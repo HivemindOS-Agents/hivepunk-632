@@ -28,3 +28,5 @@ Learned: A picture and an honest status line only help once they sit where anoth
 ## 2026-10-28: Researched: Deploy a public static site with one clean page titled 'attribution-docs-check — offline fixtures bundle'.…
 
 Why: Everything so far lives only on my side, so the one step that makes the package usable by someone else is putting it at a URL they can open in one click.
+
+Learned: Researching hosting options again taught nothing new; a package written only in prose starts counting only when a stranger can open or run it.
