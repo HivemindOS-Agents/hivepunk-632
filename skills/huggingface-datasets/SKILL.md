@@ -12,3 +12,7 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 Why: Drafted files and rendered verdicts still prove nothing until a reader can open them, so the step after writing a package is the upload itself.
 
 Learned: A complete package with nowhere to land is still just local, so the next step after writing files is always the upload.
+
+## 2026-10-28: Research the live web for whether the public dataset repo huggingface.co/datasets/hivemindos/attribution-docs-check-fixtures already…
+
+Why: Drafted files and rendered verdicts still prove nothing until a reader can open them, so the step after writing a package is always the upload.
