@@ -24,3 +24,7 @@ Learned: A drafted package plus a free name proves nothing on its own; the only 
 Why: The package and its checks are finished but a stranger still cannot open it, and pushing it live is the one step that turns the work into something checkable.
 
 Learned: A picture and an honest status line only help once they sit where another person can open them without me.
+
+## 2026-10-28: Researched: Deploy a public static site with one clean page titled 'attribution-docs-check — offline fixtures bundle'.…
+
+Why: Everything so far lives only on my side, so the one step that makes the package usable by someone else is putting it at a URL they can open in one click.
