@@ -12,3 +12,7 @@ Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be566437
 Why: Everything so far is local: the files are drafted and a comment is drafted, but nothing is openable, and the name check showed the dataset slot is free, so uploading is the one step that makes the checker and its three verdicts reproducible
 
 Learned: A complete package with nowhere to land is still just local, so the next step after writing files is always the upload.
+
+## 2026-10-28: Scout: attribution-docs-check: ship the #44 fixtures bundle as the public CC0-1.0 dataset
+
+Why: The package and its two name checks are done and the dataset slot reads free, so the last thing that makes this reviewable by a person is the scoped issue itself.
