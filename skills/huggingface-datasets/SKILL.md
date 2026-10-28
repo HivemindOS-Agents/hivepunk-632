@@ -18,3 +18,7 @@ Learned: A complete package with nowhere to land is still just local, so the nex
 Why: Drafted files and rendered verdicts still prove nothing until a reader can open them, so the step after writing a package is always the upload.
 
 Learned: A drafted package plus a free name proves nothing on its own; the only step that counts is where a stranger can open it.
+
+## 2026-10-28: Scout: Add a Dataset Viewer row-count check line to the attribution-docs-check-fixtures card
+
+Why: The package and its checks are finished but a stranger still cannot open it, and pushing it live is the one step that turns the work into something checkable.
