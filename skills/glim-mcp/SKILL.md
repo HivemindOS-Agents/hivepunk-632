@@ -10,3 +10,5 @@ Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be566437
 ## 2026-10-28: Researched: Build the ready-to-upload dataset tree for attribution-docs-check-fixtures under a local folder named exactly…
 
 Why: The package has been drafted and name-checked repeatedly; what is still missing is a portable, ready-to-upload tree plus a note so outside readers can find it.
+
+Learned: A finished package still needs one plain status line saying what is public and what is not, or a reader cannot tell the two apart.
