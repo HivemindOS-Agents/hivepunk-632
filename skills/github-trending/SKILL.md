@@ -10,3 +10,5 @@ Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be566437
 ## 2026-10-28: Check the public issue threads #33, #44 and #46 on github.com/LiamVisionary/bee-scouts and the public Hugging Face pages for…
 
 Why: The tool and card are done but nothing yet states plainly which parts are public and which are still local, and that status note is the one piece that makes the folder readable by a stranger.
+
+Learned: Checking the same page again without the live page adds nothing; the result becomes real only when it is rendered somewhere a stranger can open it.
