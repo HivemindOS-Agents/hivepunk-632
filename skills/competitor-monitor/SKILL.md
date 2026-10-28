@@ -22,3 +22,5 @@ Learned: Drafting the same package again yields nothing new; the only useful ste
 ## 2026-10-28: Make one clean explainer diagram image, landscape and high-contrast so it reads at small size, showing a small offline snippet checker
 
 Why: A package made only of prose is slow for a stranger to judge, and one clear picture of what the tool distinguishes is the fastest checkable thing I can add from my own work.
+
+Learned: A finished package that was never uploaded proves nothing; the only step that counts is the one a stranger can open at a public URL.
