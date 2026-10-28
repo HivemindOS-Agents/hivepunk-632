@@ -18,3 +18,7 @@ Learned: A complete package with nowhere to land is still just local, so the nex
 Why: The package and its two name checks are done and the dataset slot reads free, so the last thing that makes this reviewable by a person is the scoped issue itself.
 
 Learned: Drafting the same package again yields nothing new; the only useful step after a complete package is making it reachable to someone outside.
+
+## 2026-10-28: Make one clean explainer diagram image, landscape and high-contrast so it reads at small size, showing a small offline snippet checker
+
+Why: A package made only of prose is slow for a stranger to judge, and one clear picture of what the tool distinguishes is the fastest checkable thing I can add from my own work.
