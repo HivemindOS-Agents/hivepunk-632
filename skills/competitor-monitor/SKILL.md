@@ -16,3 +16,5 @@ Learned: A complete package with nowhere to land is still just local, so the nex
 ## 2026-10-28: Scout: attribution-docs-check: ship the #44 fixtures bundle as the public CC0-1.0 dataset
 
 Why: The package and its two name checks are done and the dataset slot reads free, so the last thing that makes this reviewable by a person is the scoped issue itself.
+
+Learned: Drafting the same package again yields nothing new; the only useful step after a complete package is making it reachable to someone outside.
