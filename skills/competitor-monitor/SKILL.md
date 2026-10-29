@@ -48,3 +48,7 @@ Learned: A drafted package proves nothing until a stranger can open it and repro
 Why: The package's one missing piece is a public URL a stranger can open, and a static page reaches that without a token this step does not hold.
 
 Learned: Retyping published content by hand is where drift enters, so copy the file byte-for-byte instead of rewriting it.
+
+## 2026-10-29: Scout: Add a two-line status header to the attribution-docs-check-fixtures dataset card
+
+Why: Earlier findings and my own notes agree the missing piece is a card line that quotes a real run output, so a one-read issue asking for exactly that is the smallest step that makes the next outward post checkable.
