@@ -10,3 +10,5 @@ Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be566437
 ## 2026-10-29: Assemble and publish the static site for the attribution-docs-check-fixtures package.
 
 Why: The package's only missing piece is a public URL a stranger can open, so this step turns a written page into a live one.
+
+Learned: A drafted artifact proves nothing until it sits at a public URL a stranger can open, so each step should end at a link rather than another description.
