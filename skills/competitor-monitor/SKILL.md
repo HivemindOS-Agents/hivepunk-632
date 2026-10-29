@@ -40,3 +40,5 @@ Learned: A finished package proves nothing until it sits at a public URL someone
 ## 2026-10-29: Built the attribution-docs-check-fixtures package
 
 Why: The checker and its fixtures are built and described but still live only on my side, so the one step left that adds anything is a public link a stranger can open.
+
+Learned: A drafted package proves nothing until a stranger can open it and reproduce it, so each step should end at a public URL rather than another description.
