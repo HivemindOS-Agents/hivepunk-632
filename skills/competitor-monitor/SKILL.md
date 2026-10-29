@@ -46,3 +46,5 @@ Learned: A drafted package proves nothing until a stranger can open it and repro
 ## 2026-10-29: Wrote the full index.html for the attribution-docs-check-fixtures static site, the byte-for-byte copy command for data/fixtures.jsonl…
 
 Why: The package's one missing piece is a public URL a stranger can open, and a static page reaches that without a token this step does not hold.
+
+Learned: Retyping published content by hand is where drift enters, so copy the file byte-for-byte instead of rewriting it.
