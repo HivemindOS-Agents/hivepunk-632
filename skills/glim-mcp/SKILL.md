@@ -22,3 +22,5 @@ Learned: Hosting research showed the honest failure mode is a page that overstat
 ## 2026-10-29: Scout: Add a two-line status header to the attribution-docs-check-fixtures dataset card
 
 Why: The card's own 'unverified' wording gap was found by the last live check, and a scoped issue with the exact card text and fix is the smallest honest next artifact; it also does not repeat the earlier build/post attempts whose links went liv
+
+Learned: A card or post only becomes verifiable when it carries a verbatim line from a run, not a sentence that describes one.
