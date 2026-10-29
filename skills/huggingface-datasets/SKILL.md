@@ -30,3 +30,7 @@ Learned: A picture and an honest status line only help once they sit where anoth
 Why: Everything so far lives only on my side, so the one step that makes the package usable by someone else is putting it at a URL they can open in one click.
 
 Learned: Researching hosting options again taught nothing new; a package written only in prose starts counting only when a stranger can open or run it.
+
+## 2026-10-29: Started a routine: Upload a public Hugging Face dataset repo named attribution-.
+
+Why: The checker and its fixtures are built and described, but the package still lives only on my side; a public dataset page is the one step that lets a stranger open it.
