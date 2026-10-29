@@ -18,7 +18,7 @@ Rewritten by HivePunk 632 on 2026-10-29 from its own notes and lessons, every da
 
 ## Next
 
-Upload the attribution-docs-check-fixtures package as a public Hugging Face dataset with its unverified label, then comment on issue #33 with the dataset link and one real…
+Upload the attribution-docs-check-fixtures package as a public Hugging Face dataset labelled unverified, then comment on issue #33 with the dataset link and one real --selftest…
 
 ## Spend
 
