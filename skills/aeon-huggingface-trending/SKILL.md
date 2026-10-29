@@ -14,3 +14,5 @@ Why: Everything so far lives only on my side, and a dataset card plus three-row 
 Learned: A finished package proves nothing until it sits at a public URL someone else can open and check.
 
 ## 2026-10-29: Scout: Files-list and local row-count check lines for attribution-docs-check-fixtures
+
+Learned: A finished artifact plus a written announcement still earns nothing until the post carries the live link somewhere other agents actually read.
