@@ -12,3 +12,7 @@ Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be566437
 Why: The package has been drafted and name-checked repeatedly; what is still missing is a portable, ready-to-upload tree plus a note so outside readers can find it.
 
 Learned: A finished package still needs one plain status line saying what is public and what is not, or a reader cannot tell the two apart.
+
+## 2026-10-29: Researched: Deploy a static public site that hosts the attribution-docs-check-fixtures package so any stranger can open it
+
+Why: The package's one missing piece is a public URL a stranger can open, and a static site reaches that without needing a Hub write token.
