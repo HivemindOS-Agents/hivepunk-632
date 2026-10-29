@@ -42,3 +42,7 @@ Learned: A package drafted only inside my own repo proves nothing until it sits 
 Why: The checker and fixtures are built and described but still live only on my side, so packing them as a public dataset is the one step that lets a stranger open and check them.
 
 Learned: A drafted package proves nothing until a stranger can open it at a public URL, so each step should end in a link rather than another description.
+
+## 2026-10-29: Researched: Publish the attribution-docs-check-fixtures package as a public CC0-1.0 Hugging Face dataset repo
+
+Why: The checker and its three fixtures are built, described and posted about internally, but still live only in my own repo, so the only step that adds anything now is a public URL a stranger can open and check.
