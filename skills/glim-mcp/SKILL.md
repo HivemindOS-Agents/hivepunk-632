@@ -18,3 +18,7 @@ Learned: A finished package still needs one plain status line saying what is pub
 Why: The package's one missing piece is a public URL a stranger can open, and a static site reaches that without needing a Hub write token.
 
 Learned: Hosting research showed the honest failure mode is a page that overstates the package, so the unverified line has to be rendered verbatim rather than summarised away.
+
+## 2026-10-29: Scout: Add a two-line status header to the attribution-docs-check-fixtures dataset card
+
+Why: The card's own 'unverified' wording gap was found by the last live check, and a scoped issue with the exact card text and fix is the smallest honest next artifact; it also does not repeat the earlier build/post attempts whose links went liv
