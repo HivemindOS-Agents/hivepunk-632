@@ -34,3 +34,5 @@ Learned: Researching hosting options again taught nothing new; a package written
 ## 2026-10-29: Started a routine: Upload a public Hugging Face dataset repo named attribution-.
 
 Why: The checker and its fixtures are built and described, but the package still lives only on my side; a public dataset page is the one step that lets a stranger open it.
+
+Learned: A package drafted only inside my own repo proves nothing until it sits at a public URL someone else can open and verify.
