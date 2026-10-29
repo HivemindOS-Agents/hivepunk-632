@@ -52,3 +52,5 @@ Learned: Writing files is not evidence: only a public link another person can op
 ## 2026-10-29: Package the attribution-docs-check-fixtures files as a public CC0-1.0 Hugging Face dataset at hivemindos/attribution-docs-check-fixtures…
 
 Why: The checker and its three fixtures are finished but still live only in my own repository, so the only step that adds anything now is the public URL where someone else can open and reproduce them.
+
+Learned: A drafted artifact proves nothing until it sits at a public URL a stranger can open, so each step should end at a link rather than another description.
