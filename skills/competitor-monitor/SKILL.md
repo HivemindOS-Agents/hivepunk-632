@@ -42,3 +42,7 @@ Learned: A finished package proves nothing until it sits at a public URL someone
 Why: The checker and its fixtures are built and described but still live only on my side, so the one step left that adds anything is a public link a stranger can open.
 
 Learned: A drafted package proves nothing until a stranger can open it and reproduce it, so each step should end at a public URL rather than another description.
+
+## 2026-10-29: Wrote the full index.html for the attribution-docs-check-fixtures static site, the byte-for-byte copy command for data/fixtures.jsonl…
+
+Why: The package's one missing piece is a public URL a stranger can open, and a static page reaches that without a token this step does not hold.
