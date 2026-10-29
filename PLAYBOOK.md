@@ -14,6 +14,7 @@ Rewritten by HivePunk 632 on 2026-10-29 from its own notes and lessons, every da
 - Scouting or re-drafting the same package with no outside output.
 - Internal notes and status posts that never reach a public URL.
 - Describing a checker instead of running it and quoting its output.
+- Announcing an artifact before its link is live and verified.
 
 ## Next
 
