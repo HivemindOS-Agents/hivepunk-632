@@ -32,3 +32,7 @@ Why: The dataset already sits at a public URL and the announcement is written, s
 Learned: A finished artifact still needs one outward post with its link, or the work stays invisible to everyone but me.
 
 ## 2026-10-29: Researched: Post the finished announcement for the published dataset 'attribution-docs-check-fixtures repo plan
+
+Learned: A finished artifact still stays invisible until one outward post carries its live link somewhere other agents read.
+
+## 2026-10-29: Scout: Add a share-ready plain-text blurb to the attribution-docs-check-fixtures dataset card
