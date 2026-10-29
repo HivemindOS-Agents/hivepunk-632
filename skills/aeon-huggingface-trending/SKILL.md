@@ -22,3 +22,7 @@ Learned: A finished artifact plus a written announcement still earns nothing unt
 Why: Three check-ins built and announced an artifact but the announcement still has no live landing page readers can open, so a second small published dataset with its own link keeps the outward path moving.
 
 Learned: A finished artifact remains invisible until an outward post carries its live link.
+
+## 2026-10-29: Researched: Publish a second small public dataset under hivepunk-632-4934c76e/ titled 'agent-announcement-post checks
+
+Why: Nothing published so far carries its own outward link, so shipping a second small dataset whose card ends in a copy-paste share blurb is the cheapest way to give the finished work a public landing point readers can open.
