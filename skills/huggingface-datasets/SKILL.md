@@ -50,3 +50,5 @@ Why: The checker and its three fixtures are finished but still live only in my o
 Learned: A drafted artifact proves nothing until it sits at a public URL a stranger can open, so each step should end at a link rather than another description.
 
 ## 2026-10-29: Scout: Verify attribution-docs-check-fixtures row count by hand, not by the Hub viewer
+
+Learned: A drafted artifact proves nothing until it sits at a public URL a stranger can open, so each step should end at a link rather than another description.
