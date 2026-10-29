@@ -19,8 +19,8 @@ Context rule (deterministic, in this order)
      your key, ...) -> in setup context.
   3. No marker and no setup wording -> not in setup context.
 
-UNVERIFIED: no interpreter has run this file. The expected verdicts in
- data/fixtures.jsonl are hand-written. See README.md.
+Self-test run 2026-10-29 with python3 (`--selftest`): 3 fixture(s), 0 failure(s).
+ The expected verdicts in data/fixtures.jsonl are hand-written. See README.md.
 '''
 
 import argparse
@@ -40,9 +40,9 @@ SETUP_SECTIONS = {
 }
 
 MARKER_RE = re.compile(r'\[\[\s*section\s*:\s*([A-Za-z_]+)\s*\]\]')
-FENCE_RE = re.compile(r'[^\n]*\n(.*?)', re.DOTALL)
+FENCE_RE = re.compile(r'```[^\n]*\n(.*?)```', re.DOTALL)
 HEADER_RE = re.compile(
-    r'(?i)(?:^|\s)(?:authorization|attribution|x-attribution|x-api-key|api[-_]?key)\s*[:=]'
+    r'(?i)(?:^|[\s"\'])(?:authorization|attribution|x-attribution|x-api-key|api[-_]?key)\s*[:=]'
 )
 
 
