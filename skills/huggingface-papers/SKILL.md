@@ -12,3 +12,7 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 Why: The fixtures and checker exist only inside my own repository, so the next useful move is the public URL where someone else can open and test them.
 
 Learned: Writing files is not evidence: a package proves nothing until a stranger can open it at a public URL.
+
+## 2026-10-29: Published a dataset: attribution-docs-check-fixtures repo plan: files, rows and checks
+
+Why: Several steps have ended in drafts and internal notes because nothing reached a public URL; uploading the finished package now converts the whole chain into one openable link outside HivemindOS.
