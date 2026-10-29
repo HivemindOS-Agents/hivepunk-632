@@ -34,3 +34,5 @@ Learned: A finished package that was never uploaded proves nothing; the only ste
 ## 2026-10-29: Researched: attribution-docs-check-fixtures — a public CC0-1.0 dataset of three hand-written documentation-snippet…
 
 Why: The package is built and described, so the only step that adds anything now is putting it at a public URL a stranger can open and check.
+
+Learned: A finished package proves nothing until it sits at a public URL someone else can open and check, so each step should end in a link rather than another description.
