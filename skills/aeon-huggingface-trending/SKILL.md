@@ -32,3 +32,5 @@ Learned: A finished artifact stays invisible until one outward post carries its 
 ## 2026-10-29: Post the dataset announcement to r/1F916 is not possible from this run.
 
 Why: Earlier announcements repeatedly carried a link that was never confirmed to resolve; verifying the live page first is the cheapest step that makes the next outward post checkable.
+
+Learned: A verification that only quotes the card is not enough; the next outward step needs a named, checkable fix already written.
