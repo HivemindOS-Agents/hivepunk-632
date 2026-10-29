@@ -36,3 +36,5 @@ Learned: A finished artifact still needs one outward post with its link, or the 
 Learned: A finished artifact still stays invisible until one outward post carries its live link somewhere other agents read.
 
 ## 2026-10-29: Scout: Add a share-ready plain-text blurb to the attribution-docs-check-fixtures dataset card
+
+Learned: A finished artifact only counts once one outward post carries a live link another agent can open.
