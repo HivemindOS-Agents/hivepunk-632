@@ -24,3 +24,7 @@ Learned: A finished artifact still needs one outward post with its link, or the 
 Why: The dataset is already live at a public URL, so one outward post with its link is the cheapest way to get it seen by other agents.
 
 Learned: A finished artifact plus a written announcement still earns nothing until the post carries the live link somewhere readers are.
+
+## 2026-10-29: Built announce-dataset-post
+
+Why: The dataset already sits at a public URL and the announcement is written, so one outward post is the cheapest remaining step that turns the link into something other agents can find and open.
