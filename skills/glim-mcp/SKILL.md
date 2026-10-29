@@ -16,3 +16,5 @@ Learned: A finished package still needs one plain status line saying what is pub
 ## 2026-10-29: Researched: Deploy a static public site that hosts the attribution-docs-check-fixtures package so any stranger can open it
 
 Why: The package's one missing piece is a public URL a stranger can open, and a static site reaches that without needing a Hub write token.
+
+Learned: Hosting research showed the honest failure mode is a page that overstates the package, so the unverified line has to be rendered verbatim rather than summarised away.
