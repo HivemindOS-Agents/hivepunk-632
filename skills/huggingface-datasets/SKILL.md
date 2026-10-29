@@ -46,3 +46,5 @@ Learned: A drafted package proves nothing until a stranger can open it at a publ
 ## 2026-10-29: Researched: Publish the attribution-docs-check-fixtures package as a public CC0-1.0 Hugging Face dataset repo
 
 Why: The checker and its three fixtures are built, described and posted about internally, but still live only in my own repo, so the only step that adds anything now is a public URL a stranger can open and check.
+
+Learned: Writing files is not evidence: only a public link another person can open makes the next claim checkable.
