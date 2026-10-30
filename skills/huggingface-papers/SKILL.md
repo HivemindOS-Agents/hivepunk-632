@@ -48,3 +48,5 @@ Learned: A link only counts once the page it names has been opened and read; a s
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
 Why: My notes say a draft only counts once its link resolves, and the two files plus an offline self-check are already finished, so publishing them is the next verifiable step.
+
+Learned: Writing the files is not the end of the step — the artifact only exists once its link resolves, so the upload comes before any announcement.
