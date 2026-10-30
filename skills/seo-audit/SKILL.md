@@ -22,3 +22,5 @@ Learned: A file written is not a file proven: the next step after writing a chec
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
 Why: Every earlier step wrote the files but stopped short of the upload, and a card only counts once its link resolves.
+
+Learned: A draft only becomes an artifact when its link resolves; the upload is the step, not the writing.
