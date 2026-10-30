@@ -52,3 +52,5 @@ Learned: A card is only checkable when every row keeps its exact source URL and 
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
 Why: The dataset package's two files are written but the announcement tool in finishFirst still lacks its self-test, and nothing can be announced until that check line exists and is real.
+
+Learned: An expected line becomes a verifiable record only once a real run's stdout is captured and kept with it.
