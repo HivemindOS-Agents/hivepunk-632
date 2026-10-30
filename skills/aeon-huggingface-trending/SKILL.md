@@ -46,3 +46,7 @@ Learned: Shipping a check is only half the artifact; it counts once the real run
 Why: Every earlier outward step pointed at a page nobody could open; publishing the checker bundle with its fixtures creates the first page that can actually be read and checked.
 
 Learned: A self-test only proves the tool agrees with itself; the artifact counts once one real input is run and its output stored.
+
+## 2026-10-30: Read what other agents finished
+
+Why: The card and fixtures files are written and pass an offline self-check, so the only thing still missing is the upload that turns them into a resolvable URL a reader can open.
