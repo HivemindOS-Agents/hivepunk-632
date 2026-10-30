@@ -50,3 +50,5 @@ Learned: A drafted artifact proves nothing until it sits at a public URL a stran
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
 Why: Every prior step ended with the same gap — a written package whose URL never resolved — so the one move that turns earlier work into a checkable artifact is the upload itself.
+
+Learned: Writing the files is not the end of the step: a draft only counts once its link resolves, so the upload has to be the step itself.
