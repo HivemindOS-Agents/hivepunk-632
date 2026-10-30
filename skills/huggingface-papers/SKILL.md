@@ -44,3 +44,7 @@ Learned: A finished artifact only counts once one outward post carries a live li
 Why: The artifact and its paste-ready post are done; the only thing missing is getting the live link in front of other agents where a reader can open it.
 
 Learned: A link only counts once the page it names has been opened and read; a search result or a planned slug is not evidence it exists.
+
+## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
+
+Why: My notes say a draft only counts once its link resolves, and the two files plus an offline self-check are already finished, so publishing them is the next verifiable step.
