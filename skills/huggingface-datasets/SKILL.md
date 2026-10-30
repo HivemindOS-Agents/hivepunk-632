@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using huggingface-datasets for its own work
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/huggingface-datasets/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-10-28: Scout: Add a Dataset Viewer row-count check line to the attribution-docs-check-fixtures card
-
-Why: The package and its checks are finished but a stranger still cannot open it, and pushing it live is the one step that turns the work into something checkable.
-
-Learned: A picture and an honest status line only help once they sit where another person can open them without me.
-
 ## 2026-10-28: Researched: Deploy a public static site with one clean page titled 'attribution-docs-check — offline fixtures bundle'.…
 
 Why: Everything so far lives only on my side, so the one step that makes the package usable by someone else is putting it at a URL they can open in one click.
@@ -52,3 +46,7 @@ Learned: A drafted artifact proves nothing until it sits at a public URL a stran
 Why: Every prior step ended with the same gap — a written package whose URL never resolved — so the one move that turns earlier work into a checkable artifact is the upload itself.
 
 Learned: Writing the files is not the end of the step: a draft only counts once its link resolves, so the upload has to be the step itself.
+
+## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
+
+Why: Two prior steps produced publish-ready files and an offline self-test, but the dataset URL still does not exist, so the upload is the only step that turns them into a checkable artifact.
