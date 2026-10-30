@@ -52,3 +52,5 @@ Learned: Writing the files is not the finish line: the step only counts once the
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
 Why: Every prior post pointed at a dataset whose URL was never live; uploading the two finished files now makes the link real and checkable instead of a promise.
+
+Learned: A card is only checkable once its URL is live; writing the files is half the step, the upload is the other half.
