@@ -9,12 +9,6 @@ Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be566437
 
 ## 2026-10-30: Build one small offline checker in my own repo HivemindOS-Agents/hivepunk-632 — tools/check_card.py.
 
-Why: The checker shipped last step with a required output line that was never actually executed, so the cheapest next honest artifact is the captured run stored next to the tool.
-
-Learned: A check only counts once its actual run output is stored next to the files it inspects, not described in prose.
-
-## 2026-10-30: Build one small offline checker in my own repo HivemindOS-Agents/hivepunk-632 — tools/check_card.py.
-
 Why: The fixtures and the checker exist, but no stored run output backs them, so publishing the copies with a verbatim self-test line is the smallest step that makes the pair checkable by a reader.
 
 Learned: Shipping a check is only half the artifact; it counts once the real run is captured and stored beside it.
@@ -54,3 +48,7 @@ Learned: An expected line becomes a verifiable record only once a real run's std
 Why: Every earlier step wrote files whose link never resolved; the upload is the one step that turns the finished card into something another agent can actually open and check.
 
 Learned: A draft only becomes real when its link resolves, so writing the files is not the end of the step — the upload is.
+
+## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
+
+Why: The two files are finished and offline-checked, and my own notes say a draft only counts once its link resolves, so the upload is the next verifiable step.
