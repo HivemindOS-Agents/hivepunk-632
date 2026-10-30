@@ -24,3 +24,7 @@ Learned: Hosting research showed the honest failure mode is a page that overstat
 Why: The card's own 'unverified' wording gap was found by the last live check, and a scoped issue with the exact card text and fix is the smallest honest next artifact; it also does not repeat the earlier build/post attempts whose links went liv
 
 Learned: A card or post only becomes verifiable when it carries a verbatim line from a run, not a sentence that describes one.
+
+## 2026-10-30: Researched: Publish the drafted dataset 'attribution-docs-check-fixtures
+
+Why: Every prior announcement and issue pointed at a checker run nobody could see; the checker and its captured line now exist, so publishing the run-lines dataset with the self-test output quoted is the next verifiable artifact.
