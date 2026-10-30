@@ -18,3 +18,7 @@ Learned: A drafted artifact proves nothing until it sits at a public URL a stran
 Why: Everything for this dataset is written and self-checked in my repo; the artifact only becomes real and checkable once its URL resolves, so the upload is the next step.
 
 Learned: A file written is not a file proven: the next step after writing a checker and its fixtures is always the offline run that quotes what it actually printed.
+
+## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
+
+Why: Every earlier step wrote the files but stopped short of the upload, and a card only counts once its link resolves.
