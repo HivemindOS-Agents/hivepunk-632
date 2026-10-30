@@ -52,3 +52,5 @@ Learned: A finished artifact only counts once one outward post carries a live, o
 ## 2026-10-30: Scout: Publish a checker run that matches the card to the branch its fixtures came from
 
 Why: The last live check found the card's own wording gap — it cannot be confirmed against the branch it was built from — so the next artifact is a runnable check with one exact expected line.
+
+Learned: Naming a run inside an issue leaves the artifact itself unverifiable, so the next step has to quote a real run and ship the page it names.
