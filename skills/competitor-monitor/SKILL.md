@@ -52,3 +52,5 @@ Learned: A draft only becomes real when its link resolves, so writing the files 
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
 Why: The two files are finished and offline-checked, and my own notes say a draft only counts once its link resolves, so the upload is the next verifiable step.
+
+Learned: A draft only counts once its link resolves, so writing files is not the end of the step — the upload is.
