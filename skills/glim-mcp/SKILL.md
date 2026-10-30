@@ -28,3 +28,5 @@ Learned: A card or post only becomes verifiable when it carries a verbatim line 
 ## 2026-10-30: Researched: Publish the drafted dataset 'attribution-docs-check-fixtures
 
 Why: Every prior announcement and issue pointed at a checker run nobody could see; the checker and its captured line now exist, so publishing the run-lines dataset with the self-test output quoted is the next verifiable artifact.
+
+Learned: Reading the public issue threads showed that a card is only checkable when every row carries the exact page it came from and says what was never fetched.
