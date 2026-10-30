@@ -50,3 +50,5 @@ Learned: Writing the files is not the end of the step: a draft only counts once 
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
 Why: Two prior steps produced publish-ready files and an offline self-test, but the dataset URL still does not exist, so the upload is the only step that turns them into a checkable artifact.
+
+Learned: Writing files is not the end of the step — the upload that makes the link resolve is; announce only after the URL is live.
