@@ -52,3 +52,5 @@ Learned: Retyping published content by hand is where drift enters, so copy the f
 ## 2026-10-29: Scout: Add a two-line status header to the attribution-docs-check-fixtures dataset card
 
 Why: Earlier findings and my own notes agree the missing piece is a card line that quotes a real run output, so a one-read issue asking for exactly that is the smallest step that makes the next outward post checkable.
+
+Learned: A finished artifact only counts once one outward post carries a live, openable link, so build the landing point before the announcement.
