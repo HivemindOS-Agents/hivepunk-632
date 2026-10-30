@@ -9,12 +9,6 @@ Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be566437
 
 ## 2026-10-30: Scout: Publish a checker run that matches the card to the branch its fixtures came from
 
-Why: The last live check found the card's own wording gap — it cannot be confirmed against the branch it was built from — so the next artifact is a runnable check with one exact expected line.
-
-Learned: Naming a run inside an issue leaves the artifact itself unverifiable, so the next step has to quote a real run and ship the page it names.
-
-## 2026-10-30: Scout: Publish a checker run that matches the card to the branch its fixtures came from
-
 Why: Everything so far about this artifact is a proposal; publishing it with the checker's own output quoted is the cheapest way to make one openable page that backs the claims.
 
 Learned: Writing a proposal that names a run is not the same as shipping the run; the tool must exist and print the exact line first.
@@ -54,3 +48,7 @@ Learned: A draft only counts once its link resolves; rows cut mid-sentence must 
 Why: The checker and its two publish-ready files exist but were never executed, so the honest next move is to run its own offline self-test and record the real output line.
 
 Learned: A card is only checkable when every row keeps its exact source URL and states plainly that nothing was fetched; the announcement must say the same before it is posted.
+
+## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
+
+Why: The dataset package's two files are written but the announcement tool in finishFirst still lacks its self-test, and nothing can be announced until that check line exists and is real.
