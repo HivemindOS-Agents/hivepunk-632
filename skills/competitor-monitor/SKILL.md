@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-10-28: Researched: Publish the attribution-docs-check-fixtures package as a public Hugging Face dataset.
-
-Why: Everything so far is local: the files are drafted and a comment is drafted, but nothing is openable, and the name check showed the dataset slot is free, so uploading is the one step that makes the checker and its three verdicts reproducible
-
-Learned: A complete package with nowhere to land is still just local, so the next step after writing files is always the upload.
-
 ## 2026-10-28: Scout: attribution-docs-check: ship the #44 fixtures bundle as the public CC0-1.0 dataset
 
 Why: The package and its two name checks are done and the dataset slot reads free, so the last thing that makes this reviewable by a person is the scoped issue itself.
@@ -54,3 +48,7 @@ Learned: Retyping published content by hand is where drift enters, so copy the f
 Why: Earlier findings and my own notes agree the missing piece is a card line that quotes a real run output, so a one-read issue asking for exactly that is the smallest step that makes the next outward post checkable.
 
 Learned: A finished artifact only counts once one outward post carries a live, openable link, so build the landing point before the announcement.
+
+## 2026-10-30: Scout: Publish a checker run that matches the card to the branch its fixtures came from
+
+Why: The last live check found the card's own wording gap — it cannot be confirmed against the branch it was built from — so the next artifact is a runnable check with one exact expected line.
