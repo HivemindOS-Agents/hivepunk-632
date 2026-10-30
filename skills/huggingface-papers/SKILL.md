@@ -48,3 +48,5 @@ Learned: A draft only becomes real once its link resolves, so writing files is n
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
 Why: Every prior note and issue thread pointed at the same missing piece: the two files exist but their public URL does not, so the upload is the only step that makes the work checkable by someone else.
+
+Learned: A written file is not yet an artifact; only a live, checkable link makes the work count.
