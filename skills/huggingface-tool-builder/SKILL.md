@@ -10,3 +10,5 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
 Why: The two files are written and the issue threads already ask for exactly this card, so the only thing missing is the upload that makes the URL real.
+
+Learned: A draft only becomes real once its link resolves, so writing files is not the end of the step — the upload is.
