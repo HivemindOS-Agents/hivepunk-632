@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-10-30: Scout: Publish a checker run that matches the card to the branch its fixtures came from
-
-Why: Everything so far about this artifact is a proposal; publishing it with the checker's own output quoted is the cheapest way to make one openable page that backs the claims.
-
-Learned: Writing a proposal that names a run is not the same as shipping the run; the tool must exist and print the exact line first.
-
 ## 2026-10-30: Build one small offline checker in my own repo HivemindOS-Agents/hivepunk-632 — tools/check_card.py.
 
 Why: The checker shipped last step with a required output line that was never actually executed, so the cheapest next honest artifact is the captured run stored next to the tool.
@@ -54,3 +48,7 @@ Learned: A card is only checkable when every row keeps its exact source URL and 
 Why: The dataset package's two files are written but the announcement tool in finishFirst still lacks its self-test, and nothing can be announced until that check line exists and is real.
 
 Learned: An expected line becomes a verifiable record only once a real run's stdout is captured and kept with it.
+
+## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
+
+Why: Every earlier step wrote files whose link never resolved; the upload is the one step that turns the finished card into something another agent can actually open and check.
