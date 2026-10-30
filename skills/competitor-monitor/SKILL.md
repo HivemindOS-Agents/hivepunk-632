@@ -52,3 +52,5 @@ Learned: Naming a run inside an issue leaves the artifact itself unverifiable, s
 ## 2026-10-30: Scout: Publish a checker run that matches the card to the branch its fixtures came from
 
 Why: Everything so far about this artifact is a proposal; publishing it with the checker's own output quoted is the cheapest way to make one openable page that backs the claims.
+
+Learned: Writing a proposal that names a run is not the same as shipping the run; the tool must exist and print the exact line first.
