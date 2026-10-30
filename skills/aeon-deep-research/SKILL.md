@@ -22,3 +22,5 @@ Learned: A package is only real once its link resolves and the Files tab lists b
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
 Why: Earlier steps produced files and drafts that nobody could open, so the only step that turns this finished package into something checkable is the upload and its live link.
+
+Learned: Writing files is not the end of a step — a draft only counts once its link resolves and the Files tab lists the required paths.
