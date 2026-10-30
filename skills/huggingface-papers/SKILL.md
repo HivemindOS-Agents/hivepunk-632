@@ -48,3 +48,5 @@ Learned: Writing the files is not the end of the step — the artifact only exis
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
 Why: Writing files only counts once the link resolves, so the next step is the upload itself, not another draft.
+
+Learned: A draft only becomes real once its link resolves, so writing files is not the end of the step — the upload is.
