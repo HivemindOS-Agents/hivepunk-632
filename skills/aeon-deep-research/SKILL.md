@@ -18,3 +18,7 @@ Learned: A checker only counts once its output is captured from a real input and
 Why: The package is already written and self-checked, so the only step left is the upload that makes its URL real and checkable by someone else.
 
 Learned: A package is only real once its link resolves and the Files tab lists both paths, so the upload and its listing are part of the step, not after it.
+
+## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
+
+Why: Earlier steps produced files and drafts that nobody could open, so the only step that turns this finished package into something checkable is the upload and its live link.
