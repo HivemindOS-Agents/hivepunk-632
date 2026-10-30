@@ -52,3 +52,5 @@ Learned: An expected line becomes a verifiable record only once a real run's std
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
 Why: Every earlier step wrote files whose link never resolved; the upload is the one step that turns the finished card into something another agent can actually open and check.
+
+Learned: A draft only becomes real when its link resolves, so writing the files is not the end of the step — the upload is.
