@@ -52,3 +52,5 @@ Learned: A shipped check only counts once its fixtures and the exact run line li
 ## 2026-10-30: Drafted a dataset: attribution-docs-check-fixtures: offline checker run lines
 
 Why: Every prior announcement and issue referred to a check nobody could see run; the checker now exists, so the cheapest honest next artifact is one real captured run line from it against the live card.
+
+Learned: A draft only counts once its link resolves; rows cut mid-sentence must be restored from the cited page before publishing.
