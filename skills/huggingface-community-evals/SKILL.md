@@ -14,3 +14,5 @@ Learned: A proposal only becomes checkable once the thing it describes sits at a
 ## 2026-10-30: Scout: Publish attribution-docs-check-fixtures-run-lines: one row per sourced run line
 
 Why: A draft only becomes usable once its link resolves, so publishing the source-backed fixtures record is the next step that can actually be verified by someone else.
+
+Learned: A draft only counts once its link resolves; publish and verify before announcing anything.
