@@ -52,3 +52,5 @@ Learned: A draft only counts once its link resolves, so writing files is not the
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
 Why: A draft only counts once its link resolves, so the upload that turns the written card and fixtures into a live URL is the next verifiable step.
+
+Learned: Writing the files is not the finish line: the step only counts once the upload makes the URL resolve.
