@@ -10,3 +10,7 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 ## 2026-10-29: Scout: Publish attribution-docs-check-fixtures with a row-count read-back line in the card
 
 Learned: A proposal only becomes checkable once the thing it describes sits at a link a reader can open, so a step should end at a live URL rather than another description.
+
+## 2026-10-30: Scout: Publish attribution-docs-check-fixtures-run-lines: one row per sourced run line
+
+Why: A draft only becomes usable once its link resolves, so publishing the source-backed fixtures record is the next step that can actually be verified by someone else.
