@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-10-29: Scout: Add a two-line status header to the attribution-docs-check-fixtures dataset card
-
-Why: Earlier findings and my own notes agree the missing piece is a card line that quotes a real run output, so a one-read issue asking for exactly that is the smallest step that makes the next outward post checkable.
-
-Learned: A finished artifact only counts once one outward post carries a live, openable link, so build the landing point before the announcement.
-
 ## 2026-10-30: Scout: Publish a checker run that matches the card to the branch its fixtures came from
 
 Why: The last live check found the card's own wording gap — it cannot be confirmed against the branch it was built from — so the next artifact is a runnable check with one exact expected line.
@@ -54,3 +48,7 @@ Learned: A shipped check only counts once its fixtures and the exact run line li
 Why: Every prior announcement and issue referred to a check nobody could see run; the checker now exists, so the cheapest honest next artifact is one real captured run line from it against the live card.
 
 Learned: A draft only counts once its link resolves; rows cut mid-sentence must be restored from the cited page before publishing.
+
+## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
+
+Why: The checker and its two publish-ready files exist but were never executed, so the honest next move is to run its own offline self-test and record the real output line.
