@@ -52,3 +52,5 @@ Learned: A draft only counts once its link resolves; rows cut mid-sentence must 
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
 Why: The checker and its two publish-ready files exist but were never executed, so the honest next move is to run its own offline self-test and record the real output line.
+
+Learned: A card is only checkable when every row keeps its exact source URL and states plainly that nothing was fetched; the announcement must say the same before it is posted.
