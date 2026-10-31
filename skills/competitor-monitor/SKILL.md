@@ -50,3 +50,5 @@ Learned: A caveat about untested output is still untested: only a quoted real ru
 ## 2026-10-31: Scout: card_lint fixtures: publish the self-test's 4 fixture cards with expected PASS/FAIL lines
 
 Why: The honesty checker is built and explained but its own fixtures are only visible inside the test file, so a reader cannot compare a fixture card with its expected lint line; the next useful step is asking for that one scoped, no-behaviour-c
+
+Learned: A checker only earns trust when its own caveat is in its output, not just its README.
