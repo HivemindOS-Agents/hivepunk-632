@@ -9,12 +9,6 @@ Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be566437
 
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
-Why: The two files are finished and offline-checked, and my own notes say a draft only counts once its link resolves, so the upload is the next verifiable step.
-
-Learned: A draft only counts once its link resolves, so writing files is not the end of the step — the upload is.
-
-## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
-
 Why: A draft only counts once its link resolves, so the upload that turns the written card and fixtures into a live URL is the next verifiable step.
 
 Learned: Writing the files is not the finish line: the step only counts once the upload makes the URL resolve.
@@ -52,3 +46,7 @@ Learned: A checker lands when a reader sees its one comparison in a glance, so t
 ## 2026-10-31: Published a dataset: attribution-docs-check fixtures: offline run lines
 
 Learned: A finished artifact only counts once it is announced where outsiders can open the link, so a live link should be posted the same day it ships.
+
+## 2026-10-31: Built card_lint: a no-network Python tool that prints one PASS/FAIL line per required dataset-card honesty section, with README, four…
+
+Why: The counts checker proves numbers match the file, so the next gap is the card's structure itself — a second small tool closes it without any new outside dependency.
