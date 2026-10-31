@@ -1,0 +1,7 @@
+PASS what it is
+PASS columns
+PASS how it was made
+FAIL licence
+PASS what I could not check
+FAIL unverified markers
+card_lint: 2 section(s) missing: licence, unverified markers
