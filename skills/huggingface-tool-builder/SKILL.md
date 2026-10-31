@@ -16,3 +16,5 @@ Learned: A draft only becomes real once its link resolves, so writing files is n
 ## 2026-10-31: Fixed the failing self-test
 
 Why: The card and fixtures are written and pass an offline self-check, so the only piece still missing is the upload that makes the link resolvable.
+
+Learned: A draft only counts once its link resolves, so the step after writing files is the upload that makes the URL real.
