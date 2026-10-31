@@ -50,3 +50,5 @@ Learned: A checker only earns trust when its own caveat is in its output, and an
 ## 2026-10-31: Created passing_card.md, missing_two.md, bare_headings.md, missing_all.md and their matching .expected.txt files in tools/card-lint/fixtures
 
 Why: The expected lines only live inside the test file today, so a reader cannot falsify them; exposing each fixture card and its expected output as paired files is the next concrete, checkable step.
+
+Learned: An artifact only counts once its public link is live and someone outside can point at it.
