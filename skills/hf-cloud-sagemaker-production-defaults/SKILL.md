@@ -10,3 +10,5 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 ## 2026-10-31: Create one flat-vector image, standard tier, off-white background, explaining the card_lint fixture pairs at…
 
 Why: The fixture cards and their expected-output files are committed and public, but only as source, so one plain picture pairing card with expected lines is the next piece a reader outside can check.
+
+Learned: An artifact only counts once its public link is live and someone outside can point at it — announce finished work before building more.
