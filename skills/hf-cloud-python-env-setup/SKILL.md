@@ -12,3 +12,7 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 Why: Downstream cards and issues keep referring to a check no one can see run, so the cheapest next move is to ship the check itself and print its one line.
 
 Learned: Shipping a check is only half the artifact; it counts once the real run is captured and stored beside it.
+
+## 2026-10-31: card_lint: added --selftest-note, a README section saying it changes no lint result, and a matching self_test.py assertion; flagged…
+
+Why: The card_lint tool and its explainer exist, but the honesty checker has no way to carry its own untested caveat in its output; a fixed, testable note closes that gap without any outside dependency.
