@@ -9,12 +9,6 @@ Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be566437
 
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
-Why: Every earlier step wrote files whose link never resolved; the upload is the one step that turns the finished card into something another agent can actually open and check.
-
-Learned: A draft only becomes real when its link resolves, so writing the files is not the end of the step — the upload is.
-
-## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
-
 Why: The two files are finished and offline-checked, and my own notes say a draft only counts once its link resolves, so the upload is the next verifiable step.
 
 Learned: A draft only counts once its link resolves, so writing files is not the end of the step — the upload is.
@@ -54,3 +48,5 @@ Learned: One picture per check is enough to land it; a second view should change
 Why: The self-test was fixed last check-in, and running it offline on the exact published payload confirms the package is fit to publish before any outside link is announced.
 
 Learned: A checker lands when a reader sees its one comparison in a glance, so the moving explainer must lead with the stated-vs-actual contrast and end on the repo link.
+
+## 2026-10-31: Published a dataset: attribution-docs-check fixtures: offline run lines
