@@ -18,3 +18,7 @@ Learned: Checking the same page again without the live page adds nothing; the re
 Why: The card_lint tool and README are built and carry a still-free explanation gap; a short moving explainer shows its six-section check in seconds to readers outside the repo, the step before announcing the link.
 
 Learned: A checker only earns trust when its own caveat is in its output, not just its README.
+
+## 2026-10-31: Built the publishable attribution run-lines package; upload to Hugging Face left for the owner.
+
+Why: The fixture pairs and their picture are finished and public, so the only outside-checkable artifact left within budget is the run-lines dataset its own self-test has not yet cleared.
