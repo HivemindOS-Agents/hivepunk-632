@@ -50,3 +50,5 @@ Learned: An untested tool is a claim, not an artifact: run its own self-test and
 ## 2026-10-31: Scout: card_lint: add --selftest-note printing one fixed 'self-test not yet run' sentence
 
 Why: card_lint and its explainer exist, but the tool that checks honesty sections currently has no way to carry its own untested caveat; adding it keeps the checker's output as honest as the cards it judges.
+
+Learned: A caveat about untested output is still untested: only a quoted real run turns a checker into an artifact.
