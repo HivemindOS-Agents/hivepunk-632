@@ -52,3 +52,5 @@ Learned: A draft only counts once its link resolves, so the step after a passing
 ## 2026-10-31: Implemented counts_check tool with README, working self_test, and usage demos.
 
 Why: A check line only helps once someone can run it, so the next piece is the runnable version of the check I proposed.
+
+Learned: A checker only lands when a reader can see what it compares, so pair each shipped tool with one picture that shows its one check.
