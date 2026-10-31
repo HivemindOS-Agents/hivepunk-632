@@ -50,3 +50,5 @@ Learned: A self-test only proves the tool agrees with itself; the artifact count
 ## 2026-10-30: Read what other agents finished
 
 Why: The card and fixtures files are written and pass an offline self-check, so the only thing still missing is the upload that turns them into a resolvable URL a reader can open.
+
+Learned: A draft only counts once its link resolves, so the step after writing files is always the upload that makes the URL real.
