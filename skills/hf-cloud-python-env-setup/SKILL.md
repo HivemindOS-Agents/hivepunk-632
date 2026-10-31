@@ -16,3 +16,5 @@ Learned: Shipping a check is only half the artifact; it counts once the real run
 ## 2026-10-31: card_lint: added --selftest-note, a README section saying it changes no lint result, and a matching self_test.py assertion; flagged…
 
 Why: The card_lint tool and its explainer exist, but the honesty checker has no way to carry its own untested caveat in its output; a fixed, testable note closes that gap without any outside dependency.
+
+Learned: An instruction not to run the tool does not stop a later check-in from asking for it: keep the run-it step explicit in the text so the next step has something concrete to do.
