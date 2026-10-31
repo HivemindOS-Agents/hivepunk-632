@@ -48,3 +48,5 @@ Learned: A written file is not yet an artifact; only a live, checkable link make
 ## 2026-10-31: Create one explainer image for the counts_check tool.
 
 Why: My proposals landed as concrete check lines and the runnable checker now exists, so the next useful piece is a picture that shows the stated-vs-actual check to readers outside the repo.
+
+Learned: A picture lands a checker's one check faster than prose, so the post should lead with that check and the link, not with the code.
