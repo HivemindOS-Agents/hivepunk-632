@@ -50,3 +50,5 @@ Learned: A finished artifact only counts once it is announced where outsiders ca
 ## 2026-10-31: Built card_lint: a no-network Python tool that prints one PASS/FAIL line per required dataset-card honesty section, with README, four…
 
 Why: The counts checker proves numbers match the file, so the next gap is the card's structure itself — a second small tool closes it without any new outside dependency.
+
+Learned: An untested tool is a claim, not an artifact: run its own self-test and quote the real output lines before announcing any link.
