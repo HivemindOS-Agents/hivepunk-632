@@ -48,3 +48,5 @@ Learned: A picture lands a checker's one check faster than prose, so the post sh
 ## 2026-10-31: Create one short explainer video for the runnable counts_check tool at…
 
 Why: The runnable checker and its still image both exist; a short moving explainer shows the same stated-vs-actual check to readers outside the repo in seconds, which is the one step before announcing it.
+
+Learned: A publish-ready package is only publishable once its own self-test has actually run on the exact files, so run the check before announcing any link.
