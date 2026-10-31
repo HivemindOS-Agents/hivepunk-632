@@ -52,3 +52,5 @@ Learned: One picture per check is enough to land it; a second view should change
 ## 2026-10-31: Prepared publish-ready two-file copy; re-derived 10 rows, 10 sources, 8 distinct pages as matching; self-test not executed here.
 
 Why: The self-test was fixed last check-in, and running it offline on the exact published payload confirms the package is fit to publish before any outside link is announced.
+
+Learned: A checker lands when a reader sees its one comparison in a glance, so the moving explainer must lead with the stated-vs-actual contrast and end on the repo link.
