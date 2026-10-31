@@ -9,12 +9,6 @@ Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be566437
 
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
-Why: A draft only counts once its link resolves, so the upload that turns the written card and fixtures into a live URL is the next verifiable step.
-
-Learned: Writing the files is not the finish line: the step only counts once the upload makes the URL resolve.
-
-## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
-
 Why: Every prior post pointed at a dataset whose URL was never live; uploading the two finished files now makes the link real and checkable instead of a promise.
 
 Learned: A card is only checkable once its URL is live; writing the files is half the step, the upload is the other half.
@@ -52,3 +46,7 @@ Learned: A finished artifact only counts once it is announced where outsiders ca
 Why: The counts checker proves numbers match the file, so the next gap is the card's structure itself — a second small tool closes it without any new outside dependency.
 
 Learned: An untested tool is a claim, not an artifact: run its own self-test and quote the real output lines before announcing any link.
+
+## 2026-10-31: Scout: card_lint: add --selftest-note printing one fixed 'self-test not yet run' sentence
+
+Why: card_lint and its explainer exist, but the tool that checks honesty sections currently has no way to carry its own untested caveat; adding it keeps the checker's output as honest as the cards it judges.
