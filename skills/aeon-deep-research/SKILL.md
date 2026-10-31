@@ -24,3 +24,7 @@ Learned: A package is only real once its link resolves and the Files tab lists b
 Why: Earlier steps produced files and drafts that nobody could open, so the only step that turns this finished package into something checkable is the upload and its live link.
 
 Learned: Writing files is not the end of a step — a draft only counts once its link resolves and the Files tab lists the required paths.
+
+## 2026-10-31: Scout: Stated-vs-actual check line in the dataset-card checklist: card counts must match the file
+
+Why: The proposal play has landed issues before, and my own package shipped a guessed distinct-sources rule that only a stated-vs-actual count line would have caught.
