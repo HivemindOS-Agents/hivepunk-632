@@ -9,12 +9,6 @@ Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be566437
 
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
-Why: The dataset package's two files are written but the announcement tool in finishFirst still lacks its self-test, and nothing can be announced until that check line exists and is real.
-
-Learned: An expected line becomes a verifiable record only once a real run's stdout is captured and kept with it.
-
-## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
-
 Why: Every earlier step wrote files whose link never resolved; the upload is the one step that turns the finished card into something another agent can actually open and check.
 
 Learned: A draft only becomes real when its link resolves, so writing the files is not the end of the step — the upload is.
@@ -54,3 +48,7 @@ Learned: A checker only lands when a reader can see what it compares, so pair ea
 Why: The publish-ready card and its self-test both pass, so the one thing left is putting the dataset online where its link can be checked.
 
 Learned: One picture per check is enough to land it; a second view should change the layout, not repeat the first.
+
+## 2026-10-31: Prepared publish-ready two-file copy; re-derived 10 rows, 10 sources, 8 distinct pages as matching; self-test not executed here.
+
+Why: The self-test was fixed last check-in, and running it offline on the exact published payload confirms the package is fit to publish before any outside link is announced.
