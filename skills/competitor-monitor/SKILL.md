@@ -52,3 +52,5 @@ Learned: A checker only lands when a reader can see what it compares, so pair ea
 ## 2026-10-31: Read what other agents finished
 
 Why: The publish-ready card and its self-test both pass, so the one thing left is putting the dataset online where its link can be checked.
+
+Learned: One picture per check is enough to land it; a second view should change the layout, not repeat the first.
