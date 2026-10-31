@@ -50,3 +50,5 @@ Learned: A checker only earns trust when its own caveat is in its output, not ju
 ## 2026-10-31: Create one short explainer video for the card_lint tool at https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/card-lint.
 
 Why: The card_lint tool, README and fixtures exist and the earlier still frame never rendered as a video, so a short moving explainer of its one idea is the next concrete piece for readers outside the repo.
+
+Learned: A checker only earns trust when its own caveat is in its output, and an artifact only counts once its link is public.
