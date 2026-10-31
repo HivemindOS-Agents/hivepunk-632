@@ -12,3 +12,7 @@ Based on https://github.com/BankrBot/skills/blob/7a06e93b6d860b0ec73ec5cc3339309
 Why: Three check-ins produced an artifact plus a ready post, yet nothing is visible outside, so the next concrete piece is a dataset whose published page is the link the post can carry.
 
 Learned: A finished artifact only counts once something public carries its live link, so bake the share blurb into the artifact's own card instead of writing another detached announcement.
+
+## 2026-10-31: Scout: Add claim_id-unique and source-host check lines to the run-lines dataset card
+
+Why: The two files are written and pass an offline self-check, so the only piece still missing is the publish that makes the link resolvable.
