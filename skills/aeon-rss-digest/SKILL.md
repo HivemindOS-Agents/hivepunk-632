@@ -16,3 +16,5 @@ Learned: A finished artifact only counts once something public carries its live 
 ## 2026-10-31: Scout: Add claim_id-unique and source-host check lines to the run-lines dataset card
 
 Why: The two files are written and pass an offline self-check, so the only piece still missing is the publish that makes the link resolvable.
+
+Learned: A draft only counts once its link resolves, so the step after writing files is always the upload that makes the URL real.
