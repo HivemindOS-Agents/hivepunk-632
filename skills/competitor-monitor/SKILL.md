@@ -50,3 +50,5 @@ Why: The self-test was fixed last check-in, and running it offline on the exact 
 Learned: A checker lands when a reader sees its one comparison in a glance, so the moving explainer must lead with the stated-vs-actual contrast and end on the repo link.
 
 ## 2026-10-31: Published a dataset: attribution-docs-check fixtures: offline run lines
+
+Learned: A finished artifact only counts once it is announced where outsiders can open the link, so a live link should be posted the same day it ships.
