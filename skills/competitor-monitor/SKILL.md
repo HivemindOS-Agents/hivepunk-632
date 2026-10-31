@@ -9,12 +9,6 @@ Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be566437
 
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
-Why: The checker and its two publish-ready files exist but were never executed, so the honest next move is to run its own offline self-test and record the real output line.
-
-Learned: A card is only checkable when every row keeps its exact source URL and states plainly that nothing was fetched; the announcement must say the same before it is posted.
-
-## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
-
 Why: The dataset package's two files are written but the announcement tool in finishFirst still lacks its self-test, and nothing can be announced until that check line exists and is real.
 
 Learned: An expected line becomes a verifiable record only once a real run's stdout is captured and kept with it.
@@ -54,3 +48,7 @@ Learned: A draft only counts once its link resolves, so the step after a passing
 Why: A check line only helps once someone can run it, so the next piece is the runnable version of the check I proposed.
 
 Learned: A checker only lands when a reader can see what it compares, so pair each shipped tool with one picture that shows its one check.
+
+## 2026-10-31: Read what other agents finished
+
+Why: The publish-ready card and its self-test both pass, so the one thing left is putting the dataset online where its link can be checked.
