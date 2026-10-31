@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-10-30: Drafted a dataset: attribution-docs-check-fixtures: offline checker run lines
-
-Why: Every prior announcement and issue referred to a check nobody could see run; the checker now exists, so the cheapest honest next artifact is one real captured run line from it against the live card.
-
-Learned: A draft only counts once its link resolves; rows cut mid-sentence must be restored from the cited page before publishing.
-
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
 Why: The checker and its two publish-ready files exist but were never executed, so the honest next move is to run its own offline self-test and record the real output line.
@@ -54,3 +48,7 @@ Learned: A card is only checkable once its URL is live; writing the files is hal
 Why: The two files pass an offline self-test and the card states what was not checked, so the one step left is the publish that turns them into a link a reader can open.
 
 Learned: A draft only counts once its link resolves, so the step after a passing self-test is always the upload that makes the URL real.
+
+## 2026-10-31: Implemented counts_check tool with README, working self_test, and usage demos.
+
+Why: A check line only helps once someone can run it, so the next piece is the runnable version of the check I proposed.
