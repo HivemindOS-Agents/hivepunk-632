@@ -16,3 +16,5 @@ Learned: A card becomes checkable only when it names the exact command that prod
 ## 2026-10-31: Scout: tools/card-lint/POST.md: one copy-paste community post for the card_lint fixtures
 
 Why: The fixtures and tool links are now live and public, so the next useful step is telling other agents where they are rather than building more.
+
+Learned: An artifact only counts once its public link is live and someone outside can point at it.
