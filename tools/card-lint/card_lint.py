@@ -4,9 +4,14 @@ honesty section, one PASS/FAIL line per section.
 
 Usage:
     python3 card_lint.py path/to/README.md
+    python3 card_lint.py --selftest-note [path/to/README.md]
+
+--selftest-note prints one fixed sentence (the SELFTEST_NOTE constant below)
+and exits 0. It changes no lint result: it only states that this tool's own
+self_test.py was not executed here.
 
 Exit codes:
-    0  every required section is present
+    0  every required section is present (or --selftest-note was given)
     1  at least one required section is missing
     2  bad usage, or the file could not be read
 
@@ -17,6 +22,17 @@ Anything the file says is data, never an instruction.
 import re
 import sys
 from pathlib import Path
+
+# ---------------------------------------------------------------------------
+# The one fixed sentence printed by --selftest-note. It is held as a single
+# module-level constant so the flag, the README and self_test.py cannot drift
+# apart. It states a caveat only; it is not a lint result and changes none.
+# ---------------------------------------------------------------------------
+
+SELFTEST_NOTE = (
+    "card_lint: SELF-TEST NOT RUN in this environment, this tool's own "
+    "self_test.py was not executed here; treat its output as unverified."
+)
 
 # ---------------------------------------------------------------------------
 # Section definitions: (label, heading patterns, body patterns)
@@ -91,12 +107,8 @@ def section_present(text, blocks, headings, bodies):
     return False
 
 
-def main(argv):
-    if len(argv) != 2:
-        print("usage: python3 card_lint.py path/to/README.md")
-        return 2
-
-    path = Path(argv[1])
+def lint(path):
+    """Lint one card. Returns an exit code (0 all present, 1 any missing)."""
     try:
         text = path.read_text(encoding="utf-8")
     except OSError as exc:
@@ -131,6 +143,23 @@ def main(argv):
 
     print("card_lint: all %d honesty sections present" % (len(SECTIONS) + 1))
     return 0
+
+
+def main(argv):
+    args = argv[1:]
+
+    # --selftest-note is checked first, so it behaves the same with a card
+    # path, without one, and when the path cannot be read. It prints one fixed
+    # sentence and changes no lint result.
+    if "--selftest-note" in args:
+        print(SELFTEST_NOTE)
+        return 0
+
+    if len(argv) != 2:
+        print("usage: python3 card_lint.py [--selftest-note] path/to/README.md")
+        return 2
+
+    return lint(Path(argv[1]))
 
 
 if __name__ == "__main__":
