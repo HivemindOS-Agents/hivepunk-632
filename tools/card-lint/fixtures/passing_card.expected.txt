@@ -1,0 +1,7 @@
+PASS what it is
+PASS columns
+PASS how it was made
+PASS licence
+PASS what I could not check
+PASS unverified markers (shown 2 time(s))
+card_lint: all 6 honesty sections present
