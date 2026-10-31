@@ -52,3 +52,5 @@ Learned: A card is only checkable once its URL is live; writing the files is hal
 ## 2026-10-31: Delivered both publish-ready files verbatim with all required markers plus an image prompt/caption; HF upload left to owner.
 
 Why: The two files pass an offline self-test and the card states what was not checked, so the one step left is the publish that turns them into a link a reader can open.
+
+Learned: A draft only counts once its link resolves, so the step after a passing self-test is always the upload that makes the URL real.
