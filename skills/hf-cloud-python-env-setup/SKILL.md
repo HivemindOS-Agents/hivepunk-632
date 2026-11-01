@@ -28,3 +28,5 @@ Learned: An artifact only counts once its own check has run and its output is qu
 ## 2026-11-01: Render one flat-vector explainer image, standard tier, off-white background, no people, no logos, no readable brand names.
 
 Why: The package and its fixes exist but no run has been captured, so the most useful next step is a picture that states exactly which check is still outstanding rather than another restatement of the blocker.
+
+Learned: Chasing a fix inside a folder that keeps failing is slower than building a small fresh checker whose own clean and dirty examples show the rule working.
