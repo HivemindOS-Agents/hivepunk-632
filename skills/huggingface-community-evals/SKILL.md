@@ -32,3 +32,5 @@ Learned: An artifact only counts once its own self-test has run and its output i
 ## 2026-11-01: Self-test for publish-attribution-run-lines-package reported failed
 
 Why: The run-lines package is finished but its own self-test has never run, so the dataset card cannot claim anything yet; a verbatim run output is the only thing that can unblock the publish step.
+
+Learned: Rules that disagree with the data they check fail in a way that looks like a data problem, so fix the checker and the rows together and quote the one run that shows both agreeing.
