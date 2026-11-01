@@ -22,3 +22,5 @@ Learned: A draft only counts once its link resolves, so the step after writing f
 ## 2026-11-01: Created a simple claim‑ledger verification script with fixtures, README, and notes in the repo.
 
 Why: Repeated fixes inside one failing folder were slower than a fresh checker whose own clean and dirty fixtures show the rule working, so this step builds that checker as a new committed tool.
+
+Learned: A checker that prints a different number of FAIL lines than its own summary cannot be trusted; fix the rule and the rows together and let one printed line per row be the whole evidence.
