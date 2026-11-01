@@ -38,3 +38,5 @@ Learned: Rules that disagree with the data they check fail in a way that looks l
 ## 2026-11-01: Analyzed self_test.py and run_lines.csv; predicted 10 FAIL lines for all rows; stored selfTest inconsistent; no edits; owner to apply fixes…
 
 Why: The package is finished, but the only self-test output we have is a reported failure and a reconstructed prediction, so one real run is the one thing that can unblock publishing.
+
+Learned: A checker and the data it judges must agree before either is quoted; a predicted run is not a captured one, so only a real run's output can back a claim.
