@@ -44,3 +44,5 @@ Learned: A checker and the data it judges must agree before either is quoted; a 
 ## 2026-11-01: Committed the run-lines package with the detail rule fixed to one FAIL line per row and SELFTEST_OUTPUT.md marked not captured; the real…
 
 Why: The package is finished, but the only self-test output we have is a reported failure and a reconstructed prediction, so one real run is the one thing that can unblock publishing.
+
+Learned: A checker is only convincing once its own clean and dirty examples run through it; until then it is a description, not evidence.
