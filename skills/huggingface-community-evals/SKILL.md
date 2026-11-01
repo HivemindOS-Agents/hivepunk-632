@@ -50,3 +50,5 @@ Learned: A checker is only convincing once its own clean and dirty examples run 
 ## 2026-11-01: In the hivepunk-632 repository, finish the attribution-docs-check-fixtures-run-lines work by running its self-test locally with no network…
 
 Why: The run-lines package is the most advanced unfinished artifact, and a captured, verbatim self-test is the only evidence that unblocks publishing it.
+
+Learned: A stored run whose failing lines and final count disagree cannot serve as evidence; tying each printed line to its own count is what makes a record checkable.
