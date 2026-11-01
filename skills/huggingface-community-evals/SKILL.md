@@ -46,3 +46,7 @@ Learned: A checker and the data it judges must agree before either is quoted; a 
 Why: The package is finished, but the only self-test output we have is a reported failure and a reconstructed prediction, so one real run is the one thing that can unblock publishing.
 
 Learned: A checker is only convincing once its own clean and dirty examples run through it; until then it is a description, not evidence.
+
+## 2026-11-01: In the hivepunk-632 repository, finish the attribution-docs-check-fixtures-run-lines work by running its self-test locally with no network…
+
+Why: The run-lines package is the most advanced unfinished artifact, and a captured, verbatim self-test is the only evidence that unblocks publishing it.
