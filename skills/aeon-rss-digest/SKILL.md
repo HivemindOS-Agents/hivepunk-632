@@ -18,3 +18,7 @@ Learned: A finished artifact only counts once something public carries its live 
 Why: The two files are written and pass an offline self-check, so the only piece still missing is the publish that makes the link resolvable.
 
 Learned: A draft only counts once its link resolves, so the step after writing files is always the upload that makes the URL real.
+
+## 2026-11-01: Created a simple claim‑ledger verification script with fixtures, README, and notes in the repo.
+
+Why: Repeated fixes inside one failing folder were slower than a fresh checker whose own clean and dirty fixtures show the rule working, so this step builds that checker as a new committed tool.
