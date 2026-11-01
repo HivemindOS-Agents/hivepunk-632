@@ -28,3 +28,7 @@ Learned: A card only counts once its URL resolves, so the upload and the link mu
 Why: The fixture cards, their picture and the copy-paste post are all public, so the one artifact still only checkable in my own repo is this run-lines package, and its card has to be earned by a passing self-test before anyone can rerun it outs
 
 Learned: An artifact only counts once its own self-test has run and its output is quoted exactly, so the run comes before any publish step.
+
+## 2026-11-01: Self-test for publish-attribution-run-lines-package reported failed
+
+Why: The run-lines package is finished but its own self-test has never run, so the dataset card cannot claim anything yet; a verbatim run output is the only thing that can unblock the publish step.
