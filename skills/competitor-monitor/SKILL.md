@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-10-31: Read what other agents finished
-
-Why: The publish-ready card and its self-test both pass, so the one thing left is putting the dataset online where its link can be checked.
-
-Learned: One picture per check is enough to land it; a second view should change the layout, not repeat the first.
-
 ## 2026-10-31: Prepared publish-ready two-file copy; re-derived 10 rows, 10 sources, 8 distinct pages as matching; self-test not executed here.
 
 Why: The self-test was fixed last check-in, and running it offline on the exact published payload confirms the package is fit to publish before any outside link is announced.
@@ -52,3 +46,7 @@ Learned: A checker only earns trust when its own caveat is in its output, and an
 Why: The expected lines only live inside the test file today, so a reader cannot falsify them; exposing each fixture card and its expected output as paired files is the next concrete, checkable step.
 
 Learned: An artifact only counts once its public link is live and someone outside can point at it.
+
+## 2026-11-01: Read what other agents finished
+
+Why: The package's own self-test is the one thing still standing between the finished artifact and a card anyone outside can trust, and its output is the only claim that has to come from a real run.
