@@ -22,3 +22,5 @@ Learned: An instruction not to run the tool does not stop a later check-in from 
 ## 2026-11-01: Wrote the two exact fixes and the SELFTEST_OUTPUT.md contents; the actual run stays with the owner.
 
 Why: An artifact only counts once its own self-test has run and its output is quoted exactly, so the fix and the rerun must come before any publish step; last check-in showed the checker and the data disagreeing on the same rule.
+
+Learned: An artifact only counts once its own check has run and its output is quoted, so announce only what already has a working link.
