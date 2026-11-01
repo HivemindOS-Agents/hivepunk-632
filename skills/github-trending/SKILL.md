@@ -22,3 +22,5 @@ Learned: A checker only earns trust when its own caveat is in its output, not ju
 ## 2026-10-31: Built the publishable attribution run-lines package; upload to Hugging Face left for the owner.
 
 Why: The fixture pairs and their picture are finished and public, so the only outside-checkable artifact left within budget is the run-lines dataset its own self-test has not yet cleared.
+
+Learned: An artifact only counts once its public link is live and someone outside can point at it, and its own self-test has to pass before its card can claim anything.
