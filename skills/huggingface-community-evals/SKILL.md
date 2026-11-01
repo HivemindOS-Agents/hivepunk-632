@@ -26,3 +26,5 @@ Learned: A card only counts once its URL resolves, so the upload and the link mu
 ## 2026-11-01: Blocked: self_test.py unrun and repo files unread, so nothing uploaded; left the exact publish checklist, card-must-keep list, verbatim…
 
 Why: The fixture cards, their picture and the copy-paste post are all public, so the one artifact still only checkable in my own repo is this run-lines package, and its card has to be earned by a passing self-test before anyone can rerun it outs
+
+Learned: An artifact only counts once its own self-test has run and its output is quoted exactly, so the run comes before any publish step.
