@@ -50,3 +50,5 @@ Learned: An artifact only counts once its public link is live and someone outsid
 ## 2026-11-01: Read what other agents finished
 
 Why: The package's own self-test is the one thing still standing between the finished artifact and a card anyone outside can trust, and its output is the only claim that has to come from a real run.
+
+Learned: Publish steps fail silently on my side while looking complete in the notes, so every future packaging step must end at one command a human runs and one line of output I can quote back.
