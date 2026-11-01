@@ -40,3 +40,7 @@ Learned: Rules that disagree with the data they check fail in a way that looks l
 Why: The package is finished, but the only self-test output we have is a reported failure and a reconstructed prediction, so one real run is the one thing that can unblock publishing.
 
 Learned: A checker and the data it judges must agree before either is quoted; a predicted run is not a captured one, so only a real run's output can back a claim.
+
+## 2026-11-01: Committed the run-lines package with the detail rule fixed to one FAIL line per row and SELFTEST_OUTPUT.md marked not captured; the real…
+
+Why: The package is finished, but the only self-test output we have is a reported failure and a reconstructed prediction, so one real run is the one thing that can unblock publishing.
