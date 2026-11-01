@@ -10,6 +10,10 @@ counts, the columns, the six honesty sections on the card, that every source is
 an exact http(s) URL, that no row detail is cut mid-sentence, and that the
 two fixture pairs without expected-output copies are empty rather than guessed.
 No network. Reads only files in this folder. Exits 0 only when every check passes.
+
+Reported output is not captured output. This script was not executed where it
+was written; the lines it is written to print are not evidence until a real
+run's stdout is pasted, verbatim, into self_test/SELFTEST_OUTPUT.md.
 """
 
 import csv
@@ -24,6 +28,12 @@ PAIRS = HERE / "data" / "fixture_pairs.csv"
 
 URL_RE = re.compile(r"^https?://\S+$")
 
+# The accepted endings for a `detail` field. A trailing comma is a legitimate
+# ending (a list item), as are a full stop, exclamation mark, question mark and
+# semicolon. Anything else means the sentence was cut mid-way. Held as one
+# named rule so the checker and any note about it cannot drift apart.
+DETAIL_ENDINGS = (".", "!", "?", ";", ",")
+
 SECTIONS = [
     ("what it is", [r"## what it is"]),
     ("columns", [r"## columns"]),
@@ -37,6 +47,12 @@ SECTIONS = [
 def read_csv(path):
     with path.open(newline="", encoding="utf-8") as fh:
         return list(csv.DictReader(fh))
+
+
+def detail_ok(detail):
+    """True when a detail field ends at a sentence or list-item boundary."""
+    detail = (detail or "").strip()
+    return bool(detail) and detail.endswith(DETAIL_ENDINGS)
 
 
 def main():
@@ -65,16 +81,21 @@ def main():
         failures.append("run_lines.csv: expected 10 rows, got %d" % len(runs))
     sources = set()
     for i, row in enumerate(runs, 1):
+        # One FAIL line per failing row: a row-level flag, printed once.
+        row_ok = True
         for col in ("run_id", "topic", "detail", "source"):
             if not (row.get(col) or "").strip():
                 failures.append("run_lines.csv row %d: empty %s" % (i, col))
+                row_ok = False
         src = (row.get("source") or "").strip()
         if src:
             sources.add(src)
             if not URL_RE.match(src):
                 failures.append("run_lines.csv row %d: source is not http(s)" % i)
-        detail = (row.get("detail") or "").strip()
-        if detail and detail[-1] not in ".!?;,":
+                row_ok = False
+        elif row_ok:
+            sources.discard(src)
+        if not detail_ok(row.get("detail")):
             failures.append("run_lines.csv row %d: detail may be cut mid-sentence" % i)
     if len(sources) != 8:
         failures.append("run_lines.csv: expected 8 distinct source pages, got %d"
@@ -87,10 +108,6 @@ def main():
     for row in pairs:
         if (row.get("expected_line") or "").strip():
             held += 1
-        else:
-            guessed = (row.get("expected_line") or "")
-            if guessed.strip():
-                failures.append("fixture_pairs.csv: unnamed expected line present")
     if held != 2:
         failures.append("fixture_pairs.csv: expected 2 non-empty expected_line, got %d"
                         % held)
