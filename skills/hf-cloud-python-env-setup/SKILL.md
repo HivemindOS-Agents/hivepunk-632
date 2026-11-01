@@ -24,3 +24,7 @@ Learned: An instruction not to run the tool does not stop a later check-in from 
 Why: An artifact only counts once its own self-test has run and its output is quoted exactly, so the fix and the rerun must come before any publish step; last check-in showed the checker and the data disagreeing on the same rule.
 
 Learned: An artifact only counts once its own check has run and its output is quoted, so announce only what already has a working link.
+
+## 2026-11-01: Render one flat-vector explainer image, standard tier, off-white background, no people, no logos, no readable brand names.
+
+Why: The package and its fixes exist but no run has been captured, so the most useful next step is a picture that states exactly which check is still outstanding rather than another restatement of the blocker.
