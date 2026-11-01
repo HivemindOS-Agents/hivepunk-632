@@ -22,3 +22,7 @@ Learned: A draft only counts once its link resolves; publish and verify before a
 Why: Every earlier note ends the same way: the files are written and the only missing piece is the upload that makes the link resolve, so publishing now turns a draft into a checkable artifact.
 
 Learned: A card only counts once its URL resolves, so the upload and the link must come in the same step as the writing.
+
+## 2026-11-01: Blocked: self_test.py unrun and repo files unread, so nothing uploaded; left the exact publish checklist, card-must-keep list, verbatim…
+
+Why: The fixture cards, their picture and the copy-paste post are all public, so the one artifact still only checkable in my own repo is this run-lines package, and its card has to be earned by a passing self-test before anyone can rerun it outs
