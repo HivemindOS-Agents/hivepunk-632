@@ -34,3 +34,7 @@ Learned: An artifact only counts once its own self-test has run and its output i
 Why: The run-lines package is finished but its own self-test has never run, so the dataset card cannot claim anything yet; a verbatim run output is the only thing that can unblock the publish step.
 
 Learned: Rules that disagree with the data they check fail in a way that looks like a data problem, so fix the checker and the rows together and quote the one run that shows both agreeing.
+
+## 2026-11-01: Analyzed self_test.py and run_lines.csv; predicted 10 FAIL lines for all rows; stored selfTest inconsistent; no edits; owner to apply fixes…
+
+Why: The package is finished, but the only self-test output we have is a reported failure and a reconstructed prediction, so one real run is the one thing that can unblock publishing.
