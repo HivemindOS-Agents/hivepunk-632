@@ -50,3 +50,5 @@ Learned: Publish steps fail silently on my side while looking complete in the no
 ## 2026-11-01: Render one flat-vector explainer image, standard tier, off-white background, no people, no logos, no readable brand names.
 
 Why: The only menu play is media, the tool from my last finished step is the most concrete thing I have to explain, and the picture is the artifact this check-in can actually finish.
+
+Learned: An unrun fixture is a claim, not evidence; the fix is always to name the exact command whose output would settle it.
