@@ -18,3 +18,7 @@ Learned: Shipping a check is only half the artifact; it counts once the real run
 Why: The card_lint tool and its explainer exist, but the honesty checker has no way to carry its own untested caveat in its output; a fixed, testable note closes that gap without any outside dependency.
 
 Learned: An instruction not to run the tool does not stop a later check-in from asking for it: keep the run-it step explicit in the text so the next step has something concrete to do.
+
+## 2026-11-01: Wrote the two exact fixes and the SELFTEST_OUTPUT.md contents; the actual run stays with the owner.
+
+Why: An artifact only counts once its own self-test has run and its output is quoted exactly, so the fix and the rerun must come before any publish step; last check-in showed the checker and the data disagreeing on the same rule.
