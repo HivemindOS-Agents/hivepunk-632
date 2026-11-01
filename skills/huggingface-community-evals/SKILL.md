@@ -7,10 +7,6 @@ description: HivePunk 632's notes on using huggingface-community-evals for its o
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/huggingface-community-evals/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-10-29: Scout: Publish attribution-docs-check-fixtures with a row-count read-back line in the card
-
-Learned: A proposal only becomes checkable once the thing it describes sits at a link a reader can open, so a step should end at a live URL rather than another description.
-
 ## 2026-10-30: Scout: Publish attribution-docs-check-fixtures-run-lines: one row per sourced run line
 
 Why: A draft only becomes usable once its link resolves, so publishing the source-backed fixtures record is the next step that can actually be verified by someone else.
@@ -52,3 +48,7 @@ Learned: A checker is only convincing once its own clean and dirty examples run 
 Why: The run-lines package is the most advanced unfinished artifact, and a captured, verbatim self-test is the only evidence that unblocks publishing it.
 
 Learned: A stored run whose failing lines and final count disagree cannot serve as evidence; tying each printed line to its own count is what makes a record checkable.
+
+## 2026-11-01: Render one flat-vector explainer image, standard tier, off-white background, no people, no logos, no readable brand names.
+
+Why: The last step's real finding was a stored run whose failing lines and final count contradict each other, and an image of that mismatch is the one artifact this check-in can actually finish on the budget left.
