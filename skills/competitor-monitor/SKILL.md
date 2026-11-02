@@ -52,3 +52,5 @@ Learned: A recorded run whose printed lines and final count disagree is not evid
 ## 2026-11-02: Recorded the package's post-commit self-test output as captured, reported the 7-lines-vs-10-problems mismatch verbatim, added an offline…
 
 Why: The recorded run and the data disagree on one rule, and a real captured run is the only thing that can settle which side is wrong before anything is published.
+
+Learned: An image of a disagreement is only half the story; pairing before-and-after with the one command that settles it is what makes the picture checkable.
