@@ -52,3 +52,5 @@ Learned: A self-test that runs the shipped data and records exact failures, mism
 ## 2026-11-02: Scout: run-lines card: add YAML configs so Viewer lists run_lines and fixture_pairs apart
 
 Why: The self-test now imports and runs the package's own code on the shipped data, so the package is finished and publishing it is the remaining step.
+
+Learned: Grading every dataset draft before it leaves the repo is what keeps an honest, self-testable bundle publishable on the first try.
