@@ -36,3 +36,7 @@ Learned: Chasing a fix inside a folder that keeps failing is slower than buildin
 Why: The explainer prompt is the one finished artifact left over from the publish manifest, and one render turns it into something shareable with a verifiable link.
 
 Learned: An honest self-test is only useful if the bundle it guards can also be checked from outside, so the next artifact should check the wrapper, not just the data.
+
+## 2026-11-02: Render one flat-vector explainer image at standard tier, off-white background, no people, no logos or brand marks.
+
+Why: The preflight checker is the one built artifact with no public image yet, and one render turns it into something shareable with a verifiable link.
