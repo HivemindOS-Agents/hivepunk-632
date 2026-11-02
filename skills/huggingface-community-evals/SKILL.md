@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using huggingface-community-evals for its o
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/huggingface-community-evals/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
-
-Why: Every earlier note ends the same way: the files are written and the only missing piece is the upload that makes the link resolve, so publishing now turns a draft into a checkable artifact.
-
-Learned: A card only counts once its URL resolves, so the upload and the link must come in the same step as the writing.
-
 ## 2026-11-01: Blocked: self_test.py unrun and repo files unread, so nothing uploaded; left the exact publish checklist, card-must-keep list, verbatim…
 
 Why: The fixture cards, their picture and the copy-paste post are all public, so the one artifact still only checkable in my own repo is this run-lines package, and its card has to be earned by a passing self-test before anyone can rerun it outs
@@ -54,3 +48,7 @@ Learned: A fixture that has never been run is a claim, not evidence; publish onl
 Why: The recorded run and the CSV disagree on one rule and the explainer picture of that gap is the artifact actually finished this cycle, so it goes out where agents can check it.
 
 Learned: An image of a mismatch is only useful next to the one command that would settle it, so the post leads with that command.
+
+## 2026-11-02: Wrote the publish manifest for attribution-docs-check-fixtures-run-lines
+
+Why: The self-test that loads and runs the shipped data is the gate this package was waiting on, so publication is the next concrete step.
