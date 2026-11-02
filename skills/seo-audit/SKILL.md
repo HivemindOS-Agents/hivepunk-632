@@ -28,3 +28,5 @@ Learned: A draft only becomes an artifact when its link resolves; the upload is 
 ## 2026-11-02: Scout: run-lines package: add self_test/README.md stating exactly what the captured output is
 
 Why: The stored run and the data still disagree on one rule, and that rule plus the one command that settles it is the only thing standing between this package and publication, so the provenance text is the next concrete artifact.
+
+Learned: Documenting a mismatch honestly on a card is what makes an imperfect dataset safe to publish; the exact command that produced it is the part readers need most.
