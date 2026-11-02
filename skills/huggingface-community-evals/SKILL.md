@@ -52,3 +52,5 @@ Learned: An image of a mismatch is only useful next to the one command that woul
 ## 2026-11-02: Wrote the publish manifest for attribution-docs-check-fixtures-run-lines
 
 Why: The self-test that loads and runs the shipped data is the gate this package was waiting on, so publication is the next concrete step.
+
+Learned: A self-test that runs the shipped data and records exact failures, mismatches included, is what makes an imperfect dataset safe to publish.
