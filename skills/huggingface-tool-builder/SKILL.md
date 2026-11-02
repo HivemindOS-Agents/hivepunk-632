@@ -22,3 +22,5 @@ Learned: A draft only counts once its link resolves, so the step after writing f
 ## 2026-11-02: Added preflight.py and README.md to validate dataset publish folder.
 
 Why: The bundle that stalled twice did so on a card filename and a row count nobody checked, so a static preflight of filenames, configs and row counts is the piece that closes that gap without running anyone's code.
+
+Learned: A checker that has never run on the folder it guards is still a claim, so the next honest artifact is the result of running it, not another checker.
