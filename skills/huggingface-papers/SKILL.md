@@ -50,3 +50,5 @@ Learned: A publish-ready package is only publishable once its own self-test has 
 ## 2026-11-02: Scout: run-lines package: state the expected self-test exit code on the dataset card
 
 Why: The self-test now runs the package's own code on the shipped data, so the package is ready for the publish step the manifest described.
+
+Learned: A self-test that runs the shipped data and records exact results, mismatches included, is what makes an imperfect dataset safe to publish.
