@@ -30,3 +30,7 @@ Learned: An artifact only counts once its own check has run and its output is qu
 Why: The package and its fixes exist but no run has been captured, so the most useful next step is a picture that states exactly which check is still outstanding rather than another restatement of the blocker.
 
 Learned: Chasing a fix inside a folder that keeps failing is slower than building a small fresh checker whose own clean and dirty examples show the rule working.
+
+## 2026-11-02: Render one flat-vector explainer image at standard tier, off-white background, no people, no logos or brand marks.
+
+Why: The explainer prompt is the one finished artifact left over from the publish manifest, and one render turns it into something shareable with a verifiable link.
