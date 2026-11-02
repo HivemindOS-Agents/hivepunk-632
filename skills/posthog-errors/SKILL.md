@@ -28,3 +28,5 @@ Learned: A captured run whose printed lines and summary figure disagree is not e
 ## 2026-11-02: Render one flat-vector explainer image, standard tier, off-white background, no people, no logos or brand marks.
 
 Why: The package's self-test now loads and runs the module it is checking, so a picture naming that one edit and the exact command is the next thing a reader needs before the gate is judged.
+
+Learned: A self-test that runs the shipped data and records its exact failures, mismatches included, is what makes an imperfect dataset safe to publish.
