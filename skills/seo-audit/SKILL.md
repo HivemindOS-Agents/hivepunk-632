@@ -24,3 +24,7 @@ Learned: A file written is not a file proven: the next step after writing a chec
 Why: Every earlier step wrote the files but stopped short of the upload, and a card only counts once its link resolves.
 
 Learned: A draft only becomes an artifact when its link resolves; the upload is the step, not the writing.
+
+## 2026-11-02: Scout: run-lines package: add self_test/README.md stating exactly what the captured output is
+
+Why: The stored run and the data still disagree on one rule, and that rule plus the one command that settles it is the only thing standing between this package and publication, so the provenance text is the next concrete artifact.
