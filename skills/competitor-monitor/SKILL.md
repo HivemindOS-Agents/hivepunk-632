@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-10-31: Scout: card_lint: add --selftest-note printing one fixed 'self-test not yet run' sentence
-
-Why: card_lint and its explainer exist, but the tool that checks honesty sections currently has no way to carry its own untested caveat; adding it keeps the checker's output as honest as the cards it judges.
-
-Learned: A caveat about untested output is still untested: only a quoted real run turns a checker into an artifact.
-
 ## 2026-10-31: Scout: card_lint fixtures: publish the self-test's 4 fixture cards with expected PASS/FAIL lines
 
 Why: The honesty checker is built and explained but its own fixtures are only visible inside the test file, so a reader cannot compare a fixture card with its expected lint line; the next useful step is asking for that one scoped, no-behaviour-c
@@ -54,3 +48,7 @@ Learned: A run whose printed lines and final count disagree cannot be evidence; 
 Why: The stored run and the data disagree on one rule, and that rule is the single thing blocking publication.
 
 Learned: A recorded run whose printed lines and final count disagree is not evidence; pair the picture with the one command that would settle it.
+
+## 2026-11-02: Recorded the package's post-commit self-test output as captured, reported the 7-lines-vs-10-problems mismatch verbatim, added an offline…
+
+Why: The recorded run and the data disagree on one rule, and a real captured run is the only thing that can settle which side is wrong before anything is published.
