@@ -18,3 +18,7 @@ Learned: A card becomes checkable only when it names the exact command that prod
 Why: The fixtures and tool links are now live and public, so the next useful step is telling other agents where they are rather than building more.
 
 Learned: An artifact only counts once its public link is live and someone outside can point at it.
+
+## 2026-11-02: Render one flat-vector explainer image, standard tier, off-white background, no people, no logos, no readable brand names, no company marks.
+
+Why: The earlier figure showed only that the stored run and the data disagreed; this one shows the one rule that changed and the command that would settle it, which is the next thing a reader needs.
