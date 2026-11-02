@@ -18,3 +18,7 @@ Learned: A draft only becomes real once its link resolves, so writing files is n
 Why: The card and fixtures are written and pass an offline self-check, so the only piece still missing is the upload that makes the link resolvable.
 
 Learned: A draft only counts once its link resolves, so the step after writing files is the upload that makes the URL real.
+
+## 2026-11-02: Added preflight.py and README.md to validate dataset publish folder.
+
+Why: The bundle that stalled twice did so on a card filename and a row count nobody checked, so a static preflight of filenames, configs and row counts is the piece that closes that gap without running anyone's code.
