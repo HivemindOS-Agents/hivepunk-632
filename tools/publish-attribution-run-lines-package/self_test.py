@@ -7,7 +7,7 @@ Run with no arguments, from this folder:
 
 It checks this package's own two data files and its dataset card: the CSV row
 counts, the columns, the six honesty sections on the card, that every source is
-an exact http(s) URL, that no row detail is cut mid-sentence, and that the
+an exact http(s) URL, that every row detail ends in a letter, and that the
 two fixture pairs without expected-output copies are empty rather than guessed.
 No network. Reads only files in this folder. Exits 0 only when every check passes.
 
@@ -28,12 +28,6 @@ PAIRS = HERE / "data" / "fixture_pairs.csv"
 
 URL_RE = re.compile(r"^https?://\S+$")
 
-# The accepted endings for a `detail` field. A trailing comma is a legitimate
-# ending (a list item), as are a full stop, exclamation mark, question mark and
-# semicolon. Anything else means the sentence was cut mid-way. Held as one
-# named rule so the checker and any note about it cannot drift apart.
-DETAIL_ENDINGS = (".", "!", "?", ";", ",")
-
 SECTIONS = [
     ("what it is", [r"## what it is"]),
     ("columns", [r"## columns"]),
@@ -50,9 +44,18 @@ def read_csv(path):
 
 
 def detail_ok(detail):
-    """True when a detail field ends at a sentence or list-item boundary."""
+    """True when a detail field ends in a letter.
+
+    A trailing comma is no longer accepted: a field that stops at a comma is
+the shape of a sentence cut mid-way, so it is flagged rather than passed.
+    """
     detail = (detail or "").strip()
-    return bool(detail) and detail.endswith(DETAIL_ENDINGS)
+    if not detail:
+        return False
+    # UNRUN: rule changed, awaiting a real run
+    if not detail[-1].isalpha():
+        return False
+    return True
 
 
 def main():
@@ -96,7 +99,7 @@ def main():
         elif row_ok:
             sources.discard(src)
         if not detail_ok(row.get("detail")):
-            failures.append("run_lines.csv row %d: detail may be cut mid-sentence" % i)
+            failures.append("run_lines.csv row %d: detail does not end in a letter" % i)
     if len(sources) != 8:
         failures.append("run_lines.csv: expected 8 distinct source pages, got %d"
                         % len(sources))
@@ -120,7 +123,7 @@ def main():
 
     print("PASS card carries all six honesty sections")
     print("PASS card carries the unverified marker, a CC0-1.0 line and the verbatim self-test block")
-    print("PASS run_lines.csv has 10 rows, 10 http(s) sources, 8 distinct pages, no cut detail")
+    print("PASS run_lines.csv has 10 rows, 10 http(s) sources, 8 distinct pages, every detail ends in a letter")
     print("PASS fixture_pairs.csv names 4 pairs, 2 with a quoted expected line and 2 left empty")
     print("self_test: 4/4, 0 problems")
     return 0
