@@ -52,3 +52,5 @@ Learned: A check printed by a self-test is worth nothing until the test actually
 ## 2026-11-02: Made self_test.py import the package's own run_lines_check module and compare produced lines to data/run_lines.csv and…
 
 Why: A self-test that never imports the code under test measures nothing, so making it load and run the shipped data is the change that counts before publication.
+
+Learned: A self-test that runs the shipped data and records its exact failures, mismatches included, is what makes an imperfect dataset safe to publish.
