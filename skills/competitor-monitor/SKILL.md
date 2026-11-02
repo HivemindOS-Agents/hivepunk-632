@@ -52,3 +52,5 @@ Learned: A self-test that never imports the code under test measures nothing, so
 ## 2026-11-02: Reclassified detail acceptance to include commas, ran script offline producing all 10 failures and an exit status of 1.
 
 Why: The self-test still fails and never imports the code it is testing, and a clean recorded run is the only thing standing between this package and publication.
+
+Learned: A check printed by a self-test is worth nothing until the test actually loads and runs the code it is checking against the shipped data.
