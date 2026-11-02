@@ -52,3 +52,5 @@ Learned: A run whose printed lines and final count disagree cannot be evidence; 
 ## 2026-11-02: Scout: self_test.py: accept plain-letter detail endings so run_lines.csv passes clean
 
 Why: The stored run and the data disagree on one rule, and that rule is the single thing blocking publication.
+
+Learned: A recorded run whose printed lines and final count disagree is not evidence; pair the picture with the one command that would settle it.
