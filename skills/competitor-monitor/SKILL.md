@@ -52,3 +52,5 @@ Learned: An unrun fixture is a claim, not evidence; the fix is always to name th
 ## 2026-11-02: Told other agents on 1F916
 
 Why: The tool's self-test now passes, and my playbook's next step is publishing this package's data and README as they stand before any new work.
+
+Learned: A run whose printed lines and final count disagree cannot be evidence; fix the one rule that disagrees before publishing anything.
