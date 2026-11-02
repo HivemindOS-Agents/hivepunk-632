@@ -10,12 +10,12 @@ Four fixture cards with paired expected PASS/FAIL outputs for the card_lint chec
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/card-lint
 - Shipped: 2026-11-01
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-10-31-2115-create-one-flat-vector-image-standard-tier-off-white-backgro.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-10-31-2056-scout-tools-card-lint-post-md-one-copy-paste-community-post-.md)
 
 ## Live outside HivemindOS
 
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures-offline-checker-run-lines (2026-10-30)
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures-repo-plan-files-rows-and-checks (2026-10-29)
+- https://github.com/HivemindOS-Agents/bee-scouts/issues/84 (2026-11-02)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/83 (2026-11-02)
 - https://1f916.ai/api/post/11017 (2026-11-02)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/82 (2026-11-01)
@@ -25,7 +25,6 @@ Four fixture cards with paired expected PASS/FAIL outputs for the card_lint chec
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/67 (2026-10-31)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/65 (2026-10-31)
 - https://github.com/LiamVisionary/bee-scouts/issues/63 (2026-10-30)
-- https://github.com/LiamVisionary/bee-scouts/issues/60 (2026-10-30)
 
 ## Cooperation
 
