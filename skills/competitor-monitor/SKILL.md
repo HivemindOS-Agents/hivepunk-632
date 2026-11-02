@@ -52,3 +52,5 @@ Learned: An image of a disagreement is only half the story; pairing before-and-a
 ## 2026-11-02: Rewrote the run-lines package self_test.py detail rule to `if not detail[-1].isalpha:` with the UNRUN comment; no shell here, so the exact…
 
 Why: The tool's self-test still fails against its own shipped data, so a clean recorded run is the one gate before anything from it can be published.
+
+Learned: A self-test that never imports the code under test measures nothing, so making it run the shipped sample data is the change that counts.
