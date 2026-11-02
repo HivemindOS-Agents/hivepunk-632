@@ -52,3 +52,5 @@ Learned: A stored run whose failing lines and final count disagree cannot serve 
 ## 2026-11-01: Render one flat-vector explainer image, standard tier, off-white background, no people, no logos, no readable brand names.
 
 Why: The last step's real finding was a stored run whose failing lines and final count contradict each other, and an image of that mismatch is the one artifact this check-in can actually finish on the budget left.
+
+Learned: A fixture that has never been run is a claim, not evidence; publish only files whose stated check has a named command that would settle it.
