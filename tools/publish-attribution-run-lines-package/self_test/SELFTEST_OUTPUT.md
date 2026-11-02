@@ -1,48 +1,80 @@
 # SELFTEST_OUTPUT.md - publish-attribution-run-lines-package
 
-Provenance, read first: **CAPTURED: NO.** I have no shell here and did not execute
-self_test.py. What follows under "Output" is the output the script is written to
-print, transcribed from its own message strings; it is a reconstruction, not a
-capture, and it is not evidence that the package passes. The `N/N` count is left
-as a placeholder because I will not guess it. The real run is left for the owner.
-
-How to run it (no arguments, no network), from the package folder:
-
-    python3 self_test.py
+Provenance, read first: **CAPTURED: YES - recorded, not run by me.** The block
+below is the output the repository's post-commit self-test runner recorded for
+this tool (its recorded state: `failed`). I did not execute `self_test.py`; this
+step had no shell. Nothing below was retyped, reordered or adjusted.
 
 ## Output
 
-NOT YET CAPTURED. Paste the real stdout here, line for line, including the final
-summary line. Reconstructed shape only:
-
 ~~~
-PASS card carries all six honesty sections
-PASS card carries the unverified marker, a CC0-1.0 line and the verbatim self-test block
-PASS run_lines.csv has 10 rows, 10 http(s) sources, 8 distinct pages, no cut detail
-PASS fixture_pairs.csv names 4 pairs, 2 with a quoted expected line and 2 left empty
-self_test: N/N, 0 problems
+FAIL run_lines.csv row 4: detail may be cut mid-sentence
+FAIL run_lines.csv row 5: detail may be cut mid-sentence
+FAIL run_lines.csv row 6: detail may be cut mid-sentence
+FAIL run_lines.csv row 7: detail may be cut mid-sentence
+FAIL run_lines.csv row 8: detail may be cut mid-sentence
+FAIL run_lines.csv row 9: detail may be cut mid-sentence
+FAIL run_lines.csv row 10: detail may be cut mid-sentence
+self_test: 10 problem(s)
 ~~~
 
-Exit status: not observed here. If the real run prints any `FAIL` line, that line
-is the result and this file must quote it, not this shape.
+Exit status: **non-zero.** The runner recorded the state as `failed`, and
+`self_test.py` returns 1 whenever any check fails, so the status is 1 as far as
+the record goes. I did not watch a process exit; the number is inferred from the
+recorded state and the script's return path, and is labelled as inferred rather
+than asserted as observed.
 
-## What was fixed before this run
+## Count check: lines printed against the figure printed
 
-`self_test.py` accepts a `detail` ending in `.`, `!`, `?`, `;` or `,` through one
-named rule, `DETAIL_ENDINGS` and `detail_ok()`, and prints exactly one `FAIL` line
-per failing row, so the count line can no longer disagree with the lines printed.
-The two data files and `README_DATASET_CARD.md` were not changed for this note.
+- FAIL lines printed: **7** - `data/run_lines.csv` rows 4, 5, 6, 7, 8, 9, 10.
+- Summary line printed: `self_test: 10 problem(s)` - figure: **10**.
+- **Mismatch: 7 printed FAIL lines against a figure of 10. Three problems are
+  counted that no printed line names.** Reported verbatim; neither the lines nor
+  the figure was adjusted to match the other. What the three unnamed problems
+  were is not readable from this output and is not guessed here.
+
+## Second mismatch, from reading the committed files (not from a run)
+
+The committed `self_test.py` prints one `FAIL` line per entry in its failure
+list, then prints `len(failures)` - so a larger figure than the printed lines
+cannot come from that script unless lines were lost, or the output came from a
+different revision. Also, read against the committed files: the check that fired,
+`detail may be cut mid-sentence`, accepts a trailing comma through
+`DETAIL_ENDINGS` (`. ! ? ; ,`), and all ten `detail` fields of the committed
+`data/run_lines.csv` end with a comma. Under that rule, rows 4-10 would not be
+flagged. So this recorded output cannot be a run of the committed script against
+the committed CSV. Which revision produced it, I could not confirm, and I do not
+invent an explanation. Both statements are readings of the files, not results of
+a run.
+
+## Publication gate
+
+The step's gate is: an output showing `0 problems` and exit `0` permits the next
+step, publication under the title `attribution-docs-check-fixtures-run-lines`.
+This recorded output shows neither. **Nothing was published.** No upload was
+prepared, attempted or made under any title, and no upload script, token step or
+hosting command appears anywhere in this package.
 
 ## What this file does not settle
 
-- Whether the current `data/run_lines.csv` satisfies the rule: only a real run says.
-- Anything about the six honesty sections of the card, beyond what a real run prints.
+- Whether the committed `self_test.py` exits 0 on the committed `data/run_lines.csv`:
+  only a real run says, and `sh capture_selftest.sh` is how to get one.
+- The three problems counted but not printed, and why rows 1-3 are absent from
+  the printed lines.
+- Anything about the six honesty sections of `README_DATASET_CARD.md` beyond what
+  a real run prints.
 - The two deliberately empty `expected_line` cells for `bare_headings` and
-  `missing_all` stay empty, and no untested marker is upgraded by this file.
+  `missing_all` stay empty; no untested marker is upgraded by this file.
 
-Nothing was uploaded. No upload script, token step or CLI command for a hosting
-service appears here. Publication waits on a run whose verbatim output shows
-`0 problems`.
+## Left for the owner
+
+Run, from the package folder, with no network:
+
+    sh capture_selftest.sh
+
+That rewrites this file with a real capture, the real exit status, and the
+FAIL-line count against the summary figure. If it does not show 0 problems and
+exit 0, send back the complete output rather than publishing.
 
 ---
 Bee #632. Card: https://hivemindos.app/bee/632. A person decides; a bee never
