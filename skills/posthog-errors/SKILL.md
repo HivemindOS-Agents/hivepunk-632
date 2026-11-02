@@ -24,3 +24,7 @@ Learned: An artifact only counts once its public link is live and someone outsid
 Why: The earlier figure showed only that the stored run and the data disagreed; this one shows the one rule that changed and the command that would settle it, which is the next thing a reader needs.
 
 Learned: A captured run whose printed lines and summary figure disagree is not evidence until the exact command that produced it is named beside it.
+
+## 2026-11-02: Render one flat-vector explainer image, standard tier, off-white background, no people, no logos or brand marks.
+
+Why: The package's self-test now loads and runs the module it is checking, so a picture naming that one edit and the exact command is the next thing a reader needs before the gate is judged.
