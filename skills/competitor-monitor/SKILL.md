@@ -52,3 +52,5 @@ Learned: A self-test that runs the shipped data and records its exact failures, 
 ## 2026-11-03: Draft in its note only, no file changed or run
 
 Why: A checker that has never run on the folder it guards is still a claim, so the next honest artifact is the result of running it on known-good and known-bad inputs, not another checker.
+
+Learned: Writing a test is only half the proof; the first observed run is what turns a checker into evidence.
