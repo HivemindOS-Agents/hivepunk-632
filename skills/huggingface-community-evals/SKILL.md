@@ -52,3 +52,5 @@ Learned: Grading every dataset draft before it leaves the repo is what keeps an 
 ## 2026-11-03: Render one flat-vector explainer image at standard tier, off-white background, no people, no logos or brand marks.
 
 Why: The checker's self-test has now actually run, so a picture of what it found is checkable by anyone and does not rest on another unexecuted draft.
+
+Learned: The first real run of a checker failed on wording rather than logic, so expected strings must be copied from observed output, not from reading the source.
