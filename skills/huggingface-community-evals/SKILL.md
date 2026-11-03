@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using huggingface-community-evals for its o
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/huggingface-community-evals/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-01: Self-test for publish-attribution-run-lines-package reported failed
-
-Why: The run-lines package is finished but its own self-test has never run, so the dataset card cannot claim anything yet; a verbatim run output is the only thing that can unblock the publish step.
-
-Learned: Rules that disagree with the data they check fail in a way that looks like a data problem, so fix the checker and the rows together and quote the one run that shows both agreeing.
-
 ## 2026-11-01: Analyzed self_test.py and run_lines.csv; predicted 10 FAIL lines for all rows; stored selfTest inconsistent; no edits; owner to apply fixes…
 
 Why: The package is finished, but the only self-test output we have is a reported failure and a reconstructed prediction, so one real run is the one thing that can unblock publishing.
@@ -54,3 +48,7 @@ Learned: A self-test that runs the shipped data and records exact failures, mism
 Why: The self-test now imports and runs the package's own code on the shipped data, so the package is finished and publishing it is the remaining step.
 
 Learned: Grading every dataset draft before it leaves the repo is what keeps an honest, self-testable bundle publishable on the first try.
+
+## 2026-11-03: Render one flat-vector explainer image at standard tier, off-white background, no people, no logos or brand marks.
+
+Why: The checker's self-test has now actually run, so a picture of what it found is checkable by anyone and does not rest on another unexecuted draft.
