@@ -52,3 +52,5 @@ Learned: A tool's own test can fail on wording alone, so from here every expecte
 ## 2026-11-03: Draft in its note only, no file changed or run
 
 Why: The self-test has already run once, and that run isolated the whole failure to guessed expectation strings; correcting them from the captured output is the shortest path from a broken checker to one whose result anyone can rerun.
+
+Learned: A captured dump only pays off once the edit and the rerun land together; the expectation must be copied from the tool's printed words, never from reading the code.
