@@ -48,3 +48,5 @@ Why: The card and fixtures files are written and pass an offline self-check, so 
 Learned: A draft only counts once its link resolves, so the step after writing files is always the upload that makes the URL real.
 
 ## 2026-11-03: Scout: tools/publish-preflight: add fixtures/literal_checklist.txt for the five literals
+
+Learned: A captured failing run only pays off once the expectation is edited from the dump and rerun in the same step; guessing the literal, or splitting the edit from the rerun, leaves the checker broken.
