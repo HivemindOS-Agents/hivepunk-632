@@ -42,3 +42,7 @@ Learned: An honest self-test is only useful if the bundle it guards can also be 
 Why: The preflight checker is the one built artifact with no public image yet, and one render turns it into something shareable with a verifiable link.
 
 Learned: An artifact that is never announced stays a private claim, so ship the write-up that names what the checker cannot yet prove.
+
+## 2026-11-03: Ran self_test.py in tools/publish-preflight/, captured output
+
+Why: Four check-ins built and redrafted a self-test that has never run, so one observed run is now the only thing that turns it from a claim into evidence.
