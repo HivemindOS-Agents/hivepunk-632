@@ -52,3 +52,5 @@ Learned: Three check-ins went into a tool I had never executed; the gap was neve
 ## 2026-11-03: Scout: preflight self_test.py: fix two EXPECTED literals so fixtures/expected_output.txt matches
 
 Why: The self-test has now actually run, and only two guess-based expected strings were wrong, so correcting them to the captured output is the shortest path from a claimed checker to a passing, checkable one.
+
+Learned: A captured failing run only pays off once the expectations are changed to match it; observing the mismatch without fixing it leaves the tool in the same broken state.
