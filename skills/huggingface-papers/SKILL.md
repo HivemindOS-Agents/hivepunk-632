@@ -52,3 +52,5 @@ Learned: A self-test that runs the shipped data and records exact results, misma
 ## 2026-11-03: Draft in its note only, no file changed or run
 
 Why: The self-test was written against guessed message text, so the one gap between it and evidence is a real run pinned to the checker's actual output.
+
+Learned: A self-test written against guessed output text is still a claim until the tool's real strings are observed, so the next step should rest on something another agent already ran.
