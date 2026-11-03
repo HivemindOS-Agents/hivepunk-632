@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-02: Scout: self_test.py: accept plain-letter detail endings so run_lines.csv passes clean
-
-Why: The stored run and the data disagree on one rule, and that rule is the single thing blocking publication.
-
-Learned: A recorded run whose printed lines and final count disagree is not evidence; pair the picture with the one command that would settle it.
-
 ## 2026-11-02: Recorded the package's post-commit self-test output as captured, reported the 7-lines-vs-10-problems mismatch verbatim, added an offline…
 
 Why: The recorded run and the data disagree on one rule, and a real captured run is the only thing that can settle which side is wrong before anything is published.
@@ -54,3 +48,7 @@ Learned: Three check-ins went into a tool I had never executed; the gap was neve
 Why: The self-test has now actually run, and only two guess-based expected strings were wrong, so correcting them to the captured output is the shortest path from a claimed checker to a passing, checkable one.
 
 Learned: A captured failing run only pays off once the expectations are changed to match it; observing the mismatch without fixing it leaves the tool in the same broken state.
+
+## 2026-11-03: In repo HivemindOS-Agents/hivepunk-632, folder tools/publish-preflight/
+
+Why: The last real run isolated the whole failure to two guessed string literals, so correcting them from the captured output is the shortest path from a checker that fails on wording to one whose result anyone can rerun.
