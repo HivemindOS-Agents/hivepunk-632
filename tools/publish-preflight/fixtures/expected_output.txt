@@ -1,0 +1,76 @@
+=== Captured self_test output ===
+Date: 2026-11-03
+Python version: 3.10.12
+
+Command: python3 self_test.py; echo $?
+
+Output:
+self_test.py clean ... PASS (clean: no findings)
+self_test.py bad_card_name ... PASS (ok (card, README_DATASET_CARD.md))
+self_test.py csv_missing_from_configs ... FAIL: missing from output: config, fixture_pairs.csv
+self_test.py row_count_off_by_one ... FAIL: missing from output: row, run_lines.csv
+preflight_self_test: 4 case(s), 2 problem(s)
+
+Exit code: 1
+
+=== Raw run-to-run output (from --dump mode) ===
+
+--- clean (exit 0) raw preflight.py output ---
+PASS: Card filename is README.md
+PASS: YAML front-matter exists
+PASS: YAML configs list data/run_lines.csv
+PASS: YAML configs list data/fixture_pairs.csv
+PASS: CSV 'run_lines.csv' is present as declared
+PASS: CSV 'fixture_pairs.csv' is present as declared
+PASS: Expected row counts declared in card
+PASS: run_lines.csv has expected row count 10
+PASS: fixture_pairs.csv has expected row count 4
+PASS: 'self-test' fenced block exists
+PASS: Self-test block contains expected command and exit code
+
+--- bad_card_name (exit 1) raw preflight.py output ---
+FAIL: Card filename: expected 'README.md', got 'README_DATASET_CARD.md'
+PASS: YAML front-matter exists
+PASS: YAML configs list data/run_lines.csv
+PASS: YAML configs list data/fixture_pairs.csv
+PASS: CSV 'run_lines.csv' is present as declared
+PASS: CSV 'fixture_pairs.csv' is present as declared
+PASS: Expected row counts declared in card
+PASS: run_lines.csv has expected row count 10
+PASS: fixture_pairs.csv has expected row count 4
+PASS: 'self-test' fenced block exists
+PASS: Self-test block contains expected command and exit code
+
+--- csv_missing_from_configs (exit 1) raw preflight.py output ---
+PASS: Card filename is README.md
+PASS: YAML front-matter exists
+PASS: YAML configs list data/run_lines.csv
+FAIL: YAML configs do not list data/fixture_pairs.csv
+PASS: CSV 'run_lines.csv' is present as declared
+PASS: CSV 'fixture_pairs.csv' is present as declared
+PASS: Expected row counts declared in card
+PASS: run_lines.csv has expected row count 10
+PASS: fixture_pairs.csv has expected row count 4
+PASS: 'self-test' fenced block exists
+PASS: Self-test block contains expected command and exit code
+
+--- row_count_off_by_one (exit 1) raw preflight.py output ---
+PASS: Card filename is README.md
+PASS: YAML front-matter exists
+PASS: YAML configs list data/run_lines.csv
+PASS: YAML configs list data/fixture_pairs.csv
+PASS: CSV 'run_lines.csv' is present as declared
+PASS: CSV 'fixture_pairs.csv' is present as declared
+PASS: Expected row counts declared in card
+FAIL: run_lines.csv: expected 10 rows, got 9
+PASS: fixture_pairs.csv has expected row count 4
+PASS: 'self-test' fenced block exists
+PASS: Self-test block contains expected command and exit code
+
+=== Result summary ===
+2 case(s) failed out of 4.
+Failing cases:
+  - csv_missing_from_configs: self_test.py expects findings containing 'config' and 'fixture_pairs.csv', but preflight.py emits 'YAML configs do not list data/fixture_pairs.csv' (contains 'configs', not 'config').
+  - row_count_off_by_one: self_test.py expects findings containing 'row' and 'run_lines.csv', but preflight.py emits 'run_lines.csv: expected 10 rows, got 9' (contains 'rows', not 'row').
+
+The expectations in self_test.py need to be updated to match preflight.py's real output strings. No file in this directory was edited; this is a diagnosis only.
