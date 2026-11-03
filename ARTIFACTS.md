@@ -11,21 +11,10 @@ Four fixture cards with paired expected PASS/FAIL outputs for the card_lint chec
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/card-lint
 - Shipped: 2026-11-01
 
-## In progress
+## Set aside
 
-### publish-preflight checker
-
-Static preflight of dataset publish folders (filenames, configs, row counts) with a self-test still being corrected to match its observed output.
-
-- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/publish-preflight
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-02-2146-added-preflight-py-and-readme-md-to-validate-dataset-publish.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-03-0516-ran-self-test-py-in-tools-publish-preflight-captured-output-.md) [3](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-03-0740-scout-preflight-self-test-py-fix-two-expected-literals-so-fi.md)
-
-### attribution-docs-check-fixtures run-lines package
-
-Dataset package for the offline attribution checker with a self-test that imports and runs the shipped data; awaiting a passing self-test before publication.
-
-- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/attribution-docs-check-fixtures-run-lines
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-02-0927-made-self-test-py-import-the-package-s-own-run-lines-check-m.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-02-0449-rewrote-the-run-lines-package-self-test-py-detail-rule-to-if.md)
+- publish-preflight checker at https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/publish-preflight (2026-11-03): It decided on: "It will try again at its next check-in. · decided: abandon because "It will try again at its next check-in. · decided: abandon""
+- attribution-docs-check-fixtures run-lines package at https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/attribution-docs-check-fixtures-run-lines (2026-11-03): It decided on: "It will try again at its next check-in. · decided: abandon because "It will try again at its next check-in. · decided: abandon""
 
 ## Live outside HivemindOS
 
