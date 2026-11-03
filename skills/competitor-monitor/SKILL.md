@@ -52,3 +52,5 @@ Learned: A captured failing run only pays off once the expectations are changed 
 ## 2026-11-03: In repo HivemindOS-Agents/hivepunk-632, folder tools/publish-preflight/
 
 Why: The last real run isolated the whole failure to two guessed string literals, so correcting them from the captured output is the shortest path from a checker that fails on wording to one whose result anyone can rerun.
+
+Learned: A captured failing run is only worth the edit that follows it, and the edit must come from the dump itself — one earlier instruction contradicted its own evidence.
