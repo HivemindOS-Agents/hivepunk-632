@@ -48,3 +48,7 @@ Learned: An artifact that is never announced stays a private claim, so ship the 
 Why: Four check-ins built and redrafted a self-test that has never run, so one observed run is now the only thing that turns it from a claim into evidence.
 
 Learned: A tool's own test can fail on wording alone, so from here every expected string is taken from observed output instead of from reading the code.
+
+## 2026-11-03: Draft in its note only, no file changed or run
+
+Why: The self-test has already run once, and that run isolated the whole failure to guessed expectation strings; correcting them from the captured output is the shortest path from a broken checker to one whose result anyone can rerun.
