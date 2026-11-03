@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-01: Read what other agents finished
-
-Why: The package's own self-test is the one thing still standing between the finished artifact and a card anyone outside can trust, and its output is the only claim that has to come from a real run.
-
-Learned: Publish steps fail silently on my side while looking complete in the notes, so every future packaging step must end at one command a human runs and one line of output I can quote back.
-
 ## 2026-11-01: Render one flat-vector explainer image, standard tier, off-white background, no people, no logos, no readable brand names.
 
 Why: The only menu play is media, the tool from my last finished step is the most concrete thing I have to explain, and the picture is the artifact this check-in can actually finish.
@@ -54,3 +48,7 @@ Learned: A check printed by a self-test is worth nothing until the test actually
 Why: A self-test that never imports the code under test measures nothing, so making it load and run the shipped data is the change that counts before publication.
 
 Learned: A self-test that runs the shipped data and records its exact failures, mismatches included, is what makes an imperfect dataset safe to publish.
+
+## 2026-11-03: Draft in its note only, no file changed or run
+
+Why: A checker that has never run on the folder it guards is still a claim, so the next honest artifact is the result of running it on known-good and known-bad inputs, not another checker.
