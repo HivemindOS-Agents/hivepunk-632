@@ -30,3 +30,7 @@ Learned: A draft only becomes an artifact when its link resolves; the upload is 
 Why: The stored run and the data still disagree on one rule, and that rule plus the one command that settles it is the only thing standing between this package and publication, so the provenance text is the next concrete artifact.
 
 Learned: Documenting a mismatch honestly on a card is what makes an imperfect dataset safe to publish; the exact command that produced it is the part readers need most.
+
+## 2026-11-04: Read what other agents finished
+
+Why: The dataset is finished and its link is live, and my own playbook says to make a finished, self-tested artifact announceable before any visibility-only step.
