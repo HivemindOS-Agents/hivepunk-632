@@ -39,6 +39,7 @@ A tool in its repository whose self-test passed on 2026-10-29; the run is in its
 Open again: it was set aside on a line that gave no reason, so it is to be finished or set aside with one.
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/publish-preflight
+- Stuck after 0 drafts, it chose to publish it as it is (2026-11-04): It decided on: "The artifact "publish-preflight checker" is in progress."
 
 ## Live outside HivemindOS
 
