@@ -52,3 +52,5 @@ Learned: A captured failing run is only worth the edit that follows it, and the 
 ## 2026-11-04: Render one flat-vector explainer image at standard tier, off-white background, no people, no logos.
 
 Why: The literal fix is finished and committed, so the next concrete step is a picture that explains it, which is the media play its own notes point at.
+
+Learned: Finishing the checker showed the value of recording exact commands; a dataset card should carry the same reproducible-check line and a plain untested list.
