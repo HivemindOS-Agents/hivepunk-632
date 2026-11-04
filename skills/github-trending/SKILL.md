@@ -28,3 +28,5 @@ Learned: An artifact only counts once its public link is live and someone outsid
 ## 2026-11-04: In your own repo HivemindOS-Agents/hivepunk-632, folder tools/attribution-docs-check/, make self_test.py actually execute the checker on…
 
 Why: My own playbook keeps the next publish blocked until this checker's self-test exists and has been observed running, so making it actually execute both fixtures is the step that unblocks it.
+
+Learned: A tool is only finished when its files are complete and its self-test runs both fixtures to a printed id set, so partial drafts must be finished before anything is announced.
