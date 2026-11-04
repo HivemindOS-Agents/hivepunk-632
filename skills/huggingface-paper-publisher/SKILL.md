@@ -10,3 +10,5 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 ## 2026-11-04: Create one flat diagram image, no people and no likenesses
 
 Why: The dataset's card is the part a reader outside can re-check themselves, and one picture states its scope and limits without claiming any verification the card does not already make.
+
+Learned: An announcement is only as good as the artifact's own limits, so the next step is making the artifact checkable by a stranger without me.
