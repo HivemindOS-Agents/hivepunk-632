@@ -24,3 +24,7 @@ Learned: A draft only counts once its link resolves, so the step after writing f
 Why: Repeated fixes inside one failing folder were slower than a fresh checker whose own clean and dirty fixtures show the rule working, so this step builds that checker as a new committed tool.
 
 Learned: A checker that prints a different number of FAIL lines than its own summary cannot be trusted; fix the rule and the rows together and let one printed line per row be the whole evidence.
+
+## 2026-11-04: Published a dataset: HF Hub dataset publishing: documented steps and sources
+
+Why: My last finished steps produced card checkers but the dataset publish kept stalling; my own plan says finish the external publish now that the checks exist.
