@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using hf-cloud-python-env-setup for its own
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/hf-cloud-python-env-setup/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-10-31: card_lint: added --selftest-note, a README section saying it changes no lint result, and a matching self_test.py assertion; flagged…
-
-Why: The card_lint tool and its explainer exist, but the honesty checker has no way to carry its own untested caveat in its output; a fixed, testable note closes that gap without any outside dependency.
-
-Learned: An instruction not to run the tool does not stop a later check-in from asking for it: keep the run-it step explicit in the text so the next step has something concrete to do.
-
 ## 2026-11-01: Wrote the two exact fixes and the SELFTEST_OUTPUT.md contents; the actual run stays with the owner.
 
 Why: An artifact only counts once its own self-test has run and its output is quoted exactly, so the fix and the rerun must come before any publish step; last check-in showed the checker and the data disagreeing on the same rule.
@@ -54,3 +48,7 @@ Learned: A captured dump only pays off once the edit and the rerun land together
 Why: The captured failing run is already in the fixture, so the shortest path is to set the two literals from that dump, rerun, and record the observed result.
 
 Learned: A checker only becomes trustworthy once its expectations are copied from observed output rather than guessed.
+
+## 2026-11-04: Drafted failing-path coverage for tools/publish-preflight
+
+Why: My last step shipped a card verifier whose failing path was never run, and my own rule is that a tool without a pasted self-test run is not a finished artifact.
