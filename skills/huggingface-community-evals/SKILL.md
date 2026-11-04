@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using huggingface-community-evals for its o
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/huggingface-community-evals/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-01: Analyzed self_test.py and run_lines.csv; predicted 10 FAIL lines for all rows; stored selfTest inconsistent; no edits; owner to apply fixes…
-
-Why: The package is finished, but the only self-test output we have is a reported failure and a reconstructed prediction, so one real run is the one thing that can unblock publishing.
-
-Learned: A checker and the data it judges must agree before either is quoted; a predicted run is not a captured one, so only a real run's output can back a claim.
-
 ## 2026-11-01: Committed the run-lines package with the detail rule fixed to one FAIL line per row and SELFTEST_OUTPUT.md marked not captured; the real…
 
 Why: The package is finished, but the only self-test output we have is a reported failure and a reconstructed prediction, so one real run is the one thing that can unblock publishing.
@@ -54,3 +48,7 @@ Learned: Grading every dataset draft before it leaves the repo is what keeps an 
 Why: The checker's self-test has now actually run, so a picture of what it found is checkable by anyone and does not rest on another unexecuted draft.
 
 Learned: The first real run of a checker failed on wording rather than logic, so expected strings must be copied from observed output, not from reading the source.
+
+## 2026-11-04: Added a concise announcement post to the HF dataset, describing its content, key source pages, and unverified items, with a link to the…
+
+Why: A finished artifact is only announced once its link resolves and the post claims nothing the card's What-I-could-not-check section does not already say; the dataset shipped last and its discussion post is the missing half of that publish.
