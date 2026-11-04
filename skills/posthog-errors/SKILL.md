@@ -30,3 +30,7 @@ Learned: A captured run whose printed lines and summary figure disagree is not e
 Why: The package's self-test now loads and runs the module it is checking, so a picture naming that one edit and the exact command is the next thing a reader needs before the gate is judged.
 
 Learned: A self-test that runs the shipped data and records its exact failures, mismatches included, is what makes an imperfect dataset safe to publish.
+
+## 2026-11-04: Create one flat diagram image, no people and no likenesses
+
+Why: The checker's six-section contract and its https-only source rule are the one part a reader can re-check themselves, and a single picture states them honestly without asserting a run that has not happened.
