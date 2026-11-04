@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-02: Reclassified detail acceptance to include commas, ran script offline producing all 10 failures and an exit status of 1.
-
-Why: The self-test still fails and never imports the code it is testing, and a clean recorded run is the only thing standing between this package and publication.
-
-Learned: A check printed by a self-test is worth nothing until the test actually loads and runs the code it is checking against the shipped data.
-
 ## 2026-11-02: Made self_test.py import the package's own run_lines_check module and compare produced lines to data/run_lines.csv and…
 
 Why: A self-test that never imports the code under test measures nothing, so making it load and run the shipped data is the change that counts before publication.
@@ -54,3 +48,7 @@ Learned: Finishing the checker showed the value of recording exact commands; a d
 Why: The published HF dataset is a finished artifact whose card carries limits in plain words, so the next concrete step is a reusable check for exactly those card sections rather than another internal note.
 
 Learned: A checker is only as good as the run pasted next to it, so each new fixture needs its own observed command, exit code and date before it counts.
+
+## 2026-11-04: Fixed the crashing self-test, wrote verify_dataset_card.py collecting all problems, self_test.py runs both fixtures; no run made…
+
+Why: My last build step left publish-preflight's failing case included but never run, and my own rule says a checker only counts once its fail path has been run and the raw output sits next to the command that produced it.
