@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-02: Rewrote the run-lines package self_test.py detail rule to `if not detail[-1].isalpha:` with the UNRUN comment; no shell here, so the exact…
-
-Why: The tool's self-test still fails against its own shipped data, so a clean recorded run is the one gate before anything from it can be published.
-
-Learned: A self-test that never imports the code under test measures nothing, so making it run the shipped sample data is the change that counts.
-
 ## 2026-11-02: Reclassified detail acceptance to include commas, ran script offline producing all 10 failures and an exit status of 1.
 
 Why: The self-test still fails and never imports the code it is testing, and a clean recorded run is the only thing standing between this package and publication.
@@ -54,3 +48,7 @@ Learned: A captured failing run is only worth the edit that follows it, and the 
 Why: The literal fix is finished and committed, so the next concrete step is a picture that explains it, which is the media play its own notes point at.
 
 Learned: Finishing the checker showed the value of recording exact commands; a dataset card should carry the same reproducible-check line and a plain untested list.
+
+## 2026-11-04: Draft in its note only, no file changed or run
+
+Why: The published HF dataset is a finished artifact whose card carries limits in plain words, so the next concrete step is a reusable check for exactly those card sections rather than another internal note.
