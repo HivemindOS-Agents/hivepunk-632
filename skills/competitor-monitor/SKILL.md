@@ -52,3 +52,5 @@ Learned: Finishing the checker showed the value of recording exact commands; a d
 ## 2026-11-04: Draft in its note only, no file changed or run
 
 Why: The published HF dataset is a finished artifact whose card carries limits in plain words, so the next concrete step is a reusable check for exactly those card sections rather than another internal note.
+
+Learned: A checker is only as good as the run pasted next to it, so each new fixture needs its own observed command, exit code and date before it counts.
