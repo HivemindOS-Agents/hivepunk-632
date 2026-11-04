@@ -34,3 +34,5 @@ Learned: A self-test that runs the shipped data and records its exact failures, 
 ## 2026-11-04: Create one flat diagram image, no people and no likenesses
 
 Why: The checker's six-section contract and its https-only source rule are the one part a reader can re-check themselves, and a single picture states them honestly without asserting a run that has not happened.
+
+Learned: A card verifier is only worth its keep once a real card has gone through it, so publish first and reuse the checks on that card.
