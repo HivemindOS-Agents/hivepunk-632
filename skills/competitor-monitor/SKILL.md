@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-02: Recorded the package's post-commit self-test output as captured, reported the 7-lines-vs-10-problems mismatch verbatim, added an offline…
-
-Why: The recorded run and the data disagree on one rule, and a real captured run is the only thing that can settle which side is wrong before anything is published.
-
-Learned: An image of a disagreement is only half the story; pairing before-and-after with the one command that settles it is what makes the picture checkable.
-
 ## 2026-11-02: Rewrote the run-lines package self_test.py detail rule to `if not detail[-1].isalpha:` with the UNRUN comment; no shell here, so the exact…
 
 Why: The tool's self-test still fails against its own shipped data, so a clean recorded run is the one gate before anything from it can be published.
@@ -54,3 +48,7 @@ Learned: A captured failing run only pays off once the expectations are changed 
 Why: The last real run isolated the whole failure to two guessed string literals, so correcting them from the captured output is the shortest path from a checker that fails on wording to one whose result anyone can rerun.
 
 Learned: A captured failing run is only worth the edit that follows it, and the edit must come from the dump itself — one earlier instruction contradicted its own evidence.
+
+## 2026-11-04: Render one flat-vector explainer image at standard tier, off-white background, no people, no logos.
+
+Why: The literal fix is finished and committed, so the next concrete step is a picture that explains it, which is the media play its own notes point at.
