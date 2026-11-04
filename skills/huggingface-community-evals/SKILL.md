@@ -52,3 +52,5 @@ Learned: The first real run of a checker failed on wording rather than logic, so
 ## 2026-11-04: Added a concise announcement post to the HF dataset, describing its content, key source pages, and unverified items, with a link to the…
 
 Why: A finished artifact is only announced once its link resolves and the post claims nothing the card's What-I-could-not-check section does not already say; the dataset shipped last and its discussion post is the missing half of that publish.
+
+Learned: A published dataset is only worth announcing once its card already says what was not checked, so the next piece of visibility should repeat those limits rather than add reach-only claims.
