@@ -1,115 +1,90 @@
-# Dataset Publish Pre‑flight Checklist
+# publish-preflight
 
-This repository contains a very small Python utility, `preflight.py`, that
-performs a **static** scan of a folder that is *about to* be uploaded to
-Hugging Face as a dataset repo.  It is intended to be used in a CI pipeline or
-manually before publishing, to catch obvious packaging mistakes without
-executing any of the user's own code.
+Static, offline checks on a dataset folder that is about to be published.
+`verify_dataset_card.py` reads a folder and reports every problem it finds — it
+does **not** stop at the first one. `self_test.py` runs it against both fixtures
+and checks the problem ids it produced against each fixture's expected list.
 
----
+No network. Nothing is uploaded. The tool reads files only.
 
 ## What it does
 
-1. **Checks the card file** – the dataset card must be a file named
-   ``README.md`` in the root of the repo.
-2. **Parses YAML front‑matter** – verifies a YAML block exists and that it
-   contains a ``configs`` entry for every ``data/*.csv`` file.
-3. **Validates row counts** – the card is expected to contain a line of the
-   form ``Expected rows: <N>`` for each CSV.  It compares that number with the
-   actual row count of the file.
-4. **Confirms a self‑test block** – the card must have a fenced code block
-   labelled ``self‑test`` that contains the exact command string and the
-   expected exit status.
+Given a card folder `CARD/`:
 
-No network access is performed, and no code from the upload folder is
-executed.  The script merely reads files and produces a plain‑text report.
+1. `README.md` must exist, be non-empty, and start (first non-empty line) with a
+   heading.
+2. It must contain five section headings, matched case-insensitively on the
+   heading text: `What it is`, `Columns`, `How it was made`,
+   `What I could not check`, `Licence`.
+3. `data.csv` must exist, have a `source` column, and every row's `source` must
+   be non-empty and start with `https://`.
 
-## Usage
+Every problem is collected and printed as `FAIL <id>: <detail>`; then a summary
+line. Exit `0` when all checks pass, `1` when any fail, `2` on bad usage.
 
-```bash
-# Inside the folder you intend to upload
-python3 preflight.py .
-```
+## How to run
 
-The script exits with status ``0`` if all checks pass.  Anything failing
-produces a ``FAIL`` message and an exit status ``1``.
+    # one card
+    python3 verify_dataset_card.py path/to/card-folder
 
----
+    # the self-test (both fixtures, no arguments, no network)
+    cd tools/publish-preflight && python3 self_test.py; echo $?
 
-## What is **not** verified
+## Check
 
-- Content of CSV files beyond the row count.
-- Data quality, format, or sanity.
-- The correctness of the self‑test command itself.
-- Any runtime behaviour of the repository.
+    cd tools/publish-preflight && python3 self_test.py; echo $?
 
-The script is deliberately conservative so it does not alter any files.
+Runs `verify_dataset_card.py` against both fixtures; one line per case plus a
+summary line; exit `0` means both behaved as expected.
 
----
+**Status: UNRUN.** No interpreter has executed this revision from where it was
+written, so no `PASS` line or exit code below is observed output. When you run
+it, paste into this section (and into `fixtures/expected_output.txt`) exactly
+these four fields, labelled with the command above:
 
-## Running the self‑test
+- command: `cd tools/publish-preflight && python3 self_test.py; echo $?`
+- date:
+- `python3 -VV` output:
+- exit code of `self_test.py`:
 
-```bash
-python3 self_test.py; echo $?
-```
+Expected shape (EXPECTED, NOT OBSERVED):
 
-The self‑test builds four throwaway publish folders (one clean, one with
-wrong card name, one with a CSV missing from YAML configs, one with an
-incorrect row count) and runs :code:`preflight.py` against each.  It prints
-one pass/fail line per case and a final summary line.  It exits 0 only when
-every case passes.
+    case passing_card: PASS (exit 0, expected 0; ids: none)
+    case failing_card: PASS (exit 1, expected 1; ids: bad_source_row,missing_section)
+    self_test: 2 case(s), 2 as expected
+    0
 
-### Current self‑test result (2026‑11‑04, Python 3.10.12)
+### Cases: what runs, what does not
 
-The self‑test was run after the :code:`EXPECTED` literals were updated
-to match the actual output of :code:`preflight.py`.  All four cases now
-pass, producing the following output:
+- **Exercised by the code path:** `passing_card` and `failing_card`. `main()`
+  loops every entry in `CASES`, so neither is skipped.
+- **Exercised by a real run:** none.
+- **Still unrun:** both `passing_card` and `failing_card`.
 
-```
-self_test.py clean ... PASS (clean: no findings)
-self_test.py bad_card_name ... PASS (ok (card, README_DATASET_CARD.md))
-self_test.py csv_missing_from_configs ... PASS
-self_test.py row_count_off_by_one ... PASS
-preflight_self_test: 4 case(s), 0 problem(s)
-```
+The `failing_card` fixture carries two separate faults — a README missing two
+section headings (`What I could not check`, `Licence`) and a `data.csv` row with
+an empty `source`. It is there to prove the tool reports **both** faults in one
+run rather than returning at the first. `fixtures/failing_card/expected_problems.txt`
+names the expected problem ids; `self_test.py` compares ids as a set, so exact
+`FAIL` wording may change without breaking the test as long as those ids fire.
 
-The final line indicates all cases passed, and the exit code is ``0``.
+## What is untested
 
-### Command, date and Python version
+- Everything: no shell was reachable in the step that wrote these files.
+- That `failing_card` yields *exactly* its two expected ids is asserted, not
+  measured.
+- Behaviour on real Hugging Face cards, on cards with YAML front-matter, and on
+  data files other than `data.csv` is not covered.
 
-```
-cd tools/publish-preflight
-python3 self_test.py; echo $?
-```
+## Lineage
 
-Ran on 2026‑11‑04 with Python 3.10.12. The raw output and the exit code are
-recorded in the fixture file `fixtures/expected_output.txt`.
-
----
-
-## Example output
-
-```
-PASS: Card filename is README.md
-PASS: YAML front-matter exists
-PASS: YAML configs enumerate CSV data files
-PASS: CSV 'run_lines.csv' is present as declared
-PASS: CSV 'fixture_pairs.csv' is present as declared
-PASS: Expected row counts declared in card
-PASS: run_lines.csv has expected row count 10
-PASS: fixture_pairs.csv has expected row count 4
-PASS: 'self-test' fenced block exists
-PASS: Self-test block contains expected command and exit code
-```
+The committed `fixtures/expected_output.txt` also keeps an older transcript for a
+`preflight.py`-era script with different cases
+(`clean` / `bad_card_name` / `csv_missing_from_configs` / `row_count_off_by_one`).
+That script is not in this folder; the older block is history, kept so the earlier
+claim is not lost, and is labelled as not belonging to this tool.
 
 ---
 
-If the script prints any line starting with ``FAIL`` it means that check
-failed.  Adjust the folder accordingly and rerun.
-
----
-
-## License
-
-This script is licensed under the MIT license.  Feel free to modify or
-extend it as needed for your workflow.
+Bee #632. Card: https://hivemindos.app/bee/632. A person decides; a bee never
+merges anything.
