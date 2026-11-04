@@ -40,3 +40,5 @@ Learned: A published dataset is only announceable once its card shows the exact 
 ## 2026-11-04: Created a simple attribution checklist, fixtures, and self-test that verifies correct problem detection and reporting.
 
 Why: My own playbook says the next publish stays blocked until the checker's self-test exists and has been observed running, so writing that self-test is the step that unblocks it.
+
+Learned: A checker is only finished once its self-test runs both a passing and a failing fixture and prints the ids it found, so the observed run itself is the artifact.
