@@ -1,77 +1,92 @@
 #!/usr/bin/env python3
-"""Small self-test for the publish-preflight tool.
+"""self_test.py - run verify_dataset_card.py over both committed fixtures.
 
-Runs :code:`preflight.py` against a temporary publish directory that
-contains four deliberately incorrect variants of a dataset folder and
-checks that :code:`preflight.py` emits strings that contain the substrings
-listed in :data:`EXPECTED`.  The test exits zero only when every case
-passes.
+Run with no arguments, from this folder:
 
-This file intentionally does not reimplement the checks performed by
-:code:`preflight.py`; it simply feeds the same data and then verifies the
-output contains the expected markers.
+    python3 self_test.py; echo $?
+
+No network. Runs only this tool's own code on its own fixtures.
+
+For each case in CASES it runs verify_dataset_card.py against the fixture
+folder, collects the problem ids from the produced FAIL lines, and compares
+that SET with the ids in the fixture's expected_problems.txt. One line per
+case, then a summary line. Exit 0 only when every case's ids match.
+
+Asserting on problem ids (not full wording) keeps the test pinned to what
+matters: which faults were found, and that a two-fault fixture reports both
+rather than stopping at the first.
 """
 
 from __future__ import annotations
 
+import re
 import subprocess
 import sys
 from pathlib import Path
 
-# Substrings that must appear in the :code:`preflight.py` output for each test
-# case.  The dictionary keys are case names understood by this test.
-# The values are lists of mandatory substrings.
-EXPECTED = {
-    # No issues expected – the output should not contain "FAIL".
-    "clean": [],
-    # The card file has the wrong name; :code:`preflight.py` should
-    # report a failure containing this phrase.
-    "bad_card_name": ["FAIL card filename"],
-    # In this case a CSV referenced in the card is missing; the tool
-    # prints "YAML configs do not list ..." – the substring "configs"
-    # (plural) is what appears.
-    "csv_missing_from_configs": ["configs", "fixture_pairs.csv"],
-    # Here the row count is off by one; :code:`preflight.py` prints a
-    # line that contains "rows" and the CSV name.
-    "row_count_off_by_one": ["rows", "run_lines.csv"],
-}
+HERE = Path(__file__).resolve().parent
+TOOL = HERE / "verify_dataset_card.py"
 
-# Path to the directory that contains the test folders
-BASE = Path(__file__).resolve().parent
+# (case name, fixture folder, expected exit status)
+CASES = (
+    ("passing_card", HERE / "fixtures" / "passing_card", 0),
+    ("failing_card", HERE / "fixtures" / "failing_card", 1),
+)
 
-# Function that runs :code:`preflight.py` within a given directory and
-# returns the captured stdout as a string.
+FAIL_RE = re.compile(r"^FAIL\s+([a-z_]+):")
 
-def run_preflight(target: Path) -> str:
-    result = subprocess.run(
-        ["python3", "preflight.py", "."], cwd=target, capture_output=True, text=True
-    )
-    return result.stdout
 
-# Run a single test case and return a tuple (case_name, bool, output)
+def expected_ids(fixture: Path):
+    path = fixture / "expected_problems.txt"
+    ids = set()
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        # Accept 'missing_section' or 'missing_section: some detail'.
+        ids.add(line.split(":", 1)[0].strip())
+    return ids
 
-def run_case(name: str) -> tuple[str, bool, str]:
-    target = BASE / f"{name}_folder"
-    output = run_preflight(target)
-    # Determine whether all expected substrings are present.
-    missed = [s for s in EXPECTED[name] if s not in output]
-    passed = not missed
-    return name, passed, output
+
+def produced_ids(stdout: str):
+    ids = set()
+    for line in stdout.splitlines():
+        m = FAIL_RE.match(line.strip())
+        if m:
+            ids.add(m.group(1))
+    return ids
 
 
 def main() -> int:
     problems = 0
-    for case, _, _ in EXPECTED:
-        name, passed, out = run_case(case)
-        print(f"self_test.py {name} ... ")
-        if not passed:
-            print("FAIL:")
-            for miss in [s for s in EXPECTED[name] if s not in out]:
-                print(f"  missing from output: {miss}")
+    total = 0
+    for name, fixture, want_exit in CASES:
+        total += 1
+        if not fixture.is_dir():
+            print("case %s: FAIL (fixture folder missing)" % name)
             problems += 1
+            continue
+        proc = subprocess.run(
+            [sys.executable, str(TOOL), str(fixture)],
+            capture_output=True,
+            text=True,
+        )
+        print(proc.stdout, end="")
+        got = produced_ids(proc.stdout)
+        want = expected_ids(fixture)
+        ok = (proc.returncode == want_exit) and (got == want)
+        if ok:
+            print("case %s: PASS (exit %d, expected %d; ids: %s)"
+                  % (name, proc.returncode, want_exit,
+                     ",".join(sorted(got)) or "none"))
         else:
-            print("PASS")
-    print(f"preflight_self_test: {len(EXPECTED)} case(s), {problems} problem(s)")
+            print("case %s: FAIL" % name)
+            print("  exit: got %d, expected %d" % (proc.returncode, want_exit))
+            print("  ids: got %s, expected %s"
+                  % (sorted(got), sorted(want)))
+            problems += 1
+
+    print("self_test: %d case(s), %d as expected" % (total, total - problems))
     return 0 if problems == 0 else 1
 
 
