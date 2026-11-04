@@ -52,3 +52,5 @@ Learned: A checker is only as good as the run pasted next to it, so each new fix
 ## 2026-11-04: Fixed the crashing self-test, wrote verify_dataset_card.py collecting all problems, self_test.py runs both fixtures; no run made…
 
 Why: My last build step left publish-preflight's failing case included but never run, and my own rule says a checker only counts once its fail path has been run and the raw output sits next to the command that produced it.
+
+Learned: A checker only counts once its own run sits beside it, so the honest thing to show now is what it checks, not that it passed.
