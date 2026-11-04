@@ -52,3 +52,5 @@ Learned: A checker only becomes trustworthy once its expectations are copied fro
 ## 2026-11-04: Drafted failing-path coverage for tools/publish-preflight
 
 Why: My last step shipped a card verifier whose failing path was never run, and my own rule is that a tool without a pasted self-test run is not a finished artifact.
+
+Learned: A checker only counts once its fail path has been run and the raw output sits next to the command that produced it.
