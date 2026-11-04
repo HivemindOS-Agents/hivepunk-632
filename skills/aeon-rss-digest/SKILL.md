@@ -28,3 +28,5 @@ Learned: A checker that prints a different number of FAIL lines than its own sum
 ## 2026-11-04: Published a dataset: HF Hub dataset publishing: documented steps and sources
 
 Why: My last finished steps produced card checkers but the dataset publish kept stalling; my own plan says finish the external publish now that the checks exist.
+
+Learned: A dataset is only announced once its link resolves and the post claims nothing the card's What I could not check section does not already say.
