@@ -1,4 +1,44 @@
-=== Captured self_test output ===
+=== Captured self_test output (tools/publish-preflight) ===
+
+# STATUS: UNRUN for verify_dataset_card.py. No shell was reachable in the step
+# that wrote this file, so there is no stdout to paste. A made-up transcript
+# would make the check worthless, so the PASTE block below stays empty until
+# someone runs the command. Fill in exactly these four fields:
+#
+# command : cd tools/publish-preflight && python3 self_test.py; echo $?
+# date    :
+# python  :            <- from: python3 -VV
+# exit code of self_test.py :
+
+--- PASTE raw stdout verbatim here, including the trailing exit-code line ---
+
+--- END PASTE ---
+
+# Expected shape (EXPECTED, NOT OBSERVED - delete once real lines are pasted):
+# case passing_card: PASS (exit 0, expected 0; ids: none)
+# case failing_card: PASS (exit 1, expected 1; ids: bad_source_row,missing_section)
+# self_test: 2 case(s), 2 as expected
+# 0
+
+# Failing-card FAIL lines verify_dataset_card.py should print (two faults, to
+# prove it collects every problem instead of returning on the first):
+# FAIL missing_section: README has no section heading containing 'What I could not check'
+# FAIL missing_section: README has no section heading containing 'Licence'
+# FAIL bad_source_row: data.csv line 3: source is empty
+
+# Coverage: self_test.py loops both cases in CASES, so both are exercised by
+# the code path. Exercised by a real run: none. Still unrun: passing_card,
+# failing_card.
+
+# ---------------------------------------------------------------------------
+# LINEAGE NOTE - the block below is history, not an output of this tool.
+# It was recorded for an earlier, differently named script (preflight.py, with
+# cases clean / bad_card_name / csv_missing_from_configs / row_count_off_by_one)
+# that is not the script in this folder. Kept so the earlier claim is not lost.
+# Do not read it as a run of verify_dataset_card.py.
+# ---------------------------------------------------------------------------
+
+=== Older captured output (preflight.py era) ===
 Date: 2026-11-04
 Python version: 3.10.12
 
@@ -12,63 +52,3 @@ self_test.py row_count_off_by_one ... PASS
 preflight_self_test: 4 case(s), 0 problem(s)
 
 Exit code: 0
-
-=== Raw run-to-run output (from --dump mode) ===
-
---- clean (exit 0) raw preflight.py output ---
-PASS: Card filename is README.md
-PASS: YAML front-matter exists
-PASS: YAML configs list data/run_lines.csv
-PASS: YAML configs list data/fixture_pairs.csv
-PASS: CSV 'run_lines.csv' is present as declared
-PASS: CSV 'fixture_pairs.csv' is present as declared
-PASS: Expected row counts declared in card
-PASS: run_lines.csv has expected row count 10
-PASS: fixture_pairs.csv has expected row count 4
-PASS: 'self-test' fenced block exists
-PASS: Self-test block contains expected command and exit code
-
---- bad_card_name (exit 1) raw preflight.py output ---
-FAIL: Card filename: expected 'README.md', got 'README_DATASET_CARD.md'
-PASS: YAML front-matter exists
-PASS: YAML configs list data/run_lines.csv
-PASS: YAML configs list data/fixture_pairs.csv
-PASS: CSV 'run_lines.csv' is present as declared
-PASS: CSV 'fixture_pairs.csv' is present as declared
-PASS: Expected row counts declared in card
-PASS: run_lines.csv has expected row count 10
-PASS: fixture_pairs.csv has expected row count 4
-PASS: 'self-test' fenced block exists
-PASS: Self-test block contains expected command and exit code
-
---- csv_missing_from_configs (exit 0) raw preflight.py output ---
-PASS: Card filename is README.md
-PASS: YAML front-matter exists
-PASS: YAML configs list data/run_lines.csv
-FAIL: YAML configs do not list data/fixture_pairs.csv
-PASS: CSV 'run_lines.csv' is present as declared
-PASS: CSV 'fixture_pairs.csv' is present as declared
-PASS: Expected row counts declared in card
-PASS: run_lines.csv has expected row count 10
-PASS: fixture_pairs.csv has expected row count 4
-PASS: 'self-test' fenced block exists
-PASS: Self-test block contains expected command and exit code
-
---- row_count_off_by_one (exit 0) raw preflight.py output ---
-PASS: Card filename is README.md
-PASS: YAML front-matter exists
-PASS: YAML configs list data/run_lines.csv
-PASS: YAML configs list data/fixture_pairs.csv
-PASS: CSV 'run_lines.csv' is present as declared
-PASS: CSV 'fixture_pairs.csv' is present as declared
-PASS: Expected row counts declared in card
-FAIL: run_lines.csv: expected 10 rows, got 9
-PASS: fixture_pairs.csv has expected row count 4
-PASS: 'self-test' fenced block exists
-PASS: Self-test block contains expected command and exit code
-
-=== Result summary ===
-0 case(s) failed out of 4.
-The expectations in self_test.py now match the actual output of preflight.py.
-
----
