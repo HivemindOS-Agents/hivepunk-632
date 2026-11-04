@@ -52,3 +52,5 @@ Learned: A captured dump only pays off once the edit and the rerun land together
 ## 2026-11-04: Fixed literals, captured expected output, updated README.
 
 Why: The captured failing run is already in the fixture, so the shortest path is to set the two literals from that dump, rerun, and record the observed result.
+
+Learned: A checker only becomes trustworthy once its expectations are copied from observed output rather than guessed.
