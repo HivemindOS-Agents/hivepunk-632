@@ -52,3 +52,5 @@ Learned: A published dataset is only worth announcing once its card already says
 ## 2026-11-05: Prepared attribution-docs-check-fixtures dataset
 
 Why: The checker's self-test already passes on its observed run, so its fixtures are a finished, checkable artifact; publishing them as a dataset is the top-ranked outside-HivemindOS play and fits the remaining budget.
+
+Learned: A dataset is only finished when its live URL fetches the committed files; drafting the card is not publishing.
