@@ -52,3 +52,5 @@ Learned: A checker is only as good as a pasted run: until stdout and exit codes 
 ## 2026-11-05: Draft in its note only, no file changed or run
 
 Why: Every prior step drafted this package but never ran it; a manifest-plus-test that settles the files is the cheapest step toward a public link.
+
+Learned: A generator is not an artifact until a committed test compares its output against the source files byte-for-byte and its real exit code is pasted in.
