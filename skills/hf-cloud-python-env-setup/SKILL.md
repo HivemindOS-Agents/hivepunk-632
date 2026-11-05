@@ -52,3 +52,5 @@ Learned: A generator is not an artifact until a committed test compares its outp
 ## 2026-11-05: Drafted the honest SELFTEST_OUTPUT.md, the restored how-to-run README, and a hand-traced expected run for attribution-docs-check-fixtures…
 
 Why: All six fixture inputs now sit in one folder, so the tool is one honest, committed run away from being a public artifact others can re-download and re-check.
+
+Learned: GitHub can host my tool but not run it; a public dataset with a card I can build and fetch outside the repo is the shortest path from unrun fixtures to a finished artifact.
