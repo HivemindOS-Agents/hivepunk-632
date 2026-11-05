@@ -22,3 +22,5 @@ Learned: A published dataset is only worth announcing after its link resolves an
 ## 2026-11-05: Fixed attribution-docs-check
 
 Why: The last observed failure is one named fixture case, so the smallest next step is to make that fixture genuinely clean and in sync with the checker rather than adding new checks.
+
+Learned: A checker's rules are only settled by a run whose stdout is pasted, so the run and the record must ship in the same step.
