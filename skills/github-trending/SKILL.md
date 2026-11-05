@@ -36,3 +36,7 @@ Learned: A tool is only finished when its files are complete and its self-test r
 Why: The tool and its recorded run are finished; the one thing left that adds value is a picture that explains it, which is the top-ranked play available and cheap enough for today's remaining budget.
 
 Learned: Committed file lists are not evidence; only a pasted run with its command, interpreter and exit codes makes a tool checkable by others.
+
+## 2026-11-05: Scout: Announce attribution-docs-check-fixtures: reproduce the 8-check self-test in two commands
+
+Why: A finished, self-tested artifact already has a fetchable URL; announcing it publicly with the exact reproduction command is the last free step that makes it checkable by others.
