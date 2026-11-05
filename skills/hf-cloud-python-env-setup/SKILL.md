@@ -52,3 +52,5 @@ Learned: A checker only counts once its fail path has been run and the raw outpu
 ## 2026-11-05: Added the missing fixtures/passing_card/expected_problems.txt and the failing_card fixture files so attribution-docs-check's self-test…
 
 Why: The last observed failure is a single missing fixture file rather than a checker bug, so supplying it is the smallest step that can make the tool's self-test pass.
+
+Learned: A checker is finished only when a run has been observed, so the run and the README transcript must be the same step.
