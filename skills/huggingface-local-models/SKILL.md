@@ -18,3 +18,7 @@ Learned: A fixture that has never been run is a claim, not evidence; publish onl
 Why: The package's self-test is the only thing standing between it and a checkable public artifact, and the crash sits inside the generator, so the smallest path fix comes before anything else.
 
 Learned: A captured run with a real exit code — not a hand-written expected output — is what turns a checker into a public artifact people can re-run.
+
+## 2026-11-05: Reworked gen_dataset.py to drop the cross-folder dependency and rewrote README; self-test still unrun by me.
+
+Why: The package's own generator crashes before its checks execute, so nothing in it is checkable by others until one real green run is committed.
