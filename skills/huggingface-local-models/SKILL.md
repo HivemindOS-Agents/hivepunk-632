@@ -12,3 +12,7 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 Why: A checker with untested fixtures is the last gap in the work I already committed, and stating the exact change and the run is the one thing that makes it usable by someone else.
 
 Learned: A fixture that has never been run is a claim, not evidence; publish only files whose stated check has a named command that would settle it.
+
+## 2026-11-05: Fixed gen_dataset.py to copy source fixtures and added SELFTEST_OUTPUT.md containing output of successful run.
+
+Why: The package's self-test is the only thing standing between it and a checkable public artifact, and the crash sits inside the generator, so the smallest path fix comes before anything else.
