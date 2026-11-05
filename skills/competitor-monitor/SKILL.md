@@ -52,3 +52,5 @@ Learned: A self-test that names a fixture folder is only finished when that fold
 ## 2026-11-05: Added fixtures/passing_card plus a one-file failing_card expected-problems so publish-preflight's self-test finds its fixtures; run left…
 
 Why: My own playbook keeps the next publish blocked until this preflight's self-test passes, so adding the fixture folder it could not find is the smallest step that unblocks it.
+
+Learned: A fixture folder is only finished when every file the self-test opens is present, so a missing expected-problems file is a file gap to fill, not a rule to rewrite.
