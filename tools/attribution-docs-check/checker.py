@@ -1,18 +1,41 @@
-~~~python
 #!/usr/bin/env python3
-"""Attribution Docs Checker – validates a dataset card layout.
+"""Attribution Docs Checker - validates a dataset-card folder layout.
 
-The returned structure is a list of tuples ``(problem_id, detail)``.  The
-``problem_id`` values are the short strings used in the test harness.
+Reads one card folder and returns EVERY problem it finds, as a list of
+(problem_id, detail) tuples. It does not stop at the first problem, which is
+what lets a fixture with two faults report both faults in a single run.
+
+Reads files only. No network, no subprocesses, nothing written.
+
+Usage:
+
+    python3 checker.py <card-folder>
+
+Exit status:
+    0  all checks satisfied  -> 'PASS all checks satisfied'
+    1  at least one problem   -> the FAIL lines, then one summary line
+    2  bad usage / not a directory
+
+Problem ids (stable; self_test.py asserts on these sets):
+    readme_missing   README.md absent or empty
+    title_line       first non-empty README line is not a heading
+    missing_section  a required section heading is absent
+    data_missing     data.csv absent
+    source_column    data.csv has no 'source' column
+    bad_source_row   a data.csv row's source is empty or not https://
+
+Section headings are matched against heading lines only (a line whose first
+non-space character is '#'), case-insensitively on the heading text. Prose that
+merely mentions a section name is not a heading and does not satisfy the check.
 """
 
 from __future__ import annotations
 
 import csv
 import pathlib
+import sys
 from typing import List, Tuple
 
-# Problem identifiers expected by the self‑test
 PROBLEM_IDS = (
     "readme_missing",
     "title_line",
@@ -22,7 +45,6 @@ PROBLEM_IDS = (
     "bad_source_row",
 )
 
-# The five mandatory section headings (case‑insensitive)
 REQUIRED_SECTIONS = (
     "What it is",
     "Columns",
@@ -32,67 +54,85 @@ REQUIRED_SECTIONS = (
 )
 
 
-def read_readme(path: pathlib.Path) -> str:
-    return path.read_text(encoding="utf-8") if path.is_file() else ""
+def read_readme(path):
+    """README text, or '' when the file is absent."""
+    if path.is_file():
+        return path.read_text(encoding="utf-8")
+    return ""
 
 
-def check_folder(card_dir: pathlib.Path) -> List[Tuple[str, str]]:
+def heading_lines(text):
+    """Stripped lines whose first non-space character is '#'."""
+    return [ln.strip() for ln in text.splitlines() if ln.strip().startswith("#")]
+
+
+def check_folder(card_dir):
+    """Return a list of (problem_id, detail) tuples. Collects every problem."""
+    card = pathlib.Path(card_dir)
     problems: List[Tuple[str, str]] = []
-    readme = card_dir / "README.md"
-    readme_text = read_readme(readme)
+
+    readme_text = read_readme(card / "README.md")
     if not readme_text.strip():
         problems.append(("readme_missing", "README.md is missing or empty"))
-        # Without a README we cannot proceed further checks safely
-        return problems
 
-    # Title line: first non‑empty line must start with '#'
-    first_line = next((ln for ln in readme_text.splitlines() if ln.strip()), "")
-    if not first_line.lstrip().startswith("#"):
-        problems.append(("title_line", "first non‑empty line of README.md is not a heading"))
+    non_empty = [ln for ln in readme_text.splitlines() if ln.strip()]
+    if not non_empty or not non_empty[0].lstrip().startswith("#"):
+        problems.append(
+            ("title_line", "first non-empty README line is not a heading")
+        )
 
-    # Section checks
-    lowered = readme_text.lower()
+    headings = heading_lines(readme_text)
     for name in REQUIRED_SECTIONS:
-        if name.lower() not in lowered:
-            problems.append(("missing_section", f"README.md missing section: {name}"))
+        if not any(name.lower() in h.lower() for h in headings):
+            problems.append(
+                ("missing_section", "README.md missing section: " + name)
+            )
 
-    # data.csv checks
-    data = card_dir / "data.csv"
+    data = card / "data.csv"
     if not data.is_file():
         problems.append(("data_missing", "data.csv is missing"))
         return problems
 
     with data.open(newline="", encoding="utf-8") as fh:
         reader = csv.DictReader(fh)
-        if not reader.fieldnames or "source" not in reader.fieldnames:
+        fieldnames = reader.fieldnames or []
+        if "source" not in fieldnames:
             problems.append(("source_column", "data.csv has no 'source' column"))
             return problems
         for lineno, row in enumerate(reader, start=2):  # header is line 1
             src = (row.get("source") or "").strip()
             if not src:
-                problems.append(("bad_source_row", f"data.csv line {lineno}: source is empty"))
+                problems.append(
+                    ("bad_source_row",
+                     "data.csv line %d: source is empty" % lineno)
+                )
             elif not src.startswith("https://"):
-                problems.append(("bad_source_row", f"data.csv line {lineno}: source is not https://"))
+                problems.append(
+                    ("bad_source_row",
+                     "data.csv line %d: source is not https://" % lineno)
+                )
 
     return problems
 
 
-# The following block is only executed when the script is run directly.
-if __name__ == "__main__":  # pragma: no cover
-    import sys
-    if len(sys.argv) != 2:
+def main(argv) -> int:
+    if len(argv) != 2:
         sys.stderr.write("usage: python3 checker.py <card-folder>\n")
-        sys.exit(2)
-    card = pathlib.Path(sys.argv[1])
+        return 2
+    card = pathlib.Path(argv[1])
     if not card.is_dir():
-        sys.stderr.write(f"{card} is not a directory\n")
-        sys.exit(2)
-    result = check_folder(card)
-    for pid, detail in result:
-        print(f"FAIL {pid}: {detail}")
-    if result:
-        print(f"checked {len(result)} checks, {len(result)} failed")
-        sys.exit(1)
+        sys.stderr.write("%s is not a directory\n" % card)
+        return 2
+
+    problems = check_folder(card)
+    for pid, detail in problems:
+        print("FAIL %s: %s" % (pid, detail))
+    if problems:
+        print("checked %d checks, %d failed" % (len(problems), len(problems)))
+        return 1
     print("PASS all checks satisfied")
-    sys.exit(0)
-~~~
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))
