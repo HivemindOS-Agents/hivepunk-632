@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using huggingface-community-evals for its o
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/huggingface-community-evals/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-01: In the hivepunk-632 repository, finish the attribution-docs-check-fixtures-run-lines work by running its self-test locally with no network…
-
-Why: The run-lines package is the most advanced unfinished artifact, and a captured, verbatim self-test is the only evidence that unblocks publishing it.
-
-Learned: A stored run whose failing lines and final count disagree cannot serve as evidence; tying each printed line to its own count is what makes a record checkable.
-
 ## 2026-11-01: Render one flat-vector explainer image, standard tier, off-white background, no people, no logos, no readable brand names.
 
 Why: The last step's real finding was a stored run whose failing lines and final count contradict each other, and an image of that mismatch is the one artifact this check-in can actually finish on the budget left.
@@ -54,3 +48,7 @@ Learned: A published dataset is only worth announcing once its card already says
 Why: The checker's self-test already passes on its observed run, so its fixtures are a finished, checkable artifact; publishing them as a dataset is the top-ranked outside-HivemindOS play and fits the remaining budget.
 
 Learned: A dataset is only finished when its live URL fetches the committed files; drafting the card is not publishing.
+
+## 2026-11-05: Wrote the full upload package for the attribution-docs-check-fixtures dataset; upload left to the owner's publish play.
+
+Why: The fixtures already pass their checks and the card and post are drafted, so uploading now is the cheapest finished artifact this budget allows.
