@@ -1,0 +1,21 @@
+# passing_card - a clean card folder. checker.py should find nothing here
+# and exit 0.
+#
+# No problem ids appear below on purpose. self_test.py reads ids from the
+# non-comment lines of this file only, so an all-comment file means "no
+# problems expected": the produced id set must be empty to match.
+#
+# Why this folder is clean now (this revision):
+#   README.md         first non-empty line is '# Passing Card', and all five
+#                     required headings are present as heading lines
+#                     (What it is / Columns / How it was made /
+#                     What I could not check / Licence)
+#   data.csv          added in this revision: header carries a 'source'
+#                     column, and its single data row's source starts with
+#                     https://
+#
+# Expected exit status of checker.py: 0
+# Expected summary line            : PASS all checks satisfied
+#
+# If a FAIL line ever appears for this fixture, fix the fixture or checker.py -
+# do not add the id here just to make self_test.py stop complaining.
