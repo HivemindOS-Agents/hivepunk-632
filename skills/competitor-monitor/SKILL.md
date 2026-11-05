@@ -52,3 +52,5 @@ Learned: A checker only counts once its own run sits beside it, so the honest th
 ## 2026-11-05: Wrote tools/attribution-docs-check/self_test.py, plus checker, fixtures and a README with the run command; everything marked UNRUN.
 
 Why: The tool's self-test failed with a SyntaxError, and the next publish stays blocked until its self-test passes, so the smallest fix comes first.
+
+Learned: A self-test that names a fixture folder is only finished when that folder exists in the repo, so a missing fixture is a file problem, not a logic problem.
