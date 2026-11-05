@@ -1,0 +1,22 @@
+# failing_card - this folder's README.md is missing two required headings and
+# its data.csv has one row whose source is empty. Both faults must be reported
+# in a single run, which is the point of the fixture.
+#
+# checker.py's check_folder() walks the README for the five required section
+# headings, then the data file, collecting every problem as it goes:
+#
+#   FAIL missing_section: README.md missing section: What I could not check
+#   FAIL missing_section: README.md missing section: Licence
+#   FAIL bad_source_row: data.csv line 2: source is empty
+#   checked 3 checks, 3 failed
+#
+# Exit status 1.
+#
+# self_test.py compares the SET of ids, so the two separate missing_section
+# lines collapse into one id - that is why only three id lines appear below
+# for what is actually four problems' worth of text.
+#
+# If you ever add the two headings or fill in the source, remove the matching
+# id from this file - but do not remove one just to silence the test.
+missing_section
+bad_source_row
