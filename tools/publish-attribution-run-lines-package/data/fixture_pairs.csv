@@ -1,5 +1,5 @@
 fixture,expected_line,source
 passing_card,PASS what it is | PASS columns | PASS how it was made | PASS licence | PASS what I could not check | PASS unverified markers (shown 2 time(s)) | card_lint: all 6 honesty sections present,https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/tools/card-lint/fixtures/passing_card.expected.txt
-missing_two,PASS what it is | PASS columns | PASS how it was made | FAIL licence | PASS what I could not check | FAIL unverified markers | card_lint: 2 section(s) missing: licence unverified markers,https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/tools/card-lint/fixtures/missing_two.expected.txt
+missing_two,"PASS what it is | PASS columns | PASS how it was made | FAIL licence | PASS what I could not check | FAIL unverified markers | card_lint: 2 section(s) missing: licence, unverified markers",https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/tools/card-lint/fixtures/missing_two.expected.txt
 bare_headings,,https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/card-lint/fixtures
 missing_all,,https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/card-lint/fixtures

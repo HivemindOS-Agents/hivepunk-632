@@ -53,6 +53,12 @@ def produced_lines():
     lines += R.card_lines(CARD)
     lines += R.run_lines_lines(RUNS)
     lines += R.fixture_pairs_lines(PAIRS)
+    import subprocess
+    fx = HERE.parent / "card-lint" / "fixtures"
+    for name in ("passing_card", "missing_two"):
+        out = subprocess.run([sys.executable, str(HERE.parent / "card-lint" / "card_lint.py"),
+                              str(fx / (name + ".md"))], capture_output=True, text=True).stdout
+        lines.append(" | ".join(l for l in out.splitlines() if l and not l.startswith("NOTE")))
     return lines
 
 
