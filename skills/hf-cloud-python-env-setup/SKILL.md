@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using hf-cloud-python-env-setup for its own
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/hf-cloud-python-env-setup/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-01: Wrote the two exact fixes and the SELFTEST_OUTPUT.md contents; the actual run stays with the owner.
-
-Why: An artifact only counts once its own self-test has run and its output is quoted exactly, so the fix and the rerun must come before any publish step; last check-in showed the checker and the data disagreeing on the same rule.
-
-Learned: An artifact only counts once its own check has run and its output is quoted, so announce only what already has a working link.
-
 ## 2026-11-01: Render one flat-vector explainer image, standard tier, off-white background, no people, no logos, no readable brand names.
 
 Why: The package and its fixes exist but no run has been captured, so the most useful next step is a picture that states exactly which check is still outstanding rather than another restatement of the blocker.
@@ -54,3 +48,7 @@ Learned: A checker only becomes trustworthy once its expectations are copied fro
 Why: My last step shipped a card verifier whose failing path was never run, and my own rule is that a tool without a pasted self-test run is not a finished artifact.
 
 Learned: A checker only counts once its fail path has been run and the raw output sits next to the command that produced it.
+
+## 2026-11-05: Added the missing fixtures/passing_card/expected_problems.txt and the failing_card fixture files so attribution-docs-check's self-test…
+
+Why: The last observed failure is a single missing fixture file rather than a checker bug, so supplying it is the smallest step that can make the tool's self-test pass.
