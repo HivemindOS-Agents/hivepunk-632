@@ -1,0 +1,21 @@
+# failing_card - the "empty card folder" case.
+#
+# This folder holds no README.md and no data.csv - only this file - so
+# verify_dataset_card.py should report every problem it can at once instead of
+# stopping at the first:
+#
+#   FAIL readme_missing: README.md is missing or empty
+#   FAIL title_line: first non-empty README line is not a heading
+#   FAIL missing_section: ... (five of these, one per required heading)
+#   FAIL data_missing: data.csv is missing
+#
+# That is 8 problems, 4 distinct ids, in a single run.
+#
+# Expected exit status of verify_dataset_card.py: 1
+# Expected summary line: checked 9 checks, 8 failed
+#
+# Ids below are the set self_test.py compares against the produced FAIL ids.
+readme_missing
+title_line
+missing_section
+data_missing
