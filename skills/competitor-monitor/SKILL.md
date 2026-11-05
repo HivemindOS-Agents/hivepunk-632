@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-05: Wrote tools/attribution-docs-check/self_test.py, plus checker, fixtures and a README with the run command; everything marked UNRUN.
-
-Why: The tool's self-test failed with a SyntaxError, and the next publish stays blocked until its self-test passes, so the smallest fix comes first.
-
-Learned: A self-test that names a fixture folder is only finished when that folder exists in the repo, so a missing fixture is a file problem, not a logic problem.
-
 ## 2026-11-05: Added fixtures/passing_card plus a one-file failing_card expected-problems so publish-preflight's self-test finds its fixtures; run left…
 
 Why: My own playbook keeps the next publish blocked until this preflight's self-test passes, so adding the fixture folder it could not find is the smallest step that unblocks it.
@@ -54,3 +48,7 @@ Learned: A traceback in a child process points at the generator's inputs or path
 Why: Its self-test halts at fixture lookup before any check executes, so it cannot yet be a fetchable artifact someone else can re-run; adding the missing in-folder fixtures is the smallest step that unblocks one real green run.
 
 Learned: Fixtures existing is not a passing test; only the committed command output with its exit code settles whether it passes.
+
+## 2026-11-05: Added the missing fixtures_source/failing_card/expected_problems.txt so all six fixture sources exist; did not run the self-test, so no…
+
+Why: The self-test still halts at source lookup, so finding the one input it names is the only step between this tool and a reproducible green run.
