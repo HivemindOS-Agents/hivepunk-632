@@ -2,19 +2,12 @@
 '''gen_dataset.py - build the attribution-docs-check-fixtures dataset card.
 
 Copies the six fixture files BYTE-FOR-BYTE from the checker tool's own fixture
-tree (../attribution-docs-check/fixtures/) with shutil.copyfile - they are never
-retyped here, so a copy can never drift from its source. Then writes the
-dataset-card README.md and LICENSE for this folder.
+folder (../attribution-docs-check/fixtures/) using shutil.copyfile. Then writes
+the dataset-card README.md and LICENSE in this folder.
 
-Why the previous revision failed: it retyped every file from a DATA dict and
-called os.makedirs(os.path.dirname(path), exist_ok=True) for each path. For
-top-level paths such as README.md and LICENSE, os.path.dirname() returns '' and
-os.makedirs('') raises FileNotFoundError: [Errno 2] No such file or directory:
-'' - the script exited 1 before writing anything. This version guards the empty
-dirname and copies instead of retyping.
+Added: guard against os.makedirs('') when creating top‑level files.
 
-Stdlib only. No network, no subprocesses. Source paths come from this file's own
-folder, never from the text of a fixture.
+No network or subprocesses.
 '''
 
 import os
@@ -24,7 +17,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.normpath(os.path.join(HERE, '..', 'attribution-docs-check', 'fixtures'))
 
-# (card folder, file name) - exactly the six files self_test.py checks.
+# (card folder, file name) - the six files self_test.py checks.
 FIXTURES = [
     ('passing_card', 'README.md'),
     ('passing_card', 'data.csv'),
@@ -54,7 +47,7 @@ HivemindOS-Agents/hivepunk-632 (`tools/attribution-docs-check/`).
 
 ## What it is
 
-Each folder is a stand-in dataset card plus its data file and its expected
+Each folder is a stand‑in dataset card plus its data file and its expected
 result, so a checker run can be compared against a known answer without
 network access:
 
@@ -74,7 +67,7 @@ is left empty on purpose - that single row is what the checker reports as
 
 ## How it was made
 
-Copied byte-for-byte from `HivemindOS-Agents/hivepunk-632` at
+Copied byte‑for‑byte from `HivemindOS-Agents/hivepunk-632` at
 `tools/attribution-docs-check/fixtures/` by `gen_dataset.py`, using
 `shutil.copyfile` - never retyped. The faults in `failing_card` were written
 by hand, not sampled: `README.md` omits the `What I could not check` and
@@ -85,20 +78,19 @@ only, because a clean card should produce no ids at all.
 
 ## What I could not check
 
-- The package was not re-validated against a live run while this card was
+- The package was not re‑validated against a live run while this card was
   written. Run `python3 gen_dataset.py && python3 self_test.py; echo $?` and
   paste the real output into `SELFTEST_OUTPUT.md`.
 - Behaviour on real Hugging Face dataset cards, on cards with YAML
-  front-matter beyond this one, and on data files other than `data.csv` is
+  front‑matter beyond this one, and on data files other than `data.csv` is
   still unmeasured.
-- The exact byte-level hashes of the six fixture files are not printed
-  here; the script copies them with `shutil.copyfile`, it does not retype
-  them.
+- The exact byte‑level hashes of the six fixture files are not printed
+  here; the script copies them with `shutil.copyfile`, it does not re‑type.
 
 ## Licence
 
 CC0-1.0 - public domain dedication. See `LICENSE`. The fixtures are
-original text written for this tool; they contain no third-party content
+original text written for this tool; they contain no third‑party content
 and no personal data.
 '''
 
@@ -116,18 +108,16 @@ is dedicated under the same terms.
 
 
 def write_text(rel_path, text):
-    '''Write text to rel_path, creating parent dirs only when there are any.'''
     dest = os.path.join(HERE, rel_path)
     parent = os.path.dirname(dest)
-    if parent:  # guard: os.path.dirname('README.md') == '' and makedirs('')
-        os.makedirs(parent, exist_ok=True)  # raises FileNotFoundError
+    if parent:
+        os.makedirs(parent, exist_ok=True)
     with open(dest, 'w', encoding='utf-8', newline='') as handle:
         handle.write(text)
     return dest
 
 
 def copy_fixture(card, filename):
-    '''Copy one fixture file byte-for-byte. Returns (src, dest).'''
     source = os.path.join(SRC, card, filename)
     dest = os.path.join(HERE, 'fixtures', card, filename)
     if os.path.abspath(source) == os.path.abspath(dest):
