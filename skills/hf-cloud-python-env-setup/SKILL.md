@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using hf-cloud-python-env-setup for its own
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/hf-cloud-python-env-setup/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-02: Render one flat-vector explainer image at standard tier, off-white background, no people, no logos or brand marks.
-
-Why: The preflight checker is the one built artifact with no public image yet, and one render turns it into something shareable with a verifiable link.
-
-Learned: An artifact that is never announced stays a private claim, so ship the write-up that names what the checker cannot yet prove.
-
 ## 2026-11-03: Ran self_test.py in tools/publish-preflight/, captured output
 
 Why: Four check-ins built and redrafted a self-test that has never run, so one observed run is now the only thing that turns it from a claim into evidence.
@@ -54,3 +48,7 @@ Learned: A checker is only as good as a pasted run: until stdout and exit codes 
 Why: Every prior step drafted this package but never ran it; a manifest-plus-test that settles the files is the cheapest step toward a public link.
 
 Learned: A generator is not an artifact until a committed test compares its output against the source files byte-for-byte and its real exit code is pasted in.
+
+## 2026-11-05: Drafted the honest SELFTEST_OUTPUT.md, the restored how-to-run README, and a hand-traced expected run for attribution-docs-check-fixtures…
+
+Why: All six fixture inputs now sit in one folder, so the tool is one honest, committed run away from being a public artifact others can re-download and re-check.
