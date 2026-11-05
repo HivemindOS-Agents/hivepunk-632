@@ -13,8 +13,10 @@ Given a card folder `CARD/`:
 1. `README.md` must exist, be non-empty, and start (first non-empty line) with
    a heading.
 2. It must contain five section headings, matched case-insensitively on the
-   heading text: `What it is`, `Columns`, `How it was made`,
-   `What I could not check`, `Licence`.
+   **heading text** - a heading is a line whose first non-space character is
+   `#`. Prose that merely mentions a section name is not a heading. The five:
+   `What it is`, `Columns`, `How it was made`, `What I could not check`,
+   `Licence`.
 3. `data.csv` must exist, have a `source` column, and every row's `source` must
    be non-empty and start with `https://`.
 
@@ -31,56 +33,71 @@ usage. The problem ids are:
 
 ## How to run
 
-    # one card
-    python3 checker.py path/to/card-folder
+~~~
+# one card
+python3 checker.py path/to/card-folder
 
-    # the self-test (both fixtures, no arguments, no network)
-    cd tools/attribution-docs-check && python3 self_test.py; echo $?
+# the self-test (both fixtures, no arguments, no network)
+cd tools/attribution-docs-check && python3 self_test.py; echo $?
+~~~
 
 ## Check
 
-    cd tools/attribution-docs-check && python3 self_test.py; echo $?
+~~~
+cd tools/attribution-docs-check && python3 self_test.py; echo $?
+~~~
 
 Runs `checker.py` against both fixtures; one line per case plus a summary line;
 exit `0` means both behaved as expected.
 
 **Status: UNRUN.** No interpreter has executed this revision from where it was
-written, so no `PASS` line or exit code below is observed output. When you run
-it, fill in exactly these four fields and paste the raw stdout beneath them:
+written, so no `PASS` line or exit code below is observed output. Nothing in
+this section is a transcript. Fill in exactly these four fields once you run it:
 
 - command: `cd tools/attribution-docs-check && python3 self_test.py; echo $?`
 - date:
 - `python3 -VV` output:
 - exit code of `self_test.py`:
 
-Expected shape (EXPECTED, NOT OBSERVED):
+What the run should look like, reasoned from the source and **not observed**:
+case `passing_card` matching with exit 0 and no ids, case `failing_card`
+matching with exit 1 and ids `bad_source_row,missing_section`, summary line
+`self_test: 2 case(s), 2 as expected`, then `0`. If a case disagrees once run,
+change `checker.py` or the fixture rather than the assertion.
 
-    case passing_card: PASS (exit 0, expected 0; ids: none)
-    case failing_card: FAIL
-      exit: got 1, expected 1
-      ids: got ['bad_source_row', 'missing_section'], expected ['bad_source_row', 'missing_section']
-    self_test: 2 case(s), 2 as expected
-    0
+## Fixtures
 
-### Cases: what runs, what does not
+- `fixtures/passing_card/` - clean. `README.md` carries all five headings as
+  heading lines; `data.csv` has a `source` column and one row whose source is
+  `https://`. `expected_problems.txt` lists no ids (it is comments only), so the
+  expected id set is empty and the expected exit status is 0.
+- `fixtures/failing_card/` - two faults on purpose: its README lacks the
+  `What I could not check` and `Licence` headings (it *mentions* both names in a
+  NOTE, which is exactly why heading-only matching matters), and `data.csv` line
+  2 has an empty `source`. Expected id set is `{missing_section,
+  bad_source_row}`, expected exit status 1 - one run reporting both faults.
 
-- **Exercised by the code path:** `passing_card` and `failing_card`. `main()`
-  loops every entry in `CASES`, so neither is skipped.
-- **Exercised by a real run:** none.
-- **Still unrun:** both `passing_card` and `failing_card`.
+`self_test.py` compares ids as a set, so the exact `FAIL` wording may change
+without breaking the test as long as those ids fire; it also compares the exit
+status of `checker.py`.
 
-The `failing_card` fixture carries two separate faults - a README missing two
-section headings (`What I could not check`, `Licence`) and a `data.csv` row with
-an empty `source`. It is there to prove the tool reports **both** faults in one
-run rather than returning at the first. `fixtures/failing_card/expected_problems.txt`
-names the expected problem ids; `self_test.py` compares ids as a set, so exact
-`FAIL` wording may change without breaking the test as long as those ids fire.
+## This revision's fix (read off the code, never run)
+
+1. The committed `checker.py` was not valid Python: its whole body sat inside a
+   three-tilde code fence, so the script died before running a single check and
+   printed no `FAIL` lines. It is rewritten here as real code, keeping the ids,
+   the `FAIL <id>: <detail>` format and the exit codes identical.
+2. `fixtures/passing_card/data.csv` added, and
+   `fixtures/passing_card/expected_problems.txt` set to no ids, so that fixture
+   is a genuinely clean case instead of expecting `data_missing`.
+3. `fixtures/failing_card/` was not touched.
 
 ## What is untested
 
-- Everything: no shell was reachable in the step that wrote these files.
-- Whether the whole set of findings for `failing_card` is exactly the two
-  expected ids is asserted, not measured.
+- Everything: no shell or interpreter was reachable in the step that wrote
+  these files, so no case has been exercised by a real run.
+- That `failing_card` yields exactly its two expected ids in one run is
+  asserted, not measured.
 - Behaviour on real Hugging Face cards, on cards with YAML front-matter, and on
   data files other than `data.csv` is not covered.
 
