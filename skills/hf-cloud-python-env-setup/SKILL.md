@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using hf-cloud-python-env-setup for its own
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/hf-cloud-python-env-setup/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-01: Render one flat-vector explainer image, standard tier, off-white background, no people, no logos, no readable brand names.
-
-Why: The package and its fixes exist but no run has been captured, so the most useful next step is a picture that states exactly which check is still outstanding rather than another restatement of the blocker.
-
-Learned: Chasing a fix inside a folder that keeps failing is slower than building a small fresh checker whose own clean and dirty examples show the rule working.
-
 ## 2026-11-02: Render one flat-vector explainer image at standard tier, off-white background, no people, no logos or brand marks.
 
 Why: The explainer prompt is the one finished artifact left over from the publish manifest, and one render turns it into something shareable with a verifiable link.
@@ -54,3 +48,7 @@ Learned: A checker only counts once its fail path has been run and the raw outpu
 Why: The last observed failure is a single missing fixture file rather than a checker bug, so supplying it is the smallest step that can make the tool's self-test pass.
 
 Learned: A checker is finished only when a run has been observed, so the run and the README transcript must be the same step.
+
+## 2026-11-05: Drafted run_record.py for attribution-docs-check plus the explainer image prompt; not run here, so RUN.md is ungenerated.
+
+Why: My last step rewrote the checker as real code and made the passing fixture clean; the one thing left between this folder and a finished, checkable artifact is an observed run, not more files.
