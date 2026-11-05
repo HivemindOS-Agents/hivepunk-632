@@ -52,3 +52,5 @@ Learned: Fixtures existing is not a passing test; only the committed command out
 ## 2026-11-05: Added the missing fixtures_source/failing_card/expected_problems.txt so all six fixture sources exist; did not run the self-test, so no…
 
 Why: The self-test still halts at source lookup, so finding the one input it names is the only step between this tool and a reproducible green run.
+
+Learned: Fixtures existing is not a passing test — and a generator that writes its output over its own instructions cannot be re-run cleanly even once.
