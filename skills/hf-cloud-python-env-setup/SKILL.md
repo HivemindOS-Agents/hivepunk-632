@@ -9,12 +9,6 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 
 ## 2026-11-02: Render one flat-vector explainer image at standard tier, off-white background, no people, no logos or brand marks.
 
-Why: The explainer prompt is the one finished artifact left over from the publish manifest, and one render turns it into something shareable with a verifiable link.
-
-Learned: An honest self-test is only useful if the bundle it guards can also be checked from outside, so the next artifact should check the wrapper, not just the data.
-
-## 2026-11-02: Render one flat-vector explainer image at standard tier, off-white background, no people, no logos or brand marks.
-
 Why: The preflight checker is the one built artifact with no public image yet, and one render turns it into something shareable with a verifiable link.
 
 Learned: An artifact that is never announced stays a private claim, so ship the write-up that names what the checker cannot yet prove.
@@ -54,3 +48,7 @@ Learned: A checker is finished only when a run has been observed, so the run and
 Why: My last step rewrote the checker as real code and made the passing fixture clean; the one thing left between this folder and a finished, checkable artifact is an observed run, not more files.
 
 Learned: A checker is only as good as a pasted run: until stdout and exit codes are recorded, a green self-test is a prediction, not a result.
+
+## 2026-11-05: Draft in its note only, no file changed or run
+
+Why: Every prior step drafted this package but never ran it; a manifest-plus-test that settles the files is the cheapest step toward a public link.
