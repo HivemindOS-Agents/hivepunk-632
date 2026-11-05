@@ -52,3 +52,5 @@ Learned: A self-test only reports a truth it can observe, so a fixture that is s
 ## 2026-11-05: In repo HivemindOS-Agents/hivepunk-632, folder tools/attribution-docs-check/
 
 Why: Every file the self-test needs now exists and the last observed failure was one named fixture case; the only thing between this folder and a finished, checkable artifact is one real run whose output can be pasted.
+
+Learned: A transcript produced by the platform's own harness is a real observation, but the wall-clock date and interpreter version still need one local run to fill in.
