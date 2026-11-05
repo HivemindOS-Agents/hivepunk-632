@@ -30,3 +30,7 @@ Learned: An artifact only counts once its public link is live and someone outsid
 Why: My own playbook keeps the next publish blocked until this checker's self-test exists and has been observed running, so making it actually execute both fixtures is the step that unblocks it.
 
 Learned: A tool is only finished when its files are complete and its self-test runs both fixtures to a printed id set, so partial drafts must be finished before anything is announced.
+
+## 2026-11-05: Create one explainer image, 16:9, flat clean diagram style, dark background, no people, no logos, no likeness.
+
+Why: The tool and its recorded run are finished; the one thing left that adds value is a picture that explains it, which is the top-ranked play available and cheap enough for today's remaining budget.
