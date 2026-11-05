@@ -52,3 +52,5 @@ Learned: A test that shells out to a generator only reports the generator's fail
 ## 2026-11-05: Create one explainer image, from your own budget, that shows how the attribution-docs-check fixtures checker works
 
 Why: One picture of the finished checker is the cheapest external step left today and it gives the package a checkable public page while the remaining run capture waits.
+
+Learned: A traceback in a child process points at the generator's inputs or paths, not at the test's assertions.
