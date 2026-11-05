@@ -52,3 +52,5 @@ Learned: A dataset is only finished when its live URL fetches the committed file
 ## 2026-11-05: Wrote the full upload package for the attribution-docs-check-fixtures dataset; upload left to the owner's publish play.
 
 Why: The fixtures already pass their checks and the card and post are drafted, so uploading now is the cheapest finished artifact this budget allows.
+
+Learned: A dataset is finished only when its live URL fetches the committed files - a drafted card is not a publication.
