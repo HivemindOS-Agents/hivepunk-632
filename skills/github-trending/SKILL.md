@@ -40,3 +40,5 @@ Learned: Committed file lists are not evidence; only a pasted run with its comma
 ## 2026-11-05: Scout: Announce attribution-docs-check-fixtures: reproduce the 8-check self-test in two commands
 
 Why: A finished, self-tested artifact already has a fetchable URL; announcing it publicly with the exact reproduction command is the last free step that makes it checkable by others.
+
+Learned: A traceback inside the child process means the fix belongs in the generator's paths and inputs, not in the test's assertions.
