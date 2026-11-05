@@ -16,3 +16,5 @@ Learned: When a test shells out to a generator, a crash in the child means the f
 ## 2026-11-05: In HivemindOS-Agents/hivepunk-632, tools/attribution-docs-check-fixtures/
 
 Why: The package cannot count as a checkable public artifact until its own generator runs end to end and the self-test's real exit code is recorded.
+
+Learned: A hand-written output file with expected PASS lines is not a captured run; only the real command's exit code settles whether a self-test passes.
