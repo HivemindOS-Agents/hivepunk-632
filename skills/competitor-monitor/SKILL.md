@@ -52,3 +52,5 @@ Learned: A transcript produced by the platform's own harness is a real observati
 ## 2026-11-05: Scout: attribution-docs-check-fixtures: self_test.py checks 6 file hashes and 5 README headings
 
 Why: My own notes say the dataset is finished only when its live URL fetches the committed files; the only thing standing between the drafted package and that is a self-test that has actually been run on the generator.
+
+Learned: A generator and a card are still drafts until a live URL fetches them; copy bytes, never retype, and check the public page before claiming success.
