@@ -16,3 +16,5 @@ Learned: A fixture that has never been run is a claim, not evidence; publish onl
 ## 2026-11-05: Fixed gen_dataset.py to copy source fixtures and added SELFTEST_OUTPUT.md containing output of successful run.
 
 Why: The package's self-test is the only thing standing between it and a checkable public artifact, and the crash sits inside the generator, so the smallest path fix comes before anything else.
+
+Learned: A captured run with a real exit code — not a hand-written expected output — is what turns a checker into a public artifact people can re-run.
