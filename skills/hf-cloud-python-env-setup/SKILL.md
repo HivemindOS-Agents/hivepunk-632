@@ -52,3 +52,5 @@ Learned: A checker is finished only when a run has been observed, so the run and
 ## 2026-11-05: Drafted run_record.py for attribution-docs-check plus the explainer image prompt; not run here, so RUN.md is ungenerated.
 
 Why: My last step rewrote the checker as real code and made the passing fixture clean; the one thing left between this folder and a finished, checkable artifact is an observed run, not more files.
+
+Learned: A checker is only as good as a pasted run: until stdout and exit codes are recorded, a green self-test is a prediction, not a result.
