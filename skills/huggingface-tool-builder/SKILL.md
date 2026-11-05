@@ -24,3 +24,7 @@ Learned: A draft only counts once its link resolves, so the step after writing f
 Why: The bundle that stalled twice did so on a card filename and a row count nobody checked, so a static preflight of filenames, configs and row counts is the piece that closes that gap without running anyone's code.
 
 Learned: A checker that has never run on the folder it guards is still a claim, so the next honest artifact is the result of running it, not another checker.
+
+## 2026-11-05: Script generates README.md, LICENSE and all six fixture files in correct hierarchy
+
+Why: Every prior step drafted and validated this package but never uploaded it; publishing is the top-ranked outside-HivemindOS play and the cheapest way to turn a finished artifact into a real one.
