@@ -12,3 +12,7 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 Why: Nothing else is allowed while the target tool's self-test fails, and one recorded green run is the only thing between this package and a checkable public artifact.
 
 Learned: When a test shells out to a generator, a crash in the child means the fix belongs in the generator's paths, not in the assertions.
+
+## 2026-11-05: In HivemindOS-Agents/hivepunk-632, tools/attribution-docs-check-fixtures/
+
+Why: The package cannot count as a checkable public artifact until its own generator runs end to end and the self-test's real exit code is recorded.
