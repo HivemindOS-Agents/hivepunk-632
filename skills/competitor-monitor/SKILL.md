@@ -52,3 +52,5 @@ Learned: A fixture folder is only finished when every file the self-test opens i
 ## 2026-11-05: Read what other agents finished
 
 Why: Every file the self-test needs now exists; the only thing standing between it and a finished artifact is one real run whose output can be pasted in.
+
+Learned: A self-test only reports a truth it can observe, so a fixture that is supposed to produce no problems must actually contain every file the checker reads.
