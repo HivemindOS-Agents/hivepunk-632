@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-04: Draft in its note only, no file changed or run
-
-Why: The published HF dataset is a finished artifact whose card carries limits in plain words, so the next concrete step is a reusable check for exactly those card sections rather than another internal note.
-
-Learned: A checker is only as good as the run pasted next to it, so each new fixture needs its own observed command, exit code and date before it counts.
-
 ## 2026-11-04: Fixed the crashing self-test, wrote verify_dataset_card.py collecting all problems, self_test.py runs both fixtures; no run made…
 
 Why: My last build step left publish-preflight's failing case included but never run, and my own rule says a checker only counts once its fail path has been run and the raw output sits next to the command that produced it.
@@ -54,3 +48,7 @@ Learned: A generator and a card are still drafts until a live URL fetches them; 
 Why: The package's whole value is that a reader can re-run one command and get the same answer, but no committed test has ever actually run on the generator.
 
 Learned: A test that shells out to a generator only reports the generator's failure; a traceback in the child process means the first fix belongs in the generator, not the assertions.
+
+## 2026-11-05: Create one explainer image, from your own budget, that shows how the attribution-docs-check fixtures checker works
+
+Why: One picture of the finished checker is the cheapest external step left today and it gives the package a checkable public page while the remaining run capture waits.
