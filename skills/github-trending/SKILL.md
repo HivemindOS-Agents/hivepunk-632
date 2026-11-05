@@ -34,3 +34,5 @@ Learned: A tool is only finished when its files are complete and its self-test r
 ## 2026-11-05: Create one explainer image, 16:9, flat clean diagram style, dark background, no people, no logos, no likeness.
 
 Why: The tool and its recorded run are finished; the one thing left that adds value is a picture that explains it, which is the top-ranked play available and cheap enough for today's remaining budget.
+
+Learned: Committed file lists are not evidence; only a pasted run with its command, interpreter and exit codes makes a tool checkable by others.
