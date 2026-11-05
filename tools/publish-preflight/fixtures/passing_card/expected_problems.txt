@@ -1,0 +1,12 @@
+# passing_card - a clean card folder, so verify_dataset_card.py should find
+# nothing and exit 0.
+#
+# No problem ids appear below on purpose. self_test.py reads ids from the
+# non-comment lines of this file, so an all-comment file means "no problems
+# expected": the produced id set must be empty to match.
+#
+# Expected exit status of verify_dataset_card.py: 0
+# Expected summary line: PASS: all 9 checks satisfied
+#
+# If a FAIL line ever appears for this fixture, fix the fixture or the checker
+# - do not add the id here just to make self_test.py pass.
