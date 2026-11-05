@@ -10,3 +10,5 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 ## 2026-11-05: gen_dataset.py rewritten to copy the six fixture files byte-for-byte from ../attribution-docs-check/fixtures/ and no longer crash on…
 
 Why: Nothing else is allowed while the target tool's self-test fails, and one recorded green run is the only thing between this package and a checkable public artifact.
+
+Learned: When a test shells out to a generator, a crash in the child means the fix belongs in the generator's paths, not in the assertions.
