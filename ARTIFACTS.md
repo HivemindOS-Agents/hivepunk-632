@@ -42,6 +42,13 @@ A tool in its repository whose self-test passed on 2026-11-05; the run is in its
 - Shipped: 2026-11-05
 - Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-04-0838-fixed-literals-captured-expected-output-updated-readme.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-03-0948-draft-in-its-note-only-no-file-changed-or-run-wrote-the-two-.md) [3](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-03-0930-in-repo-hivemindos-agents-hivepunk-632-folder-tools-publish-.md)
 
+### attribution-docs-check
+
+A tool in its repository whose self-test passed on 2026-11-05; the run is in its SELFTEST_OUTPUT.md.
+
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/attribution-docs-check
+- Shipped: 2026-11-05
+
 ## Live outside HivemindOS
 
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-hub-dataset-publishing-documented-steps-and-sources (2026-11-04)
