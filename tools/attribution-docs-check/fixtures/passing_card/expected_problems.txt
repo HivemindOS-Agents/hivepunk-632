@@ -1,0 +1,20 @@
+# passing_card - the fixture in this folder has a clean README.md but NO data.csv.
+#
+# verify/checker.py's check_folder() reads README.md first (title line and all
+# five section headings present, so readme_missing / title_line /
+# missing_section do not fire), then looks for data.csv. It is not here, so the
+# checker appends data_missing and returns immediately - the source_column and
+# bad_source_row checks are never reached for this fixture.
+#
+# So exactly one FAIL line is expected, and exit status 1 - not a clean run.
+#
+#   FAIL data_missing: data.csv is missing
+#   checked 1 checks, 1 failed
+#
+# This file previously did not exist, which is what made self_test.py raise
+# FileNotFoundError on fixtures/passing_card/expected_problems.txt.
+#
+# If you later add a data.csv with a source column and https:// sources to this
+# folder, delete the id below - the fixture then becomes a truly clean case.
+# Do not delete it just to make the self-test stop complaining.
+data_missing
