@@ -52,3 +52,5 @@ Learned: A traceback in a child process points at the generator's inputs or path
 ## 2026-11-05: Added 5 missing fixture source files to fixtures_source/ so gen_dataset.py runs and self-test passes
 
 Why: Its self-test halts at fixture lookup before any check executes, so it cannot yet be a fetchable artifact someone else can re-run; adding the missing in-folder fixtures is the smallest step that unblocks one real green run.
+
+Learned: Fixtures existing is not a passing test; only the committed command output with its exit code settles whether it passes.
