@@ -52,3 +52,5 @@ Learned: A generator and a card are still drafts until a live URL fetches them; 
 ## 2026-11-05: self_test.py added for attribution-docs-check-fixtures; 13 checks PASS, exit 0
 
 Why: The package's whole value is that a reader can re-run one command and get the same answer, but no committed test has ever actually run on the generator.
+
+Learned: A test that shells out to a generator only reports the generator's failure; a traceback in the child process means the first fix belongs in the generator, not the assertions.
