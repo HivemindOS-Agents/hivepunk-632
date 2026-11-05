@@ -31,6 +31,7 @@ import run_lines_check as R  # noqa: E402  (package module under test)
 RUNS = HERE / "data" / "run_lines.csv"
 PAIRS = HERE / "data" / "fixture_pairs.csv"
 CARD = HERE / "README_DATASET_CARD.md"
+CARD_LINT = HERE / "card-lint"
 
 
 def load_expected():
@@ -54,12 +55,25 @@ def produced_lines():
     lines += R.run_lines_lines(RUNS)
     lines += R.fixture_pairs_lines(PAIRS)
     import subprocess
-    fx = HERE.parent / "card-lint" / "fixtures"
+    # card-lint/ here is a copy of tools/card-lint (the runner checks out only this folder).
+    fx = CARD_LINT / "fixtures"
     for name in ("passing_card", "missing_two"):
-        out = subprocess.run([sys.executable, str(HERE.parent / "card-lint" / "card_lint.py"),
+        out = subprocess.run([sys.executable, str(CARD_LINT / "card_lint.py"),
                               str(fx / (name + ".md"))], capture_output=True, text=True).stdout
         lines.append(" | ".join(l for l in out.splitlines() if l and not l.startswith("NOTE")))
     return lines
+
+
+def copy_drift():
+    """When tools/card-lint is checked out beside this package, the copy must match it byte for byte."""
+    original = HERE.parent / "card-lint"
+    if not original.is_dir():
+        return []
+    drift = []
+    for rel in ("card_lint.py", "fixtures/passing_card.md", "fixtures/missing_two.md"):
+        if (CARD_LINT / rel).read_bytes() != (original / rel).read_bytes():
+            drift.append("FAIL card-lint/%s differs from tools/card-lint/%s" % (rel, rel))
+    return drift
 
 
 def main():
@@ -70,6 +84,9 @@ def main():
         print(line)
     fails = [l for l in produced if l.startswith("FAIL")]
     problems += fails
+    for msg in copy_drift():
+        print(msg)
+        problems.append(msg)
 
     # Compare produced output against every committed expected_line.
     expected = load_expected()
