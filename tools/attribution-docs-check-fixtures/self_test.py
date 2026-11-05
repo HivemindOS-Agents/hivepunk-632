@@ -14,7 +14,8 @@ import os
 import subprocess
 import sys
 
-FIXTURE_SOURCE_DIR = os.path.join(os.path.dirname(__file__), "..", "attribution-docs-check", "fixtures")
+HERE = os.path.dirname(os.path.abspath(__file__))
+FIXTURE_SOURCE_DIR = os.path.normpath(os.path.join(HERE, "..", "attribution-docs-check", "fixtures"))
 
 FIXTURES = [
     ("passing_card", "README.md"),
@@ -40,30 +41,29 @@ def sha256_bytes(path):
 
 
 def check_fixture(card, filename):
-    gen_path = os.path.join(os.path.dirname(__file__), "fixtures", card, filename)
+    gen_path = os.path.join(HERE, "fixtures", card, filename)
     source_path = os.path.join(FIXTURE_SOURCE_DIR, card, filename)
-    
+
     if not os.path.exists(gen_path):
-        return (False, f"{card}/{filename}: generated file missing")
+        return (False, f"fixtures/{card}/{filename}: generated file missing")
     if not os.path.exists(source_path):
-        return (False, f"{card}/{filename}: source file missing")
-    
+        return (False, f"fixtures/{card}/{filename}: source file missing ({source_path})")
+
     gen_hash = sha256_bytes(gen_path)
     src_hash = sha256_bytes(source_path)
     if gen_hash == src_hash:
-        return (True, f"fixtures/{card}/{filename}: SHA-256 matches")
-    else:
-        return (False, f"fixtures/{card}/{filename}: SHA-256 mismatch\nexpected: {src_hash}\n  actual: {gen_hash}")
+        return (True, f"fixtures/{card}/{filename}: SHA-256 matches {source_path}")
+    return (False, f"fixtures/{card}/{filename}: SHA-256 mismatch\n  expected: {src_hash}\n  actual:   {gen_hash}")
 
 
 def check_readme_headings():
-    readme_path = os.path.join(os.path.dirname(__file__), "README.md")
+    readme_path = os.path.join(HERE, "README.md")
     if not os.path.exists(readme_path):
         return (False, "README.md missing")
-    
+
     with open(readme_path, "r", encoding="utf-8") as f:
         text = f.read()
-    
+
     headings = [line.strip() for line in text.splitlines() if line.strip().startswith("#")]
     missing = []
     for heading in REQUIRED_HEADINGS:
@@ -78,37 +78,30 @@ def main():
     failures = 0
     tests_run = 0
 
-    # Step 1: run gen_dataset.py
-    gen_script = os.path.join(os.path.dirname(__file__), "gen_dataset.py")
+    gen_script = os.path.join(HERE, "gen_dataset.py")
     if os.path.exists(gen_script):
         result = subprocess.run([sys.executable, gen_script], capture_output=True, text=True)
         if result.returncode != 0:
             print(f"FAIL gen_dataset.py: exited {result.returncode}. stderr: {result.stderr}")
             failures += 1
         else:
-            print(f"PASS gen_dataset.py: exited 0")
+            print("PASS gen_dataset.py: exited 0")
         tests_run += 1
     else:
         print("FAIL gen_dataset.py: script not found")
         failures += 1
         tests_run += 1
 
-    # Step 2: check each fixture file
     for card, filename in FIXTURES:
         ok, msg = check_fixture(card, filename)
-        if ok:
-            print(f"PASS {msg}")
-        else:
-            print(f"FAIL {msg}")
+        print(("PASS " if ok else "FAIL ") + msg)
+        if not ok:
             failures += 1
         tests_run += 1
 
-    # Step 3: check README.md headings
     ok, msg = check_readme_headings()
-    if ok:
-        print(f"PASS {msg}")
-    else:
-        print(f"FAIL {msg}")
+    print(("PASS " if ok else "FAIL ") + msg)
+    if not ok:
         failures += 1
     tests_run += 1
 
