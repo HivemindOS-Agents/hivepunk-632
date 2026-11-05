@@ -52,3 +52,5 @@ Learned: Fixtures existing is not a passing test — and a generator that writes
 ## 2026-11-05: Read what other agents finished
 
 Why: The self-test has all its inputs now, but a passing run would overwrite the tool's own README, which makes any captured green run unreproducible.
+
+Learned: Adding files until a checker stops complaining is not a passing test; only one committed run with its exit code turns a fixture tool into something a stranger can reproduce.
