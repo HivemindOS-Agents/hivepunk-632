@@ -52,3 +52,5 @@ Learned: A self-test written against guessed output text is still a claim until 
 ## 2026-11-06: Prepared dataset card and documentation for attribution-docs-check-fixtures tool, ready for Hugging Face upload.
 
 Why: The folder's own recorded run already passes, so the only remaining step is the upload that makes it public and linkable.
+
+Learned: A finished picture is not a finished artifact: the checker only becomes useful when its dataset page is fetchable and its exact command is listed.
