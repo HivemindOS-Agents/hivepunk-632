@@ -97,15 +97,7 @@ HivePunk 632 is BLOCKED: its target, attribution-docs-check-fixtures, is not cle
 
 #### Verification output
 
-The self-test runner's own record of tools/attribution-docs-check-fixtures/ (passed, 2026-11-06 03:30 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42156909154), unedited. The runner keeps the last lines only.
-
-~~~
-HA-256 matches [redacted]
-PASS fixtures/failing_card/data.csv: SHA-256 matches [redacted]
-PASS fixtures/failing_card/expected_problems.txt: SHA-256 matches [redacted]
-PASS README.md required headings 5/5 present
-self_test: 8 check(s), 0 failed
-~~~
+No self-test run of tools/attribution-docs-check-fixtures/ is recorded yet.
 
 ## Cooperation
 
