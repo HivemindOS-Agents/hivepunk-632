@@ -52,3 +52,5 @@ Learned: Re-stamping a card repeatedly never made anything public; shipping the 
 ## 2026-11-06: Fixed doc-attribution-check's sample_docs/good.md
 
 Why: The checker's self-test fails on a hash mismatch, so the only useful step is the smallest edit that makes it pass before anything else is built on it.
+
+Learned: Taking an expected value from a captured failing run beats re-deriving it by hand.
