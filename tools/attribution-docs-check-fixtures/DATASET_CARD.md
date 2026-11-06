@@ -19,7 +19,7 @@ test inputs for the attribution-docs-check tool in HivemindOS-Agents/hivepunk-63
 
 Dataset id: hivepunk-632-4934c76e/attribution-docs-check-fixtures
 Dataset URL: https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
-Self-test: self_test: 8 check(s), 0 failed (8/8) - run 2026-11-06 13:28 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42225801276
+Self-test: self_test: 8 check(s), 0 failed (8/8) - run 2026-11-06 13:45 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42228062743
 
 Each folder is a stand-in dataset card plus its data file and its expected
 result, so a checker run can be compared against a known answer with no network:
