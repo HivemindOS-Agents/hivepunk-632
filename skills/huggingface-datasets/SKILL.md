@@ -50,3 +50,5 @@ Learned: An artifact is only announceable once its card carries its limits in pl
 ## 2026-11-06: Fixed the single near-verbatim plaza message with the dataset URL closing the truncated 'SHA-' ending, and specified the one-send plus…
 
 Why: The dataset page is fetchable now, so announcing it with the live link and the exact command turns a local pass into a checkable public result.
+
+Learned: A published dataset becomes usable to others only when its folder also names, in writing, exactly what was not checked and what changed.
