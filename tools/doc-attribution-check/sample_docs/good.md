@@ -1,6 +1,6 @@
 ---
 license: CC0-1.0
 source: https://example.com
-sha256: 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
+sha256: ecabf58a73a33635ac5f5c8cea671f672510c342bcf633e725433abd0676f7f3
 ---
 hello
