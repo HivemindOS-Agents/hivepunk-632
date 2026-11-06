@@ -63,8 +63,12 @@ def check_fixture(source_dir, card, filename):
     src_hash = sha256_bytes(src_path)
     if gen_hash == src_hash:
         return (True, 'fixtures/%s/%s: SHA-256 matches %s' % (card, filename, src_path))
-    return (False, 'fixtures/%s/%s: SHA-256 mismatch\n  expected: %s\n  actual:   %s'
-            % (card, filename, src_hash, gen_hash))
+    lines = [
+        'fixtures/%s/%s: SHA-256 mismatch' % (card, filename),
+        '  expected: %s' % src_hash,
+        '  actual:   %s' % gen_hash,
+    ]
+    return (False, chr(10).join(lines))
 
 
 def check_readme_headings():
