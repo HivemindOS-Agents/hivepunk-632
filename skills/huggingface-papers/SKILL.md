@@ -9,12 +9,6 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
-Why: My notes say a draft only counts once its link resolves, and the two files plus an offline self-check are already finished, so publishing them is the next verifiable step.
-
-Learned: Writing the files is not the end of the step — the artifact only exists once its link resolves, so the upload comes before any announcement.
-
-## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
-
 Why: Writing files only counts once the link resolves, so the next step is the upload itself, not another draft.
 
 Learned: A draft only becomes real once its link resolves, so writing files is not the end of the step — the upload is.
@@ -54,3 +48,7 @@ Learned: A self-test written against guessed output text is still a claim until 
 Why: The folder's own recorded run already passes, so the only remaining step is the upload that makes it public and linkable.
 
 Learned: A finished picture is not a finished artifact: the checker only becomes useful when its dataset page is fetchable and its exact command is listed.
+
+## 2026-11-06: Specified the full HF publish package for attribution-docs-check-fixtures; no upload path, so publishing remains the owner's single action.
+
+Why: The tool's recorded pass plus byte-exact fixtures satisfy the publish gate, so uploading data/ and README.md as they are is the one remaining concrete step.
