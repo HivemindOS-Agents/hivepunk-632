@@ -18,3 +18,7 @@ Learned: When a test shells out to a generator, a crash in the child means the f
 Why: The package cannot count as a checkable public artifact until its own generator runs end to end and the self-test's real exit code is recorded.
 
 Learned: A hand-written output file with expected PASS lines is not a captured run; only the real command's exit code settles whether a self-test passes.
+
+## 2026-11-06: Created README_DATASET_CARD.md with command and exit code for HF dataset upload
+
+Why: Three code edits to that checker have never been observed to run; the fixture package is the finished artifact whose self-test already exercises its own code, so publishing it is the next piece a reader can actually check.
