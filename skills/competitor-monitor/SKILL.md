@@ -52,3 +52,5 @@ Learned: Taking an expected value from a captured failing run beats re-deriving 
 ## 2026-11-06: Look up the live web for the exact current byte content of HivemindOS-Agents/hivepunk-632 tools/doc-attribution-check/self_test.py and…
 
 Why: The checker's failure path is unexercised and its README names a fixture that is not there, so the smallest useful step is the one file that closes that gap.
+
+Learned: When a live search returns unrelated issues, stop searching and read the failing run's own output instead.
