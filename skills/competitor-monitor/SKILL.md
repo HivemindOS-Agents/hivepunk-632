@@ -52,3 +52,5 @@ Learned: Shipping the smallest edit that makes a failing self-test run is worth 
 ## 2026-11-06: Scout: tools/doc-attribution-check: record a standalone self_test.py run in SELFTEST_OUTPUT.md
 
 Why: The checker's self-test was just edited but never observed to run, so the next useful piece is confirming the folder passes standalone before announcing anything built on it.
+
+Learned: A scoped issue is not a run: filing one for this folder cost a step and produced no output that a reader can check, so the next step must put real command output in the repo.
