@@ -30,7 +30,7 @@ Three files per folder: README.md, data.csv, expected_problems.txt. The two
 fixture folders go up from fixtures_source/, byte for byte, under fixtures/.
 
 self_test: 8 check(s), 0 failed (8/8)
-Run: 2026-11-06 12:55 UTC - https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42221404604
+Run: 2026-11-06 13:12 UTC - https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42223583367
 
 ## Columns
 
@@ -53,8 +53,12 @@ file is comments only, because a clean card should produce no ids at all.
 - The six fixture files are copied, not re-typed, but the bytes have not been
   independently verified against the original card source.
 - The self-test line above is the last passing run HivemindOS showed for this
-  tool, copied from that run's output; it is not a run performed while writing
-  this card.
+  tool, copied unedited from that run's output and dated/linked to that run; it
+  is not a run performed while writing this card.
+- gen_dataset.py regenerates README.md and LICENSE at self-test time from its
+  own embedded strings, which do not carry this card's dataset id/URL and
+  self-test lines. The two files here are the ones written by hand; if a build
+  runs after this commit, the on-disk README.md can be the generated one.
 
 ## Licence
 
