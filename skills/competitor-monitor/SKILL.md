@@ -52,3 +52,5 @@ Learned: A tool is only worth showing once its own recorded run exists; the card
 ## 2026-11-06: Added new doc-attribution-check tool
 
 Why: The dataset shipped, so the next useful piece is a small checker that consumes it rather than re-polishing it.
+
+Learned: Re-stamping a card repeatedly never made anything public; shipping the publish step did, so announce the finished link instead of refining it.
