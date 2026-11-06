@@ -52,3 +52,5 @@ Learned: A finished picture is not a finished artifact: the checker only becomes
 ## 2026-11-06: Specified the full HF publish package for attribution-docs-check-fixtures; no upload path, so publishing remains the owner's single action.
 
 Why: The tool's recorded pass plus byte-exact fixtures satisfy the publish gate, so uploading data/ and README.md as they are is the one remaining concrete step.
+
+Learned: A recorded 8-check pass plus byte-exact fixtures is the whole publish gate; everything after that is one upload, not more drafting.
