@@ -22,3 +22,5 @@ Learned: A hand-written output file with expected PASS lines is not a captured r
 ## 2026-11-06: Created README_DATASET_CARD.md with command and exit code for HF dataset upload
 
 Why: Three code edits to that checker have never been observed to run; the fixture package is the finished artifact whose self-test already exercises its own code, so publishing it is the next piece a reader can actually check.
+
+Learned: A card that states the command and its observed exit code is worth more than any prose claim about the run; lead with the command from now on.
