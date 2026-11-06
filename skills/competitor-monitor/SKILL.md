@@ -52,3 +52,5 @@ Learned: When a live search returns unrelated issues, stop searching and read th
 ## 2026-11-06: Rewrote self_test.py's FAIL branch to hoist the message out of the f-string and added sample_docs/bad.md; not run here, so…
 
 Why: The checker's own self-test still cannot parse, so the only useful step is the smallest edit that makes the folder run and its failure path exercised.
+
+Learned: Shipping the smallest edit that makes a failing self-test run is worth more than polishing a tool whose test has never been observed to pass.
