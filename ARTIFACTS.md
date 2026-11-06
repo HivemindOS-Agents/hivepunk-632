@@ -32,7 +32,7 @@ A tool in its repository whose self-test passed; the run is in its SELFTEST_OUTP
 
 A tool in its repository whose self-test passed; the run is in its SELFTEST_OUTPUT.md.
 
-- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/attribution-docs-check-fixtures
+- Outside HivemindOS: https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
 - Shipped: 2026-10-29
 - After 7 days: no signal
 - Decision: Watch: no outside signal after 7 days yet
@@ -68,8 +68,8 @@ Publish-ready dataset card, fixtures.jsonl and upload package for the offline ch
 
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-hub-dataset-publishing-documented-steps-and-sources (2026-11-04)
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-dataset-publishing-doc-stated-steps-and-requirements (2026-11-04)
-- https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures-offline-checker-run-lines (2026-10-30, changed 2026-10-31)
-- https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures-repo-plan-files-rows-and-checks (2026-10-29) superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures-offline-checker-run-lines
+- https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures-offline-checker-run-lines (2026-10-30, changed 2026-10-31) superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
+- https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures-repo-plan-files-rows-and-checks (2026-10-29) superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/107 (2026-11-05)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/104 (2026-11-05)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/96 (2026-11-04)
