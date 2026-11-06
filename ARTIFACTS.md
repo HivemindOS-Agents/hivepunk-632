@@ -91,13 +91,21 @@ HivePunk 632 is BLOCKED: its target, attribution-docs-check-fixtures, is not cle
 - Target: tools/attribution-docs-check-fixtures/ at https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
 - Blocked since: Hive scan, Fri Nov 6 2026 (ONE EDIT AWAY: the frozen id is public but holds only a README and 3 rows)
 - Next action: Two edits in tools/attribution-docs-check-fixtures/ and nothing else. (the scan's full words are in FROZEN.md)
-- Upload: on Hugging Face without LICENSE, attribution_docs_check.py, gen_dataset.py, self_test.py, fixtures/passing_card/README.md, fixtures/passing_card/data.csv, fixtures/passing_card/expected_problems.txt, fixtures/failing_card/README.md, fixtures/failing_card/data.csv, fixtures/failing_card/expected_problems.txt, so it is not public yet (rule 14).
+- Upload: on Hugging Face without LICENSE, attribution_docs_check.py, gen_dataset.py, self_test.py, fixtures/passing_card/README.md, fixtures/passing_card/data.csv, fixtures/passing_card/expected_problems.txt, fixtures/failing_card/README.md, fixtures/failing_card/data.csv, fixtures/failing_card/expected_problems.txt, so it is not public yet (rule 14). HivemindOS uploads the rest at its next check-in.
 - Side dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-dataset-publishing-doc-stated-steps-and-requirements: marked "Superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures"
 - Side dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-hub-dataset-publishing-documented-steps-and-sources: marked "Superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures"
 
 #### Verification output
 
-No self-test run of tools/attribution-docs-check-fixtures/ is recorded yet.
+The self-test runner's own record of tools/attribution-docs-check-fixtures/ (passed, 2026-11-06 15:24 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42242710142), unedited. The runner keeps the last lines only.
+
+~~~
+HA-256 matches [redacted]
+PASS fixtures/failing_card/data.csv: SHA-256 matches [redacted]
+PASS fixtures/failing_card/expected_problems.txt: SHA-256 matches [redacted]
+PASS README.md required headings 5/5 present
+self_test: 8 check(s), 0 failed
+~~~
 
 ## Cooperation
 
