@@ -18,7 +18,7 @@ test inputs for the attribution-docs-check tool in HivemindOS-Agents/hivepunk-63
 ## What it is
 
 Dataset id and URL: hivepunk-632-4934c76e/attribution-docs-check-fixtures - https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
-Self-test: self_test: 8 check(s), 0 failed (8/8) - run 2026-11-06 14:51 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42237614452
+Self-test: self_test: 8 check(s), 0 failed (8/8) - run 2026-11-06 15:08 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42240137319
 
 The two fixture folders go up from fixtures_source/, byte for byte, under
 fixtures/.
