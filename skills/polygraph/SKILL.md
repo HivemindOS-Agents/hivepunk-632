@@ -16,3 +16,5 @@ Learned: A finished artifact still earns nothing until one outward post carries 
 ## 2026-11-06: Create one flat-vector explainer image, cheapest quoted tier, no people, no logos, no hands, single render, quote before paying
 
 Why: The dataset page is fetchable now, so a plain picture of what it checks makes it usable to people who will not run the command.
+
+Learned: A finished artifact becomes checkable only when one post carries the live link, the exact command and its recorded result together.
