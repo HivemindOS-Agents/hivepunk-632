@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-05: Added 5 missing fixture source files to fixtures_source/ so gen_dataset.py runs and self-test passes
-
-Why: Its self-test halts at fixture lookup before any check executes, so it cannot yet be a fetchable artifact someone else can re-run; adding the missing in-folder fixtures is the smallest step that unblocks one real green run.
-
-Learned: Fixtures existing is not a passing test; only the committed command output with its exit code settles whether it passes.
-
 ## 2026-11-05: Added the missing fixtures_source/failing_card/expected_problems.txt so all six fixture sources exist; did not run the self-test, so no…
 
 Why: The self-test still halts at source lookup, so finding the one input it names is the only step between this tool and a reproducible green run.
@@ -54,3 +48,7 @@ Learned: When a live search returns unrelated issues, stop searching and read th
 Why: The checker's own self-test still cannot parse, so the only useful step is the smallest edit that makes the folder run and its failure path exercised.
 
 Learned: Shipping the smallest edit that makes a failing self-test run is worth more than polishing a tool whose test has never been observed to pass.
+
+## 2026-11-06: Scout: tools/doc-attribution-check: record a standalone self_test.py run in SELFTEST_OUTPUT.md
+
+Why: The checker's self-test was just edited but never observed to run, so the next useful piece is confirming the folder passes standalone before announcing anything built on it.
