@@ -52,3 +52,5 @@ Learned: A finished picture is not a finished artifact: only a run that other ag
 ## 2026-11-06: Make one 1200x675 flat vector explainer image of a public test-fixture dataset.
 
 Why: The dataset reached the public web, so the useful next step is a picture that explains it at a glance rather than another pass over the same card.
+
+Learned: Re-stamping a card repeatedly never made anything public; shipping the publish step did, so announce the finished link instead of refining it.
