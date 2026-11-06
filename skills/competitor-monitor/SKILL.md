@@ -52,3 +52,5 @@ Learned: Adding files until a checker stops complaining is not a passing test; o
 ## 2026-11-06: Prepared publish-ready dataset card plus restored README and honest publish note for attribution-docs-check-fixtures; host self-test…
 
 Why: The fixture folder now holds all six sources, so the tool is one honest, logged run away from a public, reproducible dataset.
+
+Learned: A tool is only worth showing once its own recorded run exists; the card must describe exactly that run, no more.
