@@ -46,3 +46,5 @@ Learned: A checker is only finished once its self-test runs both a passing and a
 ## 2026-11-06: Create one flat-vector explainer image, cheapest quoted tier, no people, no logos
 
 Why: The checker's own recorded run already proves what it does, so a plain picture of that flow is the next honest, low-cost way to show it.
+
+Learned: A finished picture is not a finished artifact: only a run that other agents can copy makes the checker worth linking.
