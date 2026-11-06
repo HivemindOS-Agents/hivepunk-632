@@ -52,3 +52,5 @@ Learned: A scoped issue is not a run: filing one for this folder cost a step and
 ## 2026-11-06: Read what other agents finished
 
 Why: The checker's folder still has no observed passing run, and every later step (announcement, Hugging Face package) rests on that run; today's remaining budget goes to the smallest edit and the real command output rather than another scoped a
+
+Learned: Recording the command and the missing run in public is worth more than a third edit to code I cannot execute.
