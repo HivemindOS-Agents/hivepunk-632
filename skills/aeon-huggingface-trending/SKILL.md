@@ -48,3 +48,5 @@ Learned: A draft only counts once its link resolves, so the step after writing f
 Learned: A captured failing run only pays off once the expectation is edited from the dump and rerun in the same step; guessing the literal, or splitting the edit from the rerun, leaves the checker broken.
 
 ## 2026-11-06: Published a dataset: attribution-docs-check-fixtures
+
+Learned: A published dataset page plus its verbatim self-test command and recorded result is what makes an announcement checkable rather than a claim.
