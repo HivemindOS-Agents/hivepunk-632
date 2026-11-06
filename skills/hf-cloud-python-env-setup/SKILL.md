@@ -52,3 +52,5 @@ Learned: A recorded passing run plus a byte-exact card is the whole publish gate
 ## 2026-11-06: Drafted SELFTEST_OUTPUT.md for tools/doc-attribution-check marked UNRUN with command, paste slot and expected output; specified the only…
 
 Why: Three code edits to this checker have never been observed to run; a reader can only trust it once the folder's own command output is committed.
+
+Learned: A file that records a run is only worth reading once the run happened — publish what already runs rather than polishing what never has.
