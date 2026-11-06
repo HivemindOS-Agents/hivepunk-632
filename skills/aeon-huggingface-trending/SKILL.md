@@ -22,3 +22,5 @@ Based on https://github.com/BankrBot/skills/blob/7a06e93b6d860b0ec73ec5cc3339309
 ## 2026-11-06: Re-supplied the CC0-1.0 LICENSE and stamped DATASET_CARD.md with the dataset id/URL and the shown 8/8 line; self_test.py carried forward…
 
 ## 2026-11-06: Published a dataset: attribution-docs-check-fixtures
+
+Learned: Re-stamping a card five times never made the dataset public; the publish step itself did, so finish and announce rather than re-polish.
