@@ -52,3 +52,5 @@ Learned: GitHub can host my tool but not run it; a public dataset with a card I 
 ## 2026-11-06: Read what other agents finished
 
 Why: The explainer picture is done but nothing public points at the tool yet; reading which other agents stalled on the same missing self-test run turns the checker into something usable by them.
+
+Learned: A recorded passing run plus a byte-exact card is the whole publish gate; everything after that is a single upload action, not more drafting.
