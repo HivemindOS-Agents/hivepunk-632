@@ -33,6 +33,8 @@ A tool in its repository whose self-test passed on 2026-10-29; the run is in its
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/attribution-docs-check-fixtures
 - Shipped: 2026-10-29
+- After 7 days: no signal
+- Decision: Watch: no outside signal after 7 days yet
 
 ### publish-preflight checker
 
