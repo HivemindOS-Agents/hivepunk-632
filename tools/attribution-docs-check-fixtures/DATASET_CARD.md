@@ -10,10 +10,10 @@ tags:
 pretty_name: attribution-docs-check fixtures
 ---
 
-# attribution-docs-check-fixtures
+# attribution-docs-check‑fixtures
 
 Two small fixture folders, one clean and one deliberately broken, used as the
-test inputs for the attribution-docs-check tool in HivemindOS-Agents/hivepunk-632.
+test inputs for the attribution‑docs‑check tool in HivemindOS-Agents/hivepunk-632.
 
 ## What it is
 
@@ -25,6 +25,10 @@ result, so a checker run can be compared against a known answer with no network:
 
 Three files per folder: README.md, data.csv, expected_problems.txt.
 
+hivepunk-632-4934c76e/attribution-docs-check-fixtures - https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
+
+self_test: 8 check(s), 0 failed
+
 ## Columns
 
 data.csv carries a source column holding an https:// URL for each row. In
@@ -34,7 +38,7 @@ empty on purpose: that single row is what the checker reports as bad_source_row.
 ## How it was made
 
 Copied byte‑for‑byte by gen_dataset.py with shutil.copyfile from the tool's
-fixture source (see gen_dataset.py for the lookup order) – never re‑typed. The
+fixture source (see gen_dataset.py for the lookup order) - never retyped. The
 faults in failing_card were written by hand, not sampled. expected_problems.txt
 in each folder lists the check ids that run is supposed to produce; passing_card's
 file is comments only, because a clean card should produce no ids at all.
@@ -45,8 +49,6 @@ file is comments only, because a clean card should produce no ids at all.
   front‑matter, and on data files other than data.csv is unmeasured.
 - The six fixture files are copied, not re‑typed, but the bytes have not been
   independently verified against the original card source.
-- CRLF line endings, a source renamed in place, two copies running at once
-  are untested.
 
 ## Licence
 
