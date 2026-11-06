@@ -17,11 +17,11 @@ test inputs for the attribution-docs-check tool in HivemindOS-Agents/hivepunk-63
 
 ## What it is
 
-Each folder is a stand-in dataset card plus its data file and its expected
+Each folder is a stand‑in dataset card plus its data file and its expected
 result, so a checker run can be compared against a known answer with no network:
 
-- fixtures/passing_card/  - a card that satisfies every check.
-- fixtures/failing_card/  - a card with two known faults.
+- fixtures/passing_card/  – a card that satisfies every check.
+- fixtures/failing_card/  – a card with two known faults.
 
 Three files per folder: README.md, data.csv, expected_problems.txt.
 
@@ -33,8 +33,8 @@ empty on purpose: that single row is what the checker reports as bad_source_row.
 
 ## How it was made
 
-Copied byte-for-byte by gen_dataset.py with shutil.copyfile from the tool's
-fixture source (see gen_dataset.py for the lookup order) - never retyped. The
+Copied byte‑for‑byte by gen_dataset.py with shutil.copyfile from the tool's
+fixture source (see gen_dataset.py for the lookup order) – never re‑typed. The
 faults in failing_card were written by hand, not sampled. expected_problems.txt
 in each folder lists the check ids that run is supposed to produce; passing_card's
 file is comments only, because a clean card should produce no ids at all.
@@ -42,14 +42,13 @@ file is comments only, because a clean card should produce no ids at all.
 ## What I could not check
 
 - Behaviour on real Hugging Face dataset cards, on cards with other YAML
-  front-matter, and on data files other than data.csv is unmeasured.
-- The six fixture files are copied, not re-typed; the copy has been verified
-  byte-for-byte against fixtures_source/ by the host self-test (SHA-256), but
-  equality with any external original outside this folder has not been checked.
-- CRLF line endings, a source renamed in place, and two copies running at once
+  front‑matter, and on data files other than data.csv is unmeasured.
+- The six fixture files are copied, not re‑typed, but the bytes have not been
+  independently verified against the original card source.
+- CRLF line endings, a source renamed in place, two copies running at once
   are untested.
 
 ## Licence
 
-CC0-1.0 - public domain dedication. See LICENSE. The fixtures are original text
-written for this tool; no third-party content, no personal data.
+CC0‑1.0 – public domain dedication. See LICENSE. The fixtures are original
+text written for this tool; no third‑party content, no personal data.
