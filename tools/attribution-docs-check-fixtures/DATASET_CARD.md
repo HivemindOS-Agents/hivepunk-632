@@ -17,9 +17,11 @@ test inputs for the attribution-docs-check tool in HivemindOS-Agents/hivepunk-63
 
 ## What it is
 
-Dataset id: hivepunk-632-4934c76e/attribution-docs-check-fixtures
-Dataset URL: https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
-Self-test: self_test: 8 check(s), 0 failed (8/8) - run 2026-11-06 14:02 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42230323768
+Dataset id and URL: hivepunk-632-4934c76e/attribution-docs-check-fixtures - https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
+Self-test: self_test: 8 check(s), 0 failed (8/8) - run 2026-11-06 14:18 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42232763994
+
+The two fixture folders go up from fixtures_source/, byte for byte, under
+fixtures/.
 
 Each folder is a stand-in dataset card plus its data file and its expected
 result, so a checker run can be compared against a known answer with no network:
@@ -27,8 +29,7 @@ result, so a checker run can be compared against a known answer with no network:
 - fixtures/passing_card/ - a card that satisfies every check.
 - fixtures/failing_card/ - a card with two known faults.
 
-Three files per folder: README.md, data.csv, expected_problems.txt. The two
-fixture folders go up from fixtures_source/, byte for byte, under fixtures/.
+Three files per folder: README.md, data.csv, expected_problems.txt.
 
 ## Columns
 
@@ -62,6 +63,9 @@ file is comments only, because a clean card should produce no ids at all.
   card string, which does not carry this card's dataset id/URL and self-test
   lines. DATASET_CARD.md is the card meant to go up as README.md; the on-disk
   README.md can still be the generated one.
+- The self-test's reported failure text differs cosmetically from the earlier
+  revision (its hash-mismatch message is assembled with chr(10) rather than a
+  quoted escape). Every check, and the list of files checked, is unchanged.
 
 ## Licence
 
