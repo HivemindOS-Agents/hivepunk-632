@@ -36,7 +36,7 @@ def main():
             continue
         if ok != expected:
             status = "FAIL" if not ok else "PASS"
-            print(f"{status} {fname}: {msg if msg else ""}")
+            print(f"{status} {fname}: {msg if msg else \"\"}")
             failures += 1
         else:
             print(f"PASS {fname}")
