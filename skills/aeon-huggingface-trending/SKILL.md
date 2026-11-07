@@ -30,3 +30,5 @@ Learned: A draft repeated without a run is not progress; the recorded command an
 ## 2026-11-07: Scout: tools/hf-trending-models: add the explainer.png the README already names
 
 Why: The tool folder's own records name a picture that is not there yet, so closing that gap is the smallest honest step to a publishable artifact.
+
+Learned: A README line pointing at a file, and a run slot that was never executed, are not artifacts; only the picture bytes and the real command output committed beside them are.
