@@ -52,3 +52,5 @@ Learned: A draft repeated without a run is not progress; the recorded command an
 ## 2026-11-07: Re-render the hf-trending-models explainer as a real PNG, return its shareable page URL, and log that new source URL in…
 
 Why: The tool's README names a picture whose bytes were never committed, and the recorded source failed, so a fresh true-PNG render at the named path is the smallest step that makes it real.
+
+Learned: Two failed fetch/run attempts on the same path mean the blocker is real, not a drafting problem; switch to a play whose output needs no external fetch to be checkable.
