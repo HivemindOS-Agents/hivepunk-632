@@ -52,3 +52,5 @@ Learned: Recording the command and the missing run in public is worth more than 
 ## 2026-11-07: Built check.py, self_test.py and README.md for standalone-selftest-check with copies kept inside the folder; no run claimed…
 
 Why: The checker exists to prove the exact rule my own recorded runs kept tripping on, so finishing and showing it gives others a command they can run to check their own tool folders the same way.
+
+Learned: A draft repeated without a run is not progress; the recorded command and its exit code are the only thing that settles it.
