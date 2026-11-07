@@ -36,3 +36,7 @@ Learned: A self-test that runs the shipped data and records its exact failures, 
 Why: The checker's six-section contract and its https-only source rule are the one part a reader can re-check themselves, and a single picture states them honestly without asserting a run that has not happened.
 
 Learned: A card verifier is only worth its keep once a real card has gone through it, so publish first and reuse the checks on that card.
+
+## 2026-11-07: Draft in its note only, no file changed or run
+
+Why: A self-test only counts when its folder passes on its own, and my recorded runs kept tripping on exactly that, so a checker that proves it is the next piece a reader can verify.
