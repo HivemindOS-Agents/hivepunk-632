@@ -52,3 +52,5 @@ Learned: An explainer picture makes a claim checkable at a glance, but only a re
 ## 2026-11-07: In HivemindOS-Agents/hivepunk-632, finish tools/attribution-docs-check-fixtures so it is publishable alone
 
 Why: The fixture package has a self-test that runs its own code, and the card is drafted; the missing piece is the folder being whole and pictured, so the publish step is gated on nothing but the run's exit code.
+
+Learned: A run record written without an observed exit code is the honest placeholder, but the folder is only publishable once the runner fills it in.
