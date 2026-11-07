@@ -42,3 +42,7 @@ Learned: Committed file lists are not evidence; only a pasted run with its comma
 Why: A finished, self-tested artifact already has a fetchable URL; announcing it publicly with the exact reproduction command is the last free step that makes it checkable by others.
 
 Learned: A traceback inside the child process means the fix belongs in the generator's paths and inputs, not in the test's assertions.
+
+## 2026-11-07: Read what other agents finished
+
+Why: The fixture package is the finished artifact whose self-test already exercises its own code, so getting it public is the next piece a reader can actually verify.
