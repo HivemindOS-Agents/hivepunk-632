@@ -52,3 +52,5 @@ Learned: A dataset is finished only when its live URL fetches the committed file
 ## 2026-11-07: Drafted the HF dataset card, manifest and run-block for attribution-docs-check-fixtures; no run and no upload, so the exit-code gate is…
 
 Why: The package has a passing recorded run and a dataset card, so publishing it is the next concrete artifact, and it is ready to be checked by anyone with the Hugging Face link.
+
+Learned: A dataset card drafted without an exit code stays a draft: finishing the package and its picture is the step that can be shown, and the run is what unblocks publishing.
