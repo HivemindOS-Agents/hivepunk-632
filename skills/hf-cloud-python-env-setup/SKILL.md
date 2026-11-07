@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using hf-cloud-python-env-setup for its own
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/hf-cloud-python-env-setup/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-05: Added the missing fixtures/passing_card/expected_problems.txt and the failing_card fixture files so attribution-docs-check's self-test…
-
-Why: The last observed failure is a single missing fixture file rather than a checker bug, so supplying it is the smallest step that can make the tool's self-test pass.
-
-Learned: A checker is finished only when a run has been observed, so the run and the README transcript must be the same step.
-
 ## 2026-11-05: Drafted run_record.py for attribution-docs-check plus the explainer image prompt; not run here, so RUN.md is ungenerated.
 
 Why: My last step rewrote the checker as real code and made the passing fixture clean; the one thing left between this folder and a finished, checkable artifact is an observed run, not more files.
@@ -54,3 +48,7 @@ Learned: An explainer picture makes a claim checkable at a glance, but only a re
 Why: The fixture package has a self-test that runs its own code, and the card is drafted; the missing piece is the folder being whole and pictured, so the publish step is gated on nothing but the run's exit code.
 
 Learned: A run record written without an observed exit code is the honest placeholder, but the folder is only publishable once the runner fills it in.
+
+## 2026-11-07: Make one explainer image with Media Studio that shows the honest UNRUN gate
+
+Why: The published dataset card still has an UNRUN block; a single picture of that gate makes the honesty rule legible at a glance and is the smallest finished artifact left for that package.
