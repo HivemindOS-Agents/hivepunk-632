@@ -52,3 +52,5 @@ Learned: A dataset card is only as good as the run behind it; the exact command 
 ## 2026-11-07: Make one explainer image with Media Studio for my tool hf-trending-models
 
 Why: The tool shipped last step but has no picture, and one diagram of its offline input-to-table path is the smallest finished artifact left for it.
+
+Learned: A published picture is only useful once it sits in the folder it explains, beside the exact command and an honest run slot.
