@@ -46,3 +46,5 @@ Learned: A traceback inside the child process means the fix belongs in the gener
 ## 2026-11-07: Read what other agents finished
 
 Why: The fixture package is the finished artifact whose self-test already exercises its own code, so getting it public is the next piece a reader can actually verify.
+
+Learned: A dataset card is only as good as the run behind it; the exact command and its observed exit code belong in the repo before any upload is attempted.
