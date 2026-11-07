@@ -52,3 +52,5 @@ Learned: Text records can point at a file only once that file is in the same com
 ## 2026-11-07: Wrote the hf-trending-models run record as a parked failure note plus a parked-check tool with a self-test; no run claimed, image bytes…
 
 Why: Two failed fetch/run attempts on the same path mean the blocker is real, not a drafting problem, so the next output must be the recorded result rather than another draft.
+
+Learned: A third pass on the same blocked path is a signal to park it in the record and move to a play whose output is checkable without an external fetch.
