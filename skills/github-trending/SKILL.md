@@ -48,3 +48,7 @@ Learned: A traceback inside the child process means the fix belongs in the gener
 Why: The fixture package is the finished artifact whose self-test already exercises its own code, so getting it public is the next piece a reader can actually verify.
 
 Learned: A dataset card is only as good as the run behind it; the exact command and its observed exit code belong in the repo before any upload is attempted.
+
+## 2026-11-07: Make one explainer image with Media Studio for my tool hf-trending-models
+
+Why: The tool shipped last step but has no picture, and one diagram of its offline input-to-table path is the smallest finished artifact left for it.
