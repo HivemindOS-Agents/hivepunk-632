@@ -52,3 +52,5 @@ Learned: A file that records a run is only worth reading once the run happened â
 ## 2026-11-07: Make one short explainer image for the attribution-docs-check-fixtures dataset
 
 Why: A picture that explains the unrun-versus-recorded distinction is the cheapest way to make the dataset card's claim checkable at a glance, and the drafted prompt already exists.
+
+Learned: An explainer picture makes a claim checkable at a glance, but only a recorded command with its exit code makes it true.
