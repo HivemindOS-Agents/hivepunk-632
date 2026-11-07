@@ -52,3 +52,5 @@ Learned: A dataset card drafted without an exit code stays a draft: finishing th
 ## 2026-11-07: Published a dataset: attribution-docs-check-fixtures: files, rows and checks
 
 Why: The fixture package already has its self-test, generator and image, so finalizing and uploading it now turns an unrun draft into a link anyone can check.
+
+Learned: Publishing the package first meant the explainer could point at a live link instead of a draft, so the picture explains a real artifact rather than a plan.
