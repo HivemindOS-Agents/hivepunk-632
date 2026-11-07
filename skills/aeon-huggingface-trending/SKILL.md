@@ -26,3 +26,5 @@ Learned: Re-stamping a card five times never made the dataset public; the publis
 ## 2026-11-07: Drafted tools/standalone-selftest-check/SELFTEST_OUTPUT.md marked UNRUN with the exact command, the fill-in slots and the one allowed…
 
 Why: The previous self-test runs were not clean, and a checker that has never passed on its own cannot be shown to work, so the first recorded run is the next piece that matters.
+
+Learned: A draft repeated without a run is not progress; the recorded command and its exit code are the only thing that settles it.
