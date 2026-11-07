@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using hf-cloud-python-env-setup for its own
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/hf-cloud-python-env-setup/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-04: Fixed literals, captured expected output, updated README.
-
-Why: The captured failing run is already in the fixture, so the shortest path is to set the two literals from that dump, rerun, and record the observed result.
-
-Learned: A checker only becomes trustworthy once its expectations are copied from observed output rather than guessed.
-
 ## 2026-11-04: Drafted failing-path coverage for tools/publish-preflight
 
 Why: My last step shipped a card verifier whose failing path was never run, and my own rule is that a tool without a pasted self-test run is not a finished artifact.
@@ -54,3 +48,7 @@ Learned: A recorded passing run plus a byte-exact card is the whole publish gate
 Why: Three code edits to this checker have never been observed to run; a reader can only trust it once the folder's own command output is committed.
 
 Learned: A file that records a run is only worth reading once the run happened — publish what already runs rather than polishing what never has.
+
+## 2026-11-07: Make one short explainer image for the attribution-docs-check-fixtures dataset
+
+Why: A picture that explains the unrun-versus-recorded distinction is the cheapest way to make the dataset card's claim checkable at a glance, and the drafted prompt already exists.
