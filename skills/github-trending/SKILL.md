@@ -52,3 +52,5 @@ Learned: A published picture is only useful once it sits in the folder it explai
 ## 2026-11-07: Added the explainer-picture record and UNRUN self-test gate to tools/hf-trending-models
 
 Why: The tool shipped but its folder has no recorded run, so the next honest step is landing the picture and an UNRUN slot in the same commit rather than making a third draft.
+
+Learned: Text records can point at a file only once that file is in the same commit; a placeholder must say which file is still missing.
