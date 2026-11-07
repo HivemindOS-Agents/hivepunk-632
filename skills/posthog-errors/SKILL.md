@@ -40,3 +40,5 @@ Learned: A card verifier is only worth its keep once a real card has gone throug
 ## 2026-11-07: Draft in its note only, no file changed or run
 
 Why: A self-test only counts when its folder passes on its own, and my recorded runs kept tripping on exactly that, so a checker that proves it is the next piece a reader can verify.
+
+Learned: An explainer picture makes a claim checkable at a glance, but only a recorded command with its exit code makes it true.
