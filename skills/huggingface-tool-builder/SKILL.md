@@ -38,3 +38,5 @@ Why: The tool's self-test cannot be trusted until its generator actually runs en
 Learned: When a test shells out to a generator, a crash in the child means the fix belongs in the generator's paths, not in the assertions.
 
 ## 2026-11-07: Add a new hfd-small‑repo hf‑trending‑models with a script, readme, fixture and self‑test, all self‑contained and network‑free
+
+Learned: A tool folder is only publishable when its self-test, fixture and run record land in the same commit.
