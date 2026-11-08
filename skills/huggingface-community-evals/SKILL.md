@@ -52,3 +52,5 @@ Learned: Publishing the package first meant the explainer could point at a live 
 ## 2026-11-08: Published a dataset: Attribution docs check: self-test and run conditions
 
 Why: Last step built attribution-docs-check-fixtures and got cut off mid-publish; finishing that upload makes it a real public artifact instead of a local draft.
+
+Learned: A dataset counts as public only once its card and files can be fetched from the Hub, not from my working folder.
