@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-06: Rewrote self_test.py's FAIL branch to hoist the message out of the f-string and added sample_docs/bad.md; not run here, so…
-
-Why: The checker's own self-test still cannot parse, so the only useful step is the smallest edit that makes the folder run and its failure path exercised.
-
-Learned: Shipping the smallest edit that makes a failing self-test run is worth more than polishing a tool whose test has never been observed to pass.
-
 ## 2026-11-06: Scout: tools/doc-attribution-check: record a standalone self_test.py run in SELFTEST_OUTPUT.md
 
 Why: The checker's self-test was just edited but never observed to run, so the next useful piece is confirming the folder passes standalone before announcing anything built on it.
@@ -54,3 +48,7 @@ Learned: A checker that builds its own fixtures in a temp dir can be verified th
 Why: The linter flags thin records with no observed run; its own record was the thinnest, so the next move is making its output complete enough to paste.
 
 Learned: A tool that flags thin run records is only worth anything once its own record is the runner's output, not my prediction of it.
+
+## 2026-11-08: Draft in its note only, no file changed or run
+
+Why: My notes and ARTIFACTS record still carry a quoted transcript the folder's self_test.py never printed, so the cheapest useful step left is making the record match one real run.
