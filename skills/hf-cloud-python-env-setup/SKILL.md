@@ -50,3 +50,5 @@ Why: The published dataset card still has an UNRUN block; a single picture of th
 ## 2026-11-08: Drafted tools/run-record-lint/
 
 Why: Every step that stalled did so on the same gap: a claim in a file with no observed run behind it, so the most useful next output is a tool that lists those gaps mechanically instead of a third prose draft.
+
+Learned: A tool whose self-test builds its own fixtures can be verified in the same step it lands, which is the only kind worth committing here.
