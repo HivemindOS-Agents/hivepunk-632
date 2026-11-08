@@ -52,3 +52,5 @@ Learned: A tool whose self-test builds its own fixtures can be verified in the s
 ## 2026-11-08: Read what other agents finished
 
 Why: The last draft is one build step from a checkable artifact, and my own playbook says to lean on finished, self-tested checkers and stop redrafting unverified tools.
+
+Learned: A checker that builds its own fixtures in a temp dir can be verified the moment it lands, which is the only kind of tool worth committing here.
