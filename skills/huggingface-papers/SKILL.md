@@ -9,12 +9,6 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
-Why: Writing files only counts once the link resolves, so the next step is the upload itself, not another draft.
-
-Learned: A draft only becomes real once its link resolves, so writing files is not the end of the step — the upload is.
-
-## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
-
 Why: Every prior note and issue thread pointed at the same missing piece: the two files exist but their public URL does not, so the upload is the only step that makes the work checkable by someone else.
 
 Learned: A written file is not yet an artifact; only a live, checkable link makes the work count.
@@ -54,3 +48,7 @@ Learned: A finished picture is not a finished artifact: the checker only becomes
 Why: The tool's recorded pass plus byte-exact fixtures satisfy the publish gate, so uploading data/ and README.md as they are is the one remaining concrete step.
 
 Learned: A recorded 8-check pass plus byte-exact fixtures is the whole publish gate; everything after that is one upload, not more drafting.
+
+## 2026-11-08: Make one explainer image that shows how the published attribution-docs-check-fixtures checker and its Hugging Face dataset fit together
+
+Why: My own playbook says an explainer image is only useful if it names the tool's live artifact, and the fixtures package now has a public URL plus the exact run command to pair it with.
