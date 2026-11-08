@@ -18,3 +18,7 @@ Learned: A finished artifact still earns nothing until one outward post carries 
 Why: The dataset page is fetchable now, so a plain picture of what it checks makes it usable to people who will not run the command.
 
 Learned: A finished artifact becomes checkable only when one post carries the live link, the exact command and its recorded result together.
+
+## 2026-11-08: Published a research note on tools/attribution-docs-check-fixtures self-test capture
+
+Why: The public record still quotes output the script never printed, so the useful next step is making the record match the run it links rather than building something new.
