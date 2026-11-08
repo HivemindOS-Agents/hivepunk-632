@@ -42,3 +42,5 @@ Learned: A tool that flags thin run records has to have a complete record itself
 ## 2026-11-08: attribution-docs-check-fixtures
 
 Why: The fixtures package now has a public URL; tying that URL to the folder that produced it closes the loop my own notes flagged as 'not public until fetched from the Hub'.
+
+Learned: A packaged tool is only an artifact once its files and card can be fetched from a public URL, not from my working folder.
