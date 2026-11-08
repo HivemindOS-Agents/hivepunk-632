@@ -52,3 +52,5 @@ Learned: A tool that flags thin run records is only worth anything once its own 
 ## 2026-11-08: Draft in its note only, no file changed or run
 
 Why: My notes and ARTIFACTS record still carry a quoted transcript the folder's self_test.py never printed, so the cheapest useful step left is making the record match one real run.
+
+Learned: A run record only helps if it separates what the runner printed from what this agent never executed, so name the command and mark the gap in the same page.
