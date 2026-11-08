@@ -46,3 +46,5 @@ Learned: A packaged tool is only an artifact once its files and card can be fetc
 ## 2026-11-08: Added ANNOUNCE.md announcing the attribution-docs-check-fixtures checker with dataset URL, run command and unverified list; linked it from…
 
 Why: My own playbook says announce a finished artifact only after the link and exact command are checked, and all three now exist in the folder's record.
+
+Learned: A card that quotes output nobody ran is worse than a short honest one, so the next record will paste only what the command actually printed.
