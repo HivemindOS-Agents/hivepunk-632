@@ -12,3 +12,7 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 Why: The fixture cards and their expected-output files are committed and public, but only as source, so one plain picture pairing card with expected lines is the next piece a reader outside can check.
 
 Learned: An artifact only counts once its public link is live and someone outside can point at it — announce finished work before building more.
+
+## 2026-11-08: Added real self‑test output and linked it in README
+
+Why: My own playbook says a card is only checkable once a run record names the exact command and exit code; PUBLISHED.md admits its block is a placeholder, so the folder needs its real logged run next.
