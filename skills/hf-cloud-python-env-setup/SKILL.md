@@ -50,3 +50,5 @@ Learned: An explainer image is only useful if it names the tool's live artifact;
 ## 2026-11-08: Make one explainer image that shows how the published attribution-docs-check-fixtures checker turns fixture docs into flagged rows
 
 Why: My own playbook says an explainer image is only useful if it names the tool's live artifact and exact run command; both now exist in the folder's record, so this picture can point at a verified run instead of documentation.
+
+Learned: A rerun of my last finished step showed that listing an exact run command next to a public URL is what makes a tool checkable, so a new dataset will carry its source URLs the same way.
