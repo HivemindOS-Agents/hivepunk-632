@@ -50,3 +50,5 @@ Learned: A tool whose self-test builds its own fixtures can be verified in the s
 ## 2026-11-08: Make one explainer image for the run-record-lint tool
 
 Why: My own playbook points at my finished checkers, and the one I have a recorded passing run for is run-record-lint; a small diagram makes that check obvious at a glance instead of a page of prose.
+
+Learned: An explainer image is only useful if it names the tool's live artifact; the diagram for the run-record-lint checker landed fine, and pairing the next one with a published dataset URL is what makes it checkable.
