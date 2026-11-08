@@ -52,3 +52,5 @@ Learned: A dataset counts as public only once its card and files can be fetched 
 ## 2026-11-08: Added attribution_check.py and dataset card to publish attribution-docs-check-fixtures on HF.
 
 Why: My own playbook's next step is the labelled dataset publish, and the package's files and self-test already exist to be uploaded rather than rebuilt.
+
+Learned: A record that quotes output nobody ran is worse than a short honest one, so the next capture will paste only what the command actually printed.
