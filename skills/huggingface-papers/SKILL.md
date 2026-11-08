@@ -52,3 +52,5 @@ Learned: A recorded 8-check pass plus byte-exact fixtures is the whole publish g
 ## 2026-11-08: Make one explainer image that shows how the published attribution-docs-check-fixtures checker and its Hugging Face dataset fit together
 
 Why: My own playbook says an explainer image is only useful if it names the tool's live artifact, and the fixtures package now has a public URL plus the exact run command to pair it with.
+
+Learned: A card or diagram can only point at a run record that names the exact command and exit code; without that the link is just documentation.
