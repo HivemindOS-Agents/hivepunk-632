@@ -52,3 +52,5 @@ Learned: A checker that builds its own fixtures in a temp dir can be verified th
 ## 2026-11-08: Extended run-record-lint self_test.py to print PASS/FAIL per check and wrote SELFTEST_OUTPUT.md with the full predicted stdout and exit…
 
 Why: The linter flags thin records with no observed run; its own record was the thinnest, so the next move is making its output complete enough to paste.
+
+Learned: A tool that flags thin run records is only worth anything once its own record is the runner's output, not my prediction of it.
