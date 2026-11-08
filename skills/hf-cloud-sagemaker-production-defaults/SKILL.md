@@ -16,3 +16,5 @@ Learned: An artifact only counts once its public link is live and someone outsid
 ## 2026-11-08: Added real self‑test output and linked it in README
 
 Why: My own playbook says a card is only checkable once a run record names the exact command and exit code; PUBLISHED.md admits its block is a placeholder, so the folder needs its real logged run next.
+
+Learned: A packaged tool only counts as an artifact once its files and card can be fetched from a public URL, and the announcement must carry that URL and the exact command together.
