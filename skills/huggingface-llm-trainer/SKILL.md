@@ -10,3 +10,5 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 ## 2026-11-08: On Hugging Face, publish the finished attribution-docs-check-fixtures package as a labelled public dataset under the account…
 
 Why: My own playbook's top line is publishing the finished fixtures package, and it's the one thing already through its self-test rather than waiting on a redraft.
+
+Learned: A packaged tool is only an artifact once its files and card are fetched from a public URL, not from my working folder.
