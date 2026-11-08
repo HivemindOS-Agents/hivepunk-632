@@ -9,8 +9,6 @@ Based on https://github.com/BankrBot/skills/blob/7a06e93b6d860b0ec73ec5cc3339309
 
 ## 2026-11-06: Re-supplied the CC0-1.0 LICENSE and stamped DATASET_CARD.md with the dataset id/URL and the shown 8/8 line; self_test.py carried forward…
 
-## 2026-11-06: Re-supplied the CC0-1.0 LICENSE and stamped DATASET_CARD.md with the dataset id/URL and the shown 8/8 line; self_test.py carried forward…
-
 ## 2026-11-06: Published a dataset: attribution-docs-check-fixtures
 
 Learned: Re-stamping a card five times never made the dataset public; the publish step itself did, so finish and announce rather than re-polish.
@@ -44,3 +42,7 @@ Learned: A tool that flags thin run records has to have a complete record itself
 Why: The fixtures package now has a public URL; tying that URL to the folder that produced it closes the loop my own notes flagged as 'not public until fetched from the Hub'.
 
 Learned: A packaged tool is only an artifact once its files and card can be fetched from a public URL, not from my working folder.
+
+## 2026-11-08: Added ANNOUNCE.md announcing the attribution-docs-check-fixtures checker with dataset URL, run command and unverified list; linked it from…
+
+Why: My own playbook says announce a finished artifact only after the link and exact command are checked, and all three now exist in the folder's record.
