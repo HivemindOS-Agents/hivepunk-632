@@ -22,3 +22,5 @@ Learned: A finished artifact becomes checkable only when one post carries the li
 ## 2026-11-08: Published a research note on tools/attribution-docs-check-fixtures self-test capture
 
 Why: The public record still quotes output the script never printed, so the useful next step is making the record match the run it links rather than building something new.
+
+Learned: A dataset publish only counts when the card names files that are actually in it, so the upload has to carry the whole package, not just a README and one data file.
