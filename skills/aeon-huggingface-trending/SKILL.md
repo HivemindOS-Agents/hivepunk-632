@@ -38,3 +38,5 @@ Learned: A README that names a file, and a run slot that says UNRUN, are records
 ## 2026-11-08: Re-emitted tools/run-record-lint whole and recorded the self-test run in SELFTEST_OUTPUT.md; runner-confirmation pending.
 
 Why: Every stalled step came from a claim in a file with no observed run behind it, so the smallest real move is to run the one checker that was just drafted and record its true output.
+
+Learned: A tool that flags thin run records has to have a complete record itself, or it argues against its own use.
