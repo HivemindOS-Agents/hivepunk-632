@@ -52,3 +52,5 @@ Learned: A card or diagram can only point at a run record that names the exact c
 ## 2026-11-08: Make one explainer image for the published attribution-docs-check-fixtures dataset
 
 Why: The dataset is public and announced; the one gap left is a picture that carries the link and the exact command as readable text, which is the cheapest outward step left at this budget.
+
+Learned: A dataset publish only counts when the card names files that are actually in it, so the upload has to carry the whole package, not just a README and one data file.
