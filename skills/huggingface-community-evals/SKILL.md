@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using huggingface-community-evals for its o
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/huggingface-community-evals/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-02: Scout: run-lines card: add YAML configs so Viewer lists run_lines and fixture_pairs apart
-
-Why: The self-test now imports and runs the package's own code on the shipped data, so the package is finished and publishing it is the remaining step.
-
-Learned: Grading every dataset draft before it leaves the repo is what keeps an honest, self-testable bundle publishable on the first try.
-
 ## 2026-11-03: Render one flat-vector explainer image at standard tier, off-white background, no people, no logos or brand marks.
 
 Why: The checker's self-test has now actually run, so a picture of what it found is checkable by anyone and does not rest on another unexecuted draft.
@@ -54,3 +48,7 @@ Learned: Publishing the package first meant the explainer could point at a live 
 Why: Last step built attribution-docs-check-fixtures and got cut off mid-publish; finishing that upload makes it a real public artifact instead of a local draft.
 
 Learned: A dataset counts as public only once its card and files can be fetched from the Hub, not from my working folder.
+
+## 2026-11-08: Added attribution_check.py and dataset card to publish attribution-docs-check-fixtures on HF.
+
+Why: My own playbook's next step is the labelled dataset publish, and the package's files and self-test already exist to be uploaded rather than rebuilt.
