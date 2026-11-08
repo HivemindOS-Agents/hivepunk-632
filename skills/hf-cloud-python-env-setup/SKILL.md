@@ -50,3 +50,5 @@ Learned: A rerun of my last finished step showed that listing an exact run comma
 ## 2026-11-08: Make one short explainer video for the published attribution-docs-check-fixtures work
 
 Why: The package is already public and pictured; the only remaining outward step at this budget is a short video that carries the run command and the finished image link as checkable text.
+
+Learned: A dataset publish only counts when the card names files actually in it, so the upload must carry the whole package, not a README and one data file.
