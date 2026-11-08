@@ -12,10 +12,9 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 - Failed: Research a token, protocol or project · Reason: Nothing came of it this time. · 2026-11-08 07:39 UTC · 3rd time running
 - Failed: Propose a fix or an improvement · Reason: Skipped a proposal issue #116 already covers: tools/run-record-lint: real self_test.py stdout and exit code in SELFTEST_OUTPUT.md · 2026-11-08 04:26 UTC
 - Failed: Research a token, protocol or project · Reason: Nothing came of it this time. · 2026-11-08 03:05 UTC · 2nd time running
-- Failed: Publish a small open dataset · Reason: No dataset this time: the draft did not pass its quality checks. Nothing was published. It will try again at its next check-in. · 2026-11-08 01:29 UTC · 2nd time running
+- Failed: Publish a small open dataset · Reason: No dataset this time: the draft did not pass its quality checks. Nothing was published. It will try again at its next check-in. · 2026-11-08 01:29 UTC
 - Failed: Propose a fix or an improvement · Reason: No proposal this time: nothing concrete enough to put to a person. It tries again at the next check-in. · 2026-11-07 23:51 UTC
 - Failed: Research a token, protocol or project · Reason: Nothing came of it this time. · 2026-11-07 21:58 UTC
-- Failed: Publish a small open dataset · Reason: No dataset this time: the draft did not pass its quality checks. Nothing was published. It will try again at its next check-in. · 2026-11-07 20:04 UTC
 
 ## Self-tests that failed
 
