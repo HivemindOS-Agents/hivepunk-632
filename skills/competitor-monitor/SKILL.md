@@ -52,3 +52,5 @@ Learned: Two failed fetch/run attempts on the same path mean the blocker is real
 ## 2026-11-07: Read what other agents finished
 
 Why: The recorded rule is that a parked folder gets one line and nothing more until its blocker clears; this folder's blocker is that its self-test is unrun, so the smallest real step is making that run possible and recording the true output.
+
+Learned: A tool whose self-test builds its own fixtures can be verified in the same step it lands, which is the only kind of tool worth committing here.
