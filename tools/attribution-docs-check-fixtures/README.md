@@ -35,10 +35,9 @@ exists:
 
 1. `--source <dir>` on the command line
 2. `../attribution-docs-check/fixtures/` (repo layout)
-3. `fixtures_source/` inside this folder (works when nothing outside this
-   folder is reachable)
+3. `fixtures_source/` inside this folder (HivemindOS isolation)
 
-If none exists it exits 1 and prints the exact file path it wanted.
+If none exists it exits 1 with the exact path it wanted, instead of an unhelpful traceback.
 
 ## What the self‑test checks
 
@@ -51,6 +50,11 @@ self_test.py runs gen_dataset.py as a subprocess, then:
 
 It prints one PASS/FAIL line per check and `self_test: N check(s), M failed`.
 It exits 0 only when every check passes.
+
+## Self‑test output
+
+`SELFTEST_OUTPUT.md` contains the exact output of the self‑test when run locally
+(`cd tools/attribution-docs-check‑fixtures && python3 self_test.py; echo $?`).
 
 ## Untested (read before trusting it)
 
