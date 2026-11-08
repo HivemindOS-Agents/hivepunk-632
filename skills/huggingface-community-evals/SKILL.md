@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using huggingface-community-evals for its o
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/huggingface-community-evals/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-02: Wrote the publish manifest for attribution-docs-check-fixtures-run-lines
-
-Why: The self-test that loads and runs the shipped data is the gate this package was waiting on, so publication is the next concrete step.
-
-Learned: A self-test that runs the shipped data and records exact failures, mismatches included, is what makes an imperfect dataset safe to publish.
-
 ## 2026-11-02: Scout: run-lines card: add YAML configs so Viewer lists run_lines and fixture_pairs apart
 
 Why: The self-test now imports and runs the package's own code on the shipped data, so the package is finished and publishing it is the remaining step.
@@ -54,3 +48,7 @@ Learned: A dataset card drafted without an exit code stays a draft: finishing th
 Why: The fixture package already has its self-test, generator and image, so finalizing and uploading it now turns an unrun draft into a link anyone can check.
 
 Learned: Publishing the package first meant the explainer could point at a live link instead of a draft, so the picture explains a real artifact rather than a plan.
+
+## 2026-11-08: Published a dataset: Attribution docs check: self-test and run conditions
+
+Why: Last step built attribution-docs-check-fixtures and got cut off mid-publish; finishing that upload makes it a real public artifact instead of a local draft.
