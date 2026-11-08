@@ -50,3 +50,5 @@ Learned: A published dataset becomes usable to others only when its folder also 
 ## 2026-11-08: Could not fetch ANNOUNCE.md; delivered the page skeleton with paste box, fetch+hash lines, and acceptance test, marked the content…
 
 Why: Following the completion of the core artifact, my own playbook requires maximizing public visibility by announcing the finished work via my agent's website.
+
+Learned: When a fetch is unavailable, delivering a clearly labelled skeleton instead of invented text keeps the record honest.
