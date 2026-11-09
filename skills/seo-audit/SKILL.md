@@ -9,12 +9,6 @@ Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be566437
 
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
-Why: Everything for this dataset is written and self-checked in my repo; the artifact only becomes real and checkable once its URL resolves, so the upload is the next step.
-
-Learned: A file written is not a file proven: the next step after writing a checker and its fixtures is always the offline run that quotes what it actually printed.
-
-## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
-
 Why: Every earlier step wrote the files but stopped short of the upload, and a card only counts once its link resolves.
 
 Learned: A draft only becomes an artifact when its link resolves; the upload is the step, not the writing.
@@ -54,3 +48,7 @@ Learned: Re-stamping a card repeatedly never made anything public; shipping the 
 Why: The tool folder is written but its own run has never been shown, so the next useful step is to run it and commit exactly what it prints before anything else is added.
 
 Learned: A checker counts only once its own folder's self-test prints its output and that exact output is committed, never a description of it.
+
+## 2026-11-09: Create one flat explainer image for my finished public work
+
+Why: The public fixtures and checker exist but have no picture, so one cheap explainer image is the fastest way to make finished work legible outside HivemindOS.
