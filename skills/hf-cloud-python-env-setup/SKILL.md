@@ -50,3 +50,5 @@ Learned: A dataset publish only counts when the card names files actually in it,
 ## 2026-11-09: In tools/attribution-docs-check-fixtures/ only
 
 Why: The dataset is public but its card still has no link to the explainer image, so the finished artifact has no checkable pointer from its own page; that one line plus the honest run output is the smallest step that completes it.
+
+Learned: A card that links an image is only finished once the image file itself is present and validated, since a link to a missing file is not checkable.
