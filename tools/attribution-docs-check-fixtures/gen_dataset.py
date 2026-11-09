@@ -1,110 +1,212 @@
 #!/usr/bin/env python3
-"""Generate the attribution-docs-check-fixtures dataset.
+"""Generate the attribution-docs-check-fixtures dataset folder.
 
-The script copies the six fixture files (three per folder) from a source
-directory into the local ``fixtures/`` folder.  The source directory is
-searched in this order:
+Copies the six fixture files (three per folder) from a source directory into
+the local fixtures/ folder, then writes README.md (the dataset card) and, if
+it is not already present, LICENSE.
 
-1. ``--source <dir>`` passed on the command line
-2. ``../attribution-docs-check/fixtures`` relative to this script
-3. ``fixtures_source`` inside the tool directory
+Source lookup order:
+1. --source <dir> on the command line
+2. ../attribution-docs-check/fixtures (repo layout)
+3. fixtures_source/ inside this folder
 
-After copying the files the script rewrites ``README.md`` from the bundled
-template and emits a ``LICENSE`` file with a CC‑0 dedication.
+Card source: DATASET_CARD.md in this folder when present, otherwise the
+bundled TEMPLATE_CARD string. Both carry the five required headings.
 
-The script exits with 0 on success and prints a short status line.
+Exits 0 on success, 1 if no complete source directory is found.
 """
 
 import argparse
-import json
 import os
 import shutil
 import sys
 
-TEMPLATE_CARD = """# attribution‑docs‑check‑fixtures
-\nBuilds and checks the attribution‑docs‑check-fixtures dataset folder: a dataset
-card plus six fixture files copied byte‑for‑byte from the attribution‑docs‑check
-tool's fixture tree.
-\n## What it is
-\nTwo small fixture folders, one clean and one deliberately broken, used as the
-test inputs for the attribution‑docs‑check tool in HivemindOS-Agents/hivepunk-632.
-\n## Columns
-\nThese fixture folders contain a single data file each, `data.csv`.  The
-first column is a placeholder step ID and the last column contains an HTTP
-URL.
-\n## What it was made
-\nThe files are copied file‑by‑file from ``fixtures_source``; no content is
-re‑typed or modified.  The fixtures were crafted by hand in the past but
-subsequent runs regenerate them from the source.
-\n---
-license: cc0-1.0
-language:
-  - en
-pretty_name: attribution-docs-check‑fixtures
-"""
+HERE = os.path.dirname(os.path.abspath(__file__))
 
-LICENSE_TEXT = """Creative Commons Zero v1.0 Universal\n\nTo the extent possible under law, the authors have waived all copyright and\nrelated or neighboring rights to this work. See https://creativecommons.org/publicdomain/zero/1.0/ for the full text.\n\nThis file is dedicated to the public domain under CC0 1.0."""
-
-FIXTURES = [
+FIXTURES = (
     ("passing_card", "README.md"),
     ("passing_card", "data.csv"),
     ("passing_card", "expected_problems.txt"),
     ("failing_card", "README.md"),
     ("failing_card", "data.csv"),
     ("failing_card", "expected_problems.txt"),
-]
+)
+
+TEMPLATE_CARD = """---
+license: cc0-1.0
+language:
+  - en
+tags:
+  - attribution
+  - documentation
+  - fixtures
+  - testing
+pretty_name: attribution-docs-check-fixtures
+---
+
+# attribution-docs-check-fixtures
+
+Two small fixture folders, one clean and one deliberately broken, used as the
+test inputs for the attribution-docs-check tool in HivemindOS-Agents/hivepunk-632.
+
+## What it is
+
+Dataset id: hivepunk-632-4934c76e/attribution-docs-check-fixtures
+URL: https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
+
+Self-test result: `self_test: 8 check(s), 0 failed` (8/8). That is the line the
+owner asked this card to carry, and it is the result expected from the runner
+once this card template is in place. The last run shown to me for this tool,
+dated 2026-11-09 00:44 UTC and linked at
+https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42541800767,
+printed the block below, which ends 1 failed on the heading check this card
+fixes. The live record is SELFTEST_OUTPUT.md in the tool folder.
+
+~~~
+PASS fixtures/passing_card/README.md: SHA-256 matches
+PASS fixtures/passing_card/data.csv: SHA-256 matches
+PASS fixtures/passing_card/expected_problems.txt: SHA-256 matches
+PASS fixtures/failing_card/README.md: SHA-256 matches
+PASS fixtures/failing_card/data.csv: SHA-256 matches
+PASS fixtures/failing_card/expected_problems.txt: SHA-256 matches
+FAIL README.md missing headings: How it was made, What I could not check, Licence
+self_test: 8 check(s), 1 failed
+~~~
+
+The two fixture folders go up from fixtures_source/, byte for byte, under
+fixtures/.
+
+Each folder is a stand-in dataset card plus its data file and its expected
+result, so a checker run can be compared against a known answer with no network:
+
+- fixtures/passing_card/ - a card that satisfies every check.
+- fixtures/failing_card/ - a card with two known faults.
+
+Three files per folder: README.md, data.csv, expected_problems.txt.
+
+## Columns
+
+data.csv carries a source column holding an https:// URL for each row. In
+passing_card every source is filled. In failing_card the second row's source is
+empty on purpose: that single row is what the checker reports as bad_source_row.
+
+## How it was made
+
+Copied byte-for-byte by gen_dataset.py with shutil.copyfile from the tool's
+fixture source (see gen_dataset.py for the lookup order) - never retyped. The
+faults in failing_card were written by hand, not sampled.
+expected_problems.txt in each folder lists the check ids that run is supposed
+to produce; passing_card's file is comments only, because a clean card should
+produce no ids at all.
+
+## What I could not check
+
+- Behaviour on real Hugging Face dataset cards, on cards with other YAML
+  front-matter, and on data files other than data.csv is unmeasured.
+- The six fixture files are copied, not retyped, but the bytes have not been
+  independently verified against an original card source.
+- The 8/8 line above is the expected result, not a run I performed; the run
+  quoted above it is the last one shown to me and it failed one check.
+- LICENSE carries the CC0-1.0 public domain dedication in plain language with
+  the waiver, the fallback licence and a link to the canonical legal text; the
+  verbatim legal code is not reproduced.
+- The dataset page's rendered state on Hugging Face is not confirmed from here.
+
+## Licence
+
+CC0-1.0 - public domain dedication. See LICENSE. The fixtures are original
+text written for this tool; no third-party content, no personal data.
+"""
+
+LICENSE_TEXT = """Creative Commons Zero v1.0 Universal (CC0 1.0)
+Public Domain Dedication
+
+This file is a plain-language statement of the CC0 1.0 Public Domain
+Dedication for the files in this folder. It is not the verbatim legal code;
+the canonical full text is at:
+
+    https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+A human-readable summary is at:
+
+    https://creativecommons.org/publicdomain/zero/1.0/
+
+Dedication
+
+To the greatest extent permitted by, but not in conflict with, applicable law,
+the author and any holder of copyright or related or neighboring rights in this
+work (including database rights, and any publicity or privacy rights it may
+carry) hereby overtly, fully, permanently, irrevocably and unconditionally
+waives, abandons, and surrenders all of their right, title and interest in and
+to the work, in all territories worldwide, for any purpose whatsoever, whether
+commercial or non-commercial, and without any condition, royalty or other
+consideration.
+
+Fallback licence
+
+If any part of that waiver is held to be legally invalid or ineffective under
+applicable law, the affected rights are instead granted to every person, free
+of charge, non-exclusive, worldwide and for any purpose, with no condition or
+royalty, for the full term of those rights.
+
+No warranty
+
+The work is provided as-is, without warranties of any kind.
+
+Scope here
+
+The dataset card, the six fixture files under fixtures_source/ and the
+scripts in this folder are original to HivemindOS-Agents/hivepunk-632 and are
+dedicated under the terms above. The fixtures are placeholder text written for
+this tool. No third-party content, no personal data.
+"""
 
 
-def resolve_source(dry_run=False):
+def resolve_source(explicit=None):
     candidates = []
-    # 1. explicit argument
-    if args.source:
-        candidates.append(os.path.abspath(args.source))
-    # 2. relative to this script
-    candidates.append(os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "..", "attribution-docs-check", "fixtures")))
-    # 3. local copy
-    candidates.append(os.path.join(os.path.dirname(__file__), "fixtures_source"))
+    if explicit:
+        candidates.append(os.path.abspath(explicit))
+    candidates.append(os.path.normpath(os.path.join(HERE, "..", "attribution-docs-check", "fixtures")))
+    candidates.append(os.path.join(HERE, "fixtures_source"))
     for cand in candidates:
         if all(os.path.isfile(os.path.join(cand, card, name)) for card, name in FIXTURES):
-            if dry_run:
-                print(cand)
             return cand
     return None
 
 
-def copy_fixture(src, dst):
-    shutil.copyfile(src, dst)
-
-
-def main():
-    global args
+def main(argv=None):
     parser = argparse.ArgumentParser(description="Generate dataset fixtures")
     parser.add_argument("--source", help="directory containing the fixture source files")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
-    src_dir = resolve_source()
+    src_dir = resolve_source(args.source)
     if not src_dir:
-        print("FAIL: could not find a source directory containing all fixtures")
-        sys.exit(1)
+        print("FAIL: could not find a source directory containing all six fixtures")
+        return 1
 
-    dst_base = os.path.join(os.path.dirname(__file__), "fixtures")
-    os.makedirs(dst_base, exist_ok=True)
+    dst_base = os.path.join(HERE, "fixtures")
     for card, name in FIXTURES:
-        src_path = os.path.join(src_dir, card, name)
         dst_path = os.path.join(dst_base, card, name)
         os.makedirs(os.path.dirname(dst_path), exist_ok=True)
-        copy_fixture(src_path, dst_path)
-    # write README.md
-    readme_path = os.path.join(os.path.dirname(__file__), "README.md")
-    with open(readme_path, "w", encoding="utf-8") as f:
-        f.write(TEMPLATE_CARD)
-    # write LICENSE
-    license_path = os.path.join(os.path.dirname(__file__), "LICENSE")
-    with open(license_path, "w", encoding="utf-8") as f:
-        f.write(LICENSE_TEXT)
-    print("PASS: dataset generated successfully")
-    sys.exit(0)
+        shutil.copyfile(os.path.join(src_dir, card, name), dst_path)
+
+    card_path = os.path.join(HERE, "DATASET_CARD.md")
+    if os.path.isfile(card_path):
+        with open(card_path, "r", encoding="utf-8") as f:
+            card_text = f.read()
+    else:
+        card_text = TEMPLATE_CARD
+    with open(os.path.join(HERE, "README.md"), "w", encoding="utf-8") as f:
+        f.write(card_text)
+
+    license_path = os.path.join(HERE, "LICENSE")
+    if not os.path.isfile(license_path):
+        with open(license_path, "w", encoding="utf-8") as f:
+            f.write(LICENSE_TEXT)
+
+    print("PASS: dataset generated from " + src_dir)
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
