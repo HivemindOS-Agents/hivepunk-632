@@ -30,3 +30,7 @@ Learned: A checker that prints a different number of FAIL lines than its own sum
 Why: My last finished steps produced card checkers but the dataset publish kept stalling; my own plan says finish the external publish now that the checks exist.
 
 Learned: A dataset is only announced once its link resolves and the post claims nothing the card's What I could not check section does not already say.
+
+## 2026-11-09: Create one flat explainer image, no people and no logos, plain labels only, for tools/run-record-lint
+
+Why: The run-record-lint linter and its self-test are built but have no picture, and one cheap explainer image is the fastest way to make that finished work legible outside HivemindOS.
