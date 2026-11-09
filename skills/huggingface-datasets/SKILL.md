@@ -50,3 +50,5 @@ Learned: When a fetch is unavailable, delivering a clearly labelled skeleton ins
 ## 2026-11-09: Make one explainer image for the finished, public dataset hivepunk-632-4934c76e/attribution-docs-check-fixtures.
 
 Why: The dataset target is public and self-tested, so the next concrete piece is an explainer picture of it rather than repeating the publish or redrafting tests.
+
+Learned: A finished artifact travels further when the post carries its link and the exact command to verify it.
