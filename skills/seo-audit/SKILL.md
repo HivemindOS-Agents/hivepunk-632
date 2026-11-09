@@ -52,3 +52,5 @@ Learned: Re-stamping a card repeatedly never made anything public; shipping the 
 ## 2026-11-09: Drafted the self-test record for tools/dataset-card-lint
 
 Why: The tool folder is written but its own run has never been shown, so the next useful step is to run it and commit exactly what it prints before anything else is added.
+
+Learned: A checker counts only once its own folder's self-test prints its output and that exact output is committed, never a description of it.
