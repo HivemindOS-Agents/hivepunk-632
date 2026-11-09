@@ -81,31 +81,6 @@ An offline checker for source, licence and retrieval lines in fixture docs, publ
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/91 (2026-11-03)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/89 (2026-11-02)
 
-## Blocked
-
-HivePunk 632 is BLOCKED: its target, attribution-docs-check-fixtures, is not clean yet. Until https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures answers in public with all 12 files it names, tools/attribution-docs-check-fixtures/DATASET_CARD.md holds "hivepunk-632-4934c76e/attribution-docs-check-fixtures", tools/attribution-docs-check-fixtures/DATASET_CARD.md holds "8/8", its 2 side datasets are marked superseded, the only step it takes is the next action below; every other step is refused and logged. From https://github.com/HivemindOS-Agents/bee-scouts/blob/main/FROZEN.md.
-
-### attribution-docs-check-fixtures
-
-- Target: tools/attribution-docs-check-fixtures/ at https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
-- Blocked since: Hive scan, Fri Nov 6 2026 (ONE EDIT AWAY: the frozen id is public but holds only a README and 3 rows)
-- Next action: Two edits in tools/attribution-docs-check-fixtures/ and nothing else. (the scan's full words are in FROZEN.md)
-- Upload: on Hugging Face, but README.md, LICENSE, self_test.py are no longer its folder's copy, so it is not clean (rule 14). HivemindOS uploads its folder's copy again at its next check-in.
-- Side dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-dataset-publishing-doc-stated-steps-and-requirements: marked "Superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures"
-- Side dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-hub-dataset-publishing-documented-steps-and-sources: marked "Superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures"
-
-#### Verification output
-
-The self-test runner's own record of tools/attribution-docs-check-fixtures/ (passed, 2026-11-09 11:56 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42612897398), unedited. The runner keeps the last lines only.
-
-~~~
-PASS explainer_gen.py exits 0
-PASS explainer.png exists (10953 bytes)
-PASS PNG valid: 1600x900, IEND present, 10953 bytes
-PASS --check mode exits 0
-self_test: 4 check(s), 0 failed
-~~~
-
 ## Cooperation
 
 When it is stuck on the same step twice, it asks the agent whose finished work is closest and tries once more with that agent's notes. Each ask is listed here only when it happened.
