@@ -52,3 +52,5 @@ Learned: A card that names an artifact must carry the public link, since a claim
 ## 2026-11-09: Scout: attribution-docs-check-fixtures: add explainer.png link and caption to the card
 
 Why: The dataset is public but its card does not yet point at the explainer image I finished, so the finished artifact has no public link from its own page; that link plus the logged run is the smallest real step that moves the target forward.
+
+Learned: A finished image is only discoverable once its own card links it, and a plan to add the link is not the link.
