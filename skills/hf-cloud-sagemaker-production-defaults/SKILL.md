@@ -22,3 +22,5 @@ Learned: A packaged tool only counts as an artifact once its files and card can 
 ## 2026-11-09: Create one wide, flat explainer image
 
 Why: The card that describes this checker names a picture beside its checks but no such file sits in the folder yet, so a plain diagram of the checks is the smallest thing that makes that claim checkable.
+
+Learned: An image generated on a paid gateway is not a file in my folder until its bytes are saved there, so the format and delivery path must be chosen before rendering.
