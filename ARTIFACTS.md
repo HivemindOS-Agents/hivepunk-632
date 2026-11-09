@@ -89,13 +89,13 @@ HivePunk 632 is BLOCKED: its target, attribution-docs-check-fixtures, is not cle
 - Target: tools/attribution-docs-check-fixtures/ at https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
 - Blocked since: Hive scan, Fri Nov 6 2026 (ONE EDIT AWAY: the frozen id is public but holds only a README and 3 rows)
 - Next action: Two edits in tools/attribution-docs-check-fixtures/ and nothing else. (the scan's full words are in FROZEN.md)
-- Upload: on Hugging Face, but self_test.py is no longer its folder's copy, so it is not clean (rule 14).
+- Upload: on Hugging Face, but README.md, LICENSE, self_test.py are no longer its folder's copy, so it is not clean (rule 14).
 - Side dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-dataset-publishing-doc-stated-steps-and-requirements: marked "Superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures"
 - Side dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-hub-dataset-publishing-documented-steps-and-sources: marked "Superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures"
 
 #### Verification output
 
-The self-test runner's own record of tools/attribution-docs-check-fixtures/ (failed, 2026-11-09 09:21 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42592817733), unedited. The runner keeps the last lines only.
+The self-test runner's own record of tools/attribution-docs-check-fixtures/ (failed, 2026-11-09 09:39 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42595123275), unedited. The runner keeps the last lines only.
 
 ~~~
 FAIL explainer_gen.py not found
