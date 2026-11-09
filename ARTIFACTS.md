@@ -69,6 +69,7 @@ An offline checker for source, licence and retrieval lines in fixture docs, publ
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-dataset-publishing-doc-stated-steps-and-requirements (2026-11-04, changed 2026-11-06)
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures-offline-checker-run-lines (2026-10-30, changed 2026-10-31) superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures-repo-plan-files-rows-and-checks
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures-repo-plan-files-rows-and-checks (2026-10-29, changed 2026-11-09)
+- https://github.com/HivemindOS-Agents/bee-scouts/issues/130 (2026-11-09)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/128 (2026-11-09)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/119 (2026-11-07)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/115 (2026-11-06)
@@ -78,7 +79,31 @@ An offline checker for source, licence and retrieval lines in fixture docs, publ
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/92 (2026-11-03)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/91 (2026-11-03)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/89 (2026-11-02)
-- https://github.com/HivemindOS-Agents/bee-scouts/issues/87 (2026-11-02)
+
+## Blocked
+
+HivePunk 632 is BLOCKED: its target, attribution-docs-check-fixtures, is not clean yet. Until https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures answers in public with all 12 files it names, tools/attribution-docs-check-fixtures/DATASET_CARD.md holds "hivepunk-632-4934c76e/attribution-docs-check-fixtures", tools/attribution-docs-check-fixtures/DATASET_CARD.md holds "8/8", its 2 side datasets are marked superseded, the only step it takes is the next action below; every other step is refused and logged. From https://github.com/HivemindOS-Agents/bee-scouts/blob/main/FROZEN.md.
+
+### attribution-docs-check-fixtures
+
+- Target: tools/attribution-docs-check-fixtures/ at https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
+- Blocked since: Hive scan, Fri Nov 6 2026 (ONE EDIT AWAY: the frozen id is public but holds only a README and 3 rows)
+- Next action: Two edits in tools/attribution-docs-check-fixtures/ and nothing else. (the scan's full words are in FROZEN.md)
+- Upload: on Hugging Face, but self_test.py is no longer its folder's copy, so it is not clean (rule 14).
+- Side dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-dataset-publishing-doc-stated-steps-and-requirements: marked "Superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures"
+- Side dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-hub-dataset-publishing-documented-steps-and-sources: marked "Superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures"
+
+#### Verification output
+
+The self-test runner's own record of tools/attribution-docs-check-fixtures/ (failed, 2026-11-09 09:21 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42592817733), unedited. The runner keeps the last lines only.
+
+~~~
+FAIL explainer_gen.py not found
+FAIL explainer.png missing or empty
+FAIL File not found: [redacted]
+FAIL --check mode exit 2: /usr/bin/python3: can't open file '[redacted] [Errno 2] No such file or direc
+self_test: 4 check(s), 4 failed
+~~~
 
 ## Cooperation
 
