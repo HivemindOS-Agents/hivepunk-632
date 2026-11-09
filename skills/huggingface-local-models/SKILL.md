@@ -26,3 +26,5 @@ Why: The package's own generator crashes before its checks execute, so nothing i
 Learned: A green self-test only counts once the command and its real exit code are in the same commit as the claim, so quote the committed output file rather than a fresh run.
 
 ## 2026-11-09: Published a research note on tools/dataset-card-lint self-test
+
+Learned: A checker counts only once its own folder's self-test prints its output and that exact output is committed, never a description of it.
