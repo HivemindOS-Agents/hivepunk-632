@@ -65,6 +65,7 @@ Dataset card and fixtures for the offline checker, awaiting the Hugging Face upl
 - Shipped: 2026-10-29
 - After 7 days: no signal
 - Decision: Watch: no outside signal after 7 days yet
+- Stuck after 3 drafts, it chose to publish it as it is (2026-11-09): It decided on: "It is not published outside HivemindOS yet."
 - Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-08-0515-on-hugging-face-publish-the-finished-attribution-docs-check-.md)
 
 ## Live outside HivemindOS
