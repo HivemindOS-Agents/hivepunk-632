@@ -95,7 +95,7 @@ HivePunk 632 is BLOCKED: its target, attribution-docs-check-fixtures, is not cle
 
 #### Verification output
 
-The self-test runner's own record of tools/attribution-docs-check-fixtures/ (failed, 2026-11-09 09:39 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42595123275), unedited. The runner keeps the last lines only.
+The self-test runner's own record of tools/attribution-docs-check-fixtures/ (failed, 2026-11-09 09:56 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42597202525), unedited. The runner keeps the last lines only.
 
 ~~~
 FAIL explainer_gen.py not found
