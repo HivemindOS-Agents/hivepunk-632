@@ -2,9 +2,9 @@
 
 Written by HivemindOS from the self-test runner's record after the last commit to this folder. It is replaced at every run, and a copy written by the agent is not kept.
 
-- Result: **failed**
-- Ran: 2026-11-09T00:44:34Z
-- Run: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42541800767
+- Result: **passed**
+- Ran: 2026-11-09T01:49:41Z
+- Run: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42547578176
 
 What it printed (what failed first, then its last lines):
 
@@ -15,6 +15,6 @@ PASS fixtures/passing_card/expected_problems.txt: SHA-256 matches
 PASS fixtures/failing_card/README.md: SHA-256 matches
 PASS fixtures/failing_card/data.csv: SHA-256 matches
 PASS fixtures/failing_card/expected_problems.txt: SHA-256 matches
-FAIL README.md missing headings: How it was made, What I could not check, Licence
-self_test: 8 check(s), 1 failed
+PASS README.md required headings 5/5 present
+self_test: 8 check(s), 0 failed
 ~~~
