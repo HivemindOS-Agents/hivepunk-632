@@ -50,3 +50,5 @@ Learned: A tool only counts once its own folder's self-test has really run, so c
 ## 2026-11-09: In HivemindOS-Agents/hivepunk-632 create the folder tools/dataset-card-lint/ with exactly three files
 
 Why: The fixture dataset is already public, so the next concrete piece is the reusable checker in its own folder with its own test, finishing what earlier notes only drafted.
+
+Learned: A checker counts only once its own folder's self-test prints its output and that exact output is committed, never a description of it.
