@@ -1,69 +1,95 @@
 #!/usr/bin/env python3
-"""List tool folders whose SELFTEST_OUTPUT.md lacks a recorded command-with-exit-code line.
-Reads text only: <root>/<folder>/SELFTEST_OUTPUT.md. No network, no writes.
-Exit: 0 nothing flagged, 1 something flagged, 2 usage/IO error."""
-import argparse, json, re, sys
-from pathlib import Path
+"""Run‑record Markdown linting tool.
 
-RECORD = "SELFTEST_OUTPUT.md"
-CMD_A, CMD_B = "python", "self_test.py"
-EXIT_RE = re.compile(r"\bexit(?:[\s_-]*(?:code|status))?[\s:=\-]+(-?\d+)\b", re.I)
-MARKERS = ("unrun", "(none recorded)", "no run recorded", "not run")
-ROOT_DEFAULT = Path(__file__).resolve().parent.parent
+Reads a Markdown file that records a command run (the format used in
+HivemindOS run logs).  It verifies the file contains:
 
-def command_lines(text):
-    return [l.strip() for l in text.splitlines() if CMD_A in l.lower() and CMD_B in l.lower()]
+- A line starting with ``**Command:**``
+- A line starting with ``**Exit status:**``
+- A non‑empty fenced code block after a line starting with ``**Output:**``
 
-def exit_codes(text):
-    return [int(m.group(1)) for m in EXIT_RE.finditer(text)]
+Exits with status:
+  0 – all checks pass
+  1 – one or more checks failed (reasons printed to stdout)
+  2 – the file could not be read
 
-def inspect(folder):
-    path = folder / RECORD
-    if not path.is_file():
-        return {"name": folder.name, "ok": False, "reasons": ["no SELFTEST_OUTPUT.md"]}
-    text = path.read_text(encoding="utf-8", errors="replace")
-    reasons = []
-    if not command_lines(text):
-        reasons.append("no command line holding %r and %r" % (CMD_A, CMD_B))
-    if not exit_codes(text):
-        reasons.append("no numeric exit code line")
-        marks = [m for m in MARKERS if m in text.lower()]
-        if marks:
-            reasons.append("no-run marker: " + ", ".join(repr(m) for m in marks))
-    return {"name": folder.name, "ok": not reasons, "reasons": reasons}
+The tool uses only the Python standard library.
+
+Usage
+-----
+    python3 run_record_lint.py path/to/run-record.md
+"""
+
+import os
+import sys
+
+
+def read_file(path):
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            lines = f.read().splitlines()
+        return lines, True
+    except OSError as exc:
+        print(f"cannot read file: {exc}")
+        sys.exit(2)
+
+
+def lint(lines):
+    """Return a list of problem strings.  Empty list means OK."""
+    problems = []
+
+    # Check for command line
+    found_command = any(line.lstrip().startswith("**Command:**") for line in lines)
+    if not found_command:
+        problems.append("missing command line")
+
+    # Check for exit status line
+    found_exit = any(line.lstrip().startswith("**Exit status:**") for line in lines)
+    if not found_exit:
+        problems.append("missing exit status line")
+
+    # Output block: find a line starting with **Output:**, then look for a fenced code block
+    output_block_found = False
+    for i, line in enumerate(lines):
+        if line.lstrip().startswith("**Output:**"):
+            # Look for a fenced code block in the remaining lines
+            for j in range(i + 1, len(lines)):
+                stripped = lines[j].strip()
+                if stripped.startswith("```"):
+                    # Found opening fence; collect content until closing fence
+                    content_lines = []
+                    for k in range(j + 1, len(lines)):
+                        if lines[k].strip().startswith("```"):
+                            break
+                        content_lines.append(lines[k])
+                    content = "\n".join(content_lines).strip()
+                    if content:
+                        output_block_found = True
+                    break
+            break
+    if not output_block_found:
+        problems.append("missing or empty output block")
+
+    return problems
+
 
 def main(argv=None):
-    ap = argparse.ArgumentParser(description="flag tool folders with no recorded command+exit-code line")
-    ap.add_argument("--root", type=Path, default=ROOT_DEFAULT)
-    ap.add_argument("--json", action="store_true")
-    ap.add_argument("--include-missing", action="store_true",
-                    help="also list folders with no SELFTEST_OUTPUT.md")
-    a = ap.parse_args(argv)
-    if not a.root.is_dir():
-        print("run-record-lint: not a directory: %s" % a.root, file=sys.stderr)
-        return 2
-    rows = []
-    for folder in sorted(p for p in a.root.iterdir() if p.is_dir()):
-        if not a.include_missing and not (folder / RECORD).is_file():
-            continue
-        try:
-            rows.append(inspect(folder))
-        except OSError as exc:
-            print("run-record-lint: read failed for %s: %s" % (folder, exc), file=sys.stderr)
-            return 2
-    flagged = [r for r in rows if not r["ok"]]
-    if a.json:
-        print(json.dumps({"root": str(a.root), "rows": rows, "flagged_count": len(flagged)}, indent=2))
-    else:
-        print("run-record-lint root: %s" % a.root)
-        print("checked %d folder(s) with %s" % (len(rows), RECORD))
-        if flagged:
-            print("FLAGGED %d:" % len(flagged))
-            for r in flagged:
-                print("  %-28s %s" % (r["name"], "; ".join(r["reasons"])))
-        else:
-            print("OK: every checked folder records a command with an exit code")
-    return 1 if flagged else 0
+    if argv is None:
+        argv = sys.argv[1:]
+    if not argv:
+        print("Usage: run_record_lint.py <run-record.md>")
+        sys.exit(1)
+    path = argv[0]
+    lines, _ = read_file(path)
+
+    problems = lint(lines)
+    if problems:
+        for p in problems:
+            print(p)
+        sys.exit(1)
+    print("OK")
+    sys.exit(0)
+
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()
