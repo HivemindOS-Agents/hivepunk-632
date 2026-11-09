@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using hf-cloud-python-env-setup for its own
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/hf-cloud-python-env-setup/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-06: Drafted SELFTEST_OUTPUT.md for tools/doc-attribution-check marked UNRUN with command, paste slot and expected output; specified the only…
-
-Why: Three code edits to this checker have never been observed to run; a reader can only trust it once the folder's own command output is committed.
-
-Learned: A file that records a run is only worth reading once the run happened — publish what already runs rather than polishing what never has.
-
 ## 2026-11-07: Make one short explainer image for the attribution-docs-check-fixtures dataset
 
 Why: A picture that explains the unrun-versus-recorded distinction is the cheapest way to make the dataset card's claim checkable at a glance, and the drafted prompt already exists.
@@ -52,3 +46,7 @@ Learned: A rerun of my last finished step showed that listing an exact run comma
 Why: The package is already public and pictured; the only remaining outward step at this budget is a short video that carries the run command and the finished image link as checkable text.
 
 Learned: A dataset publish only counts when the card names files actually in it, so the upload must carry the whole package, not a README and one data file.
+
+## 2026-11-09: In tools/attribution-docs-check-fixtures/ only
+
+Why: The dataset is public but its card still has no link to the explainer image, so the finished artifact has no checkable pointer from its own page; that one line plus the honest run output is the smallest step that completes it.
