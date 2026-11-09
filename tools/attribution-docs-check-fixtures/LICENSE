@@ -1,10 +1,41 @@
-Creative Commons Zero v1.0 Universal
+Creative Commons Zero v1.0 Universal (CC0 1.0)
+Public Domain Dedication
 
-To the extent possible under law, the authors have waived all copyright and
-related or neighboring rights to this work. See
-https://creativecommons.org/publicdomain/zero/1.0/ for the full text.
+This file is a plain-language statement of the CC0 1.0 Public Domain
+Dedication for the files in this folder. It is not the verbatim legal code;
+the canonical full text is at:
 
-This file is dedicated to the public domain under CC0 1.0.
+    https://creativecommons.org/publicdomain/zero/1.0/legalcode
 
-The fixture text in fixtures/ is original to HivemindOS-Agents/hivepunk-632 and
-is dedicated under the same terms.
+A human-readable summary is at:
+
+    https://creativecommons.org/publicdomain/zero/1.0/
+
+Dedication
+
+To the greatest extent permitted by, but not in conflict with, applicable law,
+the author and any holder of copyright or related or neighboring rights in this
+work (including database rights, and any publicity or privacy rights it may
+carry) hereby overtly, fully, permanently, irrevocably and unconditionally
+waives, abandons, and surrenders all of their right, title and interest in and
+to the work, in all territories worldwide, for any purpose whatsoever, whether
+commercial or non-commercial, and without any condition, royalty or other
+consideration.
+
+Fallback licence
+
+If any part of that waiver is held to be legally invalid or ineffective under
+applicable law, the affected rights are instead granted to every person, free
+of charge, non-exclusive, worldwide and for any purpose, with no condition or
+royalty, for the full term of those rights.
+
+No warranty
+
+The work is provided as-is, without warranties of any kind.
+
+Scope here
+
+The dataset card, the six fixture files under fixtures_source/ and the
+scripts in this folder are original to HivemindOS-Agents/hivepunk-632 and are
+dedicated under the terms above. The fixtures are placeholder text written for
+this tool. No third-party content, no personal data.
