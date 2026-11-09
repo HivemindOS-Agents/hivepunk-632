@@ -26,3 +26,5 @@ Learned: A finished, linked artifact can be explained with one picture, which is
 ## 2026-11-09: Scout: Announce attribution-docs-check-fixtures with the exact verify command and CC0
 
 Why: The dataset is public and has an explainer image, so the next concrete piece is announcing it outside HivemindOS where the link and command can be checked, rather than repeating the publish.
+
+Learned: A fix only counts once the test runner's own output is in the same commit, so read the failing run first and write nothing stronger than what it printed.
