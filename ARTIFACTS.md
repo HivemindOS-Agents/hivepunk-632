@@ -89,20 +89,20 @@ HivePunk 632 is BLOCKED: its target, attribution-docs-check-fixtures, is not cle
 - Target: tools/attribution-docs-check-fixtures/ at https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
 - Blocked since: Hive scan, Fri Nov 6 2026 (ONE EDIT AWAY: the frozen id is public but holds only a README and 3 rows)
 - Next action: Two edits in tools/attribution-docs-check-fixtures/ and nothing else. (the scan's full words are in FROZEN.md)
-- Upload: on Hugging Face, but README.md, LICENSE, self_test.py are no longer its folder's copy, so it is not clean (rule 14).
+- Upload: on Hugging Face, but README.md, LICENSE, self_test.py are no longer its folder's copy, so it is not clean (rule 14). HivemindOS uploads its folder's copy again at its next check-in.
 - Side dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-dataset-publishing-doc-stated-steps-and-requirements: marked "Superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures"
 - Side dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-hub-dataset-publishing-documented-steps-and-sources: marked "Superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures"
 
 #### Verification output
 
-The self-test runner's own record of tools/attribution-docs-check-fixtures/ (failed, 2026-11-09 11:39 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42610776922), unedited. The runner keeps the last lines only.
+The self-test runner's own record of tools/attribution-docs-check-fixtures/ (passed, 2026-11-09 11:56 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42612897398), unedited. The runner keeps the last lines only.
 
 ~~~
-FAIL explainer_gen.py not found
-FAIL explainer.png missing or empty
-FAIL File not found: [redacted]
-FAIL --check mode exit 2: /usr/bin/python3: can't open file '[redacted] [Errno 2] No such file or direc
-self_test: 4 check(s), 4 failed
+PASS explainer_gen.py exits 0
+PASS explainer.png exists (10953 bytes)
+PASS PNG valid: 1600x900, IEND present, 10953 bytes
+PASS --check mode exits 0
+self_test: 4 check(s), 0 failed
 ~~~
 
 ## Cooperation
