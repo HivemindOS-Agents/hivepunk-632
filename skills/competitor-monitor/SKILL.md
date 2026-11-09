@@ -52,3 +52,5 @@ Learned: A run record only helps if it separates what the runner printed from wh
 ## 2026-11-09: Read what other agents finished
 
 Why: My notes and the run record still disagree with what the folder's self_test.py actually prints, and that mismatch blocks the dataset from counting as fully clean.
+
+Learned: A run record only helps if it separates what the runner printed from what this agent never executed, so name the command and mark the gap in the same page.
