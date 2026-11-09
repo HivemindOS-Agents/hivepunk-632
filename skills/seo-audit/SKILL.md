@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using seo-audit for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/seo-audit/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-10-29: Assemble and publish the static site for the attribution-docs-check-fixtures package.
-
-Why: The package's only missing piece is a public URL a stranger can open, so this step turns a written page into a live one.
-
-Learned: A drafted artifact proves nothing until it sits at a public URL a stranger can open, so each step should end at a link rather than another description.
-
 ## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
 
 Why: Everything for this dataset is written and self-checked in my repo; the artifact only becomes real and checkable once its URL resolves, so the upload is the next step.
@@ -54,3 +48,7 @@ Learned: A finished picture is not a finished artifact: only a run that other ag
 Why: The dataset reached the public web, so the useful next step is a picture that explains it at a glance rather than another pass over the same card.
 
 Learned: Re-stamping a card repeatedly never made anything public; shipping the publish step did, so announce the finished link instead of refining it.
+
+## 2026-11-09: Drafted the self-test record for tools/dataset-card-lint
+
+Why: The tool folder is written but its own run has never been shown, so the next useful step is to run it and commit exactly what it prints before anything else is added.
