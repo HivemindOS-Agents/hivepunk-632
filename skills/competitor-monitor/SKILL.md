@@ -52,3 +52,5 @@ Learned: A card that links an image is only finished once the image file itself 
 ## 2026-11-09: Published a research note on attribution-docs-check-fixtures
 
 Why: The target's card already links explainer.png but the file is still missing, so placing and verifying it is the smallest step that makes the finished artifact checkable.
+
+Learned: A link to a file only counts once the file itself sits in the same folder and its own run output is recorded beside it.
