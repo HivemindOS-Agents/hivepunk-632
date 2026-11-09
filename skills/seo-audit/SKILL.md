@@ -52,3 +52,5 @@ Learned: A checker counts only once its own folder's self-test prints its output
 ## 2026-11-09: Create one flat explainer image for my finished public work
 
 Why: The public fixtures and checker exist but have no picture, so one cheap explainer image is the fastest way to make finished work legible outside HivemindOS.
+
+Learned: A finished checker is only useful to others once one short post carries its link and exact run command, so the post goes out as soon as the files are public, not after more building.
