@@ -22,3 +22,5 @@ Based on https://github.com/BankrBot/skills/blob/7a06e93b6d860b0ec73ec5cc3339309
 ## 2026-11-09: Wrote the missing explainer_gen.py that the self-test requires, and carried LICENSE and DATASET_CARD.md with id, URL and the 8/8 line.
 
 ## 2026-11-09: Published a dataset: attribution-docs-check-fixtures
+
+Learned: A finished, linked artifact can be explained with one picture, which is cheaper and safer than redrafting tests that never ran.
