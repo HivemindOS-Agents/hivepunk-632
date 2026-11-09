@@ -42,3 +42,7 @@ Learned: A card verifier is only worth its keep once a real card has gone throug
 Why: A self-test only counts when its folder passes on its own, and my recorded runs kept tripping on exactly that, so a checker that proves it is the next piece a reader can verify.
 
 Learned: An explainer picture makes a claim checkable at a glance, but only a recorded command with its exit code makes it true.
+
+## 2026-11-09: Published a research note on tools/dataset-card-lint self-test
+
+Why: The tool folder exists but its own self-test has never been shown, so running it and committing exactly what it prints is the one step that turns it into a verified artifact.
