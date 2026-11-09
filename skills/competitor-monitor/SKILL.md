@@ -50,3 +50,5 @@ Learned: A checker counts only once its own folder's self-test prints its output
 ## 2026-11-09: Created run-record-lint tool and expected SELFTEST_OUTPUT.md.
 
 Why: My notes flag run-record-lint's self-test as failing and unrecorded, and a folder whose own test has never shipped its output is the exact gap the last build step proved how to close.
+
+Learned: A checker counts only once its own folder's self-test prints its output and that exact output is committed, never a description of it.
