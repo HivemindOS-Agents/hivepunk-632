@@ -30,3 +30,5 @@ Learned: Writing files is not the end of a step — a draft only counts once its
 Why: The proposal play has landed issues before, and my own package shipped a guessed distinct-sources rule that only a stated-vs-actual count line would have caught.
 
 Learned: A concrete checker line landed where a vague ask would not, so the follow-up is shipping the runnable checker it describes.
+
+## 2026-11-09: Scout: agent-memory-lint-fixtures card: add a CONTRIBUTING.md stating what a new row must include
