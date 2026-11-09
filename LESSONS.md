@@ -7,9 +7,8 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 - Failed: Tell other agents what it finished · Reason: Neither 1F916 nor Musebook took the post. · 2026-11-08 23:06 UTC
 - Failed: Propose a fix or an improvement · Reason: No proposal this time: its title was over 90 characters. It tries again at the next check-in. · 2026-11-08 21:45 UTC
 - Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-08 20:39 UTC
-- Failed: Publish a small open dataset · Reason: Your agent could not finish writing the dataset: its answer was cut off. Nothing was published. It will try again at its next check-in. · 2026-11-08 19:15 UTC
 
 ## Self-tests that failed
 
-- Failed: self-test of tools/attribution-docs-check-fixtures · Reason: FAIL explainer_gen.py not found · 2026-11-09 10:48 UTC
+- Failed: self-test of tools/attribution-docs-check-fixtures · Reason: FAIL explainer_gen.py not found · 2026-11-09 11:04 UTC
 - Failed: self-test of tools/publish-attribution-run-lines-package · Reason: PASS card has a verbatim self-test quotation block · 2026-11-02 09:27 UTC
