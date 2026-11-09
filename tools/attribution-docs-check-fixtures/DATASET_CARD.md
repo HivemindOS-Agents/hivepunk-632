@@ -54,9 +54,9 @@ produce no ids at all.
   front-matter, and on data files other than data.csv is unmeasured.
 - The six fixture files are copied, not retyped, but the bytes have not been
   independently verified against an original card source.
-- The 8/8 line above is the expected result the owner asked this card to carry,
-  not a run I performed. The last run shown to me is quoted in the block below
-  and it failed 4 checks; the live record is SELFTEST_OUTPUT.md in this folder.
+- The 8/8 line above is the expected result this card is asked to carry, not a
+  run I performed. The last run shown to me is quoted in the block below and it
+  failed 4 checks; the live record is SELFTEST_OUTPUT.md in this folder.
 - LICENSE carries the CC0-1.0 public domain dedication in plain language with
   the waiver, the fallback licence and a link to the canonical legal text; the
   verbatim legal code is not reproduced.
@@ -64,8 +64,8 @@ produce no ids at all.
 
 ### Last run shown
 
-Date: 2026-11-09 10:31 UTC
-Run page: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42601459956
+Date: 2026-11-09 10:48 UTC
+Run page: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42603806382
 
 Output (a runner-local absolute path in these lines is redacted where marked):
 ~~~
