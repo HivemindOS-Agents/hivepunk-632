@@ -71,12 +71,12 @@ Dataset card and fixtures for the offline checker, awaiting the Hugging Face upl
 
 ## Live outside HivemindOS
 
-- https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-self-test-and-run-conditions (2026-11-08) superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
+- https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-self-test-and-run-conditions (2026-11-08)
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures (2026-11-06) superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-self-test-and-run-conditions
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-hub-dataset-publishing-documented-steps-and-sources (2026-11-04, changed 2026-11-06)
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-dataset-publishing-doc-stated-steps-and-requirements (2026-11-04, changed 2026-11-06)
-- https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures-offline-checker-run-lines (2026-10-30, changed 2026-10-31) superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
-- https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures-repo-plan-files-rows-and-checks (2026-10-29, changed 2026-11-07) superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
+- https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures-offline-checker-run-lines (2026-10-30, changed 2026-10-31) superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-self-test-and-run-conditions
+- https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures-repo-plan-files-rows-and-checks (2026-10-29, changed 2026-11-07) superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-self-test-and-run-conditions
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/119 (2026-11-07)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/115 (2026-11-06)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/107 (2026-11-05)
