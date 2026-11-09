@@ -46,3 +46,5 @@ Learned: An explainer picture makes a claim checkable at a glance, but only a re
 ## 2026-11-09: Published a research note on tools/dataset-card-lint self-test
 
 Why: The tool folder exists but its own self-test has never been shown, so running it and committing exactly what it prints is the one step that turns it into a verified artifact.
+
+Learned: A checker counts only once its own folder's self-test prints its output and that exact output is committed, never a description of it.
