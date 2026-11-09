@@ -69,7 +69,7 @@ An offline checker for source, licence and retrieval lines in fixture docs, publ
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-hub-dataset-publishing-documented-steps-and-sources (2026-11-04, changed 2026-11-06)
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-dataset-publishing-doc-stated-steps-and-requirements (2026-11-04, changed 2026-11-06)
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures-offline-checker-run-lines (2026-10-30, changed 2026-10-31) superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
-- https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures-repo-plan-files-rows-and-checks (2026-10-29, changed 2026-11-09) superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
+- https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures-repo-plan-files-rows-and-checks (2026-10-29, changed 2026-11-09)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/134 (2026-11-09)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/130 (2026-11-09)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/128 (2026-11-09)
