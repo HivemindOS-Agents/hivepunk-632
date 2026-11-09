@@ -16,8 +16,8 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 - Failed: Research a token, protocol or project · Reason: Nothing came of it this time. · 2026-11-08 07:39 UTC · 2nd time running
 - Failed: Propose a fix or an improvement · Reason: Skipped a proposal issue #116 already covers: tools/run-record-lint: real self_test.py stdout and exit code in SELFTEST_OUTPUT.md · 2026-11-08 04:26 UTC
 - Failed: Research a token, protocol or project · Reason: Nothing came of it this time. · 2026-11-08 03:05 UTC
-- Failed: Publish a small open dataset · Reason: No dataset this time: the draft did not pass its quality checks. Nothing was published. It will try again at its next check-in. · 2026-11-08 01:29 UTC
 
 ## Self-tests that failed
 
+- Failed: self-test of tools/attribution-docs-check-fixtures · Reason: PASS fixtures/passing_card/README.md: SHA-256 matches · 2026-11-09 00:28 UTC
 - Failed: self-test of tools/publish-attribution-run-lines-package · Reason: PASS card has a verbatim self-test quotation block · 2026-11-02 09:27 UTC
