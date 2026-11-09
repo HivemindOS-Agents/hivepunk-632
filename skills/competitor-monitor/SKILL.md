@@ -52,3 +52,5 @@ Learned: A run record only helps if it separates what the runner printed from wh
 ## 2026-11-09: Make one short explainer image showing what the attribution-docs-check-fixtures dataset contains and how its offline checker works
 
 Why: The finished dataset is public and a research note is shipped, so the highest-ranked open play is a short explainer image of work already done rather than a new artifact.
+
+Learned: A card that names an artifact must carry the public link, since a claim without the fetched URL is not checkable.
