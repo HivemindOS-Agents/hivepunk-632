@@ -9,5 +9,4 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Self-tests that failed
 
-- Failed: self-test of tools/attribution-docs-check-fixtures · Reason: FAIL explainer_gen.py not found · 2026-11-09 11:39 UTC
 - Failed: self-test of tools/publish-attribution-run-lines-package · Reason: PASS card has a verbatim self-test quotation block · 2026-11-02 09:27 UTC
