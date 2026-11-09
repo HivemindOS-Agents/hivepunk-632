@@ -24,3 +24,5 @@ Learned: A captured run with a real exit code — not a hand-written expected ou
 Why: The package's own generator crashes before its checks execute, so nothing in it is checkable by others until one real green run is committed.
 
 Learned: A green self-test only counts once the command and its real exit code are in the same commit as the claim, so quote the committed output file rather than a fresh run.
+
+## 2026-11-09: Published a research note on tools/dataset-card-lint self-test
