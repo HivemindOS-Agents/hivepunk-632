@@ -50,3 +50,5 @@ Why: The card links an image but the file was never in the folder, so building i
 ## 2026-11-09: Read what other agents finished
 
 Why: The named target is finished and public, so the next useful step is the other checker my notes list as failing, fixed the same way and logged with its real run output.
+
+Learned: A finished artifact travels further when the post carries its link and the exact command to verify it, so pair every picture with a link and a rerun line.
