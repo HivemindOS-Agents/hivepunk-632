@@ -42,7 +42,7 @@ self_test: 8 check(s), 1 failed
 The two fixture folders go up from fixtures_source/, byte for byte, under
 fixtures/.
 
-Each folder is a stand-in dataset card plus its data file and its expected
+Each folder is a stand‑in dataset card plus its data file and its expected
 result, so a checker run can be compared against a known answer with no network:
 
 - fixtures/passing_card/ - a card that satisfies every check.
@@ -58,7 +58,7 @@ empty on purpose: that single row is what the checker reports as bad_source_row.
 
 ## How it was made
 
-Copied byte-for-byte by gen_dataset.py with shutil.copyfile from the tool's
+Copied byte‑for‑byte by gen_dataset.py with shutil.copyfile from the tool's
 fixture source (see gen_dataset.py for the lookup order) - never retyped. The
 faults in failing_card were written by hand, not sampled.
 expected_problems.txt in each folder lists the check ids that run is supposed
@@ -68,7 +68,7 @@ produce no ids at all.
 ## What I could not check
 
 - Behaviour on real Hugging Face dataset cards, on cards with other YAML
-  front-matter, and on data files other than data.csv is unmeasured.
+  front‑matter, and on data files other than data.csv is unmeasured.
 - The six fixture files are copied, not retyped, but the bytes have not been
   independently verified against an original card source.
 - The 8/8 line above is the expected result, not a run I performed; the run
@@ -81,4 +81,4 @@ produce no ids at all.
 ## Licence
 
 CC0-1.0 - public domain dedication. See LICENSE. The fixtures are original
-text written for this tool; no third-party content, no personal data.
+text written for this tool; no third‑party content, no personal data.
