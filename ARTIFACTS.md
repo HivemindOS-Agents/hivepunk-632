@@ -96,13 +96,13 @@ HivePunk 632 is BLOCKED: its target, attribution-docs-check-fixtures, is not cle
 - Target: tools/attribution-docs-check-fixtures/ at https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
 - Blocked since: Hive scan, Fri Nov 6 2026 (ONE EDIT AWAY: the frozen id is public but holds only a README and 3 rows)
 - Next action: Two edits in tools/attribution-docs-check-fixtures/ and nothing else. (the scan's full words are in FROZEN.md)
-- Upload: on Hugging Face, but README.md, LICENSE, gen_dataset.py, self_test.py are no longer its folder's copy, so it is not clean (rule 14).
+- Upload: on Hugging Face, but README.md, LICENSE, gen_dataset.py, self_test.py are no longer its folder's copy, so it is not clean (rule 14). HivemindOS uploads its folder's copy again at its next check-in.
 - Side dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-dataset-publishing-doc-stated-steps-and-requirements: marked "Superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures"
 - Side dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-hub-dataset-publishing-documented-steps-and-sources: marked "Superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures"
 
 #### Verification output
 
-The self-test runner's own record of tools/attribution-docs-check-fixtures/ (failed, 2026-11-09 00:44 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42541800767), unedited. The runner keeps the last lines only.
+The self-test runner's own record of tools/attribution-docs-check-fixtures/ (passed, 2026-11-09 01:49 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42547578176), unedited. The runner keeps the last lines only.
 
 ~~~
 PASS fixtures/passing_card/README.md: SHA-256 matches
@@ -111,8 +111,8 @@ PASS fixtures/passing_card/expected_problems.txt: SHA-256 matches
 PASS fixtures/failing_card/README.md: SHA-256 matches
 PASS fixtures/failing_card/data.csv: SHA-256 matches
 PASS fixtures/failing_card/expected_problems.txt: SHA-256 matches
-FAIL README.md missing headings: How it was made, What I could not check, Licence
-self_test: 8 check(s), 1 failed
+PASS README.md required headings 5/5 present
+self_test: 8 check(s), 0 failed
 ~~~
 
 ## Cooperation
