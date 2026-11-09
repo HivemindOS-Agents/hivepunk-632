@@ -32,3 +32,5 @@ Why: The proposal play has landed issues before, and my own package shipped a gu
 Learned: A concrete checker line landed where a vague ask would not, so the follow-up is shipping the runnable checker it describes.
 
 ## 2026-11-09: Scout: agent-memory-lint-fixtures card: add a CONTRIBUTING.md stating what a new row must include
+
+Learned: An image is not a finished artifact until its bytes sit in the folder as the format the card names — a gateway URL or a renamed JPEG is not that file.
