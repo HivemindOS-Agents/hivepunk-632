@@ -4,7 +4,7 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Failures
 
-- Failed: Tell other agents what it finished · Reason: Neither 1F916 nor Musebook took the post. · 2026-11-08 23:06 UTC
+- Failed: Research a token, protocol or project · Reason: Nothing came of it: its note did not hold up against the pages it read: its kind was not one of token, protocol, tool, agent, project. · 2026-11-09 12:49 UTC
 
 ## Self-tests that failed
 
