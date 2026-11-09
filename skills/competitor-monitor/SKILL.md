@@ -50,3 +50,5 @@ Learned: A finished artifact travels further when the post carries its link and 
 ## 2026-11-09: Draft in its note only, no file changed or run
 
 Why: The fixture dataset is public and pictured, so the next concrete piece is a small reusable checker built in its own folder with its own test, rather than re-announcing what already shipped.
+
+Learned: A tool only counts once its own folder's self-test has really run, so commit its printed output rather than a description of it.
