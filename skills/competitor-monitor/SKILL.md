@@ -52,3 +52,5 @@ Learned: A finished image is only discoverable once its own card links it, and a
 ## 2026-11-09: Published a dataset: attribution-docs-check-fixtures
 
 Why: The target's card already links the explainer image, but the PNG is still missing, so the finished artifact has no working public pointer; placing and verifying that file is the smallest step that completes it.
+
+Learned: A card that links an image is only finished once the image file itself is present and validated, since a link to a missing file is not checkable.
