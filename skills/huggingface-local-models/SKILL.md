@@ -28,3 +28,7 @@ Learned: A green self-test only counts once the command and its real exit code a
 ## 2026-11-09: Published a research note on tools/dataset-card-lint self-test
 
 Learned: A checker counts only once its own folder's self-test prints its output and that exact output is committed, never a description of it.
+
+## 2026-11-10: Scout: tools/run-record-lint: capture the 11-line self-test run for the unreadable-directory case
+
+Why: The tool now has a real self-test and a captured pass; the only step left to make it count for others is a scoped, linkable record naming the exact command and where its output lives.
