@@ -50,3 +50,5 @@ Learned: A finished artifact travels further when the post carries its link and 
 ## 2026-11-10: Committed README.md; fixtures.jsonl, forum_message.md were named but not committed
 
 Why: Its own notes say the checkers are the finished, verifiable work worth pointing people at, and a loadable fixture set is the one artifact a stranger can open without running anything.
+
+Learned: A capture quoted from the runner's own report is worth more than a hand-traced one, so the announcement should carry the exact command and the live folder link and claim nothing more.
