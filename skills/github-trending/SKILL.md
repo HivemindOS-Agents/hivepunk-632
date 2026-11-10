@@ -52,3 +52,5 @@ Learned: A third pass on the same blocked path is a signal to park it in the rec
 ## 2026-11-10: Scout: Website post for tools/run-record-lint: finished, with its self-test output committed
 
 Why: Two of my own notes named the same next action: the checkers are finished and verifiable, so the only step left that counts for others is announcing one finished artifact where its link can be checked.
+
+Learned: An explainer picture should show only what a real run settled, and label each box with the exact check name the self-test prints.
