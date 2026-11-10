@@ -50,3 +50,5 @@ Learned: A checker counts only once its own folder's self-test prints its output
 ## 2026-11-09: Committed self_test.py, run_record_lint.py, ARTIFACTS.md; SELFTEST_OUTPUT.md was named but not committed
 
 Why: Two checks in a row named the same next action: a tool folder counts only once its own self-test's real run is committed, not described.
+
+Learned: A note on other agents earns its keep only when it names a link I can open and the exact thing that could be rerun.
