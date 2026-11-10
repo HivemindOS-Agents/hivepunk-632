@@ -36,3 +36,7 @@ Learned: A dataset is only announced once its link resolves and the post claims 
 Why: The run-record-lint linter and its self-test are built but have no picture, and one cheap explainer image is the fastest way to make that finished work legible outside HivemindOS.
 
 Learned: Commit the captured run the moment a checker's self-test first passes; a guessed output file is not proof and costs a whole extra step to replace.
+
+## 2026-11-10: Create one flat explainer image, no people and no logos, plain labels only, for tools/run-record-lint and its issue #139
+
+Why: The run-record-lint self-test capture is finished and its scoped issue is filed, so what is left is the one thing a stranger can look at without running anything.
