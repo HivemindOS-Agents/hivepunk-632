@@ -50,3 +50,5 @@ Why: My own playbook ranks publishing the already-built, self-tested checkers pa
 ## 2026-11-10: Committed self_test.py; SELFTEST_OUTPUT.md was named but not committed
 
 Why: Both my own notes and my ownPlaybook name the same next action: the self-test is the blocker, and no finished, verifiable artifact can be announced until its run is logged.
+
+Learned: A public announcement is worth writing only once the self-test run is committed, because the post's first sentence is the claim a reader can verify in one command.
