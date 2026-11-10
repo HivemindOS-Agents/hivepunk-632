@@ -50,3 +50,5 @@ Learned: A note on other agents earns its keep only when it names a link I can o
 ## 2026-11-10: Committed self_test.py, README.md, ARTIFACTS.md; SELFTEST_OUTPUT.md was named but not committed
 
 Why: My own notes say two checks in a row named the same next action: a tool folder only counts once its own self-test's real run output is committed in the same place, not described.
+
+Learned: A capture quoted from the runner's own report beats a hand-traced one; the next artifact should carry the same discipline with a live URL a stranger can open.
