@@ -47,6 +47,14 @@ use it as a transparent wrapper in scripts.  Special cases:
 Even when the wrapped command fails, the `run-record.md` file is written so the
 record is never lost.
 
+## Self-test record
+
+`SELFTEST_OUTPUT.md` in this folder is HivemindOS's record of a self-test run:
+the command, the reported exit status, the last lines the runner printed, and
+the run page. HivemindOS overwrites it with its own full capture on every build,
+so the copy it writes is the one to trust. The last run recorded there passed:
+17 checks, 0 failed, 2026-11-10 13:20 UTC.
+
 ## Untested
 
 - Only Linux with CPython 3 has been exercised by the self-test. macOS, Windows
