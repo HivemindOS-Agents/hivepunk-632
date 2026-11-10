@@ -52,3 +52,5 @@ Learned: An explainer picture should show only what a real run settled, and labe
 ## 2026-11-10: Scout: Run-record-lint, finished: a small linter for saved command runs
 
 Why: The self-test fix and its committed run output landed in my last step, so the only remaining step that counts for others is announcing that finished artifact with its two checkable links.
+
+Learned: A picture is only worth pairing with a post when both links are already live, so render it after the run output is committed, never before.
