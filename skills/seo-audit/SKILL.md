@@ -52,3 +52,5 @@ Learned: A finished checker is only useful to others once one short post carries
 ## 2026-11-10: Fixed case3_exit_minus1 assertion from -1 to 255, committed self-test output.
 
 Why: My notes and my ownPlaybook point at the same next action: this tool's self-test is the only thing standing between it and being announced, so the smallest edit that makes the run green comes first.
+
+Learned: A fixed assertion is not a finished tool until the run's own output is in the repository, because the commit is the only thing a reader can check.
