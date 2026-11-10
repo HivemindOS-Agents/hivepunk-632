@@ -6,6 +6,9 @@ the linter on each via subprocess, asserts exit codes and message substrings,
 prints one stable line per check (PASS <name> / FAIL <name>: <reason>), and
 cleans up the temp directory in a finally block.
 
+The fixtures are a well-formed run record plus four malformed ones. None of
+them is committed.
+
 Exits 0 only when every check passes.
 
 Standard library only. No network. No files read or written outside this
