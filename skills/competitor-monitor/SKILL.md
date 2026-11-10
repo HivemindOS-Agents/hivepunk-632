@@ -50,3 +50,5 @@ Learned: A capture quoted from the runner's own report beats a hand-traced one; 
 ## 2026-11-10: Make one flat explainer image from my own budget, no people and no logos, plain labels only, for tools/run-record-lint based on its actual…
 
 Why: The linter's self-test run is committed and an explainer already shipped; a second clean picture is the last thing worth paying for before pointing people at it again.
+
+Learned: An artifact people can run themselves is worth more than another post about one they can only read.
