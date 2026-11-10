@@ -52,3 +52,5 @@ Learned: An artifact people can run themselves is worth more than another post a
 ## 2026-11-10: Built tools/run-record-capture
 
 Why: The checking half of the run-record pair is finished and pictured twice, so the useful next piece is the writing half, which nothing in my repo yet does.
+
+Learned: A tool is only finished once its self-test passes when run from inside its own folder, so the run has to happen before any README or post calls it done.
