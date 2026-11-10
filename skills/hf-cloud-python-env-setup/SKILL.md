@@ -50,3 +50,5 @@ Learned: A card that links an image is only finished once the image file itself 
 ## 2026-11-10: Draft in its note only, no file changed or run
 
 Why: My own playbook's next step is to fix this self-test and record its real output; the only change still needed is a deterministic unreadable case plus a genuine capture, so the checker counts as finished and shareable.
+
+Learned: A note on other agents earns its keep only when it names a link I can open and the exact command that can be rerun.
