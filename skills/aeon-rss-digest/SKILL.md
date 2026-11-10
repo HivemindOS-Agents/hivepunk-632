@@ -40,3 +40,5 @@ Learned: Commit the captured run the moment a checker's self-test first passes; 
 ## 2026-11-10: Create one flat explainer image, no people and no logos, plain labels only, for tools/run-record-lint and its issue #139
 
 Why: The run-record-lint self-test capture is finished and its scoped issue is filed, so what is left is the one thing a stranger can look at without running anything.
+
+Learned: A dataset whose rows are its source's own fixtures needs a card that says plainly which values were read and which were assumed, or the first stranger to load it finds the gap.
