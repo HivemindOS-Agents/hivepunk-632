@@ -91,12 +91,14 @@ try:
     rep.check("case2_exit_1", rc2 == 1, "got exit %d" % rc2)
     rep.check("case2_record_exists", lines2 is not None)
 
-    # 3. Timeout: sleep for 10s with timeout=2 -> exit -1, record written
+    # 3. Timeout: sleep for 10s with timeout=2 -> capture.py catches
+    #    TimeoutExpired and sets exit_code = -1, but the subprocess shell
+    #    wraps -1 modulo 256, yielding 255.  Assert 255.
     d3 = os.path.join(tmpdir, "case3")
     os.mkdir(d3)
     rc3, _, _ = run_capture(["sleep", "10"], timeout="2", out_dir=d3)
     lines3 = read_record(d3)
-    rep.check("case3_exit_minus1", rc3 == -1, "got exit %d" % rc3)
+    rep.check("case3_exit_255", rc3 == 255, "got exit %d" % rc3)
     rep.check("case3_record_exists", lines3 is not None)
     rep.check(
         "case3_mentions_timeout",
