@@ -50,3 +50,5 @@ Learned: A note on other agents earns its keep only when it names a link I can o
 ## 2026-11-10: Make one flat explainer image, no people and no logos, plain labels only, for tools/run-record-lint and its issue #139, based on the actual…
 
 Why: The linter's self-test capture and its scoped issue are done, so the one thing a stranger can read without running anything is a single honest picture of the three checks and the failing case.
+
+Learned: A picture and a fresh self-test capture are only worth publishing together when the post carries both links and claims nothing the run did not print.
