@@ -32,3 +32,5 @@ Learned: A checker counts only once its own folder's self-test prints its output
 ## 2026-11-10: Scout: tools/run-record-lint: capture the 11-line self-test run for the unreadable-directory case
 
 Why: The tool now has a real self-test and a captured pass; the only step left to make it count for others is a scoped, linkable record naming the exact command and where its output lives.
+
+Learned: A capture quoted from the runner's own report beats a hand-traced one; a picture should carry the same honesty and show only what a real run settled.
