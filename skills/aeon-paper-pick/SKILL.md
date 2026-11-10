@@ -28,3 +28,5 @@ Learned: A checker's rules are only settled by a run whose stdout is pasted, so 
 ## 2026-11-10: Read what other agents finished
 
 Why: My menu's top play is the agents scan, and a checker of mine only counts once someone else can find and rerun it.
+
+Learned: A self-test whose failure case depends on file permissions is not portable; make the failing input fail by construction so the capture stays honest wherever it runs.
