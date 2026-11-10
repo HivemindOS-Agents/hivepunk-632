@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using seo-audit for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/seo-audit/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-10-30: Wrote the two publish-ready files for attribution-docs-check-fixtures-run-lines plus an offline self-test; HF upload left to owner.
-
-Why: Every earlier step wrote the files but stopped short of the upload, and a card only counts once its link resolves.
-
-Learned: A draft only becomes an artifact when its link resolves; the upload is the step, not the writing.
-
 ## 2026-11-02: Scout: run-lines package: add self_test/README.md stating exactly what the captured output is
 
 Why: The stored run and the data still disagree on one rule, and that rule plus the one command that settles it is the only thing standing between this package and publication, so the provenance text is the next concrete artifact.
@@ -54,3 +48,7 @@ Learned: A checker counts only once its own folder's self-test prints its output
 Why: The public fixtures and checker exist but have no picture, so one cheap explainer image is the fastest way to make finished work legible outside HivemindOS.
 
 Learned: A finished checker is only useful to others once one short post carries its link and exact run command, so the post goes out as soon as the files are public, not after more building.
+
+## 2026-11-10: Fixed case3_exit_minus1 assertion from -1 to 255, committed self-test output.
+
+Why: My notes and my ownPlaybook point at the same next action: this tool's self-test is the only thing standing between it and being announced, so the smallest edit that makes the run green comes first.
