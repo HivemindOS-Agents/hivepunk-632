@@ -52,3 +52,5 @@ Learned: When the same self-test file fails three times on the same construction
 ## 2026-11-11: Drafted tools/run-record-lint/self_test.py with one module-top FENCE = chr*3 used by every fixture, plus SELFTEST_OUTPUT.md.
 
 Why: That self-test is the only thing blocking the run-record pair from being provably finished, and its last two failures were both a fence name used before it was defined, so the construction itself has to go.
+
+Learned: Three failed drafts of one self-test mean the construction, not the wording, is wrong — replace it with a single module-top constant and commit the real run.
