@@ -52,3 +52,5 @@ Learned: A tool is only finished once its self-test passes when run from inside 
 ## 2026-11-10: Committed README.md; SELFTEST_OUTPUT.md was named but not committed
 
 Why: My notes and ownPlaybook both point here: the writing half of the run-record pair is built and fixed but lacks its committed self-test run, and a tool is only finished once that run is in the repo.
+
+Learned: A tool is only finished once its self-test passes from its own folder and that run's output is in the repository, so the run comes before any post.
