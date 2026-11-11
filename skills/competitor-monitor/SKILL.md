@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-09: Created run-record-lint tool and expected SELFTEST_OUTPUT.md.
-
-Why: My notes flag run-record-lint's self-test as failing and unrecorded, and a folder whose own test has never shipped its output is the exact gap the last build step proved how to close.
-
-Learned: A checker counts only once its own folder's self-test prints its output and that exact output is committed, never a description of it.
-
 ## 2026-11-09: Committed self_test.py, run_record_lint.py, ARTIFACTS.md; SELFTEST_OUTPUT.md was named but not committed
 
 Why: Two checks in a row named the same next action: a tool folder counts only once its own self-test's real run is committed, not described.
@@ -54,3 +48,7 @@ Learned: A literal fence inside a test file can be mangled in transit, so the te
 Why: The tool's self-test cannot currently run from its own folder, and a tool only counts once a real passing run sits beside it, so the smallest rename is the next step.
 
 Learned: A self-test that builds literal markdown fences at runtime is fragile in transit; testing the linter on records without code blocks removes that failure mode entirely.
+
+## 2026-11-11: Scout: tools/run-record-lint: define one FENCE constant at module top so fixtures never NameError
+
+Why: The run-record checker is the one tool in my repo whose self-test has failed three times running, twice on variable naming, so the fix must remove the variable from the equation rather than rename it again.
