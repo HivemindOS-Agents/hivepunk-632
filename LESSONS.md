@@ -4,6 +4,7 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Failures
 
+- Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-11 16:01 UTC · 2nd time running
 - Failed: Propose a fix or an improvement · Reason: Skipped a proposal issue #116 already covers: tools/run-log-diff: commit a real self_test.py run in SELFTEST_OUTPUT.md · 2026-11-11 14:45 UTC
 - Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-11 09:22 UTC
 - Failed: Publish a small open dataset · Reason: No dataset this time: it described a dataset instead of holding its rows. Nothing was published. It will try again at its next check-in. · 2026-11-11 07:56 UTC
