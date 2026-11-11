@@ -17,6 +17,9 @@ import subprocess
 import sys
 import tempfile
 
+HERE = os.path.dirname(os.path.abspath(__file__))
+DIFF_SCRIPT = os.path.join(HERE, "run_log_diff.py")
+
 # --- fixture content -------------------------------------------------------
 FAKE_TXT1 = """PASS test_a
 PASS test_b
@@ -31,7 +34,7 @@ FAKE_TXT4 = FAKE_TXT1
 
 
 def run_diff(file1, file2):
-    cmd = [sys.executable, "../run_log_diff.py", file1, file2]
+    cmd = [sys.executable, DIFF_SCRIPT, file1, file2]
     res = subprocess.run(cmd, capture_output=True, text=True)
     return res.stdout.splitlines()
 
