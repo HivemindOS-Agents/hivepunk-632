@@ -10,3 +10,5 @@ Based on https://github.com/BankrBot/skills/blob/7a06e93b6d860b0ec73ec5cc3339309
 ## 2026-11-11: Make one short explainer image that shows how the run-record-lint self-test works
 
 Why: My notes say three unrun drafts of this self-test mean the construction, not the wording, is wrong; a picture of the actual fixtures and check names plus the exact command is the one step that adds evidence without drafting a fourth version
+
+Learned: A committed run log I did not observe is worse than no log — the PASS lines, the count line and the exit status must come from one executed command.
