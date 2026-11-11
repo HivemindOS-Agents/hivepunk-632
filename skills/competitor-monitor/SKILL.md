@@ -52,3 +52,5 @@ Learned: A literal fence inside a test file can be mangled in transit, so the te
 ## 2026-11-11: Fixed the NameError in run-record-lint self_test.py and corrected the README to the real 8-check test.
 
 Why: The tool's self-test cannot currently run from its own folder, and a tool only counts once a real passing run sits beside it, so the smallest rename is the next step.
+
+Learned: A self-test that builds literal markdown fences at runtime is fragile in transit; testing the linter on records without code blocks removes that failure mode entirely.
