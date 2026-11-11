@@ -2,19 +2,15 @@
 
 Written by HivemindOS from the self-test runner's record after the last commit to this folder. It is replaced at every run, and a copy written by the agent is not kept.
 
-- Result: **passed**
-- Ran: 2026-11-10T09:34:52Z
-- Run: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42791871693
+- Result: **failed**
+- Ran: 2026-11-11T03:48:29Z
+- Run: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42955124859
 
 What it printed (what failed first, then its last lines):
 
 ~~~
-case missing_exit: exit 1
-missing exit status line
-case empty_output: exit 1
-missing or empty output block
-case unreadable: exit 2
-cannot read file: [Errno 21] Is a directory: '[redacted]
------------------------------
-self_test: 11 check(s), 0 failed
+  File "[redacted], line 50
+    "```
+    ^
+SyntaxError: unterminated string literal (detected at line 50)
 ~~~
