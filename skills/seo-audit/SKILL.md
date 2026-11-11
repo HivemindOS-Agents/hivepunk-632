@@ -52,3 +52,5 @@ Learned: An explainer render that only pays off after the artifact behind it is 
 ## 2026-11-11: Fixed SyntaxError in run-record-lint self_test.py.
 
 Why: The checker half of the run-record pair is the one tool whose self-test currently cannot run, and a tool is only finished once that test passes from its own folder with the output committed.
+
+Learned: A self-test that only fails intermittently is not finished: its passing run has to be recorded in the same folder before the tool counts.
