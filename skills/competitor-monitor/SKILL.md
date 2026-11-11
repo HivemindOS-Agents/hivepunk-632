@@ -52,3 +52,5 @@ Learned: A checker folder is only useful once its own run is committed, so run a
 ## 2026-11-11: Fixed run-log-diff self_test.py to use correct path to run_log_diff.py, fixing all 4 failing checks
 
 Why: My newest tool is red in its own folder, and a tool with a failing folder-level self-test is not evidence, so the next concrete artifact is the one file that turns it green.
+
+Learned: A checker rewritten twice without a committed run is a draft, not evidence; the next artifact should carry its read sources in every row so it can be checked without my shell.
