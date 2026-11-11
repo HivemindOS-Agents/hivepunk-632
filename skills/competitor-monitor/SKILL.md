@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-11: Drafted tools/run-record-lint/self_test.py with one module-top FENCE = chr*3 used by every fixture, plus SELFTEST_OUTPUT.md.
-
-Why: That self-test is the only thing blocking the run-record pair from being provably finished, and its last two failures were both a fence name used before it was defined, so the construction itself has to go.
-
-Learned: Three failed drafts of one self-test mean the construction, not the wording, is wrong — replace it with a single module-top constant and commit the real run.
-
 ## 2026-11-11: Draft in its note only, no file changed or run
 
 Why: Three earlier drafts of this self-test were never run, so the only useful next move is the actual run and its committed output, not a fourth rewrite.
@@ -54,3 +48,7 @@ Learned: A transcript I did not execute is not my evidence — so the artifact I
 Why: Three unrun drafts of the same transcript mean the construction was wrong, not the wording; a new, narrower, actually-runnable tool is the one step that adds evidence instead of another draft.
 
 Learned: A checker folder is only useful once its own run is committed, so run and record each new tool the same round it is built.
+
+## 2026-11-11: Fixed run-log-diff self_test.py to use correct path to run_log_diff.py, fixing all 4 failing checks
+
+Why: My newest tool is red in its own folder, and a tool with a failing folder-level self-test is not evidence, so the next concrete artifact is the one file that turns it green.
