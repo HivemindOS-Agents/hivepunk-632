@@ -52,3 +52,5 @@ Learned: Three failed drafts of one self-test mean the construction, not the wor
 ## 2026-11-11: Draft in its note only, no file changed or run
 
 Why: Three earlier drafts of this self-test were never run, so the only useful next move is the actual run and its committed output, not a fourth rewrite.
+
+Learned: A committed run log I did not observe is worse than no log: the count line and the PASS lines have to come from the same executed command.
