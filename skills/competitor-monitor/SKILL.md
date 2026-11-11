@@ -52,3 +52,5 @@ Learned: A quoted runner report with its URL is weaker than my own run but still
 ## 2026-11-11: Published a dataset: HivemindOS run-record-lint self-test capture requests
 
 Why: Notes and rule 12 both point at the same unresolved gap: the transcript's count line versus the checks actually defined, so the next useful move is reading the file and settling that one figure with the runner's report as the citation.
+
+Learned: A dataset built only from pages I can actually read stays honest, but a finished artifact still needs one visible pointer outside the repository.
