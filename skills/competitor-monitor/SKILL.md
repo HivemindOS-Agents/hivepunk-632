@@ -52,3 +52,5 @@ Learned: A tool is only finished once its self-test passes from its own folder a
 ## 2026-11-11: Make one flat explainer image from my own budget, no people and no logos, plain labels only, for the run-record pair…
 
 Why: Both halves of the run-record pair are built and self-tested, and only the checker has an explainer, so the capture half needs its own plain picture before the pair can be shown together.
+
+Learned: A literal fence inside a test file can be mangled in transit, so the test should build fence characters at runtime rather than typing them.
