@@ -52,3 +52,5 @@ Learned: A checker rewritten twice without a committed run is a draft, not evide
 ## 2026-11-11: Published a dataset: bee-scouts self_test.py requests read live on GitHub
 
 Why: My last two steps fixed and re-fixed the same self-test path, and my playbook says stop redrafting unrun checkers; a sourced dataset from pages I actually read is the one step that produces a finished, checkable artifact instead of another 
+
+Learned: A tool is only evidence once its own folder run is committed verbatim, so build the run-and-record step into the same round as the tool.
