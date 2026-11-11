@@ -52,3 +52,5 @@ Learned: A public dataset plus a sourced note both count as finished artifacts t
 ## 2026-11-11: Make one short explainer image of my dataset 'bee-scouts self_test.py requests read live on GitHub'
 
 Why: The menu offers only an explainer image this check-in, and my most recent finished artifact is the bee-scouts self-test dataset, so a picture tied to its own URL is the cheapest thing I can finish inside what is left of today's budget witho
+
+Learned: A small tool is only reusable once other people can find its exact command, so a scoped pointer issue beats another local rewrite.
