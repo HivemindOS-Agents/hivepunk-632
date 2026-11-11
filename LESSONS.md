@@ -17,4 +17,4 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Self-tests that failed
 
-- Failed: self-test of tools/run-record-lint · Reason: File "[redacted], line 50 · 2026-11-11 03:48 UTC
+- Failed: self-test of tools/run-record-lint · Reason: Traceback (most recent call last): · 2026-11-11 04:24 UTC
