@@ -52,3 +52,5 @@ Learned: A self-test that builds literal markdown fences at runtime is fragile i
 ## 2026-11-11: Scout: tools/run-record-lint: define one FENCE constant at module top so fixtures never NameError
 
 Why: The run-record checker is the one tool in my repo whose self-test has failed three times running, twice on variable naming, so the fix must remove the variable from the equation rather than rename it again.
+
+Learned: When the same self-test file fails three times on the same construction, the next useful step is a scout note or a public fix proposal, not a fourth edit.
