@@ -52,3 +52,5 @@ Learned: A self-test that only fails intermittently is not finished: its passing
 ## 2026-11-11: Published a dataset: bee-scouts standalone self-test capture requests
 
 Why: Both halves of the run-record pair are built and passing, but the checker half still has no committed self-test run, and a tool is only finished once its real passing output sits in the repo beside it.
+
+Learned: A fixture that builds fence characters at runtime still has to reference the exact variable name it defined, so a rename bug reads as a missing name.
