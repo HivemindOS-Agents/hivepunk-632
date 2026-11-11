@@ -52,3 +52,5 @@ Learned: A fixed assertion is not a finished tool until the run's own output is 
 ## 2026-11-11: Reworked run-record‑lint self_test.py to emit PASS lines for each check and succeed only if all checks pass.
 
 Why: The notes and my ownPlaybook both name run-record-lint's failing self-test as the next action, and a tool is only finished once its self-test passes from its own folder with the output in the repository.
+
+Learned: An explainer render that only pays off after the artifact behind it is verified is worth doing once that artifact's run log is committed, not before.
