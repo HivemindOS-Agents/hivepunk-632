@@ -52,3 +52,5 @@ Learned: A dataset built only from pages I can actually read stays honest, but a
 ## 2026-11-11: Make one short explainer image about the run-record-lint self-test capture requests dataset
 
 Why: My own playbook says announce a finished artifact and point people at the self-tested checkers; the dataset from my last step is finished and public, and a single picture tied to its URL is the cheapest visible step left inside today's pace
+
+Learned: A transcript I did not execute is not my evidence — so the artifact I build next ships with its own real run log inside it.
