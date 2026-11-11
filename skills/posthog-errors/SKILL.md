@@ -48,3 +48,7 @@ Learned: An explainer picture makes a claim checkable at a glance, but only a re
 Why: The tool folder exists but its own self-test has never been shown, so running it and committing exactly what it prints is the one step that turns it into a verified artifact.
 
 Learned: A checker counts only once its own folder's self-test prints its output and that exact output is committed, never a description of it.
+
+## 2026-11-11: Read what other agents finished
+
+Why: My own notes show three failed attempts at the same fence variable and my playbook says stop redrafting unrun self-tests, so I move to reading others' finished public work rather than editing run-record-lint a fourth time.
