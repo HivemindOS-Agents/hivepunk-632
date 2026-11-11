@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
-"""Self‑test for run_record_lint.py.
+"""Self-test for run_record_lint.py.
 
-The test creates a temporary directory, writes a set of fixtures that the
-linter should reject or accept, runs the linter on each,
-and reports `PASS <name>` or `FAIL <name>` for every named check.
-All checks must pass for the test to exit with status 0.
+Builds a small set of fixture run records in a temporary directory inside
+this folder, runs run_record_lint.py on each of them as a subprocess, and
+prints one `PASS <name>` / `FAIL <name>` line per named check.  It exits 0
+only when every check passes.
+
+The three-backtick code fence is built at runtime with chr(96) * 3 and named
+BT, so the file itself contains no literal backtick fence and there is only
+one name for the fence everywhere.
+
+Standard library only.  No network.  Run with no arguments from this folder:
+
+    python3 self_test.py
 """
 
 import os
@@ -12,45 +20,52 @@ import subprocess
 import sys
 import tempfile
 
-# Build the fence character at runtime to avoid syntax errors from
-# literal triple-backtick strings.
+# The one and only name for a three-backtick code fence.
 BT = chr(96) * 3
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 LINT_PATH = os.path.join(HERE, "run_record_lint.py")
 
-# Expected fixture file contents.
+# --- fixtures -------------------------------------------------------------
+# One well-formed record: linter must exit 0 and print OK.
 VALID_MD = (
     "**Command:** `python3 tool.py`\n"
     "**Exit status:** 0\n"
     "**Output:**\n"
     f"{BT}\n"
     "Something happened.\n"
-    f"{TB}\n"
+    f"{BT}\n"
 )
+
+# No command line at all.
 NO_COMMAND = (
     "**Exit status:** 0\n"
     "**Output:**\n"
     f"{BT}\n"
     "Some output.\n"
-    f"{TB}\n"
+    f"{BT}\n"
 )
+
+# No exit status line.
 NO_EXIT = (
     "**Command:** `python3 tool.py`\n"
     "**Output:**\n"
     f"{BT}\n"
     "Some output.\n"
-    f"{TB}\n"
+    f"{BT}\n"
 )
+
+# Output block present but whitespace-only.
 EMPTY_OUTPUT = (
     "**Command:** `python3 tool.py`\n"
     "**Exit status:** 0\n"
     "**Output:**\n"
     f"{BT}\n"
     "   \n"
-    f"{TB}\n"
+    f"{BT}\n"
 )
 
+# --- checks ---------------------------------------------------------------
 TESTS = [
     {
         "name": "valid_exit_0",
@@ -100,41 +115,53 @@ TESTS = [
         "expected_rc": 1,
         "check": lambda out: "missing or empty output block" in out,
     },
-    # Test case unreadable has been removed because it is impossible to
-    # test portably without running from a container- or fixture-specific
-    # filesystem setup that HivemindOS cannot guarantee.  The linter's
-    # exit-2 path is exercised indirectly by the other cases.
+    # An unreadable-file case is deliberately not tested here: making a file
+    # unreadable does not work for every uid (root reads it anyway), so such a
+    # check would be flaky rather than meaningful.  The linter's exit-2 path is
+    # its OSError branch and is not exercised by this self-test.
 ]
 
-passed = 0
-failed = 0
 
-with tempfile.TemporaryDirectory(dir=HERE) as tmp:
-    for test in TESTS:
-        if test["content"] is not None:
-            fp = os.path.join(tmp, f"{test['name']}.md")
-            with open(fp, "w", encoding="utf-8") as f:
+def main():
+    passed = 0
+    failed = 0
+
+    with tempfile.TemporaryDirectory(dir=HERE) as tmp:
+        paths = {}
+        for test in TESTS:
+            path = os.path.join(tmp, test["name"] + ".md")
+            paths[test["name"]] = path
+            with open(path, "w", encoding="utf-8") as f:
                 f.write(test["content"])
 
-    for test in TESTS:
-        if test["content"] is not None:
-            path = os.path.join(tmp, f"{test['name']}.md")
-        else:
-            continue  # (never reached after removing the unreadable case)
+        for test in TESTS:
+            path = paths[test["name"]]
+            try:
+                result = subprocess.run(
+                    [sys.executable, LINT_PATH, path],
+                    capture_output=True,
+                    text=True,
+                )
+            except OSError as exc:
+                print("FAIL %s: could not run linter: %s" % (test["name"], exc))
+                failed += 1
+                continue
 
-        result = subprocess.run(
-            [sys.executable, LINT_PATH, path], capture_output=True, text=True
-        )
-        rc = result.returncode
-        out = result.stdout + result.stderr
+            out = result.stdout + result.stderr
+            ok = result.returncode == test["expected_rc"] and test["check"](out)
+            if ok:
+                print("PASS " + test["name"])
+                passed += 1
+            else:
+                print(
+                    "FAIL %s: exit %d (expected %d), output=%r"
+                    % (test["name"], result.returncode, test["expected_rc"], out)
+                )
+                failed += 1
 
-        cond = rc == test["expected_rc"] and test["check"](out)
-        if cond:
-            print(f"PASS {test['name']}")
-            passed += 1
-        else:
-            print(f"FAIL {test['name']}")
-            failed += 1
+    print("self_test: %d check(s), %d failed" % (passed + failed, failed))
+    return 0 if failed == 0 else 1
 
-print(f"self_test: {len(TESTS)} check(s), {failed} failed")
-sys.exit(0 if failed == 0 else 1)
+
+if __name__ == "__main__":
+    sys.exit(main())
