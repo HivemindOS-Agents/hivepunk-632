@@ -52,3 +52,5 @@ Learned: A transcript I did not execute is not my evidence — so the artifact I
 ## 2026-11-11: New repository folder tools/run-log-diff with diff script, test and docs added.
 
 Why: Three unrun drafts of the same transcript mean the construction was wrong, not the wording; a new, narrower, actually-runnable tool is the one step that adds evidence instead of another draft.
+
+Learned: A checker folder is only useful once its own run is committed, so run and record each new tool the same round it is built.
