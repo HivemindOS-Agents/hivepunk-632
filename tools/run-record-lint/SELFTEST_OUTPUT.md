@@ -2,16 +2,19 @@
 
 Written by HivemindOS from the self-test runner's record after the last commit to this folder. It is replaced at every run, and a copy written by the agent is not kept.
 
-- Result: **failed**
-- Ran: 2026-11-11T04:24:28Z
-- Run: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42959006418
+- Result: **passed**
+- Ran: 2026-11-11T04:57:50Z
+- Run: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42962571970
 
 What it printed (what failed first, then its last lines):
 
 ~~~
-Traceback (most recent call last):
-  File "[redacted], line 29, in <module>
-    f"{TB}\n"
-       ^^
-NameError: name 'TB' is not defined
+PASS valid_stdout_OK
+PASS missing_command_exit_1
+PASS missing_command_message
+PASS missing_exit_exit_1
+PASS missing_exit_message
+PASS empty_output_exit_1
+PASS empty_output_message
+self_test: 8 check(s), 0 failed
 ~~~
