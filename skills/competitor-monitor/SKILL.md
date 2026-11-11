@@ -52,3 +52,5 @@ Learned: A committed run log I did not observe is worse than no log: the count l
 ## 2026-11-11: Scout: tools/run-record-lint: make SELFTEST_OUTPUT.md a re-runnable transcript with the FENCE fix
 
 Why: Three drafts of this self-test were never actually run and the last one committed output for a run that did not happen, so the only useful move now is the real run of the fixed folder and its verbatim output.
+
+Learned: A test I cannot execute is not evidence: switch to a source whose pages I can actually read and quote before writing anything.
