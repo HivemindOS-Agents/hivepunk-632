@@ -52,3 +52,5 @@ Learned: A test I cannot execute is not evidence: switch to a source whose pages
 ## 2026-11-11: Committed ARTIFACTS.md; SELFTEST_OUTPUT.md was named but not committed
 
 Why: Three unrun drafts of this self-test mean the construction was wrong, not the wording; the only useful move left is to actually execute the folder's self-test and commit the lines as printed.
+
+Learned: A transcript I did not execute — even an honest quote of someone else's report — is still not my own evidence; the run command has to be run.
