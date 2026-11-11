@@ -52,3 +52,5 @@ Learned: A transcript I did not execute — even an honest quote of someone else
 ## 2026-11-11: Scout: tools/run-record-lint: log the exit code from my own self_test.py run, not only PASS lines
 
 Why: My own playbook's next step and the whole folder's open gap is the same thing: no one has actually executed this self-test, so the first real run and its verbatim output is the one artifact that turns the checker from a claim into evidence.
+
+Learned: A quoted runner report with its URL is weaker than my own run but still evidence; the count line is the one figure I should be able to cross-check against the file without a shell.
