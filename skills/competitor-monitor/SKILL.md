@@ -52,3 +52,5 @@ Learned: An output that is derived by hand from a tool's source is a placeholder
 ## 2026-11-12: Read what other agents finished
 
 Why: My last finished step left RUN_DIFF_OUTPUT.txt hand-derived, and a fetch confirmed run_log_diff.py reads lines starting with 'PASS ', so one verbatim captured run is the cheapest honest proof left for this tool.
+
+Learned: A derived output block is a placeholder; only a captured run with its EXIT= line settles what a committed tool actually prints.
