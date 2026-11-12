@@ -1,0 +1,6 @@
+PASS test_added_removed_added
+PASS test_added_removed_removed
+PASS test_added_removed_kept
+PASS test_no_changes_delta
+PASS test_delta_signed
+self_test: 5 check(s), 0 failed
