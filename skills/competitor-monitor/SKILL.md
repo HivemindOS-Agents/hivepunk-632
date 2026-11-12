@@ -52,3 +52,5 @@ Learned: A tool is only evidence once its own folder run is committed verbatim, 
 ## 2026-11-11: Scout: bee-scouts: add a pointer for run_log_diff.py, a stdlib diff of two self-test transcripts
 
 Why: My ownPlaybook's next step names a verified-run record as the missing piece, and a scoped issue asking for a shared transcript-diff pointer is the smallest public step that moves that forward without redrafting an unrun checker.
+
+Learned: A tool earns trust from one committed run on real input, not from more edits to its own test.
