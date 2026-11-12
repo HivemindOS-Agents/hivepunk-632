@@ -1,142 +1,163 @@
 #!/usr/bin/env python3
-"""Read a tool folder’s ``out/`` directory and emit a self‑contained HTML card.
+"""Render a self-contained HTML fixture card for a directory laid out as:
 
-The script parses ``README.md`` for a *verify* command and an ``EXIT=`` line, walks the
-``data/`` sub‑directory, calculates SHA‑256 checksums, and renders a small HTML page that
-shows the card contents, the command strings and a table with file name, hash and
-raw byte representation.
+    out/
+      README.md      -- carries the verify command and an EXIT= line
+      data/...       -- the files to be fingerprinted
 
-Only the standard library is used: ``os``, ``sys``, ``hashlib`` and ``html``.
+Standard library only: hashlib, html, os, sys. The script reads nothing
+outside the directory named on the command line and writes only to stdout.
+
+Usage:
+    python3 fixture_card.py <out-directory>
+
+Exit status: 0 on success, 1 when the argument is not a directory, 2 on a
+usage error.
 """
-import os
-import sys
+
 import hashlib
 import html
+import os
+import sys
+
+CHUNK = 65536
 
 
-def sha256hex(path: str) -> str:
-    """Return the hex SHA‑256 of a file.”"""
-    h = hashlib.sha256()
-    with open(path, "rb") as f:
-        for chunk in iter(lambda: f.read(65536), b""):
-            h.update(chunk)
-    return h.hexdigest()
+def sha256_hex(path):
+    """Return the hex SHA-256 digest of the file at path."""
+    digest = hashlib.sha256()
+    with open(path, "rb") as handle:
+        for chunk in iter(lambda: handle.read(CHUNK), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
-def bytes_display(data: bytes) -> str:
-    """Return a printable representation: printable ASCII unchanged, others as ``\xHH``.
-
-Backslashes themselves are escaped as ``\\`` to keep the output verbatim.
-"""
+def display_bytes(data):
+    """Lossless display: printable ASCII as itself, every other byte as an
+    escape of the form backslash x and two hex digits (backslash included).
+    """
     parts = []
-    for b in data:
-        if 32 <= b < 127 and b != ord("\\"):
-            parts.append(chr(b))
+    for byte in data:
+        if 32 <= byte < 127 and byte != 92:  # 92 is the backslash byte
+            parts.append(chr(byte))
         else:
-            parts.append(f"\\x{b:02x}")
+            parts.append("\\x%02x" % byte)
     return "".join(parts)
 
 
-def main() -> None:
-    if len(sys.argv) != 2:
-        print(f"Usage: {sys.argv[0]} <out-directory>", file=sys.stderr)
-        sys.exit(1)
-    out_dir = sys.argv[1]
-    if not os.path.isdir(out_dir):
-        print(f"Error: {out_dir} is not a directory", file=sys.stderr)
-        sys.exit(1)
+def parse_readme(text):
+    """Return (verify_command, exit_line) found in the card text, or None."""
+    verify_cmd = None
+    exit_line = None
+    for line in text.splitlines():
+        stripped = line.strip().strip("`").strip()
+        if verify_cmd is None and stripped.startswith("cd ") and "self_test.py" in stripped:
+            verify_cmd = stripped
+        if exit_line is None and stripped.startswith("EXIT="):
+            exit_line = stripped
+    return verify_cmd, exit_line
 
+
+def collect_files(data_dir):
+    """Walk data_dir and return one entry per file, sorted by relative path."""
+    entries = []
+    for root, dirs, files in os.walk(data_dir):
+        dirs.sort()
+        for name in sorted(files):
+            path = os.path.join(root, name)
+            rel = os.path.relpath(path, data_dir).replace(os.sep, "/")
+            with open(path, "rb") as handle:
+                raw = handle.read()
+            entries.append({
+                "path": rel,
+                "sha256": sha256_hex(path),
+                "size": len(raw),
+                "display": display_bytes(raw),
+            })
+    entries.sort(key=lambda item: item["path"])
+    return entries
+
+
+def render(out_dir):
+    """Return the whole HTML page for out_dir as a string."""
     readme_path = os.path.join(out_dir, "README.md")
     data_dir = os.path.join(out_dir, "data")
 
-    verify_cmd = None
-    exit_line = None
-    readme_content = ""
+    readme_text = ""
     if os.path.isfile(readme_path):
-        with open(readme_path, "r", encoding="utf-8") as f:
-            readme_content = f.read()
-        for line in readme_content.splitlines():
-            stripped = line.strip()
-            # Verify command: a line that starts with back‑ticked "cd … && python3 self_test.py"
-            if stripped.startswith("`cd ") and "self_test.py" in stripped:
-                verify_cmd = stripped.strip("`")
-            # EXIT= line: may be back‑ticked or not
-            cand = stripped.strip("`")
-            if cand.startswith("EXIT="):
-                exit_line = cand
+        with open(readme_path, "r", encoding="utf-8", errors="replace") as handle:
+            readme_text = handle.read()
 
-    # Walk the data directory
-    file_entries = []
-    if os.path.isdir(data_dir):
-        for root, _, files in os.walk(data_dir):
-            rel_dir = os.path.relpath(root, data_dir)
-            if rel_dir == ".":
-                rel_dir = ""
-            for fname in sorted(files):
-                filepath = os.path.join(root, fname)
-                rel_path = os.path.join(rel_dir, fname) if rel_dir else fname
-                sha = sha256hex(filepath)
-                with open(filepath, "rb") as f:
-                    raw_bytes = f.read()
-                file_entries.append({
-                    "rel_path": rel_path,
-                    "sha256": sha,
-                    "size": len(raw_bytes),
-                    "raw_display": bytes_display(raw_bytes),
-                })
+    verify_cmd, exit_line = parse_readme(readme_text)
+    entries = collect_files(data_dir) if os.path.isdir(data_dir) else []
+    esc = html.escape
 
-    # Build HTML
-    parts = []
-    parts.append("<!DOCTYPE html>")
-    parts.append("<html lang=\"en\">")
-    parts.append("<head><meta charset=\"utf-8\"><title>Fixture Card – Self‑Contained View</title>")
-    parts.append("<style>body{font-family:monospace;max-width:960px;margin:20px auto;padding:0 10px}")
-    parts.append("pre{background:#f5f5f5;padding:10px;overflow-x:auto}")
-    parts.append("table{border-collapse:collapse;width:100%}")
-    parts.append("td,th{border:1px solid #ccc;padding:6px;vertical-align:top}")
-    parts.append("th{background:#eee}")
-    parts.append(".raw-bytes{word-break:break-all;font-size:small}")
-    parts.append("</style></head><body>")
+    parts = [
+        "<!DOCTYPE html>",
+        '<html lang="en">',
+        "<head>",
+        '<meta charset="utf-8">',
+        "<title>Fixture Card</title>",
+        "<style>",
+        "body{font-family:monospace;max-width:960px;margin:20px auto;padding:0 12px}",
+        "pre{background:#f4f4f4;padding:10px;overflow-x:auto}",
+        "table{border-collapse:collapse;width:100%}",
+        "th,td{border:1px solid #ccc;padding:6px;vertical-align:top;text-align:left}",
+        "th{background:#eee}",
+        ".raw{word-break:break-all}",
+        "</style>",
+        "</head>",
+        "<body>",
+        "<h1>Fixture Card</h1>",
+        "<h2>Verify command</h2>",
+    ]
 
-    parts.append("<h1>Fixture Card Web View</h1>")
-
-    # Verify command
-    parts.append("<h2>Verify Command</h2>")
     if verify_cmd:
-        parts.append(f"<pre><code>{html.escape(verify_cmd)}</code></pre>")
+        parts.append("<pre><code>%s</code></pre>" % esc(verify_cmd))
     else:
-        parts.append("<p><em>Not found in README.md</em></p>")
+        parts.append("<p><em>not found in README.md</em></p>")
 
-    # EXIT= line
-    parts.append("<h2>Captured EXIT= Line</h2>")
+    parts.append("<h2>Captured EXIT= line</h2>")
     if exit_line:
-        parts.append(f"<pre><code>{html.escape(exit_line)}</code></pre>")
+        parts.append("<pre><code>%s</code></pre>" % esc(exit_line))
     else:
-        parts.append("<p><em>Not found in README.md</em></p>")
+        parts.append("<p><em>not found in README.md</em></p>")
 
-    # Dataset card contents
-    parts.append("<h2>Dataset Card (README.md)</h2>")
-    parts.append(f"<pre><code>{html.escape(readme_content)}</code></pre>")
+    parts.append("<h2>Card text (README.md)</h2>")
+    parts.append("<pre><code>%s</code></pre>" % esc(readme_text))
 
-    # File table
-    parts.append("<h2>Per‑File Table</h2>")
-    if file_entries:
-        parts.append("<table><tr><th>File</th><th>SHA‑256</th><th>Size (bytes)</th><th>Raw Bytes</th></tr>")
-        for entry in file_entries:
-            parts.append("<tr>")
-            parts.append(f"<td>{html.escape(entry[\"rel_path\"])}</td>")
-            parts.append(f"<td><code>{entry[\"sha256\"]}</code></td>")
-            parts.append(f"<td>{entry[\"size\"]}</td>")
-            parts.append(f"<td class=\"raw-bytes\"><code>{html.escape(entry[\"raw_display\"])</code></td>")
-            parts.append("</tr>")
+    parts.append("<h2>Files under data/</h2>")
+    if entries:
+        parts.append("<table>")
+        parts.append("<tr><th>file</th><th>sha256</th><th>size</th><th>raw bytes</th></tr>")
+        for entry in entries:
+            parts.append(
+                '<tr><td>%s</td><td>%s</td><td>%d</td><td class="raw">%s</td></tr>'
+                % (esc(entry["path"]), esc(entry["sha256"]), entry["size"],
+                   esc(entry["display"]))
+            )
         parts.append("</table>")
+        parts.append("<p>%d file(s), %d byte(s) in total.</p>"
+                     % (len(entries), sum(item["size"] for item in entries)))
     else:
-        parts.append("<p><em>No files found in data/ directory.</em></p>")
+        parts.append("<p><em>no files found in data/</em></p>")
 
-    parts.append("</body></html>")
+    parts.append("</body>")
+    parts.append("</html>")
+    return "\n".join(parts) + "\n"
 
-    print("".join(parts))
+
+def main(argv):
+    if len(argv) != 2:
+        sys.stderr.write("Usage: %s <out-directory>\n" % os.path.basename(argv[0]))
+        return 2
+    out_dir = argv[1]
+    if not os.path.isdir(out_dir):
+        sys.stderr.write("Error: %s is not a directory\n" % out_dir)
+        return 1
+    sys.stdout.write(render(out_dir))
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main(sys.argv))
