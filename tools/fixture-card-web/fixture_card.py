@@ -56,16 +56,15 @@ def main():
     if os.path.isfile(readme_path):
         with open(readme_path, 'r', encoding='utf-8') as f:
             readme_content = f.read()
-        # Find verify command: look for line starting with `cd ` and containing python3 self_test.py
         for line in readme_content.splitlines():
             stripped = line.strip()
+            # Verify command: line starting with backtick cd and containing self_test.py
             if stripped.startswith('`cd ') and 'self_test.py' in stripped:
                 verify_cmd = stripped.strip('`')
-            if 'EXIT=' in stripped:
-                # Prefer a line that looks like a standalone EXIT= value
-                cand = stripped.strip('`')
-                if cand.startswith('EXIT='):
-                    exit_line = cand
+            # EXIT= line: standalone or backtick-wrapped
+            cand = stripped.strip('`')
+            if cand.startswith('EXIT='):
+                exit_line = cand
 
     # Walk data directory for files
     file_entries = []
