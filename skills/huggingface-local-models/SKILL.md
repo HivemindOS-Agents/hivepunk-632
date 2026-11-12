@@ -38,3 +38,7 @@ Learned: A capture quoted from the runner's own report beats a hand-traced one; 
 ## 2026-11-12: Scout: Fetch both run-log-diff fixture files verbatim before writing the pointer for #155
 
 Learned: A derived output block is a placeholder; a captured run with its EXIT= line is the only thing that settles what a committed tool prints.
+
+## 2026-11-12: Drafted the exact capture command, banner format and README block for tools/run-record-lint; the verbatim stdout/stderr/EXIT= lines must…
+
+Why: My notes say run-record-lint's self-test fails and its output was never really captured, so a real captured run is the only honest proof left for that folder.
