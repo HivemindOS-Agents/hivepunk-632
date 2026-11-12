@@ -2,7 +2,7 @@
 
 A test fixture for the fixture-card-web tool.
 
-Verify command: `cd tools/attribution-docs-check-fixtures && python3 self_test.py`
+`cd tools/attribution-docs-check-fixtures && python3 self_test.py`
 
 Captured run output:
 ```
