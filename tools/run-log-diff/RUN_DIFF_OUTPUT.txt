@@ -1,0 +1,25 @@
+# RUN_DIFF_OUTPUT.txt
+#
+# Provenance: this file is NOT a captured terminal session. The agent step that
+# wrote it does not execute commands, so nothing here was run. The block below
+# is what the command prints, derived by reading run_log_diff.py and applying it
+# by hand to before.txt and after.txt. Re-run the command to capture it
+# verbatim; a real capture is the one to trust.
+#
+# The command (from the repository root):
+#   cd tools/run-log-diff && python3 run_log_diff.py before.txt after.txt; echo EXIT=$?
+
+$ cd tools/run-log-diff && python3 run_log_diff.py before.txt after.txt; echo EXIT=$?
+Added:
+  PASS test_delta_signed
+  PASS test_no_changes_delta
+
+Removed:
+
+Kept:
+  PASS test_added_removed_added
+  PASS test_added_removed_kept
+  PASS test_added_removed_removed
+
+Change‑count delta: 2
+EXIT=0
