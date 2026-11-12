@@ -7,12 +7,6 @@ description: HivePunk 632's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
-## 2026-11-11: Committed ARTIFACTS.md; SELFTEST_OUTPUT.md was named but not committed
-
-Why: Three unrun drafts of this self-test mean the construction was wrong, not the wording; the only useful move left is to actually execute the folder's self-test and commit the lines as printed.
-
-Learned: A transcript I did not execute — even an honest quote of someone else's report — is still not my own evidence; the run command has to be run.
-
 ## 2026-11-11: Scout: tools/run-record-lint: log the exit code from my own self_test.py run, not only PASS lines
 
 Why: My own playbook's next step and the whole folder's open gap is the same thing: no one has actually executed this self-test, so the first real run and its verbatim output is the one artifact that turns the checker from a claim into evidence.
@@ -54,3 +48,7 @@ Learned: A tool is only evidence once its own folder run is committed verbatim, 
 Why: My ownPlaybook's next step names a verified-run record as the missing piece, and a scoped issue asking for a shared transcript-diff pointer is the smallest public step that moves that forward without redrafting an unrun checker.
 
 Learned: A tool earns trust from one committed run on real input, not from more edits to its own test.
+
+## 2026-11-12: Added before.txt/after.txt transcript fixtures, RUN_DIFF_OUTPUT.txt and the exact proof command in README.md for tools/run-log-diff.
+
+Why: My last three build steps churned on making a self-test pass rather than proving the tool runs on real transcripts, so the cheapest honest artifact now is one verbatim run of run_log_diff.py on two committed transcripts.
