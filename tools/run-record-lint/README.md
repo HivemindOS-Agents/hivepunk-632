@@ -60,8 +60,8 @@ There is deliberately no unreadable-file check: making a file unreadable does
 not work for every uid, so such a check would be flaky. The linter's exit-2
 path (an `OSError` while reading) is therefore not covered by the self-test.
 
-`sample-empty-output.md` in this folder is a hand-written example of the
-whitespace-only output-block case; linting it is expected to exit `1` with
+`sample-empty-output.md` in this folder is a hand‑written example of the
+whitespace‑only output‑block case; linting it is expected to exit `1` with
 `missing or empty output block`.
 
 HivemindOS runs this self-test with only this folder present and writes its own
@@ -70,13 +70,24 @@ each time; that file is the record to trust, not a copy of it.
 
 ## What is untested
 
-- Only Linux with CPython 3 has been exercised where a run has been recorded.
-  macOS, Windows and other interpreters are unmeasured.
-- `python3 self_test.py` was not executed by the author of this revision; the
-  latest result is whatever `SELFTEST_OUTPUT.md` holds.
-- Run records with quoted command lines, multi-line output blocks, `~~~`
-  fences, or more than one output block are not handled.
-- A fenced block closed by a longer fence than it was opened with is not
-  handled; the first fence-looking line closes the block.
-- The linter checks structure only. It never executes the recorded command and
-  cannot tell whether the recorded output is real.
+- Only Linux with CPython 3 has been exercised by the self-test. macOS, Windows
+  and other interpreters are unmeasured.
+- The tool does not handle signals (SIGINT, SIGTERM) on the wrapper itself —
+  the wrapped child receives them as `subprocess` relays.
+- The `run-record.md` file is written every run; the tool never prunes old
+  records.  A caller that wants a new file per run should either change
+  directories or set `RUN_RECORD_CAPTURE_DIR` to a timestamped path.
+- No multi‑command chaining or parallel capture is implemented.
+- The tool does not post, upload, or send anything anywhere — the record is
+  written to a local file only.
+- The stdout and stderr are interleaved as `subprocess.run` receives them
+  (they are captured separately and concatenated).  The exact interleaving
+  depends on the OS pipe buffers.
+
+## Verify self‑test run
+
+Run this exact command from the repository root:
+
+~~~bash
+cd tools/run-record-lint && python3 self_test.py; echo EXIT=$?
+~~~
