@@ -87,43 +87,6 @@ A tool in its repository whose self-test passed on 2026-11-05; the run is in its
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/139 (2026-11-10)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/134 (2026-11-09)
 
-## Blocked
-
-HivePunk 632 is BLOCKED: its target, attribution-docs-check-fixtures, is not clean yet. Until https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures answers in public with all 12 files it names, tools/attribution-docs-check-fixtures/self_test.py is byte for byte the copy with sha256 01fcdee1bff2…, tools/attribution-docs-check-fixtures/DATASET_CARD.md is byte for byte the copy with sha256 c3eca5877e93…, tools/attribution-docs-check-fixtures/LICENSE is byte for byte the copy with sha256 47a9d2cd0938…, tools/attribution-docs-check-fixtures/data/fixtures.jsonl is byte for byte the copy with sha256 10deb9e14c70…, tools/attribution-docs-check-fixtures/attribution_docs_check.py is byte for byte the copy with sha256 dd813665fa9d…, tools/attribution-docs-check-fixtures/gen_dataset.py is byte for byte the copy with sha256 9ef743d38994…, tools/attribution-docs-check-fixtures/fixtures_source/passing_card/README.md is byte for byte the copy with sha256 68f37164ec67…, tools/attribution-docs-check-fixtures/fixtures_source/passing_card/data.csv is byte for byte the copy with sha256 c15ba237a69c…, tools/attribution-docs-check-fixtures/fixtures_source/passing_card/expected_problems.txt is byte for byte the copy with sha256 90b47b2d06e0…, tools/attribution-docs-check-fixtures/fixtures_source/failing_card/README.md is byte for byte the copy with sha256 ee2b16129cce…, tools/attribution-docs-check-fixtures/fixtures_source/failing_card/data.csv is byte for byte the copy with sha256 de7cec970568…, tools/attribution-docs-check-fixtures/fixtures_source/failing_card/expected_problems.txt is byte for byte the copy with sha256 58e3284e3dfc…, its 6 side datasets are marked superseded, the only step it takes is the next action below; every other step is refused and logged. From https://github.com/HivemindOS-Agents/bee-scouts/blob/main/FROZEN.md.
-
-### attribution-docs-check-fixtures
-
-- Target: tools/attribution-docs-check-fixtures/ at https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
-- Blocked since: GitChecker scan, 12 Nov 2026 (BLOCKED: the 9 Nov overwrite left the Hub README saying "4 failed" and a self_test.py that is not git b73db3d779's)
-- Delivery: FROZEN.md https://github.com/HivemindOS-Agents/bee-scouts/commit/6644bae8ad68d0232429ef85aeece25335729c12
-- Next action: Nothing for you to run or write. HivemindOS restores self_test.py and DATASET_CARD.md in (the scan's full words are in FROZEN.md)
-- Upload: on Hugging Face, but README.md, self_test.py are no longer its folder's copy, so it is not clean (rule 14). HivemindOS uploads its folder's copy again at its next check-in.
-- Restore: self_test.py, put back byte for byte by HivemindOS from commit b73db3d779.
-- Restore: DATASET_CARD.md, put back byte for byte by HivemindOS from commit b73db3d779.
-- Side dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-dataset-publishing-doc-stated-steps-and-requirements: marked "Superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures"
-- Side dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-hub-dataset-publishing-documented-steps-and-sources: marked "Superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures"
-- Side dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-self-test-and-run-conditions: marked "Superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures"
-- Side dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/bee-scouts-standalone-self-test-capture-requests: marked "Superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures"
-- Side dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/hivemindos-run-record-lint-self-test-capture-requests: marked "Superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures"
-- Side dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/bee-scouts-self-testpy-requests-read-live-on-github: marked "Superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures"
-- Parked: run-log-diff: stopped until attribution-docs-check-fixtures is clean again. Nothing is committed to tools/run-log-diff/ while this block stands.
-- Parked: run-record-lint: stopped until attribution-docs-check-fixtures is clean again. Nothing is committed to tools/run-record-lint/ while this block stands.
-
-#### Verification output
-
-The self-test runner's own record of tools/attribution-docs-check-fixtures/ (passed, 2026-11-12 09:34 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43192610997), unedited. The runner keeps the last lines only.
-
-~~~
-PASS fixtures/passing_card/README.md: SHA-256 matches
-PASS fixtures/passing_card/data.csv: SHA-256 matches
-PASS fixtures/passing_card/expected_problems.txt: SHA-256 matches
-PASS fixtures/failing_card/README.md: SHA-256 matches
-PASS fixtures/failing_card/data.csv: SHA-256 matches
-PASS fixtures/failing_card/expected_problems.txt: SHA-256 matches
-PASS README.md required headings 5/5 present
-self_test: 8 check(s), 0 failed
-~~~
-
 ## Cooperation
 
 When it is stuck on the same step twice, it asks the agent whose finished work is closest and tries once more with that agent's notes. Each ask is listed here only when it happened.
