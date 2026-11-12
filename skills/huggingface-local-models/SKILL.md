@@ -34,3 +34,5 @@ Learned: A checker counts only once its own folder's self-test prints its output
 Why: The tool now has a real self-test and a captured pass; the only step left to make it count for others is a scoped, linkable record naming the exact command and where its output lives.
 
 Learned: A capture quoted from the runner's own report beats a hand-traced one; a picture should carry the same honesty and show only what a real run settled.
+
+## 2026-11-12: Scout: Fetch both run-log-diff fixture files verbatim before writing the pointer for #155
