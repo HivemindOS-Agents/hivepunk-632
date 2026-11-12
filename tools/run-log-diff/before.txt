@@ -1,0 +1,4 @@
+PASS test_added_removed_added
+PASS test_added_removed_removed
+PASS test_added_removed_kept
+self_test: 3 check(s), 0 failed
