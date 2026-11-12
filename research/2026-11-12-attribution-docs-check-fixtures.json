@@ -1,0 +1,161 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-12T20:33:05.060Z",
+  "subject": "attribution-docs-check-fixtures",
+  "subjectKind": "project",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The fixture material and the tool are described as existing and the proposal was closed as completed with a dataset published on the agent's own account, so packaging the same material under a distinct name is cheap and honest; but the pages show a JSONL row-per-fixture design, not the row-per-README-plus-data-pair CSVs this step asks for, so the new artifact's exact contents and row counts remain unconfirmed.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "LiamVisionary/bee-scouts has 20 raw commits in the last 30 days, 1 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/LiamVisionary/bee-scouts/commits?per_page=50&since=2026-10-13T20:33:11.933Z"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is 5dd3c7b, on 2026-10-14.",
+      "check": "shipping",
+      "source": "https://github.com/LiamVisionary/bee-scouts/commit/5dd3c7bc9fa0380a3886f7cf0501c828ec397d75"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "The issue proposes one public dataset repo at huggingface.co/datasets/hivemindos/attribution-docs-check-fixtures containing README.md and data/fixtures.jsonl, one row per fixture.",
+      "check": "page",
+      "source": "https://github.com/LiamVisionary/bee-scouts/issues/33"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "The proposed JSONL row fields are fixture_id, snippet_text, header_present, header_inside_setup_section, expected_verdict (one of OK, OUTSIDE_SETUP, NO_HEADER) and provenance.",
+      "check": "page",
+      "source": "https://github.com/LiamVisionary/bee-scouts/issues/33"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "The issue states the card's first line must read: \"Offline fixtures only. No live page was fetched and no live finding is claimed.\"",
+      "check": "page",
+      "source": "https://github.com/LiamVisionary/bee-scouts/issues/33"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "The issue body says the provenance value on every row states it came from a hand-written local fixture file.",
+      "check": "page",
+      "source": "https://github.com/LiamVisionary/bee-scouts/issues/33"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "A collaborator comment on the issue says HivePunk 632 published it on its own Hugging Face account as hivepunk-632-4934c76e/attribution-docs-check-fixtures-repo-plan-files-rows-and-checks, with card and data.csv.",
+      "check": "page",
+      "source": "https://github.com/LiamVisionary/bee-scouts/issues/33"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "The issue was closed as completed on Oct 29, 2026.",
+      "check": "page",
+      "source": "https://github.com/LiamVisionary/bee-scouts/issues/33"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "The issue says copy link for #46 (CC0-1.0 fixtures bundle) and #52 (row-count read-back line) were marked as duplicates of it on Oct 29, 2026.",
+      "check": "page",
+      "source": "https://github.com/LiamVisionary/bee-scouts/issues/33"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "Hugging Face datasets docs state the simplest structure has README.md, train.csv and test.csv, and that splits are inferred from file names containing train, test or valid.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/v1.18.0/repository_structure.html"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "The same docs give an example where the data files sit in a directory named data containing train.csv, test.csv and valid.csv.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/v1.18.0/repository_structure.html"
+    },
+    {
+      "id": "c10",
+      "label": "FACT",
+      "text": "LiamVisionary/bee-scouts has 20 raw commits in the last 30 days, 1 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/LiamVisionary/bee-scouts/commits?per_page=50&since=2026-10-13T20:33:11.933Z"
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "Its latest real commit is 5dd3c7b, on 2026-10-14.",
+      "check": "page",
+      "missing": "It gave no source it read for this."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "How many out/README.md plus data/ pairs exist, and what their contents and train/test split would be.",
+      "check": "page",
+      "missing": "A read of the checker's fixture directory in the bee-scouts repository, or the card and data.csv of the already-published dataset, would show the available pairs and rows."
+    }
+  ],
+  "counts": {
+    "fact": 12,
+    "derived": 0,
+    "unknown": 2
+  },
+  "risks": [
+    "The dataset described here is not the one shown as published; the only published dataset named in the pages is ...-repo-plan-files-rows-and-checks, so a new differently named dataset may duplicate it [https://github.com/LiamVisionary/bee-scouts/issues/33]",
+    "The fixture material is described in the issue as hand-written local samples, and no page shows an independent check of the fixture contents [https://github.com/LiamVisionary/bee-scouts/issues/33]",
+    "No page shows the out/README.md plus data/ pairs, their count, or their contents, so the two-file CSV structure the step asks for cannot be verified from these pages",
+    "The published dataset's card, licence, splits and rows are not shown in any page read here",
+    "The linked published dataset appears only as a comment on a closed issue, with no page read here showing its own card or data"
+  ],
+  "unknowns": [
+    "Its latest real commit is 5dd3c7b, on 2026-10-14.: It gave no source it read for this.",
+    "How many out/README.md plus data/ pairs exist, and what their contents and train/test split would be.: A read of the checker's fixture directory in the bee-scouts repository, or the card and data.csv of the already-published dataset, would show the available pairs and rows."
+  ],
+  "wouldChangeMind": [
+    "Finding the already-published dataset hivepunk-632-4934c76e/attribution-docs-check-fixtures-repo-plan-files-rows-and-checks already contains the same train/test CSV splits, making a new name a duplicate.",
+    "Finding that the fixture directory contains no out/README.md plus data/ pairs at all, so the row-per-pair CSV design has no material.",
+    "A published run log showing the checker's verdicts on the packaged rows, which would turn fixture packaging into verified output."
+  ],
+  "sources": [
+    {
+      "title": "Publish the offline attribution-docs-check fixtures as a public Hugging Face dataset card · Issue #33 · LiamVisionary/bee-scouts · GitHub",
+      "url": "https://github.com/LiamVisionary/bee-scouts/issues/33"
+    },
+    {
+      "title": "Structure your repository — datasets 1.18.0 documentation",
+      "url": "https://huggingface.co/docs/datasets/v1.18.0/repository_structure.html"
+    },
+    {
+      "title": "Structure your repository — datasets 1.16.0 documentation",
+      "url": "https://huggingface.co/docs/datasets/v1.16.0/repository_structure.html"
+    },
+    {
+      "title": "Structure your repository — datasets 1.17.0 documentation",
+      "url": "https://huggingface.co/docs/datasets/v1.17.0/repository_structure.html"
+    },
+    {
+      "title": "GitHub commits of LiamVisionary/bee-scouts",
+      "url": "https://api.github.com/repos/LiamVisionary/bee-scouts/commits?per_page=50&since=2026-10-13T20:33:11.933Z"
+    }
+  ],
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-12-attribution-docs-check-fixtures.md",
+  "decidedBy": "bee"
+}
