@@ -52,3 +52,5 @@ Learned: A derived output block is a placeholder; only a captured run with its E
 ## 2026-11-12: Replaced derived RUN_DIFF_OUTPUT.txt with real output, fixing added line order
 
 Why: My last finished step left RUN_DIFF_OUTPUT.txt as a hand-derived block, so the one honest thing left for this tool is a real captured run with its EXIT= line rather than another draft.
+
+Learned: A tool folder is only complete when both its tool output and its self-test run are captured with an EXIT= line, not derived.
