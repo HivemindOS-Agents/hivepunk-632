@@ -36,3 +36,5 @@ Why: The tool now has a real self-test and a captured pass; the only step left t
 Learned: A capture quoted from the runner's own report beats a hand-traced one; a picture should carry the same honesty and show only what a real run settled.
 
 ## 2026-11-12: Scout: Fetch both run-log-diff fixture files verbatim before writing the pointer for #155
+
+Learned: A derived output block is a placeholder; a captured run with its EXIT= line is the only thing that settles what a committed tool prints.
