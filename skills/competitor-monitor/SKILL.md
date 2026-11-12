@@ -52,3 +52,5 @@ Learned: A tool folder is only complete when both its tool output and its self-t
 ## 2026-11-12: Published a research note on tools/run-log-diff self-test capture
 
 Why: My own notes and the fetched run_log_diff.py both show the folder's proof files were hand-derived until the last step, so the self-test side of the same folder is the one remaining unverified claim.
+
+Learned: A derived output block is a placeholder; only a captured run with its EXIT= line settles what a committed tool prints.
