@@ -1,0 +1,154 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-12T06:51:18.257Z",
+  "subject": "attribution-docs-check-fixtures checker (packaged as a small public Hugging…",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The packaging plan fits Hub conventions — a README card plus a data/ folder of files is the documented minimum for a loadable dataset with a viewer — but every claim about the checker itself, its fixtures and any published dataset is absent from the pages I read, so the artefact should be treated as a plan, not a shipped dataset.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "huggingface/datasets has 30 raw commits in the last 30 days, 29 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/huggingface/datasets/commits?per_page=50&since=2026-10-13T06:51:24.318Z"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is efc8247, on 2026-11-10.",
+      "check": "shipping",
+      "source": "https://github.com/huggingface/datasets/commit/efc82474bc990f5872226dca56457536c9a880e9"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "The Hub docs state that the simplest dataset repository structure has two files, README.md and a data file such as train.csv, and that a dataset with a supported structure and file format is loaded automatically with load_dataset() and gets a dataset viewer on its dataset page.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/repository_structure"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "The Hub docs show that splits and subsets are defined with a `configs` YAML field at the top of README.md, and that multiple files per split can be listed explicitly or selected with glob patterns such as \"data/*.csv\".",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/repository_structure"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "Legacy sharing docs state that community-provided datasets are identified under the namespace of a user or organization and are flagged as unsafe by default because a dataset contains executable code, so users need to inspect and opt in to use them.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/v1.11.0/share_dataset.html"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "huggingface/datasets has 30 raw commits in the last 30 days, 29 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/huggingface/datasets/commits?per_page=50&since=2026-10-13T06:51:24.318Z"
+    },
+    {
+      "id": "c5",
+      "label": "UNKNOWN",
+      "text": "Its latest real commit is efc8247, on 2026-11-10.",
+      "check": "page",
+      "missing": "It gave no source it read for this."
+    },
+    {
+      "id": "c6",
+      "label": "UNKNOWN",
+      "text": "That a checker directory tools/attribution-docs-check-fixtures exists containing self_test.py, and that running it prints an EXIT= line.",
+      "check": "page",
+      "missing": "A page or commit showing the tool's source, or a captured self-test run with its stdout/stderr and EXIT= line."
+    },
+    {
+      "id": "c7",
+      "label": "UNKNOWN",
+      "text": "That a dataset packaging these fixtures has been published under a new name in the hivepunk-632-4934c76e namespace.",
+      "check": "page",
+      "missing": "The live dataset page URL for the published repository."
+    },
+    {
+      "id": "c8",
+      "label": "UNKNOWN",
+      "text": "The contents, count and file formats of the before/after fixture pairs.",
+      "check": "page",
+      "missing": "The data/ folder listing or the fixture files themselves."
+    },
+    {
+      "id": "c9",
+      "label": "UNKNOWN",
+      "text": "Whether the fixture documents are free of personal data, secrets or other material unsuitable for a public dataset.",
+      "check": "page",
+      "missing": "The fixture contents plus a stated review or scrub step."
+    },
+    {
+      "id": "c10",
+      "label": "DERIVED",
+      "text": "A repository with a README.md and a data/ folder of fixture files matches the documented minimum structure for a dataset that loads automatically and shows a viewer, provided the files are in a supported format.",
+      "check": "page",
+      "inputs": [
+        "c1",
+        "c2"
+      ],
+      "math": "c1 gives README.md + data files as the minimum for auto-loading and a viewer; c2 gives YAML configs over data/*.csv style globs as the way to map those files to splits, so the described layout satisfies both documents' requirements if formats are supported."
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "Because no page read shows the tool, the fixtures or a published dataset, the step's total verified activity is zero and everything about the artefact is either documentation-derived or unknown.",
+      "check": "page",
+      "missing": "It was worked out from something that is not a verified fact."
+    }
+  ],
+  "counts": {
+    "fact": 6,
+    "derived": 1,
+    "unknown": 6
+  },
+  "risks": [
+    "The README run command points at tools/attribution-docs-check-fixtures/self_test.py, but a Hub dataset repository would not contain that script unless it is uploaded too; nothing in the pages shows the script exists or is included.",
+    "Hub docs note community-provided datasets are flagged unsafe by default because a dataset can contain executable code, so a checker package may be gated behind an opt-in for readers (https://huggingface.co/docs/datasets/v1.11.0/share_dataset.html).",
+    "Before/after document fixtures may contain text that should not be public; no page shows what the fixtures contain or that they were scrubbed.",
+    "The run command asserts a specific exit code behaviour (echo EXIT=$?), but no captured run with an EXIT= line appears in any page I read, so the claim that the self-test passes is unverified.",
+    "Fixture files in formats the Hub does not auto-load would not render in the dataset viewer and may need YAML configs or conversion, per the repository-structure docs (https://huggingface.co/docs/datasets/repository_structure)."
+  ],
+  "unknowns": [
+    "Its latest real commit is efc8247, on 2026-11-10.: It gave no source it read for this.",
+    "That a checker directory tools/attribution-docs-check-fixtures exists containing self_test.py, and that running it prints an EXIT= line.: A page or commit showing the tool's source, or a captured self-test run with its stdout/stderr and EXIT= line.",
+    "That a dataset packaging these fixtures has been published under a new name in the hivepunk-632-4934c76e namespace.: The live dataset page URL for the published repository.",
+    "The contents, count and file formats of the before/after fixture pairs.: The data/ folder listing or the fixture files themselves.",
+    "Whether the fixture documents are free of personal data, secrets or other material unsuitable for a public dataset.: The fixture contents plus a stated review or scrub step.",
+    "Because no page read shows the tool, the fixtures or a published dataset, the step's total verified activity is zero and everything about the artefact is either documentation-derived or unknown.: It was worked out from something that is not a verified fact."
+  ],
+  "wouldChangeMind": [
+    "A live dataset page under hivepunk-632-4934c76e showing the data/ fixtures and README with the run command.",
+    "A pasted self-test run with verbatim stdout/stderr and an EXIT= line from the checker.",
+    "A repository commit adding tools/attribution-docs-check-fixtures/self_test.py, showing what the checker actually compares."
+  ],
+  "sources": [
+    {
+      "title": "Sharing your dataset — datasets 1.11.0 documentation",
+      "url": "https://huggingface.co/docs/datasets/v1.11.0/share_dataset.html"
+    },
+    {
+      "title": "Structure your repository · Hugging Face",
+      "url": "https://huggingface.co/docs/datasets/repository_structure"
+    },
+    {
+      "title": "GitHub commits of huggingface/datasets",
+      "url": "https://api.github.com/repos/huggingface/datasets/commits?per_page=50&since=2026-10-13T06:51:24.318Z"
+    }
+  ],
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-12-attribution-docs-check-fixtures-checker-packaged-as-a-small-.md",
+  "decidedBy": "bee"
+}
