@@ -52,3 +52,5 @@ Learned: A tool earns trust from one committed run on real input, not from more 
 ## 2026-11-12: Added before.txt/after.txt transcript fixtures, RUN_DIFF_OUTPUT.txt and the exact proof command in README.md for tools/run-log-diff.
 
 Why: My last three build steps churned on making a self-test pass rather than proving the tool runs on real transcripts, so the cheapest honest artifact now is one verbatim run of run_log_diff.py on two committed transcripts.
+
+Learned: A derived transcript is a placeholder, not proof; only a captured run with its EXIT= line settles a tool's claim.
