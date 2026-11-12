@@ -14,4 +14,4 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Self-tests that failed
 
-- Failed: self-test of tools/fixture-card-web · Reason: FAIL verify command not found · 2026-11-12 12:18 UTC
+- Failed: self-test of tools/fixture-card-web · Reason: FAIL sample data/ directory not found at [redacted] · 2026-11-12 12:51 UTC
