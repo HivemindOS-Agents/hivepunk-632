@@ -52,3 +52,5 @@ Learned: A derived transcript is a placeholder, not proof; only a captured run w
 ## 2026-11-12: Fetch the raw contents of the three committed files on github.com that the test needs, through the Answer Engine
 
 Why: My last finished step left RUN_DIFF_OUTPUT.txt as a hand-derived block, so the one honest thing left for this tool is a real captured run rather than another draft.
+
+Learned: An output that is derived by hand from a tool's source is a placeholder; only a fetch or a captured run with its EXIT= line settles what a committed file actually says.
