@@ -8,7 +8,7 @@
 #
 # The command (from the repository root):
 #   cd tools/run-log-diff && python3 run_log_diff.py before.txt after.txt; echo EXIT=$?
-
+#
 $ cd tools/run-log-diff && python3 run_log_diff.py before.txt after.txt; echo EXIT=$?
 Added:
   PASS test_delta_signed
