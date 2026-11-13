@@ -1,0 +1,174 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-13T13:34:14.900Z",
+  "subject": "run-record-lint-fixtures",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "I cannot show that run-record-lint-fixtures exists or that its self-test passes: the only pages I read are proposals for other fixture datasets and Hugging Face upload documentation, so the dataset should be treated as unconfirmed until its live card and a real run line can be read.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "LiamVisionary/bee-scouts has 45 raw commits in the last 30 days, 6 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/LiamVisionary/bee-scouts/commits?per_page=50&since=2026-10-14T13:34:21.628Z"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is 9278a35, on 2026-11-08.",
+      "check": "shipping",
+      "source": "https://github.com/LiamVisionary/bee-scouts/commit/9278a35795e7aeb68339f31241ce5d15de7d2510"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "One issue proposes publishing, under the account hivepunk-632-4934c76e, the dataset https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures with exactly two files: README.md and data/fixtures.jsonl.",
+      "check": "page",
+      "source": "https://github.com/LiamVisionary/bee-scouts/issues/63"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "That issue states the public index it was given lists only hivemindos.app pages, the SuperAgent API/MCP, agent cards and the HivePunkz/HiveVerse skills, and shows no bee-scouts repository, no issue pages and no Hugging Face dataset.",
+      "check": "page",
+      "source": "https://github.com/LiamVisionary/bee-scouts/issues/63"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "Hugging Face's upload documentation says a dataset repository is created from your profile via New Dataset, files are added in the Files and versions tab, and Create Dataset Card creates a README.md where license, language and task tags are chosen.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/upload_dataset"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "The same documentation says .csv, .mp3, .jpg, .json, .jsonl and .txt are supported, recommends compressing text data, and states text extensions are not tracked by Git LFS by default so files over 10MB will not be uploaded.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/upload_dataset"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "One issue proposes adding a CONTRIBUTING.md next to README.md and data.csv in the agent-memory-lint-fixtures dataset, listing the fields a new row needs and saying the row is checked by the existing self-test.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/130"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "One issue proposes hf-dataset-card-lint-fixtures under hivepunk-547-db38b7a4 with exactly three files, README.md, lint.py and self_test.py, and states the second bee-547 dataset's self-test exits 0 only when a clean fixture passes and a bad fixture fails.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/136"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "That issue states the public index lists hivemindos.app pages, the SuperAgent API docs and the bee-scouts repo, but no Hugging Face dataset page, so the author could not confirm from it what Hugging Face already holds.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/136"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "One issue proposes adding a 'Share post (copy-paste)' section to the published attribution-docs-check-fixtures card giving the dataset URL, the exact verify command and the license line 'License: CC0-1.0'.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/134"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "LiamVisionary/bee-scouts has 45 raw commits in the last 30 days, 6 of them real work (not docs, formatting, bots, templates or trivial), and its latest real commit is 9278a35, on 2026-11-08.",
+      "check": "page",
+      "source": "https://api.github.com/repos/LiamVisionary/bee-scouts/commits?per_page=50&since=2026-10-14T13:34:21.628Z"
+    },
+    {
+      "id": "c10",
+      "label": "DERIVED",
+      "text": "No page read here shows the run-record-lint-fixtures dataset or its files, so its existence and contents are unconfirmed.",
+      "check": "page",
+      "inputs": [
+        "c1",
+        "c2",
+        "c7"
+      ],
+      "math": "c1 and c2 show one fixture dataset proposed under the same account with a different name and two files; c7 shows no Hugging Face dataset page appeared in the public index; therefore the specific run-record-lint-fixtures dataset is not evidenced by any page read."
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "Whether hivepunk-632-4934c76e/run-record-lint-fixtures is published with clean.txt, missing-why.txt, unlabelled-claim.txt, rules.csv, train.csv, test.csv and a README.md carrying a CC0-1.0 license line and an exact self-test command.",
+      "check": "page",
+      "missing": "A live read of the dataset card and its Files and versions tab, plus the verbatim self-test output with its exit line."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether the linter rejects the missing-why and unlabelled-claim fixtures with a non-zero exit and accepts the clean fixture, and what the rules in rules.csv are.",
+      "check": "page",
+      "missing": "A committed self-test run showing each case's exit code, and the contents of rules.csv."
+    }
+  ],
+  "counts": {
+    "fact": 11,
+    "derived": 1,
+    "unknown": 2
+  },
+  "risks": [
+    "No page I read shows the run-record-lint-fixtures dataset page, its files, or a passing self-test, so every content claim about it is unverified",
+    "The proposal issues describing similar fixture datasets are open and carry the label saying a bee wrote them and a person decides, so they are proposals, not completed publications [https://github.com/HivemindOS-Agents/bee-scouts/issues/134]",
+    "One issue says it did not fetch the pages whose snippets it read and could confirm neither their full text nor issue #40, showing proposals can rest on unread snippets [https://github.com/LiamVisionary/bee-scouts/issues/63]",
+    "The Hugging Face docs note text file extensions are not tracked by Git LFS by default and files greater than 10MB will not be uploaded, which would affect .csv and .txt fixtures if they were large [https://huggingface.co/docs/datasets/upload_dataset]",
+    "Whether a CC0-1.0 license line or an exact self-test command appears anywhere for this dataset is not shown by any page I read"
+  ],
+  "unknowns": [
+    "Whether hivepunk-632-4934c76e/run-record-lint-fixtures is published with clean.txt, missing-why.txt, unlabelled-claim.txt, rules.csv, train.csv, test.csv and a README.md carrying a CC0-1.0 license line and an exact self-test command.: A live read of the dataset card and its Files and versions tab, plus the verbatim self-test output with its exit line.",
+    "Whether the linter rejects the missing-why and unlabelled-claim fixtures with a non-zero exit and accepts the clean fixture, and what the rules in rules.csv are.: A committed self-test run showing each case's exit code, and the contents of rules.csv."
+  ],
+  "wouldChangeMind": [
+    "A live page at huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixtures listing the named files and license",
+    "A committed self-test run whose exit line shows the clean fixture passing and the two bad fixtures failing",
+    "The contents of rules.csv and the train/test splits showing what each fixture is meant to prove"
+  ],
+  "sources": [
+    {
+      "title": "Publish attribution-docs-check-fixtures-run-lines: one row per sourced run line · Issue #63 · LiamVisionary/bee-scouts · GitHub",
+      "url": "https://github.com/LiamVisionary/bee-scouts/issues/63"
+    },
+    {
+      "title": "Share a dataset to the Hub · Hugging Face",
+      "url": "https://huggingface.co/docs/datasets/upload_dataset"
+    },
+    {
+      "title": "Announce attribution-docs-check-fixtures with the exact verify command and CC0 · Issue #134 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/134"
+    },
+    {
+      "title": "agent-memory-lint-fixtures card: add a CONTRIBUTING.md stating what a new row must include · Issue #130 · HivemindOS-Agents/bee-scouts · Git",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/130"
+    },
+    {
+      "title": "Publish hf-dataset-card-lint-fixtures: card, lint.py and self_test.py · Issue #136 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/136"
+    },
+    {
+      "title": "Hugging Face Dataset Upload Decision Guide · Hugging Face",
+      "url": "https://huggingface.co/docs/hub/en/datasets-upload-guide-llm"
+    },
+    {
+      "title": "GitHub commits of LiamVisionary/bee-scouts",
+      "url": "https://api.github.com/repos/LiamVisionary/bee-scouts/commits?per_page=50&since=2026-10-14T13:34:21.628Z"
+    }
+  ],
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-13-run-record-lint-fixtures.md",
+  "decidedBy": "bee"
+}
