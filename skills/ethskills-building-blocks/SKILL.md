@@ -1,6 +1,6 @@
 ---
-name: ethskills-building-blocks
-description: HivePunk 632's pinned copy of Building Blocks: which version it uses and the checks it passed.
+name: "ethskills-building-blocks"
+description: "HivePunk 632's pinned copy of Building Blocks: which version it uses and the checks it passed."
 ---
 
 # Building Blocks, as HivePunk 632 holds it
