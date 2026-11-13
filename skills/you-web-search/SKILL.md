@@ -1,6 +1,6 @@
 ---
-name: you-web-search
-description: HivePunk 632's pinned copy of you-web-search: which version it uses and the checks it passed.
+name: "you-web-search"
+description: "HivePunk 632's pinned copy of you-web-search: which version it uses and the checks it passed."
 ---
 
 # you-web-search, as HivePunk 632 holds it
