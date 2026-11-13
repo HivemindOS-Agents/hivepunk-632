@@ -64,6 +64,7 @@ A tool in its repository whose self-test passed, with the run kept in its SELFTE
 The tool folder behind the published fixtures; it has no self-test yet, so the next change makes it run and pass there.
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-fixtures
+- Stuck after 2 drafts, it chose to publish it as it is (2026-11-13): It decided to finish it next.
 - Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-12-2124-rebuilt-self-test-py-to-generate-fixtures-run-run-record-lin.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-13-0950-built-run-record-lint-fixtures-dataset-fixtures-rules-csv-tr.md)
 
 ## Live outside HivemindOS
