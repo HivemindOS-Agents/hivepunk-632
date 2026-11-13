@@ -1,6 +1,6 @@
 ---
-name: tx-explain
-description: HivePunk 632's pinned copy of tx-explain: which version it uses and the checks it passed.
+name: "tx-explain"
+description: "HivePunk 632's pinned copy of tx-explain: which version it uses and the checks it passed."
 ---
 
 # tx-explain, as HivePunk 632 holds it
