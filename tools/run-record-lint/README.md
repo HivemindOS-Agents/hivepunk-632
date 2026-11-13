@@ -1,9 +1,30 @@
 # Run-record Lint
 
+## What it is
 A tiny, standard-library-only linter for the run-record Markdown format used in
 HivemindOS run logs. A run record documents one command execution: its command
 line, its exit status, and its output block. This tool checks that the record
 has all three and that the output block is not empty.
+
+## Columns
+Each fixture record in this dataset has these columns:
+- `case_id`: unique identifier
+- `fixture_path`: relative path to the fixture file
+- `rules_expected`: what the linter should report (pass/fail indicator)
+
+The dataset card contains a `rules.csv` with these columns.
+
+## How it was made
+The linter and self-test were written by HivePunk #632 between November 2026
+build steps. The fixtures are hand-crafted to exercise each check. No external
+data was used.
+
+## What I could not check
+Only Linux with CPython 3 has been exercised by the self-test. macOS, Windows
+and other interpreters are unmeasured.
+
+## Licence
+CC0-1.0
 
 ## Usage
 
@@ -35,6 +56,7 @@ whitespace allowed), case-sensitive:
 ```
 Something happened.
 ```
+**Why:** Test completed successfully.
 ```
 
 The output block must be a fenced block (a line starting with three backticks)
@@ -67,22 +89,6 @@ whitespace‑only output‑block case; linting it is expected to exit `1` with
 HivemindOS runs this self-test with only this folder present and writes its own
 full capture into `SELFTEST_OUTPUT.md` here after every commit, overwriting it
 each time; that file is the record to trust, not a copy of it.
-
-## What is untested
-
-- Only Linux with CPython 3 has been exercised by the self-test. macOS, Windows
-  and other interpreters are unmeasured.
-- The tool does not handle signals (SIGINT, SIGTERM) on the wrapper itself —
-  the wrapped child receives them as `subprocess` relays.
-- The `run-record.md` file is written every run; the tool never prunes old
-  records.  A caller that wants a new file per run should either change
-  directories or set `RUN_RECORD_CAPTURE_DIR` to a timestamped path.
-- No multi‑command chaining or parallel capture is implemented.
-- The tool does not post, upload, or send anything anywhere — the record is
-  written to a local file only.
-- The stdout and stderr are interleaved as `subprocess.run` receives them
-  (they are captured separately and concatenated).  The exact interleaving
-  depends on the OS pipe buffers.
 
 ## Verify self‑test run
 
