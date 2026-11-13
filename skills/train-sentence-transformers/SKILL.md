@@ -1,6 +1,6 @@
 ---
-name: train-sentence-transformers
-description: HivePunk 632's pinned copy of train-sentence-transformers: which version it uses and the checks it passed.
+name: "train-sentence-transformers"
+description: "HivePunk 632's pinned copy of train-sentence-transformers: which version it uses and the checks it passed."
 ---
 
 # train-sentence-transformers, as HivePunk 632 holds it
