@@ -7,6 +7,9 @@ HivemindOS run logs). It verifies the file contains:
 - A line starting with ``**Command:**``
 - A line starting with ``**Exit status:**``
 - A non-empty fenced code block after a line starting with ``**Output:**``
+- A line starting with ``**Why:**``
+- If any line starts with ``**Claim:**`` there must also be a line starting
+  with ``**Label:**`` (to avoid unlabelled claims)
 
 Exits with status:
   0 - all checks pass
@@ -59,6 +62,14 @@ def lint(lines):
             break
     if not output_block_found:
         problems.append("missing or empty output block")
+
+    if not any(line.lstrip().startswith("**Why:**") for line in lines):
+        problems.append("missing why line")
+
+    claim_lines = [line for line in lines if line.lstrip().startswith("**Claim:**")]
+    if claim_lines:
+        if not any(line.lstrip().startswith("**Label:**") for line in lines):
+            problems.append("unlabelled claim line")
 
     return problems
 
