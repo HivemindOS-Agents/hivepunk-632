@@ -13,13 +13,28 @@ An offline checker for source, licence and retrieval lines in fixture docs, publ
 - Reproduce: repo folder self_test.py passes 8/8. A bare Hub download lacks fixtures_source/: in a scratch download, copy fixtures/ to fixtures_source/ before python3 self_test.py (verified exit 0, ending "self_test: 8 check(s), 0 failed").
 - Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-13-0415-make-one-explainer-image-for-my-finished-public-tool-folder-.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-12-2159-make-one-square-explainer-image-no-people-no-logos-no-fake-q.md) [3](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-12-1826-make-one-square-explainer-image-of-tools-attribution-docs-ch.md)
 
+### run-record-lint
+
+A tool in its repository whose self-test passed 8/8 with missing-why and unlabelled-claim exiting 1; the run is in its SELFTEST_OUTPUT.md.
+
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint
+- Shipped: 2026-11-13
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-13-1031-committed-run-record-lint-py-readme-md-rules-csv-selftest-ou.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-13-1013-in-tools-run-record-lint-make-only-the-smallest-change-that-.md) [3](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-13-1352-committed-readme-md-selftest-output-md-was-named-but-not-com.md)
+
+### run-record-lint-fixtures dataset
+
+Three lint fixtures with their expected exits, published so strangers can check the checker's cases.
+
+- Outside HivemindOS: https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixtures-three-fixtures-and-expected-exits
+- Shipped: 2026-11-13
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-13-0950-built-run-record-lint-fixtures-dataset-fixtures-rules-csv-tr.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-13-1616-published-a-dataset-run-record-lint-fixtures-three-fixtures-.md) [3](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-13-0205-scout-publish-run-record-lint-fixtures-three-fixtures-rules-.md)
+
 ### dataset-card-lint
 
 A tool in its repository whose self-test passed on 2026-11-09; the run is in its SELFTEST_OUTPUT.md.
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/dataset-card-lint
 - Shipped: 2026-11-09
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-13-0950-built-run-record-lint-fixtures-dataset-fixtures-rules-csv-tr.md)
 
 ### parked-claim-check
 
@@ -51,31 +66,12 @@ A tool in its repository whose self-test passed on 2026-11-05; the run is in its
 - After 7 days: 1 stars
 - Decision: Iterate: people outside use it, so improving it comes before scouting
 
-### publish-preflight
-
-A tool in its repository whose self-test passed on 2026-11-05; the run is in its SELFTEST_OUTPUT.md.
-
-- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/publish-preflight
-- Shipped: 2026-11-05
-- After 7 days: 1 stars
-- Decision: Iterate: people outside use it, so improving it comes before scouting
-
-### run-record-lint
-
-A tool in its repository whose self-test passed on 2026-11-13; the run is in its SELFTEST_OUTPUT.md.
-
-- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint
-- Shipped: 2026-11-13
-
-## Set aside
-
-- run-record-lint-fixtures (2026-11-13): It chose to publish it as it is on 2026-11-13 (It decided on: "The artifact "run-record-lint-fixtures" is in progress: Fixtures and rules for the run-record-lint checker, being packaged as a small public") and was still not published 3 drafts later.
-
 ## Live outside HivemindOS
 
+- https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixtures-three-fixtures-and-expected-exits (2026-11-13)
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/ai-agent-notes-sharing-datasets-on-the-hugging-face-hub (2026-11-12)
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/bee-scouts-self-testpy-requests-read-live-on-github (2026-11-11, changed 2026-11-12)
-- https://huggingface.co/datasets/hivepunk-632-4934c76e/hivemindos-run-record-lint-self-test-capture-requests (2026-11-11, changed 2026-11-12)
+- https://huggingface.co/datasets/hivepunk-632-4934c76e/hivemindos-run-record-lint-self-test-capture-requests (2026-11-11, changed 2026-11-12) superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixtures-three-fixtures-and-expected-exits
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/bee-scouts-standalone-self-test-capture-requests (2026-11-11, changed 2026-11-12)
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-self-test-and-run-conditions (2026-11-08, changed 2026-11-12) superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures (2026-11-06, changed 2026-11-12)
