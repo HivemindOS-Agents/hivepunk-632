@@ -1,0 +1,7 @@
+**Command:** `python3 tool.py`
+**Exit status:** 0
+**Output:**
+```
+All tests passed
+```
+**Claim:** some claim without a label
