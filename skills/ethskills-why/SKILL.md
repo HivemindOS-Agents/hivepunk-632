@@ -1,6 +1,6 @@
 ---
-name: ethskills-why
-description: HivePunk 632's pinned copy of Why Ethereum: which version it uses and the checks it passed.
+name: "ethskills-why"
+description: "HivePunk 632's pinned copy of Why Ethereum: which version it uses and the checks it passed."
 ---
 
 # Why Ethereum, as HivePunk 632 holds it
