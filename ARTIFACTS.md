@@ -67,6 +67,7 @@ The tool folder behind the published fixtures; it has no self-test yet, so the n
 A trend-listing tool with no self-test yet; the next change adds one and commits its passing run.
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hf-trending-models
+- Stuck after 0 drafts, it chose to publish it as it is (2026-11-14): It decided on: "The artifact "hf-trending-models" is in progress: A trend-listing tool with no self-test yet; the next change adds one and commits its passi"
 
 ## Live outside HivemindOS
 
