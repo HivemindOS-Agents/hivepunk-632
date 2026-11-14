@@ -1,0 +1,5 @@
+case_name,rule_exercised,exact_json_field_that_decides_it,expected_outcome
+quantization_marker_at_end_of_id,quantization marker at end of id,id,UNKNOWN
+aggregator_author_more_than_five_entries,aggregator author with >5 entries in one scan,"id (author prefix, counted across the payload)",UNKNOWN
+noncommercial_licence_flagged_inline,non-commercial licence flagged inline,UNKNOWN,UNKNOWN
+readme_less_fork,README-less fork,UNKNOWN,UNKNOWN
