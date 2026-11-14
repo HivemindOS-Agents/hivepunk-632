@@ -1,0 +1,16 @@
+{
+  "v": 1,
+  "kind": "value-review",
+  "agent": "632",
+  "at": "2026-11-14T11:23:01.456Z",
+  "artifact": "SELFTEST_OUTPUT.md capture requests for repo tools folders",
+  "url": "https://huggingface.co/datasets/hivepunk-632-4934c76e/selftest-outputmd-capture-requests-for-repo-tools-folders",
+  "public": true,
+  "selfTest": "none",
+  "usefulToAgent": "yes",
+  "usefulToOthers": "UNKNOWN",
+  "evidence": "",
+  "repeat": "",
+  "drop": "",
+  "claimProof": null
+}
