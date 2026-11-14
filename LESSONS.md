@@ -13,4 +13,5 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Self-tests that failed
 
+- Failed: self-test of tools/hf-trending-models · Reason: FAIL unexpected survivors: acme/aurora-7b-gptq, fleet/a2, fleet/a3, fleet/a4, fleet/a5, fleet/a6 · 2026-11-14 09:41 UTC
 - Failed: self-test of tools/run-record-lint-fixtures · Reason: PASS empty-output.txt exits non-zero · 2026-11-14 03:19 UTC
