@@ -1,79 +1,97 @@
 # hf-trending-models
 
-A tiny, network-free helper: it reads a local JSON fixture of model rows and
-prints a ranked table of the models by momentum. No HTTP call, no key, no
-account — the fixture is the only input.
+## What it is
 
-Picture: [explainer.png](explainer.png) · Run slot: **UNRUN** (see
-[SELFTEST_OUTPUT.md](SELFTEST_OUTPUT.md)) — no run observed.
+A filter and cluster-rank pass over the three Hugging Face trending surfaces
+(models, datasets, spaces), following the aeon-huggingface-trending method:
+popularity alone does not surface an entry.
 
-## Files in this folder
+It reads the JSON array that the Hub's trending endpoints return
+(`?sort=trending&direction=-1&limit=30`) and applies these rules:
 
-- `hf_trending.py` — the script (Python standard library only)
-- `fixtures/models.json` — sample model rows used by every example below
-- `self_test.py` — the self-test
-- `explainer.png` — the three-panel picture for this tool (see *Picture*)
-- `SELFTEST_OUTPUT.md` — the runner's result file; currently marked **UNRUN**
-- `ARTIFACTS.md` — what this folder ships, with the picture's source URL
-- `explainer_image_source.txt` — where the picture's bytes come from
+- drop an empty repo (no downloads, likes or tags)
+- drop a repo with no model card
+- drop a fork whose README is unchanged from upstream
+- demote a same-week quantization of an already-trending model to a tail
+- demote an author with more than 5 trending entries in one scan
+- flag an unclear or missing licence inline; never drop for it
+- accept only a concrete "why notable" (architecture shift, size step,
+  context-window jump, notable author, licence change); with no reason it says
+  `no clear why - popular but unremarkable` rather than inventing one
 
-## How to run
+**It never touches the network.** Save the endpoint output to a file and point
+the tool at it. Everything it reads is data; no repo name, card field or tag is
+treated as an instruction.
+
+## How to run it
+
+From the repository root:
 
 ~~~bash
 cd tools/hf-trending-models
-python3 hf_trending.py --fixture fixtures/models.json
-python3 hf_trending.py --fixture fixtures/models.json --top 5
+
+# a saved models payload
+python3 hf_trending.py --kind models saved_models.json
+
+# machine-readable picks
+python3 hf_trending.py --kind spaces --json saved_spaces.json
+
+# filter-only listing: tails and drops, no picks
+python3 hf_trending.py --why saved_datasets.json
 ~~~
 
-`--fixture` is the input: the script fetches nothing by itself. Output is one
-model per line, highest ranked first.
-
-An earlier revision of this tool shipped `list_trending.py --sample <file>` and
-an optional live-API mode. If that is the script in your copy, the same rule
-holds — point it at a local file; the self-test never needs a key or a network
-call.
-
-## Picture — `explainer.png`
-
-A flat three-panel diagram: a local fixture JSON of model rows on the left, the
-script labelled *offline, no network* in the middle, a ranked model table on the
-right, with the run command and the self-test line printed beneath. No people,
-no logos, no brand marks.
-
-Caption: *A small tool that ranks trending models from a local file, with no
-network call.*
-
-The file is `tools/hf-trending-models/explainer.png`. Its bytes come from the
-image source recorded in `explainer_image_source.txt` and were **not written by
-this step** — see that file for the exact source URL.
-
-## Run slot — UNRUN
-
-The self-test command, exactly:
+To save a payload without any tool here, in a shell you control:
 
 ~~~bash
-cd tools/hf-trending-models && python3 self_test.py; echo $?
+curl -s "https://huggingface.co/api/models?sort=trending&direction=-1&limit=30" \
+  > saved_models.json
 ~~~
 
-**No run has been observed for this tool.** `SELFTEST_OUTPUT.md` therefore holds
-an empty stdout slot and an empty exit-code slot, marked UNRUN. Treat the tool as
-unrun until a runner's own output replaces that file. Never hand-write a pass
-line into it.
+## Self-test
 
-## Untested
+Run this exact command from inside the repository:
 
-- Nothing here is a record of a run. The command above is written out but was
-  not executed in this step, and both slots in `SELFTEST_OUTPUT.md` are empty.
-- This README was written without being able to list the tool folder. If the
-  script, fixture, flags or file names in your copy differ from the ones above,
-  the above is wrong and should be corrected against the folder.
-- The picture's bytes are referenced, not committed by this step: the PNG still
-  has to be saved into the folder from the recorded source.
-- No real Hugging Face data, no sorting edge cases (ties, missing fields, an
-  empty fixture) and no very large fixture are covered.
+~~~bash
+cd tools/hf-trending-models && python3 self_test.py; echo EXIT=$?
+~~~
 
-## Data handling
+No arguments, no network, standard library only. It imports this folder's own
+`hf_trending` module, feeds it one inline fixture payload, and compares the
+survivors, the quantization tail, the drop reasons, the licence flags and the
+why lines against what should come out. It exits `0` only when every check
+passes; the last line then reads `self_test: N check(s), 0 failed`.
 
-Offline and public only: standard library, one local JSON file, no network, no
-key, no personal data. Text inside the fixture (model names, descriptions) is
-treated as data, never as instructions.
+`--self-test` on the main script runs the same checks.
+
+## Exit codes
+
+`self_test.py`:
+
+- `0` - every check passed
+- `1` - at least one check failed; the failing lines are above the summary
+
+`hf_trending.py`: `0` on a completed scan, `2` when the JSON file cannot be
+read or is not an array.
+
+## What is untested
+
+- **No run has been captured for this folder yet.** This step wrote files and
+  executed nothing, so no `EXIT=` line exists to quote. `SELFTEST_OUTPUT.md`
+  here is written by HivemindOS after every commit and is the line to trust.
+- The fixture payload is inline and synthetic. A real trending payload has
+  fields this fixture does not (gated flags, siblings, `lastModified`,
+  `createdAt`), and the tool ignores unknown fields rather than using them, so
+  ranking on real data is unmeasured.
+- `--json` and `--why` formatting have no dedicated check; only the prose
+  `render` is touched by the self-test.
+- A real "same-week" window is not computed: the quantization tail is decided
+  by id suffix plus the base already being in the same scan, not by dates. A
+  quantization of a model that is not in the same payload is not demoted.
+- Only Linux with CPython 3 is the assumed environment. macOS, Windows and
+  other interpreters are unmeasured.
+- No page, dataset or service was read to build this folder.
+
+## Licence
+
+CC0-1.0. The method follows aeon-huggingface-trending; the code and fixture
+payload here are this agent's own.
