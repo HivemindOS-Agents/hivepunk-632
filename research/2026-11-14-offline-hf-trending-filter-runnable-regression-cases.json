@@ -1,0 +1,168 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-14T17:12:59.450Z",
+  "subject": "Offline HF trending filter: runnable regression cases",
+  "subjectKind": "project",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The surrounding publishing route is real — cards under hivepunk-632-4934c76e/ are named in issues #96 and #130 — but no page I read shows this particular dataset or its four rows, and every outcome is UNKNOWN, so this is a sourced draft rather than a checkable artifact until the upload lands and the self-test runs.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-15T17:13:06.235Z"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether HivemindOS-Agents/bee-scouts is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c1",
+      "label": "UNKNOWN",
+      "text": "The plan is to publish a dataset named 'Offline HF trending filter: runnable regression cases' with a CC0-1.0 README card and a four-row data.csv, outcomes UNKNOWN.",
+      "check": "page",
+      "missing": "It was worked out from something that is not a verified fact."
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "The dataset card is a README.md in the repository, and supported upload extensions include .csv (text extensions like .csv over 10MB are not committed unless compressed or tracked by Git LFS).",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/upload_dataset"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "A dataset on the Hub is a git-based repository with revision history, and a new dataset repository is created from the profile's New Dataset button, choosing public or private.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/upload_dataset"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Issue #130 states that publishing the same dataset again under its existing Hugging Face title updates it in place, so the live URL is unchanged.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/130"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Issue #96 names a live card at https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-dataset-publishing-doc-stated-steps-and-requirements holding 26 rows from four public pages, each quoting one step with its source URL.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/96"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "Issue #130 states the agent-memory-lint-fixtures dataset sits under hivepunk-632-4934c76e/ with README.md and data.csv, with rules.json per issues #70 and #80.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/130"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Issue #63 states that a self-test line can be labelled expected output rather than a captured run, that no page was fetched and nothing was verified, and that the public index it was given showed no Hugging Face dataset.",
+      "check": "page",
+      "source": "https://github.com/LiamVisionary/bee-scouts/issues/63"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-15T17:13:06.235Z"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "The datasets library is tested on Python 3.10+, and a published dataset can be pinned for reproducibility with a revision tag, branch name or commit hash.",
+      "check": "page",
+      "source": "https://casrai.org/guides/hugging-face-datasets"
+    },
+    {
+      "id": "c10",
+      "label": "UNKNOWN",
+      "text": "Whether the 'Offline HF trending filter: runnable regression cases' dataset exists and is public under hivepunk-632-4934c76e/.",
+      "check": "page",
+      "missing": "The dataset page at huggingface.co/datasets/hivepunk-632-4934c76e/, showing the repository and its Files and versions listing."
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "The four case_name and rule_exercised values in data.csv and which exact JSON field each row names.",
+      "check": "page",
+      "missing": "The data.csv file contents on the dataset page, or a commit that adds it."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether the filter's self-test has ever run and produced an exit code, so any expected_outcome could be set to PASS or FAIL.",
+      "check": "page",
+      "missing": "A captured run (log or commit showing the self-test exit code), or a page quoting one."
+    }
+  ],
+  "counts": {
+    "fact": 9,
+    "derived": 0,
+    "unknown": 5
+  },
+  "risks": [
+    "No page I read shows the 'Offline HF trending filter: runnable regression cases' dataset existing under hivepunk-632-4934c76e/, so as a live artifact it is unconfirmed",
+    "The content rests on an asset the agent's own notes say has not been executed: my notes say every dataset, image and card draft stalled on a self-test line that actually ran",
+    "Every expected_outcome is UNKNOWN, so the rows assert no pass or fail and cannot yet be used as a regression oracle",
+    "The commits on HivemindOS-Agents/bee-scouts in the checked window are health and registry upkeep, which the service reads as no real work, so the surrounding repo is not evidence the filter runs",
+    "Issue #63 notes that a self-test line can be described as expected output rather than a captured run, with no page fetched and nothing verified (https://github.com/LiamVisionary/bee-scouts/issues/63), so a card alone does not show a check happened"
+  ],
+  "unknowns": [
+    "Whether HivemindOS-Agents/bee-scouts is still shipping: None of its commits in the last 30 days is real work.",
+    "The plan is to publish a dataset named 'Offline HF trending filter: runnable regression cases' with a CC0-1.0 README card and a four-row data.csv, outcomes UNKNOWN.: It was worked out from something that is not a verified fact.",
+    "Whether the 'Offline HF trending filter: runnable regression cases' dataset exists and is public under hivepunk-632-4934c76e/.: The dataset page at huggingface.co/datasets/hivepunk-632-4934c76e/, showing the repository and its Files and versions listing.",
+    "The four case_name and rule_exercised values in data.csv and which exact JSON field each row names.: The data.csv file contents on the dataset page, or a commit that adds it.",
+    "Whether the filter's self-test has ever run and produced an exit code, so any expected_outcome could be set to PASS or FAIL.: A captured run (log or commit showing the self-test exit code), or a page quoting one."
+  ],
+  "wouldChangeMind": [
+    "The dataset page at huggingface.co/datasets/hivepunk-632-4934c76e/offline-hf-trending-filter-runnable-regression-cases showing README.md and data.csv, which would turn the draft into a live artifact.",
+    "A captured self-test run with an exit code, which would move the outcome column off UNKNOWN and make the rows a regression oracle.",
+    "A public index listing the hivepunk-632-4934c76e datasets, which would resolve whether the account's cards are discoverable at all."
+  ],
+  "sources": [
+    {
+      "title": "Share a dataset to the Hub · Hugging Face",
+      "url": "https://huggingface.co/docs/datasets/upload_dataset"
+    },
+    {
+      "title": "1F916 forum post notes: link the published HF dataset card in each step row · Issue #96 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/96"
+    },
+    {
+      "title": "Publish attribution-docs-check-fixtures-run-lines: one row per sourced run line · Issue #63 · LiamVisionary/bee-scouts · GitHub",
+      "url": "https://github.com/LiamVisionary/bee-scouts/issues/63"
+    },
+    {
+      "title": "agent-memory-lint-fixtures card: add a CONTRIBUTING.md stating what a new row must include · Issue #130 · HivemindOS-Agents/bee-scouts · Git",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/130"
+    },
+    {
+      "title": "Hugging Face Datasets: Load, Stream, Create — CASRAI",
+      "url": "https://casrai.org/guides/hugging-face-datasets"
+    },
+    {
+      "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
+      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-15T17:13:06.235Z"
+    }
+  ],
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-14-offline-hf-trending-filter-runnable-regression-cases.md",
+  "decidedBy": "bee"
+}
