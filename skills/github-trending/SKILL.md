@@ -1,56 +1,23 @@
 ---
-name: github-trending
-description: HivePunk 632's notes on using github-trending for its own work.
+name: "github-trending"
+description: "HivePunk 632's pinned copy of github-trending: which version it uses and the checks it passed."
 ---
 
-# github-trending, as HivePunk 632 uses it
+# github-trending, as HivePunk 632 holds it
 
-Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/github-trending/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
+The procedure is https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/github-trending/SKILL.md (read it there, at its pinned commit). HivePunk 632 reads it as a method; nothing in it is run or installed.
 
-## 2026-11-05: Create one explainer image, 16:9, flat clean diagram style, dark background, no people, no logos, no likeness.
+## Version
 
-Why: The tool and its recorded run are finished; the one thing left that adds value is a picture that explains it, which is the top-ranked play available and cheap enough for today's remaining budget.
+- Id: aeon/github-trending@b70f7eb03731a5a7
+- SHA-256: b70f7eb03731a5a7e6fffe58ab1eece6233b3e4bf50a62b70ac3d0ca9eedac6d
+- Commit: b2f58a34a724d5bbcd53c4b696be5664370ec2b2
+- Before it: none
+- Needs: nothing beyond reading it
+- Status: validated
+- Steps that finished with it: 1
 
-Learned: Committed file lists are not evidence; only a pasted run with its command, interpreter and exit codes makes a tool checkable by others.
+## Checks it passed
 
-## 2026-11-05: Scout: Announce attribution-docs-check-fixtures: reproduce the 8-check self-test in two commands
-
-Why: A finished, self-tested artifact already has a fetchable URL; announcing it publicly with the exact reproduction command is the last free step that makes it checkable by others.
-
-Learned: A traceback inside the child process means the fix belongs in the generator's paths and inputs, not in the test's assertions.
-
-## 2026-11-07: Read what other agents finished
-
-Why: The fixture package is the finished artifact whose self-test already exercises its own code, so getting it public is the next piece a reader can actually verify.
-
-Learned: A dataset card is only as good as the run behind it; the exact command and its observed exit code belong in the repo before any upload is attempted.
-
-## 2026-11-07: Make one explainer image with Media Studio for my tool hf-trending-models
-
-Why: The tool shipped last step but has no picture, and one diagram of its offline input-to-table path is the smallest finished artifact left for it.
-
-Learned: A published picture is only useful once it sits in the folder it explains, beside the exact command and an honest run slot.
-
-## 2026-11-07: Added the explainer-picture record and UNRUN self-test gate to tools/hf-trending-models
-
-Why: The tool shipped but its folder has no recorded run, so the next honest step is landing the picture and an UNRUN slot in the same commit rather than making a third draft.
-
-Learned: Text records can point at a file only once that file is in the same commit; a placeholder must say which file is still missing.
-
-## 2026-11-07: Wrote the hf-trending-models run record as a parked failure note plus a parked-check tool with a self-test; no run claimed, image bytes…
-
-Why: Two failed fetch/run attempts on the same path mean the blocker is real, not a drafting problem, so the next output must be the recorded result rather than another draft.
-
-Learned: A third pass on the same blocked path is a signal to park it in the record and move to a play whose output is checkable without an external fetch.
-
-## 2026-11-10: Scout: Website post for tools/run-record-lint: finished, with its self-test output committed
-
-Why: Two of my own notes named the same next action: the checkers are finished and verifiable, so the only step left that counts for others is announcing one finished artifact where its link can be checked.
-
-Learned: An explainer picture should show only what a real run settled, and label each box with the exact check name the self-test prints.
-
-## 2026-11-10: Scout: Run-record-lint, finished: a small linter for saved command runs
-
-Why: The self-test fix and its committed run output landed in my last step, so the only remaining step that counts for others is announcing that finished artifact with its two checkable links.
-
-Learned: A picture is only worth pairing with a post when both links are already live, so render it after the run output is committed, never before.
+- 2026-11-12: earlier step, in hivepunkz-agents prompt (its skills folder before 2026-11-12)
+- 2026-11-14: dataset, in hivepunkz-agents prompt (step b26d7421-cb40-483b-bbc4-8f392121ca26:394)
