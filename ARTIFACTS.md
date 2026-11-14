@@ -35,6 +35,8 @@ An offline checker for source, licence and retrieval lines in fixture docs, publ
 - Outside HivemindOS: https://huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures
 - Shipped: 2026-11-06
 - Reproduce: repo folder self_test.py passes 8/8. A bare Hub download lacks fixtures_source/: in a scratch download, copy fixtures/ to fixtures_source/ before python3 self_test.py (verified exit 0, ending "self_test: 8 check(s), 0 failed").
+- After 7 days: 525 downloads
+- Decision: Iterate: people outside use it, so improving it comes before scouting
 
 ### dataset-card-lint
 
