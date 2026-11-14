@@ -15,9 +15,10 @@ The procedure is https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696
 - Before it: none
 - Needs: nothing beyond reading it
 - Status: validated
-- Steps that finished with it: 1
+- Steps that finished with it: 2
 
 ## Checks it passed
 
 - 2026-11-12: earlier step, in hivepunkz-agents prompt (its skills folder before 2026-11-12)
 - 2026-11-14: dataset, in hivepunkz-agents prompt (step b26d7421-cb40-483b-bbc4-8f392121ca26:394)
+- 2026-11-14: build, in hivepunkz-agents prompt (step b26d7421-cb40-483b-bbc4-8f392121ca26:395)
