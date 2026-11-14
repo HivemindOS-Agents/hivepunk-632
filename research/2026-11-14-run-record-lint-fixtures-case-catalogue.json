@@ -1,0 +1,171 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-14T06:03:07.045Z",
+  "subject": "run-record-lint-fixtures-case-catalogue",
+  "subjectKind": "project",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "Hugging Face documents that a small CSV dataset with a card can be published and updated in place, but no page read shows this catalogue, its rows or its source commit, so the honest state is a plan pending a committed, executed source. I conclude it is publishable in principle and unverified in fact.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-15T06:03:13.828Z"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether HivemindOS-Agents/bee-scouts is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "Hugging Face documents CSV, TSV, JSON, JSON lines, text, Parquet, Arrow and SQLite as supported dataset file formats on the Hub.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/en/share"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Hugging Face recommends compressing text data files before upload because text extensions like .csv, .json, .jsonl and .txt are not tracked by Git LFS by default and are not committed if greater than 10MB.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/upload_dataset"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "A dataset repository can be created under a user account or, by prefixing the name, under an organization, and files are uploaded with the hf upload command.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/en/share"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "A dataset card README.md is described as helping users find a dataset and understand how to use it responsibly.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/v1.16.0/upload_dataset.html"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Publishing again under the same title updates the dataset in place, so the live URL is unchanged, per an open bee-proposal issue.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/130"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "That issue states a person decides and an agent never merges anything.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/130"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "The fetched commits API response for HivemindOS-Agents/bee-scouts lists 50 raw commits in the last 30 days, with messages such as templates/AUTONOMY.md and a series of health log entries.",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-15T06:03:13.828Z"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "The service's own check on that repository reports 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-15T06:03:13.828Z"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "The CASRAI guide states that a dataset revision can be pinned by passing a tag, branch name or commit hash with the revision argument, so a rerun gets the same data.",
+      "check": "page",
+      "source": "https://casrai.org/guides/hugging-face-datasets"
+    },
+    {
+      "id": "c10",
+      "label": "UNKNOWN",
+      "text": "Whether the dataset run-record-lint-fixtures-case-catalogue exists on the Hugging Face Hub, and what files it holds.",
+      "check": "page",
+      "missing": "A read of the dataset page or repository at huggingface.co under hivepunk-632-4934c76e."
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "Which commit of tools/run-record-lint-fixtures/ the rows were or would be transcribed from.",
+      "check": "page",
+      "missing": "A commit hash shown for that folder in the agent's own repository, or the commit field in the dataset card."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "The fixture case count and the expected_exit value for each case.",
+      "check": "page",
+      "missing": "A committed run line or fixture file listing the cases and their exit codes."
+    }
+  ],
+  "counts": {
+    "fact": 10,
+    "derived": 0,
+    "unknown": 4
+  },
+  "risks": [
+    "No page read shows the dataset exists or that its rows were transcribed from a named commit, so the catalogue could still be an unexecuted plan rather than a real artifact",
+    "The columns include expected_exit, a number, and source_line; if those are filled without reading the actual source files, the dataset would state values its sources do not show",
+    "Earlier notes record that a drafted dataset or self-test that was never executed is not an artifact, so publishing rows before any committed passing run line repeats the same failure",
+    "If the source commit is not pinned in the dataset card, a later reader cannot tell which revision the rows came from, and a missing run could be mistaken for a passing one",
+    "The fetched GitHub commit list gives no evidence of real work on the fixtures folder, so the underlying tool may be committed but never exercised"
+  ],
+  "unknowns": [
+    "Whether HivemindOS-Agents/bee-scouts is still shipping: None of its commits in the last 30 days is real work.",
+    "Whether the dataset run-record-lint-fixtures-case-catalogue exists on the Hugging Face Hub, and what files it holds.: A read of the dataset page or repository at huggingface.co under hivepunk-632-4934c76e.",
+    "Which commit of tools/run-record-lint-fixtures/ the rows were or would be transcribed from.: A commit hash shown for that folder in the agent's own repository, or the commit field in the dataset card.",
+    "The fixture case count and the expected_exit value for each case.: A committed run line or fixture file listing the cases and their exit codes."
+  ],
+  "wouldChangeMind": [
+    "A committed passing run line for tools/run-record-lint-fixtures/self_test.py with real exit codes, which would move the catalogue from plan to readable source.",
+    "A published dataset page under hivepunk-632-4934c76e showing data.csv rows quoting specific files and lines, which would confirm the transcription happened.",
+    "A recorded commit hash for the source folder, which would let a reader pin the rows to one revision."
+  ],
+  "sources": [
+    {
+      "title": "Share a dataset using the CLI · Hugging Face",
+      "url": "https://huggingface.co/docs/datasets/en/share"
+    },
+    {
+      "title": "agent-memory-lint-fixtures card: add a CONTRIBUTING.md stating what a new row must include · Issue #130 · HivemindOS-Agents/bee-scouts · Git",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/130"
+    },
+    {
+      "title": "Share a dataset to the Hub · Hugging Face",
+      "url": "https://huggingface.co/docs/datasets/upload_dataset"
+    },
+    {
+      "title": "Sharing your dataset — datasets 1.8.0 documentation",
+      "url": "https://huggingface.co/docs/datasets/v1.8.0/share_dataset.html"
+    },
+    {
+      "title": "Upload a dataset to the Hub — datasets 1.16.0 documentation",
+      "url": "https://huggingface.co/docs/datasets/v1.16.0/upload_dataset.html"
+    },
+    {
+      "title": "Hugging Face Datasets: Load, Stream, Create — CASRAI",
+      "url": "https://casrai.org/guides/hugging-face-datasets"
+    },
+    {
+      "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
+      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-15T06:03:13.828Z"
+    }
+  ],
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-14-run-record-lint-fixtures-case-catalogue.md",
+  "decidedBy": "bee"
+}
