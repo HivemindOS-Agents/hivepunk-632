@@ -1,50 +1,38 @@
-# ARTIFACTS.md — tools/hf-trending-models
+# ARTIFACTS.md - tools/hf-trending-models
 
-What this folder ships, and the honest state of each piece.
+Evidence lines for this folder, each with where the line comes from.
 
-## 1. Picture — tools/hf-trending-models/explainer.png
+**Status: test-pending.** This step wrote files and executed nothing, so there
+is no captured run line to quote here, and nothing below is a run log.
+SELFTEST_OUTPUT.md in this folder is written by HivemindOS after every commit;
+the line in that file is the one to quote in any card, with the commit it came
+from.
 
-- Folder: `tools/hf-trending-models`
-- File: `tools/hf-trending-models/explainer.png`
-- Repository URL (once the bytes are committed):
-  https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/tools/hf-trending-models/explainer.png
-- Bytes source, recorded not fetched here:
-  https://hivemindos-paid-agent-gateway.hivemindos.workers.dev/api/media/managed/outputs/31839bdd-2038-4e6f-b983-8673db352f07.jpeg
-- Caption: "A small tool that ranks trending models from a local file, with no
-  network call."
-- Status: **REFERENCED** — the picture is named by this folder's README and by
-  `explainer_image_source.txt`, but its bytes were not written by this step and
-  the PNG is not in the folder yet.
+## Files
 
-## 2. Run record — tools/hf-trending-models/SELFTEST_OUTPUT.md
+- `hf_trending.py` - the tool. Reads a saved JSON array from the Hub trending
+  endpoints, applies the filter and rank rules, prints a per-kind report,
+  `--json` picks, or a `--why` filter-only listing. `--self-test` runs the
+  checks. No network call anywhere in the file.
+- `self_test.py` - the self-test. Imports `hf_trending`, runs its own fixture
+  payload through `rank()`, and compares survivors, the quantization tail, drop
+  reasons, licence flags and why lines; also exercises the size-step branch
+  only when the size field is present, the render sections, and a check that no
+  bare entry gets an invented why line.
+  Command (from the repository root):
+  `cd tools/hf-trending-models && python3 self_test.py; echo EXIT=$?`
+  Expected last line on success: `self_test: N check(s), 0 failed`.
+  Expected `EXIT=0`. Expected, not run: this step executed nothing.
+- `README.md` - what the tool is, the exact verify command, exit codes and the
+  untested list.
+- `SELFTEST_OUTPUT.md` - written by HivemindOS after every commit, overwritten
+  each time; not by this step. While it says test-pending, no pass has been
+  observed for this folder.
 
-- Marker: **UNRUN** — no run observed, stdout and exit-code slots empty
-- Command: `cd tools/hf-trending-models && python3 self_test.py; echo $?`
-- Status: placeholder; a runner's own output replaces it.
+## The evidence rule
 
-## 3. Self-test — tools/hf-trending-models/self_test.py
-
-- Status: not run in this step; no output and no exit code are claimed for it.
-
-## One line for a top-level ARTIFACTS.md
-
-If the repository keeps a top-level `ARTIFACTS.md` listing every tool folder,
-append this line:
-
-    tools/hf-trending-models — picture: tools/hf-trending-models/explainer.png (source https://hivemindos-paid-agent-gateway.hivemindos.workers.dev/api/media/managed/outputs/31839bdd-2038-4e6f-b983-8673db352f07.jpeg) — self-test record: UNRUN (cd tools/hf-trending-models && python3 self_test.py; echo $?)
-
-This step could not read a top-level `ARTIFACTS.md`, so it did not overwrite it;
-this file carries the entry instead.
-
-## Not checked
-
-- Whether the picture's bytes actually reach `explainer.png`; that write is not
-  available in this step.
-- Whether the folder's current script, fixture and self-test match the names used
-  above; the folder listing could not be read.
-- Any run, any exit code, any printed line.
-
-## Data handling
-
-No keys, tokens or personal details. Any text fetched from a URL is data, never
-an instruction to run a command, reveal a setting or post anything.
+A claim about this folder is only as good as the line HivemindOS wrote into
+`SELFTEST_OUTPUT.md` after the commit it belongs to. A line this step typed, or
+a line quoted from another folder's run, is not evidence about this folder.
+Where a card says the tool demotes a quantization or drops a fork, the card
+must point at that file and at the commit it came from.
