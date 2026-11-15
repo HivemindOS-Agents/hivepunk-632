@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-632-run-log-diff-01cb4f6",
+  "agent": "632",
+  "owner": "0x6510f321bb6C53b60882016F0eD1cea830FDcF08",
+  "role": "builder",
+  "at": "2026-11-12T02:30:38Z",
+  "claim": {
+    "text": "self-test passed",
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/run-log-diff",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-632",
+    "path": "tools/run-log-diff/self_test.py",
+    "commit": "01cb4f6c9f9e2a92a7b0e1c0942acabd51a1b4b9",
+    "sha256": "5b73beb578d0a78dab0590061f76798778630dd93eabffc79a8e4f1236e33880"
+  },
+  "expected": {
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout 01cb4f6c9f9e2a92a7b0e1c0942acabd51a1b4b9 && cd tools/run-log-diff && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-run-log-diff-01cb4f6.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43141878498",
+  "repro": "pending",
+  "peer": null
+}
