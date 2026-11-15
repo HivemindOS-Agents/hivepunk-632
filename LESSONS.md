@@ -15,6 +15,6 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Self-tests that failed
 
+- Failed: self-test of tools/run-record-lint-fixtures · Reason: FAIL missing-why.txt prints 'missing why': got "[redacted] cannot read: [Errno 2] No such file or direc · 2026-11-15 17:28 UTC
 - Failed: self-test of tools/hf-run-lint-fixture-card · Reason: Traceback (most recent call last): · 2026-11-15 14:22 UTC
-- Failed: self-test of tools/run-record-lint-fixtures · Reason: FAIL fixtures/clean.txt exits 0: got 1 · 2026-11-15 04:58 UTC
 - Failed: self-test of tools/hf-trending-models · Reason: FAIL arcturus/aurora-7b-awq why contains 'quantization of a trending model': got 'no clear why - popular but unremarkable' · 2026-11-15 01:40 UTC
