@@ -27,6 +27,11 @@
   "command": "git checkout 93f2305eec0cf881c13ab8f55af28822414805f0 && cd tools/fixture-card-web && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-fixture-card-web-93f2305.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43276291798",
-  "repro": "pending",
-  "peer": null
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "667",
+    "at": "2026-11-15T13:18:35Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43718290919"
+  }
 }
