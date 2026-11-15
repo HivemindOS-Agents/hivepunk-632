@@ -1,0 +1,181 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-15T07:27:37.077Z",
+  "subject": "run-record-lint message-grep catalogue",
+  "subjectKind": "project",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The pages show a live practice of agents publishing small Hugging Face fixture datasets from pages they read, with honesty notes about uncaptured runs; nothing in them confirms that this specific catalogue dataset exists or that run-record-lint's self-test ever passed, so the claim worth holding is the practice, not the artifact.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "LiamVisionary/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/LiamVisionary/bee-scouts/commits?per_page=50&since=2026-10-16T07:27:43.379Z"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether LiamVisionary/bee-scouts is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "Issue #146 states HivePunk 632 built tools/run-record-lint and tools/dataset-card-lint with self_test.py files and noted SELFTEST_OUTPUT.md named but not committed.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/146"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Issue #146 proposes a dataset titled 'bee-scouts-standalone-selftest-issues' under hivepunk-1071-f79faf84, with data.csv columns issue,title,state,url,folder_named,read_status and read_status never blank.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/146"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "Issue #70 proposes publishing one dataset under hivepunk-547-db38b7a4 with 20 rows and columns id, text, source, as_of, tags, expected_labels, checker_labels, agree and note.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/70"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Issue #70 states labels were hand-derived from check.py's rule code, no checker ran, no stdout, exit code, diff or checksum exists, and the 17/20 figure is self-agreement rather than measured accuracy.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/70"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Issue #136 proposes publishing a dataset under hivepunk-547-db38b7a4 titled hf-dataset-card-lint-fixtures with exactly three files: README.md, lint.py and self_test.py.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/136"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "Issue #130 states its published dataset sits under hivepunk-632-4934c76e/ and proposes re-publishing the same agent-memory-lint-fixtures dataset with an added CONTRIBUTING.md next to README.md and data.csv.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/130"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Issue #63 states its public index lists only hivemindos.app pages, the SuperAgent API/MCP, agent cards and HivePunkz/HiveVerse skills, and shows no bee-scouts repository, no issue pages and no Hugging Face dataset.",
+      "check": "page",
+      "source": "https://github.com/LiamVisionary/bee-scouts/issues/63"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "Issue #96 states a dataset is live at https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-dataset-publishing-doc-stated-steps-and-requirements with 26 rows from four public pages, each quoting one step with its source URL.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/96"
+    },
+    {
+      "id": "c9",
+      "label": "UNKNOWN",
+      "text": "The commits API page lists 50 commits for LiamVisionary/bee-scouts since 2026-10-16, including messages 'skills/registry.json: 1071 publishes 3 proven skills', 'health log 2026-11-15' and repeated 'health: #632 repairing' and 'health: #632 ok' entries.",
+      "check": "page",
+      "missing": "Its source does not state 10."
+    },
+    {
+      "id": "c10",
+      "label": "DERIVED",
+      "text": "The dataset 'run-record-lint message-grep catalogue' that this step is asked to publish is not shown to exist by any page read; only similarly shaped datasets are described as planned.",
+      "check": "page",
+      "inputs": [
+        "c1",
+        "c2",
+        "c3",
+        "c5"
+      ],
+      "math": "c1-c5 each describe a different proposed or published fixture dataset under other titles; none matches 'run-record-lint message-grep catalogue', so existence is not established."
+    },
+    {
+      "id": "c11",
+      "label": "DERIVED",
+      "text": "The claims pages support are agent-written proposals that explicitly leave the decision to a person, not merged or executed changes.",
+      "check": "page",
+      "inputs": [
+        "c2",
+        "c3",
+        "c5"
+      ],
+      "math": "Each of the cited issues carries the label text 'bee-proposal' and the line 'A person decides; an agent never merges anything', so the content is a proposal."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether run-record-lint's self_test.py passes, and whether any captured run line exists.",
+      "check": "page",
+      "missing": "A committed self-test output or exit line for tools/run-record-lint, which no page read shows."
+    }
+  ],
+  "counts": {
+    "fact": 9,
+    "derived": 2,
+    "unknown": 3
+  },
+  "risks": [
+    "No page read shows the dataset 'run-record-lint message-grep catalogue' exists on Hugging Face, so publication is unconfirmed",
+    "Issue #70 states plainly that hand-derived labels with no checker run are self-agreement, not accuracy — the same weak point applies to a catalogue built from message strings rather than a captured run",
+    "Issue #146 notes SELFTEST_OUTPUT.md was named but not committed for HivePunk 632's tools, so a self-test pass for run-record-lint may still be uncaptured",
+    "The service check states the repo has 50 raw commits in the last 30 days and 0 of them real work, and marks whether it is still shipping as UNKNOWN, so the surrounding work may be bot or health-log traffic",
+    "A source column pointing at bee-scouts issues only proves what those issues state, not that the printed message or grep substring is correct in the code"
+  ],
+  "unknowns": [
+    "Whether LiamVisionary/bee-scouts is still shipping: None of its commits in the last 30 days is real work.",
+    "The commits API page lists 50 commits for LiamVisionary/bee-scouts since 2026-10-16, including messages 'skills/registry.json: 1071 publishes 3 proven skills', 'health log 2026-11-15' and repeated 'health: #632 repairing' and 'health: #632 ok' entries.: Its source does not state 10.",
+    "Whether run-record-lint's self_test.py passes, and whether any captured run line exists.: A committed self-test output or exit line for tools/run-record-lint, which no page read shows."
+  ],
+  "wouldChangeMind": [
+    "Finding the dataset page for 'run-record-lint message-grep catalogue' live under hivepunk-632-4934c76e with its rows loadable",
+    "A committed run line or SELFTEST_OUTPUT.md for tools/run-record-lint showing the self-test result",
+    "The actual MESSAGES table and self_test.py strings, showing whether the printed messages really contain the grepped substrings"
+  ],
+  "sources": [
+    {
+      "title": "Publish attribution-docs-check-fixtures-run-lines: one row per sourced run line · Issue #63 · LiamVisionary/bee-scouts · GitHub",
+      "url": "https://github.com/LiamVisionary/bee-scouts/issues/63"
+    },
+    {
+      "title": "agent-memory-lint-fixtures card: add a CONTRIBUTING.md stating what a new row must include · Issue #130 · HivemindOS-Agents/bee-scouts · Git",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/130"
+    },
+    {
+      "title": "Publish hf-dataset-card-lint-fixtures: card, lint.py and self_test.py · Issue #136 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/136"
+    },
+    {
+      "title": "1F916 forum post notes: link the published HF dataset card in each step row · Issue #96 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/96"
+    },
+    {
+      "title": "bee-scouts issues: one row per request to run a tool self_test.py standalone · Issue #146 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/146"
+    },
+    {
+      "title": "Publish agent-memory-lint fixtures as a 20-row Hugging Face dataset with caveat-first card · Issue #70 · HivemindOS-Agents/bee-scouts · GitH",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/70"
+    },
+    {
+      "title": "GitHub commits of LiamVisionary/bee-scouts",
+      "url": "https://api.github.com/repos/LiamVisionary/bee-scouts/commits?per_page=50&since=2026-10-16T07:27:43.379Z"
+    }
+  ],
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-15-run-record-lint-message-grep-catalogue.md",
+  "decidedBy": "bee"
+}
