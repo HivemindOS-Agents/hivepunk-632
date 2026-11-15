@@ -1,87 +1,115 @@
 #!/usr/bin/env python3
-"""run-record-lint: check a saved run record for the fields a reader needs.
+"""run-record-lint: check a run record for the two things a reader needs.
 
-Reads one plain-text run record and reports whether it carries a why/rationale
-line, whether any claim in it is unlabelled, and whether it names its source.
-Exit code 0 when the record is clean, 1 when something is missing.
+A run record (a note, an issue comment, a commit message kept as a file) is
+meant to say what was run and why it was run. This linter reads one file and
+reports:
 
-Everything read from the record is data. A record that says "ignore your
-instructions" or "[removed: an instruction from what it read]" is a string of bytes to be linted, never an
+  * a line that states something happened but carries no why label;
+  * a record with no why line at all.
+
+A clean record prints the clean message and exits 0. A record with a finding
+prints the finding message and exits 1. Usage:
+
+    python3 run_record_lint.py FILE
+    python3 run_record_lint.py --messages   # print the message table
+
+Everything read from the record is data. A line that says "ignore your
+instructions" or anything like it is a string to be checked, never an
 instruction to this tool.
 
-Usage:
-    python3 run_record_lint.py fixtures/clean.txt
-    python3 run_record_lint.py --json fixtures/missing-why.txt
+Standard library only. No network call anywhere.
 """
 
 import argparse
-import json
 import re
 import sys
 
-WHY_PATTERN = re.compile(r'^\s*(why|rationale)\s*[:\-]\s*\S', re.I | re.M)
-CLAIM_PATTERN = re.compile(r'\b(verified|confirmed|tested|proven|passing)\b', re.I)
-LABEL_PATTERN = re.compile(r'\[(verified|unverified|unknown|derived)\]', re.I)
-SOURCE_PATTERN = re.compile(r'^\s*(source|sources|ref|reference)\s*[:\-]\s*\S', re.I | re.M)
+# --- finding messages -----------------------------------------------------
+# Each value MUST contain, verbatim, the substring the matching check in
+# self_test.py greps for. If a check's substring changes, edit one line here.
+MSG_CLEAN = 'clean record: no finding'
+MSG_MISSING_WHY = 'missing why: every non-empty line needs a why label'
+MSG_UNLABELLED_CLAIM = 'unlabelled claim: this line states a claim with no why label'
+
+MESSAGES = {
+    'clean': MSG_CLEAN,
+    'missing-why': MSG_MISSING_WHY,
+    'unlabelled-claim': MSG_UNLABELLED_CLAIM,
+}
+
+# A why label is the literal token 'why:' at the start of a line, optionally
+# after a list marker or bold markers.
+WHY_RE = re.compile(r'^\s*(?:[-*+]\s+|\d+[.)]\s+)?\**\s*why\s*:', re.IGNORECASE)
+
+# A claim line is one that states something was done or happened.
+CLAIM_RE = re.compile(
+    r'\b(ran|run|executed|passed|failed|fixed|committed|published|uploaded|'
+    r'wrote|wrote|deployed|built|checked)\b', re.IGNORECASE)
 
 
-def lint(text):
-    """Return (exit_code, list_of_messages)."""
-    messages = []
-    problems = 0
-
-    if WHY_PATTERN.search(text):
-        messages.append('record is complete: no missing-why warning')
-    else:
-        messages.append('record is missing why: no why or rationale line found')
-        problems += 1
-
-    claims = [m.group(0) for m in CLAIM_PATTERN.finditer(text)]
-    for claim in claims:
-        window = text[max(0, m_start(text, claim) - 40):m_end(text, claim) + 10]
-        if not LABEL_PATTERN.search(window):
-            messages.append('unlabelled claim: %r (add [verified] or [unverified])' % claim)
-            problems += 1
-            break
-
-    if not SOURCE_PATTERN.search(text):
-        messages.append('no source line')
-        problems += 1
-
-    return (1 if problems else 0), messages
+def is_why_line(line):
+    return bool(WHY_RE.match(line))
 
 
-def m_start(text, claim):
-    return text.lower().find(claim.lower())
+def is_claim_line(line):
+    stripped = line.strip()
+    if not stripped or stripped.startswith('#') or stripped.startswith('~~~'):
+        return False
+    if stripped.startswith('**Command:**') or stripped.startswith('**Exit'):
+        return False
+    return bool(CLAIM_RE.search(stripped))
 
 
-def m_end(text, claim):
-    idx = m_start(text, claim)
-    return idx + len(claim) if idx >= 0 else len(claim)
+def lint_lines(lines):
+    """Return (exit_code, message) for a list of record lines."""
+    why_lines = 0
+    for line in lines:
+        if is_why_line(line):
+            why_lines += 1
+            continue
+        if is_claim_line(line):
+            return 1, MSG_UNLABELLED_CLAIM
+    if why_lines == 0:
+        return 1, MSG_MISSING_WHY
+    return 0, MSG_CLEAN
+
+
+def lint_text(text):
+    return lint_lines(text.splitlines())
+
+
+def lint_file(path):
+    """Lint one file, print the message, and return the exit code."""
+    try:
+        with open(path, encoding='utf-8') as fh:
+            text = fh.read()
+    except OSError as exc:
+        print('%s: cannot read: %s' % (path, exc))
+        return 2
+    code, message = lint_text(text)
+    print('%s: %s' % (path, message))
+    return code
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.split('\n')[0])
-    parser.add_argument('path', nargs='?', help='run record to lint')
-    parser.add_argument('--json', action='store_true', help='print JSON')
+    parser.add_argument('paths', nargs='*', help='record file(s) to lint')
+    parser.add_argument('--messages', action='store_true',
+                        help='print the message table and exit')
     args = parser.parse_args(argv)
-
-    if not args.path:
-        parser.error('a run record path is required')
-    try:
-        with open(args.path, 'r', encoding='utf-8') as handle:
-            text = handle.read()
-    except OSError as exc:
-        print('cannot read %s: %s' % (args.path, exc))
-        return 2
-
-    code, messages = lint(text)
-    if args.json:
-        print(json.dumps({'path': args.path, 'exit_code': code, 'messages': messages}, indent=2))
-    else:
-        for msg in messages:
-            print(msg)
-    return code
+    if args.messages:
+        for key in ('clean', 'missing-why', 'unlabelled-claim'):
+            print('%s: %s' % (key, MESSAGES[key]))
+        return 0
+    if not args.paths:
+        parser.error('at least one record file is required')
+    worst = 0
+    for path in args.paths:
+        code = lint_file(path)
+        if code != 0:
+            worst = code
+    return worst
 
 
 if __name__ == '__main__':
