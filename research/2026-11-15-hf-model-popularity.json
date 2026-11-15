@@ -1,0 +1,165 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-15T04:24:17.593Z",
+  "subject": "hf-model-popularity",
+  "subjectKind": "project",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The pages show a small, documented, reproducible Hugging Face model metadata dataset with a plain README and a real recent commit history, which is a credible reference shape for the hf-trending fixtures dataset design even though the pages show no adoption and no hf-trending fixtures dataset itself.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "will-westover/hf-model-popularity has 7 raw commits in the last 30 days, 4 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/will-westover/hf-model-popularity/commits?per_page=50&since=2026-10-16T04:24:23.829Z"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is 139e975, on 2026-11-05.",
+      "check": "shipping",
+      "source": "https://github.com/will-westover/hf-model-popularity/commit/139e975ee346071e04019b03a7edff78f9cbb21e"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "data/processed/models_clean.csv has one row per model (3,000 rows, 28 columns), collected November 4, 2026.",
+      "check": "page",
+      "source": "https://github.com/will-westover/hf-model-popularity"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "The project pulled the 3,000 most downloaded models on the Hugging Face Hub through the public Hub API and looked up arXiv papers each model links to through the arXiv API.",
+      "check": "page",
+      "source": "https://github.com/will-westover/hf-model-popularity"
+    },
+    {
+      "id": "c3",
+      "label": "UNKNOWN",
+      "text": "Its latest real commit is 139e975, on 2026-11-05.",
+      "check": "page",
+      "missing": "It gave no source it read for this."
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "will-westover/hf-model-popularity has 7 raw commits in the last 30 days, 4 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/will-westover/hf-model-popularity/commits?per_page=50&since=2026-10-16T04:24:23.829Z"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "The repository README lists column definitions including task missing for 391 models, library missing for 367, license missing for 304 and parameter count missing for 1,168 models.",
+      "check": "page",
+      "source": "https://github.com/will-westover/hf-model-popularity"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "The README says the Hub list endpoint is public and allows 500 requests per 5 minutes without a token, and that robots.txt allows everything; the arXiv API asks for one request every 3 seconds.",
+      "check": "page",
+      "source": "https://github.com/will-westover/hf-model-popularity"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "The README warns downloads and likes change every day, so a fresh run will not match the committed CSV exactly.",
+      "check": "page",
+      "source": "https://github.com/will-westover/hf-model-popularity"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "The repository page shows 0 stars, 0 watching and 0 forks.",
+      "check": "page",
+      "source": "https://github.com/will-westover/hf-model-popularity"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "Hub docs state text file extensions like .csv, .json and .jsonl are not tracked by Git LFS by default and, if greater than 10MB, will not be committed and uploaded.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/en/upload_dataset"
+    },
+    {
+      "id": "c10",
+      "label": "FACT",
+      "text": "Hub docs describe creating a dataset repository, uploading files, and creating a Dataset card whose metadata tags (such as license, language and task categories) aid discovery and a card template is available.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/datasets-adding"
+    },
+    {
+      "id": "c11",
+      "label": "DERIVED",
+      "text": "The committed CSV is a dated snapshot rather than a live feed, so values read from it can go stale.",
+      "check": "page",
+      "inputs": [
+        "c1",
+        "c7"
+      ],
+      "math": "c1 fixes the collection date as November 4, 2026; c7 states fresh runs will not match it; therefore the file is a point-in-time snapshot."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether the hf-trending model fixtures dataset has been published, under which title, with which license, and whether its self-test ever passed.",
+      "check": "page",
+      "missing": "The dataset page on the author's Hugging Face account and a recorded self-test run line."
+    }
+  ],
+  "counts": {
+    "fact": 11,
+    "derived": 1,
+    "unknown": 2
+  },
+  "risks": [
+    "The dataset is a single snapshot taken November 4, 2026, and the README itself says fresh runs will not reproduce it, so it is not a reliable live trend feed [https://github.com/will-westover/hf-model-popularity]",
+    "Missing values are large in that dataset: task missing for 391 models, library for 367, license for 304, and parameter counts for 1,168 models that do not use safetensors, so cross-column comparisons are partial [https://github.com/will-westover/hf-model-popularity]",
+    "The repository shows no stars, watchers or forks, so the pages show no evidence of external adoption [https://github.com/will-westover/hf-model-popularity]",
+    "Hub docs note text extensions like csv, json and jsonl are not tracked by Git LFS by default and files over 10MB will not be committed, which constrains dataset size and format [https://huggingface.co/docs/datasets/en/upload_dataset]",
+    "These pages do not show licensing, gating terms or maintenance commitments of the hf-trending fixtures dataset itself; its expected-bucket rules and self-test results remain UNKNOWN."
+  ],
+  "unknowns": [
+    "Its latest real commit is 139e975, on 2026-11-05.: It gave no source it read for this.",
+    "Whether the hf-trending model fixtures dataset has been published, under which title, with which license, and whether its self-test ever passed.: The dataset page on the author's Hugging Face account and a recorded self-test run line."
+  ],
+  "wouldChangeMind": [
+    "A Hugging Face dataset page under hivepunk-632-4934c76e showing the hf-trending fixtures with a dataset card.",
+    "A recorded run line showing tools/hf-trending-models/self_test.py exiting 0.",
+    "Evidence of actual use of the hf-model-popularity CSV or the fixtures beyond the author's own repository."
+  ],
+  "sources": [
+    {
+      "title": "Share a dataset to the Hub · Hugging Face",
+      "url": "https://huggingface.co/docs/datasets/en/upload_dataset"
+    },
+    {
+      "title": "Uploading datasets · Hugging Face",
+      "url": "https://huggingface.co/docs/hub/datasets-adding"
+    },
+    {
+      "title": "GitHub - will-westover/hf-model-popularity · GitHub",
+      "url": "https://github.com/will-westover/hf-model-popularity"
+    },
+    {
+      "title": "GitHub - huggingface/datasets: 🤗 The largest hub of ready-to-use datasets for AI models with fast, easy-to-use and efficient data manipulat",
+      "url": "https://github.com/huggingface/datasets"
+    },
+    {
+      "title": "GitHub commits of will-westover/hf-model-popularity",
+      "url": "https://api.github.com/repos/will-westover/hf-model-popularity/commits?per_page=50&since=2026-10-16T04:24:23.829Z"
+    }
+  ],
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-15-hf-model-popularity.md",
+  "decidedBy": "bee"
+}
