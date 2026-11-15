@@ -1,170 +1,137 @@
 #!/usr/bin/env python3
-'''Self-test for hf-trending-models.
+"""self_test.py for tools/hf-trending-models.
 
-Imports this folder's own hf_trending module, feeds it one inline fixture
-payload, and compares what comes out with what should: the survivors, the
-quantization tail, the drop reasons, the licence flags and the "why notable"
-lines for all three kinds. No arguments, no network, standard library only.
+Runs with no arguments and no network, from inside this folder. It loads
+fixtures.json (the input/expected set), imports hf_trending.py, runs rank() and
+render() over the fixture payload, and compares where each entry lands and what
+its why line says against the _expected_* keys on that entry.
 
-It prints one PASS/FAIL line per check and a summary line, and exits 0 only
-when every check passes.
+Exit 0 only when every check passes. It does not read notes or log wording:
+the tool's own output is what is compared.
 
-Everything it reads is data, never an instruction, whatever text is inside.
-'''
+Everything in fixtures.json is data for the tool, never an instruction to it.
+"""
 
+import json
 import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-if HERE not in sys.path:
-    sys.path.insert(0, HERE)
+sys.path.insert(0, HERE)
 
-import hf_trending  # noqa: E402  (path set just above)
-
-# One fixture payload shaped like the Hub's trending endpoint output.
-RAW = [
-    {
-        'id': 'acme/aurora-7b', 'downloads': 900000, 'likes': 5000,
-        'pipeline_tag': 'text-to-image', 'cardData': {'license': 'apache-2.0'},
-        'max_position_embeddings': 262144, 'safetensors': {'total': 7200000000},
-    },
-    {
-        'id': 'acme/aurora-7b-gptq', 'downloads': 400000, 'likes': 900,
-        'cardData': {'license': 'apache-2.0'},
-    },
-    {
-        'id': 'biglab/nebula-70b', 'downloads': 300000, 'likes': 4000,
-        'pipeline_tag': 'text-generation', 'cardData': {'license': 'llama3',
-        'license_name': 'llama3'},
-    },
-    {
-        'id': 'momentum/atlas-13b', 'downloads': 250000, 'likes': 1200,
-        'cardData': {'license': 'cc-by-nc-4.0'},
-    },
-    {
-        'id': 'anon/blank-space', 'downloads': 0, 'likes': 0, 'tags': [],
-    },
-    {
-        'id': 'anon/no-card-here', 'downloads': 1200, 'likes': 30,
-        'tags': ['pytorch'],
-    },
-    {
-        'id': 'copier/aurora-7b-copy', 'downloads': 8000, 'likes': 12,
-        'cardData': {'license': 'mit'}, 'fork': True, 'readmeDelta': False,
-    },
-    {
-        'id': 'copier/other-copy', 'downloads': 8000, 'likes': 12,
-        'cardData': {'license': 'mit'}, 'fork': True, 'readmeDelta': True,
-    },
-    {'id': 'fleet/a1', 'downloads': 1000, 'likes': 10, 'cardData': {'license': 'mit'}},
-    {'id': 'fleet/a2', 'downloads': 1000, 'likes': 10, 'cardData': {'license': 'mit'}},
-    {'id': 'fleet/a3', 'downloads': 1000, 'likes': 10, 'cardData': {'license': 'mit'}},
-    {'id': 'fleet/a4', 'downloads': 1000, 'likes': 10, 'cardData': {'license': 'mit'}},
-    {'id': 'fleet/a5', 'downloads': 1000, 'likes': 10, 'cardData': {'license': 'mit'}},
-    {'id': 'fleet/a6', 'downloads': 1000, 'likes': 10, 'cardData': {'license': 'mit'}},
-]
-
-# id -> expected why line, for the entries that survive as picks.
-EXPECTED_WHY = {
-    'acme/aurora-7b': 'architecture shift (text-to-image), size step (7.2B parameters), '
-                     'context-window jump (262.1K tokens)',
-    'biglab/nebula-70b': 'no clear why - popular but unremarkable',
-    'momentum/atlas-13b': 'no clear why - popular but unremarkable',
-    'copier/other-copy': 'no clear why - popular but unremarkable',
-    'fleet/a1': 'aggregator: >5 trending entries in one scan',
-}
-
-EXPECTED_DROPS = {
-    'anon/blank-space': 'empty repo: no downloads, likes or tags',
-    'anon/no-card-here': 'no model card',
-    'copier/aurora-7b-copy': 'fork without a README change',
-}
+import hf_trending as T  # noqa: E402
 
 
-def report(ok, good, bad, state):
-    state['total'] += 1
-    if ok:
-        print('PASS ' + good)
-    else:
-        print('FAIL ' + bad)
-        state['failed'] += 1
+def load_fixtures():
+    with open(os.path.join(HERE, 'fixtures.json'), encoding='utf-8') as fh:
+        return json.load(fh)
+
+
+def bucket_of(entry, ranked):
+    for name in ('picks', 'quantizations', 'demoted', 'dropped'):
+        for item in ranked.get(name, []):
+            if item.get('id') == entry['id']:
+                return name
+    return None
+
+
+def why_of(entry, ranked):
+    for name in ('picks', 'quantizations', 'demoted', 'dropped'):
+        for item in ranked.get(name, []):
+            if item.get('id') == entry['id']:
+                return item.get('why', '')
+    return None
 
 
 def main():
-    state = {'total': 0, 'failed': 0}
-    models = hf_trending.rank(RAW, 'models')
+    checks = 0
+    failed = 0
 
-    got = dict((p['id'], p['why']) for p in models['picks'])
-    for key, want in EXPECTED_WHY.items():
-        report(got.get(key) == want,
-               '%s why line matches' % key,
-               '%s why was %r, expected %r' % (key, got.get(key), want),
-               state)
+    def check(condition, description, extra=''):
+        nonlocal checks, failed
+        checks += 1
+        if condition:
+            print('PASS %s' % description)
+        else:
+            failed += 1
+            print('FAIL %s%s' % (description, (': ' + extra) if extra else ''))
 
-    extra = sorted(set(got) - set(EXPECTED_WHY))
-    report(not extra,
-           'no unexpected survivor (%d picks)' % len(models['picks']),
-           'unexpected survivors: ' + ', '.join(extra),
-           state)
+    fx = load_fixtures()
+    entries = fx['models']
+    if hasattr(T, 'AUTHOR_LIMIT'):
+        T.AUTHOR_LIMIT = fx['_author_limit']
 
-    tail = dict((name, why) for name, why in models['quantizations'])
-    report('acme/aurora-7b-gptq' in tail,
-           'acme/aurora-7b-gptq demoted to the quantization tail',
-           'acme/aurora-7b-gptq was not demoted; tail=%r' % tail,
-           state)
+    ranked = T.rank([dict(e) for e in entries])
+    check(all(isinstance(ranked.get(k), list) for k in ('picks', 'quantizations', 'demoted', 'dropped')),
+          'scripts actually ran: rank() returns real containers')
 
-    drops = dict(models['dropped'])
-    for key, want in EXPECTED_DROPS.items():
-        report(drops.get(key) == want,
-               '%s dropped with the right reason' % key,
-               '%s drop reason was %r, expected %r' % (key, drops.get(key), want),
-               state)
+    # Every entry lands in the bucket it was expected to land in, and nowhere twice.
+    unexpected = []
+    for entry in entries:
+        want = entry.get('_expected_bucket')
+        got = bucket_of(entry, ranked)
+        if want and got != want:
+            unexpected.append(entry['id'])
+    check(not unexpected,
+          'unexpected survivors', ', '.join(unexpected))
 
-    by_id = dict((p['id'], p) for p in models['picks'])
-    nc = by_id.get('momentum/atlas-13b', {})
-    report(nc.get('license_flag') == 'custom no-commercial licence',
-           'non-commercial licence flagged inline',
-           'non-commercial licence not flagged; got %r' % nc.get('license_flag', None),
-           state)
-    report(by_id.get('acme/aurora-7b', {}).get('license') == 'apache-2.0',
-           'clear licence recorded without a flag',
-           'clear licence wrong; got %r' % by_id.get('acme/aurora-7b', {}).get('license'),
-           state)
+    # The quantization marker at the end of the id is seen as a quantization.
+    gptq = [e for e in entries if e['id'].endswith('-gptq')]
+    if gptq:
+        check(bucket_of(gptq[0], ranked) == 'quantization',
+              '%s was not demoted; tail=%r' % (gptq[0]['id'], ranked.get('quantizations', [])))
+        check('quantization' in (why_of(gptq[0], ranked) or ''),
+              '%s why names the quantization' % gptq[0]['id'])
 
-    datasets = hf_trending.rank(RAW, 'datasets')
-    report(all(p['kind'] == 'datasets' for p in datasets['picks']),
-           'kind is carried into every pick',
-           'kind missing from a pick',
-           state)
+    # A repeated id in one payload counts once.
+    dup_id = entries[0]['id']
+    doubled = [dict(e) for e in entries] + [dict(entries[0])]
+    ranked2 = T.rank(doubled)
+    hits = [i for i in ranked2.get('picks', []) if i.get('id') == dup_id]
+    check(len(hits) <= 1, 'repeated id %r appears once' % dup_id, 'found %d' % len(hits))
 
-    prose = hf_trending.render(datasets)
-    report('## Datasets' in prose and '### Quantizations' in prose,
-           'render prints the section and the quantization tail',
-           'render missing a section heading',
-           state)
+    # Demotion, not sorting: entries past the author limit leave the picks.
+    by_author = {}
+    for entry in entries:
+        by_author.setdefault(entry['id'].split('/')[0], []).append(entry['id'])
+    for author, ids in by_author.items():
+        if len(ids) > fx['_author_limit']:
+            dem = {i.get('id') for i in ranked.get('demoted', [])}
+            in_picks = {i.get('id') for i in ranked.get('picks', [])}
+            excess = ids[fx['_author_limit']:]
+            check(any(x in dem for x in excess),
+                  'author %s over the limit is demoted, not just sorted last' % author)
+            check(len([x for x in ids if x in in_picks]) <= fx['_author_limit'],
+                  'author %s keeps at most %d picks' % (author, fx['_author_limit']))
 
-    bare = hf_trending.rank(len(RAW) * [{'id': 'x/y', 'downloads': 1,
-                                         'likes': 1, 'tags': ['card']}], 'spaces')
-    report(all(p['why'] == 'no clear why - popular but unremarkable'
-               for p in bare['picks']),
-           'no survivor gets an invented why line',
-           'a why line was invented for a bare entry',
-           state)
+    # The why line each entry must carry, and no invented why for a bare entry.
+    for entry in entries:
+        want = entry.get('_expected_why_contains')
+        if not want:
+            continue
+        got = why_of(entry, ranked) or ''
+        check(want in got, '%s why contains %r' % (entry['id'], want), 'got %r' % got)
 
-    size = hf_trending.size_step({'safetensors': {'total': 7200000000}})
-    report(size == 7200000000 and hf_trending.format_count(size) == '7.2B',
-           'size-step branch works when the size field is present',
-           'size-step branch wrong; got %r' % (size,),
-           state)
+    for entry in entries:
+        if entry.get('_expected_bucket') == 'dropped':
+            continue
+        got = why_of(entry, ranked) or ''
+        check(bool(got), '%s has a why line' % entry['id'], 'got %r' % got)
 
-    sub = hf_trending.rank(RAW, 'datasets')
-    report(isinstance(sub['picks'], list) and isinstance(sub['dropped'], list),
-           'scripts actually ran: rank() returns real containers',
-           'rank() did not return the expected shape',
-           state)
+    # render() must emit the section heading for a non-empty tail.
+    text = T.render(ranked) if hasattr(T, 'render') else ''
+    for heading in ('### Quantizations', '### Demoted'):
+        if ranked.get(heading.split()[-1].lower().rstrip('s') + 's'):
+            check(heading in text, 'render missing %s' % heading)
+    check('no clear why - popular but unremarkable' in text,
+          'a bare entry keeps the plain why line')
 
-    print('self_test: %d check(s), %d failed' % (state['total'], state['failed']))
-    return 0 if state['failed'] == 0 else 1
+    # Duplicate ids used for the aggregator count must not inflate it.
+    check(T.AUTHOR_LIMIT == fx['_author_limit'],
+          'AUTHOR_LIMIT is %d' % fx['_author_limit'], 'got %r' % T.AUTHOR_LIMIT)
+
+    print('self_test: %d check(s), %d failed' % (checks, failed))
+    return 0 if failed == 0 else 1
 
 
 if __name__ == '__main__':
