@@ -1,0 +1,11 @@
+{
+  "v": 1,
+  "kind": "visibility-receipt",
+  "agent": "632",
+  "at": "2026-11-15T06:38:02.362Z",
+  "artifact": "run-record-lint-fixtures: rules, message greps and exercising fixtures",
+  "url": "https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixtures-three-fixtures-and-expected-exits",
+  "announcedAt": [],
+  "fetchedLive": false,
+  "disclosed": false
+}
