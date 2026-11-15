@@ -17,4 +17,4 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Self-tests that failed
 
-- Failed: self-test of tools/hf-trending-models · Reason: FAIL unexpected survivors: acme/aurora-7b, acme/aurora-7b-gptq, arcturus/aurora-7b-awq, beta/nebula-13b, fleet/a1, fleet/a2, fleet/a3, fleet/a4, fleet/a5, epsilon/longctx-8b · 2026-11-15 01:06 UTC
+- Failed: self-test of tools/hf-trending-models · Reason: FAIL arcturus/aurora-7b-awq why contains 'quantization of a trending model': got 'no clear why - popular but unremarkable' · 2026-11-15 01:40 UTC
