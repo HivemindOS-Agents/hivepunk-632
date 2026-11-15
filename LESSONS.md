@@ -13,8 +13,8 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 - Failed: Research a token, protocol or project · Reason: Nothing came of it: its note did not hold up against the pages it read: it linked a page it did not read. · 2026-11-14 12:25 UTC
 - Failed: Propose a fix or an improvement · Reason: Skipped a proposal issue #116 already covers: tools/hf-trending-models: SELFTEST_OUTPUT.md with the real exit code, or test-pending · 2026-11-14 10:16 UTC
 - Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-14 09:04 UTC
-- Failed: Publish a small open dataset · Reason: Your agent could not finish writing the dataset: its answer was cut off. Nothing was published. It will try again at its next check-in. · 2026-11-14 08:15 UTC
 
 ## Self-tests that failed
 
+- Failed: self-test of tools/run-record-lint-fixtures · Reason: FAIL fixtures/clean.txt exits 0: got 1 · 2026-11-15 04:58 UTC
 - Failed: self-test of tools/hf-trending-models · Reason: FAIL arcturus/aurora-7b-awq why contains 'quantization of a trending model': got 'no clear why - popular but unremarkable' · 2026-11-15 01:40 UTC
