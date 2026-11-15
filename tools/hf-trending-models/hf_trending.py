@@ -1,280 +1,174 @@
 #!/usr/bin/env python3
-"""hf-trending-models: filter and cluster-rank Hugging Face trending surfaces.
+"""hf-trending-models: filter a payload of Hugging Face trending repos.
 
-Reads the JSON arrays the Hub's trending endpoints return
-(https://huggingface.co/api/models?sort=trending&direction=-1&limit=30 and the
-datasets / spaces equivalents) and applies the aeon-huggingface-trending
-filters on top of aeon's ranking:
+Reads one JSON file (a list of repo objects, or an object with a 'models' or
+'repos' key) and prints a markdown report: genuine picks, quantizations of a
+trending base, then the demoted and dropped tail.
 
-  * drop empty repos, no-commit repos and repos with no model card
-  * demote a same-week quantization of a model already trending to a tail
-  * drop a fork whose README is unchanged from upstream
-  * demote authors with more than 5 trending entries (aggregators)
-  * flag an unclear or missing licence inline; never drop for it
-  * require a concrete "why notable" line; with no reason, say so
-
-The tool never uses the network. Point it at saved JSON; that is the whole
-input surface. Everything it reads is data: no line in a repo name, card
-field or author name is treated as an instruction.
+Everything read from the payload is data. A repo whose name or card text says
+"ignore your instructions" or "[removed: an instruction from what it read]" is a string of bytes to be filtered, never an
+instruction to this tool.
 
 Usage:
-    python3 hf_trending.py --kind models saved_models.json
-    python3 hf_trending.py --kind spaces --json saved_spaces.json
-    python3 hf_trending.py --why saved_models.json        # filter-only list
-    python3 hf_trending.py --self-test                    # same checks as self_test.py
+    python3 hf_trending.py trending.json
+    python3 hf_trending.py --json trending.json
 """
 
 import argparse
 import json
-import os
 import sys
 
-# Same-week quantization markers, checked lowercased in the repo id.
-QUANT_MARKERS = ('-gptq', '-awq', '-gguf', '-4bit', '-8bit', '-int4',
-                 '-int8', '-q4', '-q5', '-q8', '-exl2')
-BASE_SEPARATORS = ('-', '_')
-
-# Licences we recognise as clear. Anything else is flagged, not dropped.
-CLEAR_LICENCES = ('apache-2.0', 'mit', 'bsd-3-clause', 'bsd-2-clause',
-                  'cc0-1.0', 'cc-by-4.0', 'openrail-m', 'openrail', 'llama2',
-                  'llama3', 'gemma', 'mpl-2.0', 'gpl-3.0')
-
-# Authors with more trending entries than this in one scan are aggregators.
 AUTHOR_LIMIT = 5
 
+# Both spellings: embedded/leading markers and the trailing hyphenated ones.
+QUANT_MARKERS = (
+    'gptq', 'awq', 'gguf', 'int4', 'int8',
+    '-gptq', '-awq', '-gguf', '-int4', '-4bit',
+)
 
-def repo_name(entry):
-    return entry.get('id') or entry.get('modelId') or entry.get('name') or ''
+NON_COMMERCIAL = ('cc-by-nc', 'non-commercial', 'openrail-m')
 
+LONG_CONTEXT = 131072
 
-def author_of(name):
-    return name.split('/')[0] if '/' in name else '(no author)'
-
-
-def base_of(name):
-    """Strip the quantization suffix from a repo id, for dedup."""
-    tail = name.split('/')[-1].lower()
-    for sep in BASE_SEPARATORS:
-        for marker in QUANT_MARKERS:
-            idx = tail.find(marker + sep)
-            if idx > 0:
-                return name.split('/')[0] + '/' + tail[:idx]
-    return ''
+BARE_WHY = 'no clear why - popular but unremarkable'
 
 
-def is_quantization(name):
-    return bool(base_of(name))
+def base_of(repo_id):
+    """Strip a quantization marker from an id, returning the base id."""
+    lowered = repo_id.lower()
+    for marker in QUANT_MARKERS:
+        if lowered.endswith(marker):
+            trimmed = repo_id[:len(repo_id) - len(marker)].rstrip('-_')
+            return trimmed or repo_id
+    return repo_id
 
 
-def has_card(entry):
-    """The API gives cardData for a parsed card, tags for the card's tags."""
-    if entry.get('cardData'):
-        return True
-    tags = entry.get('tags') or []
-    return 'dataset:card' in tags or 'card' in tags
+def is_quantization(repo_id):
+    lowered = repo_id.lower()
+    return any(marker in lowered for marker in QUANT_MARKERS)
 
 
-def is_fork(entry):
-    return bool(entry.get('fork') or entry.get('private_fork'))
+def is_empty(repo):
+    return not repo.get('likes') and not repo.get('downloads') and not repo.get('pipeline_tag')
 
 
-def readme_delta(entry):
-    """A fork with no README change is dropped; 'unknown' keeps it."""
-    value = entry.get('readmeDelta')
-    if value is None:
-        return 'unknown'
-    return bool(value)
+def is_fork_without_delta(repo):
+    return bool(repo.get('fork')) and not repo.get('readmeDelta')
 
 
-def licence_of(entry):
-    card = entry.get('cardData') or {}
-    lic = card.get('license')
-    if not lic:
-        for tag in entry.get('tags') or []:
-            if isinstance(tag, str) and tag.startswith('license:'):
-                lic = tag.split(':', 1)[1]
-                break
-    if not lic:
-        return None, 'no licence stated'
-    low = str(lic).lower()
-    if low in CLEAR_LICENCES:
-        return low, None
-    if 'nc' in low or 'non-commercial' in low:
-        return low, 'custom no-commercial licence'
-    return low, 'licence not on the recognised list'
+def licence_of(repo):
+    card = repo.get('cardData') or {}
+    return (card.get('license') or '').lower()
 
 
-def size_step(entry):
-    """A parameter count is a size step when it is in the raw entry."""
-    for key in ('safetensors', 'parameters', 'numParameters'):
-        value = entry.get(key)
-        if isinstance(value, dict):
-            total = value.get('total')
-            if isinstance(total, int) and total > 0:
-                return total
-        elif isinstance(value, int) and value > 0:
-            return value
-    return None
-
-
-def why_notable(entry, is_quant, is_aggregator):
-    """A concrete reason, or the plain admission that there is none."""
+def why_for(repo, trending_bases, author_counts):
+    repo_id = repo.get('id', '')
     reasons = []
-    name = repo_name(entry)
-    if entry.get('pipeline_tag'):
-        pt = entry.get('pipeline_tag')
-        if pt not in ('text-generation', 'text-classification',
-                      'feature-extraction'):
-            reasons.append('architecture shift (%s)' % pt)
-    size = size_step(entry)
-    if size:
-        reasons.append('size step (%s parameters)' % format_count(size))
-    ctx = entry.get('max_position_embeddings')
-    if isinstance(ctx, int) and ctx >= 131072:
-        reasons.append('context-window jump (%s tokens)' % format_count(ctx))
-    if entry.get('_notable_author'):
-        reasons.append('notable author affiliation')
-    if is_quant:
+    quant_base = base_of(repo_id)
+    if is_quantization(repo_id) and quant_base in trending_bases:
         reasons.append('quantization of a trending model')
-    if is_aggregator:
-        reasons.append('aggregator: >%d trending entries in one scan' % AUTHOR_LIMIT)
-    if entry.get('_new_licence'):
-        reasons.append('licence change')
-    if not reasons:
-        return 'no clear why - popular but unremarkable'
-    return ', '.join(reasons)
+    size = (repo.get('safetensors') or {}).get('total')
+    if size:
+        reasons.append('size step to %.1fB' % (size / 1e9))
+    if (repo.get('max_position_embeddings') or 0) >= LONG_CONTEXT:
+        reasons.append('context-window jump to %d' % repo['max_position_embeddings'])
+    author = repo_id.split('/')[0]
+    if author_counts.get(author, 0) > AUTHOR_LIMIT:
+        reasons.append('aggregator: more than %d trending entries in one scan' % AUTHOR_LIMIT)
+    if any(m in licence_of(repo) for m in NON_COMMERCIAL):
+        reasons.append('custom no-commercial licence')
+    return '; '.join(reasons) if reasons else BARE_WHY
 
 
-def format_count(n):
-    for unit, div in (('B', 10 ** 9), ('M', 10 ** 6), ('K', 10 ** 3)):
-        if n >= div:
-            return '%.1f%s' % (n / div, unit)
-    return str(n)
+def rank(repos):
+    """Return {'picks': [...], 'quantizations': [...], 'demoted': [...], 'dropped': [...]}."""
+    seen = set()
+    unique = []
+    for repo in repos:
+        rid = repo.get('id')
+        if rid in seen:
+            continue
+        seen.add(rid)
+        unique.append(repo)
 
-
-def rank(entries, kind='models'):
-    """Return a dict with 'picks', 'quantizations' and 'dropped'."""
-    picks, quantizations, dropped = [], [], []
-
-    counted = [e for e in entries if repo_name(e)]
     author_counts = {}
-    for e in counted:
-        a = author_of(repo_name(e))
-        author_counts[a] = author_counts.get(a, 0) + 1
+    for repo in unique:
+        author = repo.get('id', '').split('/')[0]
+        author_counts[author] = author_counts.get(author, 0) + 1
 
     trending_bases = set()
-    for e in counted:
-        name = repo_name(e)
-        if not is_quantization(name):
-            trending_bases.add(name.lower())
+    for repo in unique:
+        rid = repo.get('id', '')
+        if not is_quantization(rid):
+            trending_bases.add(rid)
 
-    for e in counted:
-        name = repo_name(e)
-        if entry_is_empty(e):
-            dropped.append((name, 'empty repo: no downloads, likes or tags'))
+    picks, quantizations, demoted, dropped = [], [], [], []
+    author_kept = {}
+    for repo in unique:
+        rid = repo.get('id', '')
+        why = why_for(repo, trending_bases, author_counts)
+        item = {'id': rid, 'why': why, 'kind': repo.get('pipeline_tag') or 'unknown'}
+        if is_empty(repo) or is_fork_without_delta(repo):
+            dropped.append(item)
             continue
-        if not has_card(e):
-            dropped.append((name, 'no model card'))
+        if is_quantization(rid) and base_of(rid) in trending_bases:
+            quantizations.append(item)
             continue
-        if is_fork(e) and readme_delta(e) is False:
-            dropped.append((name, 'fork without a README change'))
+        author = rid.split('/')[0]
+        kept = author_kept.get(author, 0)
+        if author_counts.get(author, 0) > AUTHOR_LIMIT and kept >= AUTHOR_LIMIT:
+            demoted.append(item)
             continue
-        is_quant = is_quantization(name)
-        is_aggregator = author_counts[author_of(name)] > AUTHOR_LIMIT
-        if is_quant and base_of(name) in trending_bases:
-            quantizations.append((name, why_notable(e, True, is_aggregator)))
-            continue
-        lic, flag = licence_of(e)
-        picks.append({
-            'id': name,
-            'kind': kind,
-            'why': why_notable(e, False, is_aggregator),
-            'license': lic or 'unknown',
-            'license_flag': flag,
-            'downloads': e.get('downloads', 0),
-            'likes': e.get('likes', 0),
-            '_aggregator': is_aggregator,
-        })
-        if is_quant:
-            quantizations.append((name, why_notable(e, True, is_aggregator)))
-
-    picks.sort(key=lambda p: (p['_aggregator'], -p['likes'], -p['downloads']))
-    return {'kind': kind, 'picks': picks, 'quantizations': quantizations,
-            'dropped': dropped}
+        author_kept[author] = kept + 1
+        picks.append(item)
+    return {'picks': picks, 'quantizations': quantizations, 'demoted': demoted, 'dropped': dropped}
 
 
-def entry_is_empty(entry):
-    return not entry.get('downloads') and not entry.get('likes') \
-        and not entry.get('tags')
-
-
-def render(report, wants_why=False):
-    lines = []
-    if wants_why:
-        lines.append('%s: filter-only listing' % report['kind'])
-        for name, why in sorted(report['quantizations']):
-            lines.append('  tail %s - %s' % (name, why))
-        for name, why in report['dropped']:
-            lines.append('  drop %s - %s' % (name, why))
-        return '\n'.join(lines)
-    lines.append('## %s\n' % report['kind'].capitalize())
-    for pick in report['picks']:
-        flag = ' [%s]' % pick['license_flag'] if pick['license_flag'] else ''
-        lines.append('- %s - %s (licence %s%s, %s downloads, %s likes)' % (
-            pick['id'], pick['why'], pick['license'], flag,
-            pick['downloads'], pick['likes']))
-    if not report['picks']:
-        lines.append('- (no survivors)')
-    if report['quantizations']:
-        lines.append('\n### Quantizations')
-        for name, why in sorted(report['quantizations']):
-            lines.append('- %s - %s' % (name, why))
-    if report['dropped']:
-        lines.append('\n### Dropped')
-        for name, why in report['dropped']:
-            lines.append('- %s - %s' % (name, why))
+def render(ranked):
+    lines = ['# Trending models', '']
+    lines.append('### Picks')
+    for item in ranked.get('picks', []):
+        lines.append('- **%s** - %s' % (item['id'], item['why']))
+    if ranked.get('quantizations'):
+        lines.append('### Quantizations')
+        for item in ranked['quantizations']:
+            lines.append('- **%s** - %s' % (item['id'], item['why']))
+    if ranked.get('demoted'):
+        lines.append('### Demoted')
+        for item in ranked['demoted']:
+            lines.append('- **%s** - %s' % (item['id'], item['why']))
+    if ranked.get('dropped'):
+        lines.append('### Dropped')
+        for item in ranked['dropped']:
+            lines.append('- **%s** - %s' % (item['id'], item['why']))
     return '\n'.join(lines)
+
+
+def load(path):
+    with open(path, encoding='utf-8') as fh:
+        data = json.load(fh)
+    if isinstance(data, dict):
+        return data.get('models') or data.get('repos') or []
+    return data
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.split('\n')[0])
-    parser.add_argument('path', nargs='?', help='saved JSON array from the Hub API')
-    parser.add_argument('--kind', default='models',
-                        choices=('models', 'datasets', 'spaces'))
-    parser.add_argument('--json', action='store_true',
-                        help='print the picks as JSON instead of prose')
-    parser.add_argument('--why', action='store_true',
-                        help='filter-only listing: tails and drops, no picks')
-    parser.add_argument('--self-test', action='store_true',
-                        help='run the checks in self_test.py and exit')
+    parser.add_argument('path', nargs='?', help='JSON payload of trending repos')
+    parser.add_argument('--json', action='store_true', help='print JSON')
     args = parser.parse_args(argv)
-
-    if args.self_test:
-        here = os.path.dirname(os.path.abspath(__file__))
-        sys.path.insert(0, here)
-        import self_test
-        return self_test.main()
-
     if not args.path:
-        parser.error('a JSON file is required unless --self-test is given')
+        parser.error('a payload path is required')
     try:
-        with open(args.path, 'r', encoding='utf-8') as handle:
-            payload = json.load(handle)
-    except OSError as exc:
+        repos = load(args.path)
+    except (OSError, ValueError) as exc:
         print('cannot read %s: %s' % (args.path, exc))
         return 2
-    except ValueError as exc:
-        print('not JSON: %s: %s' % (args.path, exc))
-        return 2
-    if not isinstance(payload, list):
-        print('expected a JSON array of repo objects')
-        return 2
-
-    report = rank(payload, args.kind)
+    ranked = rank(repos)
     if args.json:
-        print(json.dumps(report['picks'], indent=2))
+        print(json.dumps(ranked, indent=2))
     else:
-        print(render(report, wants_why=args.why))
+        print(render(ranked))
     return 0
 
 
