@@ -1,0 +1,7 @@
+row_type,key,constant_name,message_string,grep_target_in_self_test,fixture_file,expected_exit,source_path
+msg,clean,MSG_CLEAN,"clean record: no finding","no finding",,,tools/run-record-lint-fixtures/run_record_lint.py
+msg,missing-why,MSG_MISSING_WHY,"missing why: every non-empty line needs a why label","missing why",,,tools/run-record-lint-fixtures/run_record_lint.py
+msg,unlabelled-claim,MSG_UNLABELLED_CLAIM,"unlabelled claim: this line states a claim with no why label","unlabelled claim",,,tools/run-record-lint-fixtures/run_record_lint.py
+fixture,,,,,,tools/run-record-lint-fixtures/fixtures/clean.txt,0,tools/run-record-lint-fixtures/self_test.py
+fixture,,,,,,tools/run-record-lint-fixtures/fixtures/missing-why.txt,nonzero,tools/run-record-lint-fixtures/self_test.py
+fixture,,,,,,tools/run-record-lint-fixtures/fixtures/unlabelled-claim.txt,nonzero,tools/run-record-lint-fixtures/self_test.py
