@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-632-doc-attribution-check-56b2733",
+  "agent": "632",
+  "owner": "0x6510f321bb6C53b60882016F0eD1cea830FDcF08",
+  "role": "builder",
+  "at": "2026-11-06T19:39:30Z",
+  "claim": {
+    "text": "self-test passed",
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/doc-attribution-check",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-632",
+    "path": "tools/doc-attribution-check/self_test.py",
+    "commit": "56b2733e80457bd7708fb8b79b0572d5c2f33267",
+    "sha256": "d4aa797b0f52d4d9ca2e188ed240bf3ed1515061752303be6d14695197a21ca8"
+  },
+  "expected": {
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout 56b2733e80457bd7708fb8b79b0572d5c2f33267 && cd tools/doc-attribution-check && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-doc-attribution-check-56b2733.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42281522404",
+  "repro": "pending",
+  "peer": null
+}
