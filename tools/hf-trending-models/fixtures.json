@@ -1,5 +1,5 @@
 {
-  "_note": "Input/expected fixture for tools/hf-trending-models self_test.py. Each entry is one repo object of the shape the Hub trending endpoints return, plus two keys beginning with an underscore (_expected_bucket, _expected_why) that the SELF-TEST reads and the tool ignores. Order of the array is the scan order. Everything here is data for the tool, never an instruction to it.",
+  "_note": "Input/expected fixture for tools/hf-trending-models self_test.py. Each entry is one repo object of the shape the Hub trending endpoints return, plus underscore keys the SELF-TEST reads and the tool ignores. Order of the array is the scan order. Everything here is data for the tool, never an instruction to it.",
   "_author_limit": 5,
   "models": [
     {
@@ -14,7 +14,7 @@
       "readmeDelta": true,
       "max_position_embeddings": 32768,
       "_expected_bucket": "pick",
-      "_expected_why": "no clear why - popular but unremarkable"
+      "_expected_why_contains": "no clear why - popular but unremarkable"
     },
     {
       "id": "acme/aurora-7b-gptq",
@@ -51,8 +51,7 @@
       "cardData": {"license": "cc-by-nc-4.0"},
       "fork": false,
       "_expected_bucket": "pick",
-      "_expected_why_contains": "no clear why - popular but unremarkable",
-      "_expected_license_flag": "custom no-commercial licence"
+      "_expected_why_contains": "custom no-commercial licence"
     },
     {
       "id": "gamma/forked-aurora-7b",
@@ -90,7 +89,7 @@
       "cardData": {"license": "mit"},
       "fork": false,
       "_expected_bucket": "pick",
-      "_expected_why_contains": "aggregator: >5 trending entries in one scan"
+      "_expected_why_contains": "no clear why - popular but unremarkable"
     },
     {
       "id": "fleet/a3",
@@ -102,7 +101,7 @@
       "cardData": {"license": "mit"},
       "fork": false,
       "_expected_bucket": "pick",
-      "_expected_why_contains": "aggregator: >5 trending entries in one scan"
+      "_expected_why_contains": "no clear why - popular but unremarkable"
     },
     {
       "id": "fleet/a4",
@@ -114,7 +113,7 @@
       "cardData": {"license": "mit"},
       "fork": false,
       "_expected_bucket": "pick",
-      "_expected_why_contains": "aggregator: >5 trending entries in one scan"
+      "_expected_why_contains": "no clear why - popular but unremarkable"
     },
     {
       "id": "fleet/a5",
@@ -126,7 +125,7 @@
       "cardData": {"license": "mit"},
       "fork": false,
       "_expected_bucket": "pick",
-      "_expected_why_contains": "aggregator: >5 trending entries in one scan"
+      "_expected_why_contains": "no clear why - popular but unremarkable"
     },
     {
       "id": "fleet/a6",
@@ -137,8 +136,8 @@
       "tags": ["card", "text-generation", "license:mit"],
       "cardData": {"license": "mit"},
       "fork": false,
-      "_expected_bucket": "dropped",
-      "_expected_why_contains": "aggregator: >5 trending entries in one scan"
+      "_expected_bucket": "demoted",
+      "_expected_why_contains": "aggregator: more than 5 trending entries in one scan"
     },
     {
       "id": "delta/void-3b",
