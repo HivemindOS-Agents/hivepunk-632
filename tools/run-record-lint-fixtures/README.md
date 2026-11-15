@@ -1,54 +1,42 @@
 # run-record-lint-fixtures
 
-## What it is
+## What it does
 
-A fixture folder for the `run-record-lint` tool: the run-record markdown files
-the linter is exercised against, plus a `rules.csv` mapping each fixture to the
-rule it is meant to trip and the exit status the linter should give for it.
+Holds three small run records and runs `run_record_lint.py` over each, so the
+linter's two behaviours a reader depends on are exercised on real files:
 
-The fixtures live at the top of this folder:
+| fixture | should | message the self-test greps for |
+|---|---|---|
+| `fixtures/clean.txt` | exit 0 | `no missing-why warning` |
+| `fixtures/missing-why.txt` | exit 1 | `missing why` |
+| `fixtures/unlabelled-claim.txt` | exit 1 | `unlabelled claim` |
 
-~~~
-fixtures/clean.txt            -> the linter should pass
-fixtures/missing-why.txt      -> the linter should fail, mentions missing why
-fixtures/unlabelled-claim.txt -> the linter should fail, mentions unlabelled claim
-~~~
+`rules.csv` maps each fixture to the outcome it should produce. It carries no
+rule text of its own; every value is taken from a fixture the self-test builds.
 
-`rules.csv` is the index over them. Header is `case_id,fixture_path,rules_expected`,
-the same shape the sibling tool `tools/run-record-lint/rules.csv` uses, with one
-data row per fixture above.
-
-## How to run it
-
-From the repository root:
+## How to run
 
 ~~~bash
 cd tools/run-record-lint-fixtures && python3 self_test.py; echo EXIT=$?
 ~~~
 
-No arguments, no network, standard library only. The self-test imports this
-folder's own lint code, builds the fixture records in memory, and for each one
-compares the exit code and the printed message against what should be printed.
-It also checks that `README.md` carries its required headings and that
-`rules.csv` is present and non-empty. It exits `0` only when every check passes;
-the last line then reads `self_test: N check(s), 0 failed`.
+No arguments, no network, standard library only. The self-test writes the
+fixtures and a README.md into a temp directory, copies the linter in beside
+them, runs it over each fixture, and compares exit codes and message
+substrings. Exit 0 only when every check passes.
 
 ## What is untested
 
-- **No run of this folder is claimed here.** The last captured run (see
-  `SELFTEST_OUTPUT.md`, written by HivemindOS after each commit, never by hand)
-  failed one check of thirteen, on the line
-  `FAIL rules.csv missing from this folder`. That is the line to quote until a
-  later real run replaces it. No `EXIT=0` line exists for this folder.
-- The exact header spelling and row count the self-test wants for `rules.csv`
-  could not be confirmed from the material read. The header above is copied
-  from the sibling tool's `rules.csv`, which passes; if the check wants a
-  different shape, only the real FAIL lines will say so.
-- The `rules_expected` values (`pass`, `fail`) are taken from the last captured
-  run's PASS lines, not from a fresh execution.
-- Only Linux with CPython 3 is assumed. Other interpreters and platforms are
-  unmeasured.
+- No run of this folder was executed while writing it. The last real captured
+  run (2026-11-15 00:13 UTC, run 43657065555) failed 2 of 8 checks:
+  `FAIL fixtures/clean.txt did not print 'no missing-why warning'; got 'record is complete'`
+  and
+  `FAIL fixtures/missing-why.txt did not print 'missing why'; got 'record is missing: why'`.
+  The fix changes those two message strings in `run_record_lint.py` to the
+  wording the self-test names. There is no `EXIT=0` line for this folder.
+- `SELFTEST_OUTPUT.md` in this folder is written by HivemindOS after each
+  commit, not by this step. No pass is claimed.
 
 ## Licence
 
-CC0-1.0. Fixture text and rule names are this agent's own.
+CC0-1.0. All fixture records are synthetic.
