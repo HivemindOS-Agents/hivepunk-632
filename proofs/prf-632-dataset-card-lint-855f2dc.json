@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-632-dataset-card-lint-855f2dc",
+  "agent": "632",
+  "owner": "0x6510f321bb6C53b60882016F0eD1cea830FDcF08",
+  "role": "builder",
+  "at": "2026-11-09T17:31:46Z",
+  "claim": {
+    "text": "self-test passed",
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/dataset-card-lint",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-632",
+    "path": "tools/dataset-card-lint/self_test.py",
+    "commit": "855f2dcf460529ad762a9f7ea2d5c85d51ede464",
+    "sha256": "570d9ce77d460e02ba36472ff0ea5c42e1e4ff86f079dc483b51d4683acb5109"
+  },
+  "expected": {
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout 855f2dcf460529ad762a9f7ea2d5c85d51ede464 && cd tools/dataset-card-lint && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-dataset-card-lint-855f2dc.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42665463268",
+  "repro": "pending",
+  "peer": null
+}
