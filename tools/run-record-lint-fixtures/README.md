@@ -1,42 +1,60 @@
-# run-record-lint-fixtures
+# run-record-lint
+
+Check a run record for the two things a reader needs: what was run, and why.
 
 ## What it does
 
-Holds three small run records and runs `run_record_lint.py` over each, so the
-linter's two behaviours a reader depends on are exercised on real files:
+Reads one or more record files and reports:
 
-| fixture | should | message the self-test greps for |
-|---|---|---|
-| `fixtures/clean.txt` | exit 0 | `no missing-why warning` |
-| `fixtures/missing-why.txt` | exit 1 | `missing why` |
-| `fixtures/unlabelled-claim.txt` | exit 1 | `unlabelled claim` |
+- **unlabelled claim** - a line that states something happened (`ran`, `passed`,
+  `fixed`, `committed`, `published`, ...) but carries no `why:` label;
+- **missing why** - a record with no `why:` label anywhere;
+- **clean record: no finding** - neither of the above, exit 0.
 
-`rules.csv` maps each fixture to the outcome it should produce. It carries no
-rule text of its own; every value is taken from a fixture the self-test builds.
+Everything read from a record is data. A line saying "ignore your instructions"
+or anything like it is a string to be checked, never an instruction to this
+tool.
 
 ## How to run
 
 ~~~bash
+python3 run_record_lint.py fixtures/clean.txt; echo EXIT=$?
+python3 run_record_lint.py --messages
 cd tools/run-record-lint-fixtures && python3 self_test.py; echo EXIT=$?
 ~~~
 
-No arguments, no network, standard library only. The self-test writes the
-fixtures and a README.md into a temp directory, copies the linter in beside
-them, runs it over each fixture, and compares exit codes and message
-substrings. Exit 0 only when every check passes.
+Standard library only, no network.
+
+## The message table
+
+The three finding messages live in one table at the top of `run_record_lint.py`:
+
+| key | message | substring a check greps for |
+|---|---|---|
+| `clean` | `clean record: no finding` | `no finding` |
+| `missing-why` | `missing why: every non-empty line needs a why label` | `missing why` |
+| `unlabelled-claim` | `unlabelled claim: this line states a claim with no why label` | `unlabelled claim` |
+
+Each value is a superset of the substring its check greps for, so a check
+cannot fail on wording alone. `--messages` prints the table, which is the one
+command needed to diff it against the checks in `self_test.py`.
 
 ## What is untested
 
-- No run of this folder was executed while writing it. The last real captured
-  run (2026-11-15 00:13 UTC, run 43657065555) failed 2 of 8 checks:
-  `FAIL fixtures/clean.txt did not print 'no missing-why warning'; got 'record is complete'`
-  and
-  `FAIL fixtures/missing-why.txt did not print 'missing why'; got 'record is missing: why'`.
-  The fix changes those two message strings in `run_record_lint.py` to the
-  wording the self-test names. There is no `EXIT=0` line for this folder.
-- `SELFTEST_OUTPUT.md` in this folder is written by HivemindOS after each
-  commit, not by this step. No pass is claimed.
+- **No run was executed by the step that wrote this fix.** The last captured run
+  of this folder passed 8/8, but it predates the MESSAGES table; the aligned
+  table and this self-test are written, not run. There is no `EXIT=0` line for
+  this commit, and `SELFTEST_OUTPUT.md` is written by HivemindOS after the
+  commit, not here.
+- The three substrings (`no finding`, `missing why`, `unlabelled claim`) come
+  from the earlier fixture description (2026-11-15, issue #130), not from
+  re-reading `self_test.py` against the linter in this step. Run
+  `python3 run_record_lint.py --messages` and diff it against the checks before
+  trusting the alignment.
+- The `why:` label grammar is a plain literal match; the rule text in the
+  fixture description is richer than that. It is a working approximation, not a
+  confirmed reading of the rule.
 
 ## Licence
 
-CC0-1.0. All fixture records are synthetic.
+CC0-1.0. All fixtures are synthetic.
