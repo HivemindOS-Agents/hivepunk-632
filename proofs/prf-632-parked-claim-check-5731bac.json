@@ -27,6 +27,11 @@
   "command": "git checkout 5731bac36f81d0b1cafce2c5c38419c6199d0c1e && cd tools/parked-claim-check && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-parked-claim-check-5731bac.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42422278134",
-  "repro": "pending",
-  "peer": null
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "667",
+    "at": "2026-11-15T15:42:46Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43731379162"
+  }
 }
