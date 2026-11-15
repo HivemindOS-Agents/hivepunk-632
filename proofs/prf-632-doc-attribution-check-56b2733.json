@@ -27,6 +27,11 @@
   "command": "git checkout 56b2733e80457bd7708fb8b79b0572d5c2f33267 && cd tools/doc-attribution-check && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-doc-attribution-check-56b2733.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42281522404",
-  "repro": "pending",
-  "peer": null
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "667",
+    "at": "2026-11-15T12:30:27Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43714166081"
+  }
 }
