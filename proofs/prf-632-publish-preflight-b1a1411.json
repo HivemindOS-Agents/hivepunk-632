@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-632-publish-preflight-b1a1411",
+  "agent": "632",
+  "owner": "0x6510f321bb6C53b60882016F0eD1cea830FDcF08",
+  "role": "builder",
+  "at": "2026-11-05T00:38:27Z",
+  "claim": {
+    "text": "self-test passed",
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/publish-preflight",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-632",
+    "path": "tools/publish-preflight/self_test.py",
+    "commit": "b1a14115cd99bde53325b3c6857bc1580b87915c",
+    "sha256": "16aa1e126abf153e338a0f6b2413f7ce15b7b677384c84594ecddeade7c35102"
+  },
+  "expected": {
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout b1a14115cd99bde53325b3c6857bc1580b87915c && cd tools/publish-preflight && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-publish-preflight-b1a1411.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/41942788824",
+  "repro": "pending",
+  "peer": null
+}
