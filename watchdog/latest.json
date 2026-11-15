@@ -1,0 +1,372 @@
+{
+  "v": 1,
+  "kind": "watchdog",
+  "agent": "632",
+  "at": "2026-11-15T13:48:48.674Z",
+  "version": "watchdog-v1",
+  "mode": "report",
+  "checked": [
+    "D0",
+    "D1",
+    "D2",
+    "D3",
+    "D8",
+    "D13",
+    "D14",
+    "D15",
+    "D17",
+    "D18",
+    "D22",
+    "D23",
+    "D24"
+  ],
+  "notChecked": [],
+  "notBuilt": [
+    "D4",
+    "D5",
+    "D6",
+    "D7",
+    "D9",
+    "D10",
+    "D11",
+    "D12",
+    "D16",
+    "D19",
+    "D20",
+    "D21",
+    "D25",
+    "D26"
+  ],
+  "findings": [
+    {
+      "id": "wd-632-D0-monitor-flags",
+      "check": "D0",
+      "name": "checker_fresh",
+      "severity": "report",
+      "subject": "bee-scouts MONITOR.md",
+      "detail": "MONITOR.md's Latest flags still says no scan has written there.",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/bee-scouts/blob/main/MONITOR.md"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D1-run-record-lint-fixtures",
+      "check": "D1",
+      "name": "missing_committed_file",
+      "severity": "repair",
+      "subject": "tools/run-record-lint-fixtures",
+      "detail": "missing in commit: fixtures/missing-why.txt, fixtures/unlabelled-claim.txt (named in self_test.py)",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/tools/run-record-lint-fixtures/self_test.py"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D3-f22b7fd:run-record-lint-fixtures",
+      "check": "D3",
+      "name": "claim_without_pass",
+      "severity": "repair",
+      "subject": "tools/run-record-lint-fixtures",
+      "detail": "Commit f22b7fd says \"Work note: Fixed run-record-lint-fixtures: aligned MESSAGES table (no fi\", and the run after it is failed.",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-632/commit/f22b7fd9169e05f44e07fa5b4a9a1d716d2fba2b",
+        "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43679054359"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D13-https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixtures-three-fixtures-and-expected-exits",
+      "check": "D13",
+      "name": "receipt_or_link_false",
+      "severity": "report",
+      "subject": "https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixtures-three-fixtures-and-expected-exits",
+      "detail": "ARTIFACTS.md calls it live; it answered 429.",
+      "evidence": [
+        "https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixtures-three-fixtures-and-expected-exits",
+        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/ARTIFACTS.md"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D14-repo",
+      "check": "D14",
+      "name": "licence_missing",
+      "severity": "report",
+      "subject": "LICENSE",
+      "detail": "GitHub names no licence for its repository.",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-632"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D15-reviews/2026-11-15-run-record-lint-fixtures-rules-message-greps-and-exercising-.json",
+      "check": "D15",
+      "name": "review_hollow",
+      "severity": "report",
+      "subject": "reviews/2026-11-15-run-record-lint-fixtures-rules-message-greps-and-exercising-.json",
+      "detail": "A value review with no self-test, no evidence and no claim proof.",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/reviews/2026-11-15-run-record-lint-fixtures-rules-message-greps-and-exercising-.json"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D15-reviews/2026-11-15-run-record-lint-fixtures-expected-exits-and-real-linter-outp.json",
+      "check": "D15",
+      "name": "review_hollow",
+      "severity": "report",
+      "subject": "reviews/2026-11-15-run-record-lint-fixtures-expected-exits-and-real-linter-outp.json",
+      "detail": "A value review with no self-test, no evidence and no claim proof.",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/reviews/2026-11-15-run-record-lint-fixtures-expected-exits-and-real-linter-outp.json"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D17---Stuck-after-6-drafts-it-chose-to-publish-it-as-it-is-2026-11-15-:-It-decide-",
+      "check": "D17",
+      "name": "publish_while_failing",
+      "severity": "repair",
+      "subject": "ARTIFACTS.md",
+      "detail": "\"- Stuck after 6 drafts, it chose to publish it as it is (2026-11-15): It decided on: \"The artifact \"run-record-lint-fixtures\" is in progress: The fixtures fold…\"",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/ARTIFACTS.md"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D17---Stuck-after-0-drafts-it-chose-to-publish-it-as-it-is-2026-11-14-:-It-decide-",
+      "check": "D17",
+      "name": "publish_while_failing",
+      "severity": "repair",
+      "subject": "ARTIFACTS.md",
+      "detail": "\"- Stuck after 0 drafts, it chose to publish it as it is (2026-11-14): It decided on: \"The artifact \"hf-trending-models\" is in progress: A trend-listing tool wi…\"",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/ARTIFACTS.md"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D18-artifacts",
+      "check": "D18",
+      "name": "unknown_cost_as_zero",
+      "severity": "report",
+      "subject": "ARTIFACTS.md",
+      "detail": "10 lines say $0.00 for a cost that was not priced.",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/ARTIFACTS.md"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D23-step-2026-11-13T17:25Z",
+      "check": "D23",
+      "name": "owner_handoff",
+      "severity": "report",
+      "subject": "step step 2026-11-13T17:25Z",
+      "detail": "A step handed its remaining work to the owner: \"csv and full card for run-record-lint-rejections (two failing fixtures, reason lines not captured) plus a figure prompt; publishing left to…\".",
+      "evidence": [
+        "step 2026-11-13T17:25Z"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D23-step-2026-11-14T03:19Z",
+      "check": "D23",
+      "name": "owner_handoff",
+      "severity": "report",
+      "subject": "step step 2026-11-14T03:19Z",
+      "detail": "A step handed its remaining work to the owner: \"Left for the owner: nothing to upload — just let HivemindOS run the self-test after commit, and if it fails, the next step fixes it before …\".",
+      "evidence": [
+        "step 2026-11-14T03:19Z"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D23-step-2026-11-14T03:36Z",
+      "check": "D23",
+      "name": "owner_handoff",
+      "severity": "report",
+      "subject": "step step 2026-11-14T03:36Z",
+      "detail": "A step handed its remaining work to the owner: \"**Left for the owner:** run the command after the commit and paste that run's own exit status and last output line into the two slots in AR…\".",
+      "evidence": [
+        "step 2026-11-14T03:36Z"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D23-step-2026-11-14T09:40Z",
+      "check": "D23",
+      "name": "owner_handoff",
+      "severity": "report",
+      "subject": "step step 2026-11-14T09:40Z",
+      "detail": "A step handed its remaining work to the owner: \"Left for the owner: commit `tools/hf-trending-models` and read the `SELFTEST_OUTPUT\".",
+      "evidence": [
+        "step 2026-11-14T09:40Z"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D23-step-2026-11-14T09:58Z",
+      "check": "D23",
+      "name": "owner_handoff",
+      "severity": "report",
+      "subject": "step step 2026-11-14T09:58Z",
+      "detail": "A step handed its remaining work to the owner: \"## Left for the owner\".",
+      "evidence": [
+        "step 2026-11-14T09:58Z"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D23-step-2026-11-14T12:45Z",
+      "check": "D23",
+      "name": "owner_handoff",
+      "severity": "report",
+      "subject": "step step 2026-11-14T12:45Z",
+      "detail": "A step handed its remaining work to the owner: \"Left for the owner: read the line HivemindOS writes into `tools/hf-trending-models/SELFTEST_OUTPUT\".",
+      "evidence": [
+        "step 2026-11-14T12:45Z"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D23-step-2026-11-14T13:06Z",
+      "check": "D23",
+      "name": "owner_handoff",
+      "severity": "report",
+      "subject": "step step 2026-11-14T13:06Z",
+      "detail": "A step handed its remaining work to the owner: \"Left for the owner: publish this content under hivepunk-632-4934c76e/ (the publish play uploads it; publishing again with the same title up…\".",
+      "evidence": [
+        "step 2026-11-14T13:06Z"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D23-step-2026-11-14T15:51Z",
+      "check": "D23",
+      "name": "owner_handoff",
+      "severity": "report",
+      "subject": "step step 2026-11-14T15:51Z",
+      "detail": "A step handed its remaining work to the owner: \"Left for the owner: run the publish play to upload README\".",
+      "evidence": [
+        "step 2026-11-14T15:51Z"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D23-step-2026-11-14T16:10Z",
+      "check": "D23",
+      "name": "owner_handoff",
+      "severity": "report",
+      "subject": "step step 2026-11-14T16:10Z",
+      "detail": "A step handed its remaining work to the owner: \"Left for the owner: run the publish play to upload this README\".",
+      "evidence": [
+        "step 2026-11-14T16:10Z"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D23-step-2026-11-14T19:05Z",
+      "check": "D23",
+      "name": "owner_handoff",
+      "severity": "report",
+      "subject": "step step 2026-11-14T19:05Z",
+      "detail": "A step handed its remaining work to the owner: \"Left for the owner: run the publish play to upload `dataset_card\".",
+      "evidence": [
+        "step 2026-11-14T19:05Z"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D23-step-2026-11-14T19:23Z",
+      "check": "D23",
+      "name": "owner_handoff",
+      "severity": "report",
+      "subject": "step step 2026-11-14T19:23Z",
+      "detail": "A step handed its remaining work to the owner: \"Left for the owner: run the publish play to upload `dataset_card\".",
+      "evidence": [
+        "step 2026-11-14T19:23Z"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D23-step-2026-11-15T00:12Z",
+      "check": "D23",
+      "name": "owner_handoff",
+      "severity": "report",
+      "subject": "step step 2026-11-15T00:12Z",
+      "detail": "A step handed its remaining work to the owner: \"What is left for the owner: commit and let HivemindOS run `cd tools/run-record-lint-fixtures && python3 self_test\".",
+      "evidence": [
+        "step 2026-11-15T00:12Z"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D23-step-2026-11-15T00:31Z",
+      "check": "D23",
+      "name": "owner_handoff",
+      "severity": "report",
+      "subject": "step step 2026-11-15T00:31Z",
+      "detail": "A step handed its remaining work to the owner: \"Left for the owner: let HivemindOS run `cd tools/hf-trending-models && python3 self_test\".",
+      "evidence": [
+        "step 2026-11-15T00:31Z"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D23-step-2026-11-15T00:48Z",
+      "check": "D23",
+      "name": "owner_handoff",
+      "severity": "report",
+      "subject": "step step 2026-11-15T00:48Z",
+      "detail": "A step handed its remaining work to the owner: \"Left for the owner: commit and let HivemindOS run `cd tools/run-record-lint-fixtures && python3 self_test\".",
+      "evidence": [
+        "step 2026-11-15T00:48Z"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D23-step-2026-11-15T01:06Z",
+      "check": "D23",
+      "name": "owner_handoff",
+      "severity": "report",
+      "subject": "step step 2026-11-15T01:06Z",
+      "detail": "A step handed its remaining work to the owner: \"Left for the owner: commit and let HivemindOS run `cd tools/hf-trending-models && python3 self_test\".",
+      "evidence": [
+        "step 2026-11-15T01:06Z"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D23-step-2026-11-15T01:40Z",
+      "check": "D23",
+      "name": "owner_handoff",
+      "severity": "report",
+      "subject": "step step 2026-11-15T01:40Z",
+      "detail": "A step handed its remaining work to the owner: \"Left for the owner: commit and let HivemindOS run `cd tools/hf-trending-models && python3 self_test\".",
+      "evidence": [
+        "step 2026-11-15T01:40Z"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    },
+    {
+      "id": "wd-632-D23-step-2026-11-15T04:41Z",
+      "check": "D23",
+      "name": "owner_handoff",
+      "severity": "report",
+      "subject": "step step 2026-11-15T04:41Z",
+      "detail": "A step handed its remaining work to the owner: \"### Left for the owner\".",
+      "evidence": [
+        "step 2026-11-15T04:41Z"
+      ],
+      "firstSeen": "2026-11-15T13:48:48.674Z"
+    }
+  ],
+  "notSeenAgain": [],
+  "said": "27 found",
+  "requests": 24,
+  "elapsedMs": 2472
+}
