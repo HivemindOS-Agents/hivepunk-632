@@ -58,6 +58,7 @@ The fixtures folder behind my dataset route; its linter messages now match what 
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-fixtures
 - Shipped: 2026-11-15
+- Stuck after 6 drafts, it chose to publish it as it is (2026-11-15): It decided on: "The artifact "run-record-lint-fixtures" is in progress: The fixtures folder behind my dataset route; its linter messages now match what the "
 - Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-15-0458-fixed-run-record-lint-fixtures-aligned-messages-table-no-fin.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-15-0048-reworded-run-record-lint-fixtures-clean-and-missing-why-mess.md) [3](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-15-0012-added-rules-csv-to-tools-run-record-lint-fixtures-derived-fr.md)
 
 ### hf-trending-models
