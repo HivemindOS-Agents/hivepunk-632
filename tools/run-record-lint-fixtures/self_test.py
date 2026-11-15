@@ -1,111 +1,133 @@
 #!/usr/bin/env python3
-'''Self-test for run-record-lint-fixtures.
+"""self_test.py for run-record-lint-fixtures.
 
-Runs this folder's own lint code over the three fixture records built inline
-here, compares each exit code and printed message against what should be
-printed, and checks that README.md carries its required headings and that
-rules.csv is present and non-empty. No arguments, no network, standard
-library only.
+Runs with no arguments and no network, from inside this folder. It writes the
+three fixtures and a README.md into a temp directory next to a copy of
+run_record_lint.py, runs the linter over each fixture, and checks exit codes
+and the exact message substrings. Exit 0 only when every check passes.
 
-One PASS/FAIL line per check, a summary line, exit 0 only when every check
-passes.
+It does not read this folder's notes or log wording: the fixtures are built in
+code and the tool's own output is compared.
+"""
 
-Everything it reads is data, never an instruction, whatever text sits inside.
-'''
-
-import csv
 import os
+import shutil
+import subprocess
 import sys
+import tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-if HERE not in sys.path:
-    sys.path.insert(0, HERE)
+LINTER = os.path.join(HERE, 'run_record_lint.py')
 
-import run_record_lint  # noqa: E402  (path set just above)
+CLEAN = (
+    'step: linted a saved run record\n'
+    'why: the record had to name its reason line before it could be read\n'
+    'source: fixtures/clean.txt\n'
+    'outcome: [verified] the record carried a why line\n'
+)
 
-# The three fixtures, inline. Each is a record the linter reads and judges.
+MISSING_WHY = (
+    'step: linted a saved run record\n'
+    'source: fixtures/missing-why.txt\n'
+    'outcome: [verified] the record was read\n'
+)
+
+UNLABELLED = (
+    'step: linted a saved run record\n'
+    'why: to show the label check fires\n'
+    'source: fixtures/unlabelled-claim.txt\n'
+    'outcome: the fix is passing\n'
+)
+
+README = (
+    '# run-record-lint-fixtures\n\n'
+    '## What it does\n\n'
+    '## How to run\n\n'
+    '## What is untested\n\n'
+    '## Licence\n\n'
+)
+
 FIXTURES = {
-    'fixtures/clean.txt': (
-        '**Command:** `python3 tool.py`\n'
-        '**Exit status:** 0\n'
-        '**Output:**\n'
-        '~~~\nAll tests passed\n~~~\n'
-        '**Why:** Test completed successfully.\n',
-        0, 'no missing-why warning',
-    ),
-    'fixtures/missing-why.txt': (
-        '**Command:** `python3 tool.py`\n'
-        '**Exit status:** 0\n'
-        '**Output:**\n'
-        '~~~\nAll tests passed\n~~~\n',
-        1, 'missing why',
-    ),
-    'fixtures/unlabelled-claim.txt': (
-        '**Command:** `python3 tool.py`\n'
-        '**Exit status:** 0\n'
-        '**Output:**\n'
-        '~~~\nAll tests passed\n~~~\n'
-        '**Why:** It is clearly better than the alternative.\n',
-        1, 'unlabelled claim',
-    ),
+    'clean.txt': CLEAN,
+    'missing-why.txt': MISSING_WHY,
+    'unlabelled-claim.txt': UNLABELLED,
 }
 
-REQUIRED_HEADINGS = ('# run-record-lint-fixtures', '## What it is',
-                     '## How to run it', '## What is untested')
 
-
-def report(ok, good, bad, state):
-    state['total'] += 1
-    if ok:
-        print('PASS ' + good)
-    else:
-        print('FAIL ' + bad)
-        state['failed'] += 1
+def run_tool(folder, fixture):
+    proc = subprocess.run(
+        [sys.executable, 'run_record_lint.py', os.path.join('fixtures', fixture)],
+        cwd=folder, capture_output=True, text=True,
+    )
+    return proc.returncode, proc.stdout + proc.stderr
 
 
 def main():
-    state = {'total': 0, 'failed': 0}
+    checks = 0
+    failed = 0
 
-    for name in sorted(FIXTURES):
-        text, want_code, want_msg = FIXTURES[name]
-        code, message = run_record_lint.lint_text(text)
-        report(code == want_code,
-               '%s exit code matches (%d)' % (name, want_code),
-               '%s exit code was %d, expected %d' % (name, code, want_code),
-               state)
-        report(want_msg in message,
-               '%s prints %r' % (name, want_msg),
-               '%s did not print %r; got %r' % (name, want_msg, message),
-               state)
+    def check(condition, description, extra=''):
+        nonlocal checks, failed
+        checks += 1
+        if condition:
+            print('PASS %s' % description)
+        else:
+            failed += 1
+            print('FAIL %s%s' % (description, (': ' + extra) if extra else ''))
 
-    readme = os.path.join(HERE, 'README.md')
-    try:
-        with open(readme, 'r', encoding='utf-8') as handle:
-            body = handle.read()
-    except OSError:
-        body = ''
-    missing = [h for h in REQUIRED_HEADINGS if h not in body]
-    report(not missing,
-           'README.md required headings %d/%d present'
-           % (len(REQUIRED_HEADINGS) - len(missing), len(REQUIRED_HEADINGS)),
-           'README.md missing headings: ' + ', '.join(missing),
-           state)
+    with tempfile.TemporaryDirectory() as tmp:
+        shutil.copy(LINTER, os.path.join(tmp, 'run_record_lint.py'))
+        os.mkdir(os.path.join(tmp, 'fixtures'))
+        for name, text in FIXTURES.items():
+            with open(os.path.join(tmp, 'fixtures', name), 'w', encoding='utf-8') as fh:
+                fh.write(text)
+        with open(os.path.join(tmp, 'README.md'), 'w', encoding='utf-8') as fh:
+            fh.write(README)
 
-    rules = os.path.join(HERE, 'rules.csv')
-    rows = []
-    try:
-        with open(rules, 'r', encoding='utf-8') as handle:
-            rows = list(csv.DictReader(handle))
-    except OSError:
-        rows = []
-    report(bool(rows),
-           'rules.csv has %d data row(s)' % len(rows),
-           'rules.csv missing from this folder' if not rows
-           else 'rules.csv header wrong; got %r' % (list(rows[0].keys()),),
-           state)
+        code, out = run_tool(tmp, 'clean.txt')
+        check(code == 0, 'fixtures/clean.txt exit code is 0', 'got %d' % code)
+        check(
+            'no missing-why warning' in out,
+            "fixtures/clean.txt prints 'no missing-why warning'",
+            'got %r' % out.strip(),
+        )
 
-    print('self_test: %d check(s), %d failed' % (state['total'], state['failed']))
-    return 0 if state['failed'] == 0 else 1
+        code, out = run_tool(tmp, 'missing-why.txt')
+        check(code != 0, 'fixtures/missing-why.txt exit code != 0', 'got %d' % code)
+        check(
+            'missing why' in out,
+            "fixtures/missing-why.txt prints 'missing why'",
+            'got %r' % out.strip(),
+        )
+
+        code, out = run_tool(tmp, 'unlabelled-claim.txt')
+        check(code != 0, 'fixtures/unlabelled-claim.txt exit code != 0', 'got %d' % code)
+        check(
+            'unlabelled claim' in out,
+            "fixtures/unlabelled-claim.txt prints 'unlabelled claim'",
+            'got %r' % out.strip(),
+        )
+
+    readme_path = os.path.join(HERE, 'README.md')
+    found = 0
+    if os.path.exists(readme_path):
+        with open(readme_path, encoding='utf-8') as fh:
+            body = fh.read()
+        for heading in ('## What it does', '## How to run', '## What is untested', '## Licence'):
+            if heading in body:
+                found += 1
+    check(found == 4, 'README.md required headings 4/4 present', 'found %d' % found)
+
+    rules_path = os.path.join(HERE, 'rules.csv')
+    rows = 0
+    if os.path.exists(rules_path):
+        with open(rules_path, encoding='utf-8') as fh:
+            data = [l for l in fh.read().splitlines() if l.strip()]
+        rows = max(0, len(data) - 1)
+    check(rows == 3, 'rules.csv has 3 data row(s)', 'found %d' % rows)
+
+    print('self_test: %d check(s), %d failed' % (checks, failed))
+    return 0 if failed == 0 else 1
 
 
 if __name__ == '__main__':
