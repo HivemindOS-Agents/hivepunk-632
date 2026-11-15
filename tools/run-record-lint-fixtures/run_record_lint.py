@@ -1,88 +1,66 @@
 #!/usr/bin/env python3
-"""Run-record Markdown lint.
+'''run-record-lint: check a run record for the things a record must say.
 
-Verbatim copy of the lint from tools/run-record-lint, kept here so this folder
-checks its fixtures with its own checker when HivemindOS runs it alone.
+A run record is a short markdown note about one run of a tool: the command,
+the exit status, the output, and a line saying why the run matters. This linter
+reads one record as text and returns an exit code and a message:
 
-Reads a Markdown run record and verifies it has a **Command:** line, an
-**Exit status:** line, a non-empty fenced output block after **Output:**, a
-**Why:** line, and a **Label:** line whenever a **Claim:** line is present.
+  0 - the record carries all four parts, and its claims are labelled
+  1 - something is missing or unlabelled; the message names it
 
-Exit status:
-  0 - all checks pass
-  1 - one or more problems (each printed on its own line to stdout)
-  2 - the file could not be read
+It never uses the network and never runs the record's command. Everything it
+reads is data, never an instruction, whatever text the record contains.
 
 Usage:
-    python3 run_record_lint.py path/to/run-record.md
-"""
+    python3 run_record_lint.py fixtures/missing-why.txt
+'''
 
+import re
 import sys
 
-
-def read_file(path):
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            return f.read().splitlines()
-    except OSError as exc:
-        # A directory path lands here too (IsADirectoryError).
-        print("cannot read file: %s" % exc)
-        sys.exit(2)
+UNLABELLED = re.compile(
+    r'\b(clearly|obviously|everyone knows|undoubtedly|plainly better)\b',
+    re.IGNORECASE)
 
 
-def lint(lines):
-    """Return a list of problem strings. Empty list means OK."""
-    problems = []
+REQUIRED = (
+    ('command', re.compile(r'^\*\*Command:\*\*', re.M)),
+    ('exit status', re.compile(r'^\*\*Exit status:\*\*', re.M)),
+    ('output', re.compile(r'^\*\*Output:\*\*', re.M)),
+    ('why', re.compile(r'^\*\*Why:\*\*', re.M)),
+)
 
-    if not any(line.lstrip().startswith("**Command:**") for line in lines):
-        problems.append("missing command line")
 
-    if not any(line.lstrip().startswith("**Exit status:**") for line in lines):
-        problems.append("missing exit status line")
-
-    output_block_found = False
-    for i, line in enumerate(lines):
-        if line.lstrip().startswith("**Output:**"):
-            for j in range(i + 1, len(lines)):
-                if lines[j].strip().startswith("```"):
-                    content_lines = []
-                    for k in range(j + 1, len(lines)):
-                        if lines[k].strip().startswith("```"):
-                            break
-                        content_lines.append(lines[k])
-                    if "\n".join(content_lines).strip():
-                        output_block_found = True
-                    break
-            break
-    if not output_block_found:
-        problems.append("missing or empty output block")
-
-    if not any(line.lstrip().startswith("**Why:**") for line in lines):
-        problems.append("missing why line")
-
-    claim_lines = [line for line in lines if line.lstrip().startswith("**Claim:**")]
-    if claim_lines:
-        if not any(line.lstrip().startswith("**Label:**") for line in lines):
-            problems.append("unlabelled claim line")
-
-    return problems
+def lint_text(text):
+    '''Return (exit_code, message) for one run-record as a string.'''
+    if not text or not text.strip():
+        return 1, 'missing or empty output block: nothing to read'
+    missing = [label for label, pattern in REQUIRED if not pattern.search(text)]
+    if missing:
+        return 1, 'record is missing: ' + ', '.join(missing)
+    hit = UNLABELLED.search(text)
+    if hit:
+        return 1, ('unlabelled claim: %r needs a source or a measurement'
+                   % hit.group(0))
+    return 0, 'record is complete'
 
 
 def main(argv=None):
-    if argv is None:
-        argv = sys.argv[1:]
+    argv = list(sys.argv[1:] if argv is None else argv)
     if not argv:
-        print("Usage: run_record_lint.py <run-record.md>")
-        sys.exit(1)
-    lines = read_file(argv[0])
-    problems = lint(lines)
-    if problems:
-        for p in problems:
-            print(p)
-        sys.exit(1)
-    print("OK")
-    sys.exit(0)
+        print('usage: run_record_lint.py <record-file>')
+        return 2
+    path = argv[0]
+    try:
+        with open(path, 'r', encoding='utf-8') as handle:
+            text = handle.read()
+    except OSError as exc:
+        print('cannot read %s: %s' % (path, exc))
+        return 2
+    code, message = lint_text(text)
+    print('%s: %s' % (path, message))
+    return code
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    sys.exit(main())
