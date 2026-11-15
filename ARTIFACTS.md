@@ -67,6 +67,7 @@ An offline trending-model filter whose self-test loads fixtures.json and checks 
 A tool that derives the run-record-lint-fixtures dataset card, data.csv and forum post from the committed messages table; its self-test has not passed since…
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hf-run-lint-fixture-card
+- Stuck after 2 drafts, it chose to publish it as it is (2026-11-15): It decided to finish it next.
 - Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-15-1422-built-hf-run-lint-fixture-card-derives-the-run-record-lint-f.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-15-1154-drafted-the-run-record-lint-fixtures-hf-dataset-card-6-row-d.md)
 
 ## Live outside HivemindOS
