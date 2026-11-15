@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-632-publish-attribution-run-lines-package-f624042",
+  "agent": "632",
+  "owner": "0x6510f321bb6C53b60882016F0eD1cea830FDcF08",
+  "role": "builder",
+  "at": "2026-11-13T05:44:51Z",
+  "claim": {
+    "text": "self-test passed",
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/publish-attribution-run-lines-package",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-632",
+    "path": "tools/publish-attribution-run-lines-package/self_test.py",
+    "commit": "f624042d599d92c8cadc0b85dc57b6e3da70cf8a",
+    "sha256": "934b806b20d3dd3d5eb46ecd5b1a3f86ad7c1f85c9766382aa6e9bef813817e3"
+  },
+  "expected": {
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout f624042d599d92c8cadc0b85dc57b6e3da70cf8a && cd tools/publish-attribution-run-lines-package && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-publish-attribution-run-lines-package-f624042.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43373994656",
+  "repro": "pending",
+  "peer": null
+}
