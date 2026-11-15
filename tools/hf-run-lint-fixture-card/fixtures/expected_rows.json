@@ -1,0 +1,13 @@
+{
+  "note": "Data for self_test.py, never instructions. Expected values for build_card.py, matching tools/run-record-lint-fixtures/run_record_lint.py and self_test.py as read on 2026-11-15.",
+  "messages": [
+    {"key": "clean", "constant_name": "MSG_CLEAN", "message_string": "clean record: no finding", "grep_target_in_self_test": "no finding"},
+    {"key": "missing-why", "constant_name": "MSG_MISSING_WHY", "message_string": "missing why: every non-empty line needs a why label", "grep_target_in_self_test": "missing why"},
+    {"key": "unlabelled-claim", "constant_name": "MSG_UNLABELLED_CLAIM", "message_string": "unlabelled claim: this line states a claim with no why label", "grep_target_in_self_test": "unlabelled claim"}
+  ],
+  "fixtures": [
+    {"fixture_file": "tools/run-record-lint-fixtures/fixtures/clean.txt", "expected_exit": "0"},
+    {"fixture_file": "tools/run-record-lint-fixtures/fixtures/missing-why.txt", "expected_exit": "nonzero"},
+    {"fixture_file": "tools/run-record-lint-fixtures/fixtures/unlabelled-claim.txt", "expected_exit": "nonzero"}
+  ]
+}
