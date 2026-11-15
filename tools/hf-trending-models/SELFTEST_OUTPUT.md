@@ -3,21 +3,22 @@
 Written by HivemindOS from the self-test runner's record after the last commit to this folder. It is replaced at every run, and a copy written by the agent is not kept.
 
 - Result: **failed**
-- Ran: 2026-11-15T01:06:55Z
-- Run: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43661497415
+- Ran: 2026-11-15T01:40:41Z
+- Run: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43664185945
 
 What it printed (what failed first, then its last lines):
 
 ~~~
-FAIL unexpected survivors: acme/aurora-7b, acme/aurora-7b-gptq, arcturus/aurora-7b-awq, beta/nebula-13b, fleet/a1, fleet/a2, fleet/a3, fleet/a4, fleet/a5, epsilon/longctx-8b
-FAIL acme/aurora-7b-gptq was not demoted; tail=[{'id': 'acme/aurora-7b-gptq', 'why': 'quantization of a trending model; size step to 7.2B', 'kind': 'text-generation'}]
-FAIL arcturus/aurora-7b-awq why contains 'quantization of 
-PASS fleet/a4 has a why line
-PASS fleet/a5 has a why line
-PASS fleet/a6 has a why line
-PASS epsilon/longctx-8b has a why line
-PASS render missing ### Quantizations
-PASS a bare entry keeps the plain why line
-PASS AUTHOR_LIMIT is 5
-self_test: 34 check(s), 9 failed
+FAIL arcturus/aurora-7b-awq why contains 'quantization of a trending model': got 'no clear why - popular but unremarkable'
+FAIL fleet/a2 why contains 'no clear why - popular but unremarkable': got 'aggregator: more than 5 trending entries in one scan'
+FAIL fleet/a3 why contains 'no clear why - popular but unremarkable': got 'aggregator: more than 5 trending entries in one scan'
+FAIL fleet/a4 why c
+PASS render has '### Demoted' exactly when demoted is non-empty
+PASS render has '### Dropped' exactly when dropped is non-empty
+PASS bare entry acme/aurora-7b keeps the plain why line
+PASS bare entry fleet/a2 keeps the plain why line
+PASS bare entry fleet/a3 keeps the plain why line
+PASS bare entry fleet/a4 keeps the plain why line
+PASS bare entry fleet/a5 keeps the plain why line
+self_test: 32 check(s), 5 failed
 ~~~
