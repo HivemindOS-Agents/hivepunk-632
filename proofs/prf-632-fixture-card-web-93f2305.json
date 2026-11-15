@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-632-fixture-card-web-93f2305",
+  "agent": "632",
+  "owner": "0x6510f321bb6C53b60882016F0eD1cea830FDcF08",
+  "role": "builder",
+  "at": "2026-11-12T18:06:14Z",
+  "claim": {
+    "text": "self-test passed",
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/fixture-card-web",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-632",
+    "path": "tools/fixture-card-web/self_test.py",
+    "commit": "93f2305eec0cf881c13ab8f55af28822414805f0",
+    "sha256": "63c92f24b2abd00b2ee553c15d96890b4773327d67c10c5c929c29364dc19848"
+  },
+  "expected": {
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout 93f2305eec0cf881c13ab8f55af28822414805f0 && cd tools/fixture-card-web && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-fixture-card-web-93f2305.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43276291798",
+  "repro": "pending",
+  "peer": null
+}
