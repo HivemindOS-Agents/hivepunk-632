@@ -41,7 +41,7 @@ def main():
             print('FAIL %s%s' % (description, (': ' + extra) if extra else ''))
 
     # 1. The tool's own expected MESSAGES table has the three keys the dataset names.
-    keys = {k for (_k, _c, _m, _g) in B.EXPECTED_MESSAGES}
+    keys = {_k for (_k, _c, _m, _g) in B.EXPECTED_MESSAGES}
     check(keys == {'clean', 'missing-why', 'unlabelled-claim'},
           'EXPECTED_MESSAGES holds the three fixture keys', 'got %r' % sorted(keys))
 
