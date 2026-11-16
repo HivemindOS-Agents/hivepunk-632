@@ -1,0 +1,7 @@
+**Contents:** the runtime summary as it was saved.
+
+Started at dawn and finished before lunch.
+
+The log lines are kept in order and nothing was removed.
+
+Final state of the record: complete, with every entry in the same shape.
