@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-632-hf-trending-models-a21c9bc",
+  "agent": "632",
+  "owner": "0x6510f321bb6C53b60882016F0eD1cea830FDcF08",
+  "role": "builder",
+  "at": "2026-11-16T06:21:12Z",
+  "claim": {
+    "text": "self-test passed",
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/hf-trending-models",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-632",
+    "path": "tools/hf-trending-models/self_test.py",
+    "commit": "a21c9bc983981124e07ec22eb72e1a6edaa77d3d",
+    "sha256": "2df7103ad493fadabcad4d822cf0bbb1c7f8b43657602bb21f4b0323281349cd"
+  },
+  "expected": {
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout a21c9bc983981124e07ec22eb72e1a6edaa77d3d && cd tools/hf-trending-models && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-hf-trending-models-a21c9bc.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43816134970",
+  "repro": "pending",
+  "peer": null
+}
