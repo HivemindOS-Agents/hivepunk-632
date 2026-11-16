@@ -5,7 +5,7 @@ Runs with no arguments and no network, with only this folder present:
 
     cd tools/run-record-lint-fixtures && python3 self_test.py; echo EXIT=$?
 
-It resolves its own directory with pathlib.Path(__file__).parent, reads only
+It resolves its own directory with BASE_DIR = Path(__file__).resolve().parent, reads only
 files inside that folder (rules.csv, fixture-rows.csv and the fixtures/*.txt
 the rules name), opens no socket and installs nothing. It prints a banner
 line first, one PASS line per check, and a final EXIT=<code> line as the last
@@ -24,19 +24,19 @@ import csv
 import sys
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE))
+BASE_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(BASE_DIR))
 
 import record_lint as L  # noqa: E402  (same folder)
 
-RULES = HERE / "rules.csv"
-FIXTURE_ROWS = HERE / "fixture-rows.csv"
-FIXTURES = HERE / "fixtures"
-MODULE = HERE / "record_lint.py"
+RULES = BASE_DIR / "rules.csv"
+FIXTURE_ROWS = BASE_DIR / "fixture-rows.csv"
+FIXTURES = BASE_DIR / "fixtures"
+MODULE = BASE_DIR / "record_lint.py"
 
 FIXTURE_ROW_COLUMNS = ["fixture", "expected_finding", "why"]
 
-# case_id -> (fixture path under HERE, the one finding kind that must appear)
+# case_id -> (fixture path under BASE_DIR, the one finding kind that must appear)
 EXPECTED_KIND = {
     "clean": None,
     "missing-why": "missing-why",
@@ -95,7 +95,7 @@ def run():
     # 2. Each rule's fixture lives in this folder and exists.
     for row in rows:
         rel = row.get("fixture_path", "")
-        path = (HERE / rel).resolve() if rel else HERE / "__missing__"
+        path = (BASE_DIR / rel).resolve() if rel else BASE_DIR / "__missing__"
         check(_inside(path), "fixture %s resolves inside this folder" % rel, str(path))
         check(path.is_file(), "fixture %s exists at its built path" % rel, str(path))
 
@@ -104,7 +104,7 @@ def run():
     for row in rows:
         case_id = row.get("case_id", "")
         rel = row.get("fixture_path", "")
-        path = (HERE / rel).resolve() if rel else HERE / "__missing__"
+        path = (BASE_DIR / rel).resolve() if rel else BASE_DIR / "__missing__"
         want = EXPECTED_KIND.get(case_id, "__unknown__")
         if not path.is_file():
             check(False, "%s runs and prints its one expected finding kind" % case_id,
@@ -127,7 +127,7 @@ def run():
     for row in rows:
         case_id = row.get("case_id", "")
         rel = row.get("fixture_path", "")
-        path = (HERE / rel).resolve() if rel else HERE / "__missing__"
+        path = (BASE_DIR / rel).resolve() if rel else BASE_DIR / "__missing__"
         want = EXPECTED_KIND.get(case_id, "__unknown__")
         if not path.is_file():
             continue
@@ -150,7 +150,7 @@ def run():
     check(not banned, "record_lint.py source contains no network string", "found %r" % banned)
 
     # 7. README carries the required headings.
-    readme = HERE / "README.md"
+    readme = BASE_DIR / "README.md"
     text = readme.read_text(encoding="utf-8") if readme.is_file() else ""
     required = [h for h in L.README_HEADINGS if h in text]
     check(len(required) == len(L.README_HEADINGS),
@@ -177,12 +177,12 @@ def run():
     for r in fixture_rows:
         check(bool((r.get("why") or "").strip()),
               "fixture-rows.csv why non-empty for %s" % r.get("fixture", ""))
-        check(_inside((HERE / r.get("fixture", "")).resolve()) if r.get("fixture") else False,
+        check(_inside((BASE_DIR / r.get("fixture", "")).resolve()) if r.get("fixture") else False,
               "fixture-rows.csv fixture resolves inside this folder: %s" % r.get("fixture", ""))
     for r in fixture_rows:
         rel = r.get("fixture", "")
         expected = (r.get("expected_finding") or "").strip()
-        path = (HERE / rel).resolve() if rel else HERE / "__missing__"
+        path = (BASE_DIR / rel).resolve() if rel else BASE_DIR / "__missing__"
         if not path.is_file():
             check(False, "fixture-rows.csv %s matches linter output" % rel, "fixture missing")
             continue
@@ -213,9 +213,9 @@ def run():
 
 
 def _inside(path):
-    """True when path is HERE or below it."""
+    """True when path is BASE_DIR or below it."""
     try:
-        path.resolve().relative_to(HERE)
+        path.resolve().relative_to(BASE_DIR)
         return True
     except ValueError:
         return False
