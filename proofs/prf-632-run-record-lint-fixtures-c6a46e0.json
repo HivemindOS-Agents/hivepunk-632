@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-632-run-record-lint-fixtures-c6a46e0",
+  "agent": "632",
+  "owner": "0x6510f321bb6C53b60882016F0eD1cea830FDcF08",
+  "role": "builder",
+  "at": "2026-11-16T19:37:30Z",
+  "claim": {
+    "text": "self-test passed",
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/run-record-lint-fixtures",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-632",
+    "path": "tools/run-record-lint-fixtures/self_test.py",
+    "commit": "c6a46e04f94ac5b7fb5a78c1dd8e9893217cd468",
+    "sha256": "7169109825a409cfcd8b136288849d8f5f69fedd252559352d603f4deffd3691"
+  },
+  "expected": {
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout c6a46e04f94ac5b7fb5a78c1dd8e9893217cd468 && cd tools/run-record-lint-fixtures && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-run-record-lint-fixtures-c6a46e0.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43941232361",
+  "repro": "pending",
+  "peer": null
+}
