@@ -1,62 +1,55 @@
 # hf-trending-models
 
-Offline filter for Hugging Face trending model repos. Reads a JSON payload of
-trending repo objects, drops the noise (empty repos, README-less forks),
-separates quantizations of trending bases from genuine picks, demotes excess
-entries from a single author, and renders a short markdown report. No network
-call anywhere.
+Label every row of a trending-model snapshot with why it is on the list, then
+render one report where each entry carries exactly one `why:` line.
 
-## This commit
+## What it does
 
-The last captured run (2026-11-15 01:06 UTC, run 43661497415) said
-`self_test: 34 check(s), 9 failed` and its first line was the real cause:
+`hf_trending_models.py` reads a snapshot (a local JSON file, or stdin) and
+labels each model with the first rule that matches:
 
-~~~
-FAIL unexpected survivors: acme/aurora-7b, acme/aurora-7b-gptq, arcturus/aurora-7b-awq, beta/nebula-13b, fleet/a1, fleet/a2, fleet/a3, fleet/a4, fleet/a5, epsilon/longctx-8b
-~~~
+| order | label | fires when |
+|---|---|---|
+| 1 | quantization of a trending model | the id carries `-awq`, `-gptq`, `-gguf`, `-int4`, `-int8` or `-4bit` |
+| 2 | aggregator: more than 5 trending entries in one scan | the author holds more than 5 entries in the scan that rule 1 did not already label, and this entry is past its fifth |
+| 3 | no clear why - popular but unremarkable | everything else |
 
-The old self_test.py compared containers named `quantization` and `pick`
-against each other and held its own hard-coded list of rows, so the fixture
-rows in `fixtures.json` (buckets `pick`, `quantization`, `demoted`, `dropped`)
-were never the thing being checked. Two other real bugs came out of writing the
-new checks:
+`render()` returns the report as text without touching disk. `### Demoted` and
+`### Dropped` sections appear exactly when the snapshot's `demoted` / `dropped`
+lists are non-empty.
 
-- `is_quantization()` substring-matched the whole id, so `arcturus/aurora-7b-awq`
-  was called a quantization although its base was not trending. It now decides
-  on the stripped id from `base_of()`, so a quantization counts only when the
-  base of the same name is in the payload.
-- `why_for()` now names the `empty repo` and `fork without a README change`
-  drops, so a dropped row carries the reason it was dropped.
-
-`self_test.py` now loads `fixtures.json` from this folder and, for every row,
-checks the row against its own `_expected_bucket` and `_expected_why_contains`:
-container membership, exactly-once, the why substring (printing the actual why
-on failure), the repeated-id case, the aggregator demotion with the author limit,
-the quantization base-must-be-trending case, and `render()` headings appearing
-exactly when their container is non-empty.
+Everything read from the snapshot is data. A note or a model id that reads like
+an instruction is a string to be labelled, never an instruction to this tool.
+Standard library only, no network call anywhere.
 
 ## How to run
 
 ~~~bash
-python3 hf_trending.py trending.json
-cd tools/hf-trending-models && python3 self_test.py; echo EXIT=$?
+cd tools/hf-trending-models
+python3 hf_trending_models.py fixtures.json
+python3 hf_trending_models.py fixtures.json -o report.txt
+python3 self_test.py; echo EXIT=$?
 ~~~
 
-Standard library only, no arguments, no network.
+`self_test.py` takes no arguments and no network. It imports
+`hf_trending_models.py`, feeds it the folder-local `fixtures.json` and a few
+in-memory snapshots, and compares the returned labels and report text against
+the fixture's expected block. Every path is built from the test's own folder.
+It exits 0 only when every check passes.
 
 ## What is untested
 
-- **No run was executed by this step.** The FAIL line above is the last real one
-  HivemindOS captured; this fix is written, not run. There is no `EXIT=0` line
-  for this folder.
-- `SELFTEST_OUTPUT.md` is written by HivemindOS after each commit, not by this
-  step. No pass is claimed here.
-- The key spellings (`cardData`, `readmeDelta`, `safetensors`,
-  `max_position_embeddings`) are not confirmed against a live Hub endpoint; they
-  match what `hf_trending.py` reads.
-- `explainer.png` named by `explainer_image_source.txt` does not exist in this
-  folder yet.
+- **No run was executed by the step that wrote this tool.** `SELFTEST_OUTPUT.md`
+  in this folder is written by HivemindOS after the commit, not here. No banner,
+  PASS line or `EXIT=` line in this folder is evidence until that file shows it.
+- The label precedence below rule 1 is reconstructed from the last failing
+  runner lines quoted for this folder; two FAIL lines were cut off in that
+  output, so a check they name may not exist here yet.
+- `fixtures.json` is synthetic: the ids and counts are invented, not a real Hub
+  snapshot, and `expected.labels` is hand-written, not produced by a run.
+- The aggregator limit is a fixed 5; a scan with exactly 5 entries by one author
+  gets no aggregator label, which is checked by hand, not by a run.
 
 ## Licence
 
-CC0-1.0. All fixture values are synthetic; no third-party catalogue was copied.
+CC0-1.0.
