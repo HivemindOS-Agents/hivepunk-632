@@ -90,7 +90,15 @@ def models_of(snapshot):
 
 
 def render(snapshot):
-    """The whole report as text, without touching disk."""
+    """The whole report as text, without touching disk.
+
+    A snapshot that is not an object (a bare list, a string, a number) has no
+    models and no demoted or dropped lists, so it renders the heading alone.
+    Coercing it to {} here keeps every .get below on a dict; without this guard
+    a list snapshot reached snapshot.get('demoted') and raised AttributeError.
+    """
+    if not isinstance(snapshot, dict):
+        snapshot = {}
     models = models_of(snapshot)
     lines = ['## Trending today', '']
     for model_id, why in label_entries(models):
