@@ -22,6 +22,9 @@ README_HEADINGS = ["# run-record-lint-fixtures", "## How to run", "## What it do
 
 CLAIM_RE = re.compile(r"^[A-Z][^\n]*\.$")
 WHY_RE = re.compile(r"^\s*(?:\*\*Why:?\*\*|Why:)", re.IGNORECASE)
+ACTION_RE = re.compile(
+    r"\b(ran|run|executed|passed|failed|fixed|committed|published|uploaded|"
+    r"wrote|deployed|built|checked)\b", re.IGNORECASE)
 
 
 class Finding:
@@ -51,6 +54,24 @@ class Report:
 def lint_text(text):
     """Return a Report for one record text. Never raises on ordinary input."""
     lines = text.splitlines()
+    # Missing-why takes precedence over the generic unlabelled-claim rule:
+    # a record with no Why label anywhere is reported as missing-why, not as
+    # one generic finding per plain sentence. A specific action claim in such
+    # a record is still an unlabelled claim, so that case is kept distinct.
+    if not any(WHY_RE.match(raw) for raw in lines):
+        action = [
+            (i, raw.strip())
+            for i, raw in enumerate(lines)
+            if raw.strip() and ACTION_RE.search(raw)
+        ]
+        if action:
+            return Report([
+                Finding("unlabelled-claim", i + 1, line[:60])
+                for i, line in action
+            ])
+        return Report([
+            Finding("missing-why", 1, "no reason label anywhere in this file")
+        ])
     findings = []
     for index, raw in enumerate(lines):
         line = raw.strip()
