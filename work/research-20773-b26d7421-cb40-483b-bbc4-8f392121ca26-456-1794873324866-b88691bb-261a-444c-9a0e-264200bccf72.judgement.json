@@ -1,0 +1,134 @@
+{
+  "step": "research-20773:b26d7421-cb40-483b-bbc4-8f392121ca26:456:1794873324866:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": true,
+  "failure_reason": null,
+  "description": "The agent published the research note linked in the final output after successfully reading Hugging Face dataset-viewer parquet documentation, despite several blocked or rate-limited sources.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": true,
+  "gotchas": [
+    {
+      "id": "g97683bd1",
+      "host": "deepwiki.com",
+      "observed": "GET /huggingface/hub-docs/2.2-datasets",
+      "result": "429: Vercel Security Checkpoint",
+      "evidence": "t1"
+    },
+    {
+      "id": "g88479fac",
+      "host": "huggingface.co",
+      "observed": "GET /docs/hub/datasets-cards",
+      "result": "429",
+      "evidence": "t4"
+    },
+    {
+      "id": "g4701cc54",
+      "host": "github.com",
+      "observed": "GET /YoungXinyu1802/HuggingFace-Dataset-Card-Analysis",
+      "result": "429: Rate limit - abuse detection mechanism triggered",
+      "evidence": "t5"
+    },
+    {
+      "id": "gf38f3df8",
+      "host": "discuss.huggingface.co",
+      "observed": "GET /t/:id/174072",
+      "result": "429 Too Many Requests",
+      "evidence": "t8"
+    }
+  ],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [
+    "deepwiki.com",
+    "huggingface.co",
+    "github.com",
+    "discuss.huggingface.co"
+  ],
+  "dropped": {
+    "bot-block-recovery": 1
+  },
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "deepwiki.com",
+      "path": "/huggingface/hub-docs/2.2-datasets",
+      "status": 429,
+      "error": "Vercel Security Checkpoint .spinner[data-astro-cid-ijmsm3te]{flex-direction:column;justify-content:center;align-items:center;display:flex}.spinner-circle[data-astro-cid-ijmsm3te]{transform-origin:50%;",
+      "ms": 43,
+      "at": "2026-11-16T23:55:48.218Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "deepwiki.com",
+      "path": "/huggingface/datasets/:id",
+      "status": 429,
+      "error": "Vercel Security Checkpoint .spinner[data-astro-cid-ijmsm3te]{flex-direction:column;justify-content:center;align-items:center;display:flex}.spinner-circle[data-astro-cid-ijmsm3te]{transform-origin:50%;",
+      "ms": 44,
+      "at": "2026-11-16T23:55:48.218Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "deepwiki.com",
+      "path": "/huggingface/datasets/:id",
+      "status": 429,
+      "error": "Vercel Security Checkpoint .spinner[data-astro-cid-ijmsm3te]{flex-direction:column;justify-content:center;align-items:center;display:flex}.spinner-circle[data-astro-cid-ijmsm3te]{transform-origin:50%;",
+      "ms": 44,
+      "at": "2026-11-16T23:55:48.218Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/datasets-cards",
+      "status": 429,
+      "error": "const guestTheme = document.cookie.match(/theme=(\\w+)/)?.[1]; document.documentElement.classList.toggle('dark', guestTheme === 'dark' || ( (!guestTheme || guestTheme === 'system') && window.matchMedia",
+      "ms": 44,
+      "at": "2026-11-16T23:55:48.218Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/YoungXinyu1802/HuggingFace-Dataset-Card-Analysis",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Whoa there! You have triggered an abuse detection mechanism. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdas",
+      "ms": 97,
+      "at": "2026-11-16T23:55:48.218Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/dataset-viewer/parquet",
+      "status": 200,
+      "error": null,
+      "ms": 175,
+      "at": "2026-11-16T23:55:48.218Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/dataset-viewer/en/parquet_process",
+      "status": 200,
+      "error": null,
+      "ms": 175,
+      "at": "2026-11-16T23:55:48.218Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "discuss.huggingface.co",
+      "path": "/t/:id/174072",
+      "status": 429,
+      "error": "429 Too Many Requests Your IP address has made too many requests to this service over a short amount of time. Please wait a few minutes and try again. If you are behind a proxy or coming from a large ",
+      "ms": 301,
+      "at": "2026-11-16T23:55:48.218Z"
+    }
+  ],
+  "at": "2026-11-16T23:56:14.663Z"
+}
