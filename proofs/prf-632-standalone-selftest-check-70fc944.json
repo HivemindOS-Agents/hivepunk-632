@@ -27,6 +27,11 @@
   "command": "git checkout 70fc94477d2084566a4a0356473a00732f7ec37b && cd tools/standalone-selftest-check && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-standalone-selftest-check-70fc944.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42342568667",
-  "repro": "pending",
-  "peer": null
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "667",
+    "at": "2026-11-15T20:30:49Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43758466734"
+  }
 }
