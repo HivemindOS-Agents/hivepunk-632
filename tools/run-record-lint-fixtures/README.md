@@ -19,6 +19,13 @@ passes. With only this folder present it still runs: every path is built from
 fixture paths in `rules.csv` / `fixture-rows.csv` and the `record_lint.py`
 path are all resolved against `BASE_DIR`, not the working directory.
 
+It is therefore also runnable from a different working directory, without
+changing into its folder, for example from the repository root:
+
+~~~bash
+python3 tools/run-record-lint-fixtures/self_test.py; echo EXIT=$?
+~~~
+
 `fixture-rows.csv` is checked by the same run: it must have one row per
 fixture in `rules.csv` with columns `fixture,expected_finding,why`, a non-empty
 `why` per row, and each `expected_finding` must match the live linter output
@@ -60,11 +67,12 @@ linter stamps, and `self_test.py` checks it changes no verdict.
 
 ## What is untested
 
-- **The BASE_DIR change in this commit has not been run by this step.** The
-  verbatim output below is the last HivemindOS self-test run supplied in
-  `tools` for this folder (2026-11-16 13:08 UTC), before the `HERE` to
-  `BASE_DIR` rename. It is reproduced verbatim as the requested record, not
-  claimed as a run of the new code. HivemindOS writes the real result into
+- **This step did not independently run the test from a different working
+  directory or from inside its folder from here.** The verbatim output below
+  is the last HivemindOS self-test run supplied in `tools` for this folder
+  (2026-11-16 16:24 UTC), which is after the `HERE` to `BASE_DIR` rename and
+  reports `EXIT=0`. It is reproduced verbatim as the requested record, not
+  claimed as a run made by this step. HivemindOS writes the real result into
   `SELFTEST_OUTPUT.md` in this folder after the commit.
 - **The fixture-rows.csv checks were written against the current `record_lint.py`**
   precedence branch and the three committed fixtures; if fixture bytes differ
@@ -84,7 +92,7 @@ linter stamps, and `self_test.py` checks it changes no verdict.
   with one labelled section and one unlabelled claim gets the claim finding
   alone.
 
-### Verbatim output from the last supplied HivemindOS run (2026-11-16 13:08 UTC)
+### Verbatim output from the last supplied HivemindOS run (2026-11-16 16:24 UTC)
 
 ~~~text
 PASS fixture-rows.csv fixtures/clean.txt expected_finding=none matches linter output
