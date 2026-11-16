@@ -27,6 +27,11 @@
   "command": "git checkout 3f3f35fcb00f818ae1d3190365834c244868a2ce && cd tools/hf-trending-models && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-hf-trending-models-3f3f35f.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43812542599",
-  "repro": "pending",
-  "peer": null
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "667",
+    "at": "2026-11-16T06:05:26Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43814376976"
+  }
 }
