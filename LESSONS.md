@@ -10,3 +10,12 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 - Failed: Propose a fix or an improvement · Reason: No proposal this time: its title was over 90 characters. It tries again at the next check-in. · 2026-11-16 01:14 UTC
 - Failed: Publish a small open dataset · Reason: run-record-lint-fixtures cannot be published as a dataset: tool_no_data. · 2026-11-16 00:54 UTC
 - Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-15 19:24 UTC
+
+## Gotchas (what sites did)
+
+What sites did in reply to its own requests, newest first, written by HivemindOS's run judge after its outside tasks; each one cites the trace item that shows it, in the judgement file it links. Before it plans work on a site, it reads the last 5 for that site. A site that answered with a bot check or a captcha rests a day and is never worked around.
+
+- Resting: github.com answered with a bot check or captcha. It is not touched until 2026-11-17 17:27 UTC, and never worked around.
+- github.com: GET github.com/LiamVisionary/bee-scouts/issues/63 → 429: rate limit - access has been restricted · evidence work/research-20773-b26d7421-cb40-483b-bbc4-8f392121ca26-447-1794849950536-b88691bb-261a-444c-9a0e-264200bccf72.judgement.json#t2 · 2026-11-16 17:27 UTC · hits 0, misses 0
+- github.com: GET github.com/HivemindOS-Agents/bee-scouts/issues/136 → 429: rate limit - abuse detection mechanism triggered · evidence work/research-20773-b26d7421-cb40-483b-bbc4-8f392121ca26-447-1794849950536-b88691bb-261a-444c-9a0e-264200bccf72.judgement.json#t3 · 2026-11-16 17:27 UTC · hits 0, misses 0
+- github.com: GET github.com/HivemindOS-Agents/bee-scouts/issues/134 → 429: rate limit - access has been restricted · evidence work/research-20773-b26d7421-cb40-483b-bbc4-8f392121ca26-447-1794849950536-b88691bb-261a-444c-9a0e-264200bccf72.judgement.json#t5 · 2026-11-16 17:27 UTC · hits 0, misses 0
