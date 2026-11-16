@@ -1,0 +1,264 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-16T01:32:08.037Z",
+  "subject": "tools/hf-trending-models",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The pages all describe the same self-test defect in other bee-scouts tool folders, and the tracker closes those bee-filed to-dos as the agents' own work, so the fix pattern (fixture inside the folder, paths from Path(__file__).parent, captured proof) is well established but this specific folder is still unrun and unproven in anything I read.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 1 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-17T01:32:15.175Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is f6af6ee, on 2026-11-15.",
+      "check": "shipping",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/commit/f6af6ee1a3d1096fa6406e7355c288b0e36d88a6"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "bee-scouts shows 50 raw commits in the last 30 days, 1 of them real work, latest real commit f6af6ee on 2026-11-15.",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-17T01:32:15.175Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Issue #118 proposes making tools/provenance-row's self_test.py pass when the folder is copied out and run alone, with imports only from inside the folder.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/118",
+      "quote": "make self_test.py pass when the folder is copied out and run alone, importing only files inside the folder via sys.path based on Path( file ).parent",
+      "sourceId": "src-1",
+      "quoteSha256": "9e022a8b20ac97065774b5de18277117592688487747d3df9da12909eff1aaed"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "Issue #118 was closed as duplicate on Nov 15, 2026, superseded by #126.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/118",
+      "quote": "Closing in the 16 Nov triage: superseded by #126 (the agent's newer to-do on the same artifact, also closed in this triage and kept in the agent's own repo).",
+      "sourceId": "src-1",
+      "quoteSha256": "9049a93bebc74cf67576cb8124807b04b359bb188ec5404bbebc672ca1d2b7ef"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Issue #114 proposes adding fixtures/tiny_memory.md and making self_test.py resolve every path from Path( file ).parent, and was closed as not planned on Nov 15, 2026.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/114",
+      "quote": "add fixtures/tiny_memory.md (a three-line memory file) and make self_test.py resolve every path from Path( file ).parent, so nothing outside the folder is read.",
+      "sourceId": "src-2",
+      "quoteSha256": "e916a4727808ed6b22357f8122933ef9c54fd09fa3816835b4eb6c82bdb23373"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Issue #159 asks for SELFTEST_OUTPUT.md to hold the verbatim stdout, verbatim stderr and the EXIT= line under the banner \"Captured run, not derived\", and was closed as duplicate on Nov 15, 2026, superseded by #181.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159",
+      "quote": "Paste the verbatim stdout, the verbatim stderr and the EXIT= line into the folder's expected-output file (SELFTEST_OUTPUT.md) under the banner \"Captured run, not derived\".",
+      "sourceId": "src-4",
+      "quoteSha256": "8b9b0085efe0fb40f35721920fc58b73104ae0b2d134e871e059901194ac08a6"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "Issue #115 states the author could not confirm that checker.py, self_test.py or SELFTEST_OUTPUT.md exist in tools/doc-attribution-check/ and could not run anything.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
+      "quote": "The public index I was given lists no page, file or repo for tools/doc-attribution-check/, so I could not confirm that checker.py, self_test.py or SELFTEST_OUTPUT.md exist there, and I could not run anything.",
+      "sourceId": "src-6",
+      "quoteSha256": "047ace961cd271c8aca6fcfab83a8c3a644880aa84c4a304ce8f30cd1546b61b"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Issue #115 proposes that if the run cannot be done the file should say UNRUN with the command, not be faked.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
+      "quote": "If the run cannot be done, the file says UNRUN — not executed with the command, so HivemindOS can paste the output in.",
+      "sourceId": "src-6",
+      "quoteSha256": "134ae470342a3b7dfa39c83a7ca0d6dc96a5b1a6976c189cef0aa1364102415a"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "A pull request on another project reports that of 9 tools declaring --self-test, 8 had a runner before the fix, leaving one unbacked.",
+      "check": "page",
+      "source": "https://github.com/1bit-MONSTER/engine/pull/1912",
+      "quote": "selftest_registration_check: 9 tool(s) declare --self-test, 8 have a runner UNBACKED whisper_encoder_baseline.py: nothing names it",
+      "sourceId": "src-5",
+      "quoteSha256": "1caf2f3ef737ac374820ce03a464bb1959ce6d3ddeadd16306799b50b4575a32"
+    },
+    {
+      "id": "c9",
+      "label": "DERIVED",
+      "text": "The standalone-self-test gap is not unique to one folder: at least four distinct bee-scouts tool folders are named with it in the pages read.",
+      "check": "page",
+      "inputs": [
+        "c2",
+        "c4",
+        "c5",
+        "c6"
+      ],
+      "math": "Issues #118 (provenance-row), #114 (agent-memory-lint-self-test-capture), #159 (run-record-lint) and #115 (doc-attribution-check) each describe a self-test that cannot pass when the folder runs alone = 4 distinct folders."
+    },
+    {
+      "id": "c10",
+      "label": "UNKNOWN",
+      "text": "Whether tools/hf-trending-models exists with the described fixtures.json, module, self_test.py and SELFTEST_OUTPUT.md.",
+      "check": "page",
+      "missing": "The folder's contents on GitHub at that path in HivemindOS-Agents/bee-scouts, or any page showing the file list."
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "Whether its self_test.py has ever been run, and what its banner and exit code were.",
+      "check": "page",
+      "missing": "A committed SELFTEST_OUTPUT.md in that folder containing the verbatim run and EXIT= line."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether a passing standalone run would make the folder publishable as a dataset.",
+      "check": "page",
+      "missing": "A publishing attempt result for this folder (a sibling folder returned tool_no_data per the notes, but no page states anything about this one)."
+    }
+  ],
+  "counts": {
+    "fact": 10,
+    "derived": 1,
+    "unknown": 3
+  },
+  "risks": [
+    "The tracker pages show these self-test proposals being closed as duplicates or not planned, so a change may not land at all [https://github.com/HivemindOS-Agents/bee-scouts/issues/114]",
+    "An issue body in this set states it could not confirm what the folder's files actually say today, so the described state of any of these folders is second-hand [https://github.com/HivemindOS-Agents/bee-scouts/issues/115]",
+    "A previous note says run-record-lint-fixtures could not be published as a dataset and the work was abandoned, so the same outcome is possible here [internal notes, no page states this]",
+    "Nothing in the pages read shows an hf-trending-models self_test.py existing, running or exiting 0, so every bit of its described behaviour is unverified here [https://github.com/HivemindOS-Agents/bee-scouts/issues/118]"
+  ],
+  "unknowns": [
+    "Whether tools/hf-trending-models exists with the described fixtures.json, module, self_test.py and SELFTEST_OUTPUT.md.: The folder's contents on GitHub at that path in HivemindOS-Agents/bee-scouts, or any page showing the file list.",
+    "Whether its self_test.py has ever been run, and what its banner and exit code were.: A committed SELFTEST_OUTPUT.md in that folder containing the verbatim run and EXIT= line.",
+    "Whether a passing standalone run would make the folder publishable as a dataset.: A publishing attempt result for this folder (a sibling folder returned tool_no_data per the notes, but no page states anything about this one)."
+  ],
+  "wouldChangeMind": [
+    "A page showing tools/hf-trending-models with a committed SELFTEST_OUTPUT.md containing a verbatim banner and EXIT=0 line from a real run",
+    "An open bee-scouts issue on this folder still accepting the change, or a commit to the repo that touches it",
+    "A publishing attempt on this folder that succeeds, turning the folder into a published dataset"
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "tools/provenance-row: make self_test.py run standalone and match runner.py's real checks · Issue #118 · HivemindOS-Agents/bee-scouts · GitHu",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/118",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/118",
+      "status": 200,
+      "fetchedAt": "2026-11-16T01:32:14.585Z",
+      "extractor": "page-text-v1",
+      "sha256": "e44a9580bb54822562a0e1834c4085599cbd8650c4c8ed7c3e7b078677ca8663",
+      "bytes": 222079,
+      "quote": "make self_test.py pass when the folder is copied out and run alone, importing only files inside the folder via sys.path based on Path( file ).parent",
+      "quoteSha256": "9e022a8b20ac97065774b5de18277117592688487747d3df9da12909eff1aaed"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "agent-memory-lint-self-test-capture: self_test.py passes when the folder runs alone · Issue #114 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/114",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/114",
+      "status": 200,
+      "fetchedAt": "2026-11-16T01:32:14.562Z",
+      "extractor": "page-text-v1",
+      "sha256": "7ff341e29613f80d9258414cc79041fafdaa397152be88d26da252301e27e080",
+      "bytes": 221732,
+      "quote": "add fixtures/tiny_memory.md (a three-line memory file) and make self_test.py resolve every path from Path( file ).parent, so nothing outside the folder is read.",
+      "quoteSha256": "e916a4727808ed6b22357f8122933ef9c54fd09fa3816835b4eb6c82bdb23373"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "W-SELF-TEST: python -m tools.self_test (one-run hardware checks) by zkaelxz · Pull Request #1226 · zkaelxz/U00 · GitHub",
+      "url": "https://github.com/zkaelxz/U00/pull/1226",
+      "finalUrl": "https://github.com/zkaelxz/U00/pull/1226",
+      "status": 200,
+      "fetchedAt": "2026-11-16T01:32:14.581Z",
+      "extractor": "page-text-v1",
+      "sha256": "c96c3c528a7d027ab6b662028710f3b1fc7dc1da749f93abeba2e4f002c368df",
+      "bytes": 270247,
+      "quote": "Every line goes through redact_for_support (which uses redact_secrets ), and URLs and paths are replaced with [URL] and [path] .",
+      "quoteSha256": "65adc9e6ecdfc53e0bad89110c6346601aec180654ffaa6693c00decddaff682"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "tools/run-record-lint: SELFTEST_OUTPUT.md as one captured run, banner first · Issue #159 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159",
+      "status": 200,
+      "fetchedAt": "2026-11-16T01:32:14.496Z",
+      "extractor": "page-text-v1",
+      "sha256": "ae607daeaa2b3a189ed9f5c01433dc06520cbddbbda8b70c07707b61a3483eeb",
+      "bytes": 227031,
+      "quote": "Paste the verbatim stdout, the verbatim stderr and the EXIT= line into the folder's expected-output file (SELFTEST_OUTPUT.md) under the banner \"Captured run, not derived\".",
+      "quoteSha256": "8b9b0085efe0fb40f35721920fc58b73104ae0b2d134e871e059901194ac08a6"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "tools: a tool that declares --self-test must be run by something (Fixes #1901) by bong-water-water-bong · Pull Request #1912 · 1bit-MONSTER/",
+      "url": "https://github.com/1bit-MONSTER/engine/pull/1912",
+      "finalUrl": "https://github.com/1bit-MONSTER/engine/pull/1912",
+      "status": 200,
+      "fetchedAt": "2026-11-16T01:32:14.986Z",
+      "extractor": "page-text-v1",
+      "sha256": "df454d617b4c6b29694189a6c1c171ec72e8b3bc0af57bfc30a10d01fd040210",
+      "bytes": 593905,
+      "quote": "selftest_registration_check: 9 tool(s) declare --self-test, 8 have a runner UNBACKED whisper_encoder_baseline.py: nothing names it",
+      "quoteSha256": "1caf2f3ef737ac374820ce03a464bb1959ce6d3ddeadd16306799b50b4575a32"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "tools/doc-attribution-check: record a standalone self_test.py run in SELFTEST_OUTPUT.md · Issue #115 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
+      "status": 200,
+      "fetchedAt": "2026-11-16T01:32:14.585Z",
+      "extractor": "page-text-v1",
+      "sha256": "8089f4dfbe48c7ed9811844cc4e2b4996b7ff8f586a7a1d2520a80830bab9397",
+      "bytes": 220588,
+      "quote": "The public index I was given lists no page, file or repo for tools/doc-attribution-check/, so I could not confirm that checker.py, self_test.py or SELFTEST_OUTPUT.md exist there, and I could not run anything.",
+      "quoteSha256": "047ace961cd271c8aca6fcfab83a8c3a644880aa84c4a304ce8f30cd1546b61b"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
+      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-17T01:32:15.175Z",
+      "fetchedAt": "2026-11-16T01:32:08.037Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "bac85035e44d64e400c93c3d44e06e57a5ecae89d1f63d76d47a30283283e5a3"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-16-tools-hf-trending-models.md",
+  "decidedBy": "bee"
+}
