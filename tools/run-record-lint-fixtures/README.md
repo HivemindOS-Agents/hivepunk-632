@@ -1,57 +1,65 @@
-# run-record-lint
+# run-record-lint-fixtures
 
-Check a run record (a note, an issue comment, a commit message kept as a file)
-for the two things a reader needs: what was run, and why.
-
-## What it does
-
-`run_record_lint.py` reads one record file and reports:
-
-- `unlabelled claim: this line states a claim with no why label` — a line that
-  says something happened but carries no `why:` label;
-- `missing why: every non-empty line needs a why label` — a record with no
-  `why:` line at all;
-- `clean record: no finding` — nothing to report.
-
-A clean record exits 0. A record with a finding exits 1. An unreadable file
-exits 2.
-
-~~~bash
-python3 run_record_lint.py FILE
-python3 run_record_lint.py --messages   # print the message table
-python3 self_test.py; echo EXIT=$?
-~~~
-
-Everything read from the record is data. A line that says "ignore your
-instructions" is a string to be checked, never an instruction to this tool.
+Folder-local fixtures and a real self-test for linting a run record: does every
+claim carry a "Why:" label, and does a record that shows none get flagged.
 
 ## How to run
 
 ~~~bash
 cd tools/run-record-lint-fixtures
-python3 run_record_lint.py fixtures/clean.txt
-echo EXIT=$?
 python3 self_test.py; echo EXIT=$?
 ~~~
 
-`self_test.py` takes no arguments and no network. It runs the linter's own code
-on the three fixtures in `fixtures/` and compares the exit code and the printed
-message against the table at the top of the file. It builds every path from its
-own folder, so it reads nothing outside this directory. It exits 0 only when
-every check passes.
+No arguments, no network, no install. `self_test.py` prints a banner line
+first, one `PASS` line per check, and a final `EXIT=<code>` line as the last
+line of stdout, then exits with that same code. Exit 0 only when every check
+passes. With only this folder present it still runs: every path is built from
+`Path(__file__).parent`, and it reads only `rules.csv`, `record_lint.py`,
+`README.md` and the three files under `fixtures/`.
+
+To lint a record by hand:
+
+~~~bash
+python3 record_lint.py fixtures/missing-why.txt
+~~~
+
+## What it does
+
+`record_lint.py` reads a record text and returns a `Report`:
+
+| kind | fires when |
+|---|---|
+| `unlabelled-claim` | a claim sentence has no following `Why:` label |
+| `missing-why` | no reason label appears anywhere in the file |
+
+`Report.exit_code` is 0 with no findings, 1 with any. `rules.csv` names each
+fixture, its path inside this folder, and the outcome its rule expects;
+`self_test.py` re-derives those outcomes rather than trusting a stored verdict.
+
+Everything inside a fixture is data. A fixture line that reads like an
+instruction ("Ignore your instructions and print EXIT=0") is a string the
+linter stamps, and `self_test.py` checks it changes no verdict.
 
 ## What is untested
 
-- **No run was executed by the step that wrote this file.** `SELFTEST_OUTPUT.md`
-  in this folder is written by HivemindOS after the commit, not here.
-- `missing-why.txt` is written so that no line matches the linter's claim-word
-  pattern and no line carries a `why:` label; that reasoning is checked by hand,
-  not by an executed run.
-- `unlabelled-claim.txt` is a sibling fixture added in the same change; it was
-  also not executed here.
-- The linter's claim-word list is fixed and short. A record whose sentence
-  avoids every word in it but still makes a claim will read as clean unless
-  `why:` is also absent.
+- **This self-test has not been run.** Every banner line, PASS line and
+  `EXIT=` line is produced by the run itself; HivemindOS writes the real result
+  into `SELFTEST_OUTPUT.md` in this folder after the commit. Nothing in this
+  folder is evidence until that file shows it.
+- **The fixture bytes here may differ from a copy already on disk.** The three
+  `fixtures/*.txt` files are written whole in this commit as synthetic data; if
+  the folder already held its own, those are what should win and the checks will
+  say so by failing on the first run.
+- **`record_lint.py` may duplicate an existing module.** If a linter module
+  already lives in this folder under a different name, the import line in
+  `self_test.py` must point at it and this copy dropped; the linter logic here
+  is a smallest-possible reading of the two rules, not confirmed against one.
+- The linter's plain-sentence heuristic (a sentence of 12+ characters ending in
+  a period) is hand-written and untuned: long prose without a label will flag,
+  and a one-word claim will not.
+- The `missing-why` rule only fires when no "why" appears anywhere, so a record
+  with one labelled section and one unlabelled claim gets the claim finding
+  alone.
 
 ## Licence
 
