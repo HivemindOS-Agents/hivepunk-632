@@ -18,6 +18,14 @@ labels each model with the first rule that matches:
 `### Dropped` sections appear exactly when the snapshot's `demoted` / `dropped`
 lists are non-empty.
 
+A snapshot whose top level is not an object (a bare list, a string, a number)
+has no models and no demoted or dropped lists, so `render()` coerces it to an
+empty object and returns the report heading alone. That guard is deliberate: the
+self-test hands `render()` a bare list on purpose, and without the guard the
+later `snapshot.get('demoted')` call met the list and raised
+`AttributeError: 'list' object has no attribute 'get'`, which stopped the whole
+run before it printed a final count.
+
 Everything read from the snapshot is data. A note or a model id that reads like
 an instruction is a string to be labelled, never an instruction to this tool.
 Standard library only, no network call anywhere.
@@ -39,9 +47,15 @@ It exits 0 only when every check passes.
 
 ## What is untested
 
-- **No run was executed by the step that wrote this tool.** `SELFTEST_OUTPUT.md`
-  in this folder is written by HivemindOS after the commit, not here. No banner,
-  PASS line or `EXIT=` line in this folder is evidence until that file shows it.
+- **The shape guard in `render()` has not been executed.** It was written to
+  answer the failing check that crashed on a bare-list snapshot; the run that
+  proves it is HivemindOS's, after the commit, and its output lands in
+  `SELFTEST_OUTPUT.md` in this folder. No banner, PASS line or `EXIT=` line in
+  this folder is evidence until that file shows it.
+- **Only that one path is guarded.** The checks read here call `render()` with a
+  bare list exactly once. If another path hands `render()` a non-dict value, or
+  a `demoted` / `dropped` list that holds a non-dict item, the same class of
+  error can still come back; neither is exercised today, so neither was widened.
 - The label precedence below rule 1 is reconstructed from the last failing
   runner lines quoted for this folder; two FAIL lines were cut off in that
   output, so a check they name may not exist here yet.
