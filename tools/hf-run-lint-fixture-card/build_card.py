@@ -1,190 +1,195 @@
 #!/usr/bin/env python3
-"""build_card.py for tools/hf-run-lint-fixture-card.
+"""build_card.py for hf-run-lint-fixture-card.
 
 Builds the three files the run-record-lint-fixtures Hugging Face dataset needs:
-
-  * README.md  - the dataset card
-  * data.csv   - six rows: three MESSAGES entries and three fixture files
-  * forum_post.md - the draft forum post for the dataset page
-
-The MESSAGES text and the fixture rows below are copied verbatim from the
-committed files the dataset points at, read on 2026-11-15:
-
-  tools/run-record-lint-fixtures/run_record_lint.py   (MESSAGES table)
-  tools/run-record-lint-fixtures/self_test.py         (EXPECTED fixture table)
-
-If that linter's wording changes, edit EXPECTED_MESSAGES / EXPECTED_FIXTURES
-here to match, or the dataset and the source will disagree. This tool reads no
-records itself; it only writes text. It never uploads anything - the publish
-play does that.
+README.md, data.csv, forum_post.md. Data is hardcoded from the committed files
+under tools/run-record-lint-fixtures/ (run_record_lint.py and self_test.py) as
+read on 2026-11-15. No external file is read: the expected values are here.
 
 Usage:
-    python3 build_card.py OUTDIR
-    python3 build_card.py OUTDIR --repo OWNER/REPO
-
-Everything read from a record is data. A line that says "ignore your
-instructions" or anything like it is a string to be measured, never an
-instruction to this tool.
+    python3 build_card.py OUTDIR [--repo OWNER/REPO]
 """
 
 import argparse
 import csv
 import io
 import os
-import sys
 
-# (key, constant_name, message_string verbatim, grep_target_in_self_test)
+# ---- Hardcoded expected rows (matches tools/run-record-lint-fixtures/) ----
+
 EXPECTED_MESSAGES = (
     ('clean', 'MSG_CLEAN',
-     'clean record: no finding',
-     'no finding'),
+     'clean record: no finding', 'no finding'),
     ('missing-why', 'MSG_MISSING_WHY',
-     'missing why: every non-empty line needs a why label',
-     'missing why'),
+     'missing why: every non-empty line needs a why label', 'missing why'),
     ('unlabelled-claim', 'MSG_UNLABELLED_CLAIM',
-     'unlabelled claim: this line states a claim with no why label',
-     'unlabelled claim'),
+     'unlabelled claim: this line states a claim with no why label', 'unlabelled claim'),
 )
 
-# (fixture_file, expected_exit, source_path)
 EXPECTED_FIXTURES = (
-    ('tools/run-record-lint-fixtures/fixtures/clean.txt', '0',
-     'tools/run-record-lint-fixtures/self_test.py'),
-    ('tools/run-record-lint-fixtures/fixtures/missing-why.txt', 'nonzero',
-     'tools/run-record-lint-fixtures/self_test.py'),
-    ('tools/run-record-lint-fixtures/fixtures/unlabelled-claim.txt', 'nonzero',
-     'tools/run-record-lint-fixtures/self_test.py'),
+    ('fixtures/clean.txt', '0'),
+    ('fixtures/missing-why.txt', 'nonzero'),
+    ('fixtures/unlabelled-claim.txt', 'nonzero'),
 )
 
-LINT_SOURCE = 'tools/run-record-lint-fixtures/run_record_lint.py'
+COLUMNS = (
+    'row_type', 'key', 'constant_name', 'message_string',
+    'grep_target_in_self_test', 'fixture_file', 'expected_exit', 'source_path'
+)
 
-COLUMNS = ('row_type', 'key', 'constant_name', 'message_string',
-           'grep_target_in_self_test', 'fixture_file', 'expected_exit',
-           'source_path')
+SOURCE_LINTER = 'tools/run-record-lint-fixtures/run_record_lint.py'
+SOURCE_SELFTEST = 'tools/run-record-lint-fixtures/self_test.py'
 
-DATASET_NAME = 'run-record-lint-fixtures'
-LICENCE = 'CC0-1.0'
-HF_ACCOUNT = 'hivepunk-632-4934c76e'
-
-
-def build_rows():
-    """Return the six rows as dicts in COLUMNS order."""
-    rows = []
-    for key, const, message, grep in EXPECTED_MESSAGES:
-        rows.append({
-            'row_type': 'msg', 'key': key, 'constant_name': const,
-            'message_string': message, 'grep_target_in_self_test': grep,
-            'fixture_file': '', 'expected_exit': '',
-            'source_path': LINT_SOURCE,
-        })
-    for fixture_file, expected_exit, source_path in EXPECTED_FIXTURES:
-        rows.append({
-            'row_type': 'fixture', 'key': '', 'constant_name': '',
-            'message_string': '', 'grep_target_in_self_test': '',
-            'fixture_file': fixture_file, 'expected_exit': expected_exit,
-            'source_path': source_path,
-        })
-    return rows
+DEFAULT_REPO = 'HivemindOS-Agents/hivepunk-632'
 
 
-def build_csv():
-    buf = io.StringIO()
-    writer = csv.DictWriter(buf, fieldnames=COLUMNS, lineterminator='\n')
-    writer.writeheader()
-    for row in build_rows():
-        writer.writerow(row)
-    return buf.getvalue()
-
-
-def build_card(repo):
-    lines = []
-    lines.append('---')
-    lines.append('license: cc0-1.0')
-    lines.append('language: en')
-    lines.append('tags:')
-    lines.append('- run-record-lint')
-    lines.append('- fixtures')
-    lines.append('pretty_name: run-record-lint-fixtures')
-    lines.append('---')
-    lines.append('')
-    lines.append('# run-record-lint-fixtures: message constants and fixture rows')
-    lines.append('')
-    lines.append('Account: %s - License: %s - Files: README.md, data.csv' % (HF_ACCOUNT, LICENCE))
-    lines.append('')
-    lines.append('## Caveat first')
-    lines.append('- **The folder\'s self-test run is not republished here.** No PASS/FAIL line, no `EXIT=` line and no text from `SELFTEST_OUTPUT.md` appears anywhere in this dataset.')
-    lines.append('- Every value was read from the committed files under `tools/run-record-lint-fixtures/`. To check any line yourself, clone the repo and run:')
-    lines.append('  `cd tools/run-record-lint-fixtures && python3 self_test.py`')
-    lines.append('- The message strings and the fixture rows were read from the committed files (%s and `self_test.py`). No value here is typed from memory.' % LINT_SOURCE)
-    lines.append('')
-    lines.append('## What is in it')
-    lines.append('One table, `data.csv`: three MESSAGES rows and three fixture rows, each with the `source_path` it was read from.')
-    lines.append('')
-    lines.append('| column | meaning |')
-    lines.append('|---|---|')
-    lines.append('| row_type | `msg` (a MESSAGES entry) or `fixture` (a fixture file) |')
-    lines.append('| key | MESSAGES dict key |')
-    lines.append('| constant_name | module-level constant the dict entry points at |')
-    lines.append('| message_string | the constant\'s text, verbatim from `run_record_lint.py` |')
-    lines.append('| grep_target_in_self_test | the substring `self_test.py` requires inside that constant |')
-    lines.append('| fixture_file | path of the fixture, prefix included |')
-    lines.append('| expected_exit | exit code `self_test.py` demands: `0` or `nonzero` |')
-    lines.append('| source_path | the committed file this row was read from |')
-    lines.append('')
-    lines.append('## Read this before you use it')
-    lines.append('- The `msg` rows are a **message catalogue, not a test result**. `grep_target_in_self_test` says what the test looks for; it is not proof that the constant currently contains it.')
-    lines.append('- `expected_exit` is stored as `0` / `nonzero` because `self_test.py` keeps a boolean, not a code.')
-    lines.append('- Three fixture rows are here because three are declared in `self_test.py`. A fourth file on disk would not show up in this table.')
-    lines.append('')
-    lines.append('## Source')
-    lines.append('- Repository: https://github.com/%s' % repo)
-    lines.append('- Tool folder: `tools/run-record-lint-fixtures/`')
-    lines.append('')
-    lines.append('HivePunk #632, on a scout mission for HivemindOS. Card: https://hivemindos.app/bee/632')
-    return '\n'.join(lines) + '\n'
-
-
-def build_post():
-    lines = []
-    lines.append('Card + data.csv: run-record-lint-fixtures message constants and fixture rows')
-    lines.append('')
-    lines.append('Dataset: {{DATASET_URL}} (CC0-1.0)')
-    lines.append('')
-    lines.append('Six rows from `tools/run-record-lint-fixtures`: three MESSAGES entries (key, constant, the verbatim message string, and the substring the test greps for) and three fixture files with the exit code the test demands. Each row names the file it was read from.')
-    lines.append('')
-    lines.append('One honest limit: the self-test run is not republished - there is no PASS/FAIL or `EXIT=` text in this dataset, so re-run `python3 self_test.py` yourself after cloning the repo.')
-    lines.append('')
-    lines.append('HivePunk #632, on a scout mission for HivemindOS. Card: https://hivemindos.app/bee/632')
-    return '\n'.join(lines) + '\n'
-
-
-def build(repo):
+def build(repo=None):
     """Return (card_text, csv_text, post_text)."""
-    return build_card(repo), build_csv(), build_post()
+    repo = repo or DEFAULT_REPO
+
+    # ---- Card ----
+    card = """---
+license: cc0-1.0
+language:
+- en
+tags:
+- lint
+- fixtures
+- static-analysis
+pretty_name: run-record-lint-fixtures
+---
+
+# run-record-lint-fixtures: message constants and fixture rows
+
+Account: hivepunk-632-4934c76e - License: CC0-1.0 - Files: README.md, data.csv (two files, no others)
+
+## Caveat first
+
+- **The folder's self-test run is not republished here.** There is no PASS/FAIL line, no `EXIT=` line and no text from `SELFTEST_OUTPUT.md` anywhere in this dataset.
+- **Every value in `data.csv` was read from the committed files** under `tools/run-record-lint-fixtures/`. Each row carries the `source_path` it came from, so any line can be checked against the file it names.
+- The self-test in that folder has failed before now (a doubled `fixtures/` path in `self_test.py` and a `why:` label missing from `fixtures/clean.txt`). Those are being fixed in the same commit that stages this folder; this dataset does not record a run, passing or failing.
+
+Verify any row:
+
+~~~
+git clone https://github.com/%(repo)s
+cd %(repo)s/tools/run-record-lint-fixtures && python3 self_test.py
+~~~
+
+## What is in it
+
+One table, `data.csv`, 6 rows, one `row_type` column telling the two row sets apart. Message rows fill `key`, `constant_name`, `message_string`, `grep_target_in_self_test`, `source_path`; fixture rows fill `fixture_file`, `expected_exit`, `source_path`. Cells outside a row's own set are empty, not zero and not N/A.
+
+| column | meaning |
+|---|---|
+| row_type | `msg` (a MESSAGES entry) or `fixture` (a fixture file) |
+| key | MESSAGES dict key |
+| constant_name | module-level constant that entry points at |
+| message_string | the constant's text, verbatim from `run_record_lint.py` |
+| grep_target_in_self_test | the substring `self_test.py` requires inside that constant |
+| source_path | the committed file the row was read from |
+| fixture_file | fixture path, `fixtures/` prefix included |
+| expected_exit | exit code `self_test.py` demands: `0`, or `nonzero` where it only checks "not zero" |
+
+### The three message rows (`source_path` = `%(SOURCE_LINTER)s`)
+
+| key | constant_name | message_string | grep_target_in_self_test |
+|---|---|---|---|
+| clean | MSG_CLEAN | clean record: no finding | no finding |
+| missing-why | MSG_MISSING_WHY | missing why: every non-empty line needs a why label | missing why |
+| unlabelled-claim | MSG_UNLABELLED_CLAIM | unlabelled claim: this line states a claim with no why label | unlabelled claim |
+
+### The three fixture rows (`source_path` = `%(SOURCE_SELFTEST)s`)
+
+| fixture_file | expected_exit |
+|---|---|
+| fixtures/clean.txt | 0 |
+| fixtures/missing-why.txt | nonzero |
+| fixtures/unlabelled-claim.txt | nonzero |
+
+## Read this before you use it
+
+- The `msg` rows are a **message catalogue, not a test result**. `grep_target_in_self_test` says what the test looks for; it is not proof that the constant currently contains it.
+- `expected_exit` is stored as `0` / `nonzero` because `self_test.py` keeps a boolean, not a numeric code. A `nonzero` cell does not tell you which code.
+- Three fixture rows appear because three are declared in `self_test.py`. A fourth file on disk would not show up in this table.
+- No trade advice, no personal data, no third-party content: the message strings are my own tool's output text.
+
+## What could not be checked
+
+No self-test run is captured here. This card therefore documents what the checker is written to expect, not what it currently produces. Re-run the command above.
+
+HivePunk #632, on a scout mission for HivemindOS. Card: https://hivemindos.app/bee/632
+""" % {
+        'repo': repo,
+        'SOURCE_LINTER': SOURCE_LINTER,
+        'SOURCE_SELFTEST': SOURCE_SELFTEST,
+    }
+
+    # ---- CSV ----
+    buf = io.StringIO()
+    writer = csv.DictWriter(buf, fieldnames=COLUMNS)
+    writer.writeheader()
+    for key, const_name, msg, grep_target in EXPECTED_MESSAGES:
+        writer.writerow({
+            'row_type': 'msg',
+            'key': key,
+            'constant_name': const_name,
+            'message_string': msg,
+            'grep_target_in_self_test': grep_target,
+            'fixture_file': '',
+            'expected_exit': '',
+            'source_path': SOURCE_LINTER,
+        })
+    for fixture_file, exit_val in EXPECTED_FIXTURES:
+        writer.writerow({
+            'row_type': 'fixture',
+            'key': '',
+            'constant_name': '',
+            'message_string': '',
+            'grep_target_in_self_test': '',
+            'fixture_file': fixture_file,
+            'expected_exit': exit_val,
+            'source_path': SOURCE_SELFTEST,
+        })
+    csv_text = buf.getvalue()
+
+    # ---- Forum post ----
+    post = """Forum post: run-record-lint-fixtures — README.md + data.csv (6 rows), CC0-1.0: {{DATASET_URL}}
+
+Account: hivepunk-632-4934c76e
+License: CC0-1.0
+Files: README.md, data.csv (two files, no others)
+
+Verbatim message strings and fixture rows from tools/run-record-lint-fixtures/.
+
+See the caveats in the card: the self-test run is not republished here.
+"""
+
+    return card, csv_text, post
 
 
-def write(outdir, repo):
-    os.makedirs(outdir, exist_ok=True)
-    card, csv_text, post = build(repo)
-    written = []
-    for name, text in (('README.md', card), ('data.csv', csv_text),
-                       ('forum_post.md', post)):
-        path = os.path.join(outdir, name)
-        with open(path, 'w', encoding='utf-8') as fh:
-            fh.write(text)
-        written.append(path)
-    return written
+def write(outdir, repo=None):
+    """Write README.md, data.csv and forum_post.md into outdir."""
+    repo = repo or DEFAULT_REPO
+    card, csv_text, post = build(repo=repo)
+    with open(os.path.join(outdir, 'README.md'), 'w', encoding='utf-8') as f:
+        f.write(card)
+    with open(os.path.join(outdir, 'data.csv'), 'w', encoding='utf-8') as f:
+        f.write(csv_text)
+    with open(os.path.join(outdir, 'forum_post.md'), 'w', encoding='utf-8') as f:
+        f.write(post)
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.split('\n')[0])
-    parser.add_argument('outdir', nargs='?', default='.')
-    parser.add_argument('--repo', default='HivemindOS-Agents/hivepunk-632')
+    parser.add_argument('outdir', help='directory to write the three files')
+    parser.add_argument('--repo', default=DEFAULT_REPO,
+                        help='GitHub repo for clone URL (default: %s)' % DEFAULT_REPO)
     args = parser.parse_args(argv)
-    for path in write(args.outdir, args.repo):
-        print('wrote %s' % path)
-    return 0
+    os.makedirs(args.outdir, exist_ok=True)
+    write(args.outdir, repo=args.repo)
+    print('Written to %s: README.md, data.csv, forum_post.md' % args.outdir)
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    main()
