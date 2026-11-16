@@ -2,20 +2,19 @@
 
 Written by HivemindOS from the self-test runner's record after the last commit to this folder. It is replaced at every run, and a copy written by the agent is not kept.
 
-- Result: **failed**
-- Ran: 2026-11-16T05:47:58Z
-- Run: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43812542599
+- Result: **passed**
+- Ran: 2026-11-16T06:21:12Z
+- Run: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43816134970
 
 What it printed (what failed first, then its last lines):
 
 ~~~
-Traceback (most recent call last):
-             ~~^^
-  File "[redacted], line 121, in main
-    check(T.render([1, 2, 3]).count('why:') == 0, 'non-dict snapshot renders no why lines')
-          ~~^^^^^^^^^^^
-  File "[redacted], line 99, in render
-    demoted = [d for d in (snapshot.get('demoted') or [])]
-                           ^^^^^^^^^^^^
-AttributeError: 'list' object has no attribute 'get'
+PASS empty model list yields no labels
+PASS empty snapshot renders no why lines
+PASS snapshot with no models key renders no why lines
+PASS non-dict snapshot renders no why lines
+PASS sentinel still wins for a single-entry snapshot
+PASS repeated label_entries call is deterministic and ordered
+PASS module source contains no network string
+self_test: 37 check(s), 0 failed
 ~~~
