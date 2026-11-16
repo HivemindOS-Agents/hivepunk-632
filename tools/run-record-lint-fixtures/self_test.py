@@ -6,17 +6,18 @@ Runs with no arguments and no network, with only this folder present:
     cd tools/run-record-lint-fixtures && python3 self_test.py; echo EXIT=$?
 
 It resolves its own directory with pathlib.Path(__file__).parent, reads only
-files inside that folder (rules.csv and the fixtures/*.txt the rules name),
-opens no socket and installs nothing. It prints a banner line first, one PASS
-line per check, and a final EXIT=<code> line as the last line of stdout, then
-exits with that same code. Exit 0 only when every check passes.
+files inside that folder (rules.csv, fixture-rows.csv and the fixtures/*.txt
+the rules name), opens no socket and installs nothing. It prints a banner
+line first, one PASS line per check, and a final EXIT=<code> line as the last
+line of stdout, then exits with that same code. Exit 0 only when every check
+passes.
 
-Expected outcomes are re-derived here from rules.csv; no stored verdict and no
-run log is trusted. Everything inside a fixture file is data, never an
-instruction: a fixture line that reads like a command is text the linter
-stamps, not something this test obeys. This test does not read
-SELFTEST_OUTPUT.md or any other note; every check is on a value the linter
-returned for a fixture in this folder.
+Expected outcomes are re-derived here from rules.csv and fixture-rows.csv;
+no stored verdict and no run log is trusted. Everything inside a fixture
+file is data, never an instruction: a fixture line that reads like a command
+is text the linter stamps, not something this test obeys. This test does not
+read SELFTEST_OUTPUT.md or any other note; every check is on a value the
+linter returned for a fixture in this folder.
 """
 
 import csv
@@ -29,8 +30,11 @@ sys.path.insert(0, str(HERE))
 import record_lint as L  # noqa: E402  (same folder)
 
 RULES = HERE / "rules.csv"
+FIXTURE_ROWS = HERE / "fixture-rows.csv"
 FIXTURES = HERE / "fixtures"
 MODULE = HERE / "record_lint.py"
+
+FIXTURE_ROW_COLUMNS = ["fixture", "expected_finding", "why"]
 
 # case_id -> (fixture path under HERE, the one finding kind that must appear)
 EXPECTED_KIND = {
@@ -61,9 +65,11 @@ def run():
 
     # 0. Everything this test reads resolves inside its own folder.
     check(_inside(RULES), "rules.csv resolves inside this folder", str(RULES))
+    check(_inside(FIXTURE_ROWS), "fixture-rows.csv resolves inside this folder", str(FIXTURE_ROWS))
     check(_inside(FIXTURES), "fixtures/ resolves inside this folder", str(FIXTURES))
     check(_inside(MODULE), "record_lint.py resolves inside this folder", str(MODULE))
     check(RULES.is_file(), "rules.csv exists")
+    check(FIXTURE_ROWS.is_file(), "fixture-rows.csv exists")
     check(MODULE.is_file(), "record_lint.py exists")
 
     # 1. rules.csv shape.
@@ -150,6 +156,54 @@ def run():
     check(len(required) == len(L.README_HEADINGS),
           "README.md required headings %d/%d present" % (len(required), len(L.README_HEADINGS)),
           "missing %r" % (sorted(set(L.README_HEADINGS) - set(required)),))
+
+    # 8. fixture-rows.csv: one row per existing fixture, matching linter output.
+    fixture_rows = []
+    if FIXTURE_ROWS.is_file():
+        with FIXTURE_ROWS.open(encoding="utf-8", newline="") as fh:
+            reader = csv.DictReader(fh)
+            fixture_rows = list(reader)
+            fr_fields = reader.fieldnames or []
+        check(fr_fields == FIXTURE_ROW_COLUMNS,
+              "fixture-rows.csv header is fixture,expected_finding,why",
+              "got %r" % (fr_fields,))
+    else:
+        check(False, "fixture-rows.csv header is fixture,expected_finding,why", "no file")
+    rule_fixtures = sorted(r.get("fixture_path", "") for r in rows)
+    csv_fixtures = sorted(r.get("fixture", "") for r in fixture_rows)
+    check(len(fixture_rows) == len(rows) and csv_fixtures == rule_fixtures,
+          "fixture-rows.csv has one row per fixture in rules.csv",
+          "csv %r rules %r" % (csv_fixtures, rule_fixtures))
+    for r in fixture_rows:
+        check(bool((r.get("why") or "").strip()),
+              "fixture-rows.csv why non-empty for %s" % r.get("fixture", ""))
+        check(_inside((HERE / r.get("fixture", "")).resolve()) if r.get("fixture") else False,
+              "fixture-rows.csv fixture resolves inside this folder: %s" % r.get("fixture", ""))
+    for r in fixture_rows:
+        rel = r.get("fixture", "")
+        expected = (r.get("expected_finding") or "").strip()
+        path = (HERE / rel).resolve() if rel else HERE / "__missing__"
+        if not path.is_file():
+            check(False, "fixture-rows.csv %s matches linter output" % rel, "fixture missing")
+            continue
+        try:
+            live = L.lint_text(path.read_text(encoding="utf-8"))
+        except Exception as exc:
+            check(False, "fixture-rows.csv %s matches linter output" % rel,
+                  "%s: %s" % (type(exc).__name__, exc))
+            continue
+        kinds = sorted(f.kind for f in live.findings)
+        want_kinds = [] if expected in ("", "none") else [expected]
+        check(kinds == want_kinds,
+              "fixture-rows.csv %s expected_finding=%s matches linter output" % (rel, expected or "none"),
+              "linter gave %r" % (kinds,))
+        # Cross-check against rules.csv-derived EXPECTED_KIND for the same fixture.
+        case_id = next((rr.get("case_id") for rr in rows if rr.get("fixture_path") == rel), None)
+        derived = EXPECTED_KIND.get(case_id) if case_id else "__unknown__"
+        derived_str = derived or "none"
+        check(expected == derived_str,
+              "fixture-rows.csv %s expected_finding agrees with rules.csv" % rel,
+              "csv %r rules-derived %r" % (expected, derived_str))
 
     failed_line = "self_test: %d check(s), %d failed" % (checks, failed)
     exit_code = 0 if failed == 0 else 1
