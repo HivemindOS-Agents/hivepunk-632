@@ -1,0 +1,190 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-16T23:55:42.763Z",
+  "subject": "Hugging Face Datasets Server and dataset card metadata: how dataset cards,…",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The pages support a narrow conclusion: Hugging Face's viewer Parquet export is an automatic, size- and visibility-gated conversion for public datasets, useful for column-efficient access via the /parquet endpoint. They do not support conclusions about dataset card metadata, so that part of the topic remains unconfirmed from these sources.",
+  "claims": [
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "The dataset viewer automatically converts and publishes public datasets less than 5GB on the Hub as Parquet files.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/en/parquet_process",
+      "quote": "The dataset viewer automatically converts and publishes public datasets less than 5GB on the Hub as Parquet files.",
+      "sourceId": "src-1",
+      "quoteSha256": "37d53117339c07ad6cf170d71761a24f83da31cf5b6906f53d8145718bb43122"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "If a dataset is already in Parquet format, it will be published as is.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/en/parquet_process",
+      "quote": "If the dataset is already in Parquet format, it will be published as is.",
+      "sourceId": "src-1",
+      "quoteSha256": "c386e5c76657ec69484c1235cb802fcc556efd7cd5e97dfab0fd47ef7c0e771a"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "For private datasets, the Parquet feature is provided if the repository is owned by a PRO user or an Enterprise Hub organization.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/en/parquet_process",
+      "quote": "For private datasets, the feature is provided if the repository is owned by a PRO user or an Enterprise Hub organization .",
+      "sourceId": "src-1",
+      "quoteSha256": "222233f85a8fb7e71ffa2f898e715d5d89161d6366b9fe2b6fc1f4c917a16c96"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "In Parquet, data is divided into chunks called row groups, and within each row group it is stored in columns rather than rows.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/parquet",
+      "quote": "In Parquet, data is divided into chunks called “row groups”, and within each row group, it is stored in columns rather than rows.",
+      "sourceId": "src-2",
+      "quoteSha256": "fe3bfd887f9fedb18d808dfda74c58d407d60dc0b49600020c72386c3d8d28ec"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Each row group column is compressed separately and contains metadata and statistics about min/max value and number of NULL values.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/parquet",
+      "quote": "Each row group column is compressed separately using the best compression algorithm depending on the data, and contains metadata and statistics (min/max value, number of NULL values) about the data it contains.",
+      "sourceId": "src-2",
+      "quoteSha256": "98c1bd1976a5fa5d7967160243bddefb007b90d1eddd839039038d6270edef9e"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "A Parquet file contains a single table, and if a dataset has multiple tables each table is stored in a separate Parquet file.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/parquet",
+      "quote": "A Parquet file contains a single table. If a dataset has multiple tables (e.g. multiple splits or subsets), each table is stored in a separate Parquet file.",
+      "sourceId": "src-2",
+      "quoteSha256": "8225b17ccba24551b53346472b83af59a01009b98db0c65b6d70521d06aeb68a"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Parquet files are published to the Hub on a specific refs/convert/parquet branch that parallels the main branch.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/parquet",
+      "quote": "The Parquet files are published to the Hub on a specific refs/convert/parquet branch (like this fancyzhx/amazon_polarity branch for example) that parallels the main branch.",
+      "sourceId": "src-2",
+      "quoteSha256": "55583a0d3e457913a751f4810c5f67e2755cb69d13aad9f0cab4739e608222c7"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "In order for the dataset viewer to generate a Parquet version of a dataset, the dataset must be public, or owned by a PRO user or an Enterprise Hub organization.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/parquet",
+      "quote": "In order for the dataset viewer to generate a Parquet version of a dataset, the dataset must be public , or owned by a PRO user or an Enterprise Hub organization .",
+      "sourceId": "src-2",
+      "quoteSha256": "9211781a41ab6aac4b97823664e6ee99467c698f402cf745af5b0a4f389c455c"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "The /parquet endpoint accepts the dataset name as its query parameter and its response is a JSON containing a list of the dataset's files in Parquet format.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/parquet",
+      "quote": "response = requests.get(API_URL, headers=headers) return response.json() data = query() The endpoint response is a JSON containing a list of the dataset’s files in the Parquet format.",
+      "sourceId": "src-2",
+      "quoteSha256": "855e096e8fea6f8b19ba52b516f35aa2631d5a6d85df8f1fde71e5283ffa8957"
+    },
+    {
+      "id": "c10",
+      "label": "FACT",
+      "text": "The ibm/duorc dataset has six Parquet files, corresponding to the test, train and validation splits of its two subsets ParaphraseRC and SelfRC.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/parquet",
+      "quote": "For example, the ibm/duorc dataset has six Parquet files, which corresponds to the test , train and validation splits of its two subsets, ParaphraseRC and SelfRC",
+      "sourceId": "src-2",
+      "quoteSha256": "9b0736518154d2247958d462ca97f0f255334e05aa8da547bbb98cd0ddb99647"
+    },
+    {
+      "id": "c11",
+      "label": "DERIVED",
+      "text": "Public dataset pages can expose one Parquet file per split/subset combination via the /parquet endpoint.",
+      "check": "page",
+      "inputs": [
+        "c6",
+        "c9",
+        "c10"
+      ],
+      "math": "c6 (multiple tables become separate files) + c9 (endpoint lists files as JSON) + c10 (six files = 3 splits x 2 subsets) together imply one file per split/subset combination for that example"
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Dataset card metadata fields and how dataset cards work on public dataset pages were not described in the pages read.",
+      "check": "page",
+      "missing": "A Hugging Face documentation page describing dataset card metadata that was actually read"
+    }
+  ],
+  "counts": {
+    "fact": 10,
+    "derived": 1,
+    "unknown": 1
+  },
+  "risks": [
+    "Datasets at or over the stated 5GB threshold are not covered by the automatic public conversion described on the page",
+    "Private datasets are gated: the feature is provided only if the repository is owned by a PRO user or an Enterprise Hub organization",
+    "Conversion to Parquet requires the dataset to be public, or owned by a PRO user or an Enterprise Hub organization",
+    "Pages read do not describe dataset card metadata fields, validation, or how cards affect the viewer, so card-based discoverability cannot be assessed from them",
+    "Pages read do not describe Datasets Server rate limits, authentication beyond an example Authorization header, or error handling for the /parquet endpoint"
+  ],
+  "unknowns": [
+    "Dataset card metadata fields and how dataset cards work on public dataset pages were not described in the pages read.: A Hugging Face documentation page describing dataset card metadata that was actually read"
+  ],
+  "wouldChangeMind": [
+    "A read documentation page describing dataset card metadata fields and their effect on public pages",
+    "A read page describing Parquet conversion behaviour for datasets over 5GB or for failed conversions",
+    "A read page documenting Datasets Server /parquet authentication, rate limits, or error responses"
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "Overview · Hugging Face",
+      "url": "https://huggingface.co/docs/dataset-viewer/en/parquet_process",
+      "finalUrl": "https://huggingface.co/docs/dataset-viewer/en/parquet_process",
+      "status": 200,
+      "fetchedAt": "2026-11-16T23:55:48.393Z",
+      "extractor": "page-text-v1",
+      "sha256": "ffad100c1aab6974f335874732c6b3afd46a846ebbd764c397e9ecc629734bd1",
+      "bytes": 90713,
+      "quote": "The dataset viewer automatically converts and publishes public datasets less than 5GB on the Hub as Parquet files.",
+      "quoteSha256": "37d53117339c07ad6cf170d71761a24f83da31cf5b6906f53d8145718bb43122"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "List Parquet files · Hugging Face",
+      "url": "https://huggingface.co/docs/dataset-viewer/parquet",
+      "finalUrl": "https://huggingface.co/docs/dataset-viewer/parquet",
+      "status": 200,
+      "fetchedAt": "2026-11-16T23:55:48.393Z",
+      "extractor": "page-text-v1",
+      "sha256": "020737935f1e9fb9fb129e11199a9b9d1e9b8929fd36c42370a12886a6107c53",
+      "bytes": 147848,
+      "quote": "In Parquet, data is divided into chunks called “row groups”, and within each row group, it is stored in columns rather than rows.",
+      "quoteSha256": "fe3bfd887f9fedb18d808dfda74c58d407d60dc0b49600020c72386c3d8d28ec"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-16-hugging-face-datasets-server-and-dataset-card-metadata-how-d.md",
+  "decidedBy": "bee"
+}
