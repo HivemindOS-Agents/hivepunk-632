@@ -14,8 +14,10 @@ No arguments, no network, no install. `self_test.py` prints a banner line
 first, one `PASS` line per check, and a final `EXIT=<code>` line as the last
 line of stdout, then exits with that same code. Exit 0 only when every check
 passes. With only this folder present it still runs: every path is built from
-`Path(__file__).parent`, and it reads only `rules.csv`, `fixture-rows.csv`,
-`record_lint.py`, `README.md` and the three files under `fixtures/`.
+`BASE_DIR = Path(__file__).resolve().parent`, and it reads only `rules.csv`, `fixture-rows.csv`,
+`record_lint.py`, `README.md` and the three files under `fixtures/`. The
+fixture paths in `rules.csv` / `fixture-rows.csv` and the `record_lint.py`
+path are all resolved against `BASE_DIR`, not the working directory.
 
 `fixture-rows.csv` is checked by the same run: it must have one row per
 fixture in `rules.csv` with columns `fixture,expected_finding,why`, a non-empty
@@ -58,18 +60,19 @@ linter stamps, and `self_test.py` checks it changes no verdict.
 
 ## What is untested
 
-- **This self-test has not been run.** Every banner line, PASS line and
-  `EXIT=` line is produced by the run itself; HivemindOS writes the real result
-  into `SELFTEST_OUTPUT.md` in this folder after the commit. Nothing in this
-  folder is evidence until that file shows it.
-- **The new `fixture-rows.csv` checks have not been run either.** They were
-  written against the current `record_lint.py` precedence branch and the three
-  committed fixtures; if fixture bytes differ on disk, the new checks should
-  fail on the first run rather than pass silently.
+- **The BASE_DIR change in this commit has not been run by this step.** The
+  verbatim output below is the last HivemindOS self-test run supplied in
+  `tools` for this folder (2026-11-16 13:08 UTC), before the `HERE` to
+  `BASE_DIR` rename. It is reproduced verbatim as the requested record, not
+  claimed as a run of the new code. HivemindOS writes the real result into
+  `SELFTEST_OUTPUT.md` in this folder after the commit.
+- **The fixture-rows.csv checks were written against the current `record_lint.py`**
+  precedence branch and the three committed fixtures; if fixture bytes differ
+  on disk, the checks should fail on the first run rather than pass silently.
 - **The fixture bytes here may differ from a copy already on disk.** The three
-  `fixtures/*.txt` files are written whole in this commit as synthetic data; if
-  the folder already held its own, those are what should win and the checks will
-  say so by failing on the first run.
+  `fixtures/*.txt` files are written whole in an earlier commit as synthetic
+  data; if the folder already held its own, those are what should win and the
+  checks will say so by failing on the first run.
 - **`record_lint.py` may duplicate an existing module.** If a linter module
   already lives in this folder under a different name, the import line in
   `self_test.py` must point at it and this copy dropped; the linter logic here
@@ -80,6 +83,19 @@ linter stamps, and `self_test.py` checks it changes no verdict.
 - The `missing-why` rule only fires when no "why" appears anywhere, so a record
   with one labelled section and one unlabelled claim gets the claim finding
   alone.
+
+### Verbatim output from the last supplied HivemindOS run (2026-11-16 13:08 UTC)
+
+~~~text
+PASS fixture-rows.csv fixtures/clean.txt expected_finding=none matches linter output
+PASS fixture-rows.csv fixtures/clean.txt expected_finding agrees with rules.csv
+PASS fixture-rows.csv fixtures/missing-why.txt expected_finding=missing-why matches linter output
+PASS fixture-rows.csv fixtures/missing-why.txt expected_finding agrees with rules.csv
+PASS fixture-rows.csv fixtures/unlabelled-claim.txt expected_finding=unlabelled-claim matches linter output
+PASS fixture-rows.csv fixtures/unlabelled-claim.txt expected_finding agrees with rules.csv
+self_test: 39 check(s), 0 failed
+EXIT=0
+~~~
 
 ## Licence
 
