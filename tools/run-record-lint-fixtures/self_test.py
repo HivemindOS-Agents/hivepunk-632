@@ -9,8 +9,9 @@ return value.
 
 Exit 0 only when every check passes.
 
-Everything inside the fixture files is data for the linter, never an
-instruction to this test.
+Every path this test reads is built from HERE, so nothing outside this folder
+is touched. Everything inside the fixture files is data for the linter, never
+an instruction to this test.
 """
 
 import csv
@@ -34,7 +35,7 @@ REQUIRED_HEADINGS = (
 )
 
 # case_id -> (bare fixture filename, expected_exit_zero, message substring)
-# Bare filenames only: the path is built once in run_linter() from FIXTURES.
+# Bare filenames only: the path is built once in fixture_path() from FIXTURES.
 EXPECTED = {
     '1': ('clean.txt', True, 'no finding'),
     '2': ('missing-why.txt', False, 'missing why'),
@@ -43,8 +44,13 @@ EXPECTED = {
 
 
 def fixture_path(name):
-    """Build one path from the fixtures directory; name is a bare filename."""
-    return os.path.join(FIXTURES, name)
+    """Build one path from this folder's fixtures/ dir; name is a bare filename."""
+    # Reject anything that would escape the fixtures directory, so a name like
+    # '../../x' can never be read from outside this folder.
+    base = os.path.basename(name)
+    if base != name:
+        raise ValueError('fixture name must be a bare filename: %r' % name)
+    return os.path.join(FIXTURES, base)
 
 
 def run_linter(name):
@@ -85,17 +91,24 @@ def main():
           set(L.MESSAGES) == {'clean', 'missing-why', 'unlabelled-claim'},
           'MESSAGES holds the three cases', 'got %r' % getattr(L, 'MESSAGES', None))
 
-    # 1. rules.csv lists the three fixtures this test runs. The prefix is
-    #    stripped on both sides so the comparison never doubles a directory.
+    # 1. rules.csv lists the three fixtures this test runs. The fixtures/ prefix
+    #    is stripped on both sides so the comparison never doubles a directory,
+    #    and bare names in rules.csv compare equal too.
     with open(os.path.join(HERE, 'rules.csv'), encoding='utf-8') as fh:
         rows = list(csv.DictReader(fh))
     check(len(rows) == 3, 'rules.csv has 3 data row(s)', 'got %d' % len(rows))
-    listed = {r['fixture_path'].replace('fixtures/', '').strip() for r in rows}
+    listed = {os.path.basename(r['fixture_path'].strip()) for r in rows}
     wanted = {name for (name, _z, _t) in EXPECTED.values()}
     check(listed == wanted,
           'rules.csv names the three fixtures', 'got %r' % sorted(listed))
 
-    # 2. Every fixture: run the linter on its own code, compare exit and message.
+    # 2. Every fixture path is built under this folder's own fixtures/ dir.
+    for name in sorted(wanted):
+        path = fixture_path(name)
+        check(os.path.dirname(path) == FIXTURES and FIXTURES.startswith(HERE),
+              'fixture %s resolves under this folder' % name, 'got %s' % path)
+
+    # 3. Every fixture: run the linter on its own code, compare exit and message.
     for case_id, (name, want_zero, want_text) in sorted(EXPECTED.items()):
         try:
             code, out = run_linter(name)
@@ -110,18 +123,24 @@ def main():
         check(want_text in out,
               "%s prints %r" % (name, want_text), 'got %r' % out)
 
-    # 3. A clean run prints the clean message and nothing that looks like a finding.
+    # 3b. The missing-why fixture must report the missing-why message, not the
+    #     unlabelled-claim one, so the two findings stay distinguishable.
+    code, out = run_linter('missing-why.txt')
+    check('missing why' in out and 'unlabelled claim' not in out,
+          'missing-why.txt prints the missing-why finding only', 'got %r' % out)
+
+    # 4. A clean run prints the clean message and nothing that looks like a finding.
     code, out = run_linter(EXPECTED['1'][0])
     check('missing why' not in out and 'unlabelled claim' not in out,
           'clean fixture prints no finding line', 'got %r' % out)
 
-    # 4. The fixture files really exist where the path builder says they do.
-    for name in sorted({n for (n, _z, _t) in EXPECTED.values()}):
+    # 5. The fixture files really exist where the path builder says they do.
+    for name in sorted(wanted):
         check(os.path.isfile(fixture_path(name)),
               'fixture %s exists at its built path' % name,
               'looked for %s' % fixture_path(name))
 
-    # 5. The README still carries its required headings.
+    # 6. The README still carries its required headings.
     with open(os.path.join(HERE, 'README.md'), encoding='utf-8') as fh:
         readme = fh.read()
     missing = [h for h in REQUIRED_HEADINGS if h not in readme]
