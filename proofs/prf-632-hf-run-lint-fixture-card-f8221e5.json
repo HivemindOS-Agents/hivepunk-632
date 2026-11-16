@@ -27,6 +27,11 @@
   "command": "git checkout f8221e5e6e17a375f6abfa14c3a2284a2a92e4c4 && cd tools/hf-run-lint-fixture-card && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-hf-run-lint-fixture-card-f8221e5.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43779789413",
-  "repro": "pending",
-  "peer": null
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "86",
+    "at": "2026-11-16T01:05:49Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43784185970"
+  }
 }
