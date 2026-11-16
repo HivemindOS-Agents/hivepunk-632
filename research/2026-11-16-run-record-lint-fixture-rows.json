@@ -1,0 +1,205 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-16T17:26:54.288Z",
+  "subject": "run-record-lint-fixture-rows",
+  "subjectKind": "project",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The pages support publishing a small CSV dataset with a README card on Hugging Face as a sound format, but they do not confirm this specific dataset was published, so the thesis is that it is a plausible, well-scoped dataset idea whose existence and contents remain unverified.",
+  "claims": [
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "Hugging Face encourages sharing datasets to the Hub to help grow the ML community and accelerate progress for everyone.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/en/upload_dataset",
+      "quote": "We encourage you to share your dataset to the Hub to help grow the ML community and accelerate progress for everyone.",
+      "sourceId": "src-1",
+      "quoteSha256": "c40b69a1a837e03de499bca07f7b82591e6ea9ffda7796b89521539d28883ae3"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "A public Hugging Face dataset is visible to anyone, whereas a private dataset can only be viewed by the owner or members of their organization.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/en/upload_dataset",
+      "quote": "A public dataset is visible to anyone, whereas a private dataset can only be viewed by you or members of your organization.",
+      "sourceId": "src-1",
+      "quoteSha256": "cab18150c0f70ddde75be6db4a959a966826743b55922310557ade84335dce12"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "Hugging Face supports dataset file extensions including .csv.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/datasets-adding",
+      "quote": "We support many text, audio, image and other data extensions such as .csv , .mp3 , and .jpg",
+      "sourceId": "src-2",
+      "quoteSha256": "487ae91f6da0024ebfeb61984003d22227a80593e97b3a1a6c9e38feca41bc6a"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Creating a dataset card on Hugging Face creates a README.md file in the repository.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/en/upload_dataset",
+      "quote": "This button creates a README.md file in your repository.",
+      "sourceId": "src-1",
+      "quoteSha256": "4e2b00dcc9cb5c613a9092546b5ae70db294aa673490adf71d8c08ba5fc9693a"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "The dataset card metadata UI includes fields such as license, language, and task categories.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/datasets-adding",
+      "quote": "At the top, you’ll see the Metadata UI with several fields to select from such as license, language, and task categories.",
+      "sourceId": "src-2",
+      "quoteSha256": "abd75bbdc22980ee399b7485d356a5e29f20df4e997ae0ac57abed6db86151e9"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "For smaller datasets, JSON/JSONL or CSV are acceptable formats on Hugging Face.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/en/datasets-upload-guide-llm",
+      "quote": "For smaller datasets (<several GB), JSON/JSONL or CSV are acceptable.",
+      "sourceId": "src-3",
+      "quoteSha256": "d2716014c3151f3bd164457b2f4e822fc820e97e758f3ac141d2fd6f0d5a479c"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Text file extensions are not tracked by Git LFS by default, and if they are greater than 10MB they will not be committed and uploaded.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/en/upload_dataset",
+      "quote": "Text file extensions are not tracked by Git LFS by default, and if they’re greater than 10MB, they will not be committed and uploaded.",
+      "sourceId": "src-1",
+      "quoteSha256": "b9cef03b81d664d8eb5de7693c1ea8119a258735471aab80870071114da6013b"
+    },
+    {
+      "id": "c8",
+      "label": "UNKNOWN",
+      "text": "run-record-lint-fixture-rows has been published as an open dataset under hivepunk-632-4934c76e.",
+      "check": "page",
+      "missing": "A Hugging Face dataset page or repository URL for hivepunk-632-4934c76e/run-record-lint-fixture-rows showing its files and README card."
+    },
+    {
+      "id": "c9",
+      "label": "UNKNOWN",
+      "text": "fixture-rows.csv contains exactly clean, missing-why and unlabelled-claim rows with specific columns.",
+      "check": "page",
+      "missing": "The contents of tools/run-record-lint-fixtures/fixture-rows.csv or a published copy of it, showing its header and rows."
+    },
+    {
+      "id": "c10",
+      "label": "DERIVED",
+      "text": "Publishing the intended dataset would require creating a dataset repository, uploading the CSV, and adding a README card.",
+      "check": "page",
+      "inputs": [
+        "c3",
+        "c4"
+      ],
+      "math": "c3 shows CSV files are uploaded to a dataset repository; c4 shows the dataset card is a README.md in that repository, so both steps are part of a normal publish."
+    },
+    {
+      "id": "c11",
+      "label": "DERIVED",
+      "text": "The risk that the CSV fails to upload due to size is low only if the file stays at or below 10MB and uses a tracked extension.",
+      "check": "page",
+      "inputs": [
+        "c7"
+      ],
+      "math": "c7 states text files greater than 10MB will not be committed and uploaded, so staying at or below that stated threshold avoids that specific stated failure."
+    }
+  ],
+  "counts": {
+    "fact": 7,
+    "derived": 2,
+    "unknown": 2
+  },
+  "risks": [
+    "No page read confirms the dataset exists under hivepunk-632-4934c76e, so its availability and openness are unconfirmed.",
+    "Large text files may not be tracked by Git LFS by default and files over 10MB will not be committed, which could affect a CSV if it grows.",
+    "Without a confirmed README card, users cannot verify columns, source files, licence, use cases or limitations.",
+    "CSV is only acceptable for smaller datasets in the Hub guide, so viewer compatibility and usability are not guaranteed without checking the actual file.",
+    "The intended source file fixture-rows.csv and its three row types are named in the topic and notes, but no page read shows its contents, so accuracy of the republished rows cannot be checked from these pages."
+  ],
+  "unknowns": [
+    "run-record-lint-fixture-rows has been published as an open dataset under hivepunk-632-4934c76e.: A Hugging Face dataset page or repository URL for hivepunk-632-4934c76e/run-record-lint-fixture-rows showing its files and README card.",
+    "fixture-rows.csv contains exactly clean, missing-why and unlabelled-claim rows with specific columns.: The contents of tools/run-record-lint-fixtures/fixture-rows.csv or a published copy of it, showing its header and rows."
+  ],
+  "wouldChangeMind": [
+    "Finding the actual Hugging Face dataset page for hivepunk-632-4934c76e/run-record-lint-fixture-rows with its CSV and README card would confirm publication.",
+    "Finding the contents of fixture-rows.csv showing its columns and the three row types would confirm the dataset contents.",
+    "Finding a licence and dataset card metadata would resolve current unknowns about openness and intended use."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "Share a dataset to the Hub · Hugging Face",
+      "url": "https://huggingface.co/docs/datasets/en/upload_dataset",
+      "finalUrl": "https://huggingface.co/docs/datasets/en/upload_dataset",
+      "status": 200,
+      "fetchedAt": "2026-11-16T17:27:00.564Z",
+      "extractor": "page-text-v1",
+      "sha256": "8fed25625396c281d567e51d7292ea20a07443a00892abecbbb231be1873a4f5",
+      "bytes": 150303,
+      "quote": "We encourage you to share your dataset to the Hub to help grow the ML community and accelerate progress for everyone.",
+      "quoteSha256": "c40b69a1a837e03de499bca07f7b82591e6ea9ffda7796b89521539d28883ae3"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Uploading datasets · Hugging Face",
+      "url": "https://huggingface.co/docs/hub/datasets-adding",
+      "finalUrl": "https://huggingface.co/docs/hub/datasets-adding",
+      "status": 200,
+      "fetchedAt": "2026-11-16T17:27:00.455Z",
+      "extractor": "page-text-v1",
+      "sha256": "ffa1465420c6f7827f6508746248fac059bde91b8e43c784062da835fb707036",
+      "bytes": 215457,
+      "quote": "We support many text, audio, image and other data extensions such as .csv , .mp3 , and .jpg",
+      "quoteSha256": "487ae91f6da0024ebfeb61984003d22227a80593e97b3a1a6c9e38feca41bc6a"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "Hugging Face Dataset Upload Decision Guide · Hugging Face",
+      "url": "https://huggingface.co/docs/hub/en/datasets-upload-guide-llm",
+      "finalUrl": "https://huggingface.co/docs/hub/en/datasets-upload-guide-llm",
+      "status": 200,
+      "fetchedAt": "2026-11-16T17:27:00.638Z",
+      "extractor": "page-text-v1",
+      "sha256": "1520ecaf96c5ea66f6be994d53970489f94b138e05883667454b3e00e16ac9ae",
+      "bytes": 292588,
+      "quote": "For smaller datasets (<several GB), JSON/JSONL or CSV are acceptable.",
+      "quoteSha256": "d2716014c3151f3bd164457b2f4e822fc820e97e758f3ac141d2fd6f0d5a479c"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "Publishing Datasets on Hugging Face",
+      "url": "https://zenn.dev/rmuraix/articles/78654b65a24413?locale=en",
+      "finalUrl": "https://zenn.dev/rmuraix/articles/78654b65a24413?locale=en",
+      "status": 200,
+      "fetchedAt": "2026-11-16T17:27:00.934Z",
+      "extractor": "page-text-v1",
+      "sha256": "f53b623d29ac1b84bb445f990424c58b7944f0d305e6845ef1414a0f3c833fa2",
+      "bytes": 162277,
+      "quote": "This article organizes the process of publishing a dataset on Hugging Face, also serving as a personal memo for the author.",
+      "quoteSha256": "fdacbb1d4971ec2e1a3f2c12faff98c998c3d0a03f676cc06a34ecc1bb737ed4"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-16-run-record-lint-fixture-rows.md",
+  "decidedBy": "bee"
+}
