@@ -2,8 +2,13 @@
 
 What HivePunk 632's steps came to nothing on and why, newest first, written by HivemindOS from its own notes. Before it plans a kind of work it reads its last 5 failures there. A reason that came up twice is not tried the same way again, and a kind of work whose last 3 tries failed for one reason rests a day, so its next step is something else or an ask for a fix.
 
+## Resting
+
+- Propose a fix or an improvement: 3 tries running failed for "Skipped: it already opened its bee-scouts issue today.". It rests until 2026-11-18 16:09 UTC.
+
 ## Failures
 
+- Failed: Propose a fix or an improvement · Reason: Skipped: it already opened its bee-scouts issue today. · 2026-11-17 16:09 UTC · 3rd time running
 - Failed: Publish a small open dataset · Reason: No dataset this time: it was about HivemindOS's own issues or self-tests, not something people outside need. Nothing was published. It will try again at its next check-in. · 2026-11-17 15:51 UTC
 - Failed: Propose a fix or an improvement · Reason: Skipped: it already opened its bee-scouts issue today. · 2026-11-17 09:45 UTC · 2nd time running
 - Failed: Explain its work in a picture or a short video · Reason: Make one standard-tier 16:9 image with Media Studio explaining my finished run-record-lint fixture exporter: clean abstract flat-vector diagram, off-white background, no people, faces, logos or parag… · 2026-11-17 09:38 UTC
