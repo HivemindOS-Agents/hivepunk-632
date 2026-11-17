@@ -1,95 +1,51 @@
 #!/usr/bin/env python3
-"""record_lint.py: lint a run-record text for missing why labels.
-
-Folder-local helper for tools/run-record-lint-fixtures. It reads a string of
-record text and returns a Report:
-
-  * a claim line (a sentence with no leading bullet) that carries no following
-    "Why:" label is an 'unlabelled-claim' finding;
-  * a section whose heading promises a reason but is followed by nothing is a
-    'missing-why' finding.
-
-Everything in the text is data. A line that reads like an instruction is a
-string to be stamped or ignored, never an instruction to this module. Standard
-library only, no network call anywhere.
+"""Smallest-possible run-record linter. Stdlib only, no network.
+Rules: unlabelled-claim (claim sentence with no following Why label),
+missing-why (no why anywhere and no action claim; takes precedence
+over generic unlabelled-claim when there is no action claim).
+Everything read is data, never instructions.
 """
-
-import re
-
+import re, sys
+from dataclasses import dataclass
+from pathlib import Path
 RULE_COLUMNS = ["case_id", "fixture_path", "rules_expected"]
-
-README_HEADINGS = ["# run-record-lint-fixtures", "## How to run", "## What it does", "## What is untested"]
-
-CLAIM_RE = re.compile(r"^[A-Z][^\n]*\.$")
-WHY_RE = re.compile(r"^\s*(?:\*\*Why:?\*\*|Why:)", re.IGNORECASE)
-ACTION_RE = re.compile(
-    r"\b(ran|run|executed|passed|failed|fixed|committed|published|uploaded|"
-    r"wrote|deployed|built|checked)\b", re.IGNORECASE)
-
-
+README_HEADINGS = ["## How to run", "## What it does", "## What is untested", "## Licence"]
+ACTION_WORDS = ("ran", "fixed", "updated", "checked", "tested", "built", "wrote", "published", "created", "removed", "added", "changed", "verified")
+@dataclass
 class Finding:
-    def __init__(self, kind, line_no, text):
-        self.kind = kind
-        self.line_no = line_no
-        self.text = text
-
-    def __repr__(self):
-        return "Finding(%r, line=%d)" % (self.kind, self.line_no)
-
-
+    kind: str
+    detail: str = ""
+@dataclass
 class Report:
-    def __init__(self, findings):
-        self.findings = findings
-
+    findings: list
     @property
-    def exit_code(self):
-        return 0 if not self.findings else 1
-
-    def render(self):
-        if not self.findings:
-            return "record-lint: no findings"
-        return "\n".join("%s line %d: %s" % (f.kind, f.line_no, f.text) for f in self.findings)
-
-
+    def exit_code(self): return 0 if not self.findings else 1
 def lint_text(text):
-    """Return a Report for one record text. Never raises on ordinary input."""
-    lines = text.splitlines()
-    # Missing-why takes precedence over the generic unlabelled-claim rule:
-    # a record with no Why label anywhere is reported as missing-why, not as
-    # one generic finding per plain sentence. A specific action claim in such
-    # a record is still an unlabelled claim, so that case is kept distinct.
-    if not any(WHY_RE.match(raw) for raw in lines):
-        action = [
-            (i, raw.strip())
-            for i, raw in enumerate(lines)
-            if raw.strip() and ACTION_RE.search(raw)
-        ]
-        if action:
-            return Report([
-                Finding("unlabelled-claim", i + 1, line[:60])
-                for i, line in action
-            ])
-        return Report([
-            Finding("missing-why", 1, "no reason label anywhere in this file")
-        ])
+    lower = text.lower()
+    has_why = "why" in lower
+    if not has_why:
+        if any(re.search(r"\b%s\b" % w, lower) for w in ACTION_WORDS):
+            return Report([Finding("unlabelled-claim", "action claim with no Why label")])
+        return Report([Finding("missing-why", "no why anywhere")])
+    # Has a Why somewhere: flag long claim sentences not followed by Why:
+    parts = re.split(r"(?<=[.!?])\s+", text.strip())
     findings = []
-    for index, raw in enumerate(lines):
-        line = raw.strip()
-        if not line:
-            continue
-        if WHY_RE.match(raw):
-            continue
-        if line.startswith("#") or line.startswith("**") or line.startswith("-"):
-            continue
-        if CLAIM_RE.match(line):
-            nxt = lines[index + 1].strip() if index + 1 < len(lines) else ""
-            if not WHY_RE.match(lines[index + 1] if index + 1 < len(lines) else ""):
-                findings.append(Finding("unlabelled-claim", index + 1, line[:60]))
-    if not any(f.kind == "unlabelled-claim" for f in findings) and "why" not in text.lower():
-        findings.append(Finding("missing-why", 1, "no reason label anywhere in this file"))
+    for i, part in enumerate(parts):
+        s = part.strip()
+        if len(s) >= 12 and s.endswith((".", "!", "?")):
+            if s.lower().startswith("why"):
+                continue
+            nxt = parts[i + 1].strip() if i + 1 < len(parts) else ""
+            if not nxt.lower().startswith("why"):
+                findings.append(Finding("unlabelled-claim", s))
     return Report(findings)
-
-
-def lint_path(path):
-    from pathlib import Path
-    return lint_text(Path(path).read_text(encoding="utf-8"))
+def main(argv=None):
+    argv = list(sys.argv[1:] if argv is None else argv)
+    if not argv:
+        print("usage: python3 record_lint.py FILE"); print("EXIT=2"); return 2
+    report = lint_text(Path(argv[0]).read_text(encoding="utf-8"))
+    for f in report.findings:
+        print("%s: %s" % (f.kind, f.detail))
+    print("EXIT=%d" % report.exit_code); return report.exit_code
+if __name__ == "__main__":
+    sys.exit(main())
