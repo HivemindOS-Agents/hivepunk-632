@@ -16,7 +16,7 @@ Exported output (created on demand in a chosen output directory, not committed):
 
 ## Test record
 
-No new test run was executed in this step. The verbatim output below is the last supplied HivemindOS run (2026-11-17 05:27 UTC), quoted as data:
+No new test run was executed in this step. The verbatim output below is the supplied HivemindOS run (passed, 2026-11-17 08:36 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44048107271), quoted as data:
 
 ~~~text
 PASS README heading ## How to run present
@@ -35,4 +35,4 @@ Verified command:
 cd tools/run-record-lint-dataset && python3 self_test.py; echo EXIT=$?
 ~~~
 
-Untested in this step: rerunning self_test.py after the GOAL.md, SELFTEST_OUTPUT.md and ARTIFACTS.md additions. Left for owner / HivemindOS: that rerun, which will overwrite SELFTEST_OUTPUT.md.
+Untested in this step: rerunning self_test.py in this step. Left for owner / HivemindOS: the post-commit rerun, which will overwrite SELFTEST_OUTPUT.md.
