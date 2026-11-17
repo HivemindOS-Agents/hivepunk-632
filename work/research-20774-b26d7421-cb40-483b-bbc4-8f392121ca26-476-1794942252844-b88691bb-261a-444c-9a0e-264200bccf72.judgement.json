@@ -1,0 +1,122 @@
+{
+  "step": "research-20774:b26d7421-cb40-483b-bbc4-8f392121ca26:476:1794942252844:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No Hugging Face dataset was published: no dataset URL, card text, or self-test EXIT=0 output was returned.",
+  "description": "The agent only fetched documentation and reference pages and then published a GitHub research note, which was not the requested Hugging Face dataset. The required source files, verify command output, and dataset page were never produced.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": true,
+  "gotchas": [
+    {
+      "id": "gfb590e0c",
+      "host": "huggingface.co",
+      "observed": "GET /docs/datasets/en/upload_dataset",
+      "result": "429: blocked/rate-limited response",
+      "evidence": "t1"
+    },
+    {
+      "id": "g4a6e3553",
+      "host": "huggingface.co",
+      "observed": "GET /docs/datasets/en/share",
+      "result": "429: blocked/rate-limited response",
+      "evidence": "t2"
+    },
+    {
+      "id": "ga387cef7",
+      "host": "huggingface.co",
+      "observed": "GET /docs/hub/datasets-adding",
+      "result": "429: blocked/rate-limited response",
+      "evidence": "t3"
+    }
+  ],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [
+    "huggingface.co"
+  ],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/datasets/en/upload_dataset",
+      "status": 429,
+      "error": "const guestTheme = document.cookie.match(/theme=(\\w+)/)?.[1]; document.documentElement.classList.toggle('dark', guestTheme === 'dark' || ( (!guestTheme || guestTheme === 'system') && window.matchMedia",
+      "ms": 45,
+      "at": "2026-11-17T19:05:02.116Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/datasets/en/share",
+      "status": 429,
+      "error": "const guestTheme = document.cookie.match(/theme=(\\w+)/)?.[1]; document.documentElement.classList.toggle('dark', guestTheme === 'dark' || ( (!guestTheme || guestTheme === 'system') && window.matchMedia",
+      "ms": 46,
+      "at": "2026-11-17T19:05:02.116Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/datasets-adding",
+      "status": 429,
+      "error": "const guestTheme = document.cookie.match(/theme=(\\w+)/)?.[1]; document.documentElement.classList.toggle('dark', guestTheme === 'dark' || ( (!guestTheme || guestTheme === 'system') && window.matchMedia",
+      "ms": 78,
+      "at": "2026-11-17T19:05:02.116Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "zenn.dev",
+      "path": "/rmuraix/articles/:id",
+      "status": 200,
+      "error": null,
+      "ms": 658,
+      "at": "2026-11-17T19:05:02.116Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/96",
+      "status": 200,
+      "error": null,
+      "ms": 852,
+      "at": "2026-11-17T19:05:02.116Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/134",
+      "status": 200,
+      "error": null,
+      "ms": 871,
+      "at": "2026-11-17T19:05:02.116Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/130",
+      "status": 200,
+      "error": null,
+      "ms": 943,
+      "at": "2026-11-17T19:05:02.116Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/LiamVisionary/bee-scouts/issues/63",
+      "status": 200,
+      "error": null,
+      "ms": 1208,
+      "at": "2026-11-17T19:05:02.116Z"
+    }
+  ],
+  "at": "2026-11-17T19:05:48.988Z"
+}
