@@ -1,0 +1,236 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-17T09:22:48.740Z",
+  "subject": "Angais/pixel-art-atlas-1.4m",
+  "subjectKind": "project",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "This is a very large, freely reusable synthetic sprite corpus made practically accessible by a linked API/viewer, but its value is limited by unreviewed captions and unconfirmed dataset-level licence text. I conclude it is worth using for prototyping and search, not as a verified, rights-cleared asset library without further checks.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "thantaigocua1515-cmd/pixel-art-api has 50 raw commits in the last 30 days, 46 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/thantaigocua1515-cmd/pixel-art-api/commits?per_page=50&since=2026-10-18T09:22:55.191Z",
+      "sourceId": "src-6"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is 09808ee, on 2026-11-17.",
+      "check": "shipping",
+      "source": "https://github.com/thantaigocua1515-cmd/pixel-art-api/commit/09808eeac7a469a1cb12080c3cd51f5e1bca3a6a"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "The dataset contains 1,409,404 synthetic game sprites with English captions, covering 6,194 training subjects.",
+      "check": "page",
+      "source": "https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m",
+      "quote": "1,409,404 synthetic game sprites with English captions, covering 6,194 training subjects.",
+      "sourceId": "src-1",
+      "quoteSha256": "f2754e20fd445b526c772344c1d2f70a15459d1db064ec668be30c432990df19"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Each sprite is a native 16x16 image with a transparent background.",
+      "check": "page",
+      "source": "https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m",
+      "quote": "Each sprite is a native 16×16 image with a transparent background.",
+      "sourceId": "src-1",
+      "quoteSha256": "9fb01685eb1acfc212e2b5c22d5e5ce44a3ee8ced6bc83bb520036caa7d02722"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "The images were generated from text prompts with Krea 2 Turbo and a pixel art LoRA.",
+      "check": "page",
+      "source": "https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m",
+      "quote": "The images were generated from text prompts with Krea 2 Turbo and a pixel art LoRA.",
+      "sourceId": "src-1",
+      "quoteSha256": "a134ef47754dae57f00ad22971d07161faf53dc469c1693b1ec3b958d488a729"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "The viewer lists train with 1.41M rows and validation with 4.1k rows.",
+      "check": "page",
+      "source": "https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m",
+      "quote": "Split (2) train · 1.41M rows train (1.41M rows) validation (4.1k rows)",
+      "sourceId": "src-1",
+      "quoteSha256": "5c644c5cfcfe172309b1bfb016e8e29e9508392ec40af8756c2f7579fc3c37b4"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Viewer fields include image width (px) 16, caption, subject, and row_id.",
+      "check": "page",
+      "source": "https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m",
+      "quote": "image image width (px) 16 16 caption string lengths 2 96 subject string lengths 2 36 row_id int32 0 1.41M",
+      "sourceId": "src-1",
+      "quoteSha256": "54e720d9e417983e3881cbe0bdc7e53033e8a5cc22e94470ff988d32d522d0dd"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "The dataset tree lists pixel-art-16x16-1.4m.zip at 259 MB.",
+      "check": "page",
+      "source": "https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m/tree/main",
+      "quote": "pixel-art-16x16-1.4m.zip Safe 259 MB",
+      "sourceId": "src-2",
+      "quoteSha256": "47a7d3e6b08562c627e8d2ab06ae72e7376b0b566b586822b731ebb1aa208f84"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "The linked pixel-art-api repository says the dataset was released by its author under CC0 1.0.",
+      "check": "page",
+      "source": "https://github.com/thantaigocua1515-cmd/pixel-art-api",
+      "quote": "released by the dataset author under CC0 1.0",
+      "sourceId": "src-3",
+      "quoteSha256": "3433e87269d63b3226006759a57228d1519c4d7c124fe910147acf58fd361594"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "Image-caption agreement has not been systematically reviewed.",
+      "check": "page",
+      "source": "https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m",
+      "quote": "Image–caption agreement has not been systematically reviewed.",
+      "sourceId": "src-1",
+      "quoteSha256": "9e3bc0ee6115a1c4dcd50038ac019a927cc6871626e347f50b8c9c8e75670a03"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "The linked API lets users search and hot-link 1,409,404 free 16x16 pixel-art sprites (6,194 subjects) through a tiny JSON API.",
+      "check": "page",
+      "source": "https://github.com/thantaigocua1515-cmd/pixel-art-api",
+      "quote": "Search and hot-link 1,409,404 free 16×16 pixel-art sprites (6,194 subjects), 244 animated VFX , 841 sound effects , 4,045 3D models and 83 Kenney asset packs through a tiny JSON API",
+      "sourceId": "src-3",
+      "quoteSha256": "8fa042b60fc2963e401afd458d2333fb7db0d77cf91a437e23b11733f55b245b"
+    },
+    {
+      "id": "c10",
+      "label": "FACT",
+      "text": "thantaigocua1515-cmd/pixel-art-api has 50 raw commits in the last 30 days, 46 of them real work.",
+      "check": "page",
+      "source": "https://api.github.com/repos/thantaigocua1515-cmd/pixel-art-api/commits?per_page=50&since=2026-10-18T09:22:55.191Z",
+      "sourceId": "src-6"
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "The dataset's own LICENSE file terms match CC0 1.0.",
+      "check": "page",
+      "missing": "The contents of the dataset LICENSE file listed at 396 Bytes in the tree page; only linked repositories stated CC0."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "The dataset has substantial direct downloads, likes or reuse on Hugging Face.",
+      "check": "page",
+      "missing": "Dataset download/like/fork counts, which were not shown on the pages read."
+    }
+  ],
+  "counts": {
+    "fact": 12,
+    "derived": 0,
+    "unknown": 2
+  },
+  "risks": [
+    "Captions are approximate and image-caption agreement has not been systematically reviewed, so labels cannot be trusted without spot-checking.",
+    "The pixel-art-api README states the release does not grant rights in third-party material or trademarks, a risk for commercial game use.",
+    "The pages do not show the dataset LICENSE file contents, so the CC0 claim rests on linked repositories rather than the dataset file itself.",
+    "Sprites are synthetic, generated with Krea 2 Turbo and a pixel art LoRA, raising provenance and model/LoRA licence questions the pages do not answer.",
+    "The 259 MB zip and 1.41M-row viewer scale may be cumbersome to download and inspect, and no download, like or reuse counts for the dataset itself were shown."
+  ],
+  "unknowns": [
+    "The dataset's own LICENSE file terms match CC0 1.0.: The contents of the dataset LICENSE file listed at 396 Bytes in the tree page; only linked repositories stated CC0.",
+    "The dataset has substantial direct downloads, likes or reuse on Hugging Face.: Dataset download/like/fork counts, which were not shown on the pages read."
+  ],
+  "wouldChangeMind": [
+    "Finding the dataset LICENSE file stating something other than CC0 1.0, or excluding the sprites.",
+    "Finding a systematic caption audit showing high error rates, or conversely a verified audit showing high agreement.",
+    "Finding authoritative HF download/reuse metrics showing negligible or, conversely, very high adoption."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "Angais/pixel-art-atlas-1.4m · Datasets at Hugging Face",
+      "url": "https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m",
+      "finalUrl": "https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m",
+      "status": 200,
+      "fetchedAt": "2026-11-17T09:22:54.663Z",
+      "extractor": "page-text-v1",
+      "sha256": "d79b46aee5bbe48729012ff17c435a8652c95b51792c4e8b8a0280d5a9e72495",
+      "bytes": 513381,
+      "quote": "1,409,404 synthetic game sprites with English captions, covering 6,194 training subjects.",
+      "quoteSha256": "f2754e20fd445b526c772344c1d2f70a15459d1db064ec668be30c432990df19"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Angais/pixel-art-atlas-1.4m at main",
+      "url": "https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m/tree/main",
+      "finalUrl": "https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m/tree/main",
+      "status": 200,
+      "fetchedAt": "2026-11-17T09:22:54.772Z",
+      "extractor": "page-text-v1",
+      "sha256": "fce367094732179d4f0b322425fd5c5e5d69b5d89ce4f574870e26789fd492ec",
+      "bytes": 143315,
+      "quote": "pixel-art-16x16-1.4m.zip Safe 259 MB",
+      "quoteSha256": "47a7d3e6b08562c627e8d2ab06ae72e7376b0b566b586822b731ebb1aa208f84"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "GitHub - thantaigocua1515-cmd/pixel-art-api: Searchable API + viewer for the Angais pixel-art-atlas-1.4m CC0 dataset: 1,409,404 sprites (16x",
+      "url": "https://github.com/thantaigocua1515-cmd/pixel-art-api",
+      "finalUrl": "https://github.com/thantaigocua1515-cmd/pixel-art-api",
+      "status": 200,
+      "fetchedAt": "2026-11-17T09:22:55.191Z",
+      "extractor": "page-text-v1",
+      "sha256": "9a164586310a0f313963ff554a37dc18326bc866a8fad0f7ef4c4863a3357693",
+      "bytes": 237031,
+      "quote": "released by the dataset author under CC0 1.0",
+      "quoteSha256": "3433e87269d63b3226006759a57228d1519c4d7c124fe910147acf58fd361594"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "GitHub - camenduru/pixel-art-atlas · GitHub",
+      "url": "https://github.com/camenduru/pixel-art-atlas",
+      "finalUrl": "https://github.com/camenduru/pixel-art-atlas",
+      "status": 200,
+      "fetchedAt": "2026-11-17T09:22:55.191Z",
+      "extractor": "page-text-v1",
+      "sha256": "d8c38305937e213a4ce1f228eb8f30846ff0f51e2759fbf4f3a041c43d96459f",
+      "bytes": 201618,
+      "quote": "You switched accounts on another tab or window.",
+      "quoteSha256": "4ac799df5144579b343a658cf230d3bccc74d2647af5ca068556e9f00cf45c44"
+    },
+    {
+      "id": "src-6",
+      "type": "api",
+      "title": "GitHub commits of thantaigocua1515-cmd/pixel-art-api",
+      "url": "https://api.github.com/repos/thantaigocua1515-cmd/pixel-art-api/commits?per_page=50&since=2026-10-18T09:22:55.191Z",
+      "fetchedAt": "2026-11-17T09:22:48.740Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "f6fee5e000920d1d8fd88f5b6bc534b86c67a1e37c64a35e4f90601ee03ae2af"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-17-angais-pixel-art-atlas-1-4m.md",
+  "decidedBy": "bee"
+}
