@@ -1,0 +1,134 @@
+{
+  "step": "own-research-20261117T061356Z",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No sourced note or receipt JSON was written; output states no note was written.",
+  "description": "The agent attempted official Hugging Face documentation pages but received 429 responses, obtained one GitHub documentation page, and wrote neither the requested repository note nor the research receipt.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [
+    {
+      "id": "g546de3bc",
+      "host": "huggingface.co",
+      "observed": "GET /docs/datasets/en/package_reference/main_classes",
+      "result": "429",
+      "evidence": "t1"
+    },
+    {
+      "id": "geee2ef15",
+      "host": "huggingface.co",
+      "observed": "GET /docs/dataset-viewer/en/index",
+      "result": "429",
+      "evidence": "t2"
+    },
+    {
+      "id": "g70ba6bb4",
+      "host": "huggingface.co",
+      "observed": "GET /docs/hub/en/datasets-viewer-configure",
+      "result": "429",
+      "evidence": "t3"
+    },
+    {
+      "id": "gde48819e",
+      "host": "huggingface.co",
+      "observed": "GET /docs/hub/datasets-data-files-configuration",
+      "result": "429",
+      "evidence": "t4"
+    },
+    {
+      "id": "g6d9fa172",
+      "host": "huggingface.co",
+      "observed": "GET /docs/hub/en/data-studio",
+      "result": "429",
+      "evidence": "t5"
+    }
+  ],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/datasets/en/package_reference/main_classes",
+      "status": 429,
+      "error": "const guestTheme = document.cookie.match(/theme=(\\w+)/)?.[1]; document.documentElement.classList.toggle('dark', guestTheme === 'dark' || ( (!guestTheme || guestTheme === 'system') && window.matchMedia",
+      "ms": 35,
+      "at": "2026-11-17T06:14:03.242Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/dataset-viewer/en/index",
+      "status": 429,
+      "error": "const guestTheme = document.cookie.match(/theme=(\\w+)/)?.[1]; document.documentElement.classList.toggle('dark', guestTheme === 'dark' || ( (!guestTheme || guestTheme === 'system') && window.matchMedia",
+      "ms": 35,
+      "at": "2026-11-17T06:14:03.242Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/en/datasets-viewer-configure",
+      "status": 429,
+      "error": "const guestTheme = document.cookie.match(/theme=(\\w+)/)?.[1]; document.documentElement.classList.toggle('dark', guestTheme === 'dark' || ( (!guestTheme || guestTheme === 'system') && window.matchMedia",
+      "ms": 35,
+      "at": "2026-11-17T06:14:03.242Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/datasets-data-files-configuration",
+      "status": 429,
+      "error": "const guestTheme = document.cookie.match(/theme=(\\w+)/)?.[1]; document.documentElement.classList.toggle('dark', guestTheme === 'dark' || ( (!guestTheme || guestTheme === 'system') && window.matchMedia",
+      "ms": 35,
+      "at": "2026-11-17T06:14:03.242Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/en/data-studio",
+      "status": 429,
+      "error": "const guestTheme = document.cookie.match(/theme=(\\w+)/)?.[1]; document.documentElement.classList.toggle('dark', guestTheme === 'dark' || ( (!guestTheme || guestTheme === 'system') && window.matchMedia",
+      "ms": 45,
+      "at": "2026-11-17T06:14:03.242Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/dataset-viewer/en/quick_start",
+      "status": 429,
+      "error": "const guestTheme = document.cookie.match(/theme=(\\w+)/)?.[1]; document.documentElement.classList.toggle('dark', guestTheme === 'dark' || ( (!guestTheme || guestTheme === 'system') && window.matchMedia",
+      "ms": 65,
+      "at": "2026-11-17T06:14:03.242Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/en/datasets-viewer",
+      "status": 429,
+      "error": "const guestTheme = document.cookie.match(/theme=(\\w+)/)?.[1]; document.documentElement.classList.toggle('dark', guestTheme === 'dark' || ( (!guestTheme || guestTheme === 'system') && window.matchMedia",
+      "ms": 65,
+      "at": "2026-11-17T06:14:03.242Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/huggingface/hub-docs/blob/main/docs/hub/datasets-data-files-configuration.md",
+      "status": 200,
+      "error": null,
+      "ms": 437,
+      "at": "2026-11-17T06:14:03.242Z"
+    }
+  ],
+  "at": "2026-11-17T06:14:13.959Z"
+}
