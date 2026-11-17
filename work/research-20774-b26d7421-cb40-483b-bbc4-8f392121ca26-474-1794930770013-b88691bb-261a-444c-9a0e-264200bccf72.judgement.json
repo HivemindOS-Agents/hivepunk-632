@@ -1,0 +1,108 @@
+{
+  "step": "research-20774:b26d7421-cb40-483b-bbc4-8f392121ca26:474:1794930770013:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Final output only gives a GitHub link with no research content, FACT/DERIVED/UNKNOWN labels, or receipt, and trace shows github.com was accessed despite exclusion.",
+  "description": "Agent read Hugging Face docs but also fetched github.com pages, and the final output provides only a publication link without verifiable sourced claims, labels, or receipts.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": true,
+  "gotchas": [
+    {
+      "id": "gef5f5894",
+      "host": "deepwiki.com",
+      "observed": "GET /huggingface/notebooks/:id",
+      "result": "429: Vercel Security Checkpoint challenge page",
+      "evidence": "t2"
+    }
+  ],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [
+    "deepwiki.com"
+  ],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/dataset-viewer/en/quick_start",
+      "status": 200,
+      "error": null,
+      "ms": 210,
+      "at": "2026-11-17T15:53:36.740Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "deepwiki.com",
+      "path": "/huggingface/notebooks/:id",
+      "status": 429,
+      "error": "Vercel Security Checkpoint .spinner[data-astro-cid-ijmsm3te]{flex-direction:column;justify-content:center;align-items:center;display:flex}.spinner-circle[data-astro-cid-ijmsm3te]{transform-origin:50%;",
+      "ms": 218,
+      "at": "2026-11-17T15:53:36.740Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/dataset-viewer/rows",
+      "status": 200,
+      "error": null,
+      "ms": 266,
+      "at": "2026-11-17T15:53:36.740Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/buckets/hf-doc-build/doc/tree/dataset-viewer/main/en/quick_start.md",
+      "status": 200,
+      "error": null,
+      "ms": 271,
+      "at": "2026-11-17T15:53:36.740Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/dataset-viewer/en/filter",
+      "status": 200,
+      "error": null,
+      "ms": 298,
+      "at": "2026-11-17T15:53:36.740Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "skillrepo.dev",
+      "path": "/skills/huggingface/huggingface-datasets",
+      "status": 200,
+      "error": null,
+      "ms": 408,
+      "at": "2026-11-17T15:53:36.740Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/huggingface/skills/blob/main/skills/huggingface-datasets/SKILL.md",
+      "status": 200,
+      "error": null,
+      "ms": 5260,
+      "at": "2026-11-17T15:53:36.740Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/huggingface/dataset-viewer/blob/main/docs/source/quick_start.md",
+      "status": 200,
+      "error": null,
+      "ms": 5699,
+      "at": "2026-11-17T15:53:36.740Z"
+    }
+  ],
+  "at": "2026-11-17T15:54:28.589Z"
+}
