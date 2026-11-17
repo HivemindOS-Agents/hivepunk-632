@@ -1,0 +1,236 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-17T15:53:30.315Z",
+  "subject": "Hugging Face Datasets Server (Dataset Viewer API)",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "A small parquet-backed fixture dataset is well matched to the Dataset Viewer: its rows fit in a single 100-row slice, and /is-valid, /splits, /rows, /search, /filter and /parquet give it checkable public inspection without new infrastructure. That conclusion rests on the documented endpoints, the 100-row cap, and parquet-only support, not on price or volume.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "huggingface/dataset-viewer has 21 raw commits in the last 30 days, 20 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/huggingface/dataset-viewer/commits?per_page=50&since=2026-10-18T15:53:42.457Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is 3e4d820, on 2026-11-16.",
+      "check": "shipping",
+      "source": "https://github.com/huggingface/dataset-viewer/commit/3e4d8200777089e8aab45b404972c0515879935a"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "The base URL of the Dataset Viewer REST API is https://datasets-server.huggingface.co",
+      "check": "page",
+      "source": "https://huggingface.co/buckets/hf-doc-build/doc/tree/dataset-viewer/main/en/quick_start.md",
+      "quote": "The base URL of the REST API is: https://datasets-server.huggingface.co",
+      "sourceId": "src-3",
+      "quoteSha256": "c4d3a2e6d2ccdb6ddba0deeed4bc87c945d95867e7b60b371d74f219f6b01f37"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "The API exposes GET endpoints /is-valid, /splits, /first-rows, /rows, /search, /filter, /parquet, /size, /statistics and /croissant.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/en/quick_start",
+      "quote": "/is-valid GET Check whether a specific dataset is valid. dataset : name of the dataset /splits GET Get the list of subsets and splits of a dataset.",
+      "sourceId": "src-1",
+      "quoteSha256": "e07a5d8a25b080fe1c4d6d9951af67e084bb405b2ca2d16767ef310310f7857e"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "/rows takes dataset, config, split, offset and length, with length maximum 100.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/en/quick_start",
+      "quote": "/rows GET Get a slice of rows of a dataset split. - dataset : name of the dataset - config : name of the config - split : name of the split - offset : offset of the slice - length : length of the slice (maximum 100)",
+      "sourceId": "src-1",
+      "quoteSha256": "ad8c05ebb1c1fda3a41ee24d3e14b436e380e44ed75c5ed36b8c0a90de322620"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Only datasets with parquet exports are supported for /rows, so any slice can be extracted without downloading the whole dataset.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/rows",
+      "quote": "Currently, only datasets with parquet exports are supported so the dataset viewer can extract any slice of rows without downloading the whole dataset.",
+      "sourceId": "src-2",
+      "quoteSha256": "f97f93323713e3fad3d6d6d86a4454165cff5d868619a551b821a5feeda344d2"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "/rows responds with JSON containing features and the slice of rows.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/rows",
+      "quote": "The endpoint response is a JSON containing two keys: The features of a dataset, including the column’s name and data type. The slice of rows of a dataset and the content contained in each column of a specific row.",
+      "sourceId": "src-2",
+      "quoteSha256": "8ca98f68460803ad2866dbb97c66f70c74d38bb0f90da91ee4ae7615088873a1"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "/filter takes dataset, config, split, where, orderby, offset and length, with length maximum 100.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/en/filter",
+      "quote": "where : the filter condition orderby : the order-by clause offset : the offset of the slice, for example 150 length : the length of the slice, for example 10 (maximum: 100 )",
+      "sourceId": "src-6",
+      "quoteSha256": "572d2e58aadd6ab88d11957a4f89e693d5c46fc32c747c89ea979eba51cbf311"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "The where predicate uses comparison operators =, <>, >, >=, <, <= and logical operators AND, OR, NOT, with column names in double quotes and string values in single quotes.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/en/filter",
+      "quote": "Note that, following SQL syntax, in comparison predicates, column names should be enclosed in double quotes ( \"name\" ), and string values must be enclosed in single quotes ( 'Simone' ).",
+      "sourceId": "src-6",
+      "quoteSha256": "10ff5e365a9a6cc30cf7d218105a69f148401b442bb9cba17aa0e3f7901a5358"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "For private and gated datasets a user token must be provided in headers, otherwise an error message says to retry with authentication.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/en/quick_start",
+      "quote": "For private and gated datasets, you’ll need to provide your user token in headers of your query. Otherwise, you’ll get an error message to retry with authentication.",
+      "sourceId": "src-1",
+      "quoteSha256": "d3686652f7a94ed7d250d7e9a526e40a2f4b94d6c1bcfb88b97fc442977131cd"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "huggingface/dataset-viewer has 21 raw commits in the last 30 days, 20 of them real work.",
+      "check": "page",
+      "source": "https://api.github.com/repos/huggingface/dataset-viewer/commits?per_page=50&since=2026-10-18T15:53:42.457Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c10",
+      "label": "FACT",
+      "text": "The latest real commit of huggingface/dataset-viewer is 3e4d820, on 2026-11-16.",
+      "check": "page",
+      "source": "https://api.github.com/repos/huggingface/dataset-viewer/commits?per_page=50&since=2026-10-18T15:53:42.457Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "The API's exact error status codes, error JSON schema, and rate limits for invalid parameters.",
+      "check": "page",
+      "missing": "A Hugging Face docs page or live API response stating status codes, error fields and rate limits for the Dataset Viewer endpoints."
+    },
+    {
+      "id": "c12",
+      "label": "DERIVED",
+      "text": "A fixture dataset with 3 rows can be read in one /rows call, because the call allows up to 100 rows.",
+      "check": "page",
+      "inputs": [
+        "c3"
+      ],
+      "math": "3 rows requested <= 100 maximum length, so a single /rows call with length=3 fits the documented cap."
+    }
+  ],
+  "counts": {
+    "fact": 12,
+    "derived": 1,
+    "unknown": 1
+  },
+  "risks": [
+    "Only datasets with parquet exports are supported for /rows and /filter, so a fixture not converted to parquet would not be sliceable or filterable this way.",
+    "Row-like endpoints are capped at length 100, so larger fixtures need offset pagination and handling of partial responses.",
+    "Gated or private datasets return an error telling the user to retry with authentication if no token is provided.",
+    "The pages read did not state HTTP status codes or a full error schema, so error handling cannot be assumed beyond that authentication message.",
+    "Search response fields and limits were not shown on the pages read, so search behaviour for a fixture cannot be confirmed from them."
+  ],
+  "unknowns": [
+    "The API's exact error status codes, error JSON schema, and rate limits for invalid parameters.: A Hugging Face docs page or live API response stating status codes, error fields and rate limits for the Dataset Viewer endpoints."
+  ],
+  "wouldChangeMind": [
+    "A Hugging Face page or live response showing /rows, /filter or /search limits lower than 100, or different response fields.",
+    "Evidence that a small parquet fixture fails /is-valid or does not appear in /parquet, /splits or /first-rows.",
+    "Documentation of error codes or rate limits that make verification of a small fixture impractical without a token or paid tier."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "Quickstart · Hugging Face",
+      "url": "https://huggingface.co/docs/dataset-viewer/en/quick_start",
+      "finalUrl": "https://huggingface.co/docs/dataset-viewer/en/quick_start",
+      "status": 200,
+      "fetchedAt": "2026-11-17T15:53:36.954Z",
+      "extractor": "page-text-v1",
+      "sha256": "6aca1ccf0e5d982a811f2fbb1e7adb1b3463add82fce6da70d3cf72abc59fc8a",
+      "bytes": 198310,
+      "quote": "/is-valid GET Check whether a specific dataset is valid. dataset : name of the dataset /splits GET Get the list of subsets and splits of a dataset.",
+      "quoteSha256": "e07a5d8a25b080fe1c4d6d9951af67e084bb405b2ca2d16767ef310310f7857e"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Download slices of rows · Hugging Face",
+      "url": "https://huggingface.co/docs/dataset-viewer/rows",
+      "finalUrl": "https://huggingface.co/docs/dataset-viewer/rows",
+      "status": 200,
+      "fetchedAt": "2026-11-17T15:53:37.006Z",
+      "extractor": "page-text-v1",
+      "sha256": "ebd19965c8fe7ff6bd826dbab5a1d290afee5626937236feb8fa6e2570e937ca",
+      "bytes": 132504,
+      "quote": "Currently, only datasets with parquet exports are supported so the dataset viewer can extract any slice of rows without downloading the whole dataset.",
+      "quoteSha256": "f97f93323713e3fad3d6d6d86a4454165cff5d868619a551b821a5feeda344d2"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "dataset-viewer/main/en/quick_start.md · hf-doc-build/doc",
+      "url": "https://huggingface.co/buckets/hf-doc-build/doc/tree/dataset-viewer/main/en/quick_start.md",
+      "finalUrl": "https://huggingface.co/buckets/hf-doc-build/doc/tree/dataset-viewer/main/en/quick_start.md",
+      "status": 200,
+      "fetchedAt": "2026-11-17T15:53:37.011Z",
+      "extractor": "page-text-v1",
+      "sha256": "ffe9711e59224b95ba876257ed1bd3bdccf2bbbb521aced98b021ea0a59dd7d5",
+      "bytes": 143134,
+      "quote": "The base URL of the REST API is: https://datasets-server.huggingface.co",
+      "quoteSha256": "c4d3a2e6d2ccdb6ddba0deeed4bc87c945d95867e7b60b371d74f219f6b01f37"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "Filter rows in a dataset · Hugging Face",
+      "url": "https://huggingface.co/docs/dataset-viewer/en/filter",
+      "finalUrl": "https://huggingface.co/docs/dataset-viewer/en/filter",
+      "status": 200,
+      "fetchedAt": "2026-11-17T15:53:37.046Z",
+      "extractor": "page-text-v1",
+      "sha256": "d6428225c5ddaaa048cf5d36128b629fc081d5697423b39d451f1911c4c122ed",
+      "bytes": 124223,
+      "quote": "where : the filter condition orderby : the order-by clause offset : the offset of the slice, for example 150 length : the length of the slice, for example 10 (maximum: 100 )",
+      "quoteSha256": "572d2e58aadd6ab88d11957a4f89e693d5c46fc32c747c89ea979eba51cbf311"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of huggingface/dataset-viewer",
+      "url": "https://api.github.com/repos/huggingface/dataset-viewer/commits?per_page=50&since=2026-10-18T15:53:42.457Z",
+      "fetchedAt": "2026-11-17T15:53:30.315Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "a3a1ddffa9bc4323dd3f1dcf859d0f654fd8a0a31fd2f032a1bdd9405e403169"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-17-hugging-face-datasets-server-dataset-viewer-api.md",
+  "decidedBy": "bee"
+}
