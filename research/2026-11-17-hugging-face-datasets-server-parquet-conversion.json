@@ -1,0 +1,224 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-17T12:23:59.256Z",
+  "subject": "Hugging Face Datasets Server Parquet conversion",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "For a small public fixture dataset, Parquet conversion is likely to happen automatically and should not need manual conversion, but large early-row payloads and the 5GB and visibility limits are the main documented pitfalls. The conclusion rests on the documented automatic conversion, branch, and limit statements rather than on any confirmed fixture-specific test.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "huggingface/dataset-viewer has 21 raw commits in the last 30 days, 20 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/huggingface/dataset-viewer/commits?per_page=50&since=2026-10-18T12:24:05.952Z",
+      "sourceId": "src-5"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is 3e4d820, on 2026-11-16.",
+      "check": "shipping",
+      "source": "https://github.com/huggingface/dataset-viewer/commit/3e4d8200777089e8aab45b404972c0515879935a"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "The dataset viewer automatically converts every dataset to the Parquet format.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/en/parquet",
+      "quote": "the dataset viewer automatically converts every dataset to the Parquet format.",
+      "sourceId": "src-1",
+      "quoteSha256": "ad5dd28c33776492133eae9cec902d672825580c15568bcd109587fb920e0aaf"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "The dataset viewer automatically converts and publishes public datasets less than 5GB on the Hub as Parquet files.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/en/parquet_process",
+      "quote": "The dataset viewer automatically converts and publishes public datasets less than 5GB on the Hub as Parquet files.",
+      "sourceId": "src-2",
+      "quoteSha256": "37d53117339c07ad6cf170d71761a24f83da31cf5b6906f53d8145718bb43122"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "If a dataset is already in Parquet format, it will be published as is.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/en/parquet_process",
+      "quote": "If the dataset is already in Parquet format, it will be published as is.",
+      "sourceId": "src-2",
+      "quoteSha256": "c386e5c76657ec69484c1235cb802fcc556efd7cd5e97dfab0fd47ef7c0e771a"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Parquet files are published to the Hub on a specific refs/convert/parquet branch that parallels the main branch.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/en/parquet",
+      "quote": "The Parquet files are published to the Hub on a specific refs/convert/parquet branch (like this fancyzhx/amazon_polarity branch for example) that parallels the main branch.",
+      "sourceId": "src-1",
+      "quoteSha256": "55583a0d3e457913a751f4810c5f67e2755cb69d13aad9f0cab4739e608222c7"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "For the dataset viewer to generate a Parquet version, the dataset must be public, or owned by a PRO user or an Enterprise Hub organization.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/en/parquet",
+      "quote": "In order for the dataset viewer to generate a Parquet version of a dataset, the dataset must be public , or owned by a PRO user or an Enterprise Hub organization .",
+      "sourceId": "src-1",
+      "quoteSha256": "9211781a41ab6aac4b97823664e6ee99467c698f402cf745af5b0a4f389c455c"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "A Parquet file contains a single table, and if a dataset has multiple tables such as multiple splits or subsets, each table is stored in a separate Parquet file.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/en/parquet",
+      "quote": "A Parquet file contains a single table. If a dataset has multiple tables (e.g. multiple splits or subsets), each table is stored in a separate Parquet file.",
+      "sourceId": "src-1",
+      "quoteSha256": "8225b17ccba24551b53346472b83af59a01009b98db0c65b6d70521d06aeb68a"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Seeing Error code: TooBigContentError means the dataset viewer could not read a preview within its limits.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/datasets-data-files-configuration",
+      "quote": "If you see Error code: TooBigContentError , then the dataset viewer could not read a preview within its limits.",
+      "sourceId": "src-3",
+      "quoteSha256": "61ec3981e13bd7cec9cbf1e9750ab111f2ae6364bb0f9a80d6ac86c4d66b1ea5"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "For Parquet files, the documented remedy is to use smaller row groups and include a page index with write_page_index=True so the Viewer can read only what it needs.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/datasets-data-files-configuration",
+      "quote": "For Parquet files, use smaller row groups and include a page index ( write_page_index=True ) so the Viewer can read only what it needs.",
+      "sourceId": "src-3",
+      "quoteSha256": "f6f189f0a79b10e6c377b073d91183574531fe34450f87621b7bc8ca3ca7b913"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "The documented advice is to avoid very large values in the first rows, including very long strings, large JSON blobs and base64 payloads.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/datasets-data-files-configuration",
+      "quote": "Avoid very large values in the first rows (very long strings, large JSON blobs, base64 payloads).",
+      "sourceId": "src-3",
+      "quoteSha256": "2dfcfffaf0fbb8999377e9a8170fe26637e3b2a97a44d68a83500eceada0d8cc"
+    },
+    {
+      "id": "c10",
+      "label": "DERIVED",
+      "text": "A public fixture dataset below 5GB meets the size condition stated for automatic Parquet conversion and publication.",
+      "check": "page",
+      "inputs": [
+        "c2"
+      ],
+      "math": "The documented threshold is less than 5GB for public datasets; a fixture below that threshold satisfies the stated size condition, with no fixture size given in the pages."
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "The exact numeric viewer row or preview limit for fixture rows.",
+      "check": "page",
+      "missing": "An official Hugging Face docs page stating the numeric row, scan or preview limit applicable to a small fixture dataset."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "The conversion delay after publishing or updating a dataset.",
+      "check": "page",
+      "missing": "An official Hugging Face docs page stating how long Parquet conversion takes or when the refs/convert/parquet branch updates."
+    }
+  ],
+  "counts": {
+    "fact": 11,
+    "derived": 1,
+    "unknown": 2
+  },
+  "risks": [
+    "Public datasets at or above 5GB are not covered by the stated automatic conversion and publication",
+    "Private datasets require PRO user or Enterprise Hub organization ownership for Parquet generation",
+    "Very large values in the first rows, such as very long strings, large JSON blobs or base64 payloads, can cause a viewer size-limit error",
+    "Large Parquet files may exceed scan limits unless smaller row groups and a page index are used",
+    "A dataset with multiple tables needs separate Parquet files, so split and subset naming affects the converted output"
+  ],
+  "unknowns": [
+    "The exact numeric viewer row or preview limit for fixture rows.: An official Hugging Face docs page stating the numeric row, scan or preview limit applicable to a small fixture dataset.",
+    "The conversion delay after publishing or updating a dataset.: An official Hugging Face docs page stating how long Parquet conversion takes or when the refs/convert/parquet branch updates."
+  ],
+  "wouldChangeMind": [
+    "An official docs page stating a different size threshold or visibility requirement for Parquet conversion",
+    "An official docs page stating a numeric preview or row limit that a small fixture would exceed",
+    "Evidence from an official docs page that conversion does not apply to the fixture format used"
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "List Parquet files · Hugging Face",
+      "url": "https://huggingface.co/docs/dataset-viewer/en/parquet",
+      "finalUrl": "https://huggingface.co/docs/dataset-viewer/en/parquet",
+      "status": 200,
+      "fetchedAt": "2026-11-17T12:24:05.554Z",
+      "extractor": "page-text-v1",
+      "sha256": "020737935f1e9fb9fb129e11199a9b9d1e9b8929fd36c42370a12886a6107c53",
+      "bytes": 148022,
+      "quote": "the dataset viewer automatically converts every dataset to the Parquet format.",
+      "quoteSha256": "ad5dd28c33776492133eae9cec902d672825580c15568bcd109587fb920e0aaf"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Overview · Hugging Face",
+      "url": "https://huggingface.co/docs/dataset-viewer/en/parquet_process",
+      "finalUrl": "https://huggingface.co/docs/dataset-viewer/en/parquet_process",
+      "status": 200,
+      "fetchedAt": "2026-11-17T12:24:05.531Z",
+      "extractor": "page-text-v1",
+      "sha256": "ffad100c1aab6974f335874732c6b3afd46a846ebbd764c397e9ecc629734bd1",
+      "bytes": 90713,
+      "quote": "The dataset viewer automatically converts and publishes public datasets less than 5GB on the Hub as Parquet files.",
+      "quoteSha256": "37d53117339c07ad6cf170d71761a24f83da31cf5b6906f53d8145718bb43122"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "Data files Configuration · Hugging Face",
+      "url": "https://huggingface.co/docs/hub/datasets-data-files-configuration",
+      "finalUrl": "https://huggingface.co/docs/hub/datasets-data-files-configuration",
+      "status": 200,
+      "fetchedAt": "2026-11-17T12:24:05.548Z",
+      "extractor": "page-text-v1",
+      "sha256": "91f79b67ee6797fcd1b12290f9ed17ae6a909cadd392b74c66b44b5fe64e955f",
+      "bytes": 211118,
+      "quote": "If you see Error code: TooBigContentError , then the dataset viewer could not read a preview within its limits.",
+      "quoteSha256": "61ec3981e13bd7cec9cbf1e9750ab111f2ae6364bb0f9a80d6ac86c4d66b1ea5"
+    },
+    {
+      "id": "src-5",
+      "type": "api",
+      "title": "GitHub commits of huggingface/dataset-viewer",
+      "url": "https://api.github.com/repos/huggingface/dataset-viewer/commits?per_page=50&since=2026-10-18T12:24:05.952Z",
+      "fetchedAt": "2026-11-17T12:23:59.256Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "a3a1ddffa9bc4323dd3f1dcf859d0f654fd8a0a31fd2f032a1bdd9405e403169"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-17-hugging-face-datasets-server-parquet-conversion.md",
+  "decidedBy": "bee"
+}
