@@ -53,13 +53,15 @@ Fixtures behind the dataset route; the self-test still needs a committed passing
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-fixtures
 - Shipped: 2026-11-15
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-17-1151-committed-goal-md-artifacts-md-selftest-output-md-was-named-.md)
 
-### hf-trending-models
+### run-record-lint-dataset-export
 
-An offline trending-model filter; its self-test has no committed passing run yet.
+Exporter writing dataset-ready fixture-rows.csv and a card draft; not yet verified standalone.
 
-- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hf-trending-models
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-dataset-export
 - Shipped: 2026-11-16
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-16-2249-built-standalone-exporter-in-run-record-lint-dataset-export-.md)
 
 ## Live outside HivemindOS
 
