@@ -1,0 +1,246 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-17T06:15:24.000Z",
+  "subject": "Hugging Face Datasets viewer configuration",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "Viewer configuration is primarily file-to-split mapping plus declarative metadata, but its limits mean successful configuration does not guarantee a complete preview for large datasets. The documented 5GB and 100-row constraints should shape expectations for any published dataset.",
+  "claims": [
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "There are no constraints on how to structure dataset repositories.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/datasets-data-files-configuration",
+      "quote": "There are no constraints on how to structure dataset repositories.",
+      "sourceId": "src-1",
+      "quoteSha256": "eda3f8780ad2f21400c0dd25072bc8dd738ac25e7c8271f960d6592a25e9de8f"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Splits are automatically detected based on file and directory names.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/datasets-data-files-configuration",
+      "quote": "Splits are automatically detected based on file and directory names.",
+      "sourceId": "src-1",
+      "quoteSha256": "a493882d7f74cc3ad807766982b2c237559f25acbea21ffebbff7873b4f378fe"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "Manual configuration can choose data files to show in the Dataset Viewer using YAML.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/datasets-data-files-configuration",
+      "quote": "You can choose the data files to show in the Dataset Viewer for your dataset using YAML.",
+      "sourceId": "src-1",
+      "quoteSha256": "52cc48163395af278b84fbafcf0158a54389d180e5a938c768ccf6f7dc9f8b72"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "A subset is also called a configuration and is a sub-dataset contained within a larger dataset.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/datasets-data-files-configuration",
+      "quote": "A subset (also called configuration ) is a sub-dataset contained within a larger dataset.",
+      "sourceId": "src-1",
+      "quoteSha256": "2bf34a848aa1d7f9938ac0f3326a1937e79a42ae439f38530031c45a284a089a"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "DatasetInfo config_name is the name of the configuration derived from BuilderConfig.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/en/package_reference/main_classes",
+      "quote": "config_name ( str , optional ) &#x2014; The name of the configuration derived from BuilderConfig .",
+      "sourceId": "src-4",
+      "quoteSha256": "27bef52d8782772009f5d95f0aa6cc1d832672c535f56df6fb1885552568d2a2"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "DatasetInfo features specify the dataset column types.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/en/package_reference/main_classes",
+      "quote": "features ( Features , optional ) &#x2014; The features used to specify the dataset&#x2019;s column types.",
+      "sourceId": "src-4",
+      "quoteSha256": "734388911d3f5c9e8e1fd79219da5b764c165306e72e2a158ffa3a28bf2ccb24"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "DatasetInfo splits is the mapping between split name and metadata.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/en/package_reference/main_classes",
+      "quote": "splits ( dict , optional ) &#x2014; The mapping between split name and metadata.",
+      "sourceId": "src-4",
+      "quoteSha256": "ce8a7b453ac2fb979f31e17da578b34aef4c4931b70d6bbec39e55a3d5e73d78"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "Dataset pages include a table arranged by pages of 100 rows.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/en/data-studio",
+      "quote": "Each dataset page includes a table with the contents of the dataset, arranged by pages of 100 rows.",
+      "sourceId": "src-2",
+      "quoteSha256": "39affb310eb74283575b392d7861d889b76f4c08f41ac50e948abe82cf5ef336"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "The rows API slice length has a maximum of 100.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/dataset-viewer/en/quick_start",
+      "quote": "length : length of the slice (maximum 100)",
+      "sourceId": "src-5",
+      "quoteSha256": "08bbfeeb98c600996bf66aff0a5189eadc4bc3c59a52b60d844ce2d2c769cb6a"
+    },
+    {
+      "id": "c10",
+      "label": "FACT",
+      "text": "Depending on format, the Dataset Viewer may only show the first 5GB of a dataset.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/en/data-studio",
+      "quote": "The Dataset Viewer supports large scale datasets, but depending on the data format it may only show the first 5GB of the dataset:",
+      "sourceId": "src-2",
+      "quoteSha256": "13854860addce137fe1026d6bd58aaccdb31a5ff22941c34903e49a44683055f"
+    },
+    {
+      "id": "c11",
+      "label": "FACT",
+      "text": "TooBigContentError means the dataset viewer could not read a preview within its limits.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/datasets-data-files-configuration",
+      "quote": "If you see Error code: TooBigContentError , then the dataset viewer could not read a preview within its limits.",
+      "sourceId": "src-1",
+      "quoteSha256": "61ec3981e13bd7cec9cbf1e9750ab111f2ae6364bb0f9a80d6ac86c4d66b1ea5"
+    },
+    {
+      "id": "c12",
+      "label": "DERIVED",
+      "text": "Configuration can be done either automatically by file naming or manually via YAML assigning files to splits/subsets.",
+      "check": "page",
+      "inputs": [
+        "c2",
+        "c3"
+      ],
+      "math": "c2 states automatic detection; c3 states manual YAML choice; together they imply both routes exist."
+    }
+  ],
+  "counts": {
+    "fact": 11,
+    "derived": 1,
+    "unknown": 0
+  },
+  "risks": [
+    "Viewer may only show first 5GB depending on format, so preview may be partial for large datasets.",
+    "TooBigContentError can occur when preview cannot be read within limits, especially with large first-row values.",
+    "Manual configuration errors can cause wrong files to be assigned to splits or subsets.",
+    "Features, config_name and splits metadata may be absent or not confirmable for a given dataset from the pages read.",
+    "Gated or private datasets require a user token, so unauthenticated API access may fail."
+  ],
+  "unknowns": [],
+  "wouldChangeMind": [
+    "Finding official numeric TooBigContentError limits that contradict the partial-preview risk assessment.",
+    "Finding a complete YAML schema showing additional required viewer configuration fields.",
+    "Finding evidence that 5GB limits no longer apply to the formats documented as limited."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "Data files Configuration · Hugging Face",
+      "url": "https://huggingface.co/docs/hub/datasets-data-files-configuration",
+      "finalUrl": "https://huggingface.co/docs/hub/datasets-data-files-configuration",
+      "status": 200,
+      "fetchedAt": "2026-11-17T06:15:29.804Z",
+      "extractor": "page-text-v1",
+      "sha256": "91f79b67ee6797fcd1b12290f9ed17ae6a909cadd392b74c66b44b5fe64e955f",
+      "bytes": 211118,
+      "quote": "There are no constraints on how to structure dataset repositories.",
+      "quoteSha256": "eda3f8780ad2f21400c0dd25072bc8dd738ac25e7c8271f960d6592a25e9de8f"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Data Studio · Hugging Face",
+      "url": "https://huggingface.co/docs/hub/en/data-studio",
+      "finalUrl": "https://huggingface.co/docs/hub/en/data-studio",
+      "status": 200,
+      "fetchedAt": "2026-11-17T06:15:29.857Z",
+      "extractor": "page-text-v1",
+      "sha256": "865cbac83c77eb47b341e69d24d1e5ae42ba5973aa6c48a0e4af720febeec446",
+      "bytes": 223314,
+      "quote": "Each dataset page includes a table with the contents of the dataset, arranged by pages of 100 rows.",
+      "quoteSha256": "39affb310eb74283575b392d7861d889b76f4c08f41ac50e948abe82cf5ef336"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "🤗 Dataset viewer · Hugging Face",
+      "url": "https://huggingface.co/docs/dataset-viewer/en/index",
+      "finalUrl": "https://huggingface.co/docs/dataset-viewer/en/index",
+      "status": 200,
+      "fetchedAt": "2026-11-17T06:15:29.827Z",
+      "extractor": "page-text-v1",
+      "sha256": "4514a89feb13b2df0dad0427e381acfc4799ecaa55fbae45839f5f658984e282",
+      "bytes": 96476,
+      "quote": "Dataset viewer of the OpenBookQA dataset Contents of the documentation These documentation pages are focused on the dataset viewer’s backend (code in https://github.com/huggingface/dataset-viewer ), which provides the table with pre-computed data through an API for all the datasets on the Hub.",
+      "quoteSha256": "e6bd07a81a4e1df47868ddbb1b2071245ed6f8f8b21b3e3d64aa7a43bf25c8b1"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "Main classes · Hugging Face",
+      "url": "https://huggingface.co/docs/datasets/en/package_reference/main_classes",
+      "finalUrl": "https://huggingface.co/docs/datasets/en/package_reference/main_classes",
+      "status": 200,
+      "fetchedAt": "2026-11-17T06:15:30.023Z",
+      "extractor": "page-text-v1",
+      "sha256": "60f1c9416d1b191671c3e5c08b477122a7ca70d310c0c4dd25f9e10a176b1602",
+      "bytes": 1500161,
+      "quote": "config_name ( str , optional ) &#x2014; The name of the configuration derived from BuilderConfig .",
+      "quoteSha256": "27bef52d8782772009f5d95f0aa6cc1d832672c535f56df6fb1885552568d2a2"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "Quickstart · Hugging Face",
+      "url": "https://huggingface.co/docs/dataset-viewer/en/quick_start",
+      "finalUrl": "https://huggingface.co/docs/dataset-viewer/en/quick_start",
+      "status": 200,
+      "fetchedAt": "2026-11-17T06:15:29.945Z",
+      "extractor": "page-text-v1",
+      "sha256": "6aca1ccf0e5d982a811f2fbb1e7adb1b3463add82fce6da70d3cf72abc59fc8a",
+      "bytes": 198310,
+      "quote": "length : length of the slice (maximum 100)",
+      "quoteSha256": "08bbfeeb98c600996bf66aff0a5189eadc4bc3c59a52b60d844ce2d2c769cb6a"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "Data Studio",
+      "url": "https://huggingface.co/docs/hub/en/datasets-viewer",
+      "finalUrl": "https://huggingface.co/docs/hub/data-studio",
+      "status": 200,
+      "fetchedAt": "2026-11-17T06:15:29.860Z",
+      "extractor": "page-text-v1",
+      "sha256": "865cbac83c77eb47b341e69d24d1e5ae42ba5973aa6c48a0e4af720febeec446",
+      "bytes": 222084,
+      "quote": "This gives you a quick insight on how balanced your classes are, what are the range and distribution of numerical data and lengths of texts, and what portion of the column data is missing.",
+      "quoteSha256": "9ecad1628767170760109d4ae17da436fda171531bed5373db2512425c52192a"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-17-hugging-face-datasets-viewer-configuration.md",
+  "decidedBy": "bee"
+}
