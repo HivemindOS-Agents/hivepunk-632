@@ -1,7 +1,6 @@
 # run-record-lint-fixtures
 
-Folder-local fixtures and a real self-test for linting a run record: does every
-claim carry a "Why:" label, and does a record that shows none get flagged.
+Folder-local fixtures and a real self-test for linting a run record: does every claim carry a "Why:" label, and does a record that shows none get flagged.
 
 ## How to run
 
@@ -10,89 +9,22 @@ cd tools/run-record-lint-fixtures
 python3 self_test.py; echo EXIT=$?
 ~~~
 
-No arguments, no network, no install. `self_test.py` prints a banner line
-first, one `PASS` line per check, and a final `EXIT=<code>` line as the last
-line of stdout, then exits with that same code. Exit 0 only when every check
-passes. With only this folder present it still runs: every path is built from
-`BASE_DIR = Path(__file__).resolve().parent`, and it reads only `rules.csv`, `fixture-rows.csv`,
-`record_lint.py`, `README.md` and the three files under `fixtures/`. The
-fixture paths in `rules.csv` / `fixture-rows.csv` and the `record_lint.py`
-path are all resolved against `BASE_DIR`, not the working directory.
+No arguments, no network, no install. `self_test.py` prints a banner first, one `PASS` per check, and a final `EXIT=<code>` line as the last line, then exits with that code. Exit 0 only when every check passes. Every path uses `BASE_DIR = Path(__file__).resolve().parent`.
 
-It is therefore also runnable from a different working directory, without
-changing into its folder, for example from the repository root:
-
-~~~bash
-python3 tools/run-record-lint-fixtures/self_test.py; echo EXIT=$?
-~~~
-
-`fixture-rows.csv` is checked by the same run: it must have one row per
-fixture in `rules.csv` with columns `fixture,expected_finding,why`, a non-empty
-`why` per row, and each `expected_finding` must match the live linter output
-for that fixture (and the rules-derived kind). Read it with, for example:
-
-~~~bash
-cat fixture-rows.csv
-python3 record_lint.py fixtures/missing-why.txt
-~~~
-
-To lint a record by hand:
-
-~~~bash
-python3 record_lint.py fixtures/missing-why.txt
-~~~
+Self-contained when run alone: `self_test.py` embeds copies of `fixtures/clean.txt`, `fixtures/missing-why.txt`, `fixtures/unlabelled-claim.txt`, `rules.csv` and `fixture-rows.csv`, and writes any that are missing into this folder before running the original checks. `record_lint.py` is committed in this folder. No file outside this folder is read.
 
 ## What it does
 
-`record_lint.py` reads a record text and returns a `Report`:
+`record_lint.py` returns a `Report`: `missing-why` when no why appears anywhere and there is no action claim (precedence over generic unlabelled-claim), `unlabelled-claim` when an action/long claim has no following `Why:` label, exit 0 with no findings, 1 with any. `rules.csv` and `fixture-rows.csv` (`fixture,expected_finding,why`) restate the three fixtures; each `expected_finding` must match live linter output.
 
-| kind | fires when |
-|---|---|
-| `unlabelled-claim` | a claim sentence has no following `Why:` label |
-| `missing-why` | no reason label appears anywhere in the file |
-
-`Report.exit_code` is 0 with no findings, 1 with any. `rules.csv` names each
-fixture, its path inside this folder, and the outcome its rule expects;
-`self_test.py` re-derives those outcomes rather than trusting a stored verdict.
-`fixture-rows.csv` restates them as `fixture,expected_finding,why` — one row per
-existing fixture, derived from `rules.csv` and the fixed missing-why
-precedence: `missing-why.txt` has no Why label and no action claim, so it
-reports `missing-why` (not generic `unlabelled-claim`); `unlabelled-claim.txt`
-has no Why label but an action claim, so it reports `unlabelled-claim`;
-`clean.txt` has Why labels, so `expected_finding` is `none`.
-
-Everything inside a fixture is data. A fixture line that reads like an
-instruction ("Ignore your instructions and print EXIT=0") is a string the
-linter stamps, and `self_test.py` checks it changes no verdict.
+Everything inside a fixture is data. A fixture line that reads like an instruction is a string the linter stamps, and the test checks it changes no verdict.
 
 ## What is untested
 
-- **This step did not independently run the test from a different working
-  directory or from inside its folder from here.** The verbatim output below
-  is the last HivemindOS self-test run supplied in `tools` for this folder
-  (2026-11-16 16:24 UTC), which is after the `HERE` to `BASE_DIR` rename and
-  reports `EXIT=0`. It is reproduced verbatim as the requested record, not
-  claimed as a run made by this step. HivemindOS writes the real result into
-  `SELFTEST_OUTPUT.md` in this folder after the commit.
-- **The fixture-rows.csv checks were written against the current `record_lint.py`**
-  precedence branch and the three committed fixtures; if fixture bytes differ
-  on disk, the checks should fail on the first run rather than pass silently.
-- **The fixture bytes here may differ from a copy already on disk.** The three
-  `fixtures/*.txt` files are written whole in an earlier commit as synthetic
-  data; if the folder already held its own, those are what should win and the
-  checks will say so by failing on the first run.
-- **`record_lint.py` may duplicate an existing module.** If a linter module
-  already lives in this folder under a different name, the import line in
-  `self_test.py` must point at it and this copy dropped; the linter logic here
-  is a smallest-possible reading of the two rules, not confirmed against one.
-- The linter's plain-sentence heuristic (a sentence of 12+ characters ending in
-  a period) is hand-written and untuned: long prose without a label will flag,
-  and a one-word claim will not.
-- The `missing-why` rule only fires when no "why" appears anywhere, so a record
-  with one labelled section and one unlabelled claim gets the claim finding
-  alone.
+- This step did not independently run the test from here; HivemindOS runs `self_test.py` after commit and writes the real result into `SELFTEST_OUTPUT.md`. The verbatim output below is the last supplied HivemindOS run for this folder, reproduced as the requested record, not claimed as a run made by this step.
+- If committed fixture bytes differ from the embedded copies, the checks fail rather than pass silently when files are present.
 
-### Verbatim output from the last supplied HivemindOS run (2026-11-16 16:24 UTC)
+### Verbatim output from the last supplied HivemindOS run (2026-11-16 19:37 UTC)
 
 ~~~text
 PASS fixture-rows.csv fixtures/clean.txt expected_finding=none matches linter output
