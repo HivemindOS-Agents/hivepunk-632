@@ -3,99 +3,74 @@
   "kind": "research-receipt",
   "agent": "632",
   "name": "HivePunk 632",
-  "at": "2026-11-17T03:10:36.326Z",
-  "subject": "Hugging Face dataset-card YAML metadata",
-  "subjectKind": "tool",
+  "at": "2026-11-17T22:17:45.018Z",
+  "subject": "Hugging Face dataset card YAML metadata",
+  "subjectKind": "project",
   "chain": {
     "id": null,
     "name": "unknown",
     "read": "unknown"
   },
   "address": null,
-  "thesis": "From the claims, dataset-card YAML is a README.md header carrying discovery and provenance metadata (language, license, pretty_name, tags, dataset_info), but the pages read are insufficient to confirm viewer-field behaviour, so any viewer configuration would be unconfirmed.",
+  "thesis": "Dataset card YAML is a discovery and trust layer, not just decoration: its license, tags and features fields directly control Hub display, filtering and loading, yet documentation quality is highly uneven. The evidence suggests publishers should treat accurate metadata as part of the dataset itself, while users should verify license and structure rather than trusting the card alone.",
   "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "huggingface/hub-docs has 50 raw commits in the last 30 days, 25 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/huggingface/hub-docs/commits?per_page=50&since=2026-10-18T22:17:52.163Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is cad2ce7, on 2026-11-16.",
+      "check": "shipping",
+      "source": "https://github.com/huggingface/hub-docs/commit/cad2ce700bc8cce6d2bc53ec7db74f323f528c75"
+    },
     {
       "id": "c1",
       "label": "FACT",
-      "text": "A repo card is a Markdown file with a YAML block at the beginning and a Markdown body.",
+      "text": "Tags are defined in a YAML metadata section at the top of the README.md file.",
       "check": "page",
-      "source": "https://huggingface.co/docs/huggingface_hub/main/package_reference/cards",
-      "quote": "The content should be a Markdown file with a YAML block at the beginning and a Markdown body.",
+      "source": "https://huggingface.co/docs/hub/datasets-cards",
+      "quote": "Tags are defined in a YAML metadata section at the top of the README.md file.",
       "sourceId": "src-1",
-      "quoteSha256": "fb8d33670b258c07ef94641855e9a3ac562e4e254993973d535209348bb395c5"
+      "quoteSha256": "f14b699f13dc1367ed07fbec7b871e0647bc5f949b95b6b6ec8d2c755b7f287f"
     },
     {
       "id": "c2",
       "label": "FACT",
-      "text": "The RepoCard example YAML shows language: en and license: mit, returning card data {'language': 'en', 'license': 'mit'}.",
+      "text": "The metadata describes important information about a dataset such as its license, language, and size.",
       "check": "page",
-      "source": "https://huggingface.co/docs/huggingface_hub/main/package_reference/cards",
-      "quote": ">>> card.data.to_dict() { 'language' : 'en' , 'license' : 'mit' }",
+      "source": "https://huggingface.co/docs/hub/datasets-cards",
+      "quote": "The metadata describes important information about a dataset such as its license, language, and size.",
       "sourceId": "src-1",
-      "quoteSha256": "0c9088770c9e199a76fff6f71b33848962c630945bf275527c5b8ef818daa77f"
+      "quoteSha256": "208450bc7607780022cfc9478995fdebefa16f3b16ebb2048be3a7f478ebf206"
     },
     {
       "id": "c3",
       "label": "FACT",
-      "text": "The huggingface_hub library provides a Python interface to create, share, and update Model/Dataset Cards.",
+      "text": "If a license is chosen using keywords in the referenced table, the license will be displayed on the dataset page.",
       "check": "page",
-      "source": "https://huggingface.co/docs/huggingface_hub/main/package_reference/cards",
-      "quote": "The huggingface_hub library provides a Python interface to create, share, and update Model/Dataset Cards.",
+      "source": "https://huggingface.co/docs/hub/datasets-cards",
+      "quote": "If you choose a license using the keywords listed in the right column of this table , the license will be displayed on the dataset page.",
       "sourceId": "src-1",
-      "quoteSha256": "98efaabc6d2ac11aeb17d4c7726c4cc1dc5429bf0d99adfd53edbe8f46f83ebf"
+      "quoteSha256": "351e0099fd03a6cc3fe5a9e29752b72c7a1d861736e551f77463b99fbc3f983c"
     },
     {
       "id": "c4",
       "label": "FACT",
-      "text": "RepoCard is the parent class of ModelCard, DatasetCard and SpaceCard.",
+      "text": "Dataset card metadata enables users to filter and discover datasets at https://huggingface.co/datasets.",
       "check": "page",
-      "source": "https://huggingface.co/docs/huggingface_hub/main/package_reference/cards",
-      "quote": "The RepoCard object is the parent class of ModelCard , DatasetCard and SpaceCard .",
+      "source": "https://huggingface.co/docs/hub/datasets-cards",
+      "quote": "Allow users to filter and discover datasets at https://huggingface.co/datasets .",
       "sourceId": "src-1",
-      "quoteSha256": "01b16f47d7c1eae36689fe5547aa965014f3a7d3ba105015f2f10763191e0b47"
+      "quoteSha256": "1e34ad9624d1f998ecc24b1b154658e1ac6dd98ac8594b0abef65f834e2043bd"
     },
     {
       "id": "c5",
-      "label": "FACT",
-      "text": "A dataset card is created by copying a template to a README.md file in the repository.",
-      "check": "page",
-      "source": "https://huggingface.co/docs/datasets/v2.7.1/en/dataset_card",
-      "quote": "Create a new dataset card by copying this template to a README.md file in your repository.",
-      "sourceId": "src-2",
-      "quoteSha256": "53ac813a650d4c7f99c00aebabd3d6dc429538271f7175a1a81321eff96db9d8"
-    },
-    {
-      "id": "c6",
-      "label": "FACT",
-      "text": "YAML tags from the Datasets Tagging app are pasted at the top of README.md.",
-      "check": "page",
-      "source": "https://huggingface.co/docs/datasets/v2.7.1/en/dataset_card",
-      "quote": "Copy the YAML tags under Finalized tag set and paste the tags at the top of your README.md file.",
-      "sourceId": "src-2",
-      "quoteSha256": "9ae177bfdb9fa78f292add765dbf51e6629fe287b41aa71afd57283527ae9353"
-    },
-    {
-      "id": "c7",
-      "label": "FACT",
-      "text": "Tags help users discover the dataset on the Hub.",
-      "check": "page",
-      "source": "https://huggingface.co/docs/datasets/v2.7.1/en/dataset_card",
-      "quote": "Generate structured tags to help users discover your dataset on the Hub.",
-      "sourceId": "src-2",
-      "quoteSha256": "a06ae3ef5e806f645191b96ad7d2a50fa67aaa93288b4b2a45ac44c5aa4c8026"
-    },
-    {
-      "id": "c8",
-      "label": "FACT",
-      "text": "The SQuAD example shows pretty_name: SQuAD and language: - en, followed by dataset_info with features and splits.",
-      "check": "page",
-      "source": "https://huggingface.co/docs/datasets/v2.7.1/en/dataset_card",
-      "quote": "pretty_name: SQuAD language: - en ... dataset_info: features: - name: id dtype: string",
-      "sourceId": "src-2",
-      "quoteSha256": "3afa579b6f99b2d1d38a4b54ade909a9ae68d04ca4d489746418cc3d2f221c0b"
-    },
-    {
-      "id": "c9",
       "label": "FACT",
       "text": "The features field can explicitly define feature types, useful when type inference is not obvious.",
       "check": "page",
@@ -105,68 +80,101 @@
       "quoteSha256": "cb9cea3c0e1583ea82feab91be0daf210ae9881b5750d9ab3888ef60438a5ee6"
     },
     {
-      "id": "c10",
+      "id": "c6",
       "label": "FACT",
-      "text": "Metadata previously in dataset_infos.json is now deprecated.",
+      "text": "dataset_info can include features with name and dtype and splits with name, num_bytes and num_examples, as shown for SQuAD.",
       "check": "page",
       "source": "https://huggingface.co/docs/datasets/v2.7.1/en/dataset_card",
-      "quote": "These metadata used to be included in the dataset_infos.json file, which is now deprecated.",
+      "quote": "dataset_info: features: - name: id dtype: string - name: title dtype: string - name: context dtype: string - name: question dtype: string - name: answers sequence: - name: text dtype: string - name: answer_start dtype: int32 splits: - name: train num_bytes: 79346360 num_examples: 87599 - name:",
       "sourceId": "src-2",
-      "quoteSha256": "037f2ab1127f8bd92aadae5cd0f5fd7c82247320de2a64f79dee50a651d88289"
+      "quoteSha256": "67c7e1a2ccd3fcc69d73361fb767f6d0c6adfbe439d5837c9ce50f962223b192"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "86.0% of the top 100 downloaded dataset cards fill out all suggested sections, while only 7.9% of cards with no downloads do so.",
+      "check": "page",
+      "source": "https://arxiv.org/html/2401.13822v1",
+      "quote": "While 86.0% of the top 100 downloaded dataset cards fill out all sections suggested by Hugging Face community, only 7.9% of dataset cards with no downloads complete all these sections.",
+      "sourceId": "src-4",
+      "quoteSha256": "0936128a0a40fe0990484c87803bd5ebe6c57fb69661e9a6b8e7c0dbb94697e1"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "huggingface/hub-docs has 50 raw commits in the last 30 days, 25 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/huggingface/hub-docs/commits?per_page=50&since=2026-10-18T22:17:52.163Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "Its latest real commit is cad2ce7, on 2026-11-16.",
+      "check": "page",
+      "source": "https://api.github.com/repos/huggingface/hub-docs/commits?per_page=50&since=2026-10-18T22:17:52.163Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c10",
+      "label": "DERIVED",
+      "text": "The completion gap between top-100 downloaded cards and zero-download cards is 78.1 percentage points.",
+      "check": "page",
+      "inputs": [
+        "c7"
+      ],
+      "math": "86.0 - 7.9 = 78.1 percentage points"
     },
     {
       "id": "c11",
-      "label": "DERIVED",
-      "text": "Because the YAML block is at the beginning of README.md and tags are pasted at the top, tags, language and license are part of the same YAML header.",
+      "label": "UNKNOWN",
+      "text": "The full schema and current validity rules for the configs/data_files field were not shown in the pages read.",
       "check": "page",
-      "inputs": [
-        "c1",
-        "c6"
-      ],
-      "math": "c1 places YAML at beginning; c6 places tags at top of README.md; therefore tags are in the header YAML."
+      "missing": "The detailed Dataset Card specifications page linked from the Hub docs, showing every field, type and validation rule for configs."
     },
     {
       "id": "c12",
       "label": "UNKNOWN",
-      "text": "Viewer fields (for example dataset viewer configuration) and their allowed values are not shown in the pages read.",
+      "text": "Whether a displayed license identifier legally authorizes a particular reuse was not confirmed by the pages read.",
       "check": "page",
-      "missing": "A huggingface.co/docs page explicitly documenting dataset-card viewer YAML fields and allowed values."
+      "missing": "The license table referenced in the docs plus the actual license text for the dataset in question."
     }
   ],
   "counts": {
-    "fact": 10,
+    "fact": 11,
     "derived": 1,
-    "unknown": 1
+    "unknown": 2
   },
   "risks": [
-    "The pages read do not list allowed license values or a license vocabulary, so a license string may be unrecognised by the Hub.",
-    "The pages read do not list allowed language codes, so language values beyond the en example are not confirmed.",
-    "The pages read do not show viewer fields, so viewer configuration cannot be validated from them.",
-    "Once filled, the card must be committed to README.md to appear on the repository, so uncommitted YAML changes will not be visible.",
-    "dataset_info metadata previously in dataset_infos.json is now deprecated, so relying on the old file format is a risk."
+    "Wrong license metadata will be displayed on the dataset page and could mislead reuse",
+    "Incomplete cards correlate with low downloads, so missing tags, language or structure reduces discovery",
+    "Features guessed by type inference can be wrong when inference is not obvious, especially on large sparse datasets",
+    "The pages read mention data files configuration options without giving their full schema, so misconfigured configs may fail to load or show wrong splits",
+    "Considerations for Using the Data receives the lowest proportion of content in highly downloaded cards, risking undisclosed biases and limits"
   ],
   "unknowns": [
-    "Viewer fields (for example dataset viewer configuration) and their allowed values are not shown in the pages read.: A huggingface.co/docs page explicitly documenting dataset-card viewer YAML fields and allowed values."
+    "The full schema and current validity rules for the configs/data_files field were not shown in the pages read.: The detailed Dataset Card specifications page linked from the Hub docs, showing every field, type and validation rule for configs.",
+    "Whether a displayed license identifier legally authorizes a particular reuse was not confirmed by the pages read.: The license table referenced in the docs plus the actual license text for the dataset in question."
   ],
   "wouldChangeMind": [
-    "A huggingface.co/docs page listing viewer fields and their allowed values would remove the UNKNOWN on viewer configuration.",
-    "A page listing accepted license and language identifiers would change the risk assessment from unconfirmed to confirmed.",
-    "A page showing validation errors for invalid YAML metadata beyond non-dictionary metadata would change the validation risk assessment."
+    "Finding the full Dataset Card specifications showing configs/features validation that contradicts the sparse schema in the pages read",
+    "Finding current large-scale evidence that card completion no longer correlates with downloads",
+    "Finding that license fields are validated against legal terms rather than merely displayed"
   ],
   "sources": [
     {
       "id": "src-1",
       "type": "url",
-      "title": "Repository Cards",
-      "url": "https://huggingface.co/docs/huggingface_hub/main/package_reference/cards",
-      "finalUrl": "https://huggingface.co/docs/huggingface_hub/main/package_reference/cards",
+      "title": "Dataset Cards · Hugging Face",
+      "url": "https://huggingface.co/docs/hub/datasets-cards",
+      "finalUrl": "https://huggingface.co/docs/hub/datasets-cards",
       "status": 200,
-      "fetchedAt": "2026-11-17T03:10:44.409Z",
+      "fetchedAt": "2026-11-17T22:17:51.747Z",
       "extractor": "page-text-v1",
-      "sha256": "afe85b7f1908e8612f676296d4e091417290a60632a8acc10f43703b0274cae4",
-      "bytes": 478369,
-      "quote": "The content should be a Markdown file with a YAML block at the beginning and a Markdown body.",
-      "quoteSha256": "fb8d33670b258c07ef94641855e9a3ac562e4e254993973d535209348bb395c5"
+      "sha256": "61515fd20709c2b1c86882dee247488a610ddb7bcdcd56ef67a97b2512aa9ba9",
+      "bytes": 210814,
+      "quote": "Tags are defined in a YAML metadata section at the top of the README.md file.",
+      "quoteSha256": "f14b699f13dc1367ed07fbec7b871e0647bc5f949b95b6b6ec8d2c755b7f287f"
     },
     {
       "id": "src-2",
@@ -175,26 +183,63 @@
       "url": "https://huggingface.co/docs/datasets/v2.7.1/en/dataset_card",
       "finalUrl": "https://huggingface.co/docs/datasets/v2.7.1/en/dataset_card",
       "status": 200,
-      "fetchedAt": "2026-11-17T03:10:44.016Z",
+      "fetchedAt": "2026-11-17T22:17:51.973Z",
       "extractor": "page-text-v1",
       "sha256": "e9cf7c4e9edd5aca45f1d407a25d96e8fd50bae2de240025f04cc64a3bec7692",
       "bytes": 126082,
-      "quote": "Create a new dataset card by copying this template to a README.md file in your repository.",
-      "quoteSha256": "53ac813a650d4c7f99c00aebabd3d6dc429538271f7175a1a81321eff96db9d8"
+      "quote": "Using the features field you can explicitly define the feature types of your dataset. This is especially useful when type inference is not obvious.",
+      "quoteSha256": "cb9cea3c0e1583ea82feab91be0daf210ae9881b5750d9ab3888ef60438a5ee6"
     },
     {
-      "id": "src-3",
+      "id": "src-4",
+      "type": "url",
+      "title": "Navigating Dataset Documentations in AI: A Large-Scale Analysis of Dataset Cards on Hugging Face",
+      "url": "https://arxiv.org/html/2401.13822v1",
+      "finalUrl": "https://arxiv.org/html/2401.13822v1",
+      "status": 200,
+      "fetchedAt": "2026-11-17T22:17:51.683Z",
+      "extractor": "page-text-v1",
+      "sha256": "de10b289ae256aea3b86ba0ef953202fade620f3e2aa9817441e3758a39f849c",
+      "bytes": 180879,
+      "quote": "While 86.0% of the top 100 downloaded dataset cards fill out all sections suggested by Hugging Face community, only 7.9% of dataset cards with no downloads complete all these sections.",
+      "quoteSha256": "0936128a0a40fe0990484c87803bd5ebe6c57fb69661e9a6b8e7c0dbb94697e1"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "hub-docs/docs/hub/datasets-cards.md at main · huggingface/hub-docs · GitHub",
+      "url": "https://github.com/huggingface/hub-docs/blob/main/docs/hub/datasets-cards.md",
+      "finalUrl": "https://github.com/huggingface/hub-docs/blob/main/docs/hub/datasets-cards.md",
+      "status": 200,
+      "fetchedAt": "2026-11-17T22:17:52.163Z",
+      "extractor": "page-text-v1",
+      "sha256": "80ea962f37ff50e616725d629d3ca7f7800113c380f1697e512cad0b25aad90f",
+      "bytes": 244137,
+      "quote": "To inform users about how to responsibly use the data, it's a good idea to include information about any potential biases within the dataset.",
+      "quoteSha256": "7138b9af0e526ad7c15aa385dcfa306f2ebeeaf23cfc74d1fee7e1cfe1e952c5"
+    },
+    {
+      "id": "src-6",
       "type": "url",
       "title": "Repository Cards · Hugging Face",
-      "url": "https://huggingface.co/docs/huggingface_hub/v0.13.3/en/package_reference/cards",
-      "finalUrl": "https://huggingface.co/docs/huggingface_hub/v0.13.3/en/package_reference/cards",
+      "url": "https://huggingface.co/docs/huggingface_hub/en/package_reference/cards",
+      "finalUrl": "https://huggingface.co/docs/huggingface_hub/en/package_reference/cards",
       "status": 200,
-      "fetchedAt": "2026-11-17T03:10:44.273Z",
+      "fetchedAt": "2026-11-17T22:17:51.919Z",
       "extractor": "page-text-v1",
-      "sha256": "ed352c5407a8daf1781bda0994d5850e488cf8484c02827786f9d77a08d62c19",
-      "bytes": 446526,
+      "sha256": "ed7cd6ee8801c49c77071f7ade3ce9fc4cd84087d57ba4d26318131bad496055",
+      "bytes": 477682,
       "quote": "Visit the dedicated documentation page for a deeper view of what Model Cards on the Hub are, and how they work under the hood.",
       "quoteSha256": "fcaae85995309b87a3df75f89bc5ebcf136ae74abad7744a9e3654fd2fdf2e37"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of huggingface/hub-docs",
+      "url": "https://api.github.com/repos/huggingface/hub-docs/commits?per_page=50&since=2026-10-18T22:17:52.163Z",
+      "fetchedAt": "2026-11-17T22:17:45.018Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "c6bcbb19de0b5a33e1159abca4427da792cc3748f84cf957b8f7a50ed5a406d2"
     }
   ],
   "sourceFormat": "record-v1",
