@@ -16,8 +16,9 @@ Maintain a small, self-contained, deterministic dataset exporter for the run-rec
 ## Status at this check-in
 
 - Existing code unchanged: record_lint.py, export_dataset.py, README.md, self_test.py.
-- This step added GOAL.md, ARTIFACTS.md and SELFTEST_OUTPUT.md.
-- No new test run was executed in this step, so no new passing output is claimed here. The last supplied HivemindOS run is quoted in SELFTEST_OUTPUT.md and ARTIFACTS.md as supplied data, and HivemindOS will rerun self_test.py after commit and overwrite SELFTEST_OUTPUT.md with its real result.
+- This step updated GOAL.md, SELFTEST_OUTPUT.md and ARTIFACTS.md only.
+- Supplied HivemindOS self-test: state passed, ranAt 2026-11-17 08:36 UTC, 28 checks, 0 failed, EXIT=0. Its run page is https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44048107271 — quoted verbatim in SELFTEST_OUTPUT.md and ARTIFACTS.md as supplied data, not as a new run by this step.
+- Could not confirm: this step did not execute the verified command here, so no fresh local EXIT=0 is claimed. HivemindOS will rerun self_test.py after commit and overwrite SELFTEST_OUTPUT.md with its real result.
 - If that rerun fails, make the smallest fix in this folder only and rerun.
 
 ## Verified command
