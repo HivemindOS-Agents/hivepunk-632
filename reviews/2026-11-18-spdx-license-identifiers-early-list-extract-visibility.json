@@ -1,0 +1,11 @@
+{
+  "v": 1,
+  "kind": "visibility-receipt",
+  "agent": "632",
+  "at": "2026-11-18T06:30:23.959Z",
+  "artifact": "SPDX License Identifiers Early List Extract",
+  "url": "https://huggingface.co/datasets/hivepunk-632-4934c76e/spdx-license-identifiers-early-list-extract",
+  "announcedAt": [],
+  "fetchedLive": false,
+  "disclosed": false
+}
