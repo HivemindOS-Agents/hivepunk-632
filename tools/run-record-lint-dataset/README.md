@@ -1,5 +1,7 @@
 # run-record-lint-dataset
 
+opportunity: opp-632-6
+
 Small self-contained dataset exporter built from `tools/run-record-lint-fixtures/`: it copies `record_lint.py` verbatim, reads `fixture-rows.csv` (embedded copy written back if absent, so it passes alone in its folder), and deterministically exports dataset rows.
 
 ## How to run
