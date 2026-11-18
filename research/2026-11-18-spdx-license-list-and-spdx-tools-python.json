@@ -1,0 +1,267 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-18T10:41:23.937Z",
+  "subject": "SPDX License List and spdx/tools-python",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The SPDX License List and tools-python are established, permissively licensed infrastructure with measurable adoption (252 stars, 60 contributors, version 0.8.5) but current maintenance signals are weak, so near-term value depends on whether the project resumes real shipping activity.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "spdx/tools-python has 0 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/spdx/tools-python/commits?per_page=50&since=2026-10-19T10:41:31.522Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether spdx/tools-python is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "The SPDX License List is an integral part of the SPDX Specification.",
+      "check": "page",
+      "source": "https://spdx.org/licenses/",
+      "quote": "The SPDX License List is an integral part of the SPDX Specification.",
+      "sourceId": "src-3",
+      "quoteSha256": "ffdd0add55e3e0d9251c27a0c3e1d8e15356c551bf5b1acc7a308cb46abe63ac"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "The SPDX License List is a list of commonly found licenses and exceptions used in free and open or collaborative software, data, hardware, or documentation.",
+      "check": "page",
+      "source": "https://spdx.org/licenses/",
+      "quote": "The SPDX License List itself is a list of commonly found licenses and exceptions used in free and open or collaborative software, data, hardware, or documentation.",
+      "sourceId": "src-3",
+      "quoteSha256": "01b811f0db0d4bab3b88e1d89b7a009f46bdf649fb64452b6d68a0c2714b7dac"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "The SPDX License List includes a standardized short identifier, the full name, the license text, and a canonical permanent URL for each license and exception.",
+      "check": "page",
+      "source": "https://spdx.org/licenses/",
+      "quote": "The SPDX License List includes a standardized short identifier, the full name, the license text, and a canonical permanent URL for each license and exception.",
+      "sourceId": "src-3",
+      "quoteSha256": "0feb3b045f154c05a66109bc2108fff239f2dc89931e58682743583f124d0337"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "The SPDX License List page shows Version: 3.29.0 2026-09-16.",
+      "check": "page",
+      "source": "https://spdx.org/licenses/",
+      "quote": "Version: 3.29.0 2026-09-16",
+      "sourceId": "src-3",
+      "quoteSha256": "d7339d9eabb0d7b4020bb2f2b180186949cbcbedc2516410114fe8cb1e5b805c"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "spdx/tools-python is a Python library to parse, validate and create SPDX documents.",
+      "check": "page",
+      "source": "https://github.com/spdx/tools-python",
+      "quote": "Python library to parse, validate and create SPDX documents",
+      "sourceId": "src-2",
+      "quoteSha256": "bf47d827e5d2a82ec673ecf15215a5c9e5ac45716ec6e5469fcd99a34c3bd793"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "tools-python implements SPDX parsers, convertors, validators and handlers in Python.",
+      "check": "page",
+      "source": "https://github.com/spdx/tools-python",
+      "quote": "This library implements SPDX parsers, convertors, validators and handlers in Python.",
+      "sourceId": "src-2",
+      "quoteSha256": "25a7d16e75cc73d1e5f9ef501cb00e40b9f1fec4524c2b48459f24560ee4c4e0"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "tools-python shows 1,419 Commits on GitHub.",
+      "check": "page",
+      "source": "https://github.com/spdx/tools-python",
+      "quote": "Dismiss alert {{ message }} main Branches Tags Go to file Code Open more actions menu Latest commit History 1,419 Commits 1,419 Commits Folders and files Name Name Last commit message Last commit date .github .github assets assets dev dev examples examples src/ spdx_tools src/ spdx_tools tests",
+      "sourceId": "src-2",
+      "quoteSha256": "8d1d48398e96e4baf32f8dabf8a0eae9c78200107254b191a9592cd06e1d1341"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "PyPI lists spdx-tools 0.8.5 as SPDX parser and tools.",
+      "check": "page",
+      "source": "https://pypi.org/project/spdx-tools/",
+      "quote": "spdx-tools 0.8.5 SPDX parser and tools.",
+      "sourceId": "src-4",
+      "quoteSha256": "7d23d4810121562a59513cda2220426e1b33e3bfd87cbf8b5daae83bccb534a3"
+    },
+    {
+      "id": "c9",
+      "label": "UNKNOWN",
+      "text": "tools-python is licensed Apache-2.0 and its LICENSE file begins Apache License Version 2.0, January 2004.",
+      "check": "page",
+      "missing": "Its source holds no passage that says this."
+    },
+    {
+      "id": "c10",
+      "label": "FACT",
+      "text": "Snyk reports GitHub Stars 252, Forks 161, and Contributors 60 for spdx-tools.",
+      "check": "page",
+      "source": "https://snyk.io/advisor/python/spdx-tools",
+      "quote": "GitHub Stars 252 Forks 161 Contributors 60",
+      "sourceId": "src-5",
+      "quoteSha256": "940c9518b01b445df0d3f18225d6acd93ce78448348715b71ced162182b54bc7"
+    },
+    {
+      "id": "c11",
+      "label": "FACT",
+      "text": "Snyk reports spdx-tools maintenance as Inactive and No commits over the last 6 months.",
+      "check": "page",
+      "source": "https://snyk.io/advisor/python/spdx-tools",
+      "quote": "maintenance Inactive",
+      "sourceId": "src-5",
+      "quoteSha256": "19893b8a1fc4cceb6e55efcad4d47af8e9d194c96e3f6368cec0fa5fc2e7c2ef"
+    },
+    {
+      "id": "c12",
+      "label": "FACT",
+      "text": "spdx/tools-python has 0 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/spdx/tools-python/commits?per_page=50&since=2026-10-19T10:41:31.522Z",
+      "sourceId": "src-7"
+    }
+  ],
+  "counts": {
+    "fact": 12,
+    "derived": 0,
+    "unknown": 2
+  },
+  "risks": [
+    "Snyk classifies maintenance as Inactive and reports No commits over the last 6 months.",
+    "The service check found 0 raw commits in the last 30 days, 0 of them real work.",
+    "The v0.8 release involved significant refactoring with breaking changes in the API.",
+    "Experimental SPDX 3.0 support is described as neither complete nor stable, and v0.8 only supports writing, not reading, SPDX 3.0 documents.",
+    "Snyk reports 79 Open Issues and 23 Open PR for the repository."
+  ],
+  "unknowns": [
+    "Whether spdx/tools-python is still shipping: None of its commits in the last 30 days is real work.",
+    "tools-python is licensed Apache-2.0 and its LICENSE file begins Apache License Version 2.0, January 2004.: Its source holds no passage that says this."
+  ],
+  "wouldChangeMind": [
+    "Evidence of recent real-work commits in spdx/tools-python after the 30-day window checked.",
+    "A maintainer statement confirming active maintenance and a roadmap for SPDX 3.0 reading support.",
+    "PyPI download statistics showing sustained high usage despite low commit activity."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "tools-python/LICENSE at main · spdx/tools-python · GitHub",
+      "url": "https://github.com/spdx/tools-python/blob/main/LICENSE",
+      "finalUrl": "https://github.com/spdx/tools-python/blob/main/LICENSE",
+      "status": 200,
+      "fetchedAt": "2026-11-18T10:41:31.396Z",
+      "extractor": "page-text-v1",
+      "sha256": "8f45d99b1c95f848ccbbc40ef1a3dfc160938747cd6e30907a985619b0de005d",
+      "bytes": 256730,
+      "quote": "&quot;Legal Entity&quot; shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity.",
+      "quoteSha256": "0227aace8636c49d468785d922ff3b5a2d703fcceb2251f901b67cdecfac6962"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "GitHub - spdx/tools-python: A Python library to parse, validate and create SPDX documents. · GitHub",
+      "url": "https://github.com/spdx/tools-python",
+      "finalUrl": "https://github.com/spdx/tools-python",
+      "status": 200,
+      "fetchedAt": "2026-11-18T10:41:31.464Z",
+      "extractor": "page-text-v1",
+      "sha256": "a45aa63caefdf5295d640b72c159e990be31658c158e6ed05f44fc0ac4cf80b0",
+      "bytes": 320178,
+      "quote": "Python library to parse, validate and create SPDX documents",
+      "quoteSha256": "bf47d827e5d2a82ec673ecf15215a5c9e5ac45716ec6e5469fcd99a34c3bd793"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "SPDX License List | Software Package Data Exchange (SPDX)",
+      "url": "https://spdx.org/licenses/",
+      "finalUrl": "https://spdx.org/licenses/",
+      "status": 200,
+      "fetchedAt": "2026-11-18T10:41:31.284Z",
+      "extractor": "page-text-v1",
+      "sha256": "d9a6c7b6d7b667a61f07189f625c2a8bd4083b0c415d648c101da25654210dba",
+      "bytes": 277994,
+      "quote": "The SPDX License List is an integral part of the SPDX Specification.",
+      "quoteSha256": "ffdd0add55e3e0d9251c27a0c3e1d8e15356c551bf5b1acc7a308cb46abe63ac"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "spdx-tools · PyPI",
+      "url": "https://pypi.org/project/spdx-tools/",
+      "finalUrl": "https://pypi.org/project/spdx-tools/",
+      "status": 200,
+      "fetchedAt": "2026-11-18T10:41:30.946Z",
+      "extractor": "page-text-v1",
+      "sha256": "9b44c744b4b1599abff7c2a35785ced9b9b3f09d492b8336e95fb6978581ae75",
+      "bytes": 129823,
+      "quote": "spdx-tools 0.8.5 SPDX parser and tools.",
+      "quoteSha256": "7d23d4810121562a59513cda2220426e1b33e3bfd87cbf8b5daae83bccb534a3"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "spdx-tools | Snyk",
+      "url": "https://snyk.io/advisor/python/spdx-tools",
+      "finalUrl": "https://security.snyk.io/package/pip/spdx-tools",
+      "status": 200,
+      "fetchedAt": "2026-11-18T10:41:31.412Z",
+      "extractor": "page-text-v1",
+      "sha256": "b438c9b582019ec1a928a3298193c0caeaaa5140061d1a2ffefa3c4d8ee32600",
+      "bytes": 337028,
+      "quote": "GitHub Stars 252 Forks 161 Contributors 60",
+      "quoteSha256": "940c9518b01b445df0d3f18225d6acd93ce78448348715b71ced162182b54bc7"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "SPDX · GitHub",
+      "url": "https://github.com/spdx",
+      "finalUrl": "https://github.com/spdx",
+      "status": 200,
+      "fetchedAt": "2026-11-18T10:41:31.522Z",
+      "extractor": "page-text-v1",
+      "sha256": "2da4d745a95c0196b6d524613a1a623f8548fe37ebd4aabdbdb0853f4838c739",
+      "bytes": 269766,
+      "quote": "spdx-examples - This repository contains example SPDX files covering various versions and use cases SPDX SBoM Tooling These repository contain SPDX related tools and code bindings, which are useful if you want to produce or consumer SPDX documents.",
+      "quoteSha256": "ead5916952c9a20d0169d5e072be40628e4e50aba9808c698ab61fc6808479fd"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of spdx/tools-python",
+      "url": "https://api.github.com/repos/spdx/tools-python/commits?per_page=50&since=2026-10-19T10:41:31.522Z",
+      "fetchedAt": "2026-11-18T10:41:23.937Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "06c9ffedf892a8dab1342dafc4e6f18dcf721609ca83a0c1132b039521d2e93c"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-18-spdx-license-list-and-spdx-tools-python.md",
+  "decidedBy": "bee"
+}
