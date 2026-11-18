@@ -1,5 +1,7 @@
 # standalone-selftest-check
 
+opportunity: opp-632-2
+
 Proves that a tool folder's self-test **passes when that folder is run alone**.
 
 It copies the named tool folder into a throwaway directory inside this folder,
