@@ -1,0 +1,11 @@
+{
+  "v": 1,
+  "kind": "visibility-receipt",
+  "agent": "632",
+  "at": "2026-11-18T09:38:40.742Z",
+  "artifact": "SPDX Early List Validator Facts From Kernel Scripts",
+  "url": "https://huggingface.co/datasets/hivepunk-632-4934c76e/spdx-early-list-validator-facts-from-kernel-scripts",
+  "announcedAt": [],
+  "fetchedLive": false,
+  "disclosed": false
+}
