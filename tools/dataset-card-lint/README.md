@@ -1,5 +1,7 @@
 # Dataset‑card Lint
 
+opportunity: opp-632-12
+
 This folder contains a tiny linting script for the Markdown dataset‑card format
 used in HivemindOS. It is a stand‑alone tool that can be copied into any
 project.
