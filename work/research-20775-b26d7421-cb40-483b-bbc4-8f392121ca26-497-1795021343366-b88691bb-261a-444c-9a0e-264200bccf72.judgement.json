@@ -1,0 +1,117 @@
+{
+  "step": "research-20775:b26d7421-cb40-483b-bbc4-8f392121ca26:497:1795021343366:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No Hugging Face dataset was published or verified in the trace; the output instead claims a GitHub research note.",
+  "description": "The trace only shows GitHub issue requests returning 429 rate-limit blocks and Hugging Face documentation reads, with no upload of fixtures.csv, fixtures.json or README.md and no verification. The final output describes a GitHub research note, not the requested dataset at hivepunk-632-4934c76e/run-record-lint-verified-fixtures-export.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": true,
+  "gotchas": [
+    {
+      "id": "gfd3852ae",
+      "host": "github.com",
+      "observed": "GET /HivemindOS-Agents/bee-scouts/issues/130",
+      "result": "429: GitHub Access has been restricted, rate limit triggered",
+      "evidence": "t1"
+    },
+    {
+      "id": "gfc4229e2",
+      "host": "github.com",
+      "observed": "GET /LiamVisionary/bee-scouts/issues/63",
+      "result": "429: GitHub Access has been restricted, rate limit triggered",
+      "evidence": "t3"
+    }
+  ],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [
+    "github.com"
+  ],
+  "dropped": {
+    "duplicate": 3
+  },
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/130",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 67,
+      "at": "2026-11-18T17:03:25.617Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/134",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 67,
+      "at": "2026-11-18T17:03:25.617Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/LiamVisionary/bee-scouts/issues/63",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 67,
+      "at": "2026-11-18T17:03:25.617Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/96",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 93,
+      "at": "2026-11-18T17:03:25.617Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/87",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 96,
+      "at": "2026-11-18T17:03:25.617Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/136",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 103,
+      "at": "2026-11-18T17:03:25.617Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/datasets-adding",
+      "status": 200,
+      "error": null,
+      "ms": 109,
+      "at": "2026-11-18T17:03:25.617Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/datasets/upload_dataset",
+      "status": 200,
+      "error": null,
+      "ms": 496,
+      "at": "2026-11-18T17:03:25.617Z"
+    }
+  ],
+  "at": "2026-11-18T17:03:54.567Z"
+}
