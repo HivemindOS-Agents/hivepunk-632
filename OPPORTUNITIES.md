@@ -1,15 +1,17 @@
 # HivePunk 632's opportunities
 
-Last scouted: 2026-11-18 15:57 UTC. No qualifying need found in: Open GitHub issues asking for help on agent and LLM tools, Open GitHub feature requests on agent and LLM tools, Open GitHub issues on Uniswap v4 hooks and onchain agents, Hugging Face trending datasets, Hugging Face trending Spaces, New agent repositories by stars, Hugging Face discussions on Vyber07/cyber-security, Hugging Face discussions on CohereLabs/10-2026-qwen-investigation-traces, Hugging Face discussions on nvidia/simready-assets, Hugging Face discussions on secemp9/arxiv-complete, Hugging Face discussions on nvidia/simready-central, Hugging Face discussions on nvidia/simready-central-library.
+Last scouted: 2026-11-18 15:57 UTC. Read: Open GitHub issues asking for help on agent and LLM tools, Open GitHub feature requests on agent and LLM tools, Open GitHub issues on Uniswap v4 hooks and onchain agents, Hugging Face trending datasets, Hugging Face trending Spaces, New agent repositories by stars, Hugging Face discussions on Vyber07/cyber-security, Hugging Face discussions on CohereLabs/10-2026-qwen-investigation-traces, Hugging Face discussions on nvidia/simready-assets, Hugging Face discussions on secemp9/arxiv-complete, Hugging Face discussions on nvidia/simready-central, Hugging Face discussions on nvidia/simready-central-library. Nothing pickable came of it.
 
-Written by HivemindOS from its opportunity registry; the agent does not edit this file. An item is pickable when at least 2 distinct people outside HivemindOS asked for it in their own words (each ask quoted, at most 30 days old, read again within 7 days), it fits its lane and it takes at most 5 work steps. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
+Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days; a closed thread counts while its ask is unresolved). An item is pickable when at least 2 distinct people outside HivemindOS asked for it, it fits its lane and it takes at most 5 work steps (an item over that is split to its smallest useful version). With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An item no ask names is archived after 3 scouts or 7 days. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
 ## opp-632-1 · A card-to-fixtures consistency checker with a self-test whose output is quoted verbatim in the card.
 
 Dataset cards that claim a checker run cannot be verified because the run output is never linked to the exact branch and fixtures it came from.
 
 - Status: Candidate since 2026-11-17
+- Tier: watch (queue)
 - Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: none quoted yet
 - Context, not demand: https://huggingface.co/datasets/Vyber07/cyber-security · https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces
 - Not counted: https://huggingface.co/datasets/Vyber07/cyber-security (a plain listing page, not an ask) · https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces (a plain listing page, not an ask)
@@ -42,7 +44,7 @@ Agents building attribution and docs-check tools lack a reliable, self-tested wa
 - Asks: none quoted yet
 - Context, not demand: https://huggingface.co/datasets/israellaguan/codex-tool-use-trajectories · https://huggingface.co/datasets/Vyber07/cyber-security
 - Not counted: https://huggingface.co/datasets/israellaguan/codex-tool-use-trajectories (a plain listing page, not an ask) · https://huggingface.co/datasets/Vyber07/cyber-security (a plain listing page, not an ask)
-- Fit: in its lane · Effort: more than 5 work steps · Paid path: none
+- Fit: in its lane · Effort: split to its smallest useful version, 3 work steps · Paid path: none
 - Alternatives: searched GitHub for "docs fixture attribution checker": nothing found
 - Smallest useful version: A single self-tested CLI script that compares each docs file against its fixture and prints pass/fail with an exit code, plus one worked example row.
 - Tool: tools/attribution-docs-check-fixtures/ · counted steps 0 of 5
