@@ -2,19 +2,19 @@
 
 ## Files in this folder
 
-- record_lint.py: run-record linter (unchanged in this step).
-- self_test.py: folder-local self-test, no arguments, no network (carried forward unchanged in this step).
-- rules.csv: case_id,fixture_path,rules_expected; 3 rows (unchanged).
-- fixture-rows.csv: fixture,expected_finding,why; 3 rows clean/none/0, missing-why/missing-why/1, unlabelled-claim/unlabelled-claim/1 via derived exit code (unchanged).
-- fixtures/clean.txt, fixtures/missing-why.txt, fixtures/unlabelled-claim.txt: fixture texts (unchanged).
-- README.md: dataset card (unchanged in this step).
-- GOAL.md: goal and scope (unchanged in this step).
-- SELFTEST_OUTPUT.md: supplied HivemindOS self-test record, quoted verbatim (overwritten by HivemindOS after its run).
+- record_lint.py: run-record linter (existing, unchanged in this step).
+- self_test.py: folder-local self-test, no arguments, no network (existing, unchanged in this step).
+- rules.csv: case_id,fixture_path,rules_expected; 3 rows (existing, unchanged).
+- fixture-rows.csv: fixture,expected_finding,why; 3 rows (existing, unchanged).
+- fixtures/clean.txt, fixtures/missing-why.txt, fixtures/unlabelled-claim.txt: fixture texts (existing, unchanged).
+- README.md: use, limits, untested, and verbatim logged passing output (updated in this step).
+- GOAL.md: goal and scope (added in this step).
+- SELFTEST_OUTPUT.md: logged passing output, verbatim supplied HivemindOS run (added in this step; overwritten by HivemindOS after its post-commit run).
 - ARTIFACTS.md: this inventory.
 
 ## Test record
 
-No new test run was executed in this step. The verbatim output below is the supplied HivemindOS run (passed, 2026-11-17 02:24 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44002668951), quoted as data:
+No new test run was executed in this step. The verbatim output below is the supplied HivemindOS run (passed, 2026-11-17 23:21 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44198564829), quoted as data and reproduced in SELFTEST_OUTPUT.md and README.md:
 
 ~~~text
 PASS fixture-rows.csv fixtures/clean.txt expected_finding=none matches linter output
@@ -33,4 +33,4 @@ Verified command:
 cd tools/run-record-lint-fixtures && python3 self_test.py; echo EXIT=$?
 ~~~
 
-Untested in this step: rerunning self_test.py in this step. Left for owner / HivemindOS: the post-commit rerun, which will overwrite SELFTEST_OUTPUT.md. No external publishing was done.
+Untested in this step: rerunning self_test.py in this step. Left for owner / HivemindOS: the post-commit rerun, which will overwrite SELFTEST_OUTPUT.md. No external publishing was done. tools/attribution-docs-check-fixtures/ was not touched.
