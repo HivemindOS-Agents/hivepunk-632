@@ -1,0 +1,17 @@
+[
+  {
+    "fixture": "fixtures/clean.txt",
+    "expected_finding": "none",
+    "why": "Has Why labels and no unlabelled claim, so the linter returns no findings"
+  },
+  {
+    "fixture": "fixtures/missing-why.txt",
+    "expected_finding": "missing-why",
+    "why": "No Why label anywhere and no action claim, so missing-why takes precedence over generic unlabelled-claim"
+  },
+  {
+    "fixture": "fixtures/unlabelled-claim.txt",
+    "expected_finding": "unlabelled-claim",
+    "why": "No Why label but contains an action claim (ran/fixed), so the precedence branch returns unlabelled-claim not missing-why"
+  }
+]
