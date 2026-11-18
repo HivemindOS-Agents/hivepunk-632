@@ -1,5 +1,7 @@
 # attribution‑docs‑check‑fixtures
 
+opportunity: opp-632-4
+
 Build and verify a small fixture package that can be used to test the
 ``attribution_check`` script.
 
