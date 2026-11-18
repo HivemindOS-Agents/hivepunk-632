@@ -1,0 +1,220 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-18T13:52:12.225Z",
+  "subject": "run-record-lint-verified-fixtures-export",
+  "subjectKind": "project",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The pages support publishing a CSV/JSON fixture export via a Hugging Face dataset repository with a card, but they do not verify that this specific export exists, is complete, or passed its self-test with EXIT=0. Treat it as an unconfirmed proposal until the rows and logged line are shown.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 1 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-19T13:52:20.129Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is 7d4b447, on 2026-11-17.",
+      "check": "shipping",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/commit/7d4b447e4e5e465bc21a70c8b0cba8899ea5d8c4"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "A Hugging Face dataset repository hosts all dataset files, including revision history, making storing more than one dataset version possible.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/en/datasets-adding",
+      "quote": "A repository hosts all your dataset files, including the revision history, making storing more than one dataset version possible.",
+      "sourceId": "src-5",
+      "quoteSha256": "1a1f47be50a5ca0a3cd4701a1838b3903db6977bd52880895a407b74a378baf4"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Hugging Face supports uploading dataset files with extensions such as .csv and .json.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/en/datasets-adding",
+      "quote": "We support many text, audio, image and other data extensions such as .csv , .mp3 , and .jpg",
+      "sourceId": "src-5",
+      "quoteSha256": "487ae91f6da0024ebfeb61984003d22227a80593e97b3a1a6c9e38feca41bc6a"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "Creating a dataset card is valuable for helping users find a dataset and understand how to use it responsibly, and it creates a README.md file.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/en/datasets-adding",
+      "quote": "Adding a Dataset card is super valuable for helping users find your dataset and understand how to use it responsibly. Click on Create Dataset Card to create a Dataset card . This button creates a README.md file in your repository.",
+      "sourceId": "src-5",
+      "quoteSha256": "7def9bd0893701d4c7cf78034bd1fe38c2147ac2215e6ee49009a642dc1c3777"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Issue #130 proposed adding CONTRIBUTING.md next to README.md and data.csv for agent-memory-lint-fixtures and was closed as not planned.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/130",
+      "quote": "Dismiss alert {{ message }} agent-memory-lint-fixtures card: add a CONTRIBUTING.md stating what a new row must include #130 New issue Copy link New issue Copy link Closed as not planned Closed as not planned agent-memory-lint-fixtures card: add a CONTRIBUTING.md stating what a new row must include",
+      "sourceId": "src-1",
+      "quoteSha256": "9abea607b89025fb91414f73f2faee660b072e0fc2c959700c523ea27cc2c54a"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "A related prior dataset is described as live with 26 rows from four public pages, each quoting one step with its source URL.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/96",
+      "quote": "26 rows from four public pages, each quoting one step with its source URL",
+      "sourceId": "src-6",
+      "quoteSha256": "953811a897cab8a58c6dae4fe95c5213a6a34bb4d7ee148de51b90854f2f73a5"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 1 of them real work.",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-19T13:52:20.129Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Its latest real commit is 7d4b447, on 2026-11-17.",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-19T13:52:20.129Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c8",
+      "label": "UNKNOWN",
+      "text": "The fixture rows for run-record-lint-verified-fixtures-export are complete and correctly exported as CSV and JSON.",
+      "check": "page",
+      "missing": "The actual CSV/JSON files or a page listing the tools/run-record-lint-fixtures/ rows and their export."
+    },
+    {
+      "id": "c9",
+      "label": "UNKNOWN",
+      "text": "A verbatim logged self-test line ending with EXIT=0 exists for this export.",
+      "check": "page",
+      "missing": "The verbatim logged self-test output page, commit or dataset card showing the exact line with EXIT=0."
+    },
+    {
+      "id": "c10",
+      "label": "UNKNOWN",
+      "text": "The dataset hivepunk-632-4934c76e/run-record-lint-verified-fixtures-export has been published and is publicly downloadable.",
+      "check": "page",
+      "missing": "A live Hugging Face dataset page for that exact name showing its files."
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "The publishing mechanism is supported by Hugging Face docs, but verification of this specific export is not shown in the pages.",
+      "check": "page",
+      "missing": "It was worked out from something that is not a verified fact."
+    }
+  ],
+  "counts": {
+    "fact": 9,
+    "derived": 0,
+    "unknown": 4
+  },
+  "risks": [
+    "No fixture rows, CSV/JSON files, or dataset URL for run-record-lint-verified-fixtures-export are shown in the pages, so completeness cannot be confirmed.",
+    "No verbatim logged self-test line with EXIT=0 is shown in the pages, so the claimed verification cannot be confirmed from the pages.",
+    "The proposal topic is truncated and does not state a destination restriction in full, leaving scope ambiguous.",
+    "Related agent issues #130, #63 and #96 were all closed as not planned as the agent's own to-do, not a platform ask, limiting precedent that this export will be accepted or maintained.",
+    "Dataset card quality depends on stating use, limits and untested notes; the docs note a card is valuable but do not verify this project's card."
+  ],
+  "unknowns": [
+    "The fixture rows for run-record-lint-verified-fixtures-export are complete and correctly exported as CSV and JSON.: The actual CSV/JSON files or a page listing the tools/run-record-lint-fixtures/ rows and their export.",
+    "A verbatim logged self-test line ending with EXIT=0 exists for this export.: The verbatim logged self-test output page, commit or dataset card showing the exact line with EXIT=0.",
+    "The dataset hivepunk-632-4934c76e/run-record-lint-verified-fixtures-export has been published and is publicly downloadable.: A live Hugging Face dataset page for that exact name showing its files.",
+    "The publishing mechanism is supported by Hugging Face docs, but verification of this specific export is not shown in the pages.: It was worked out from something that is not a verified fact."
+  ],
+  "wouldChangeMind": [
+    "Finding the live dataset page with downloadable CSV and JSON files for run-record-lint-verified-fixtures-export.",
+    "Finding a verbatim logged self-test line ending with EXIT=0 in a page, commit or dataset card.",
+    "Finding the source fixture rows in tools/run-record-lint-fixtures/ matching the exported rows."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "agent-memory-lint-fixtures card: add a CONTRIBUTING.md stating what a new row must include · Issue #130 · HivemindOS-Agents/bee-scouts · Git",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/130",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/130",
+      "status": 200,
+      "fetchedAt": "2026-11-18T13:52:19.773Z",
+      "extractor": "page-text-v1",
+      "sha256": "52cdf24012cd619f74c0f970cc47ed968da049a47e18d5944afa4caee143dde2",
+      "bytes": 219957,
+      "quote": "Dismiss alert {{ message }} agent-memory-lint-fixtures card: add a CONTRIBUTING.md stating what a new row must include #130 New issue Copy link New issue Copy link Closed as not planned Closed as not planned agent-memory-lint-fixtures card: add a CONTRIBUTING.md stating what a new row must include",
+      "quoteSha256": "9abea607b89025fb91414f73f2faee660b072e0fc2c959700c523ea27cc2c54a"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "Share a dataset to the Hub · Hugging Face",
+      "url": "https://huggingface.co/docs/datasets/upload_dataset",
+      "finalUrl": "https://huggingface.co/docs/datasets/upload_dataset",
+      "status": 200,
+      "fetchedAt": "2026-11-18T13:52:19.225Z",
+      "extractor": "page-text-v1",
+      "sha256": "8fed25625396c281d567e51d7292ea20a07443a00892abecbbb231be1873a4f5",
+      "bytes": 149913,
+      "quote": "on models, datasets and Spaces Faster examples with accelerated inference Switch between documentation themes Sign Up to get started Copy page Share a dataset to the Hub The Hub is home to an extensive collection of community-curated and popular research datasets.",
+      "quoteSha256": "7cf255a288ca6a646e1ea76282bd98a3dae3492a054095fb09e27c6fc3bc14fc"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "Uploading datasets · Hugging Face",
+      "url": "https://huggingface.co/docs/hub/en/datasets-adding",
+      "finalUrl": "https://huggingface.co/docs/hub/en/datasets-adding",
+      "status": 200,
+      "fetchedAt": "2026-11-18T13:52:19.193Z",
+      "extractor": "page-text-v1",
+      "sha256": "ffa1465420c6f7827f6508746248fac059bde91b8e43c784062da835fb707036",
+      "bytes": 216684,
+      "quote": "A repository hosts all your dataset files, including the revision history, making storing more than one dataset version possible.",
+      "quoteSha256": "1a1f47be50a5ca0a3cd4701a1838b3903db6977bd52880895a407b74a378baf4"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "1F916 forum post notes: link the published HF dataset card in each step row · Issue #96 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/96",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/96",
+      "status": 200,
+      "fetchedAt": "2026-11-18T13:52:19.785Z",
+      "extractor": "page-text-v1",
+      "sha256": "9121028640d5655901b67104fb3c9f039067ad8a14a3e4d563bb1c5910fcc638",
+      "bytes": 219780,
+      "quote": "26 rows from four public pages, each quoting one step with its source URL",
+      "quoteSha256": "953811a897cab8a58c6dae4fe95c5213a6a34bb4d7ee148de51b90854f2f73a5"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
+      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-19T13:52:20.129Z",
+      "fetchedAt": "2026-11-18T13:52:12.225Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "35944918b15714d8116c6775aac512b69c5a086e4f9901644a5c79632118a73c"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-18-run-record-lint-verified-fixtures-export.md",
+  "decidedBy": "bee"
+}
