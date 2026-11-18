@@ -1,0 +1,204 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-18T07:32:42.534Z",
+  "subject": "Hugging Face Dataset Card metadata requirements for a public dataset (license,…",
+  "subjectKind": "project",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "A compliant public dataset card is not just a README: it needs a YAML metadata block with licence and discovery fields plus honest Markdown documentation, and any stricter catalogue adds provenance and rights affirmations. The pages read confirm the baseline fields and workflow but do not confirm the full required-field list or a citation requirement.",
+  "claims": [
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "Each dataset should have a dataset card to promote responsible usage and inform users of any potential biases within the dataset.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/dataset_card",
+      "quote": "Each dataset should have a dataset card to promote responsible usage and inform users of any potential biases within the dataset.",
+      "sourceId": "src-2",
+      "quoteSha256": "a3013bc00e80d06cd7eb49d6e6b6a02ade2b30a3c04a0d1b4e203fb1bc7ad0f8"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Dataset cards help users understand a dataset's contents, the context for using the dataset, how it was created, and any other considerations a user should be aware of.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/dataset_card",
+      "quote": "Dataset cards help users understand a dataset’s contents, the context for using the dataset, how it was created, and any other considerations a user should be aware of.",
+      "sourceId": "src-2",
+      "quoteSha256": "a174a8d5041ea66aa3ab9a3c07f6f631e30c86c8ec39bcdc36f48d80fe7f7612"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "The metadata fields a publisher can add include license, language, pretty_name, task_categories, size_categories and other tags.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/dataset_card",
+      "quote": "You can add a license, language, pretty_name, the task_categories, size_categories, and any other tags that you think are relevant.",
+      "sourceId": "src-2",
+      "quoteSha256": "b618d729faff0dd5715203b05ce9de866b48b4f8f21fbbb9e669c1353941f4f5"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "These tags help users discover and find the dataset on the Hub.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/dataset_card",
+      "quote": "These tags help users discover and find your dataset on the Hub.",
+      "sourceId": "src-2",
+      "quoteSha256": "b9fbe187acf6974112148617b77848a22e67dd3f363d32eb5d5ee0567b90e4d0"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "For fields a publisher is unable to complete, Hugging Face advises writing [More Information Needed].",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/dataset_card",
+      "quote": "For fields you are unable to complete, you can write [More Information Needed] .",
+      "sourceId": "src-2",
+      "quoteSha256": "94c0f2982a5ecf99d2b848a81c0f97282fd8e31829a3602ddd8f728511f8c211"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "A dataset card can be created by clicking Create Dataset Card to create a new README.md file in the dataset repository.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/dataset_card",
+      "quote": "Go to your dataset repository on the Hub and click on Create Dataset Card to create a new README.md file in your repository.",
+      "sourceId": "src-2",
+      "quoteSha256": "c0a9f32c3da1530e21c40c729d7a26e13abb7005b9a633b62fad3f8864d048a4"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Hugging Face offers an Import dataset card template link that automatically creates a template with all the relevant fields to complete.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/dataset_card",
+      "quote": "Click on the Import dataset card template link to automatically create a template with all the relevant fields to complete.",
+      "sourceId": "src-2",
+      "quoteSha256": "5fe2d9de0d1438d949886547d81fd0f908f7585035d09e2b8793618ba54d847e"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "The OTDI specification documented on its page is version V0.1.7 of the criteria required for datasets cataloged by OTDI.",
+      "check": "page",
+      "source": "https://the-ai-alliance.github.io/open-trusted-data-initiative/dataset-requirements/",
+      "quote": "Note: The specification documented here is the “V0.1.7” version of the criteria we believe are required for datasets cataloged by OTDI.",
+      "sourceId": "src-1",
+      "quoteSha256": "7b04e5d4a4a612861b8ee3b3c44fbee8f3d1e48d1eb9fa5fc6719a65593f9c74"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "OTDI requires every dataset it catalogues to have a dataset card following the Hugging Face Dataset Card format, where README.md functions as the dataset card.",
+      "check": "page",
+      "source": "https://the-ai-alliance.github.io/open-trusted-data-initiative/dataset-requirements/",
+      "quote": "we require every dataset to have a dataset card (or data card ) that follows the Hugging Face Dataset Card format, where the README.md file functions as the dataset card, with our refinements discussed below.",
+      "sourceId": "src-1",
+      "quoteSha256": "69bfbfb6e4c44cb6ce3097c08cee0e6294d92fb59cfbcd5634e6f4470b4de79e"
+    },
+    {
+      "id": "c10",
+      "label": "FACT",
+      "text": "Under OTDI, the dataset owner must affirm they are the owner of the dataset or have rights from the owner enabling provision to anyone under the CDLA Permissive 2.0 license.",
+      "check": "page",
+      "source": "https://the-ai-alliance.github.io/open-trusted-data-initiative/dataset-requirements/",
+      "quote": "for all data within the dataset, the owner must affirm that they are either (a) the owner of the dataset or (b) you have rights from the owner of the data that enables the dataset to be provided to anyone under the CDLA Permissive 2.0 license.",
+      "sourceId": "src-1",
+      "quoteSha256": "1218f953d72ba7a1c027789f226354526d79627fbb17612409160916b1763ab0"
+    },
+    {
+      "id": "c11",
+      "label": "DERIVED",
+      "text": "A publisher therefore needs both the Hub YAML/Markdown card and, for OTDI cataloguing, an ownership and licence affirmation.",
+      "check": "page",
+      "inputs": [
+        "c6",
+        "c9",
+        "c10"
+      ],
+      "math": "c6 establishes README.md as the card on the Hub; c9 establishes OTDI requires that same format; c10 adds the ownership/licence affirmation on top."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether a specific citation field or citation format is mandatory in the dataset card.",
+      "check": "page",
+      "missing": "The full Required Metadata Fields and Markdown Content sections of the OTDI specification and the Hugging Face Dataset Card specifications page, which were not shown in the pages read."
+    }
+  ],
+  "counts": {
+    "fact": 10,
+    "derived": 1,
+    "unknown": 1
+  },
+  "risks": [
+    "Incomplete metadata: fields the publisher cannot complete may be marked [More Information Needed], which leaves discovery, loading and reuse information missing.",
+    "Licence mismatch: a publisher may state a licence in YAML that does not match the rights actually held over the underlying data, especially for crawled data with mixed provenance.",
+    "Template defaults may be copied without checking: the Imageomics template notes the default licence is CC0, which may not be appropriate for every dataset.",
+    "Catalogue rules are stricter than the Hub baseline: meeting Hugging Face's general guidance does not guarantee meeting the Open Trusted Data Initiative's ownership, provenance and licence criteria.",
+    "Citation and provenance details may be omitted if the publisher fills only the template sections they find relevant, reducing traceability."
+  ],
+  "unknowns": [
+    "Whether a specific citation field or citation format is mandatory in the dataset card.: The full Required Metadata Fields and Markdown Content sections of the OTDI specification and the Hugging Face Dataset Card specifications page, which were not shown in the pages read."
+  ],
+  "wouldChangeMind": [
+    "Finding the full OTDI Required Metadata Fields section showing which fields and citation formats are mandatory.",
+    "Finding Hugging Face documentation stating a required (not optional) set of YAML fields or a required citation block.",
+    "Finding that the OTDI refinements replace rather than extend the Hugging Face format for catalogued datasets."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "Dataset Specification | Open Trusted Data Initiative",
+      "url": "https://the-ai-alliance.github.io/open-trusted-data-initiative/dataset-requirements/",
+      "finalUrl": "https://the-ai-alliance.github.io/open-trusted-data-initiative/dataset-requirements/",
+      "status": 200,
+      "fetchedAt": "2026-11-18T07:32:49.020Z",
+      "extractor": "page-text-v1",
+      "sha256": "3999dfcea95920d2660a4a311e800c7440adaddec38a21751a892177fe2702a5",
+      "bytes": 95509,
+      "quote": "Note: The specification documented here is the “V0.1.7” version of the criteria we believe are required for datasets cataloged by OTDI.",
+      "quoteSha256": "7b04e5d4a4a612861b8ee3b3c44fbee8f3d1e48d1eb9fa5fc6719a65593f9c74"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Create a dataset card · Hugging Face",
+      "url": "https://huggingface.co/docs/datasets/dataset_card",
+      "finalUrl": "https://huggingface.co/docs/datasets/dataset_card",
+      "status": 200,
+      "fetchedAt": "2026-11-18T07:32:49.140Z",
+      "extractor": "page-text-v1",
+      "sha256": "1c52ce935a9d7a1f211805e50ba1220a86844bb9f0381c617833bc7ae81f559b",
+      "bytes": 123524,
+      "quote": "Each dataset should have a dataset card to promote responsible usage and inform users of any potential biases within the dataset.",
+      "quoteSha256": "a3013bc00e80d06cd7eb49d6e6b6a02ade2b30a3c04a0d1b4e203fb1bc7ad0f8"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "Dataset Card Template - Imageomics Guide",
+      "url": "https://imageomics.github.io/Imageomics-guide/wiki-guide/HF_DatasetCard_Template_mkdocs/",
+      "finalUrl": "https://imageomics.github.io/Imageomics-guide/wiki-guide/HF_DatasetCard_Template_mkdocs/",
+      "status": 200,
+      "fetchedAt": "2026-11-18T07:32:49.082Z",
+      "extractor": "page-text-v1",
+      "sha256": "e3e25f9e633df94c0b099c3c801caaa69f489acd8cb6d717c78f989254f7dec0",
+      "bytes": 102851,
+      "quote": "Alongside the appropriate stakeholders (e.g., your PI, co-authors), select a license that is following the guidelines set forth in the [ Imageomics Digital Products Release and Licensing Policy ]( https://imageomics.github.io/Imageomics-guide/wiki-guide/Digital-products-release-licensing-policy/ ).",
+      "quoteSha256": "56cf7460e61b119dfff1d480b7aae977a675207ea05e2b182ba4236493bb8050"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-18-hugging-face-dataset-card-metadata-requirements-for-a-public.md",
+  "decidedBy": "bee"
+}
