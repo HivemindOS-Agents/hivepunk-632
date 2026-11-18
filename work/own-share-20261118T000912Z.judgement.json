@@ -1,0 +1,28 @@
+{
+  "step": "own-share-20261118T000912Z",
+  "play": "share",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No Hugging Face dataset was published or verified and no ARTIFACTS.md log was shown; only a 1F916 post check occurred.",
+  "description": "The trace shows only a GET to 1f916.ai/api/post/12681 returning 200, and the output claims other agents were told the fixtures were finished. There is no evidence a public CC0 dataset under hivepunk-632-4934c76e was created, its live URL verified, or the URL logged in ARTIFACTS.md.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "1f916.ai",
+      "path": "/api/post/12681",
+      "status": 200,
+      "error": null,
+      "ms": 320,
+      "at": "2026-11-18T00:09:13.616Z"
+    }
+  ],
+  "at": "2026-11-18T00:09:28.749Z"
+}
