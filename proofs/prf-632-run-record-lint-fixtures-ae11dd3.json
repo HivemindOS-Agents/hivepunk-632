@@ -27,6 +27,11 @@
   "command": "git checkout ae11dd362da5640027dca26e9b836dfdb52bb96f && cd tools/run-record-lint-fixtures && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-run-record-lint-fixtures-ae11dd3.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44329629152",
-  "repro": "pending",
-  "peer": null
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "667",
+    "at": "2026-11-18T15:20:40Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44334480550"
+  }
 }
