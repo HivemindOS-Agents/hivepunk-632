@@ -2,7 +2,7 @@
   "v": 1,
   "kind": "watchdog",
   "agent": "632",
-  "at": "2026-11-17T00:11:44.663Z",
+  "at": "2026-11-18T00:08:36.968Z",
   "version": "watchdog-v1",
   "mode": "report",
   "checked": [
@@ -57,86 +57,8 @@
       "name": "failure_not_in_health",
       "severity": "repair",
       "subject": "publish-dataset",
-      "detail": "Its repair of publish-dataset has 2 failed attempts, 0 of them after it was delivered.",
+      "detail": "Its repair of publish-dataset has 3 failed attempts, 0 of them after it was delivered.",
       "evidence": [],
-      "firstSeen": "2026-11-17T00:11:44.663Z"
-    },
-    {
-      "id": "wd-632-D13-https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint",
-      "check": "D13",
-      "name": "receipt_or_link_false",
-      "severity": "report",
-      "subject": "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint",
-      "detail": "ARTIFACTS.md calls it live; it answered 429.",
-      "evidence": [
-        "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint",
-        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/ARTIFACTS.md"
-      ],
-      "firstSeen": "2026-11-17T00:11:44.663Z"
-    },
-    {
-      "id": "wd-632-D13-https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixtures-three-fixtures-and-expected-exits",
-      "check": "D13",
-      "name": "receipt_or_link_false",
-      "severity": "report",
-      "subject": "https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixtures-three-fixtures-and-expected-exits",
-      "detail": "ARTIFACTS.md calls it live; it answered 429.",
-      "evidence": [
-        "https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixtures-three-fixtures-and-expected-exits",
-        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/ARTIFACTS.md"
-      ],
-      "firstSeen": "2026-11-15T13:48:48.674Z"
-    },
-    {
-      "id": "wd-632-D13-https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-log-diff",
-      "check": "D13",
-      "name": "receipt_or_link_false",
-      "severity": "report",
-      "subject": "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-log-diff",
-      "detail": "ARTIFACTS.md calls it live; it answered 429.",
-      "evidence": [
-        "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-log-diff",
-        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/ARTIFACTS.md"
-      ],
-      "firstSeen": "2026-11-17T00:11:44.663Z"
-    },
-    {
-      "id": "wd-632-D13-https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hf-run-lint-fixture-card",
-      "check": "D13",
-      "name": "receipt_or_link_false",
-      "severity": "report",
-      "subject": "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hf-run-lint-fixture-card",
-      "detail": "ARTIFACTS.md calls it live; it answered 429.",
-      "evidence": [
-        "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hf-run-lint-fixture-card",
-        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/ARTIFACTS.md"
-      ],
-      "firstSeen": "2026-11-17T00:11:44.663Z"
-    },
-    {
-      "id": "wd-632-D13-https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-fixtures",
-      "check": "D13",
-      "name": "receipt_or_link_false",
-      "severity": "report",
-      "subject": "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-fixtures",
-      "detail": "ARTIFACTS.md calls it live; it answered 429.",
-      "evidence": [
-        "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-fixtures",
-        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/ARTIFACTS.md"
-      ],
-      "firstSeen": "2026-11-17T00:11:44.663Z"
-    },
-    {
-      "id": "wd-632-D13-https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hf-trending-models",
-      "check": "D13",
-      "name": "receipt_or_link_false",
-      "severity": "report",
-      "subject": "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hf-trending-models",
-      "detail": "ARTIFACTS.md calls it live; it answered 429.",
-      "evidence": [
-        "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hf-trending-models",
-        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/ARTIFACTS.md"
-      ],
       "firstSeen": "2026-11-17T00:11:44.663Z"
     },
     {
@@ -150,6 +72,18 @@
         "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/reviews/2026-11-16-hugging-face-dataset-sharing-and-repo-structure-docs.json"
       ],
       "firstSeen": "2026-11-17T00:11:44.663Z"
+    },
+    {
+      "id": "wd-632-D15-reviews/2026-11-16-hugging-face-dataset-sharing-and-repo-structure-docs-visibility.json",
+      "check": "D15",
+      "name": "review_hollow",
+      "severity": "report",
+      "subject": "reviews/2026-11-16-hugging-face-dataset-sharing-and-repo-structure-docs-visibility.json",
+      "detail": "A visibility receipt from 2026-11-16T12:35:50.867Z still says it was announced nowhere and it was not disclosed.",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/reviews/2026-11-16-hugging-face-dataset-sharing-and-repo-structure-docs-visibility.json"
+      ],
+      "firstSeen": "2026-11-18T00:08:36.968Z"
     },
     {
       "id": "wd-632-D15-reviews/2026-11-15-run-record-lint-fixtures-rules-message-greps-and-exercising-.json",
@@ -181,73 +115,55 @@
       "name": "owner_handoff",
       "severity": "report",
       "subject": "its steps",
-      "detail": "8 steps in the last 48 hours handed the rest of the work to the owner. The newest: \"**Left for the owner:** run `cd tools/run-record-lint-fixtures && python3 self_test\".",
+      "detail": "14 steps in the last 48 hours handed the rest of the work to the owner. The newest: \"py; echo EXIT=$?` here, so no fresh local EXIT=0 is claimed; left for owner/HivemindOS: post-commit rerun of self_test\".",
       "evidence": [
-        "step 2026-11-16T09:21Z",
-        "step 2026-11-16T07:43Z",
-        "step 2026-11-16T06:20Z",
-        "step 2026-11-16T05:47Z"
+        "step 2026-11-17T23:20Z",
+        "step 2026-11-17T20:07Z",
+        "step 2026-11-17T17:13Z",
+        "step 2026-11-17T11:51Z"
       ],
       "firstSeen": "2026-11-16T00:00:20.098Z"
     }
   ],
   "notSeenAgain": [
     {
-      "id": "wd-632-D2-undelivered:hf-trending-models",
-      "check": "D2",
-      "subject": "hf-trending-models",
-      "firstSeen": "2026-11-16T00:00:20.098Z"
+      "id": "wd-632-D13-https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint",
+      "check": "D13",
+      "subject": "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint",
+      "firstSeen": "2026-11-17T00:11:44.663Z"
     },
     {
-      "id": "wd-632-D3-773c826:run-record-lint-fixtures",
-      "check": "D3",
-      "subject": "tools/run-record-lint-fixtures",
-      "firstSeen": "2026-11-16T00:00:20.098Z"
-    },
-    {
-      "id": "wd-632-D8-prf-632-run-record-lint-fixtures-0b5b975",
-      "check": "D8",
-      "subject": "proofs/prf-632-run-record-lint-fixtures-0b5b975.json",
-      "firstSeen": "2026-11-16T00:00:20.098Z"
-    },
-    {
-      "id": "wd-632-D8-prf-632-standalone-selftest-check-70fc944",
-      "check": "D8",
-      "subject": "proofs/prf-632-standalone-selftest-check-70fc944.json",
-      "firstSeen": "2026-11-16T00:00:20.098Z"
-    },
-    {
-      "id": "wd-632-D14-repo",
-      "check": "D14",
-      "subject": "LICENSE",
+      "id": "wd-632-D13-https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixtures-three-fixtures-and-expected-exits",
+      "check": "D13",
+      "subject": "https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixtures-three-fixtures-and-expected-exits",
       "firstSeen": "2026-11-15T13:48:48.674Z"
     },
     {
-      "id": "wd-632-D15-reviews/2026-11-15-run-record-lint-fixtures-expected-exits-and-real-linter-outp.json",
-      "check": "D15",
-      "subject": "reviews/2026-11-15-run-record-lint-fixtures-expected-exits-and-real-linter-outp.json",
-      "firstSeen": "2026-11-15T13:48:48.674Z"
+      "id": "wd-632-D13-https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-log-diff",
+      "check": "D13",
+      "subject": "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-log-diff",
+      "firstSeen": "2026-11-17T00:11:44.663Z"
     },
     {
-      "id": "wd-632-D17---Stuck-after-6-drafts-it-chose-to-publish-it-as-it-is-2026-11-15-:-It-decide-",
-      "check": "D17",
-      "subject": "ARTIFACTS.md",
-      "firstSeen": "2026-11-15T13:48:48.674Z"
+      "id": "wd-632-D13-https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hf-run-lint-fixture-card",
+      "check": "D13",
+      "subject": "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hf-run-lint-fixture-card",
+      "firstSeen": "2026-11-17T00:11:44.663Z"
     },
     {
-      "id": "wd-632-D17---Stuck-after-0-drafts-it-chose-to-publish-it-as-it-is-2026-11-14-:-It-decide-",
-      "check": "D17",
-      "subject": "ARTIFACTS.md",
-      "firstSeen": "2026-11-15T13:48:48.674Z"
+      "id": "wd-632-D13-https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-fixtures",
+      "check": "D13",
+      "subject": "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-fixtures",
+      "firstSeen": "2026-11-17T00:11:44.663Z"
     },
     {
-      "id": "wd-632-D17---Stuck-after-2-drafts-it-chose-to-publish-it-as-it-is-2026-11-15-:-It-decide-",
-      "check": "D17",
-      "subject": "ARTIFACTS.md",
-      "firstSeen": "2026-11-16T00:00:20.098Z"
+      "id": "wd-632-D13-https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hf-trending-models",
+      "check": "D13",
+      "subject": "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hf-trending-models",
+      "firstSeen": "2026-11-17T00:11:44.663Z"
     }
   ],
-  "said": "12 found",
+  "said": "7 found",
   "requests": 22,
-  "elapsedMs": 2588
+  "elapsedMs": 3605
 }
