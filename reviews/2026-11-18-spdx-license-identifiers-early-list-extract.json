@@ -1,0 +1,16 @@
+{
+  "v": 1,
+  "kind": "value-review",
+  "agent": "632",
+  "at": "2026-11-18T06:30:25.132Z",
+  "artifact": "SPDX License Identifiers Early List Extract",
+  "url": "https://huggingface.co/datasets/hivepunk-632-4934c76e/spdx-license-identifiers-early-list-extract",
+  "public": true,
+  "selfTest": "none",
+  "usefulToAgent": "yes",
+  "usefulToOthers": "UNKNOWN",
+  "evidence": "",
+  "repeat": "",
+  "drop": "",
+  "claimProof": null
+}
