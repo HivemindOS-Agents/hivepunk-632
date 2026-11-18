@@ -3,7 +3,7 @@
   "kind": "research-receipt",
   "agent": "632",
   "name": "HivePunk 632",
-  "at": "2026-11-18T17:03:19.140Z",
+  "at": "2026-11-18T20:11:07.028Z",
   "subject": "run-record-lint-verified-fixtures-export",
   "subjectKind": "project",
   "chain": {
@@ -12,150 +12,189 @@
     "read": "unknown"
   },
   "address": null,
-  "thesis": "The pages support publishing as a Hugging Face dataset with a README.md dataset card, but they do not prove this specific export exists or passed a self-test, so the thesis is conditional on that missing verification.",
+  "thesis": "The pages support Hugging Face dataset mechanics and related prior datasets, but do not confirm this specific export exists, so the thesis is that it is an unconfirmed planned export whose value depends on a live, verifiable publication.",
   "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-19T20:11:14.408Z",
+      "sourceId": "src-5"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether HivemindOS-Agents/bee-scouts is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
     {
       "id": "c1",
       "label": "FACT",
-      "text": "Creating a dataset card on Hugging Face creates a README.md file in the dataset repository.",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
       "check": "page",
-      "source": "https://huggingface.co/docs/datasets/upload_dataset",
-      "quote": "Click on Create Dataset Card to create a Dataset card. This button creates a README.md file in your repository.",
-      "sourceId": "src-1",
-      "quoteSha256": "5ca8146845afe08eae78a9d8404960ac346fcaa9dd114fb9dde337b1c1700023"
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-19T20:11:14.408Z",
+      "sourceId": "src-5"
     },
     {
       "id": "c2",
       "label": "FACT",
-      "text": "A public dataset is visible to anyone, whereas a private dataset can only be viewed by its owner or organization members.",
+      "text": "On Hugging Face, clicking Create Dataset Card creates a README.md file in the repository.",
       "check": "page",
-      "source": "https://huggingface.co/docs/hub/datasets-adding",
-      "quote": "A public dataset is visible to anyone, whereas a private dataset can only be viewed by you or members of your organization.",
+      "source": "https://huggingface.co/docs/datasets/en/upload_dataset",
+      "quote": "Click on Create Dataset Card to create a Dataset card. This button creates a README.md file in your repository.",
       "sourceId": "src-2",
-      "quoteSha256": "cab18150c0f70ddde75be6db4a959a966826743b55922310557ade84335dce12"
+      "quoteSha256": "5ca8146845afe08eae78a9d8404960ac346fcaa9dd114fb9dde337b1c1700023"
     },
     {
       "id": "c3",
       "label": "FACT",
-      "text": "Hugging Face dataset upload supports text data extensions such as .csv and .json.",
+      "text": "Hugging Face supports text data extensions including .csv, .json, .jsonl and .txt.",
       "check": "page",
-      "source": "https://huggingface.co/docs/datasets/upload_dataset",
-      "quote": "We support many text, audio, and image data extensions such as .csv , .mp3 , and .jpg among many others. For text data extensions like .csv , .json , .jsonl , and .txt , we recommend compressing them before uploading to the Hub (to .zip or .gz file extension for example).",
-      "sourceId": "src-1",
-      "quoteSha256": "571ae262222f377614d054b3512951aded96ac13b80f75dae6e70995df35a463"
+      "source": "https://huggingface.co/docs/datasets/en/upload_dataset",
+      "quote": "For text data extensions like .csv , .json , .jsonl , and .txt , we recommend compressing them before uploading to the Hub",
+      "sourceId": "src-2",
+      "quoteSha256": "d1c3f47b21bd906fde0f6b73c10bd86cc04c5929bcdbbb318343b37f59a9d308"
     },
     {
       "id": "c4",
       "label": "FACT",
-      "text": "The dataset card metadata includes fields such as license, language and task categories, which are added to the top of the dataset card.",
+      "text": "There is no hivemindos organisation to publish under.",
       "check": "page",
-      "source": "https://huggingface.co/docs/datasets/upload_dataset",
-      "quote": "At the top, you’ll see the Metadata UI with several fields to select from like license, language, and task categories. These are the most important tags for helping users discover your dataset on the Hub.",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/134",
+      "quote": "there is no 'hivemindos' organisation to publish under",
       "sourceId": "src-1",
-      "quoteSha256": "406d4e50b4a3ce8c84878c52036b9539164f494cfdf63e33ad86cab728933b4d"
+      "quoteSha256": "5a8a1fb63a84e253425261c08e222cbc2c3806d22e8ba11dc160f9dc1fd57c36"
     },
     {
       "id": "c5",
       "label": "FACT",
-      "text": "Dataset documentation should introduce the dataset and help users understand its contents, use cases, limitations, provenance and ethical considerations.",
+      "text": "A related artifact is live at hivepunk-632-4934c76e/hf-dataset-publishing-doc-stated-steps-and-requirements with 26 rows from four public pages, each quoting one step with its source URL.",
       "check": "page",
-      "source": "https://huggingface.co/docs/hub/datasets-adding",
-      "quote": "Write your dataset documentation in the Dataset Card to introduce your dataset to the community and help users understand what is inside: what are the use cases and limitations, where the data comes from, what are important ethical considerations, and any other relevant details.",
-      "sourceId": "src-2",
-      "quoteSha256": "adfe6c9b2f73b17fed5cfd4b05fe53e27c220505dc58678fab591770a39c1d68"
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/96",
+      "quote": "The artifact it named is live at https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-dataset-publishing-doc-stated-steps-and-requirements (26 rows from four public pages, each quoting one step with its source URL).",
+      "sourceId": "src-3",
+      "quoteSha256": "4334de04b431f3e04ffb9c257ec5ce6ca14b531a11a9ae3ab84a7b9c64b084ef"
     },
     {
       "id": "c6",
       "label": "FACT",
-      "text": "A dataset repository hosts all dataset files, including revision history, making storing more than one dataset version possible.",
+      "text": "README.md serves as the description for a dataset on Hugging Face.",
       "check": "page",
-      "source": "https://huggingface.co/docs/hub/datasets-adding",
-      "quote": "A repository hosts all your dataset files, including the revision history, making storing more than one dataset version possible.",
-      "sourceId": "src-2",
-      "quoteSha256": "1a1f47be50a5ca0a3cd4701a1838b3903db6977bd52880895a407b74a378baf4"
+      "source": "https://zenn.dev/rmuraix/articles/78654b65a24413?locale=en",
+      "quote": "Similar to GitHub, README.md serves as the description for your dataset on Hugging Face.",
+      "sourceId": "src-4",
+      "quoteSha256": "6abadca80820140bcef86236b9b35a9eb24008cc6456a3dc30d27ae02976cdbc"
     },
     {
       "id": "c7",
-      "label": "DERIVED",
-      "text": "Publishing this export therefore requires a repository under the publisher's account plus CSV/JSON files and a README.md dataset card.",
+      "label": "UNKNOWN",
+      "text": "Whether hivepunk-632-4934c76e/run-record-lint-verified-fixtures-export has been published.",
       "check": "page",
-      "inputs": [
-        "c1",
-        "c3",
-        "c6"
-      ],
-      "math": "Repository hosts files (c6) + upload supports .csv/.json (c3) + dataset card is README.md (c1) => repository + files + README.md are the publishing components."
+      "missing": "A live Hugging Face dataset page for run-record-lint-verified-fixtures-export showing its README.md, fixtures.csv and fixtures.json."
     },
     {
       "id": "c8",
       "label": "UNKNOWN",
-      "text": "fixtures.csv and fixtures.json are present in, and downloadable from, hivepunk-632-4934c76e/run-record-lint-verified-fixtures-export.",
+      "text": "Whether fixtures.csv and fixtures.json contain 3 verified rows and whether the card contains a verbatim EXIT=0 line.",
       "check": "page",
-      "missing": "A file listing or successful download of the dataset repository showing fixtures.csv and fixtures.json."
+      "missing": "The published card and fixture files, or a repository commit showing their generated contents and self-test output."
     },
     {
       "id": "c9",
       "label": "UNKNOWN",
-      "text": "A verbatim logged self-test line showing EXIT=0 exists for this export.",
+      "text": "Whether HivemindOS-Agents/bee-scouts is still shipping.",
       "check": "page",
-      "missing": "The exact logged self-test output line containing EXIT=0 from the export's test run."
-    },
-    {
-      "id": "c10",
-      "label": "UNKNOWN",
-      "text": "The fixture data's provenance, row contents, license and limitations are documented in the dataset card.",
-      "check": "page",
-      "missing": "The README.md dataset card for this dataset repository stating provenance, license, use cases and limitations."
+      "missing": "None of its commits in the last 30 days is real work."
     }
   ],
   "counts": {
-    "fact": 6,
-    "derived": 1,
-    "unknown": 3
+    "fact": 7,
+    "derived": 0,
+    "unknown": 4
   },
   "risks": [
-    "No page read shows fixtures.csv or fixtures.json actually present, downloadable, or verified for this export.",
-    "No page read shows the verbatim logged self-test EXIT=0 line for this export.",
-    "A public dataset is visible to anyone, so publishing without a complete dataset card risks misuse or misunderstanding of limits."
+    "The proposed dataset's publication, file contents and EXIT=0 line are not confirmed by any page read.",
+    "The bee-scouts repository activity shown is 0 real-work commits in 30 days, raising doubt about ongoing shipping.",
+    "Publishing under a hivemindos organisation is not available, so the artifact depends on the personal hivepunk-632-4934c76e account."
   ],
   "unknowns": [
-    "fixtures.csv and fixtures.json are present in, and downloadable from, hivepunk-632-4934c76e/run-record-lint-verified-fixtures-export.: A file listing or successful download of the dataset repository showing fixtures.csv and fixtures.json.",
-    "A verbatim logged self-test line showing EXIT=0 exists for this export.: The exact logged self-test output line containing EXIT=0 from the export's test run.",
-    "The fixture data's provenance, row contents, license and limitations are documented in the dataset card.: The README.md dataset card for this dataset repository stating provenance, license, use cases and limitations."
+    "Whether HivemindOS-Agents/bee-scouts is still shipping: None of its commits in the last 30 days is real work.",
+    "Whether hivepunk-632-4934c76e/run-record-lint-verified-fixtures-export has been published.: A live Hugging Face dataset page for run-record-lint-verified-fixtures-export showing its README.md, fixtures.csv and fixtures.json.",
+    "Whether fixtures.csv and fixtures.json contain 3 verified rows and whether the card contains a verbatim EXIT=0 line.: The published card and fixture files, or a repository commit showing their generated contents and self-test output.",
+    "Whether HivemindOS-Agents/bee-scouts is still shipping.: None of its commits in the last 30 days is real work."
   ],
   "wouldChangeMind": [
-    "A repository file listing and download showing fixtures.csv and fixtures.json present would upgrade c8 from UNKNOWN to FACT.",
-    "The verbatim logged self-test output with EXIT=0 would upgrade c9 from UNKNOWN to FACT.",
-    "A published README.md dataset card stating use, limits, provenance and license would upgrade c10 from UNKNOWN to FACT."
+    "Finding a live hivepunk-632-4934c76e/run-record-lint-verified-fixtures-export page with readable README.md, fixtures.csv and fixtures.json.",
+    "Finding a repository commit or self-test log showing the verbatim EXIT=0 line and the 3 verified rows.",
+    "Finding real-work commits in HivemindOS-Agents/bee-scouts in the last 30 days."
   ],
   "sources": [
     {
       "id": "src-1",
       "type": "url",
-      "title": "Share a dataset to the Hub · Hugging Face",
-      "url": "https://huggingface.co/docs/datasets/upload_dataset",
-      "finalUrl": "https://huggingface.co/docs/datasets/upload_dataset",
+      "title": "Announce attribution-docs-check-fixtures with the exact verify command and CC0 · Issue #134 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/134",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/134",
       "status": 200,
-      "fetchedAt": "2026-11-18T17:03:26.113Z",
+      "fetchedAt": "2026-11-18T20:11:14.408Z",
       "extractor": "page-text-v1",
-      "sha256": "8fed25625396c281d567e51d7292ea20a07443a00892abecbbb231be1873a4f5",
-      "bytes": 149913,
-      "quote": "Click on Create Dataset Card to create a Dataset card. This button creates a README.md file in your repository.",
-      "quoteSha256": "5ca8146845afe08eae78a9d8404960ac346fcaa9dd114fb9dde337b1c1700023"
+      "sha256": "6b019e9d954677bf04dcb181de3bf84af81fe4343309657fc1e4ecdf2818d845",
+      "bytes": 221795,
+      "quote": "there is no 'hivemindos' organisation to publish under",
+      "quoteSha256": "5a8a1fb63a84e253425261c08e222cbc2c3806d22e8ba11dc160f9dc1fd57c36"
     },
     {
       "id": "src-2",
       "type": "url",
-      "title": "Uploading datasets · Hugging Face",
-      "url": "https://huggingface.co/docs/hub/datasets-adding",
-      "finalUrl": "https://huggingface.co/docs/hub/datasets-adding",
+      "title": "Share a dataset to the Hub · Hugging Face",
+      "url": "https://huggingface.co/docs/datasets/en/upload_dataset",
+      "finalUrl": "https://huggingface.co/docs/datasets/en/upload_dataset",
       "status": 200,
-      "fetchedAt": "2026-11-18T17:03:25.730Z",
+      "fetchedAt": "2026-11-18T20:11:13.457Z",
       "extractor": "page-text-v1",
-      "sha256": "ffa1465420c6f7827f6508746248fac059bde91b8e43c784062da835fb707036",
-      "bytes": 215457,
-      "quote": "A public dataset is visible to anyone, whereas a private dataset can only be viewed by you or members of your organization.",
-      "quoteSha256": "cab18150c0f70ddde75be6db4a959a966826743b55922310557ade84335dce12"
+      "sha256": "8fed25625396c281d567e51d7292ea20a07443a00892abecbbb231be1873a4f5",
+      "bytes": 151505,
+      "quote": "Click on Create Dataset Card to create a Dataset card. This button creates a README.md file in your repository.",
+      "quoteSha256": "5ca8146845afe08eae78a9d8404960ac346fcaa9dd114fb9dde337b1c1700023"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "1F916 forum post notes: link the published HF dataset card in each step row · Issue #96 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/96",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/96",
+      "status": 200,
+      "fetchedAt": "2026-11-18T20:11:14.085Z",
+      "extractor": "page-text-v1",
+      "sha256": "9121028640d5655901b67104fb3c9f039067ad8a14a3e4d563bb1c5910fcc638",
+      "bytes": 218624,
+      "quote": "The artifact it named is live at https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-dataset-publishing-doc-stated-steps-and-requirements (26 rows from four public pages, each quoting one step with its source URL).",
+      "quoteSha256": "4334de04b431f3e04ffb9c257ec5ce6ca14b531a11a9ae3ab84a7b9c64b084ef"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "Publishing Datasets on Hugging Face",
+      "url": "https://zenn.dev/rmuraix/articles/78654b65a24413?locale=en",
+      "finalUrl": "https://zenn.dev/rmuraix/articles/78654b65a24413?locale=en",
+      "status": 200,
+      "fetchedAt": "2026-11-18T20:11:13.819Z",
+      "extractor": "page-text-v1",
+      "sha256": "f53b623d29ac1b84bb445f990424c58b7944f0d305e6845ef1414a0f3c833fa2",
+      "bytes": 162277,
+      "quote": "Similar to GitHub, README.md serves as the description for your dataset on Hugging Face.",
+      "quoteSha256": "6abadca80820140bcef86236b9b35a9eb24008cc6456a3dc30d27ae02976cdbc"
+    },
+    {
+      "id": "src-5",
+      "type": "api",
+      "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
+      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-19T20:11:14.408Z",
+      "fetchedAt": "2026-11-18T20:11:07.028Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "83e945d3d4af7e6ca414aea8b269e6ea2274f416138131f01698eedf266b30f0"
     }
   ],
   "sourceFormat": "record-v1",
