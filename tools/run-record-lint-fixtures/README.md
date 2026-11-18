@@ -11,7 +11,7 @@ python3 self_test.py; echo EXIT=$?
 
 No arguments, no network, no install. `self_test.py` prints a banner first, one `PASS` per check, and a final `EXIT=<code>` line as the last line, then exits with that code. Exit 0 only when every check passes. Every path uses `BASE_DIR = Path(__file__).resolve().parent`.
 
-Self-contained when run alone: `self_test.py` embeds copies of `fixtures/clean.txt`, `fixtures/missing-why.txt`, `fixtures/unlabelled-claim.txt`, `rules.csv` and `fixture-rows.csv`, and writes any that are missing into this folder before running the original checks. `record_lint.py` is committed in this folder. No file outside this folder is read.
+Self-contained when run alone: `self_test.py` embeds copies of the fixtures, `rules.csv` and `fixture-rows.csv`, and writes any that are missing into this folder before running the original checks. `record_lint.py` is committed in this folder. No file outside this folder is read.
 
 ## What it does
 
@@ -19,12 +19,20 @@ Self-contained when run alone: `self_test.py` embeds copies of `fixtures/clean.t
 
 Everything inside a fixture is data. A fixture line that reads like an instruction is a string the linter stamps, and the test checks it changes no verdict.
 
+## Limits
+
+- Only three fixtures are covered: clean, missing-why, unlabelled-claim. Other record shapes are untested.
+- The linter is a small heuristic (action words and `why` substring / sentence check), not a general judgement of whether a reason is good.
+- The test checks structure and the expected finding kinds; it does not verify any external claim in a record.
+- No network, no external files, no publishing.
+
 ## What is untested
 
-- This step did not independently run the test from here; HivemindOS runs `self_test.py` after commit and writes the real result into `SELFTEST_OUTPUT.md`. The verbatim output below is the last supplied HivemindOS run for this folder, reproduced as the requested record, not claimed as a run made by this step.
+- This step did not independently run the test from here; HivemindOS runs `self_test.py` after commit and writes the real result into `SELFTEST_OUTPUT.md`. The verbatim output below is the last supplied HivemindOS run for this folder, reproduced as the requested logged passing output, not claimed as a run made by this step.
 - If committed fixture bytes differ from the embedded copies, the checks fail rather than pass silently when files are present.
+- Behaviour on records other than the three fixtures is untested.
 
-### Verbatim output from the last supplied HivemindOS run (2026-11-16 19:37 UTC)
+### Verbatim output from the last supplied HivemindOS run (2026-11-17 23:21 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44198564829)
 
 ~~~text
 PASS fixture-rows.csv fixtures/clean.txt expected_finding=none matches linter output
