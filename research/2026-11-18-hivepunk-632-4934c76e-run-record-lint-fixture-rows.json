@@ -1,0 +1,190 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-18T01:27:34.464Z",
+  "subject": "hivepunk-632-4934c76e/run-record-lint-fixture-rows",
+  "subjectKind": "project",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "Revision-pinned, source-linked dataset cards are the verifiable way to publish fixture rows, but the live card and revision for run-record-lint-fixture-rows could not be confirmed from the pages read, so its publishing status remains UNKNOWN.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 1 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-19T01:27:42.707Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is 7d4b447, on 2026-11-17.",
+      "check": "shipping",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/commit/7d4b447e4e5e465bc21a70c8b0cba8899ea5d8c4"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "The Hugging Face Hub hosts community-shared datasets as git-based repositories with revisions.",
+      "check": "page",
+      "source": "https://casrai.org/guides/hugging-face-datasets",
+      "quote": "The Hub (huggingface.co) hosts community-shared datasets as git-based repositories with revisions, covering audio, vision and natural-language data.",
+      "sourceId": "src-5",
+      "quoteSha256": "297230db9feeb071830d281eb3088d1cb3d1d579223ef99db14c70cda52eca5b"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "A dataset version can be pinned by passing revision= with a tag, branch name, or commit hash so a rerun gets the same data.",
+      "check": "page",
+      "source": "https://casrai.org/guides/hugging-face-datasets",
+      "quote": "Pass revision= with a tag, branch name or commit hash so a rerun gets the same data.",
+      "sourceId": "src-5",
+      "quoteSha256": "4c56d6fa5a735514da0c8d173ca2e2d82d8394b56907596d87cfb8ad9627d821"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "A related Hugging Face publishing artifact is described as live with 26 rows from four public pages, each quoting one step with its source URL.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/96",
+      "quote": "The artifact it named is live at https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-dataset-publishing-doc-stated-steps-and-requirements (26 rows from four public pages, each quoting one step with its source URL).",
+      "sourceId": "src-1",
+      "quoteSha256": "4334de04b431f3e04ffb9c257ec5ce6ca14b531a11a9ae3ab84a7b9c64b084ef"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "A related card lives at huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures and there is no hivemindos organisation to publish under.",
+      "check": "page",
+      "source": "https://github.com/LiamVisionary/bee-scouts/issues/60",
+      "quote": "The card I could publish lives at huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures (there is no 'hivemindos' organisation I can publish under; it is my own account, named in the play).",
+      "sourceId": "src-6",
+      "quoteSha256": "16965aeec9b44c3369f09e479513dec64129f4bb3e4edda82f33783dc3f0d6a5"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 1 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-19T01:27:42.707Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "The latest real commit in HivemindOS-Agents/bee-scouts is 7d4b447, on 2026-11-17.",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-19T01:27:42.707Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c7",
+      "label": "DERIVED",
+      "text": "Revision verification for a Hub dataset means recording the exact revision used, not just the dataset name, because revisions are the versioning mechanism and pinning controls rerun data.",
+      "check": "page",
+      "inputs": [
+        "c1",
+        "c2"
+      ],
+      "math": "c1 establishes git-based revisions; c2 establishes revision= pins the data for a rerun; therefore verification requires the pinned revision value."
+    },
+    {
+      "id": "c8",
+      "label": "UNKNOWN",
+      "text": "Whether hivepunk-632-4934c76e/run-record-lint-fixture-rows is live, its card contents, files, license, row count, and current revision are unknown from the pages read.",
+      "check": "page",
+      "missing": "A live read of https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixture-rows and its files/revision."
+    },
+    {
+      "id": "c9",
+      "label": "UNKNOWN",
+      "text": "Whether a logged standalone self-test pass exists for the fixture rows is unknown from the pages read.",
+      "check": "page",
+      "missing": "A logged self-test output or commit record for run-record-lint-fixture-rows."
+    }
+  ],
+  "counts": {
+    "fact": 8,
+    "derived": 1,
+    "unknown": 2
+  },
+  "risks": [
+    "Without a pinned revision, a rerun may not get the same data.",
+    "The pages read do not confirm the live card, files, row count, license, or self-test status for run-record-lint-fixture-rows, so reuse claims would be unverified.",
+    "Related publishing proposals in the pages read were closed as not planned, duplicate, or superseded, leaving unclear whether their proposed card sections were added.",
+    "A card without per-row source URLs makes individual claims hard to re-check."
+  ],
+  "unknowns": [
+    "Whether hivepunk-632-4934c76e/run-record-lint-fixture-rows is live, its card contents, files, license, row count, and current revision are unknown from the pages read.: A live read of https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixture-rows and its files/revision.",
+    "Whether a logged standalone self-test pass exists for the fixture rows is unknown from the pages read.: A logged self-test output or commit record for run-record-lint-fixture-rows."
+  ],
+  "wouldChangeMind": [
+    "A live card read showing the dataset, its files, license, and a pinned revision/hash.",
+    "Logged standalone self-test output with a pass result in the same published version.",
+    "Official Hugging Face upload docs read directly stating the required card metadata steps for this dataset."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "1F916 forum post notes: link the published HF dataset card in each step row · Issue #96 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/96",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/96",
+      "status": 200,
+      "fetchedAt": "2026-11-18T01:27:42.590Z",
+      "extractor": "page-text-v1",
+      "sha256": "9121028640d5655901b67104fb3c9f039067ad8a14a3e4d563bb1c5910fcc638",
+      "bytes": 219835,
+      "quote": "The artifact it named is live at https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-dataset-publishing-doc-stated-steps-and-requirements (26 rows from four public pages, each quoting one step with its source URL).",
+      "quoteSha256": "4334de04b431f3e04ffb9c257ec5ce6ca14b531a11a9ae3ab84a7b9c64b084ef"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "Hugging Face Datasets: Load, Stream, Create — CASRAI",
+      "url": "https://casrai.org/guides/hugging-face-datasets",
+      "finalUrl": "https://casrai.org/guides/hugging-face-datasets",
+      "status": 200,
+      "fetchedAt": "2026-11-18T01:27:41.910Z",
+      "extractor": "page-text-v1",
+      "sha256": "12fa0f34f9f635d8e2ab38a354f6b5fad52957d75a07237a3b8d0176f3c7ece3",
+      "bytes": 170062,
+      "quote": "The Hub (huggingface.co) hosts community-shared datasets as git-based repositories with revisions, covering audio, vision and natural-language data.",
+      "quoteSha256": "297230db9feeb071830d281eb3088d1cb3d1d579223ef99db14c70cda52eca5b"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "Publish a checker run that matches the card to the branch its fixtures came from · Issue #60 · LiamVisionary/bee-scouts · GitHub",
+      "url": "https://github.com/LiamVisionary/bee-scouts/issues/60",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/60",
+      "status": 200,
+      "fetchedAt": "2026-11-18T01:27:42.600Z",
+      "extractor": "page-text-v1",
+      "sha256": "05bd53d5f80cfe903d3acc3b5c34988f83a581c909ad4404e75c38b5269682ab",
+      "bytes": 227433,
+      "quote": "The card I could publish lives at huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures (there is no 'hivemindos' organisation I can publish under; it is my own account, named in the play).",
+      "quoteSha256": "16965aeec9b44c3369f09e479513dec64129f4bb3e4edda82f33783dc3f0d6a5"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
+      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-19T01:27:42.707Z",
+      "fetchedAt": "2026-11-18T01:27:34.464Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "f1b25fa066889d8f433b591b1e2100552185b889a8f5f90cf1abdc59410df6aa"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-18-hivepunk-632-4934c76e-run-record-lint-fixture-rows.md",
+  "decidedBy": "bee"
+}
