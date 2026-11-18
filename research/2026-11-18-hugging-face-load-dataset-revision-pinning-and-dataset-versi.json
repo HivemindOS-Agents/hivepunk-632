@@ -1,0 +1,192 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-18T04:25:07.659Z",
+  "subject": "Hugging Face load_dataset revision pinning and dataset versioning",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "Revision pinning is a small, documented reproducibility control: worth using explicitly, preferably with a commit hash, because the default is unspecified in the pages read and the pages do not prove tags or branches are immutable.",
+  "claims": [
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "Hugging Face Hub datasets are git-based repositories with revisions.",
+      "check": "page",
+      "source": "https://casrai.org/guides/hugging-face-datasets",
+      "quote": "The Hub (huggingface.co) hosts community-shared datasets as git-based repositories with revisions, covering audio, vision and natural-language data.",
+      "sourceId": "src-4",
+      "quoteSha256": "297230db9feeb071830d281eb3088d1cb3d1d579223ef99db14c70cda52eca5b"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Some datasets may have more than one version based on Git tags, branches, or commits.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/loading",
+      "quote": "Some datasets may have more than one version based on Git tags, branches, or commits. Use the revision parameter to specify the dataset version you want to load:",
+      "sourceId": "src-5",
+      "quoteSha256": "635b880c5cb72f94b086eff4becc8dbbe89b921b41e8be5eb19c26398ce59b87"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "load_dataset accepts a revision parameter whose default is None.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/en/package_reference/loading_methods",
+      "quote": "revision : typing.Union[datasets.utils.version.Version, str, NoneType] = None",
+      "sourceId": "src-2",
+      "quoteSha256": "2ce6e7ce6210ec0dae1b8cf6a33545d14fd2cae2f51720f43f2b2a4855e2cdfa"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "A guide states to pin the version by passing revision= with a tag, branch name or commit hash so a rerun gets the same data.",
+      "check": "page",
+      "source": "https://casrai.org/guides/hugging-face-datasets",
+      "quote": "Pin the version. Pass revision= with a tag, branch name or commit hash so a rerun gets the same data.",
+      "sourceId": "src-4",
+      "quoteSha256": "851e46cf84179eb0744239ff9a2910b2070d222e731b34f8f492e5f4e0c0a311"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Official loading docs show using load_dataset() to load a dataset from a Hub repository.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/loading",
+      "quote": "Now you can use the load_dataset() function to load the dataset.",
+      "sourceId": "src-5",
+      "quoteSha256": "b1269b73e5e50615be997a8018f8c5f6a1ac60a555e04171643cb52db260e281"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "Legacy sharing docs say community-provided datasets are flagged as unsafe by default because a dataset contains executable code.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/v1.8.0/share_dataset.html",
+      "quote": "are flagged as unsafe by default because a dataset contains executable code so the users need to inspect and opt-in to use the datasets",
+      "sourceId": "src-1",
+      "quoteSha256": "e08ae637164189fae1398c27387364329569b93ecf2fdec28065f2bbe5c60281"
+    },
+    {
+      "id": "c7",
+      "label": "DERIVED",
+      "text": "Pinning is opt-in: without an explicit revision= value, the caller has not used the documented version-specification parameter.",
+      "check": "page",
+      "inputs": [
+        "c2",
+        "c3"
+      ],
+      "math": "c2 says to use revision to specify the version; c3 shows revision defaults to None, so default calls do not specify a version via that parameter."
+    },
+    {
+      "id": "c8",
+      "label": "UNKNOWN",
+      "text": "What revision is loaded when revision is omitted.",
+      "check": "page",
+      "missing": "Official current documentation or source code stating the default revision resolution behavior for load_dataset."
+    },
+    {
+      "id": "c9",
+      "label": "UNKNOWN",
+      "text": "Whether a tag or branch pin is immutable over time.",
+      "check": "page",
+      "missing": "Hub documentation stating whether tags/branches can be moved or deleted after creation and whether load_dataset warns on movement."
+    },
+    {
+      "id": "c10",
+      "label": "UNKNOWN",
+      "text": "Whether pinning guarantees identical data files if the underlying storage changes.",
+      "check": "page",
+      "missing": "Documentation or tests showing how revision interacts with data file storage, caching, and conversion."
+    }
+  ],
+  "counts": {
+    "fact": 6,
+    "derived": 1,
+    "unknown": 3
+  },
+  "risks": [
+    "The load_dataset signature shows revision defaults to None, so pinning is opt-in rather than automatic.",
+    "Legacy sharing docs say community-provided datasets are flagged as unsafe by default because a dataset can contain executable code and users need to inspect and opt-in.",
+    "Whether a tag or branch can move after it is pinned is not stated in the pages read, so a tag or branch pin may be weaker than a commit-hash pin.",
+    "Streaming, caching, and conversion details in the pages do not by themselves prove the loaded bytes are identical across runs."
+  ],
+  "unknowns": [
+    "What revision is loaded when revision is omitted.: Official current documentation or source code stating the default revision resolution behavior for load_dataset.",
+    "Whether a tag or branch pin is immutable over time.: Hub documentation stating whether tags/branches can be moved or deleted after creation and whether load_dataset warns on movement.",
+    "Whether pinning guarantees identical data files if the underlying storage changes.: Documentation or tests showing how revision interacts with data file storage, caching, and conversion."
+  ],
+  "wouldChangeMind": [
+    "Current official docs stating the default revision is a fixed commit hash would weaken the opt-in concern.",
+    "Hub docs proving tags and branches are immutable would make tag/branch pins as strong as commit-hash pins.",
+    "Evidence that load_dataset verifies hashes of data files for a pinned revision would strengthen the reproducibility claim."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "Sharing your dataset — datasets 1.8.0 documentation",
+      "url": "https://huggingface.co/docs/datasets/v1.8.0/share_dataset.html",
+      "finalUrl": "https://huggingface.co/docs/datasets/v1.8.0/share_dataset.html",
+      "status": 200,
+      "fetchedAt": "2026-11-18T04:25:14.265Z",
+      "extractor": "page-text-v1",
+      "sha256": "049184f6d7059aec9171a819afb059ac405df0eb2b739ab3fac2303f2302f213",
+      "bytes": 58336,
+      "quote": "are flagged as unsafe by default because a dataset contains executable code so the users need to inspect and opt-in to use the datasets",
+      "quoteSha256": "e08ae637164189fae1398c27387364329569b93ecf2fdec28065f2bbe5c60281"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Loading methods · Hugging Face",
+      "url": "https://huggingface.co/docs/datasets/en/package_reference/loading_methods",
+      "finalUrl": "https://huggingface.co/docs/datasets/en/package_reference/loading_methods",
+      "status": 200,
+      "fetchedAt": "2026-11-18T04:25:14.622Z",
+      "extractor": "page-text-v1",
+      "sha256": "0b2606f531238a0b5e7908bf0a6e2c966219f24fdf7c5962dbd6a9bbce7e54cc",
+      "bytes": 570124,
+      "quote": "revision : typing.Union[datasets.utils.version.Version, str, NoneType] = None",
+      "quoteSha256": "2ce6e7ce6210ec0dae1b8cf6a33545d14fd2cae2f51720f43f2b2a4855e2cdfa"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "Hugging Face Datasets: Load, Stream, Create — CASRAI",
+      "url": "https://casrai.org/guides/hugging-face-datasets",
+      "finalUrl": "https://casrai.org/guides/hugging-face-datasets",
+      "status": 200,
+      "fetchedAt": "2026-11-18T04:25:14.330Z",
+      "extractor": "page-text-v1",
+      "sha256": "12fa0f34f9f635d8e2ab38a354f6b5fad52957d75a07237a3b8d0176f3c7ece3",
+      "bytes": 170062,
+      "quote": "The Hub (huggingface.co) hosts community-shared datasets as git-based repositories with revisions, covering audio, vision and natural-language data.",
+      "quoteSha256": "297230db9feeb071830d281eb3088d1cb3d1d579223ef99db14c70cda52eca5b"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "Load · Hugging Face",
+      "url": "https://huggingface.co/docs/datasets/loading",
+      "finalUrl": "https://huggingface.co/docs/datasets/loading",
+      "status": 200,
+      "fetchedAt": "2026-11-18T04:25:14.388Z",
+      "extractor": "page-text-v1",
+      "sha256": "edd29bbce215ad42468e7fbf69848a67443ef39fba5d2fec6a59ad8e87bb5309",
+      "bytes": 289733,
+      "quote": "Some datasets may have more than one version based on Git tags, branches, or commits. Use the revision parameter to specify the dataset version you want to load:",
+      "quoteSha256": "635b880c5cb72f94b086eff4becc8dbbe89b921b41e8be5eb19c26398ce59b87"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-18-hugging-face-load-dataset-revision-pinning-and-dataset-versi.md",
+  "decidedBy": "bee"
+}
