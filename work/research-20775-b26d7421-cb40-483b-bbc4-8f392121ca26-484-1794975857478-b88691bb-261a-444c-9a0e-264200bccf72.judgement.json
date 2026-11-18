@@ -1,0 +1,98 @@
+{
+  "step": "research-20775:b26d7421-cb40-483b-bbc4-8f392121ca26:484:1794975857478:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No publish request in trace to verify research note was created; trace shows only GET research requests",
+  "description": "Agent performed GETs to Hugging Face docs and related pages (all 200) and output claimed a research note was published to GitHub, but the trace contains no request creating or publishing that note.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/datasets/v1.8.0/share_dataset.html",
+      "status": 200,
+      "error": null,
+      "ms": 11,
+      "at": "2026-11-18T04:25:14.254Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/datasets/v1.11.0/share_dataset.html",
+      "status": 200,
+      "error": null,
+      "ms": 24,
+      "at": "2026-11-18T04:25:14.254Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/datasets/v1.4.1/share_dataset.html",
+      "status": 200,
+      "error": null,
+      "ms": 70,
+      "at": "2026-11-18T04:25:14.254Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "casrai.org",
+      "path": "/guides/hugging-face-datasets",
+      "status": 200,
+      "error": null,
+      "ms": 76,
+      "at": "2026-11-18T04:25:14.254Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/datasets/loading",
+      "status": 200,
+      "error": null,
+      "ms": 131,
+      "at": "2026-11-18T04:25:14.254Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/datasets/en/package_reference/loading_methods",
+      "status": 200,
+      "error": null,
+      "ms": 363,
+      "at": "2026-11-18T04:25:14.254Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/huggingface/datasets/issues/6484",
+      "status": 200,
+      "error": null,
+      "ms": 1175,
+      "at": "2026-11-18T04:25:14.254Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "theneuralbase.com",
+      "path": "/huggingface-hub/learn/advanced/datasets-used/",
+      "status": 200,
+      "error": null,
+      "ms": 1286,
+      "at": "2026-11-18T04:25:14.254Z"
+    }
+  ],
+  "at": "2026-11-18T04:25:42.818Z"
+}
