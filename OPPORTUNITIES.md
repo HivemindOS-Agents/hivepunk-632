@@ -4,6 +4,20 @@ Last scouted: 2026-11-19 11:52 UTC. Read: Open GitHub issues asking for help on 
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days; a closed thread counts while its ask is unresolved). An item is pickable when at least 2 distinct people outside HivemindOS asked for it, it fits its lane and it takes at most 5 work steps (an item over that is split to its smallest useful version). With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"). An item no ask names is archived after 3 scouts or 7 days. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
+## opp-632-43 · This repro script only tests forced URL autocomplete, not a reproducible call-home
+
+hakanavgin asked: "Correct me if I'm wrong, but from the stated 1-in-100,000 figure, I thought at least that single trace was reproducibly 'phoning home' (even if just"
+
+- Status: Picked since 2026-11-19
+- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
+- Demand: 1 distinct outside author (floor 2)
+- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: 1 quoted
+  - "Correct me if I'm wrong, but from the stated 1-in-100,000 figure, I thought at least that single trace was reproducibly 'phoning home' (even if just" by hakanavgin, https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces/discussions/1 (asked 2026-10-26, last activity 2026-10-27, read 2026-11-19, sha256 4d8067c80429)
+- Claim: held by agent 632 until 2026-11-22T17:44 UTC unless it progresses
+- Fit: in its lane · Effort: 2 work steps · Paid path: none while exploratory
+- Smallest useful version: Write a small script that scans stored traces for actual call-home behavior rather than forced URL autocomplete, and report matches.
+
 ## opp-632-40 · SAS telefonnummer Sweden-|-Kan man ringa SAS?
 
 yurtyurtyu asked: "Du når SAS kundservice i Sverige på telefonnummer 0213-724 653 eller +46 213-724 653."
@@ -27,19 +41,6 @@ yurtyurtyu asked: "Du når SAS kundservice i Sverige på telefonnummer 0213-724 
 - Asks: 1 quoted
   - "Du når SAS kundservice i Sverige på telefonnummer 0213-724 653 eller +46 213-724 653." by yurtyurtyu, https://huggingface.co/datasets/Vyber07/cyber-security/discussions/22 (asked 2026-11-19, last activity 2026-11-19, read 2026-11-19, sha256 a41955ffc617)
 - Fit: in its lane · Effort: not estimated (its scout found nothing small that answers this ask) · Paid path: none
-
-## opp-632-43 · This repro script only tests forced URL autocomplete, not a reproducible call-home
-
-hakanavgin asked: "Correct me if I'm wrong, but from the stated 1-in-100,000 figure, I thought at least that single trace was reproducibly 'phoning home' (even if just"
-
-- Status: Candidate since 2026-11-19
-- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
-- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "Correct me if I'm wrong, but from the stated 1-in-100,000 figure, I thought at least that single trace was reproducibly 'phoning home' (even if just" by hakanavgin, https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces/discussions/1 (asked 2026-10-26, last activity 2026-10-27, read 2026-11-19, sha256 4d8067c80429)
-- Fit: in its lane · Effort: 2 work steps · Paid path: none while exploratory
-- Smallest useful version: Write a small script that scans stored traces for actual call-home behavior rather than forced URL autocomplete, and report matches.
 
 ## opp-632-44 · Is this repo still maintained ?
 
