@@ -1,6 +1,6 @@
 # run-record-lint-dataset-export
 
-Builds a Hugging Face dataset package from the 3 verified run-record-lint fixture rows: `fixtures.csv`, `fixtures.json` and a dataset-card `README.md`.
+Builds a Hugging Face dataset package from the 3 verified run-record-lint fixture rows: `fixtures.csv`, `fixtures.json`, `checksums.txt` (SHA256 of the two data files) and a dataset-card `README.md`.
 
 ## How to run
 
@@ -10,11 +10,11 @@ python3 self_test.py; echo EXIT=$?
 python3 build_dataset.py; echo EXIT=$?
 ~~~
 
-No arguments (an optional output folder may be passed to `build_dataset.py`), no network, no install. `self_test.py` regenerates into a temp dir, checks CSV/JSON round-trip and card sections, prints PASS lines and a final `EXIT=<code>` line, and exits with that code. `build_dataset.py` writes `dataset/fixtures.csv`, `dataset/fixtures.json` and `dataset/README.md` by default.
+No arguments (an optional output folder may be passed to `build_dataset.py`), no network, no install. `self_test.py` regenerates into a temp dir, checks CSV/JSON round-trip, checksums.txt digests and card sections, prints PASS lines and a final `EXIT=<code>` line, and exits with that code. `build_dataset.py` writes `dataset/README.md`, `dataset/fixtures.csv`, `dataset/fixtures.json` and `dataset/checksums.txt` by default. These four files are what the owner publishes as the dataset.
 
 ## What it does
 
-`build_dataset.py` embeds the 3 rows from `fixture-rows.csv` (`fixture,expected_finding,why`), validates them (exactly 3, known `expected_finding`, non-empty `why`), and writes the CSV/JSON/card. The card states use, limits, untested notes, that it does not replace `tools/attribution-docs-check-fixtures/`, and the verbatim logged self-test tail below.
+`build_dataset.py` embeds the 3 rows from `fixture-rows.csv` (`fixture,expected_finding,why`), validates them (exactly 3, known `expected_finding`, non-empty `why`), writes the CSV/JSON, writes `checksums.txt` from the bytes just written (so the digests always match the shipped files), and writes the card. The card states use, limits, untested notes, that it does not replace `tools/attribution-docs-check-fixtures/`, the verbatim logged self-test tail below, and lists all four files.
 
 ## Logged verified output (verbatim, supplied run)
 
@@ -33,28 +33,14 @@ EXIT=0
 
 Verified EXIT=0 line: `EXIT=0`
 
-## Self-test fix log (verbatim supplied failure)
+## Latest self-test result
 
-Supplied HivemindOS run of this folder's `self_test.py` (2026-11-19 00:26 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44429030216), quoted as data:
-
-~~~text
-PASS card states it does not replace tools/attribution-docs-check-fixtures/
-PASS card contains verified EXIT=0 line
-PASS card contains verbatim logged self-test tail
-PASS card names publisher account
-PASS build_dataset.py source contains no network string
-FAIL self_test.py source contains no network string: ['urllib', 'requests', 'socket']
-self_test: 17 check(s), 1 failed
-EXIT=1
-~~~
-
-Exit recorded: `EXIT=1`
-
-Fix applied: the banned-string list in `self_test.py` is now built by concatenation, so the literals no longer appear in its own source, while the check still scans `build_dataset.py` and `self_test.py`. No other behaviour changed. This step did not run the fixed test from here; HivemindOS runs `python3 self_test.py` standalone from this folder after commit and that output is the fresh verified log.
+HivemindOS ran this folder's `self_test.py` after the previous commit: 17 checks, 0 failed, `EXIT=0` (2026-11-19 00:59 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44433370334). That pass covers the pre-checksum version; the checksum checks added in this change are not yet covered by an observed run. HivemindOS writes each run's result to `SELFTEST_OUTPUT.md` in this folder - read it there.
 
 ## What is untested
 
-- This step did not run the new `self_test.py` from here; HivemindOS runs it standalone after commit and its output is the fresh verified log. The tail above is the supplied prior run, not a claim about the new script.
+- The checksum checks and the card Files section added in this change have not been observed passing by a run; HivemindOS runs `python3 self_test.py` standalone from this folder after commit and that output is the fresh verified log.
+- The literal SHA256 digest values are not quoted in this README because no build was run in this step; run `python3 build_dataset.py` to produce `dataset/checksums.txt` with real digests.
 - Behaviour beyond the 3 bundled fixtures is untested.
 - No Hugging Face upload was done in this step; the publish step remains for the owner.
 
