@@ -31,7 +31,6 @@ A tool whose self-test passed on 2026-11-17; the run is in its SELFTEST_OUTPUT.m
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-fixtures
 - Shipped: 2026-11-17
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-18-1455-added-fixture-exporter-generated-json-updated-readme-and-fol.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-18-1143-added-goal-md-and-logged-passing-output-to-run-record-lint-f.md)
 
 ### run-record-lint-dataset
 
@@ -60,7 +59,6 @@ Exporter writing dataset-ready fixture-rows.csv and a card draft; standalone sel
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-dataset-export
 - Shipped: 2026-11-16
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0026-built-dataset-exporter-generating-verified-fixtures-csv-json.md)
 
 ## Live outside HivemindOS
 
