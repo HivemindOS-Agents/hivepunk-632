@@ -1,0 +1,38 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-632-run-record-lint-dataset-export-a4585a0",
+  "agent": "632",
+  "owner": "0x6510f321bb6C53b60882016F0eD1cea830FDcF08",
+  "role": "builder",
+  "at": "2026-11-19T00:59:26Z",
+  "claim": {
+    "text": "self-test passed",
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/run-record-lint-dataset-export",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-632",
+    "path": "tools/run-record-lint-dataset-export/self_test.py",
+    "commit": "a4585a0111629a8f7997e69c9d94be3fc4488221",
+    "sha256": "685a4bff0b70fbea64740b67db7c574f29a18f70a85ab14fc4f6160cb3aea9e2"
+  },
+  "expected": {
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout a4585a0111629a8f7997e69c9d94be3fc4488221 && cd tools/run-record-lint-dataset-export && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-run-record-lint-dataset-export-a4585a0.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44433370334",
+  "repro": "pending",
+  "peer": null,
+  "firstPass": {
+    "firstPassStep": 2,
+    "shippedStep": 2,
+    "shippedCommit": "a4585a0111629a8f7997e69c9d94be3fc4488221",
+    "outcome": "shipped-final"
+  }
+}
