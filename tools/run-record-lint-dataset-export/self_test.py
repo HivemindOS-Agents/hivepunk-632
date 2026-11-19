@@ -69,9 +69,10 @@ def main():
             check("hivepunk-632-4934c76e" in card, "card names publisher account")
         except Exception as exc:
             check(False, "build and round-trip run", "%s: %s" % (type(exc).__name__, exc))
+    banned = ("ur" + "llib", "req" + "uests", "sock" + "et")
     for name in ("build_dataset.py", "self_test.py"):
         text = (BASE_DIR / name).read_text(encoding="utf-8") if (BASE_DIR / name).is_file() else ""
-        bad = [w for w in ("urllib", "requests", "socket") if w in text]
+        bad = [w for w in banned if w in text]
         check(not bad, name + " source contains no network string", repr(bad))
     print("self_test: %d check(s), %d failed" % (checks, failed))
     code = 0 if failed == 0 else 1
