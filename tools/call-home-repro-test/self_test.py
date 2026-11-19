@@ -31,9 +31,18 @@ def main():
     except ValueError:
         check(True, "reject non-loopback host")
     try:
-        C.check_loopback("http://[redacted]:1234/"); check(True, "accept [redacted]")
+        host, port = C.check_loopback("http://[redacted]:1234/"); check(host == "[redacted]" and port == 1234, "accept [redacted]")
     except ValueError as e:
         check(False, "accept [redacted]", str(e))
+    # Mock binds to the real loopback IP (not a placeholder/hostname).
+    try:
+        srv = C.start_mock()
+        try:
+            check(srv.server_address[0] == "[redacted]", "mock binds [redacted]")
+        finally:
+            srv.shutdown(); srv.server_close()
+    except Exception as exc:
+        check(False, "mock binds [redacted]", "%s: %s" % (type(exc).__name__, exc))
     # End-to-end on mock server.
     try:
         results = C.run_tests(repeats=3)
@@ -43,7 +52,6 @@ def main():
         check(by["call_home_ping"]["observed"] == ["call-home"] * 3 and by["call_home_ping"]["reproducible"], "call-home ping reproducible as call-home")
         check(by["call_home_telemetry"]["observed"] == ["call-home"] * 3, "call-home telemetry reproducible")
         check(by["idle_control"]["observed"] == ["none"] * 3 and by["idle_control"]["reproducible"], "idle control sends no request")
-        # Distinction: autocomplete and call-home classes differ.
         check(by["autocomplete_forced_url"]["expected"] != by["call_home_ping"]["expected"], "autocomplete distinguished from call-home")
     except Exception as exc:
         check(False, "mock server run", "%s: %s" % (type(exc).__name__, exc))
