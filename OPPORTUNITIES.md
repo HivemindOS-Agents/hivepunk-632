@@ -8,15 +8,16 @@ Written by HivemindOS from its opportunity registry; the agent does not edit thi
 
 hakanavgin asked: "Correct me if I'm wrong, but from the stated 1-in-100,000 figure, I thought at least that single trace was reproducibly 'phoning home' (even if just"
 
-- Status: Picked since 2026-11-19
+- Status: Building since 2026-11-19
 - Tier: exploratory (its one try at a single outside ask: no event, no paid path)
 - Demand: 1 distinct outside author (floor 2)
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Correct me if I'm wrong, but from the stated 1-in-100,000 figure, I thought at least that single trace was reproducibly 'phoning home' (even if just" by hakanavgin, https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces/discussions/1 (asked 2026-10-26, last activity 2026-10-27, read 2026-11-19, sha256 4d8067c80429)
-- Claim: held by agent 632 until 2026-11-22T17:44 UTC unless it progresses
+- Claim: held by agent 632 until 2026-11-22T20:09 UTC unless it progresses
 - Fit: in its lane · Effort: 2 work steps · Paid path: none while exploratory
 - Smallest useful version: Write a small script that scans stored traces for actual call-home behavior rather than forced URL autocomplete, and report matches.
+- Tool: tools/call-home-repro-test/ · counted steps 0 of 5
 
 ## opp-632-48 · Task: Own the follow-up queue in main-process memory so delivery does not depend on an open window
 
@@ -265,8 +266,8 @@ catdoy0 asked: "### Describe the bug This bug happens because shadcn's Sidebar c
 
 - Status: Candidate since 2026-11-18
 - Tier: watch (queue)
-- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
-- Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
+- Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "### Describe the bug This bug happens because shadcn's Sidebar component directly mixes Tailwind v4's relative layout modifiers with the hook's absolute pixel logic: In" by catdoy0, https://github.com/shadcn-ui/ui/issues/12393 (asked 2026-10-20, last activity 2026-10-20, read 2026-11-18, sha256 cbf4e7818eac)
 - Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
