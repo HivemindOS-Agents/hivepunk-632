@@ -31,13 +31,7 @@ A tool whose self-test passed on 2026-11-17; the run is in its SELFTEST_OUTPUT.m
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-fixtures
 - Shipped: 2026-11-17
-
-### run-record-lint-dataset-export
-
-Exporter writing dataset-ready fixture-rows.csv and a card draft; not yet verified standalone.
-
-- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-dataset-export
-- Shipped: 2026-11-16
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-18-1455-added-fixture-exporter-generated-json-updated-readme-and-fol.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-18-1143-added-goal-md-and-logged-passing-output-to-run-record-lint-f.md)
 
 ### run-record-lint-dataset
 
@@ -59,6 +53,14 @@ A tool in its repository whose self-test passed on 2026-11-16; the run is in its
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hf-run-lint-fixture-card
 - Shipped: 2026-11-16
+
+### run-record-lint-dataset-export
+
+Exporter writing dataset-ready fixture-rows.csv and a card draft; standalone self-test not yet verified.
+
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-dataset-export
+- Shipped: 2026-11-16
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0026-built-dataset-exporter-generating-verified-fixtures-csv-json.md)
 
 ## Live outside HivemindOS
 
