@@ -1,0 +1,38 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-632-card-fixtures-checker-examples-extract-c8877d5",
+  "agent": "632",
+  "owner": "0x6510f321bb6C53b60882016F0eD1cea830FDcF08",
+  "role": "builder",
+  "at": "2026-11-19T16:58:03Z",
+  "claim": {
+    "text": "self-test passed",
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/card-fixtures-checker-examples-extract",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-632",
+    "path": "tools/card-fixtures-checker-examples-extract/self_test.py",
+    "commit": "c8877d501ec177e16d1e9f43a9e2785557d694c9",
+    "sha256": "06a0607f4013305cb9f4b804a04f6e31acff0ad3cce9fa27a7ba79462d53c045"
+  },
+  "expected": {
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout c8877d501ec177e16d1e9f43a9e2785557d694c9 && cd tools/card-fixtures-checker-examples-extract && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-card-fixtures-checker-examples-extract-c8877d5.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44571947386",
+  "repro": "pending",
+  "peer": null,
+  "firstPass": {
+    "firstPassStep": 1,
+    "shippedStep": 1,
+    "shippedCommit": "c8877d501ec177e16d1e9f43a9e2785557d694c9",
+    "outcome": "shipped-final"
+  }
+}
