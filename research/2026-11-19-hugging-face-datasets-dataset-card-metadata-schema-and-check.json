@@ -1,0 +1,260 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-19T11:55:00.907Z",
+  "subject": "Hugging Face Datasets dataset-card metadata schema and checksum verification",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "Dataset cards are a well-documented, template-supported metadata convention worth using for discoverability and responsible-use context, but the pages show no checksum verification, so integrity claims would need separate evidence.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "huggingface/hub-docs has 50 raw commits in the last 30 days, 25 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/huggingface/hub-docs/commits?per_page=50&since=2026-10-20T11:55:04.988Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is cad2ce7, on 2026-11-16.",
+      "check": "shipping",
+      "source": "https://github.com/huggingface/hub-docs/commit/cad2ce700bc8cce6d2bc53ec7db74f323f528c75"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "Each dataset may be documented by the README.md file in its repository, called a dataset card, rendered by the Hub on the dataset's main page.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/en/datasets-cards",
+      "quote": "Each dataset may be documented by the README.md file in the repository. This file is called a dataset card , and the Hugging Face Hub will render its contents on the dataset's main page.",
+      "sourceId": "src-1",
+      "quoteSha256": "51b63f0af9cc67ed691924148ee554d851bbbe310063c2e1ec44918de0e9ad74"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Tags are defined in a YAML metadata section at the top of the README.md file.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/en/datasets-cards",
+      "quote": "Tags are defined in a YAML metadata section at the top of the README.md file.",
+      "sourceId": "src-1",
+      "quoteSha256": "f14b699f13dc1367ed07fbec7b871e0647bc5f949b95b6b6ec8d2c755b7f287f"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "The card metadata describes information such as license, language and size, and contains tags and data-file configuration options.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/en/datasets-cards",
+      "quote": "The metadata describes important information about a dataset such as its license, language, and size. It also contains tags to help users discover a dataset on the Hub, and data files configuration options.",
+      "sourceId": "src-1",
+      "quoteSha256": "95c7a76df6b3df26354aa6aae7737bb267387bee4a6071529ff52205a957effe"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "The example YAML metadata includes language, pretty_name, tags, license and task_categories fields.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/en/datasets-cards",
+      "quote": "language: - \"List of ISO 639-1 code for your language\" - lang1 - lang2 pretty_name: \"Pretty Name of the Dataset\" tags: - tag1 - tag2 license: \"any valid license identifier\" task_categories: - task1 - task2",
+      "sourceId": "src-1",
+      "quoteSha256": "de6ff382e867c7d94db83437a5c1af495526970ca8f483bfa32633e2ac32aa96"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "In huggingface_hub, RepoCard is the parent class of ModelCard, DatasetCard and SpaceCard.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/huggingface_hub/package_reference/cards",
+      "quote": "The RepoCard object is the parent class of ModelCard , DatasetCard and SpaceCard .",
+      "sourceId": "src-4",
+      "quoteSha256": "01b16f47d7c1eae36689fe5547aa965014f3a7d3ba105015f2f10763191e0b47"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "The datasetcard_template.md references the dataset card metadata spec in hub-docs.",
+      "check": "page",
+      "source": "https://github.com/huggingface/huggingface_hub/blob/main/src/huggingface_hub/templates/datasetcard_template.md?plain=1",
+      "quote": "# For reference on dataset card metadata, see the spec: https://github.com/huggingface/hub-docs/blob/main/datasetcard.md?plain=1",
+      "sourceId": "src-5",
+      "quoteSha256": "a93bd4f4ef657947a4b03fedc02f0f3531a84f6bed41da334ebe3e1f8e2f685c"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "dataset_info YAML fields can define features and splits, and metadata formerly in dataset_infos.json is now deprecated.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/v2.7.1/en/dataset_card",
+      "quote": "These metadata used to be included in the dataset_infos.json file, which is now deprecated.",
+      "sourceId": "src-3",
+      "quoteSha256": "037f2ab1127f8bd92aadae5cd0f5fd7c82247320de2a64f79dee50a651d88289"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "huggingface/hub-docs has 50 raw commits in the last 30 days, 25 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/huggingface/hub-docs/commits?per_page=50&since=2026-10-20T11:55:04.988Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "The latest real commit for hub-docs in the service check is cad2ce7 on 2026-11-16.",
+      "check": "page",
+      "source": "https://api.github.com/repos/huggingface/hub-docs/commits?per_page=50&since=2026-10-20T11:55:04.988Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c10",
+      "label": "UNKNOWN",
+      "text": "Checksum verification of dataset files or dataset cards using a named algorithm and Hub workflow.",
+      "check": "page",
+      "missing": "A Hub docs or API page describing checksum generation, storage and verification for datasets"
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "The complete current dataset-card metadata schema, including all allowed fields and types.",
+      "check": "page",
+      "missing": "The detailed Dataset Card specifications page (datasetcard.md) referenced by the docs and template, which was not among the pages read"
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether Hub validation rejects invalid YAML metadata or only renders it.",
+      "check": "page",
+      "missing": "Documentation or code stating validation/enforcement behaviour for dataset card metadata"
+    }
+  ],
+  "counts": {
+    "fact": 11,
+    "derived": 0,
+    "unknown": 3
+  },
+  "risks": [
+    "Card content is author-supplied; the template allows [More Information Needed] placeholders, so completeness and accuracy are not guaranteed by the schema alone.",
+    "The metadata specification is referenced as an external hub-docs datasetcard.md spec that was not among the pages read, so field-level drift between docs, templates and Hub rendering cannot be ruled out from these pages.",
+    "dataset_info metadata previously in dataset_infos.json is deprecated, creating migration risk for older datasets relying on that file.",
+    "Modality is auto-detected from files and may need forcing via tags, indicating detection is not always correct.",
+    "No checksum verification process was described in the pages, so a card by itself should not be assumed to prove file integrity."
+  ],
+  "unknowns": [
+    "Checksum verification of dataset files or dataset cards using a named algorithm and Hub workflow.: A Hub docs or API page describing checksum generation, storage and verification for datasets",
+    "The complete current dataset-card metadata schema, including all allowed fields and types.: The detailed Dataset Card specifications page (datasetcard.md) referenced by the docs and template, which was not among the pages read",
+    "Whether Hub validation rejects invalid YAML metadata or only renders it.: Documentation or code stating validation/enforcement behaviour for dataset card metadata"
+  ],
+  "wouldChangeMind": [
+    "Finding Hub documentation for a checksum field or verification API would change the integrity conclusion.",
+    "Finding the full datasetcard.md spec showing required, validated fields would change the schema-completeness assessment.",
+    "Finding adoption statistics showing widespread complete-card usage would change the traction assessment."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "Dataset Cards · Hugging Face",
+      "url": "https://huggingface.co/docs/hub/en/datasets-cards",
+      "finalUrl": "https://huggingface.co/docs/hub/en/datasets-cards",
+      "status": 200,
+      "fetchedAt": "2026-11-19T11:55:04.695Z",
+      "extractor": "page-text-v1",
+      "sha256": "61515fd20709c2b1c86882dee247488a610ddb7bcdcd56ef67a97b2512aa9ba9",
+      "bytes": 213858,
+      "quote": "Each dataset may be documented by the README.md file in the repository. This file is called a dataset card , and the Hugging Face Hub will render its contents on the dataset's main page.",
+      "quoteSha256": "51b63f0af9cc67ed691924148ee554d851bbbe310063c2e1ec44918de0e9ad74"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "hub-docs/docs/hub/datasets-cards.md at main · huggingface/hub-docs · GitHub",
+      "url": "https://github.com/huggingface/hub-docs/blob/main/docs/hub/datasets-cards.md",
+      "finalUrl": "https://github.com/huggingface/hub-docs/blob/main/docs/hub/datasets-cards.md",
+      "status": 200,
+      "fetchedAt": "2026-11-19T11:55:04.988Z",
+      "extractor": "page-text-v1",
+      "sha256": "80ea962f37ff50e616725d629d3ca7f7800113c380f1697e512cad0b25aad90f",
+      "bytes": 244024,
+      "quote": "To inform users about how to responsibly use the data, it's a good idea to include information about any potential biases within the dataset.",
+      "quoteSha256": "7138b9af0e526ad7c15aa385dcfa306f2ebeeaf23cfc74d1fee7e1cfe1e952c5"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "Create a dataset card · Hugging Face",
+      "url": "https://huggingface.co/docs/datasets/v2.7.1/en/dataset_card",
+      "finalUrl": "https://huggingface.co/docs/datasets/v2.7.1/en/dataset_card",
+      "status": 200,
+      "fetchedAt": "2026-11-19T11:55:04.835Z",
+      "extractor": "page-text-v1",
+      "sha256": "e9cf7c4e9edd5aca45f1d407a25d96e8fd50bae2de240025f04cc64a3bec7692",
+      "bytes": 127284,
+      "quote": "These metadata used to be included in the dataset_infos.json file, which is now deprecated.",
+      "quoteSha256": "037f2ab1127f8bd92aadae5cd0f5fd7c82247320de2a64f79dee50a651d88289"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "Repository Cards · Hugging Face",
+      "url": "https://huggingface.co/docs/huggingface_hub/package_reference/cards",
+      "finalUrl": "https://huggingface.co/docs/huggingface_hub/package_reference/cards",
+      "status": 200,
+      "fetchedAt": "2026-11-19T11:55:04.728Z",
+      "extractor": "page-text-v1",
+      "sha256": "ed7cd6ee8801c49c77071f7ade3ce9fc4cd84087d57ba4d26318131bad496055",
+      "bytes": 478548,
+      "quote": "The RepoCard object is the parent class of ModelCard , DatasetCard and SpaceCard .",
+      "quoteSha256": "01b16f47d7c1eae36689fe5547aa965014f3a7d3ba105015f2f10763191e0b47"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "huggingface_hub/src/huggingface_hub/templates/datasetcard_template.md at main · huggingface/huggingface_hub · GitHub",
+      "url": "https://github.com/huggingface/huggingface_hub/blob/main/src/huggingface_hub/templates/datasetcard_template.md?plain=1",
+      "finalUrl": "https://github.com/huggingface/huggingface_hub/blob/main/src/huggingface_hub/templates/datasetcard_template.md?plain=1",
+      "status": 200,
+      "fetchedAt": "2026-11-19T11:55:04.910Z",
+      "extractor": "page-text-v1",
+      "sha256": "19d2fac156d6d14a7d88758e2c68488818f3c71a95abfa635473ba9618446faf",
+      "bytes": 233547,
+      "quote": "# For reference on dataset card metadata, see the spec: https://github.com/huggingface/hub-docs/blob/main/datasetcard.md?plain=1",
+      "quoteSha256": "a93bd4f4ef657947a4b03fedc02f0f3531a84f6bed41da334ebe3e1f8e2f685c"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "datasets/templates/README_guide.md at main · huggingface/datasets · GitHub",
+      "url": "https://github.com/huggingface/datasets/blob/main/templates/README_guide.md",
+      "finalUrl": "https://github.com/huggingface/datasets/blob/main/templates/README_guide.md",
+      "status": 200,
+      "fetchedAt": "2026-11-19T11:55:04.924Z",
+      "extractor": "page-text-v1",
+      "sha256": "1616c3ded47010d1cc5772f3de1809b01c6eb1ba3c22382e1392be97f14f5bdd",
+      "bytes": 286318,
+      "quote": "If the dataset supports an active leaderboard, add link here Point of Contact: If known, name and email of at least one person the reader can contact for questions about the dataset.",
+      "quoteSha256": "d873e6209e18b56cc8fe3e72c2b22490daa9ed8efc9c73052ddc43719e2a6b38"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of huggingface/hub-docs",
+      "url": "https://api.github.com/repos/huggingface/hub-docs/commits?per_page=50&since=2026-10-20T11:55:04.988Z",
+      "fetchedAt": "2026-11-19T11:55:00.907Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "fa9fabe8e1363f7b3dcb76ee9b891a92c8d613ac06a79472ca7e2be7e48e326e"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-19-hugging-face-datasets-dataset-card-metadata-schema-and-check.md",
+  "decidedBy": "bee"
+}
