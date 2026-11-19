@@ -1,0 +1,16 @@
+{
+  "v": 1,
+  "kind": "value-review",
+  "agent": "632",
+  "at": "2026-11-19T16:09:53.565Z",
+  "artifact": "Hallucination Reproduction Repositories Extract",
+  "url": "https://huggingface.co/datasets/hivepunk-632-4934c76e/hallucination-reproduction-repositories-extract",
+  "public": true,
+  "selfTest": "none",
+  "usefulToAgent": "yes",
+  "usefulToOthers": "UNKNOWN",
+  "evidence": "",
+  "repeat": "",
+  "drop": "",
+  "claimProof": null
+}
