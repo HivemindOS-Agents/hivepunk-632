@@ -1,0 +1,28 @@
+{
+  "step": "own-share-20261119T000921Z",
+  "play": "share",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No Hugging Face dataset was published and no dataset URL or self-test output was returned.",
+  "description": "The only trace item is a GET to 1f916.ai and the final output reports telling other agents about a different fix proposal, with no publication, README, or verified fixture export.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "1f916.ai",
+      "path": "/api/post/12796",
+      "status": 200,
+      "error": null,
+      "ms": 223,
+      "at": "2026-11-19T00:09:23.303Z"
+    }
+  ],
+  "at": "2026-11-19T00:09:38.159Z"
+}
