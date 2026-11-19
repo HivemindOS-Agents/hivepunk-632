@@ -1,0 +1,236 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-19T05:30:30.738Z",
+  "subject": "Hugging Face Datasets",
+  "subjectKind": "project",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "Hugging Face Datasets is actively maintained and widely used at hub scale, but documentation and verification quality vary sharply with popularity, so a verified-fixture export should treat the card and checksums as its own evidence rather than relying on hub conventions alone.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "huggingface/datasets has 29 raw commits in the last 30 days, 28 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/huggingface/datasets/commits?per_page=50&since=2026-10-20T05:30:37.761Z",
+      "sourceId": "src-5"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is 39fd698, on 2026-11-18.",
+      "check": "shipping",
+      "source": "https://github.com/huggingface/datasets/commit/39fd698d619816099ffa8eb07b5c79b0f4f5f299"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "Datasets is a lightweight library providing one-line dataloaders for many public datasets and efficient data pre-processing.",
+      "check": "page",
+      "source": "https://github.com/huggingface/datasets",
+      "quote": "🤗 Datasets is a lightweight library providing two main features: one-line dataloaders for many public datasets",
+      "sourceId": "src-4",
+      "quoteSha256": "94ee358f5b36026e36654197f8693891ee49aa1e28f8d4986432ed2aa392e828"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Datasets supports local CSV, JSON, JSONL, Parquet, HDF5, XML, text, PNG, JPEG, WAV, MP3, PDF and NIfTI, with dataset.map() for preprocessing.",
+      "check": "page",
+      "source": "https://github.com/huggingface/datasets",
+      "quote": "the public datasets as well as your own local datasets in CSV, JSON, JSONL, Parquet, HDF5, XML, text, PNG, JPEG, WAV, MP3, PDF, NIfTI, and more.",
+      "sourceId": "src-4",
+      "quoteSha256": "492bc2777b89d5a40b941934e980fb5a4240369f6b0d710d09030b6dcc67965b"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "huggingface/datasets has 29 raw commits in the last 30 days, 28 of them real work.",
+      "check": "page",
+      "source": "https://api.github.com/repos/huggingface/datasets/commits?per_page=50&since=2026-10-20T05:30:37.761Z",
+      "sourceId": "src-5"
+    },
+    {
+      "id": "c4",
+      "label": "UNKNOWN",
+      "text": "Its latest real commit is 39fd698, on 2026-11-18.",
+      "check": "page",
+      "missing": "It gave no source it read for this."
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "A study analyzed all 7,433 dataset documentation on Hugging Face.",
+      "check": "page",
+      "source": "https://arxiv.org/html/2401.13822v1",
+      "quote": "By analyzing all 7,433 dataset documentation on Hugging Face",
+      "sourceId": "src-1",
+      "quoteSha256": "8efac8fe79f83181a5c46a2d87ff90416be136141aea7f1b66158b01b09b06f8"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "86.0% of the top 100 downloaded dataset cards fill out all sections suggested by Hugging Face community, while only 7.9% of dataset cards with no downloads complete all these sections.",
+      "check": "page",
+      "source": "https://arxiv.org/html/2401.13822v1",
+      "quote": "While 86.0% of the top 100 downloaded dataset cards fill out all sections suggested by Hugging Face community, only 7.9% of dataset cards with no downloads complete all these sections.",
+      "sourceId": "src-1",
+      "quoteSha256": "0936128a0a40fe0990484c87803bd5ebe6c57fb69661e9a6b8e7c0dbb94697e1"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Another study analyzed 760,460 models and 175,000 datasets extracted from Hugging Face.",
+      "check": "page",
+      "source": "https://arxiv.org/html/2502.04484v2",
+      "quote": "we conducted an extensive analysis of 760,460 models and 175,000 datasets extracted from the popular model-sharing site Hugging Face.",
+      "sourceId": "src-3",
+      "quoteSha256": "7295891db7a5155f06495d54fe27f1ba6817f1881649745573c67947068f2320"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "Dataset availability does not prove license fit, consent, quality, or safety for a given use case.",
+      "check": "page",
+      "source": "https://heyclau.de/entry/tools/hugging-face-datasets",
+      "quote": "dataset availability does not prove license fit, consent, quality, or safety for a given use case.",
+      "sourceId": "src-2",
+      "quoteSha256": "ea327118a7b8884ef03d0c6a990446257fb8df89ca2572f78606d570ece3c9cb"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "Preprocessing can silently change examples, labels, splits, or ordering if transforms are not versioned and tested.",
+      "check": "page",
+      "source": "https://heyclau.de/entry/tools/hugging-face-datasets",
+      "quote": "Dataset preprocessing with `map`, multiprocessing, format conversion, indexing, or filtering can silently change examples, labels, splits, or ordering if transforms are not versioned and tested.",
+      "sourceId": "src-2",
+      "quoteSha256": "6e59f3dd844a3daaddacd014cf70fee6390f0ff874c1fd055b3835ef1b2b9d3e"
+    },
+    {
+      "id": "c10",
+      "label": "FACT",
+      "text": "The 2025 analysis found shortcomings in documentation and licensing and motivated better license management and automated inconsistency checking and validation.",
+      "check": "page",
+      "source": "https://arxiv.org/html/2502.04484v2",
+      "quote": "Our results motivate multiple research avenues, including the need for better license management for ML models/datasets, better support for model documentation, and automated inconsistency checking and validation.",
+      "sourceId": "src-3",
+      "quoteSha256": "6488bb7a63341d4d9b7f09db2758d71d3ef6bbada9c7da5748bd849bcc07e352"
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "The exact file checksum and verification practices for Hugging Face Datasets as stated in its public docs were not shown on the pages read.",
+      "check": "page",
+      "missing": "The Hugging Face Datasets documentation page on dataset repo files, checksums/hashes, and revision verification"
+    },
+    {
+      "id": "c12",
+      "label": "DERIVED",
+      "text": "Card completeness cannot be assumed for a low-download fixture dataset; it must be supplied explicitly.",
+      "check": "page",
+      "inputs": [
+        "c6"
+      ],
+      "math": "7.9% of no-download cards complete all suggested sections, so 92.1% do not; a new fixture dataset is likely in the low-download population until proven otherwise"
+    }
+  ],
+  "counts": {
+    "fact": 11,
+    "derived": 1,
+    "unknown": 2
+  },
+  "risks": [
+    "Dataset availability does not prove license fit, consent, quality, or safety for a given use case.",
+    "Preprocessing with map, multiprocessing, format conversion, indexing, or filtering can silently change examples, labels, splits, or ordering if transforms are not versioned and tested.",
+    "Only 7.9% of dataset cards with no downloads complete all suggested sections, so card completeness is uneven.",
+    "Large-scale analysis motivates need for better license management, better support for model documentation, and automated inconsistency checking and validation.",
+    "Streaming still performs network access and may expose dataset names, access patterns, credentials, and workload metadata."
+  ],
+  "unknowns": [
+    "Its latest real commit is 39fd698, on 2026-11-18.: It gave no source it read for this.",
+    "The exact file checksum and verification practices for Hugging Face Datasets as stated in its public docs were not shown on the pages read.: The Hugging Face Datasets documentation page on dataset repo files, checksums/hashes, and revision verification"
+  ],
+  "wouldChangeMind": [
+    "Finding official docs that Hugging Face automatically verifies file checksums against a signed manifest for every dataset revision",
+    "Finding current hub-wide card completion data substantially higher than the 2024 study for low-download datasets",
+    "Finding that the Datasets library's hub loading validates card/license fields before download, rather than leaving that to the user"
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "Navigating Dataset Documentations in AI: A Large-Scale Analysis of Dataset Cards on Hugging Face",
+      "url": "https://arxiv.org/html/2401.13822v1",
+      "finalUrl": "https://arxiv.org/html/2401.13822v1",
+      "status": 200,
+      "fetchedAt": "2026-11-19T05:30:37.311Z",
+      "extractor": "page-text-v1",
+      "sha256": "de10b289ae256aea3b86ba0ef953202fade620f3e2aa9817441e3758a39f849c",
+      "bytes": 180879,
+      "quote": "By analyzing all 7,433 dataset documentation on Hugging Face",
+      "quoteSha256": "8efac8fe79f83181a5c46a2d87ff90416be136141aea7f1b66158b01b09b06f8"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Hugging Face Datasets data loading and preprocessing library — HeyClaude",
+      "url": "https://heyclau.de/entry/tools/hugging-face-datasets",
+      "finalUrl": "https://heyclau.de/entry/tools/hugging-face-datasets",
+      "status": 200,
+      "fetchedAt": "2026-11-19T05:30:37.761Z",
+      "extractor": "page-text-v1",
+      "sha256": "2eb0f52907571b1d12a7a7c4d7fe71de43a749f829d980d13e243343c9d84afa",
+      "bytes": 313516,
+      "quote": "dataset availability does not prove license fit, consent, quality, or safety for a given use case.",
+      "quoteSha256": "ea327118a7b8884ef03d0c6a990446257fb8df89ca2572f78606d570ece3c9cb"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "An Empirical Analysis of Machine Learning Model and Dataset Documentation, Supply Chain, and Licensing Challenges on Hugging Face",
+      "url": "https://arxiv.org/html/2502.04484v2",
+      "finalUrl": "https://arxiv.org/html/2502.04484v2",
+      "status": 200,
+      "fetchedAt": "2026-11-19T05:30:37.350Z",
+      "extractor": "page-text-v1",
+      "sha256": "a19e87acf31be260ac85cb96e6c5d0ce37747bfcec217f5ab78332277aa55d64",
+      "bytes": 549044,
+      "quote": "we conducted an extensive analysis of 760,460 models and 175,000 datasets extracted from the popular model-sharing site Hugging Face.",
+      "quoteSha256": "7295891db7a5155f06495d54fe27f1ba6817f1881649745573c67947068f2320"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "GitHub - huggingface/datasets: 🤗 The largest hub of ready-to-use datasets for AI models with fast, easy-to-use and efficient data manipulat",
+      "url": "https://github.com/huggingface/datasets",
+      "finalUrl": "https://github.com/huggingface/datasets",
+      "status": 200,
+      "fetchedAt": "2026-11-19T05:30:37.705Z",
+      "extractor": "page-text-v1",
+      "sha256": "8d8e7f9ef862f21e0974646efcf2a81d51d2ca46c66840b849288512a8136952",
+      "bytes": 382452,
+      "quote": "🤗 Datasets is a lightweight library providing two main features: one-line dataloaders for many public datasets",
+      "quoteSha256": "94ee358f5b36026e36654197f8693891ee49aa1e28f8d4986432ed2aa392e828"
+    },
+    {
+      "id": "src-5",
+      "type": "api",
+      "title": "GitHub commits of huggingface/datasets",
+      "url": "https://api.github.com/repos/huggingface/datasets/commits?per_page=50&since=2026-10-20T05:30:37.761Z",
+      "fetchedAt": "2026-11-19T05:30:30.738Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "3f90d305523bf1465aa422d3fae9dea9efd526cdc3a37b2fa24ba713cc0ef278"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-19-hugging-face-datasets.md",
+  "decidedBy": "bee"
+}
