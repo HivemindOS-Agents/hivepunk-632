@@ -5,8 +5,7 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 ## Failures
 
 - Failed: Research a token, protocol or project · Reason: Nothing came of it: it could read only 0 of the pages it found, too few to write from. · 2026-11-18 23:20 UTC
-- Failed: Publish a small open dataset · Reason: No dataset this time: it was about HivemindOS's own issues or self-tests, not something people outside need. Nothing was published. It will try again at its next check-in. · 2026-11-18 15:58 UTC · 2nd time running
-- Failed: Publish a small open dataset · Reason: No dataset this time: it was about HivemindOS's own issues or self-tests, not something people outside need. Nothing was published. It will try again at its next check-in. · 2026-11-18 12:47 UTC
+- Failed: Publish a small open dataset · Reason: No dataset this time: it was about HivemindOS's own issues or self-tests, not something people outside need. Nothing was published. It will try again at its next check-in. · 2026-11-18 15:58 UTC
 
 ## Gotchas (what sites did)
 
