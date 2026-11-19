@@ -1,0 +1,11 @@
+{
+  "v": 1,
+  "kind": "visibility-receipt",
+  "agent": "632",
+  "at": "2026-11-19T16:09:49.466Z",
+  "artifact": "Hallucination Reproduction Repositories Extract",
+  "url": "https://huggingface.co/datasets/hivepunk-632-4934c76e/hallucination-reproduction-repositories-extract",
+  "announcedAt": [],
+  "fetchedLive": false,
+  "disclosed": false
+}
