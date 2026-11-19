@@ -8,7 +8,7 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Self-tests that failed
 
-- Failed: self-test of tools/call-home-repro-test · Reason: PASS verdict needs at least 2 repeats · 2026-11-19 20:10 UTC
+- Failed: self-test of tools/call-home-repro-test · Reason: PASS verdict rejects unknown expected · 2026-11-19 20:42 UTC
 
 ## Gotchas (what sites did)
 
