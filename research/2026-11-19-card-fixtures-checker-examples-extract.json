@@ -1,0 +1,259 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-19T18:18:19.304Z",
+  "subject": "card-fixtures-checker-examples-extract",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "From the claims, the specific dataset remains unconfirmed and unverified, while related proposals were closed and recent repo activity showed no real work, so it should be treated as a proposed artifact not yet proved live or matching.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "LiamVisionary/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/LiamVisionary/bee-scouts/commits?per_page=50&since=2026-10-20T18:18:25.169Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether LiamVisionary/bee-scouts is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "LiamVisionary/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/LiamVisionary/bee-scouts/commits?per_page=50&since=2026-10-20T18:18:25.169Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c2",
+      "label": "UNKNOWN",
+      "text": "Whether LiamVisionary/bee-scouts is still shipping",
+      "check": "page",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "A public Hugging Face dataset is visible to anyone.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/en/upload_dataset",
+      "quote": "A public dataset is visible to anyone, whereas a private dataset can only be viewed by you or members of your organization.",
+      "sourceId": "src-5",
+      "quoteSha256": "cab18150c0f70ddde75be6db4a959a966826743b55922310557ade84335dce12"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Creating a dataset card creates a README.md file in the repository.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/en/upload_dataset",
+      "quote": "This button creates a README.md file in your repository.",
+      "sourceId": "src-5",
+      "quoteSha256": "4e2b00dcc9cb5c613a9092546b5ae70db294aa673490adf71d8c08ba5fc9693a"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "A dataset repo renders its README.md as the dataset card and a YAML section controls card metadata.",
+      "check": "page",
+      "source": "https://github.com/LiamVisionary/bee-scouts/issues/52",
+      "quote": "The Hugging Face dataset-card page ( https://huggingface.co/docs/hub/en/datasets-cards ) says a dataset repo renders its README.md as the dataset card and that a YAML section controls card metadata.",
+      "sourceId": "src-4",
+      "quoteSha256": "dccc5bcefc627718ade395a1200c0f9114cd10e1da622b50b4d871ec692057c8"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "Publishing again with the same title updates a dataset in place, so the live URL is unchanged.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/130",
+      "quote": "Publishing again with the same title updates the dataset in place, so the live URL is unchanged.",
+      "sourceId": "src-6",
+      "quoteSha256": "30e719b5e77992a572ec4e492d03c42c5d7af4f3c9244c08f7e31814917f6898"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Issue #63 was closed as not planned on Nov 15, 2026.",
+      "check": "page",
+      "source": "https://github.com/LiamVisionary/bee-scouts/issues/63",
+      "quote": "LiamVisionary closed this as not planned on Nov 15, 2026",
+      "sourceId": "src-1",
+      "quoteSha256": "af017dd636fecfa3c493eddd5086fa29e0592946969ae8e3cda5658a1d2ffdf2"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "Issue #134 was closed as duplicate on Nov 15, 2026.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/134",
+      "quote": "LiamVisionary closed this as duplicate on Nov 15, 2026",
+      "sourceId": "src-2",
+      "quoteSha256": "ffff66ac6050529e4f633ceb28bb7789302d0ab209b5ad9e0ed521657045cc57"
+    },
+    {
+      "id": "c9",
+      "label": "UNKNOWN",
+      "text": "Whether hivepunk-632-4934c76e/card-fixtures-checker-examples-extract is published and live.",
+      "check": "page",
+      "missing": "A live Hugging Face dataset page or file listing for that exact dataset."
+    },
+    {
+      "id": "c10",
+      "label": "UNKNOWN",
+      "text": "Whether its README.md names every included file and checksums.txt matches the uploaded files.",
+      "check": "page",
+      "missing": "The published README.md and checksums.txt and the file list they are compared against."
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "Whether cases.csv and cases.json rows match.",
+      "check": "page",
+      "missing": "Both published files and a checker run comparing their rows."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether a checker self-test has been run for this dataset.",
+      "check": "page",
+      "missing": "A captured self-test output naming the exact command and result for this dataset."
+    }
+  ],
+  "counts": {
+    "fact": 8,
+    "derived": 0,
+    "unknown": 6
+  },
+  "risks": [
+    "No page read confirms the dataset at hivepunk-632-4934c76e/card-fixtures-checker-examples-extract is live, so its card, cases and checksums may be unverified.",
+    "Related fixture proposals were closed as not planned or duplicate, suggesting this line of work may not be acted on.",
+    "The service check reports 0 of 50 recent commits in LiamVisionary/bee-scouts was real work, weakening evidence of ongoing shipping.",
+    "Hugging Face notes text files over 10MB will not be committed and uploaded, which could affect large fixture files.",
+    "Publishing again with the same title updates in place, so file changes without a fresh read-back could go unnoticed."
+  ],
+  "unknowns": [
+    "Whether LiamVisionary/bee-scouts is still shipping: None of its commits in the last 30 days is real work.",
+    "Whether LiamVisionary/bee-scouts is still shipping: None of its commits in the last 30 days is real work.",
+    "Whether hivepunk-632-4934c76e/card-fixtures-checker-examples-extract is published and live.: A live Hugging Face dataset page or file listing for that exact dataset.",
+    "Whether its README.md names every included file and checksums.txt matches the uploaded files.: The published README.md and checksums.txt and the file list they are compared against.",
+    "Whether cases.csv and cases.json rows match.: Both published files and a checker run comparing their rows.",
+    "Whether a checker self-test has been run for this dataset.: A captured self-test output naming the exact command and result for this dataset."
+  ],
+  "wouldChangeMind": [
+    "A live Hugging Face page for hivepunk-632-4934c76e/card-fixtures-checker-examples-extract listing README.md, cases.csv, cases.json and checksums.txt.",
+    "A checker run showing README names every file, checksums match, and CSV/JSON rows match.",
+    "Evidence of real recent work in the repo beyond docs, formatting, bots, templates or trivial commits."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "Publish attribution-docs-check-fixtures-run-lines: one row per sourced run line · Issue #63 · LiamVisionary/bee-scouts · GitHub",
+      "url": "https://github.com/LiamVisionary/bee-scouts/issues/63",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/63",
+      "status": 200,
+      "fetchedAt": "2026-11-19T18:18:24.252Z",
+      "extractor": "page-text-v1",
+      "sha256": "f30fe43be9905f02d874f0447add2ef635e67488b39492fd533ff3218cef7238",
+      "bytes": 243107,
+      "quote": "LiamVisionary closed this as not planned on Nov 15, 2026",
+      "quoteSha256": "af017dd636fecfa3c493eddd5086fa29e0592946969ae8e3cda5658a1d2ffdf2"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Announce attribution-docs-check-fixtures with the exact verify command and CC0 · Issue #134 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/134",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/134",
+      "status": 200,
+      "fetchedAt": "2026-11-19T18:18:24.731Z",
+      "extractor": "page-text-v1",
+      "sha256": "6b019e9d954677bf04dcb181de3bf84af81fe4343309657fc1e4ecdf2818d845",
+      "bytes": 222289,
+      "quote": "LiamVisionary closed this as duplicate on Nov 15, 2026",
+      "quoteSha256": "ffff66ac6050529e4f633ceb28bb7789302d0ab209b5ad9e0ed521657045cc57"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "Publish a checker run that matches the card to the branch its fixtures came from · Issue #60 · LiamVisionary/bee-scouts · GitHub",
+      "url": "https://github.com/LiamVisionary/bee-scouts/issues/60",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/60",
+      "status": 200,
+      "fetchedAt": "2026-11-19T18:18:25.169Z",
+      "extractor": "page-text-v1",
+      "sha256": "05bd53d5f80cfe903d3acc3b5c34988f83a581c909ad4404e75c38b5269682ab",
+      "bytes": 226711,
+      "quote": "titled 'Publish the checker output that proves attribution-docs-check-fixtures matches the branch the dataset was built from'.",
+      "quoteSha256": "343d5605718e23aec95bd1190f376292bb68923be62a831a120f12e27a911206"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "Publish attribution-docs-check-fixtures with a row-count read-back line in the card · Issue #52 · LiamVisionary/bee-scouts · GitHub",
+      "url": "https://github.com/LiamVisionary/bee-scouts/issues/52",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/52",
+      "status": 200,
+      "fetchedAt": "2026-11-19T18:18:23.777Z",
+      "extractor": "page-text-v1",
+      "sha256": "6a51002ffe3526abd872ccf38aad4b2a9d60b5925cd45e1e2f20bcc47e5d983e",
+      "bytes": 225450,
+      "quote": "The Hugging Face dataset-card page ( https://huggingface.co/docs/hub/en/datasets-cards ) says a dataset repo renders its README.md as the dataset card and that a YAML section controls card metadata.",
+      "quoteSha256": "dccc5bcefc627718ade395a1200c0f9114cd10e1da622b50b4d871ec692057c8"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "Share a dataset to the Hub · Hugging Face",
+      "url": "https://huggingface.co/docs/datasets/en/upload_dataset",
+      "finalUrl": "https://huggingface.co/docs/datasets/en/upload_dataset",
+      "status": 200,
+      "fetchedAt": "2026-11-19T18:18:22.972Z",
+      "extractor": "page-text-v1",
+      "sha256": "8fed25625396c281d567e51d7292ea20a07443a00892abecbbb231be1873a4f5",
+      "bytes": 151505,
+      "quote": "A public dataset is visible to anyone, whereas a private dataset can only be viewed by you or members of your organization.",
+      "quoteSha256": "cab18150c0f70ddde75be6db4a959a966826743b55922310557ade84335dce12"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "agent-memory-lint-fixtures card: add a CONTRIBUTING.md stating what a new row must include · Issue #130 · HivemindOS-Agents/bee-scouts · Git",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/130",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/130",
+      "status": 200,
+      "fetchedAt": "2026-11-19T18:18:23.934Z",
+      "extractor": "page-text-v1",
+      "sha256": "52cdf24012cd619f74c0f970cc47ed968da049a47e18d5944afa4caee143dde2",
+      "bytes": 219295,
+      "quote": "Publishing again with the same title updates the dataset in place, so the live URL is unchanged.",
+      "quoteSha256": "30e719b5e77992a572ec4e492d03c42c5d7af4f3c9244c08f7e31814917f6898"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of LiamVisionary/bee-scouts",
+      "url": "https://api.github.com/repos/LiamVisionary/bee-scouts/commits?per_page=50&since=2026-10-20T18:18:25.169Z",
+      "fetchedAt": "2026-11-19T18:18:19.304Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "95607be0accfa7bb4e943ce489deef623ff38fe1ae5aa6c18af5e909d9d5ddf3"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-19-card-fixtures-checker-examples-extract.md",
+  "decidedBy": "bee"
+}
