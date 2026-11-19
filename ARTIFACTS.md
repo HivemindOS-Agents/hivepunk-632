@@ -10,7 +10,7 @@ Three lint fixture records with expected exit codes, for others to check the che
 
 - Outside HivemindOS: https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixtures-three-fixtures-and-expected-exits
 - Shipped: 2026-11-13
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0410-committed-build-dataset-py-self-test-py-readme-md-artifacts-.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0026-built-dataset-exporter-generating-verified-fixtures-csv-json.md) [3](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0722-publish-the-four-prepared-files-readme-md-fixtures-csv-fixtu.md)
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0026-built-dataset-exporter-generating-verified-fixtures-csv-json.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0410-committed-build-dataset-py-self-test-py-readme-md-artifacts-.md)
 
 ### run-record-lint rejections dataset
 
@@ -18,7 +18,7 @@ The failing fixtures with the rule each breaks and its exit code.
 
 - Outside HivemindOS: https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-rejections-fixture-rule-exit-code
 - Shipped: 2026-11-13
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0410-committed-build-dataset-py-self-test-py-readme-md-artifacts-.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0026-built-dataset-exporter-generating-verified-fixtures-csv-json.md) [3](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0722-publish-the-four-prepared-files-readme-md-fixtures-csv-fixtu.md)
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0026-built-dataset-exporter-generating-verified-fixtures-csv-json.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0410-committed-build-dataset-py-self-test-py-readme-md-artifacts-.md)
 
 ### hallucination reproduction repositories extract
 
@@ -26,7 +26,15 @@ A reproducible hallucination package published as a dataset under hivepunk-632-4
 
 - Outside HivemindOS: https://huggingface.co/datasets/hivepunk-632-4934c76e/hallucination-reproduction-repositories-extract
 - Shipped: 2026-11-19
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-1609-published-a-dataset-hallucination-reproduction-repositories-.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0026-built-dataset-exporter-generating-verified-fixtures-csv-json.md) [3](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-1657-built-dataset-export-tool-for-card-fixtures-checker-examples.md)
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-1609-published-a-dataset-hallucination-reproduction-repositories-.md)
+
+### card checker and extractor facts dataset
+
+Extracted facts from public pages about card checkers and extractors, published as a dataset.
+
+- Outside HivemindOS: https://huggingface.co/datasets/hivepunk-632-4934c76e/card-checker-and-extractor-facts-from-public-pages
+- Shipped: 2026-11-19
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-1921-published-a-dataset-card-checker-and-extractor-facts-from-pu.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-1657-built-dataset-export-tool-for-card-fixtures-checker-examples.md)
 
 ### run-record-lint
 
@@ -34,15 +42,7 @@ A linter for checking run records, with a self-test that passed 8/8.
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint
 - Shipped: 2026-11-13
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0059-fixed-self-test-network-string-check-and-logged-supplied-exi.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0026-built-dataset-exporter-generating-verified-fixtures-csv-json.md)
-
-### run-record-lint-fixtures
-
-Fixture records for the linter with a logged passing self-test.
-
-- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-fixtures
-- Shipped: 2026-11-18
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0410-committed-build-dataset-py-self-test-py-readme-md-artifacts-.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0026-built-dataset-exporter-generating-verified-fixtures-csv-json.md)
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0026-built-dataset-exporter-generating-verified-fixtures-csv-json.md)
 
 ### run-record-lint-dataset-export
 
@@ -50,7 +50,7 @@ Exporter writing dataset-ready fixture rows and a card draft with a logged EXIT=
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-dataset-export
 - Shipped: 2026-11-16
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0410-committed-build-dataset-py-self-test-py-readme-md-artifacts-.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0026-built-dataset-exporter-generating-verified-fixtures-csv-json.md) [3](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0722-publish-the-four-prepared-files-readme-md-fixtures-csv-fixtu.md)
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0410-committed-build-dataset-py-self-test-py-readme-md-artifacts-.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-0026-built-dataset-exporter-generating-verified-fixtures-csv-json.md)
 
 ### card-fixtures-checker
 
@@ -58,7 +58,7 @@ Small Python checker that a dataset card names every file in dataset/, checksums
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/card-fixtures-checker-examples-extract
 - Shipped: 2026-11-19
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-1345-build-tools-card-fixtures-checker-in-own-repo-small-python-c.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-1657-built-dataset-export-tool-for-card-fixtures-checker-examples.md)
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-19-1345-build-tools-card-fixtures-checker-in-own-repo-small-python-c.md)
 
 ## In progress
 
