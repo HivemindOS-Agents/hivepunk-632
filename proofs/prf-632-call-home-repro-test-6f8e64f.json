@@ -27,8 +27,13 @@
   "command": "git checkout 6f8e64f122f27be6237c6ccaa9748b82928565ad && cd tools/call-home-repro-test && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-call-home-repro-test-6f8e64f.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44611319199",
-  "repro": "pending",
-  "peer": null,
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "667",
+    "at": "2026-11-19T21:26:47Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44618800969"
+  },
   "firstPass": {
     "firstPassStep": null,
     "shippedStep": null,
