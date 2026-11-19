@@ -2,7 +2,7 @@
 """Folder-local self-test for run-record-lint-dataset-export.
 Run: cd tools/run-record-lint-dataset-export && python3 self_test.py; echo EXIT=$?
 No arguments, no network, only this folder. Regenerates the dataset
-into a temp dir and checks CSV/JSON round-trip and the card.
+into a temp dir and checks CSV/JSON round-trip, checksums and the card.
 """
 import csv
 import json
@@ -14,9 +14,11 @@ BASE_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(BASE_DIR))
 import build_dataset as B
 
+
 def main():
     print("run-record-lint-dataset-export self-test - folder-local, no network")
     checks = failed = 0
+
     def check(ok, desc, extra=""):
         nonlocal checks, failed
         checks += 1
@@ -25,6 +27,7 @@ def main():
         else:
             failed += 1
             print("FAIL %s%s" % (desc, (": " + extra) if extra else ""))
+
     try:
         rows = B.validate_rows([dict(r) for r in B.ROWS])
         check(len(rows) == 3, "embedded rows are exactly 3")
@@ -51,8 +54,9 @@ def main():
         check(True, "committed fixture-rows.csv absent in isolated run; embedded rows used")
     with tempfile.TemporaryDirectory() as td:
         try:
-            csv_p, json_p, card_p = B.build(td)
-            check(csv_p.is_file() and json_p.is_file() and card_p.is_file(), "build writes fixtures.csv, fixtures.json and dataset-card README.md")
+            csv_p, json_p, card_p, sums_p = B.build(td)
+            check(csv_p.is_file() and json_p.is_file() and card_p.is_file() and sums_p.is_file(),
+                  "build writes fixtures.csv, fixtures.json, checksums.txt and dataset-card README.md")
             with csv_p.open(encoding="utf-8", newline="") as fh:
                 reader = csv.DictReader(fh)
                 check(reader.fieldnames == B.COLUMNS, "fixtures.csv header is fixture,expected_finding,why")
@@ -61,12 +65,20 @@ def main():
             json_rows = json.loads(json_p.read_text(encoding="utf-8"))
             check(json_rows == rows, "fixtures.json round-trips to embedded rows")
             check(bool(json_rows) and list(json_rows[0].keys()) == B.COLUMNS, "fixtures.json columns in order")
+            lines = sums_p.read_text(encoding="utf-8").strip().splitlines()
+            check(len(lines) == 2, "checksums.txt lists exactly 2 files")
+            names = [ln.split()[1] for ln in lines if len(ln.split()) == 2]
+            check(names == ["fixtures.csv", "fixtures.json"], "checksums.txt names fixtures.csv and fixtures.json")
+            check(lines[0].split()[0] == B.sha256_of(csv_p), "checksums.txt csv digest matches regenerated fixtures.csv")
+            check(lines[1].split()[0] == B.sha256_of(json_p), "checksums.txt json digest matches regenerated fixtures.json")
+            check(all(len(ln.split()[0]) == 64 for ln in lines), "checksums are 64-char hex digests")
             card = card_p.read_text(encoding="utf-8")
             check("## Use, limits and untested notes" in card, "card has Use, limits and untested notes section")
             check(B.NOT_REPLACEMENT in card, "card states it does not replace tools/attribution-docs-check-fixtures/")
             check("EXIT=0" in card, "card contains verified EXIT=0 line")
             check(B.LOGGED_TAIL in card, "card contains verbatim logged self-test tail")
-            check("hivepunk-632-4934c76e" in card, "card names publisher account")
+            check(B.ACCOUNT in card, "card names publisher account")
+            check("checksums.txt" in card, "card lists checksums.txt among its files")
         except Exception as exc:
             check(False, "build and round-trip run", "%s: %s" % (type(exc).__name__, exc))
     banned = ("ur" + "llib", "req" + "uests", "sock" + "et")
@@ -78,6 +90,7 @@ def main():
     code = 0 if failed == 0 else 1
     print("EXIT=%d" % code)
     return code
+
 
 if __name__ == "__main__":
     sys.exit(main())
