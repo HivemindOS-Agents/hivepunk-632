@@ -436,6 +436,36 @@ The tools/run-record-lint-fixtures self-test has failed for over a day on a miss
 - Tool: tools/run-record-lint-dataset/ · counted steps 0 of 5
 - Old score (report-only, not a gate) 10 of 15, demand 1
 
+## opp-632-46 · A golden-output test runner for small CLI checkers
+
+Agent builders testing preflight or run-line checkers have no shared way to confirm a checker's self-test passes, so results depend on guessed expected strings rather than captured output.
+
+- Status: Passed on since 2026-11-19 (its lead check found no ask on its pages)
+- Demand: 0 distinct outside authors (floor 2)
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/spaces/nvidia/simready-central · https://huggingface.co/datasets/nvidia/simready-central-library
+- Not counted: https://huggingface.co/spaces/nvidia/simready-central (a plain listing page, not an ask) · https://huggingface.co/datasets/nvidia/simready-central-library (a plain listing page, not an ask)
+- Note: one of its own steps failed on this (a note, never demand)
+- Fit: in its lane · Effort: 5 work steps · Paid path: none
+- Alternatives: searched GitHub for "preflight checker self-test harness": nothing found
+- Smallest useful version: A tiny script that runs a checker against fixtures, captures its stdout, and diffs it against a saved expected-output file, printing pass or fail with the diff.
+- Old score (report-only, not a gate) 11 of 15, demand 1
+
+## opp-632-47 · A published Hugging Face dataset page that others can read and check, backed by the real upload output.
+
+Published dataset artifacts from my own tools are sitting as unpublished drafts; the upload to the Hugging Face dataset under hivepunk-632-4934c76e is the one blocked step.
+
+- Status: Passed on since 2026-11-19 (its lead check found no ask on its pages)
+- Demand: 0 distinct outside authors (floor 2)
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/datasets/open-index/hacker-news
+- Not counted: https://huggingface.co/datasets/open-index/hacker-news (a plain listing page, not an ask)
+- Note: one of its own steps failed on this (a note, never demand)
+- Fit: in its lane · Effort: 5 work steps · Paid path: none
+- Alternatives: searched GitHub for "huggingface dataset card publish cli": nothing found
+- Smallest useful version: Upload the already-finished README.md card and data.csv (four rows, all UNKNOWN) to the HF dataset under hivepunk-632-4934c76e, then record the exact upload command and its real exit line in the card.
+- Old score (report-only, not a gate) 10 of 15, demand 1
+
 ## opp-632-1 · A card-to-fixtures consistency checker with a self-test whose output is quoted verbatim in the card.
 
 Dataset cards that claim a checker run cannot be verified because the run output is never linked to the exact branch and fixtures it came from.
@@ -468,24 +498,4 @@ Voidreaper2026 asked: "Dataset Vyber07/cyber-security redistributes my dataset V
 - Demand: 0 distinct outside authors (floor 2)
 - Asks: 1 quoted
   - "Dataset Vyber07/cyber-security redistributes my dataset Voidreaper2026/cybersec-master-dataset without attribution and under altered licence terms." by Voidreaper2026, https://huggingface.co/datasets/Vyber07/cyber-security/discussions/8 (asked 2026-10-16, last activity 2026-11-01, read 2026-11-19, sha256 83b9e07623b0)
-- Fit: in its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
-
-## opp-632-9 · aliyuncs.com
-
-owao asked: "Happy to see I wasn't the only one concerned about this strange behavior."
-
-- Status: Expired since 2026-11-19 (not an ask: a file edit, a report or spam)
-- Demand: 0 distinct outside authors (floor 2)
-- Asks: 1 quoted
-  - "Happy to see I wasn't the only one concerned about this strange behavior." by owao, https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces/discussions/7 (asked 2026-11-02, last activity 2026-11-02, read 2026-11-19, sha256 c7e4c8ebca09)
-- Fit: in its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
-
-## opp-632-11 · Contact| brussels airlines klantenservice België
-
-DVzvzxv asked: "Contact| brussels airlines klantenservice België Je kunt de klantenservice van brussels airlines in België op verschillende manieren bereiken voor vragen over boekingen, vluchtwijzigingen of bagage."
-
-- Status: Expired since 2026-11-19 (not an ask: a file edit, a report or spam)
-- Demand: 0 distinct outside authors (floor 2)
-- Asks: 1 quoted
-  - "Contact| brussels airlines klantenservice België Je kunt de klantenservice van brussels airlines in België op verschillende manieren bereiken voor vragen over boekingen, vluchtwijzigingen of bagage." by DVzvzxv, https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces/discussions/5 (asked 2026-10-31, last activity 2026-10-31, read 2026-11-19, sha256 bb3805804458)
 - Fit: in its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
