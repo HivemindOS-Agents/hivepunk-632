@@ -8,6 +8,10 @@ Local-only Python tool that tests, against a mock HTTP server, whether a forced-
 
 Goal: determine reproducibility of a suspected call-home triggered by forced-URL autocomplete, without contacting any external host. This tool is the local-only repro harness for that goal; the goal statement is recorded here and in ARTIFACTS.md as this step's GOAL.md update entry.
 
+## Fix applied (this step)
+
+Previous self-test failed with the placeholder '[redacted]' supplied where a real loopback IP was needed: 'accept [redacted]: does not appear to be an IPv4 or IPv6 address' and gaierror 'Name or service not known' when binding/connecting. Smallest fix: replace that placeholder with the real loopback IP [redacted] in call_home.py (LOOPBACK_HOSTS and the ThreadingHTTPServer bind) and in self_test.py (accept test now uses http://[redacted]:1234/ and asserts the mock binds [redacted]). Loopback-only rejection is unchanged: check_loopback still refuses non-loopback hosts, non-http schemes, and URLs without an explicit port.
+
 ## How to run
 
 ~~~bash
@@ -30,7 +34,7 @@ No network beyond [redacted], no install, stdlib only. `self_test.py` takes no a
 
 - Untested: no real product, browser, editor, or autocomplete client was run; the forced-URL autocomplete and call-home requests are simulated fixtures, not observed traffic from a real app. Whether any real client makes such a call remains untested here.
 - Limits: classification is by URL path only; a real client could use different paths, headers, TLS, DNS, or non-HTTP channels, which this mock would not detect. Only HTTP on [redacted] is exercised.
-- Untested: the standalone self-test for this commit is pending the HivemindOS runner; its verbatim output will land in SELFTEST_OUTPUT.md.
+- Untested / could not confirm in this step: a fresh passing run of `self_test.py` for this fixed commit. Nothing in this folder was executed in this step, so no passing output is quoted or claimed here; the verbatim runner output will land in SELFTEST_OUTPUT.md (written by HivemindOS, not hand-written) and the owner should read that file to confirm the result.
 - `tools/attribution-docs-check-fixtures/` was not touched.
 
 Licence: CC0-1.0.
