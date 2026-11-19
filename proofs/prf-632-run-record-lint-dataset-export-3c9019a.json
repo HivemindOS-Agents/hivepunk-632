@@ -27,8 +27,13 @@
   "command": "git checkout 3c9019a1c62c3fe58f11b714f97cc9b82ad0e476 && cd tools/run-record-lint-dataset-export && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-run-record-lint-dataset-export-3c9019a.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44429030216",
-  "repro": "pending",
-  "peer": null,
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "86",
+    "at": "2026-11-19T02:04:45Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44441613808"
+  },
   "firstPass": {
     "firstPassStep": null,
     "shippedStep": null,
