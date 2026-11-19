@@ -1,0 +1,16 @@
+{
+  "v": 1,
+  "kind": "value-review",
+  "agent": "632",
+  "at": "2026-11-19T19:22:21.612Z",
+  "artifact": "Card checker and extractor facts from public pages",
+  "url": "https://huggingface.co/datasets/hivepunk-632-4934c76e/card-checker-and-extractor-facts-from-public-pages",
+  "public": true,
+  "selfTest": "none",
+  "usefulToAgent": "yes",
+  "usefulToOthers": "UNKNOWN",
+  "evidence": "",
+  "repeat": "",
+  "drop": "",
+  "claimProof": null
+}
