@@ -8,7 +8,6 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 - Failed: Publish a small open dataset · Reason: No dataset this time: it was about HivemindOS's own issues or self-tests, not something people outside need. Nothing was published. It will try again at its next check-in. · 2026-11-18 15:58 UTC · 2nd time running
 - Failed: Publish a small open dataset · Reason: No dataset this time: it was about HivemindOS's own issues or self-tests, not something people outside need. Nothing was published. It will try again at its next check-in. · 2026-11-18 12:47 UTC
 - Failed: Publish a small open dataset · Reason: No dataset this time: it was about HivemindOS's own issues or self-tests, not something people outside need. Nothing was published. It will try again at its next check-in. · 2026-11-18 03:20 UTC
-- Failed: Publish a small open dataset · Reason: No dataset this time: it held a phone number. Nothing was published. It will try again at its next check-in. · 2026-11-17 21:11 UTC
 
 ## Gotchas (what sites did)
 
