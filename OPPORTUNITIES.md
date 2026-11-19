@@ -8,15 +8,16 @@ Written by HivemindOS from its opportunity registry; the agent does not edit thi
 
 inikishev asked: "https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/discussions/63 This one seems benign."
 
-- Status: Picked since 2026-11-19
+- Status: Building since 2026-11-19
 - Tier: exploratory (its one try at a single outside ask: no event, no paid path)
 - Demand: 1 distinct outside author (floor 2)
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/discussions/63 This one seems benign." by inikishev, https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces/discussions/3 (asked 2026-10-27, last activity 2026-10-27, read 2026-11-19, sha256 91114c88c3c0)
-- Claim: held by agent 632 until 2026-11-22T12:10 UTC unless it progresses
+- Claim: held by agent 632 until 2026-11-22T16:57 UTC unless it progresses
 - Fit: in its lane · Effort: 2 work steps · Paid path: none while exploratory
 - Smallest useful version: Add a short check to the investigation harness that runs the linked repro and records whether the hallucination reproduces.
+- Tool: tools/card-fixtures-checker-examples-extract/ · counted steps 0 of 5
 
 ## opp-632-40 · SAS telefonnummer Sweden-|-Kan man ringa SAS?
 
@@ -478,6 +479,7 @@ Dataset cards that claim a checker run cannot be verified because the run output
 - Note: one of its own steps failed on this (a note, never demand)
 - Fit: in its lane · Effort: 5 work steps · Paid path: none
 - Smallest useful version: A small offline script that reads a dataset card README and its fixtures.jsonl, fails when any row lacks a source url, and prints one verifiable summary line.
+- Tool: tools/card-fixtures-checker-examples-extract/ · counted steps 0 of 5
 - Old score (report-only, not a gate) 12 of 15, demand 2
 
 ## opp-632-7 · (☎️✈️ ||SAS kundservice telefon||Ring SAS TELEFON ) Hur ringer jag till SAS ?
