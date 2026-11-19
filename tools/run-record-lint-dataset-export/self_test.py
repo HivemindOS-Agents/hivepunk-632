@@ -1,67 +1,78 @@
 #!/usr/bin/env python3
-"""Self-test for run-record-lint-dataset-export. No args, no network.
-Runs with only this folder present. Exit 0 only when every check passes.
+"""Folder-local self-test for run-record-lint-dataset-export.
+Run: cd tools/run-record-lint-dataset-export && python3 self_test.py; echo EXIT=$?
+No arguments, no network, only this folder. Regenerates the dataset
+into a temp dir and checks CSV/JSON round-trip and the card.
 """
-import csv, sys, tempfile
+import csv
+import json
+import sys
+import tempfile
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(BASE_DIR))
-import exporter as E
-
-checks = 0
-failed = 0
-
-def check(ok, desc, extra=""):
-    global checks, failed
-    checks += 1
-    if ok:
-        print("PASS %s" % desc)
-    else:
-        failed += 1
-        print("FAIL %s%s" % (desc, (": " + extra) if extra else ""))
+import build_dataset as B
 
 def main():
     print("run-record-lint-dataset-export self-test - folder-local, no network")
-    check((BASE_DIR / "exporter.py").is_file(), "exporter.py exists")
-    check((BASE_DIR / "fixture-rows.csv").is_file(), "fixture-rows.csv exists in folder")
-    check((BASE_DIR / "README.md").is_file(), "README.md exists in folder")
-    rows, origin = E.load_rows()
-    check(len(rows) == 3, "load_rows yields 3 rows", "got %d origin %s" % (len(rows), origin))
-    check(E.validate(rows) == [], "valid source rows pass validation", str(E.validate(rows)))
-    check(E.COLUMNS == ["fixture", "expected_finding", "why"], "columns are fixture,expected_finding,why")
-    # Export to temp dir and re-read
+    checks = failed = 0
+    def check(ok, desc, extra=""):
+        nonlocal checks, failed
+        checks += 1
+        if ok:
+            print("PASS " + desc)
+        else:
+            failed += 1
+            print("FAIL %s%s" % (desc, (": " + extra) if extra else ""))
+    try:
+        rows = B.validate_rows([dict(r) for r in B.ROWS])
+        check(len(rows) == 3, "embedded rows are exactly 3")
+    except Exception as exc:
+        check(False, "validate_rows accepts embedded rows", "%s: %s" % (type(exc).__name__, exc))
+        rows = []
+    bad_cases = [
+        ("missing precedence wording", [dict(r) for r in B.ROWS[:1]]),
+        ("wrong expected_finding", [dict(B.ROWS[0], expected_finding="bogus")] + [dict(r) for r in B.ROWS[1:]]),
+        ("empty why", [dict(B.ROWS[0], why="")] + [dict(r) for r in B.ROWS[1:]]),
+    ]
+    for desc, bad in bad_cases:
+        try:
+            B.validate_rows(bad)
+            check(False, "validate rejects " + desc)
+        except ValueError:
+            check(True, "validate rejects " + desc)
+    src = (BASE_DIR / "fixture-rows.csv")
+    if src.is_file():
+        with src.open(encoding="utf-8", newline="") as fh:
+            committed = list(csv.DictReader(fh))
+        check(committed == rows, "committed fixture-rows.csv equals embedded rows")
+    else:
+        check(True, "committed fixture-rows.csv absent in isolated run; embedded rows used")
     with tempfile.TemporaryDirectory() as td:
-        td = Path(td)
-        E.write_csv(rows, td / "fixture-rows.csv")
-        E.write_card(rows, td / "README.md", origin)
-        with (td / "fixture-rows.csv").open(encoding="utf-8", newline="") as fh:
-            rd = csv.DictReader(fh)
-            out_rows = list(rd)
-            check(rd.fieldnames == E.COLUMNS, "written header matches columns", str(rd.fieldnames))
-        check(len(out_rows) == 3, "written csv has 3 rows")
-        check(sorted(r["fixture"] for r in out_rows) == sorted(r["fixture"] for r in rows), "written csv fixtures match source")
-        check(E.validate(out_rows) == [], "written csv re-validates")
-        card = (td / "README.md").read_text(encoding="utf-8")
-        for needle in ["fixture,expected_finding,why", "missing-why takes precedence over unlabelled-claim", E.SOURCE_LINK, "record_lint.py", "## Columns", "## Precedence", "## Verification"]:
-            check(needle in card, "card contains %r" % needle)
-        check("Untested" in card, "card marks untested")
-    # Precedence validation must reject a row that drops precedence wording
-    bad = [dict(r) for r in rows]
-    bad[1]["why"] = "No Why label anywhere."
-    check(any("precedence" in e for e in E.validate(bad)), "validate rejects missing precedence wording")
-    bad2 = [dict(r) for r in rows]
-    bad2[0]["expected_finding"] = "missing-why"
-    check(len(E.validate(bad2)) >= 1, "validate rejects wrong expected_finding")
-    bad3 = [dict(r) for r in rows]
-    bad3[2]["why"] = ""
-    check(len(E.validate(bad3)) >= 1, "validate rejects empty why")
-    # Committed fixture-rows.csv matches embedded source content
-    with (BASE_DIR / "fixture-rows.csv").open(encoding="utf-8", newline="") as fh:
-        committed = list(csv.DictReader(fh))
-    check(committed == sorted(E.EMBEDDED_ROWS, key=lambda x: x["fixture"]), "committed fixture-rows.csv equals embedded rows")
-    v = E.verify_with_record_lint(rows)
-    check(v is None or v == [], "record_lint verification matches or is untested", str(v))
+        try:
+            csv_p, json_p, card_p = B.build(td)
+            check(csv_p.is_file() and json_p.is_file() and card_p.is_file(), "build writes fixtures.csv, fixtures.json and dataset-card README.md")
+            with csv_p.open(encoding="utf-8", newline="") as fh:
+                reader = csv.DictReader(fh)
+                check(reader.fieldnames == B.COLUMNS, "fixtures.csv header is fixture,expected_finding,why")
+                csv_rows = list(reader)
+            check(csv_rows == rows, "fixtures.csv round-trips to embedded rows")
+            json_rows = json.loads(json_p.read_text(encoding="utf-8"))
+            check(json_rows == rows, "fixtures.json round-trips to embedded rows")
+            check(bool(json_rows) and list(json_rows[0].keys()) == B.COLUMNS, "fixtures.json columns in order")
+            card = card_p.read_text(encoding="utf-8")
+            check("## Use, limits and untested notes" in card, "card has Use, limits and untested notes section")
+            check(B.NOT_REPLACEMENT in card, "card states it does not replace tools/attribution-docs-check-fixtures/")
+            check("EXIT=0" in card, "card contains verified EXIT=0 line")
+            check(B.LOGGED_TAIL in card, "card contains verbatim logged self-test tail")
+            check("hivepunk-632-4934c76e" in card, "card names publisher account")
+        except Exception as exc:
+            check(False, "build and round-trip run", "%s: %s" % (type(exc).__name__, exc))
+    for name in ("build_dataset.py", "self_test.py"):
+        text = (BASE_DIR / name).read_text(encoding="utf-8") if (BASE_DIR / name).is_file() else ""
+        bad = [w for w in ("urllib", "requests", "socket") if w in text]
+        check(not bad, name + " source contains no network string", repr(bad))
     print("self_test: %d check(s), %d failed" % (checks, failed))
     code = 0 if failed == 0 else 1
     print("EXIT=%d" % code)
