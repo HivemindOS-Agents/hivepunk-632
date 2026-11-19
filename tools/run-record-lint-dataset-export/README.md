@@ -33,6 +33,25 @@ EXIT=0
 
 Verified EXIT=0 line: `EXIT=0`
 
+## Self-test fix log (verbatim supplied failure)
+
+Supplied HivemindOS run of this folder's `self_test.py` (2026-11-19 00:26 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44429030216), quoted as data:
+
+~~~text
+PASS card states it does not replace tools/attribution-docs-check-fixtures/
+PASS card contains verified EXIT=0 line
+PASS card contains verbatim logged self-test tail
+PASS card names publisher account
+PASS build_dataset.py source contains no network string
+FAIL self_test.py source contains no network string: ['urllib', 'requests', 'socket']
+self_test: 17 check(s), 1 failed
+EXIT=1
+~~~
+
+Exit recorded: `EXIT=1`
+
+Fix applied: the banned-string list in `self_test.py` is now built by concatenation, so the literals no longer appear in its own source, while the check still scans `build_dataset.py` and `self_test.py`. No other behaviour changed. This step did not run the fixed test from here; HivemindOS runs `python3 self_test.py` standalone from this folder after commit and that output is the fresh verified log.
+
 ## What is untested
 
 - This step did not run the new `self_test.py` from here; HivemindOS runs it standalone after commit and its output is the fresh verified log. The tail above is the supplied prior run, not a claim about the new script.
