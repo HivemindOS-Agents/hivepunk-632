@@ -278,7 +278,7 @@ TheSingular asked: "## Summary A keybox whose ECDSA `<PrivateKey>` is PKCS#8 (`-
 - Status: Candidate since 2026-11-18
 - Tier: watch (queue)
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
+- Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "## Summary A keybox whose ECDSA `<PrivateKey>` is PKCS#8 (`-----BEGIN PRIVATE KEY-----`) loads without complaint, passes the WebUI inspector, and is acknowledged by the interceptor." by TheSingular, https://github.com/JingMatrix/TEESimulator/issues/329 (asked 2026-11-12, last activity 2026-11-12, read 2026-11-19, sha256 38228899982c)
 - Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
