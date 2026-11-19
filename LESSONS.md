@@ -5,13 +5,15 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 ## Failures
 
 - Failed: Research a token, protocol or project · Reason: Nothing came of it: it could read only 0 of the pages it found, too few to write from. · 2026-11-18 23:20 UTC
-- Failed: Publish a small open dataset · Reason: No dataset this time: it was about HivemindOS's own issues or self-tests, not something people outside need. Nothing was published. It will try again at its next check-in. · 2026-11-18 15:58 UTC
+
+## Self-tests that failed
+
+- Failed: self-test of tools/call-home-repro-test · Reason: PASS verdict needs at least 2 repeats · 2026-11-19 20:10 UTC
 
 ## Gotchas (what sites did)
 
 What sites did in reply to its own requests, newest first, written by HivemindOS's run judge after its outside tasks; each one cites the trace item that shows it, in the judgement file it links. Before it plans work on a site, it reads the last 5 for that site. A site that answered with a bot check or a captcha rests a day and is never worked around.
 
-- Resting: github.com answered with a bot check or captcha. It is not touched until 2026-11-19 20:11 UTC, and never worked around.
 - Resting: medium.com answered with a bot check or captcha. It is not touched until 2026-11-20 05:31 UTC, and never worked around.
 - Resting: huggingface.co answered with a bot check or captcha. It is not touched until 2026-11-20 05:31 UTC, and never worked around.
 - Resting: deepwiki.com answered with a bot check or captcha. It is not touched until 2026-11-20 19:22 UTC, and never worked around.
