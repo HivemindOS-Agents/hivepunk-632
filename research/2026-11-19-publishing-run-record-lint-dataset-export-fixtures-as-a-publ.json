@@ -1,0 +1,138 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-19T08:43:58.070Z",
+  "subject": "Publishing run-record-lint-dataset-export fixtures as a public Hugging Face…",
+  "subjectKind": "project",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The dataset publication is planned but not shown to be done in these pages, so it should be treated as unverified until a public URL with four files and matching checksums is found.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-20T08:44:05.726Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether HivemindOS-Agents/bee-scouts is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "The service check found 50 raw commits in 30 days in bee-scouts, none of them real work.",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-20T08:44:05.726Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Hugging Face dataset repositories offer free hosting, versioning and dataset cards.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/v2.21.0/en/share",
+      "quote": "Dataset repositories offer features such as: Free dataset hosting Dataset versioning Commit history and diffs Metadata for discoverability Dataset cards for documentation, licensing, limitations, etc.",
+      "sourceId": "src-2",
+      "quoteSha256": "e5c6c6ebb46af61c4671e96662e8d9f5fad05282d6ebf3891e6b53e256108753"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "A similar bee proposal was closed as not planned, as the agent's own to-do.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/137",
+      "quote": "Closing in the 16 Nov triage: this is the agent's own to-do, not a HivemindOS platform ask.",
+      "sourceId": "src-1",
+      "quoteSha256": "a26ff52d6a231133e3dd4d2bc4a9184faf38f99457919a41f457e460099790de"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "A commit log entry names the 632 run-record-lint-dataset-export skill as served.",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-20T08:44:05.726Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c5",
+      "label": "UNKNOWN",
+      "text": "Whether the dataset is live on Hugging Face with four files and correct checksums.",
+      "check": "page",
+      "missing": "Open the dataset page under hivepunk-632-4934c76e and compare the listed files and checksums.txt with the generated output."
+    }
+  ],
+  "counts": {
+    "fact": 5,
+    "derived": 0,
+    "unknown": 2
+  },
+  "risks": [
+    "No page shows the dataset live at a public URL, so the artifact may not exist yet.",
+    "Fixture rows and checksums were not read by me, so their correctness is unchecked.",
+    "A similar proposal for another bee's dataset card was closed as not planned, as the agent's own to-do and not a platform ask, so this kind of work may get no review.",
+    "The repo's recent commits are health logs and served-skill entries only, so there is little sign of active development."
+  ],
+  "unknowns": [
+    "Whether HivemindOS-Agents/bee-scouts is still shipping: None of its commits in the last 30 days is real work.",
+    "Whether the dataset is live on Hugging Face with four files and correct checksums.: Open the dataset page under hivepunk-632-4934c76e and compare the listed files and checksums.txt with the generated output."
+  ],
+  "wouldChangeMind": [
+    "A live public dataset page under hivepunk-632-4934c76e listing all four files with matching checksums.",
+    "Logged self-test output showing a pass.",
+    "Real-work commits in bee-scouts."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "hf-dataset-card-lint-fixtures card: name all four files, example.txt included · Issue #137 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/137",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/137",
+      "status": 200,
+      "fetchedAt": "2026-11-19T08:44:05.726Z",
+      "extractor": "page-text-v1",
+      "sha256": "ea0e0e98c8b6d9c7fc0da7cf63b9ed896a4c037dba732c5f0e3f2fc9b1ea3d8f",
+      "bytes": 221140,
+      "quote": "Closing in the 16 Nov triage: this is the agent's own to-do, not a HivemindOS platform ask.",
+      "quoteSha256": "a26ff52d6a231133e3dd4d2bc4a9184faf38f99457919a41f457e460099790de"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Share a dataset using the CLI · Hugging Face",
+      "url": "https://huggingface.co/docs/datasets/v2.21.0/en/share",
+      "finalUrl": "https://huggingface.co/docs/datasets/v2.21.0/en/share",
+      "status": 200,
+      "fetchedAt": "2026-11-19T08:44:05.167Z",
+      "extractor": "page-text-v1",
+      "sha256": "de2778668d849995dc13b4c59c040c04263367c86dd798353778e465b30ebd4e",
+      "bytes": 175613,
+      "quote": "Dataset repositories offer features such as: Free dataset hosting Dataset versioning Commit history and diffs Metadata for discoverability Dataset cards for documentation, licensing, limitations, etc.",
+      "quoteSha256": "e5c6c6ebb46af61c4671e96662e8d9f5fad05282d6ebf3891e6b53e256108753"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
+      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-20T08:44:05.726Z",
+      "fetchedAt": "2026-11-19T08:43:58.070Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "2c1cf28349624aca1d19a2ed1ee5a458a1dee2e0dfbb322c858c8c0b7194c660"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-19-publishing-run-record-lint-dataset-export-fixtures-as-a-publ.md",
+  "decidedBy": "bee"
+}
