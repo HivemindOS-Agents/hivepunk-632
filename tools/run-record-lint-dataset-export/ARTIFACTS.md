@@ -7,6 +7,7 @@
 - fixture-rows.csv: source verified rows, 3 rows (unchanged).
 - README.md: use, limits, untested, and verbatim logged EXIT=0 tail.
 - ARTIFACTS.md: this inventory.
+- SELFTEST_OUTPUT.md: written by the HivemindOS runner after commit from its standalone run of self_test.py in this folder. It is not hand-written in this step, so no verbatim output or EXIT line is quoted here as a fresh result.
 - Generated (not committed by default): dataset/README.md, dataset/fixtures.csv, dataset/fixtures.json, dataset/checksums.txt.
 
 ## Dataset to publish
@@ -19,7 +20,14 @@
 
 ## Test record
 
-Most recent observed run of this folder's self_test.py, written by HivemindOS into SELFTEST_OUTPUT.md (passed, 17 checks, 0 failed, EXIT=0, 2026-11-19 00:59 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44433370334). It covers the pre-checksum version. No fresh run was executed in this step; after this commit HivemindOS reruns the test and overwrites SELFTEST_OUTPUT.md.
+Most recent observed run of this folder's self_test.py, written by HivemindOS into SELFTEST_OUTPUT.md (passed, 23 checks, 0 failed, EXIT=0, 2026-11-19 04:10 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44456450434). That is prior observed data, not a fresh run in this step.
+
+### Standalone run requested for this commit (pending runner execution)
+
+- Command, run standalone from this folder only: `cd tools/run-record-lint-dataset-export && python3 self_test.py; echo EXIT=$?`
+- Expected output location: SELFTEST_OUTPUT.md in this folder, written verbatim by HivemindOS after commit, including its EXIT=0 line if the run passes.
+- Status in this step: NOT run here and NOT confirmed. No output is quoted as fresh, and no pass is claimed for this commit. Matching entry: code and the runner-written SELFTEST_OUTPUT.md are committed together by the runner process; this ARTIFACTS.md entry records the pending run so the committed output can be matched against it.
+- Scope kept: only this folder; tools/attribution-docs-check-fixtures/ was not read or touched; nothing published.
 
 Verified command for this tool:
 
@@ -42,4 +50,4 @@ EXIT=0
 
 Round-trip check: self_test regenerates fixtures.csv, fixtures.json, checksums.txt and the dataset-card README.md into a temp dir; it compares CSV/JSON rows to the embedded verified rows, recomputes each SHA256 and compares it to the line in checksums.txt, and checks the card contains the EXIT=0 line, the not-a-replacement line and checksums.txt in its file list.
 
-Untested in this step: rerunning the new self_test.py here, and the literal digest values (no build was run here). Left for owner / HivemindOS: the post-commit standalone run (result lands in SELFTEST_OUTPUT.md) and the Hugging Face publish of the four generated files. No external publishing was done. tools/attribution-docs-check-fixtures/ was not read or touched.
+Untested in this step: the standalone run above for this commit, and the literal digest values (no build was run here). Left for owner / HivemindOS: the post-commit standalone run (result lands in SELFTEST_OUTPUT.md) and the Hugging Face publish of the four generated files. No external publishing was done. tools/attribution-docs-check-fixtures/ was not read or touched.
