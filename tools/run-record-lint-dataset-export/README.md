@@ -35,14 +35,14 @@ Verified EXIT=0 line: `EXIT=0`
 
 ## Latest self-test result
 
-HivemindOS ran this folder's `self_test.py` after the previous commit: 17 checks, 0 failed, `EXIT=0` (2026-11-19 00:59 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44433370334). That pass covers the pre-checksum version; the checksum checks added in this change are not yet covered by an observed run. HivemindOS writes each run's result to `SELFTEST_OUTPUT.md` in this folder - read it there.
+HivemindOS ran this folder's `self_test.py` after a previous commit: 23 checks, 0 failed, `EXIT=0` (2026-11-19 04:10 UTC, https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44456450434). That pass is prior observed data. For the current commit the standalone run is pending: HivemindOS runs `python3 self_test.py` standalone from this folder after commit and writes the verbatim output, including `EXIT=0` if it passes, to `SELFTEST_OUTPUT.md` in this folder. That file is runner-written and is not hand-written in this step, so no fresh output or pass is claimed here - read it there after the run.
 
 ## What is untested
 
-- The checksum checks and the card Files section added in this change have not been observed passing by a run; HivemindOS runs `python3 self_test.py` standalone from this folder after commit and that output is the fresh verified log.
+- The standalone run for the current commit has not been executed in this step and its verbatim output is not confirmed here, including its EXIT line; the runner-written SELFTEST_OUTPUT.md is the fresh verified log.
 - The literal SHA256 digest values are not quoted in this README because no build was run in this step; run `python3 build_dataset.py` to produce `dataset/checksums.txt` with real digests.
 - Behaviour beyond the 3 bundled fixtures is untested.
-- No Hugging Face upload was done in this step; the publish step remains for the owner.
+- No Hugging Face upload was done in this step; the publish step remains for the owner. `tools/attribution-docs-check-fixtures/` was not touched.
 
 ## Licence
 
