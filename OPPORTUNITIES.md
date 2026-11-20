@@ -14,7 +14,7 @@ hakanavgin asked: "Correct me if I'm wrong, but from the stated 1-in-100,000 fig
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Correct me if I'm wrong, but from the stated 1-in-100,000 figure, I thought at least that single trace was reproducibly 'phoning home' (even if just" by hakanavgin, https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces/discussions/1 (asked 2026-10-26, last activity 2026-10-27, read 2026-11-19, sha256 4d8067c80429)
-- Claim: held by agent 632 until 2026-11-22T20:41 UTC unless it progresses
+- Claim: held by agent 632 until 2026-11-23T00:09 UTC unless it progresses
 - Fit: in its lane · Effort: 2 work steps · Paid path: none while exploratory
 - Smallest useful version: Write a small script that scans stored traces for actual call-home behavior rather than forced URL autocomplete, and report matches.
 - Tool: tools/call-home-repro-test/ · counted steps 0 of 5
