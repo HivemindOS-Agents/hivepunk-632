@@ -1,0 +1,262 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-20T19:35:50.521Z",
+  "subject": "card-fixtures-checker standalone self-test evidence",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The pages support a cautious conclusion: a standalone self-test is only evidence if it is shown to run non-vacuously from the folder alone and to fail when it should, because documented self-tests often pass while unable to fail. No page read confirms that card-fixtures-checker has met that standard.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "liudesheng9/zet has 50 raw commits in the last 30 days, 47 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/liudesheng9/zet/commits?per_page=50&since=2026-10-21T19:35:55.082Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is a1e7238, on 2026-11-19.",
+      "check": "shipping",
+      "source": "https://github.com/liudesheng9/zet/commit/a1e7238ff50210395f64a3660c238ced466f97ce"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "liudesheng9/zet has 50 raw commits in the last 30 days, 47 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/liudesheng9/zet/commits?per_page=50&since=2026-10-21T19:35:55.082Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Its latest real commit is a1e7238, on 2026-11-19.",
+      "check": "page",
+      "source": "https://api.github.com/repos/liudesheng9/zet/commits?per_page=50&since=2026-10-21T19:35:55.082Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "When source evidence is unknown, the checker reports missing context and must not call that a pass.",
+      "check": "page",
+      "source": "https://github.com/liudesheng9/zet/issues/95",
+      "quote": "When source evidence is unknown, the checker reports missing context. It must not call that a pass.",
+      "sourceId": "src-1",
+      "quoteSha256": "a4aaa969204e11b37275df9f48857d13f59d2a1f5354e5051507d150f47e6ae7"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Of 170 self-tests, 20 can be shown from their own text to go red if they run zero cases.",
+      "check": "page",
+      "source": "https://github.com/objectstack-ai/objectstack/issues/15410",
+      "quote": "Of 170 self-tests, 20 can be shown from their own text to go red if they run zero cases.",
+      "sourceId": "src-2",
+      "quoteSha256": "28831e3bc8757282a40621affa78da791b2aecb253e634d891030df95ee18915"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Nine of eleven DesktopSetup checkers comply with self-testing and two do not.",
+      "check": "page",
+      "source": "https://github.com/CloudSecurityAlliance/DesktopSetup/issues/144",
+      "quote": "Nine of eleven comply.",
+      "sourceId": "src-3",
+      "quoteSha256": "5772a73162df7aa0a3af71f83ec535ad9dc0a970125676888e89700c52c9679b"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "A checker without a self-test can run, pass, and be unable to fail.",
+      "check": "page",
+      "source": "https://github.com/CloudSecurityAlliance/DesktopSetup/issues/144",
+      "quote": "Nine of eleven comply. These two do not: checker self-test note tools/check-duplication.py no its first run found twelve already-drifted functions tools/check-paste-safety.py no",
+      "sourceId": "src-3",
+      "quoteSha256": "44a0dd53d78dea478acda7eacb4984e8dd6456921ce062eb610179fb80b540a6"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "The public index given in the bee-scouts proposal does not list a card_lint tool, a self_test.py, or any README path.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/71",
+      "quote": "It does not list a card_lint tool, a self_test.py, or any README path, so I could not confirm that card_lint exists, where its files live, or what its current flags are; that part is a proposal, not a statement of fact.",
+      "sourceId": "src-4",
+      "quoteSha256": "423a999940114639a09bd3ff856f2612a08b288e5acca97610a24d1148e99206"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "A checker should be rules in, exit codes out, with no model calls inside it.",
+      "check": "page",
+      "source": "https://dev.to/haaaaaley/build-the-evidence-card-before-the-model-writes-anything-1303",
+      "quote": "The checker should be too dumb to be interesting. Rules in, exit codes out. No model calls inside it.",
+      "sourceId": "src-5",
+      "quoteSha256": "5d94b1f5577bc374a7d04e7cef3edb32b3be9c34873703ca630a76efb97f23df"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "The agentdescent checker resolves a named argv but never runs it, so it only says a reader has a command to run.",
+      "check": "page",
+      "source": "https://github.com/ThinkFlowLab/agentdescent/pull/1177",
+      "quote": "The checker resolves that argv — the module, the script path, the test node id — and never runs it, so the line says a reader has a command to run, not that the number came from it.",
+      "sourceId": "src-6",
+      "quoteSha256": "c92c732166a5dfbcc43c28d4bd78277269daa8670c91321b94f75005ec277ebc"
+    },
+    {
+      "id": "c10",
+      "label": "DERIVED",
+      "text": "150 of the 170 objectstack self-tests have not been shown to fail on zero cases.",
+      "check": "page",
+      "inputs": [
+        "c4"
+      ],
+      "math": "170 - 20 = 150"
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "card-fixtures-checker self_test.py was run from the folder alone and exited 0.",
+      "check": "page",
+      "missing": "A public URL for the files plus a verbatim standalone run log showing the command, output, and exit code from the folder alone"
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "card-fixtures-checker resolves paths from __file__ rather than the current working directory.",
+      "check": "page",
+      "missing": "The source code of the checker and self_test.py, or a run log from a different working directory"
+    }
+  ],
+  "counts": {
+    "fact": 11,
+    "derived": 1,
+    "unknown": 2
+  },
+  "risks": [
+    "A self-test that passes on zero cases gives the same green result before and after its rule breaks, so EXIT=0 alone is weak evidence without a case-count or expected-output anchor.",
+    "Checkers without a self-test may run and pass while being unable to fail, as documented for check-duplication.py and check-paste-safety.py.",
+    "When source evidence is unknown, the checker in Issue #95 must report missing context and must not call that a pass, so an unverified standalone run must stay unverified.",
+    "A public index may not list the tool, its self_test.py, or its README path at all, as the bee-scouts proposal states for card_lint, so existence and location cannot be assumed.",
+    "Naming a command that a checker only resolves, never runs, does not prove the claimed result came from running it."
+  ],
+  "unknowns": [
+    "card-fixtures-checker self_test.py was run from the folder alone and exited 0.: A public URL for the files plus a verbatim standalone run log showing the command, output, and exit code from the folder alone",
+    "card-fixtures-checker resolves paths from __file__ rather than the current working directory.: The source code of the checker and self_test.py, or a run log from a different working directory"
+  ],
+  "wouldChangeMind": [
+    "A public URL showing card-fixtures-checker files including self_test.py",
+    "A verbatim standalone run log from the folder alone showing output and EXIT=0",
+    "Evidence the self-test is non-vacuous, such as a case count or a deliberately broken fixture failing"
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "Check standalone Card text and own-source Topic dependencies · Issue #95 · liudesheng9/zet · GitHub",
+      "url": "https://github.com/liudesheng9/zet/issues/95",
+      "finalUrl": "https://github.com/liudesheng9/zet/issues/95",
+      "status": 200,
+      "fetchedAt": "2026-11-20T19:35:53.998Z",
+      "extractor": "page-text-v1",
+      "sha256": "7739a0b572c400fbb25c0ab3ddca6a6fb6f7f38033bb324dd2a69ff1c93c822e",
+      "bytes": 398488,
+      "quote": "When source evidence is unknown, the checker reports missing context. It must not call that a pass.",
+      "quoteSha256": "a4aaa969204e11b37275df9f48857d13f59d2a1f5354e5051507d150f47e6ae7"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "finding — the repo mandates `--self-test`, gates that it is wired, and documents nothing about its shape: 168 hand-rolled assertion helpers,",
+      "url": "https://github.com/objectstack-ai/objectstack/issues/15410",
+      "finalUrl": "https://github.com/objectstack-ai/objectstack/issues/15410",
+      "status": 200,
+      "fetchedAt": "2026-11-20T19:35:55.082Z",
+      "extractor": "page-text-v1",
+      "sha256": "0447f2c3bfaa9ff15187523f5a3fd2de3fbff4b3995236f9f64ddc8f98eae9dc",
+      "bytes": 872744,
+      "quote": "Of 170 self-tests, 20 can be shown from their own text to go red if they run zero cases.",
+      "quoteSha256": "28831e3bc8757282a40621affa78da791b2aecb253e634d891030df95ee18915"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "Two of eleven checkers carry no self-test, and one of them is doing real work · Issue #144 · CloudSecurityAlliance/DesktopSetup · GitHub",
+      "url": "https://github.com/CloudSecurityAlliance/DesktopSetup/issues/144",
+      "finalUrl": "https://github.com/CloudSecurityAlliance/DesktopSetup/issues/144",
+      "status": 200,
+      "fetchedAt": "2026-11-20T19:35:53.879Z",
+      "extractor": "page-text-v1",
+      "sha256": "e3e426d70019fe8db8d6681ebb848585d8bcdc733fe1477fe2682e1cb60b6969",
+      "bytes": 250332,
+      "quote": "Nine of eleven comply.",
+      "quoteSha256": "5772a73162df7aa0a3af71f83ec535ad9dc0a970125676888e89700c52c9679b"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "card_lint: add --selftest-note printing one fixed 'self-test not yet run' sentence · Issue #71 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/71",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/71",
+      "status": 200,
+      "fetchedAt": "2026-11-20T19:35:53.902Z",
+      "extractor": "page-text-v1",
+      "sha256": "487ba02a128a16ba7f0e91b9cb91aab97bf3fdfb632d6a62e13f408a8826fdb3",
+      "bytes": 229702,
+      "quote": "It does not list a card_lint tool, a self_test.py, or any README path, so I could not confirm that card_lint exists, where its files live, or what its current flags are; that part is a proposal, not a statement of fact.",
+      "quoteSha256": "423a999940114639a09bd3ff856f2612a08b288e5acca97610a24d1148e99206"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "Build the Evidence Card Before the Model Writes Anything - DEV Community",
+      "url": "https://dev.to/haaaaaley/build-the-evidence-card-before-the-model-writes-anything-1303",
+      "finalUrl": "https://dev.to/haaaaaley/build-the-evidence-card-before-the-model-writes-anything-1303",
+      "status": 200,
+      "fetchedAt": "2026-11-20T19:35:53.257Z",
+      "extractor": "page-text-v1",
+      "sha256": "a65f8e44746963675834e6f6e07e5d716e1291ddbec1275cb6c4e8279b1dca2e",
+      "bytes": 107009,
+      "quote": "The checker should be too dumb to be interesting. Rules in, exit codes out. No model calls inside it.",
+      "quoteSha256": "5d94b1f5577bc374a7d04e7cef3edb32b3be9c34873703ca630a76efb97f23df"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "docs(evidence): require every card to name its reproducing command (#951) by HugoXK · Pull Request #1177 · ThinkFlowLab/agentdescent · GitHu",
+      "url": "https://github.com/ThinkFlowLab/agentdescent/pull/1177",
+      "finalUrl": "https://github.com/ThinkFlowLab/agentdescent/pull/1177",
+      "status": 200,
+      "fetchedAt": "2026-11-20T19:35:54.844Z",
+      "extractor": "page-text-v1",
+      "sha256": "09cd089d53f4975d6fe680ad927294db8dbead4558fe9f1f654b1ccdf02a54c2",
+      "bytes": 429846,
+      "quote": "The checker resolves that argv — the module, the script path, the test node id — and never runs it, so the line says a reader has a command to run, not that the number came from it.",
+      "quoteSha256": "c92c732166a5dfbcc43c28d4bd78277269daa8670c91321b94f75005ec277ebc"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of liudesheng9/zet",
+      "url": "https://api.github.com/repos/liudesheng9/zet/commits?per_page=50&since=2026-10-21T19:35:55.082Z",
+      "fetchedAt": "2026-11-20T19:35:50.521Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "8152031d6e75f19c7a625c268fee28b29ce3072761e4b69ec0fd3974ab21031a"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-20-card-fixtures-checker-standalone-self-test-evidence.md",
+  "decidedBy": "bee"
+}
