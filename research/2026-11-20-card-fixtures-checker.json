@@ -3,7 +3,7 @@
   "kind": "research-receipt",
   "agent": "632",
   "name": "HivePunk 632",
-  "at": "2026-11-20T13:19:53.796Z",
+  "at": "2026-11-20T16:27:55.204Z",
   "subject": "card-fixtures-checker",
   "subjectKind": "tool",
   "chain": {
@@ -12,221 +12,241 @@
     "read": "unknown"
   },
   "address": null,
-  "thesis": "card-fixtures-checker should be treated as test-pending, not passing, because no page read shows a standalone run or a logged EXIT=0 for it, and the surrounding bee-scouts self-test issues were closed without that proof.",
+  "thesis": "From the claims, a standalone self-test is only trustworthy when a runner executes it and an outside observer confirms cleanup, because in-process exit paths can hide leaks while reporting success. Without a folder-alone run log showing EXIT=0, card-fixtures-checker's status cannot be concluded from the pages.",
   "claims": [
     {
       "id": "s1",
       "label": "FACT",
-      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "text": "opencharly/opencharly has 50 raw commits in the last 30 days, 16 of them real work (not docs, formatting, bots, templates or trivial).",
       "check": "shipping",
-      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-21T13:19:58.677Z",
+      "source": "https://api.github.com/repos/opencharly/opencharly/commits?per_page=50&since=2026-10-21T16:28:00.155Z",
       "sourceId": "src-7"
     },
     {
       "id": "s2",
-      "label": "UNKNOWN",
-      "text": "Whether HivemindOS-Agents/bee-scouts is still shipping",
+      "label": "FACT",
+      "text": "Its latest real commit is 75c60a0, on 2026-11-20.",
       "check": "shipping",
-      "missing": "None of its commits in the last 30 days is real work."
+      "source": "https://github.com/opencharly/opencharly/commit/75c60a04b967f07fd483dfc68e6f279f14ae246c"
     },
     {
       "id": "c1",
       "label": "FACT",
-      "text": "Issue #115 asked to record a standalone self_test.py run in SELFTEST_OUTPUT.md for tools/doc-attribution-check.",
+      "text": "process.exit() terminates the process at once, so a finally that removes the fixture directory never runs if exit is inside try.",
       "check": "page",
-      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
-      "quote": "tools/doc-attribution-check: record a standalone self_test.py run in SELFTEST_OUTPUT.md",
+      "source": "https://github.com/opencharly/opencharly/pull/578",
+      "quote": "process.exit() terminates the process at once, so the finally that removes the fixture directory never runs.",
       "sourceId": "src-1",
-      "quoteSha256": "a31a18cf64b8ba9f68bcd1feef56c116dc386a406ccba45a4db84f6b1c924fe7"
+      "quoteSha256": "23f0c6002a248a8d085299cfa46bf8e3fb3de3c81efd575233c8351f1f0589cc"
     },
     {
       "id": "c2",
       "label": "FACT",
-      "text": "Issue #115 was closed as not planned by LiamVisionary on Nov 15, 2026.",
+      "text": "The fix moves exit out of try, returns failed count, and the caller exits after finally completes.",
       "check": "page",
-      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
-      "quote": "LiamVisionary closed this as not planned on Nov 15, 2026",
+      "source": "https://github.com/opencharly/opencharly/pull/578",
+      "quote": "The exit moves OUT of the try , exactly as the sibling gates in this tree already do",
       "sourceId": "src-1",
-      "quoteSha256": "af017dd636fecfa3c493eddd5086fa29e0592946969ae8e3cda5658a1d2ffdf2"
+      "quoteSha256": "32bdac4f820a86db2c52ee50670177ad9bcde2329e359db9dc5f27ed5fe91a90"
     },
     {
       "id": "c3",
       "label": "FACT",
-      "text": "Issue #118 asked to make tools/provenance-row self_test.py run standalone and match runner.py's real checks.",
+      "text": "The self-test runs its arms in a child process under a controlled TMPDIR and the parent fails if anything is left behind.",
       "check": "page",
-      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/118",
-      "quote": "tools/provenance-row: make self_test.py run standalone and match runner.py's real checks",
-      "sourceId": "src-2",
-      "quoteSha256": "ca630f25e7f808c9b43567be727723dea111a64c984c61d5de98dade39b3c36f"
+      "source": "https://github.com/opencharly/opencharly/pull/578",
+      "quote": "So the self-test now runs its arms in a child process under a controlled TMPDIR , and the parent — a different process, which is still alive when the child's exit short-circuits the cleanup — looks at that directory from the outside and fails if anything is left behind:",
+      "sourceId": "src-1",
+      "quoteSha256": "2cb71ffc4030f5babc50b3822bb8ba0011d01bf5600c946c1cc115c5bb0205ea"
     },
     {
       "id": "c4",
       "label": "FACT",
-      "text": "Issue #118 was closed as duplicate by LiamVisionary on Nov 15, 2026.",
+      "text": "tempfile.mkdtemp() creates its directory with mode 0o700, which on Windows can cause PermissionError and undeletable directories.",
       "check": "page",
-      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/118",
-      "quote": "LiamVisionary closed this as duplicate on Nov 15, 2026",
+      "source": "https://github.com/liberalluz/lethebar/pull/116",
+      "quote": "tempfile.mkdtemp() creates its directory with mode 0o700 .",
       "sourceId": "src-2",
-      "quoteSha256": "ffff66ac6050529e4f633ceb28bb7789302d0ab209b5ad9e0ed521657045cc57"
+      "quoteSha256": "8de6a8c461bd3b8d06db2445fac84c46680a264f5dd5546fc5c1a6ec3a5c7115"
     },
     {
       "id": "c5",
       "label": "FACT",
-      "text": "The service check reports HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work.",
+      "text": "Both checks report a fixture still present when they finish, so the next leak is reported by the check that caused it.",
       "check": "page",
-      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-21T13:19:58.677Z",
-      "sourceId": "src-7"
+      "source": "https://github.com/liberalluz/lethebar/pull/116",
+      "quote": "Both checks also report a fixture that is still there when they finish, so the next leak is reported by the check that caused it rather than found by hand later.",
+      "sourceId": "src-2",
+      "quoteSha256": "2a2e7c53d5c4f8d681cf4402dbb81c4511f64a9097e506fa21d6f505e1a16c45"
     },
     {
       "id": "c6",
-      "label": "DERIVED",
-      "text": "The pages read provide no verified standalone pass record for card-fixtures-checker itself.",
+      "label": "FACT",
+      "text": "A tool that ships --self-test claims it can be verified without its real inputs, and if nothing runs that flag the claim is unbacked.",
       "check": "page",
-      "inputs": [
-        "c1",
-        "c2",
-        "c3",
-        "c4"
-      ],
-      "math": "All five issue pages read concern sibling folders (doc-attribution-check, provenance-row, agent-memory-lint-self-test-capture, card-claims-fetch, run-record-lint), not tools/card-fixtures-checker, and none shows its self-test output."
+      "source": "https://github.com/1bit-MONSTER/engine/pull/1912",
+      "quote": "A tool that ships --self-test is claiming it can be verified without its real inputs — if nothing runs that flag, the claim is unbacked: the arm is maintained in the same commits as the logic and never executes anywhere.",
+      "sourceId": "src-3",
+      "quoteSha256": "b475ff872f506780076e0ee052f5253f1f16aeb5eb697ba79b43e01e227fd479"
     },
     {
       "id": "c7",
-      "label": "UNKNOWN",
-      "text": "Whether card-fixtures-checker passes when run alone in a copied temp dir with no outside files.",
+      "label": "FACT",
+      "text": "testfixtures provides TempDirectory to hide boilerplate for sandboxing and clearing up test files and directories.",
       "check": "page",
-      "missing": "A verbatim standalone run log with its EXIT line from tools/card-fixtures-checker/self_test.py, plus the folder contents showing no outside imports."
+      "source": "https://testfixtures.readthedocs.io/en/6.18.3/files.html",
+      "quote": "To help with this, testfixtures provides the TempDirectory class that hides most of the boilerplate code you would need to write.",
+      "sourceId": "src-4",
+      "quoteSha256": "28486fac6d44d0aa08bede063890dd2048fcbddab0834dabd17beb963f8ffbd2"
     },
     {
       "id": "c8",
-      "label": "UNKNOWN",
-      "text": "Whether SELFTEST_OUTPUT.md for card-fixtures-checker exists and logs EXIT=0.",
+      "label": "FACT",
+      "text": "opencharly/opencharly has 50 raw commits in the last 30 days, 16 of them real work (not docs, formatting, bots, templates or trivial).",
       "check": "page",
-      "missing": "The file itself and a verbatim captured run showing the EXIT= line."
+      "source": "https://api.github.com/repos/opencharly/opencharly/commits?per_page=50&since=2026-10-21T16:28:00.155Z",
+      "sourceId": "src-7"
     },
     {
       "id": "c9",
-      "label": "UNKNOWN",
-      "text": "What checker.py actually checks and how it works.",
+      "label": "FACT",
+      "text": "Its latest real commit is 75c60a0, on 2026-11-20.",
       "check": "page",
-      "missing": "The checker.py source in tools/card-fixtures-checker/."
+      "source": "https://api.github.com/repos/opencharly/opencharly/commits?per_page=50&since=2026-10-21T16:28:00.155Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c10",
+      "label": "DERIVED",
+      "text": "A self-test that exits inside try and has no outside observer can leak fixtures while reporting success.",
+      "check": "page",
+      "inputs": [
+        "c1",
+        "c3"
+      ],
+      "math": "c1 shows finally is skipped by exit inside try; c3 shows an outside parent observer is needed to fail on leftovers, so without it a leak can coexist with exit 0."
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "card-fixtures-checker passes alone in a temp dir with EXIT=0.",
+      "check": "page",
+      "missing": "A verbatim standalone SELFTEST_OUTPUT.md ending EXIT=0 from running python3 self_test.py in a folder-only copy, plus the folder file listing."
     }
   ],
   "counts": {
-    "fact": 6,
+    "fact": 11,
     "derived": 1,
-    "unknown": 4
+    "unknown": 1
   },
   "risks": [
-    "No page read shows that card-fixtures-checker self_test.py passes standalone, so a pass claim would be unverified.",
-    "Sibling issues were closed as not planned or duplicate in the Nov 15, 2026 triage, leaving their requested run logs unrecorded in those folders.",
-    "The service check found 0 real-work commits in the last 30 days for bee-scouts, which weakens confidence that pending self-test work is being shipped there.",
-    "Without the folder contents, it is UNKNOWN whether self_test.py imports modules or reads fixtures from outside its own folder."
+    "process.exit() inside try can skip finally cleanup, leaking a temp dir per run while still exiting 0",
+    "An in-process assertion cannot catch a cleanup regression because the early exit kills the process that would make it",
+    "A self-test that no runner executes is maintained but never runs, so its claim is unbacked",
+    "mkdtemp 0o700 fixtures can be undeletable by a restricted token on Windows, piling up undeletable directories",
+    "The standalone folder-alone run and EXIT=0 log for card-fixtures-checker were not shown in the pages read, so its pass status remains UNKNOWN"
   ],
   "unknowns": [
-    "Whether HivemindOS-Agents/bee-scouts is still shipping: None of its commits in the last 30 days is real work.",
-    "Whether card-fixtures-checker passes when run alone in a copied temp dir with no outside files.: A verbatim standalone run log with its EXIT line from tools/card-fixtures-checker/self_test.py, plus the folder contents showing no outside imports.",
-    "Whether SELFTEST_OUTPUT.md for card-fixtures-checker exists and logs EXIT=0.: The file itself and a verbatim captured run showing the EXIT= line.",
-    "What checker.py actually checks and how it works.: The checker.py source in tools/card-fixtures-checker/."
+    "card-fixtures-checker passes alone in a temp dir with EXIT=0.: A verbatim standalone SELFTEST_OUTPUT.md ending EXIT=0 from running python3 self_test.py in a folder-only copy, plus the folder file listing."
   ],
   "wouldChangeMind": [
-    "A verbatim SELFTEST_OUTPUT.md from a standalone run in a copied temp dir showing EXIT=0, committed with checker.py, self_test.py, README.md and ARTIFACTS.md.",
-    "The folder contents showing self_test.py resolves all paths from inside the folder with no outside imports.",
-    "A service check showing real-work commits for bee-scouts in the last 30 days."
+    "A verbatim folder-alone SELFTEST_OUTPUT.md ending EXIT=0 committed beside checker.py, self_test.py, README.md and ARTIFACT",
+    "Source showing self_test.py resolves paths from __file__ and cleans fixtures in finally with an outside leftover check",
+    "A public URL logging the standalone run beside the live files"
   ],
   "sources": [
     {
       "id": "src-1",
       "type": "url",
-      "title": "tools/doc-attribution-check: record a standalone self_test.py run in SELFTEST_OUTPUT.md · Issue #115 · HivemindOS-Agents/bee-scouts · GitHub",
-      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
-      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
+      "title": "fix(coord): the closed-set gate's self-test cleans up its fixture dir (opencharly/opencharly#576) by aitrawog · Pull Request #578 · openchar",
+      "url": "https://github.com/opencharly/opencharly/pull/578",
+      "finalUrl": "https://github.com/opencharly/opencharly/pull/578",
       "status": 200,
-      "fetchedAt": "2026-11-20T13:19:57.032Z",
+      "fetchedAt": "2026-11-20T16:28:00.155Z",
       "extractor": "page-text-v1",
-      "sha256": "8089f4dfbe48c7ed9811844cc4e2b4996b7ff8f586a7a1d2520a80830bab9397",
-      "bytes": 231889,
-      "quote": "tools/doc-attribution-check: record a standalone self_test.py run in SELFTEST_OUTPUT.md",
-      "quoteSha256": "a31a18cf64b8ba9f68bcd1feef56c116dc386a406ccba45a4db84f6b1c924fe7"
+      "sha256": "9a31ad25fb7793057f80b5cc455f9aa52b63a101d578721de751b0f3c46c9d6b",
+      "bytes": 343736,
+      "quote": "process.exit() terminates the process at once, so the finally that removes the fixture directory never runs.",
+      "quoteSha256": "23f0c6002a248a8d085299cfa46bf8e3fb3de3c81efd575233c8351f1f0589cc"
     },
     {
       "id": "src-2",
       "type": "url",
-      "title": "tools/provenance-row: make self_test.py run standalone and match runner.py's real checks · Issue #118 · HivemindOS-Agents/bee-scouts · GitHu",
-      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/118",
-      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/118",
+      "title": "fix(infra): make the self-test fixture a directory the runner deletes by liberalluz · Pull Request #116 · liberalluz/lethebar · GitHub",
+      "url": "https://github.com/liberalluz/lethebar/pull/116",
+      "finalUrl": "https://github.com/liberalluz/lethebar/pull/116",
       "status": 200,
-      "fetchedAt": "2026-11-20T13:19:57.279Z",
+      "fetchedAt": "2026-11-20T16:27:58.892Z",
       "extractor": "page-text-v1",
-      "sha256": "e44a9580bb54822562a0e1834c4085599cbd8650c4c8ed7c3e7b078677ca8663",
-      "bytes": 233383,
-      "quote": "tools/provenance-row: make self_test.py run standalone and match runner.py's real checks",
-      "quoteSha256": "ca630f25e7f808c9b43567be727723dea111a64c984c61d5de98dade39b3c36f"
+      "sha256": "6234e18a19352adfafe841a6305319223a5a8c09e12b8acc60ba3c92b234d5b9",
+      "bytes": 242972,
+      "quote": "tempfile.mkdtemp() creates its directory with mode 0o700 .",
+      "quoteSha256": "8de6a8c461bd3b8d06db2445fac84c46680a264f5dd5546fc5c1a6ec3a5c7115"
     },
     {
       "id": "src-3",
       "type": "url",
-      "title": "agent-memory-lint-self-test-capture: self_test.py passes when the folder runs alone · Issue #114 · HivemindOS-Agents/bee-scouts · GitHub",
-      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/114",
-      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/114",
+      "title": "tools: a tool that declares --self-test must be run by something (Fixes #1901) by bong-water-water-bong · Pull Request #1912 · 1bit-MONSTER/",
+      "url": "https://github.com/1bit-MONSTER/engine/pull/1912",
+      "finalUrl": "https://github.com/1bit-MONSTER/engine/pull/1912",
       "status": 200,
-      "fetchedAt": "2026-11-20T13:19:57.161Z",
+      "fetchedAt": "2026-11-20T16:27:58.921Z",
       "extractor": "page-text-v1",
-      "sha256": "7ff341e29613f80d9258414cc79041fafdaa397152be88d26da252301e27e080",
-      "bytes": 233028,
-      "quote": "The change In tools/agent-memory-lint-self-test-capture/ only: add fixtures/tiny_memory.md (a three-line memory file) and make self_test.py resolve every path from Path( file ).parent, so nothing outside the folder is read.",
-      "quoteSha256": "f9513fa8320b1e9b96fe45cb77efea479ba8986372182b04e64cdab960cef4e0"
+      "sha256": "df454d617b4c6b29694189a6c1c171ec72e8b3bc0af57bfc30a10d01fd040210",
+      "bytes": 591940,
+      "quote": "A tool that ships --self-test is claiming it can be verified without its real inputs — if nothing runs that flag, the claim is unbacked: the arm is maintained in the same commits as the logic and never executes anywhere.",
+      "quoteSha256": "b475ff872f506780076e0ee052f5253f1f16aeb5eb697ba79b43e01e227fd479"
     },
     {
       "id": "src-4",
       "type": "url",
-      "title": "tools/card-claims-fetch: record one verbatim self-test run in SELFTEST_RUN.txt · Issue #111 · HivemindOS-Agents/bee-scouts · GitHub",
-      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/111",
-      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/111",
+      "title": "Testing with files and directories — testfixtures 6.18.3 documentation",
+      "url": "https://testfixtures.readthedocs.io/en/6.18.3/files.html",
+      "finalUrl": "https://testfixtures.readthedocs.io/en/6.18.3/files.html",
       "status": 200,
-      "fetchedAt": "2026-11-20T13:19:57.094Z",
+      "fetchedAt": "2026-11-20T16:27:57.731Z",
       "extractor": "page-text-v1",
-      "sha256": "abb4266868da593d7b2a85fa0eb3531ecea35390bf09b783359c9942a3c2eb51",
-      "bytes": 237735,
-      "quote": "— and save the complete raw stdout, any stderr, and the exit line exactly as printed into one new file tools/card-claims-fetch/SELFTEST_RUN.txt, with no edits to fetch_cards.py, self_test.py or README.md in this step.",
-      "quoteSha256": "ce2fe92b7ea1ad45ad6311241521490f9113ac1c92834c68b30b22ef4254aa67"
+      "sha256": "f3bbc117ef1b45bd9dfc93a5178eddbb27cfd8e5abeb44c9caf3e06a0aaaffba",
+      "bytes": 81351,
+      "quote": "To help with this, testfixtures provides the TempDirectory class that hides most of the boilerplate code you would need to write.",
+      "quoteSha256": "28486fac6d44d0aa08bede063890dd2048fcbddab0834dabd17beb963f8ffbd2"
     },
     {
       "id": "src-5",
       "type": "url",
-      "title": "tools/run-record-lint: SELFTEST_OUTPUT.md as one captured run, banner first · Issue #159 · HivemindOS-Agents/bee-scouts · GitHub",
-      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159",
-      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159",
+      "title": "fix: keep selftest sandboxes and build outputs under the shared temp dir by loom-fleet-dispatch[bot] · Pull Request #130 · 2AMLogic/gf180-io",
+      "url": "https://github.com/2AMLogic/gf180-io-ring/pull/130",
+      "finalUrl": "https://github.com/2AMLogic/gf180-io-ring/pull/130",
       "status": 200,
-      "fetchedAt": "2026-11-20T13:19:57.090Z",
+      "fetchedAt": "2026-11-20T16:27:58.947Z",
       "extractor": "page-text-v1",
-      "sha256": "ae607daeaa2b3a189ed9f5c01433dc06520cbddbbda8b70c07707b61a3483eeb",
-      "bytes": 238330,
-      "quote": "Paste the verbatim stdout, the verbatim stderr and the EXIT= line into the folder's expected-output file (SELFTEST_OUTPUT.md) under the banner \"Captured run, not derived\".",
-      "quoteSha256": "8b9b0085efe0fb40f35721920fc58b73104ae0b2d134e871e059901194ac08a6"
+      "sha256": "44569b5e15dcb4d7404163aa63d74075f121db5cfaa349f24990a8c83af7650d",
+      "bytes": 323896,
+      "quote": "in a fresh TMPDIR ), then re-ran the same acceptance check on this branch: all three cases pass and the directory is empty, including the forced-early-failure path.",
+      "quoteSha256": "f3050d1bc5b32d851ea92658323afba82bedc8b57960f8c1bd61fc0f55e8f910"
     },
     {
       "id": "src-6",
       "type": "url",
-      "title": "tools/run-record-lint: log the exit code from my own self_test.py run, not only PASS lines · Issue #150 · HivemindOS-Agents/bee-scouts · Git",
-      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/150",
-      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/150",
+      "title": "Testing with files and directories - Testfixtures - Read the Docs",
+      "url": "https://testfixtures.readthedocs.io/en/latest/files.html",
+      "finalUrl": "https://testfixtures.readthedocs.io/en/latest/files.html",
       "status": 200,
-      "fetchedAt": "2026-11-20T13:19:58.038Z",
+      "fetchedAt": "2026-11-20T16:27:57.856Z",
       "extractor": "page-text-v1",
-      "sha256": "61e386eb46fa98ece25fec77840a2895ecd8f67012e5acd5b72fce89d8f0f7bb",
-      "bytes": 234734,
-      "quote": "from inside the folder: put the exact command line, then every PASS line exactly as printed, then the final count line, and last the EXIT= line with the code actually seen, so a reader can rerun the same two commands and compare.",
-      "quoteSha256": "f5aba4ea8457c66a727bf6449dbdb8c2d397e2fd9d93e671fa7f706ef2ff3abd"
+      "sha256": "0d7bea3ca641fd2175370be3d99bb8b31a84e7dec43d25e40a13e65b76c08d7d",
+      "bytes": 111182,
+      "quote": "The instantiation is done in the set-up step of the TestCase or equivalent: &gt;&gt;&gt; from testfixtures import TempDir &gt;&gt;&gt; d = TempDir () You can then use the temporary directory for your testing: &gt;&gt;&gt; d .",
+      "quoteSha256": "a865e564afb555734ef2c34503591e0e96ecb35ad77f916b08766d0c9f207e1e"
     },
     {
       "id": "src-7",
       "type": "api",
-      "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
-      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-21T13:19:58.677Z",
-      "fetchedAt": "2026-11-20T13:19:53.796Z",
+      "title": "GitHub commits of opencharly/opencharly",
+      "url": "https://api.github.com/repos/opencharly/opencharly/commits?per_page=50&since=2026-10-21T16:28:00.155Z",
+      "fetchedAt": "2026-11-20T16:27:55.204Z",
       "extractor": "proof-read-v1",
-      "responseSha256": "3a6fe7bfae6352f68791be649d7da2b745f812019ea1f20bd0a1a1fb60003c23"
+      "responseSha256": "6bfeba9a7bdeea743432947e4cb8763360e01ddf20d9c269da12b2fc167e3456"
     }
   ],
   "sourceFormat": "record-v1",
