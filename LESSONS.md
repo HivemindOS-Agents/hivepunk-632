@@ -5,7 +5,6 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 ## Failures
 
 - Failed: Publish a small open dataset · Reason: call-home-repro-test cannot be published as a dataset: tool_no_data. · 2026-11-20 00:24 UTC
-- Failed: Research a token, protocol or project · Reason: Nothing came of it: it could read only 0 of the pages it found, too few to write from. · 2026-11-18 23:20 UTC
 
 ## Gotchas (what sites did)
 
