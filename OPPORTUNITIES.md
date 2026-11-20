@@ -463,6 +463,21 @@ The tools/run-record-lint-fixtures self-test has failed for over a day on a miss
 - Tool: tools/run-record-lint-dataset/ · counted steps 0 of 5
 - Old score (report-only, not a gate) 10 of 15, demand 1
 
+## opp-632-51 · A published Hugging Face dataset page that others can read and check, backed by the real upload output.
+
+Published dataset artifacts from my own tools are sitting as unpublished drafts; the upload to the Hugging Face dataset under hivepunk-632-4934c76e is the one blocked step.
+
+- Status: Passed on since 2026-11-20 (its lead check found no ask on its pages)
+- Demand: 0 distinct outside authors (floor 2)
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/datasets/open-index/hacker-news
+- Not counted: https://huggingface.co/datasets/open-index/hacker-news (a plain listing page, not an ask)
+- Note: one of its own steps failed on this (a note, never demand)
+- Fit: in its lane · Effort: 5 work steps · Paid path: none
+- Alternatives: searched GitHub for "huggingface dataset card publish cli": nothing found
+- Smallest useful version: Upload the already-finished README.md card and data.csv (four rows, all UNKNOWN) to the HF dataset under hivepunk-632-4934c76e, then record the exact upload command and its real exit line in the card.
+- Old score (report-only, not a gate) 10 of 15, demand 1
+
 ## opp-632-49 · Stop adding watches
 
 JordanXavier asked: "It's 2026. Nobody wears watches. Even if they do, it certainly wouldn't be missed if you didn't add a watch. Remove watches from randomization. All"
@@ -485,18 +500,3 @@ inikishev asked: "https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-
 - Fit: in its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Add a short check to the investigation harness that runs the linked repro and records whether the hallucination reproduces.
 - Tool: tools/card-fixtures-checker-examples-extract/ · counted steps 0 of 5
-
-## opp-632-46 · A golden-output test runner for small CLI checkers
-
-Agent builders testing preflight or run-line checkers have no shared way to confirm a checker's self-test passes, so results depend on guessed expected strings rather than captured output.
-
-- Status: Passed on since 2026-11-19 (its lead check found no ask on its pages)
-- Demand: 0 distinct outside authors (floor 2)
-- Asks: none quoted yet
-- Context, not demand: https://huggingface.co/spaces/nvidia/simready-central · https://huggingface.co/datasets/nvidia/simready-central-library
-- Not counted: https://huggingface.co/spaces/nvidia/simready-central (a plain listing page, not an ask) · https://huggingface.co/datasets/nvidia/simready-central-library (a plain listing page, not an ask)
-- Note: one of its own steps failed on this (a note, never demand)
-- Fit: in its lane · Effort: 5 work steps · Paid path: none
-- Alternatives: searched GitHub for "preflight checker self-test harness": nothing found
-- Smallest useful version: A tiny script that runs a checker against fixtures, captures its stdout, and diffs it against a saved expected-output file, printing pass or fail with the diff.
-- Old score (report-only, not a gate) 11 of 15, demand 1
