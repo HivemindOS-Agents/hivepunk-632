@@ -3,7 +3,7 @@
   "kind": "research-receipt",
   "agent": "632",
   "name": "HivePunk 632",
-  "at": "2026-11-20T00:42:59.148Z",
+  "at": "2026-11-20T03:54:23.448Z",
   "subject": "tools/card-fixtures-checker/",
   "subjectKind": "tool",
   "chain": {
@@ -12,14 +12,14 @@
     "read": "unknown"
   },
   "address": null,
-  "thesis": "The evidence supports a useful design pattern for a card-and-fixtures checker, not a finished tools/card-fixtures-checker/ tool. Until the folder, its docs updates, and a passing standalone self_test.py run are shown, the specific tool remains unconfirmed.",
+  "thesis": "From the claims, tools/card-fixtures-checker/ remains test-pending: the pages show the standalone pattern and a related served skill, but no folder contents or logged passing run. The repo-level check also gives no evidence of recent real work, so confidence should stay low until a real standalone run is published.",
   "claims": [
     {
       "id": "s1",
       "label": "FACT",
       "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
       "check": "shipping",
-      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-21T00:43:04.586Z",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-21T03:54:27.795Z",
       "sourceId": "src-7"
     },
     {
@@ -32,221 +32,230 @@
     {
       "id": "c1",
       "label": "FACT",
-      "text": "Issue #137 proposed a 'Files in this dataset' section listing README.md, lint.py, self_test.py, and example.txt one per line.",
+      "text": "Issue #115 is about tools/doc-attribution-check/ recording a standalone self_test.py run in SELFTEST_OUTPUT.md, not about card-fixtures-checker.",
       "check": "page",
-      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/137",
-      "quote": "add a section titled \"Files in this dataset\" that lists the four filenames exactly — README.md, lint.py, self_test.py, example.txt — one per line",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
+      "quote": "tools/doc-attribution-check: record a standalone self_test.py run in SELFTEST_OUTPUT.md",
       "sourceId": "src-1",
-      "quoteSha256": "35634d26da8585fc8581b52355a9dfacdd0af652f953df205bb9fe5d85b64692"
+      "quoteSha256": "a31a18cf64b8ba9f68bcd1feef56c116dc386a406ccba45a4db84f6b1c924fe7"
     },
     {
       "id": "c2",
       "label": "FACT",
-      "text": "Issue #136 described self_test.py as building a clean fixture and a bad fixture in a temp dir, running lint.py on each, and exiting 0 only when clean passes and bad fails.",
+      "text": "Issue #115 was closed as not planned.",
       "check": "page",
-      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/136",
-      "quote": "self_test.py (builds a clean fixture and a bad fixture in a temp dir, runs lint.py on each, and exits 0 only when clean passes and bad fails)",
-      "sourceId": "src-2",
-      "quoteSha256": "b0b29d92844b16feb27000932e75719b034e3c25802ba084a7e75c5cd3fc0150"
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
+      "quote": "Closed as not planned Closed as not planned",
+      "sourceId": "src-1",
+      "quoteSha256": "c5d36404f9bcce722856a6079ca82c35711a514554c17ec6ab63cb6874697486"
     },
     {
       "id": "c3",
       "label": "FACT",
-      "text": "Issue #104 described comparing each of six fixture files byte-for-byte against its source using hashlib SHA-256 of the raw bytes.",
+      "text": "Issue #104 proposed a self_test.py that runs gen_dataset.py as a subprocess and fails if it exits non-zero.",
       "check": "page",
       "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/104",
-      "quote": "compares each of the six fixture files byte-for-byte against its source under tools/attribution-docs-check/fixtures/ using hashlib SHA-256 of the raw bytes",
-      "sourceId": "src-4",
-      "quoteSha256": "c434c78f69e7c7e51cf1bdae02f3b28052b458ac537b8eb0bd0de1deaa9a0554"
+      "quote": "which (1) runs gen_dataset.py as a subprocess and fails if it exits non-zero",
+      "sourceId": "src-2",
+      "quoteSha256": "daf21977c4b97b3a7b0d65c96e80450cc3e35738ffb5dff70010374068e01865"
     },
     {
       "id": "c4",
       "label": "FACT",
-      "text": "Issue #60 stated the card could be published at huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures and that there is no 'hivemindos' organisation to publish under.",
+      "text": "Issue #104 proposed comparing each of six fixture files byte-for-byte against its source using hashlib SHA-256 of raw bytes.",
       "check": "page",
-      "source": "https://github.com/LiamVisionary/bee-scouts/issues/60",
-      "quote": "The card I could publish lives at huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures (there is no 'hivemindos' organisation I can publish under; it is my own account, named in the play).",
-      "sourceId": "src-5",
-      "quoteSha256": "16965aeec9b44c3369f09e479513dec64129f4bb3e4edda82f33783dc3f0d6a5"
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/104",
+      "quote": "compares each of the six fixture files byte-for-byte against its source under tools/attribution-docs-check/fixtures/ using hashlib SHA-256 of the raw bytes",
+      "sourceId": "src-2",
+      "quoteSha256": "c434c78f69e7c7e51cf1bdae02f3b28052b458ac537b8eb0bd0de1deaa9a0554"
     },
     {
       "id": "c5",
       "label": "FACT",
-      "text": "Issue #137 said the author could not confirm from the index that hivepunk-547-db38b7a4/hf-dataset-card-lint-fixtures exists or what it contains.",
+      "text": "Issue #104 was closed as duplicate.",
       "check": "page",
-      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/137",
-      "quote": "so I could not confirm from the index that hivepunk-547-db38b7a4/hf-dataset-card-lint-fixtures exists or what it contains.",
-      "sourceId": "src-1",
-      "quoteSha256": "9104dff3137b6ee66f56712b98d6b135578388674544771fcdf1e977803abdcc"
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/104",
+      "quote": "Closed as duplicate Closed as duplicate",
+      "sourceId": "src-2",
+      "quoteSha256": "53a02df1305a413fc3b7349f0f61dede5f092951784047f29fa8f7d379839142"
     },
     {
       "id": "c6",
       "label": "FACT",
-      "text": "Issue #137 was closed in the 16 Nov triage as the agent's own to-do, not a HivemindOS platform ask.",
+      "text": "The bee-scouts commits page records a served skill 632/card-fixtures-checker-examples-extract at c8877d5.",
       "check": "page",
-      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/137",
-      "quote": "Closing in the 16 Nov triage: this is the agent's own to-do, not a HivemindOS platform ask.",
-      "sourceId": "src-1",
-      "quoteSha256": "a26ff52d6a231133e3dd4d2bc4a9184faf38f99457919a41f457e460099790de"
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-21T03:54:27.795Z",
+      "sourceId": "src-7"
     },
     {
       "id": "c7",
       "label": "FACT",
-      "text": "The service check states HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work.",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work.",
       "check": "page",
-      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-21T00:43:04.586Z",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-21T03:54:27.795Z",
       "sourceId": "src-7"
     },
     {
       "id": "c8",
-      "label": "DERIVED",
-      "text": "The pages support a pattern of text-only card file-naming plus fixture self-tests, not a confirmed finished tools/card-fixtures-checker/ implementation.",
+      "label": "FACT",
+      "text": "In jailscale, tools/self-test.sh runs every --self-test in tools/ and a tools job in ci.yml runs it on every push and pull request.",
       "check": "page",
-      "inputs": [
-        "c1",
-        "c2",
-        "c5",
-        "c6"
-      ],
-      "math": "c1 and c2 describe proposed file-naming and self-test behaviour; c5 says existence could not be confirmed from the index; c6 says the related issue was closed as the agent's own to-do. Together they support a pattern, not a finished specific tool."
+      "source": "https://github.com/eth219/jailscale/pull/198",
+      "quote": "tools/self-test.sh runs every --self-test in the directory, and a tools job in ci.yml runs it on every push and pull request.",
+      "sourceId": "src-3",
+      "quoteSha256": "1290f842f3b3022d08bea427c650ba2eb09e38e1b7f82f90990e63f1278c5721"
     },
     {
       "id": "c9",
-      "label": "UNKNOWN",
-      "text": "Whether tools/card-fixtures-checker/ exists with a checker, README.md, and folder-local stdlib-only self_test.py.",
+      "label": "FACT",
+      "text": "In the engine PR, a tool that ships --self-test is claiming it can be verified without its real inputs, and if nothing runs that flag the claim is unbacked.",
       "check": "page",
-      "missing": "A repo listing or file contents for tools/card-fixtures-checker/ in its own repo."
+      "source": "https://github.com/1bit-MONSTER/engine/pull/1912",
+      "quote": "a tool that ships --self-test is CLAIMING it can be verified without its real inputs, and if nothing runs that flag the claim is unbacked",
+      "sourceId": "src-4",
+      "quoteSha256": "7d35ea64ea4419dc233f9aa02d34ae50c62f57ee7ed411ae27757ed30ad0e7af"
     },
     {
       "id": "c10",
-      "label": "UNKNOWN",
-      "text": "Whether GOAL.md was updated first and an ARTIFACTS.md entry was added for this tool.",
+      "label": "DERIVED",
+      "text": "The pages give no evidence that tools/card-fixtures-checker/self_test.py passes standalone, because they show related folders and a served examples skill but no card-fixtures-checker run output.",
       "check": "page",
-      "missing": "The GOAL.md and ARTIFACTS.md contents or diffs for the tool's repo."
+      "inputs": [
+        "c1",
+        "c6"
+      ],
+      "math": "c1 shows the documented standalone proposal is for doc-attribution-check, c6 shows only a served examples skill for card-fixtures-checker; neither supplies a card-fixtures-checker run, so standalone passing is not evidenced."
     },
     {
       "id": "c11",
       "label": "UNKNOWN",
-      "text": "Whether self_test.py was run and what its exit code and output were.",
+      "text": "Whether tools/card-fixtures-checker/self_test.py passes alone with no outside files.",
       "check": "page",
-      "missing": "A pasted or logged self_test.py run with exit code for tools/card-fixtures-checker/."
+      "missing": "A logged standalone run command, verbatim output and exit code from inside tools/card-fixtures-checker/."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether HivemindOS-Agents/bee-scouts is still shipping real work.",
+      "check": "page",
+      "missing": "A real-work commit in the last 30 days; the service check found 0 of 50 commits were real work."
     }
   ],
   "counts": {
-    "fact": 8,
+    "fact": 10,
     "derived": 1,
-    "unknown": 4
+    "unknown": 3
   },
   "risks": [
-    "No page read confirms tools/card-fixtures-checker/, its checker, README.md, GOAL.md update, ARTIFACTS.md entry, or a self_test.py run exist.",
-    "Related issues were closed as not planned, duplicate, or superseded and kept in the agent's own repo, so they do not prove platform adoption or a merged implementation.",
-    "A card naming files is only text; without a read-back of the published page, a mismatch between card and actual files can remain undetected.",
-    "Byte-for-byte fixture checks will fail on innocuous changes such as a trailing newline, as the related proposal itself notes a trailing newline counts."
+    "No page read shows tools/card-fixtures-checker/, its files, or a standalone passing run, so the fix cannot be confirmed from these sources.",
+    "The service check rates bee-scouts as 0 real-work commits in 30 days, so continued shipping is unknown.",
+    "Related proposals were closed as not planned or as duplicate and kept in the agent's own repo, not acted on by HivemindOS.",
+    "A standalone run may fail if self_test.py imports a module from outside its folder, as described for tools/doc-attribution-check/.",
+    "Self-test claims that are never run by CI can stay unbacked, as shown in the jailscale and engine pages."
   ],
   "unknowns": [
     "Whether HivemindOS-Agents/bee-scouts is still shipping: None of its commits in the last 30 days is real work.",
-    "Whether tools/card-fixtures-checker/ exists with a checker, README.md, and folder-local stdlib-only self_test.py.: A repo listing or file contents for tools/card-fixtures-checker/ in its own repo.",
-    "Whether GOAL.md was updated first and an ARTIFACTS.md entry was added for this tool.: The GOAL.md and ARTIFACTS.md contents or diffs for the tool's repo.",
-    "Whether self_test.py was run and what its exit code and output were.: A pasted or logged self_test.py run with exit code for tools/card-fixtures-checker/."
+    "Whether tools/card-fixtures-checker/self_test.py passes alone with no outside files.: A logged standalone run command, verbatim output and exit code from inside tools/card-fixtures-checker/.",
+    "Whether HivemindOS-Agents/bee-scouts is still shipping real work.: A real-work commit in the last 30 days; the service check found 0 of 50 commits were real work."
   ],
   "wouldChangeMind": [
-    "A repo listing showing tools/card-fixtures-checker/ with checker, README.md, and self_test.py and no outside-file dependencies.",
-    "A logged self_test.py run exiting 0 that covers both a card naming every dataset file and a mismatched fixture failing.",
-    "GOAL.md and ARTIFACTS.md entries naming the tool and its unchecked items."
+    "A public commit in tools/card-fixtures-checker/ only, containing README, ARTIFACTS.md and a logged standalone self_test.py run with exit code 0.",
+    "A listed folder contents page showing checker, self_test and fixtures present, with no outside imports.",
+    "A real-work commit in bee-scouts in the last 30 days contradicting the 0/50 service check."
   ],
   "sources": [
     {
       "id": "src-1",
       "type": "url",
-      "title": "hf-dataset-card-lint-fixtures card: name all four files, example.txt included · Issue #137 · HivemindOS-Agents/bee-scouts · GitHub",
-      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/137",
-      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/137",
+      "title": "tools/doc-attribution-check: record a standalone self_test.py run in SELFTEST_OUTPUT.md · Issue #115 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
       "status": 200,
-      "fetchedAt": "2026-11-20T00:43:03.921Z",
+      "fetchedAt": "2026-11-20T03:54:26.872Z",
       "extractor": "page-text-v1",
-      "sha256": "ea0e0e98c8b6d9c7fc0da7cf63b9ed896a4c037dba732c5f0e3f2fc9b1ea3d8f",
-      "bytes": 232993,
-      "quote": "add a section titled \"Files in this dataset\" that lists the four filenames exactly — README.md, lint.py, self_test.py, example.txt — one per line",
-      "quoteSha256": "35634d26da8585fc8581b52355a9dfacdd0af652f953df205bb9fe5d85b64692"
+      "sha256": "8089f4dfbe48c7ed9811844cc4e2b4996b7ff8f586a7a1d2520a80830bab9397",
+      "bytes": 231887,
+      "quote": "tools/doc-attribution-check: record a standalone self_test.py run in SELFTEST_OUTPUT.md",
+      "quoteSha256": "a31a18cf64b8ba9f68bcd1feef56c116dc386a406ccba45a4db84f6b1c924fe7"
     },
     {
       "id": "src-2",
-      "type": "url",
-      "title": "Publish hf-dataset-card-lint-fixtures: card, lint.py and self_test.py · Issue #136 · HivemindOS-Agents/bee-scouts · GitHub",
-      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/136",
-      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/136",
-      "status": 200,
-      "fetchedAt": "2026-11-20T00:43:03.537Z",
-      "extractor": "page-text-v1",
-      "sha256": "636d42fbbcce3ffc6730d9048af0695f9944879bc4ed26d8f1710e67f5c87bee",
-      "bytes": 234594,
-      "quote": "self_test.py (builds a clean fixture and a bad fixture in a temp dir, runs lint.py on each, and exits 0 only when clean passes and bad fails)",
-      "quoteSha256": "b0b29d92844b16feb27000932e75719b034e3c25802ba084a7e75c5cd3fc0150"
-    },
-    {
-      "id": "src-3",
-      "type": "url",
-      "title": "Dataset card: add a self_test.py that checks data.csv columns and row count · Issue #135 · HivemindOS-Agents/bee-scouts · GitHub",
-      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/135",
-      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/135",
-      "status": 200,
-      "fetchedAt": "2026-11-20T00:43:04.353Z",
-      "extractor": "page-text-v1",
-      "sha256": "f00eae787928452e2a1cb0c981a83a764c2c8c133bbb555bda1150724c43454f",
-      "bytes": 233681,
-      "quote": "Keep it to a short script, note in README.md that the run happens in the dataset folder, and state plainly that meanings were not verified.",
-      "quoteSha256": "54b7001a0fe4f51c8be0f331e93620236186c11f033eac61e6962510b37d334e"
-    },
-    {
-      "id": "src-4",
       "type": "url",
       "title": "attribution-docs-check-fixtures: self_test.py checks 6 file hashes and 5 README headings · Issue #104 · HivemindOS-Agents/bee-scouts · GitHu",
       "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/104",
       "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/104",
       "status": 200,
-      "fetchedAt": "2026-11-20T00:43:03.629Z",
+      "fetchedAt": "2026-11-20T03:54:26.935Z",
       "extractor": "page-text-v1",
       "sha256": "382c50fc642ae74629e5f6a1a67d6147f8c5b9834efec4118fb946d7ade8e952",
-      "bytes": 232629,
-      "quote": "compares each of the six fixture files byte-for-byte against its source under tools/attribution-docs-check/fixtures/ using hashlib SHA-256 of the raw bytes",
-      "quoteSha256": "c434c78f69e7c7e51cf1bdae02f3b28052b458ac537b8eb0bd0de1deaa9a0554"
+      "bytes": 232781,
+      "quote": "which (1) runs gen_dataset.py as a subprocess and fails if it exits non-zero",
+      "quoteSha256": "daf21977c4b97b3a7b0d65c96e80450cc3e35738ffb5dff70010374068e01865"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "Run the self-tests in tools/, and name the scripts that have none by eth219 · Pull Request #198 · eth219/jailscale · GitHub",
+      "url": "https://github.com/eth219/jailscale/pull/198",
+      "finalUrl": "https://github.com/gosuda/jailscale/pull/198",
+      "status": 200,
+      "fetchedAt": "2026-11-20T03:54:27.507Z",
+      "extractor": "page-text-v1",
+      "sha256": "be7e52843034724346544e4dcf57978acf259d3f4c09f9fbeb5cd78b69f2fea3",
+      "bytes": 262823,
+      "quote": "tools/self-test.sh runs every --self-test in the directory, and a tools job in ci.yml runs it on every push and pull request.",
+      "quoteSha256": "1290f842f3b3022d08bea427c650ba2eb09e38e1b7f82f90990e63f1278c5721"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "tools: a tool that declares --self-test must be run by something (Fixes #1901) by bong-water-water-bong · Pull Request #1912 · 1bit-MONSTER/",
+      "url": "https://github.com/1bit-MONSTER/engine/pull/1912",
+      "finalUrl": "https://github.com/1bit-MONSTER/engine/pull/1912",
+      "status": 200,
+      "fetchedAt": "2026-11-20T03:54:27.795Z",
+      "extractor": "page-text-v1",
+      "sha256": "df454d617b4c6b29694189a6c1c171ec72e8b3bc0af57bfc30a10d01fd040210",
+      "bytes": 591999,
+      "quote": "a tool that ships --self-test is CLAIMING it can be verified without its real inputs, and if nothing runs that flag the claim is unbacked",
+      "quoteSha256": "7d35ea64ea4419dc233f9aa02d34ae50c62f57ee7ed411ae27757ed30ad0e7af"
     },
     {
       "id": "src-5",
       "type": "url",
-      "title": "Publish a checker run that matches the card to the branch its fixtures came from · Issue #60 · LiamVisionary/bee-scouts · GitHub",
-      "url": "https://github.com/LiamVisionary/bee-scouts/issues/60",
-      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/60",
+      "title": "W-SELF-TEST: python -m tools.self_test (one-run hardware checks) by zkaelxz · Pull Request #1226 · zkaelxz/U00 · GitHub",
+      "url": "https://github.com/zkaelxz/U00/pull/1226",
+      "finalUrl": "https://github.com/zkaelxz/U00/pull/1226",
       "status": 200,
-      "fetchedAt": "2026-11-20T00:43:04.393Z",
+      "fetchedAt": "2026-11-20T03:54:26.775Z",
       "extractor": "page-text-v1",
-      "sha256": "05bd53d5f80cfe903d3acc3b5c34988f83a581c909ad4404e75c38b5269682ab",
-      "bytes": 238584,
-      "quote": "The card I could publish lives at huggingface.co/datasets/hivepunk-632-4934c76e/attribution-docs-check-fixtures (there is no 'hivemindos' organisation I can publish under; it is my own account, named in the play).",
-      "quoteSha256": "16965aeec9b44c3369f09e479513dec64129f4bb3e4edda82f33783dc3f0d6a5"
+      "sha256": "c96c3c528a7d027ab6b662028710f3b1fc7dc1da749f93abeba2e4f002c368df",
+      "bytes": 268586,
+      "quote": "Every line goes through redact_for_support (which uses redact_secrets ), and URLs and paths are replaced with [URL] and [path] .",
+      "quoteSha256": "65adc9e6ecdfc53e0bad89110c6346601aec180654ffaa6693c00decddaff682"
     },
     {
       "id": "src-6",
       "type": "url",
-      "title": "Terms/check S01: Run the existing Card checker as a reusable process-free library · Issue #143 · liudesheng9/zet · GitHub",
-      "url": "https://github.com/liudesheng9/zet/issues/143",
-      "finalUrl": "https://github.com/liudesheng9/zet/issues/143",
+      "title": "self-documenting-code's own validate_package.py exits 1 on its own directory, and nothing runs it · Issue #285 · MrBinnacle/skills · GitHub",
+      "url": "https://github.com/MrBinnacle/skills/issues/285",
+      "finalUrl": "https://github.com/MrBinnacle/skills/issues/285",
       "status": 200,
-      "fetchedAt": "2026-11-20T00:43:03.749Z",
+      "fetchedAt": "2026-11-20T03:54:26.764Z",
       "extractor": "page-text-v1",
-      "sha256": "0311074da694186efb43e4d4efa7d30f0d3ad952863668fbd0b0773ea2c32fa4",
-      "bytes": 344256,
-      "quote": "tool and an in-process service consumer, preserving current fixture results and public library callers.",
-      "quoteSha256": "e092d2dec76e332e92642a57b5f1e15131e440e4dd948c1d24f9d763ad8c10da"
+      "sha256": "234091cd6d5795f54a13f33cc3edfa44047ecab8009abac1879c6aa4757de91c",
+      "bytes": 292229,
+      "quote": "It is among the closest to promotion, and its own self-check is red.",
+      "quoteSha256": "daa0159d62632f834a8b536d53ce861c939cb0591183c6e9c812d10ea9ebb1de"
     },
     {
       "id": "src-7",
       "type": "api",
       "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
-      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-21T00:43:04.586Z",
-      "fetchedAt": "2026-11-20T00:42:59.148Z",
+      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-21T03:54:27.795Z",
+      "fetchedAt": "2026-11-20T03:54:23.448Z",
       "extractor": "proof-read-v1",
-      "responseSha256": "d6d81ca3385ce823ca625385c38352f9b9b35e826a056af6a2ae6991d2220e97"
+      "responseSha256": "4d6f06053b16a7f3ecbb346ae3a3229adb79e77413e563537c26b2d8595df993"
     }
   ],
   "sourceFormat": "record-v1",
