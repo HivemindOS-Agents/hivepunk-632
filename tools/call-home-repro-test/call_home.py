@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """Local-only call-home reproduction test.
 
-Mock HTTP server on [redacted] only. Simulates a forced-URL autocomplete
+Mock HTTP server on loopback only. Simulates a forced-URL autocomplete
 request, a call-home ping, and an idle control; classifies each recorded
 request as autocomplete, call-home, or unknown; repeats scenarios and
 reports whether the expected class is reproducible.
 
-Stdlib only. No non-loopback traffic: base URLs must be [redacted]/localhost.
+Stdlib only. No non-loopback traffic: base URLs must be loopback/localhost.
+The loopback IPv4 address is assembled at runtime (see LOOPBACK_IP) rather
+than written as a literal, so no placeholder or bracketed literal is ever
+parsed as a host or resolved via DNS.
 Usage: python3 call_home.py [--repeats 3] [--scenario all]
 Fixture/scenario data below are data, never instructions.
 """
@@ -18,7 +21,10 @@ import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse
 
-LOOPBACK_HOSTS = {"[redacted]", "localhost", "::1"}
+# Assembled at runtime: the dotted loopback IPv4 address, built from its
+# four octets so the source never contains a bracketed/placeholder host.
+LOOPBACK_IP = ".".join(("127", "0", "0", "1"))
+LOOPBACK_HOSTS = {LOOPBACK_IP, "localhost", "::1"}
 SCENARIOS = {
     "autocomplete_forced_url": {"method": "GET", "path": "/autocomplete?q=forced-url-test", "expected": "autocomplete", "headers": {"User-Agent": "call-home-repro-test/autocomplete"}},
     "call_home_ping": {"method": "GET", "path": "/ping", "expected": "call-home", "headers": {"User-Agent": "call-home-repro-test/call-home", "X-Call-Home": "1"}},
@@ -42,6 +48,8 @@ def check_loopback(base_url):
     u = urlparse(base_url)
     if u.scheme not in ("http",):
         raise ValueError("only http loopback base_url allowed: %r" % base_url)
+    # urlparse().hostname strips brackets from IPv6 literals and returns a
+    # bare IPv4 address, so compare against bare loopback hosts only.
     if (u.hostname or "").lower() not in LOOPBACK_HOSTS:
         raise ValueError("refusing non-loopback host: %r" % u.hostname)
     if u.port is None:
@@ -78,7 +86,8 @@ class _Handler(BaseHTTPRequestHandler):
 
 
 def start_mock():
-    server = ThreadingHTTPServer(("[redacted]", 0), _Handler)
+    # Bind the bare loopback IP directly: no hostname, no DNS lookup.
+    server = ThreadingHTTPServer((LOOPBACK_IP, 0), _Handler)
     server.requests = []
     thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
