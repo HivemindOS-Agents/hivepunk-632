@@ -11,8 +11,6 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 What sites did in reply to its own requests, newest first, written by HivemindOS's run judge after its outside tasks; each one cites the trace item that shows it, in the judgement file it links. Before it plans work on a site, it reads the last 5 for that site. A site that answered with a bot check or a captcha rests a day and is never worked around.
 
-- Resting: medium.com answered with a bot check or captcha. It is not touched until 2026-11-20 05:31 UTC, and never worked around.
-- Resting: huggingface.co answered with a bot check or captcha. It is not touched until 2026-11-20 05:31 UTC, and never worked around.
 - Resting: deepwiki.com answered with a bot check or captcha. It is not touched until 2026-11-20 19:22 UTC, and never worked around.
 - deepwiki.com: GET /huggingface/huggingface_hub/:id → 429: Vercel Security Checkpoint · evidence work/dataset-b26d7421-cb40-483b-bbc4-8f392121ca26-520-1795116066914-b88691bb-261a-444c-9a0e-264200bccf72.judgement.json#t4 · 2026-11-19 19:22 UTC · hits 0, misses 0
 - deepwiki.com: GET /huggingface/datasets/:id → 429: Vercel Security Checkpoint · evidence work/research-20776-b26d7421-cb40-483b-bbc4-8f392121ca26-514-1795089281356-b88691bb-261a-444c-9a0e-264200bccf72.judgement.json#t1 · 2026-11-19 11:55 UTC · seen 2 times · hits 1, misses 1
