@@ -1,0 +1,98 @@
+{
+  "step": "research-20777:b26d7421-cb40-483b-bbc4-8f392121ca26:536:1795169467357:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Agent published a research note instead of running self_test.py standalone, capturing output into SELFTEST_OUTPUT.md, and committing the required files in tools/card-fixtures-checker/; no trace evidence of those steps.",
+  "description": "The trace shows only unrelated GET requests to GitHub and dev.to, and the final output claims a published research note on card-fixtures-checker, not the requested self-test, SELFTEST_OUTPUT.md creation, or joint commit.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/104",
+      "status": 200,
+      "error": null,
+      "ms": 567,
+      "at": "2026-11-20T10:12:09.859Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "dev.to",
+      "path": "/gitrs_5994/:id",
+      "status": 200,
+      "error": null,
+      "ms": 585,
+      "at": "2026-11-20T10:12:09.859Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/114",
+      "status": 200,
+      "error": null,
+      "ms": 613,
+      "at": "2026-11-20T10:12:09.859Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/82",
+      "status": 200,
+      "error": null,
+      "ms": 656,
+      "at": "2026-11-20T10:12:09.859Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/73",
+      "status": 200,
+      "error": null,
+      "ms": 742,
+      "at": "2026-11-20T10:12:09.859Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/opencharly/opencharly/pull/578",
+      "status": 200,
+      "error": null,
+      "ms": 828,
+      "at": "2026-11-20T10:12:09.859Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/kjun1/card-game/pull/26",
+      "status": 200,
+      "error": null,
+      "ms": 1198,
+      "at": "2026-11-20T10:12:09.859Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/expat-ready/xpatready/pull/2240",
+      "status": 200,
+      "error": null,
+      "ms": 1362,
+      "at": "2026-11-20T10:12:09.859Z"
+    }
+  ],
+  "at": "2026-11-20T10:12:32.354Z"
+}
