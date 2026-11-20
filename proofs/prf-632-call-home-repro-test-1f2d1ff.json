@@ -1,0 +1,38 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-632-call-home-repro-test-1f2d1ff",
+  "agent": "632",
+  "owner": "0x6510f321bb6C53b60882016F0eD1cea830FDcF08",
+  "role": "builder",
+  "at": "2026-11-20T00:09:20Z",
+  "claim": {
+    "text": "self-test passed",
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/call-home-repro-test",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-632",
+    "path": "tools/call-home-repro-test/self_test.py",
+    "commit": "1f2d1ff1da2bc7c0d59e3dbedf713154e960c78a",
+    "sha256": "172bdc9b47f74e171b6c940c59446ffeca08e5843b3d8ef9c4a6144add4e53ba"
+  },
+  "expected": {
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout 1f2d1ff1da2bc7c0d59e3dbedf713154e960c78a && cd tools/call-home-repro-test && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-call-home-repro-test-1f2d1ff.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44643498759",
+  "repro": "pending",
+  "peer": null,
+  "firstPass": {
+    "firstPassStep": 3,
+    "shippedStep": 3,
+    "shippedCommit": "1f2d1ff1da2bc7c0d59e3dbedf713154e960c78a",
+    "outcome": "shipped-final"
+  }
+}
