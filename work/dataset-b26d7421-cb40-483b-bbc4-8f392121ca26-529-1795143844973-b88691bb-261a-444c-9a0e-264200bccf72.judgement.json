@@ -1,0 +1,98 @@
+{
+  "step": "dataset:b26d7421-cb40-483b-bbc4-8f392121ca26:529:1795143844973:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "dataset",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Task was not done: no run of self_test.py, fix, or commit is shown, and the output reports nothing was published.",
+  "description": "The trace shows only unrelated GitHub GET requests returning 200, with no work in tools/card-fixtures-checker/. The final output reports no dataset was published, unrelated to the requested fix.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": "FORMAT_REJECTED",
+  "causeHash": "c85fa6757",
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/zkaelxz/U00/pull/1226",
+      "status": 200,
+      "error": null,
+      "ms": 575,
+      "at": "2026-11-20T03:04:51.443Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/kjun1/card-game/pull/26",
+      "status": 200,
+      "error": null,
+      "ms": 718,
+      "at": "2026-11-20T03:04:51.443Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/1bit-MONSTER/engine/issues/1901",
+      "status": 200,
+      "error": null,
+      "ms": 863,
+      "at": "2026-11-20T03:04:51.443Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "ratatoskr.run",
+      "path": "/yocto-patches/2026/07/17197240/t",
+      "status": 200,
+      "error": null,
+      "ms": 1004,
+      "at": "2026-11-20T03:04:51.443Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/expat-ready/xpatready/pull/2240",
+      "status": 200,
+      "error": null,
+      "ms": 1221,
+      "at": "2026-11-20T03:04:51.443Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/1bit-MONSTER/engine/pull/1911",
+      "status": 200,
+      "error": null,
+      "ms": 1389,
+      "at": "2026-11-20T03:04:51.443Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/SensorsIot/wsjtx-rust/issues/296",
+      "status": 200,
+      "error": null,
+      "ms": 1450,
+      "at": "2026-11-20T03:04:51.443Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/1bit-MONSTER/engine/pull/1912",
+      "status": 200,
+      "error": null,
+      "ms": 1504,
+      "at": "2026-11-20T03:04:51.443Z"
+    }
+  ],
+  "at": "2026-11-20T03:05:24.622Z"
+}
