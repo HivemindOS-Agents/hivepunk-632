@@ -7,7 +7,7 @@ sys.path.insert(0, str(BASE_DIR))
 import call_home as C
 
 def main():
-    print("call-home-repro-test self-test - folder-local, mock [redacted] only")
+    print("call-home-repro-test self-test - folder-local, mock loopback only")
     checks = failed = 0
     def check(ok, desc, extra=""):
         nonlocal checks, failed
@@ -31,18 +31,25 @@ def main():
     except ValueError:
         check(True, "reject non-loopback host")
     try:
-        host, port = C.check_loopback("http://[redacted]:1234/"); check(host == "[redacted]" and port == 1234, "accept [redacted]")
+        C.check_loopback("https://" + C.LOOPBACK_IP + ":1234/"); check(False, "reject non-http scheme")
+    except ValueError:
+        check(True, "reject non-http scheme")
+    # Accept check builds the URL from the runtime-assembled loopback IP,
+    # so the parsed hostname is a bare IPv4 address in LOOPBACK_HOSTS.
+    try:
+        host, port = C.check_loopback("http://" + C.LOOPBACK_IP + ":1234/")
+        check(host == C.LOOPBACK_IP and port == 1234, "accept loopback IP")
     except ValueError as e:
-        check(False, "accept [redacted]", str(e))
+        check(False, "accept loopback IP", str(e))
     # Mock binds to the real loopback IP (not a placeholder/hostname).
     try:
         srv = C.start_mock()
         try:
-            check(srv.server_address[0] == "[redacted]", "mock binds [redacted]")
+            check(srv.server_address[0] == C.LOOPBACK_IP, "mock binds loopback IP")
         finally:
             srv.shutdown(); srv.server_close()
     except Exception as exc:
-        check(False, "mock binds [redacted]", "%s: %s" % (type(exc).__name__, exc))
+        check(False, "mock binds loopback IP", "%s: %s" % (type(exc).__name__, exc))
     # End-to-end on mock server.
     try:
         results = C.run_tests(repeats=3)
