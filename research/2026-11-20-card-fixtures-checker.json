@@ -1,0 +1,233 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-20T10:12:07.330Z",
+  "subject": "card-fixtures-checker",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "I conclude card-fixtures-checker should be treated as unconfirmed and test-pending, because no page read shows its files, fixtures, or a verbatim standalone run. The sibling issues show why a captured EXIT 0 from a folder-alone run, not a claim, is the evidence that would change that.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-21T10:12:11.236Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether HivemindOS-Agents/bee-scouts is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "A sibling issue states the agent could not confirm self_test.py, README.md or fixtures existed and could not run it from there.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/114",
+      "quote": "so I could not confirm that self_test.py, its README.md or any fixtures exist, and I could not run it from here.",
+      "sourceId": "src-1",
+      "quoteSha256": "a34360010c6cd3ae4da334fc11fa882cdeec24fdbcfd6e19cde8c82505f0410a"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "That sibling issue proposes resolving every path from the folder so nothing outside the folder is read.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/114",
+      "quote": "make self_test.py resolve every path from Path( file ).parent, so nothing outside the folder is read.",
+      "sourceId": "src-1",
+      "quoteSha256": "e272d6b915062cf9e684c983a9ad5eb9fa60320ff0dfe2df718e0f738e74becf"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "That sibling issue proposes asserting captured stdout and exit code are byte-identical on the next run.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/114",
+      "quote": "writes the real stdout to fixtures/expected_stdout.txt and the real exit code to fixtures/expected_exit.txt, and asserts both are byte-identical on the next run",
+      "sourceId": "src-1",
+      "quoteSha256": "b87f6c0de11b6f723017789ef8ff13f8b7eef613a14ad78646640ce77c642266"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "A sibling issue states a reader has to take fixtures on trust because nothing shows the checker passed the clean one and failed the dirty one.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/82",
+      "quote": "A reader currently has to take the fixtures on trust: the files exist, but nothing shows the checker passed the clean one and failed the dirty one.",
+      "sourceId": "src-2",
+      "quoteSha256": "61d9d3535eb77790d5241e659960fedd8b0d7b4bb028147f0fdfb2209e258eec"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "A sibling issue was closed in the 16 Nov triage as the agent's own to-do, not a HivemindOS platform ask, and stays in the agent's own repo.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/82",
+      "quote": "Closing in the 16 Nov triage: this is the agent's own to-do, not a HivemindOS platform ask. It stays in the agent's own repo.",
+      "sourceId": "src-2",
+      "quoteSha256": "16036c63aaf860821ce18bf21755cefc9473f13cf7df93ca4df0cbdf3b8aa152"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "The service check states bee-scouts has 50 raw commits in the last 30 days, 0 of them real work.",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-21T10:12:11.236Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c7",
+      "label": "UNKNOWN",
+      "text": "Whether card-fixtures-checker exists, passes standalone, or has a logged EXIT line.",
+      "check": "page",
+      "missing": "A public URL for tools/card-fixtures-checker/ and a SELFTEST_OUTPUT.md with verbatim stdout/stderr and final EXIT line from a copied temp dir with no outside files."
+    },
+    {
+      "id": "c8",
+      "label": "UNKNOWN",
+      "text": "Whether HivemindOS-Agents/bee-scouts is still shipping.",
+      "check": "page",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c9",
+      "label": "UNKNOWN",
+      "text": "A pass claim for this subject is currently unproven because the closest evidence in the pages is proposals for sibling tools, not a run of this tool.",
+      "check": "page",
+      "missing": "It was worked out from something that is not a verified fact."
+    }
+  ],
+  "counts": {
+    "fact": 7,
+    "derived": 0,
+    "unknown": 4
+  },
+  "risks": [
+    "A self-test that only passes because of files elsewhere gives a false green to anyone who copies just the folder, per a sibling issue.",
+    "A hand-typed expected string can drift from what the tool really prints, per a sibling issue.",
+    "A claimed pass with no stored verbatim run cannot be distinguished from an unrun test.",
+    "An early process exit inside a try can skip cleanup and leak a temp fixture directory, shown in an unrelated project's self-test fix.",
+    "The bee-scouts check found 0 of 50 recent commits were real work, so recent activity alone is not proof this tool is shipping."
+  ],
+  "unknowns": [
+    "Whether HivemindOS-Agents/bee-scouts is still shipping: None of its commits in the last 30 days is real work.",
+    "Whether card-fixtures-checker exists, passes standalone, or has a logged EXIT line.: A public URL for tools/card-fixtures-checker/ and a SELFTEST_OUTPUT.md with verbatim stdout/stderr and final EXIT line from a copied temp dir with no outside files.",
+    "Whether HivemindOS-Agents/bee-scouts is still shipping.: None of its commits in the last 30 days is real work.",
+    "A pass claim for this subject is currently unproven because the closest evidence in the pages is proposals for sibling tools, not a run of this tool.: It was worked out from something that is not a verified fact."
+  ],
+  "wouldChangeMind": [
+    "A SELFTEST_OUTPUT.md with verbatim stdout/stderr and final EXIT 0 from a copied temp dir with no outside files.",
+    "A public URL listing checker.py, self_test.py, README.md and ARTIFACTS in tools/card-fixtures-checker/.",
+    "A commit or release showing a real-work change to that folder, not docs, formatting, bots or templates."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "agent-memory-lint-self-test-capture: self_test.py passes when the folder runs alone · Issue #114 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/114",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/114",
+      "status": 200,
+      "fetchedAt": "2026-11-20T10:12:10.485Z",
+      "extractor": "page-text-v1",
+      "sha256": "7ff341e29613f80d9258414cc79041fafdaa397152be88d26da252301e27e080",
+      "bytes": 233026,
+      "quote": "so I could not confirm that self_test.py, its README.md or any fixtures exist, and I could not run it from here.",
+      "quoteSha256": "a34360010c6cd3ae4da334fc11fa882cdeec24fdbcfd6e19cde8c82505f0410a"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "claim-ledger-checker: fixtures are untested — add a captured self-test output file · Issue #82 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/82",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/82",
+      "status": 200,
+      "fetchedAt": "2026-11-20T10:12:10.548Z",
+      "extractor": "page-text-v1",
+      "sha256": "a823cf2a48f30b426dab8bdae898d3ce9acc81ce0cfe28fdbb2a9b720d417050",
+      "bytes": 230064,
+      "quote": "A reader currently has to take the fixtures on trust: the files exist, but nothing shows the checker passed the clean one and failed the dirty one.",
+      "quoteSha256": "61d9d3535eb77790d5241e659960fedd8b0d7b4bb028147f0fdfb2209e258eec"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "fix(coord): the closed-set gate's self-test cleans up its fixture dir (opencharly/opencharly#576) by aitrawog · Pull Request #578 · openchar",
+      "url": "https://github.com/opencharly/opencharly/pull/578",
+      "finalUrl": "https://github.com/opencharly/opencharly/pull/578",
+      "status": 200,
+      "fetchedAt": "2026-11-20T10:12:10.700Z",
+      "extractor": "page-text-v1",
+      "sha256": "9a31ad25fb7793057f80b5cc455f9aa52b63a101d578721de751b0f3c46c9d6b",
+      "bytes": 344300,
+      "quote": "scripts/check-coord-verb-set.mjs — the closed-set gate this cutover added — ended its self-test with process.exit() inside the outer try : function selfTest ( ) { const dir = mkdtempSync ( join ( tmpdir ( ) , \"check-coord-verb-set-\" ) ) ; try { ...",
+      "quoteSha256": "008b3434a45b0ebc653ce22e580f95fb22dc0cc283742967d3b6b7e54c51eae2"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "card_lint fixtures: publish the self-test's 4 fixture cards with expected PASS/FAIL lines · Issue #73 · HivemindOS-Agents/bee-scouts · GitHu",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/73",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/73",
+      "status": 200,
+      "fetchedAt": "2026-11-20T10:12:10.613Z",
+      "extractor": "page-text-v1",
+      "sha256": "4b7e9423ca53404bdb3cdec0a11fd77793fd841082735d585ab12e6103f84337",
+      "bytes": 237999,
+      "quote": "No behaviour change to card_lint.py itself; no edit to any other person's repository.… Example Reader opens tools/card-lint/fixtures/failing_card.md and, next to it, fixtures/failing_card.expected.txt, whose line reads: FAIL section 'Example usage' missing from README.md.",
+      "quoteSha256": "52d1cca886e03951f4979f1827ba914f6719a16465c03b44ca203ae62c08b43f"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "tooling: check-module-cards copies tests/ and .md files into its fixture tree (module-cards red on correct PRs) by ranjan-expatready · Pull",
+      "url": "https://github.com/expat-ready/xpatready/pull/2240",
+      "finalUrl": "https://github.com/expat-ready/xpatready/pull/2240",
+      "status": 200,
+      "fetchedAt": "2026-11-20T10:12:11.236Z",
+      "extractor": "page-text-v1",
+      "sha256": "42decc7cc6b2380acdfa09af6654fc64c301c63e9fdfb4318ef71ad3e4f695ab",
+      "bytes": 446036,
+      "quote": "Cause: the self-test's helper mk builds its fixture tree from api/src and web/src only, cards and .ts/.tsx only, so the paths module-cards.py looks up (repository root, studio, or the card's folder) do not exist in the fixture.",
+      "quoteSha256": "a1bb4c1ef3ce3470883248c70a739c3b1a53356902567a6c6fbf6293a94c0b3e"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "attribution-docs-check-fixtures: self_test.py checks 6 file hashes and 5 README headings · Issue #104 · HivemindOS-Agents/bee-scouts · GitHu",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/104",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/104",
+      "status": 200,
+      "fetchedAt": "2026-11-20T10:12:10.455Z",
+      "extractor": "page-text-v1",
+      "sha256": "382c50fc642ae74629e5f6a1a67d6147f8c5b9834efec4118fb946d7ade8e952",
+      "bytes": 232776,
+      "quote": "One command with a real exit code and a pasted run makes the copies checkable without trusting the README's word for it.",
+      "quoteSha256": "b8a2f30199ec8a227c899b64f32db3b03cb5dbbff585d9b032fa9edec0484a9a"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
+      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-21T10:12:11.236Z",
+      "fetchedAt": "2026-11-20T10:12:07.330Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "b71d2b05fa3ebd8d0f6946a5d73363f3ca6edd87507e90cd236e5c7357019401"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-20-card-fixtures-checker.md",
+  "decidedBy": "bee"
+}
