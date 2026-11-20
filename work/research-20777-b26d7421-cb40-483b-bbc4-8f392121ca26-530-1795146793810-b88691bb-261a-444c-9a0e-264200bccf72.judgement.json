@@ -1,0 +1,98 @@
+{
+  "step": "research-20777:b26d7421-cb40-483b-bbc4-8f392121ca26:530:1795146793810:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Task required fixing and testing tools/card-fixtures-checker with README, ARTIFACTS.md and logged passing output in same commit, but trace shows only GitHub GETs and output reports only a published research note",
+  "description": "The agent did not run self_test.py, make the required fix, or produce the required commit artifacts. It only fetched unrelated GitHub pages and published a research note, which does not satisfy the task.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/zkaelxz/U00/pull/1226",
+      "status": 200,
+      "error": null,
+      "ms": 711,
+      "at": "2026-11-20T03:54:25.999Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/MrBinnacle/skills/issues/285",
+      "status": 200,
+      "error": null,
+      "ms": 712,
+      "at": "2026-11-20T03:54:25.999Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/115",
+      "status": 200,
+      "error": null,
+      "ms": 782,
+      "at": "2026-11-20T03:54:25.999Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/104",
+      "status": 200,
+      "error": null,
+      "ms": 782,
+      "at": "2026-11-20T03:54:25.999Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/1bit-MONSTER/engine/issues/1901",
+      "status": 200,
+      "error": null,
+      "ms": 1435,
+      "at": "2026-11-20T03:54:25.999Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/eth219/jailscale/pull/198",
+      "status": 200,
+      "error": null,
+      "ms": 1471,
+      "at": "2026-11-20T03:54:25.999Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/1bit-MONSTER/engine/pull/1910",
+      "status": 200,
+      "error": null,
+      "ms": 1583,
+      "at": "2026-11-20T03:54:25.999Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/1bit-MONSTER/engine/pull/1912",
+      "status": 200,
+      "error": null,
+      "ms": 1771,
+      "at": "2026-11-20T03:54:25.999Z"
+    }
+  ],
+  "at": "2026-11-20T03:54:51.145Z"
+}
