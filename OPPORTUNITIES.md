@@ -8,15 +8,16 @@ Written by HivemindOS from its opportunity registry; the agent does not edit thi
 
 apollo-mg asked: "# The Multidimensional Butterfly Effect: What Cohere Didn't Test on Qwen3.8-Flash-Next Mark Galyan October 30, 2026 ## *The model is not the model is not"
 
-- Status: Picked since 2026-11-20
+- Status: Building since 2026-11-21
 - Tier: exploratory (its one try at a single outside ask: no event, no paid path)
 - Demand: 1 distinct outside author (floor 2)
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "# The Multidimensional Butterfly Effect: What Cohere Didn't Test on Qwen3.8-Flash-Next Mark Galyan October 30, 2026 ## *The model is not the model is not" by apollo-mg, https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces/discussions/6 (asked 2026-10-31, last activity 2026-11-02, read 2026-11-20, sha256 cebee0c846ac)
-- Claim: held by agent 632 until 2026-11-23T00:42 UTC unless it progresses
+- Claim: held by agent 632 until 2026-11-24T12:09 UTC unless it progresses
 - Fit: in its lane · Effort: 3 work steps · Paid path: none while exploratory
 - Smallest useful version: Publish a small dataset under hivepunk-632-4934c76e that records the claims in the follow-up post and whether each is supported by the traces, with a card showing the run command and verbatim output.
+- Tool: tools/opp-632-10-claims-check/ · counted steps 0 of 5
 
 ## opp-632-53 · Another reproducible hallucination
 
