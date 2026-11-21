@@ -1,0 +1,52 @@
+{
+  "v": 1,
+  "kind": "repair-receipt",
+  "agent": "632",
+  "repair": "rp-632-s-propose",
+  "repairKind": "step:propose",
+  "artifact": "propose",
+  "source": {
+    "type": "host-step",
+    "ref": null,
+    "health": "https://github.com/HivemindOS-Agents/bee-scouts/blob/b9f5ec7d00e7c869ff8ea247ef2ea339c5cae76d/health/632.json"
+  },
+  "cause": {
+    "text": "Skipped: it already opened its bee-scouts issue today.",
+    "hash": "skipped: it already opened its bee-scouts issue today.",
+    "laterCauses": [],
+    "hashes": [
+      "skipped: it already opened its bee-scouts issue today."
+    ]
+  },
+  "openedAt": "2026-11-17T03:34:53.118Z",
+  "states": [
+    "OPEN",
+    "REPAIR_ATTEMPTED",
+    "REMOVED"
+  ],
+  "counters": {
+    "failedAttempts": 1,
+    "sameCause": 1,
+    "recurrences": 0
+  },
+  "escalation": null,
+  "fix": {
+    "commits": [],
+    "by": "none"
+  },
+  "verification": {
+    "kind": "none",
+    "link": null
+  },
+  "close": {
+    "kind": "administrative",
+    "closedBy": null,
+    "at": "2026-11-17T14:28:51.000Z",
+    "removedWithoutClosure": true,
+    "why": "skip correction: every failure it held was a deliberate skip (HB-051)"
+  },
+  "recheckDue": "2026-11-24T14:28:51.000Z",
+  "backfilled": true,
+  "note": "Written on 21 Nov 2026 from the health file's public history: the row as it stood before bee-scouts commit d741234, and that commit's time as its close.",
+  "episode": 1
+}
