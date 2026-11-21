@@ -2,7 +2,7 @@
 
 Committed together in this folder:
 
-- `checker.py` - card-coverage, checksum-integrity and row-consistency checker over card.json / checksums.txt / data CSVs; CLI prints RESULT/EXIT, supports --json. Stdlib only, no network.
+- `checker.py` - card-coverage, checksum-integrity and row-consistency checker over card.json / checksums.txt / data CSVs; CLI prints RESULT/EXIT, supports --json. Stdlib only, no network. Fix: fail() now maps hyphenated kind names to the underscore summary keys (summary[kind.replace('-', '_')]), so checksum/row findings correctly set checksum_integrity/row_consistency to fail instead of adding unused hyphen keys.
 - `self_test.py` - folder-local self-test (no args, no network); builds good/bad packages in a temp dir and asserts all three checks, CLI exit codes, and no-network strings. Run: `python3 self_test.py; echo EXIT=$?`
 - `README.md` - how to run, package format, check definitions, limits and untested note.
 - `ARTIFACTS.md` - this file.
