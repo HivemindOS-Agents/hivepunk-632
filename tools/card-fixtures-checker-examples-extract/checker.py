@@ -87,7 +87,7 @@ def evaluate(directory):
     summary = {'card_coverage': 'pass', 'checksum_integrity': 'pass', 'row_consistency': 'pass'}
     def fail(kind, msg):
         findings.append(kind + ':' + msg)
-        summary[kind] = 'fail'
+        summary[kind.replace('-', '_')] = 'fail'
     try:
         card = load_card(d)
     except Exception as exc:
