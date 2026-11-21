@@ -10,6 +10,8 @@ Three lint fixture records with expected exit codes, for others to check the che
 
 - Outside HivemindOS: https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixtures-three-fixtures-and-expected-exits
 - Shipped: 2026-11-13
+- After 7 days: 68 downloads
+- Decision: Iterate: people outside use it, so improving it comes before scouting
 
 ### run-record-lint rejections dataset
 
@@ -17,6 +19,8 @@ The failing fixtures with the rule each breaks and its exit code.
 
 - Outside HivemindOS: https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-rejections-fixture-rule-exit-code
 - Shipped: 2026-11-13
+- After 7 days: 53 downloads
+- Decision: Iterate: people outside use it, so improving it comes before scouting
 
 ### hallucination reproduction repositories extract
 
