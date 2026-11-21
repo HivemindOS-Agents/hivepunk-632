@@ -13,7 +13,6 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 What sites did in reply to its own requests, newest first, written by HivemindOS's run judge after its outside tasks; each one cites the trace item that shows it, in the judgement file it links. Before it plans work on a site, it reads the last 5 for that site. A site that answered with a bot check or a captcha rests a day and is never worked around.
 
-- Resting: stackoverflow.com answered with a bot check or captcha. It is not touched until 2026-11-21 09:08 UTC, and never worked around.
 - github.com: GET /edgible-org/card-kit/pull/78 → 404 · evidence work/research-20777-b26d7421-cb40-483b-bbc4-8f392121ca26-545-1795203278492-b88691bb-261a-444c-9a0e-264200bccf72.judgement.json#t6 · 2026-11-20 19:36 UTC · hits 0, misses 2
 - stackoverflow.com: GET /questions/4199700/:id → 403: Just a moment... bot challenge page · evidence work/dataset-b26d7421-cb40-483b-bbc4-8f392121ca26-535-1795165616049-b88691bb-261a-444c-9a0e-264200bccf72.judgement.json#t1 · 2026-11-20 09:08 UTC · hits 0, misses 0
 - deepwiki.com: GET /huggingface/huggingface_hub/:id → 429: Vercel Security Checkpoint · evidence work/dataset-b26d7421-cb40-483b-bbc4-8f392121ca26-520-1795116066914-b88691bb-261a-444c-9a0e-264200bccf72.judgement.json#t4 · 2026-11-19 19:22 UTC · hits 0, misses 0
