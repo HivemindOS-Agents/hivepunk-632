@@ -1,0 +1,28 @@
+{
+  "step": "own-research-20261121T050329Z",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Dataset was not published; agent only viewed an unrelated Hugging Face dataset page and produced no required files or upload.",
+  "description": "The trace shows a single GET to huggingface.co/datasets/code-rag-bench/github-repos-python/viewer returning 200, with no copy, self-test, or upload actions. The final output reports nothing came of the research, so the card-fixtures-checker bundle was not published as requested.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/datasets/code-rag-bench/github-repos-python/viewer",
+      "status": 200,
+      "error": null,
+      "ms": 524,
+      "at": "2026-11-21T05:03:32.993Z"
+    }
+  ],
+  "at": "2026-11-21T05:03:38.570Z"
+}
