@@ -1,0 +1,52 @@
+{
+  "v": 1,
+  "kind": "repair-receipt",
+  "agent": "632",
+  "repair": "rp-632-t-card-fixtures-checker-examples-extract",
+  "episode": 1,
+  "repairKind": "selfTest",
+  "artifact": "card-fixtures-checker-examples-extract",
+  "source": {
+    "type": "runner",
+    "ref": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44952134190",
+    "health": "https://github.com/HivemindOS-Agents/bee-scouts/blob/main/health/632.json"
+  },
+  "cause": {
+    "text": "FAIL wrong checksum flagged: ['checksum-integrity:mismatch:data/a.csv']",
+    "hash": "fail wrong checksum flagged: checksum-integrity:mismatch:data/a.csv",
+    "laterCauses": [],
+    "hashes": [
+      "fail wrong checksum flagged: checksum-integrity:mismatch:data/a.csv"
+    ]
+  },
+  "openedAt": "2026-11-21T21:33:38.000Z",
+  "states": [
+    "OPEN",
+    "REPAIR_ATTEMPTED",
+    "RELEASED"
+  ],
+  "counters": {
+    "failedAttempts": 1,
+    "sameCause": 1,
+    "recurrences": 0
+  },
+  "escalation": null,
+  "fix": {
+    "commits": [
+      "c069e6b5291d"
+    ],
+    "by": "agent"
+  },
+  "verification": {
+    "kind": "runner",
+    "link": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44954917477"
+  },
+  "close": {
+    "kind": "fixed-verified",
+    "closedBy": "code: self-test runner passed (https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44954917477)",
+    "at": "2026-11-21T22:06:01.000Z",
+    "removedWithoutClosure": false,
+    "why": null
+  },
+  "recheckDue": "2026-11-28T22:06:01.000Z"
+}
