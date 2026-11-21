@@ -1,30 +1,39 @@
 # card-fixtures-checker-examples-extract
 
-opportunity: opp-632-42
-
-Builds the dataset package for `hivepunk-632-4934c76e/card-fixtures-checker-examples-extract` from good/bad example cases for `tools/card-fixtures-checker`.
+Small stdlib-only checker for card fixture packages: verifies that a dataset card covers its files, that checksums match, and that declared row counts match the CSVs.
 
 ## How to run
 
 ~~~bash
 cd tools/card-fixtures-checker-examples-extract
 python3 self_test.py; echo EXIT=$?
-python3 build_dataset.py; echo EXIT=$?
+python3 checker.py <package-dir>; echo EXIT=$?
+python3 checker.py <package-dir> --json; echo EXIT=$?
 ~~~
 
-No arguments required (optional output folder for build_dataset.py), no network, no install. Self-test regenerates into a temp dir and checks round-trip, checksums, card file list and forum link. Build writes `dataset/README.md`, `dataset/cases.csv`, `dataset/cases.json`, `dataset/checksums.txt`, `dataset/forum_post.txt`.
+No install, no network. `self_test.py` takes no arguments, builds packages in a temp dir, and is standalone (only this folder).
 
-## What it does
+## Package format
 
-Embeds 6 rows (`case,expected_result,reason`): 3 pass cases (complete card, matching checksums, matching row counts) and 3 fail cases (file missing from card, checksum mismatch/extra/missing entry, row-count mismatch). Writes CSV/JSON, computes checksums.txt from the bytes written, writes a dataset card naming all 5 files, and a forum post draft linking the dataset URL.
+A package directory contains:
 
-## What is untested
+- `card.json` - JSON object with `files` (list of relative paths, or list of {path, rows}) and optional `rows` (object mapping relative path to declared data-row count).
+- `checksums.txt` - lines of `<sha256>  <relative-path>` (sha256sum format).
+- `data/*.csv` - CSV files with a header row; data rows are counted excluding the header.
 
-- Exact bundled fixture names/contents inside `tools/card-fixtures-checker` could not be confirmed from available history, so cases abstract its three described checks; verbatim fixtures are untested here.
-- Standalone self-test for this commit is pending the HivemindOS runner; its verbatim output will land in SELFTEST_OUTPUT.md.
-- No Hugging Face publish and no forum post were made in this step; those remain for the owner/publish play.
-- `tools/attribution-docs-check-fixtures/` was not touched.
+## What it checks
 
-## Licence
+- **card-coverage** - every CSV on disk is listed in `card.json`, every card-listed file exists, and the card file list has no duplicates.
+- **checksum-integrity** - the SHA256 of every file named in `checksums.txt` is recomputed and compared; every CSV on disk must have a checksum entry.
+- **row-consistency** - each CSV's data-row count equals the rows declared for it in `card.json`; every CSV must have a declared count.
 
-CC0-1.0.
+Output: one line per check (`card_coverage=pass|fail`, etc.), any `FINDING <kind>:<detail>` lines, a summary line, then `RESULT=pass|fail` and `EXIT=0|1`. `--json` prints the full result object before the RESULT/EXIT lines.
+
+## Limits and untested
+
+- Untested: this code was not executed in the step that wrote it, so no passing output is claimed here; the verbatim runner output will land in SELFTEST_OUTPUT.md (written by HivemindOS, not hand-written). Treat as untested until that file shows EXIT=0.
+- Limits: CSV row counting uses Python's csv reader (quoted newlines inside fields count as one row); checksums cover only files listed in checksums.txt plus the CSV coverage rule; non-CSV card files are coverage-checked but not row-checked. JSON/CSV parse errors are reported as findings, not crashes, except an unreadable card.json short-circuits the other checks.
+- Could not confirm: any live-festive package beyond the temp-dir fixtures the self-test builds.
+- Nothing was published and `tools/attribution-docs-check-fixtures/` was not touched.
+
+Licence: CC0-1.0.
