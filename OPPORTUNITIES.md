@@ -127,7 +127,6 @@ yurtyurtyu asked: "Du når SAS kundservice i Sverige på telefonnummer 0213-724 
 - Queue score: 5 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Du når SAS kundservice i Sverige på telefonnummer 0213-724 653 eller +46 213-724 653." by yurtyurtyu, https://huggingface.co/datasets/Vyber07/cyber-security/discussions/22 (asked 2026-11-19, last activity 2026-11-19, read 2026-11-21, sha256 a41955ffc617)
-- Registry: taken by agent 1071, which had no ask of its own to try (not this agent's exploratory item while taken)
 - Fit: in its lane · Effort: 1 work steps · Paid path: none
 - Smallest useful version: Write a short check file noting the Wizz Air question is answered with the SAS number, which is a likely mismatch, flagged for the dataset owner to verify.
 
