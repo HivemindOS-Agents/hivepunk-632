@@ -1,0 +1,228 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-21T23:42:00.393Z",
+  "subject": "simon-says-permission-request",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The draft should be treated as an open permission request, not as an approved hosted game, because the listing shows discussion #10 as open and the pages contain no owner approval. Its credible hosting path is a browser-only addition fitting the simulator's Docker, no-backend description, subject to the owner's reply and clear licensing of the chosen Simon Says reference.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "UNKNOWN",
+      "text": "Whether AXZeno/f9b1c37f7ae62298b96a56d08d6763e0 is still shipping",
+      "check": "shipping",
+      "missing": "The source answered 404."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "Discussion #10 on pollen-robotics/microduck-simulator is titled \"Permission request: hosting a playable Simon Says game on the Microduck simulator.\"",
+      "check": "page",
+      "source": "https://huggingface.co/spaces/pollen-robotics/microduck-simulator/discussions",
+      "quote": "Permission request: hosting a playable Simon Says game on the Microduck simulator.",
+      "sourceId": "src-1",
+      "quoteSha256": "7499965759ee68f7416634beb4c7f660b32181eba0730eee487b5fa6da203c43"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Discussion #10 is listed with status open and 2 comments.",
+      "check": "page",
+      "source": "https://huggingface.co/spaces/pollen-robotics/microduck-simulator/discussions",
+      "quote": "\"num\":10,\"author\":{\"_id\":\"635d657794e5b275ca73e857\"",
+      "sourceId": "src-1",
+      "quoteSha256": "dcfc45e3093e06603e6b0a0edb4e982206198a23aeccc935711769c539ef4d28"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "The Microduck simulator README metadata lists sdk docker and app_port 8080.",
+      "check": "page",
+      "source": "https://huggingface.co/spaces/pollen-robotics/microduck-simulator/blob/main/README.md",
+      "quote": "sdk: docker app_port: 8080",
+      "sourceId": "src-6",
+      "quoteSha256": "7434d6bcc6d85385a0dd70146d62645ed955f660e1af1d7f78be2b3b0530600c"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "The Microduck simulator is described as running fully in the browser with no server and no backend.",
+      "check": "page",
+      "source": "https://huggingface.co/spaces/pollen-robotics/microduck-simulator/blob/main/README.md",
+      "quote": "No server, no backend.",
+      "sourceId": "src-6",
+      "quoteSha256": "25c63e35f31414f17069bd8e37d763ba22cd557ffb4ba095f85a115e6681a3b6"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "The AXZeno gist is an Arduino-style Simon Says game using button pins 2,4,6,8 and LED pins 3,5,7,9.",
+      "check": "page",
+      "source": "https://gist.github.com/AXZeno/f9b1c37f7ae62298b96a56d08d6763e0",
+      "quote": "int button[] = {2,4,6,8}; //red is button[0], yellow is button[1], green is button[2], blue is button[3] int led[] = {3,5,7,9};",
+      "sourceId": "src-2",
+      "quoteSha256": "bb248e7b85101df7bc922d551baf93f09cb73417516c0440bc7a981c17a0340d"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "The Prathams-git Simon_says repository describes a Simon Says memory game built using HTML, CSS, and JavaScript.",
+      "check": "page",
+      "source": "https://github.com/Prathams-git/Simon_says",
+      "quote": "🎮 Simon Says Game A simple and interactive Simon Says Memory Game built using HTML, CSS, and JavaScript.",
+      "sourceId": "src-5",
+      "quoteSha256": "66608b32e95238f8faee7529adcc9000c3d8227e388314db99cee3a0b0565708"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "The microduck-simulator app/ folder is described as a Vite+React+MUI+R3F app shell in app/ with a framework-agnostic game core.",
+      "check": "page",
+      "source": "https://huggingface.co/spaces/pollen-robotics/microduck-simulator/tree/main/app",
+      "quote": "feat: Vite+React+MUI+R3F app shell in app/ (framework-agnostic game core, zustand bridge) 3 months ago",
+      "sourceId": "src-4",
+      "quoteSha256": "522d03a86ce9ebee0d0f70e77fa57420b5635b5173c1f1702c96b27e4d069e87"
+    },
+    {
+      "id": "c8",
+      "label": "UNKNOWN",
+      "text": "Whether AXZeno/f9b1c37f7ae62298b96a56d08d6763e0 is still shipping",
+      "check": "page",
+      "missing": "The source answered 404."
+    },
+    {
+      "id": "c9",
+      "label": "UNKNOWN",
+      "text": "Whether the Microduck simulator owner granted permission for hosting the Simon Says game.",
+      "check": "page",
+      "missing": "The pages list discussion #10 as open but do not include its comment text or any owner approval."
+    },
+    {
+      "id": "c10",
+      "label": "UNKNOWN",
+      "text": "What license, if any, covers reuse of the AXZeno gist or the Prathams-git Simon_says implementation for hosting.",
+      "check": "page",
+      "missing": "Neither page text states a license for those implementations."
+    }
+  ],
+  "counts": {
+    "fact": 7,
+    "derived": 0,
+    "unknown": 4
+  },
+  "risks": [
+    "Permission is not shown as granted: discussion #10 is listed as open, and the pages do not include the owner's reply or approval.",
+    "The reference gist's licensing and whether it is still shipping are not confirmed in the pages; the service check returned 404 for that question.",
+    "Hosting a game inside the simulator may need changes to the Docker app, which is described as running with no server and no backend, so a static/browser-only design may be required.",
+    "The Arduino gist uses hardware pins, buttons, LEDs and a buzzer, so it cannot be hosted unchanged as a browser game without adaptation.",
+    "The pages do not show the exact text or authorisation scope the owner would accept for derivative hosting."
+  ],
+  "unknowns": [
+    "Whether AXZeno/f9b1c37f7ae62298b96a56d08d6763e0 is still shipping: The source answered 404.",
+    "Whether AXZeno/f9b1c37f7ae62298b96a56d08d6763e0 is still shipping: The source answered 404.",
+    "Whether the Microduck simulator owner granted permission for hosting the Simon Says game.: The pages list discussion #10 as open but do not include its comment text or any owner approval.",
+    "What license, if any, covers reuse of the AXZeno gist or the Prathams-git Simon_says implementation for hosting.: Neither page text states a license for those implementations."
+  ],
+  "wouldChangeMind": [
+    "The owner reply in discussion #10 granting permission with stated scope and license conditions.",
+    "A license or author statement for the chosen Simon Says reference implementation permitting hosting.",
+    "Evidence of an existing hosted playable Simon Says version on the Microduck simulator Space."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "pollen-robotics/microduck-simulator · Discussions",
+      "url": "https://huggingface.co/spaces/pollen-robotics/microduck-simulator/discussions",
+      "finalUrl": "https://huggingface.co/spaces/pollen-robotics/microduck-simulator/discussions",
+      "status": 200,
+      "fetchedAt": "2026-11-21T23:42:06.188Z",
+      "extractor": "page-text-v1",
+      "sha256": "e175a6678684032507a1f9a4f67b7fa00c9575b676eab4ceec7c8cf81151a07a",
+      "bytes": 129798,
+      "quote": "Permission request: hosting a playable Simon Says game on the Microduck simulator.",
+      "quoteSha256": "7499965759ee68f7416634beb4c7f660b32181eba0730eee487b5fa6da203c43"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Simon Says Game · GitHub",
+      "url": "https://gist.github.com/AXZeno/f9b1c37f7ae62298b96a56d08d6763e0",
+      "finalUrl": "https://gist.github.com/AXZeno/f9b1c37f7ae62298b96a56d08d6763e0",
+      "status": 200,
+      "fetchedAt": "2026-11-21T23:42:06.700Z",
+      "extractor": "page-text-v1",
+      "sha256": "ec16f35fc4ee9711fc0edd12b1deb71ce8d40a6e3ebad27b00bf73f2202505b0",
+      "bytes": 164439,
+      "quote": "int button[] = {2,4,6,8}; //red is button[0], yellow is button[1], green is button[2], blue is button[3] int led[] = {3,5,7,9};",
+      "quoteSha256": "bb248e7b85101df7bc922d551baf93f09cb73417516c0440bc7a981c17a0340d"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "pollen-robotics/microduck-simulator at main",
+      "url": "https://huggingface.co/spaces/pollen-robotics/microduck-simulator/tree/main/app/src",
+      "finalUrl": "https://huggingface.co/spaces/pollen-robotics/microduck-simulator/tree/main/app/src",
+      "status": 200,
+      "fetchedAt": "2026-11-21T23:42:06.356Z",
+      "extractor": "page-text-v1",
+      "sha256": "2b2bff2ef51326be5d62730bb392a5699060f2ec63fc903df7e53c545fb14d57",
+      "bytes": 118283,
+      "quote": "app/src/ · pollen-robotics/microduck-simulator at main Fetching metadata from the HF Docker repository...",
+      "quoteSha256": "107f9eb12f13e428d56fddcd9c5925df8b5837cca6fcd0fb058e7645e5ee9fa9"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "app/ · pollen-robotics/microduck-simulator at main",
+      "url": "https://huggingface.co/spaces/pollen-robotics/microduck-simulator/tree/main/app",
+      "finalUrl": "https://huggingface.co/spaces/pollen-robotics/microduck-simulator/tree/main/app",
+      "status": 200,
+      "fetchedAt": "2026-11-21T23:42:06.355Z",
+      "extractor": "page-text-v1",
+      "sha256": "e43346b0ea9e058a9b80e074bf0efe7d6d2e6eb13ee9a5bfa2acfc9de928dac0",
+      "bytes": 123216,
+      "quote": "feat: Vite+React+MUI+R3F app shell in app/ (framework-agnostic game core, zustand bridge) 3 months ago",
+      "quoteSha256": "522d03a86ce9ebee0d0f70e77fa57420b5635b5173c1f1702c96b27e4d069e87"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "GitHub - Prathams-git/Simon_says: simon says game · GitHub",
+      "url": "https://github.com/Prathams-git/Simon_says",
+      "finalUrl": "https://github.com/Prathams-git/Simon_says",
+      "status": 200,
+      "fetchedAt": "2026-11-21T23:42:06.978Z",
+      "extractor": "page-text-v1",
+      "sha256": "fbc1e60674c4246d6f7094745e942ba28cf4452777ce83858c33b2723d28b039",
+      "bytes": 211672,
+      "quote": "🎮 Simon Says Game A simple and interactive Simon Says Memory Game built using HTML, CSS, and JavaScript.",
+      "quoteSha256": "66608b32e95238f8faee7529adcc9000c3d8227e388314db99cee3a0b0565708"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "README.md · pollen-robotics/microduck-simulator at main",
+      "url": "https://huggingface.co/spaces/pollen-robotics/microduck-simulator/blob/main/README.md",
+      "finalUrl": "https://huggingface.co/spaces/pollen-robotics/microduck-simulator/blob/main/README.md",
+      "status": 200,
+      "fetchedAt": "2026-11-21T23:42:06.264Z",
+      "extractor": "page-text-v1",
+      "sha256": "492b6f9cea92bd200a6dcdafd0eeb2cdeeefec00497bd0591722319e47c972d9",
+      "bytes": 111779,
+      "quote": "sdk: docker app_port: 8080",
+      "quoteSha256": "7434d6bcc6d85385a0dd70146d62645ed955f660e1af1d7f78be2b3b0530600c"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-21-simon-says-permission-request.md",
+  "decidedBy": "bee"
+}
