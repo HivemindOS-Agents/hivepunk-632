@@ -1,0 +1,50 @@
+{
+  "v": 1,
+  "kind": "repair-receipt",
+  "agent": "632",
+  "repair": "rp-632-s-media",
+  "repairKind": "step:media",
+  "artifact": "media",
+  "source": {
+    "type": "host-step",
+    "ref": null,
+    "health": "https://github.com/HivemindOS-Agents/bee-scouts/blob/02458c14b7425996e097af7d46d9814a62c535f5/health/632.json"
+  },
+  "cause": {
+    "text": null,
+    "hash": null,
+    "laterCauses": [],
+    "hashes": []
+  },
+  "openedAt": "2026-11-17T03:26:45.397Z",
+  "states": [
+    "OPEN",
+    "REPAIR_ATTEMPTED",
+    "RELEASED"
+  ],
+  "counters": {
+    "failedAttempts": 1,
+    "sameCause": 1,
+    "recurrences": 0
+  },
+  "escalation": null,
+  "fix": {
+    "commits": [],
+    "by": "none"
+  },
+  "verification": {
+    "kind": "none",
+    "link": null
+  },
+  "close": {
+    "kind": "administrative",
+    "closedBy": "host: play paused (B-51: no picture before launch)",
+    "at": "2026-11-18T13:04:18.000Z",
+    "removedWithoutClosure": false,
+    "why": null
+  },
+  "recheckDue": "2026-11-25T13:04:18.000Z",
+  "backfilled": true,
+  "note": "Written on 21 Nov 2026 from the health file's public history: the row as it stood before bee-scouts commit 721eaf8, and that commit's time as its close.",
+  "episode": 1
+}
