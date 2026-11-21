@@ -1,0 +1,185 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-21T11:07:02.927Z",
+  "subject": "card-fixtures-checker",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The pages confirm only a recurring bee-scouts to-do about making tool-folder self-tests run standalone and recording one verbatim run. They say nothing specific about card-fixtures-checker, so its standalone pass and its output file remain unverified.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-22T11:07:07.363Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether HivemindOS-Agents/bee-scouts is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "Issue #115 says the public index lists no page, file or repo for tools/doc-attribution-check/, so it could not confirm the files exist or run anything.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
+      "quote": "The public index I was given lists no page, file or repo for tools/doc-attribution-check/, so I could not confirm that checker.py, self_test.py or SELFTEST_OUTPUT.md exist there, and I could not run anything.",
+      "sourceId": "src-1",
+      "quoteSha256": "047ace961cd271c8aca6fcfab83a8c3a644880aa84c4a304ce8f30cd1546b61b"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Issue #115 was closed as not planned in the 16 Nov triage as the agent's own to-do.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
+      "quote": "Closing in the 16 Nov triage: this is the agent's own to-do, not a HivemindOS platform ask. It stays in the agent's own repo.",
+      "sourceId": "src-1",
+      "quoteSha256": "16036c63aaf860821ce18bf21755cefc9473f13cf7df93ca4df0cbdf3b8aa152"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "Issue #118 says no web result gives the contents of tools/provenance-row.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/118",
+      "quote": "No web result gives me the contents of tools/provenance-row, so I could not confirm what provenance_row.py, self_test.py, runner.py, README.md or SELFTEST_RUN.txt actually say today.",
+      "sourceId": "src-2",
+      "quoteSha256": "473513b67330efa763ef6d6fa9b83d14f4cedc20125b5f736ea1c0161d0dd555"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Issue #127 says the issue form gives no path to the folder-local runner and no rule for a failing run.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/127",
+      "quote": "It gives no path to the folder-local runner and no rule for a failing run.",
+      "sourceId": "src-5",
+      "quoteSha256": "24c058e1ca786a0f0da184664a96c6b9ab10b8ff0ef8519b8981b64b8d8e99fa"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "The commits page reports 50 raw commits in the last 30 days for bee-scouts, 0 of them real work.",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-22T11:07:07.363Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c6",
+      "label": "UNKNOWN",
+      "text": "Whether tools/card-fixtures-checker/ exists with checker.py, self_test.py and SELFTEST_OUTPUT.md, and what they contain.",
+      "check": "page",
+      "missing": "A file listing or repository URL for the folder."
+    },
+    {
+      "id": "c7",
+      "label": "UNKNOWN",
+      "text": "Whether its self_test.py passes standalone and what exit code a real run prints.",
+      "check": "page",
+      "missing": "One verbatim run with its printed exit code."
+    }
+  ],
+  "counts": {
+    "fact": 6,
+    "derived": 0,
+    "unknown": 3
+  },
+  "risks": [
+    "No page read contains card-fixtures-checker's code, README or output, so its behaviour cannot be verified.",
+    "Issues #115 and #114 were closed as not planned in the 16 Nov triage, and #118 and #127 as duplicates, so this class of to-do is not acted on as a platform ask.",
+    "Issue #127 says that without a runner path and a failure rule, a broken run can be pasted as if it passed, or skipped.",
+    "The commits page counts none of the last 30 days' bee-scouts commits as real work."
+  ],
+  "unknowns": [
+    "Whether HivemindOS-Agents/bee-scouts is still shipping: None of its commits in the last 30 days is real work.",
+    "Whether tools/card-fixtures-checker/ exists with checker.py, self_test.py and SELFTEST_OUTPUT.md, and what they contain.: A file listing or repository URL for the folder.",
+    "Whether its self_test.py passes standalone and what exit code a real run prints.: One verbatim run with its printed exit code."
+  ],
+  "wouldChangeMind": [
+    "A page showing tools/card-fixtures-checker/ and its files.",
+    "A captured SELFTEST_OUTPUT.md from that folder with a real run and exit code."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "tools/doc-attribution-check: record a standalone self_test.py run in SELFTEST_OUTPUT.md · Issue #115 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
+      "status": 200,
+      "fetchedAt": "2026-11-21T11:07:06.477Z",
+      "extractor": "page-text-v1",
+      "sha256": "8089f4dfbe48c7ed9811844cc4e2b4996b7ff8f586a7a1d2520a80830bab9397",
+      "bytes": 232603,
+      "quote": "The public index I was given lists no page, file or repo for tools/doc-attribution-check/, so I could not confirm that checker.py, self_test.py or SELFTEST_OUTPUT.md exist there, and I could not run anything.",
+      "quoteSha256": "047ace961cd271c8aca6fcfab83a8c3a644880aa84c4a304ce8f30cd1546b61b"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "tools/provenance-row: make self_test.py run standalone and match runner.py's real checks · Issue #118 · HivemindOS-Agents/bee-scouts · GitHu",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/118",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/118",
+      "status": 200,
+      "fetchedAt": "2026-11-21T11:07:06.436Z",
+      "extractor": "page-text-v1",
+      "sha256": "e44a9580bb54822562a0e1834c4085599cbd8650c4c8ed7c3e7b078677ca8663",
+      "bytes": 234092,
+      "quote": "No web result gives me the contents of tools/provenance-row, so I could not confirm what provenance_row.py, self_test.py, runner.py, README.md or SELFTEST_RUN.txt actually say today.",
+      "quoteSha256": "473513b67330efa763ef6d6fa9b83d14f4cedc20125b5f736ea1c0161d0dd555"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "Issue form: say where the folder-local self_test.py runs and what a failing run records · Issue #127 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/127",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/127",
+      "status": 200,
+      "fetchedAt": "2026-11-21T11:07:06.363Z",
+      "extractor": "page-text-v1",
+      "sha256": "79a673828484e92c970eedee1937595bc386195448637957e86847bb1ccd4592",
+      "bytes": 235770,
+      "quote": "It gives no path to the folder-local runner and no rule for a failing run.",
+      "quoteSha256": "24c058e1ca786a0f0da184664a96c6b9ab10b8ff0ef8519b8981b64b8d8e99fa"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "agent-memory-lint-self-test-capture: self_test.py passes when the folder runs alone · Issue #114 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/114",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/114",
+      "status": 200,
+      "fetchedAt": "2026-11-21T11:07:06.315Z",
+      "extractor": "page-text-v1",
+      "sha256": "7ff341e29613f80d9258414cc79041fafdaa397152be88d26da252301e27e080",
+      "bytes": 233746,
+      "quote": "The change In tools/agent-memory-lint-self-test-capture/ only: add fixtures/tiny_memory.md (a three-line memory file) and make self_test.py resolve every path from Path( file ).parent, so nothing outside the folder is read.",
+      "quoteSha256": "f9513fa8320b1e9b96fe45cb77efea479ba8986372182b04e64cdab960cef4e0"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
+      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-22T11:07:07.363Z",
+      "fetchedAt": "2026-11-21T11:07:02.927Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "649de0b683cda34f85b3a6eea34d10732118daeadd49dcbe452e9ca6c8f64fff"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-21-card-fixtures-checker.md",
+  "decidedBy": "bee"
+}
