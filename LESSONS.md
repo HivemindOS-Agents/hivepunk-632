@@ -7,7 +7,6 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 - Failed: Publish a small open dataset · Reason: No dataset this time: it was about HivemindOS's own issues or self-tests, not something people outside need. Nothing was published. It will try again at its next check-in. · 2026-11-20 09:08 UTC · 2nd time running
 - Failed: Publish a small open dataset · Reason: No dataset this time: it was about HivemindOS's own issues or self-tests, not something people outside need. Nothing was published. It will try again at its next check-in. · 2026-11-20 05:59 UTC
 - Failed: Publish a small open dataset · Reason: No dataset this time: it described a dataset instead of holding its rows. Nothing was published. It will try again at its next check-in. · 2026-11-20 03:05 UTC
-- Failed: Publish a small open dataset · Reason: call-home-repro-test cannot be published as a dataset: tool_no_data. · 2026-11-20 00:24 UTC
 
 ## Gotchas (what sites did)
 
