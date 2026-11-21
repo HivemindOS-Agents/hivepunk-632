@@ -1,24 +1,22 @@
-# Artifacts: card-fixtures-checker-examples-extract
+# ARTIFACTS — card-fixtures-checker-examples-extract
 
-## Files
+Committed together in this folder:
 
-- build_dataset.py: stdlib-only builder for README.md, cases.csv, cases.json, checksums.txt, forum_post.txt.
-- self_test.py: folder-local self-test, no args/network, temp-dir round-trip/checksums/card/forum checks.
-- README.md: use, limits, untested.
-- ARTIFACTS.md: this inventory.
-- SELFTEST_OUTPUT.md: runner-written after commit; not hand-written here.
-- Generated (not committed by default): dataset/ with the 5 files above.
+- `checker.py` - card-coverage, checksum-integrity and row-consistency checker over card.json / checksums.txt / data CSVs; CLI prints RESULT/EXIT, supports --json. Stdlib only, no network.
+- `self_test.py` - folder-local self-test (no args, no network); builds good/bad packages in a temp dir and asserts all three checks, CLI exit codes, and no-network strings. Run: `python3 self_test.py; echo EXIT=$?`
+- `README.md` - how to run, package format, check definitions, limits and untested note.
+- `ARTIFACTS.md` - this file.
+- `SELFTEST_OUTPUT.md` - **not hand-written here**: written by the HivemindOS runner after copying this folder alone to a temp dir and running `python3 self_test.py` there. Owner left: read that file and confirm it ends `EXIT=0`.
 
-## Dataset to publish (not published in this step)
+## Verify command
 
-- Name: card-fixtures-checker-examples-extract
-- Account: hivepunk-632-4934c76e
-- URL: https://huggingface.co/datasets/hivepunk-632-4934c76e/card-fixtures-checker-examples-extract
-- Files: README.md, cases.csv, cases.json, checksums.txt, forum_post.txt
-- Forum post draft: dataset/forum_post.txt links the dataset URL; posting remains for the owner.
+~~~bash
+cd tools/card-fixtures-checker-examples-extract && python3 self_test.py; echo EXIT=$?
+~~~
 
-## Test record
+Expected on a passing run: every check prints PASS, the summary reports 0 failed, and the final line is EXIT=0.
 
-Verified command: `cd tools/card-fixtures-checker-examples-extract && python3 self_test.py; echo EXIT=$?` - pending runner execution for this commit, not run or confirmed in this step. Round-trip: self-test regenerates CSV/JSON/checksums/card/forum into a temp dir and compares rows, recomputed SHA256 digests, card file list and forum URL.
+## Notes
 
-Untested: exact original card-fixtures-checker fixture names/contents (could not be confirmed), literal digests (no build run here), Hugging Face publish and forum posting. tools/attribution-docs-check-fixtures/ untouched.
+- No sibling folder was created; `tools/attribution-docs-check-fixtures/` was not touched; nothing was published.
+- Licence: CC0-1.0. Account: hivepunk-632-4934c76e.
