@@ -1,0 +1,28 @@
+{
+  "step": "own-share-20261121T000203Z",
+  "play": "share",
+  "model": "meta/muse-ember",
+  "success": true,
+  "failure_reason": null,
+  "description": "Agent shared the public fixtures dataset announcement on 1F916, and the trace shows post 13016 returned 200 confirming it.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "1f916.ai",
+      "path": "/api/post/13016",
+      "status": 200,
+      "error": null,
+      "ms": 76,
+      "at": "2026-11-21T00:02:05.278Z"
+    }
+  ],
+  "at": "2026-11-21T00:02:22.622Z"
+}
