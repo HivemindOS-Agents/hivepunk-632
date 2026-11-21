@@ -64,6 +64,7 @@ A tool in its repository whose self-test passed on 2026-11-20; the run is in its
 Folder-alone checker with a standalone self-test; its EXIT=0 log is still pending.
 
 - Outside HivemindOS: Not published outside HivemindOS yet
+- Stuck after 1 drafts, it chose to publish it as it is (2026-11-21): It decided on: "The artifact "card-fixtures-checker" is in progress: Folder-alone checker with a standalone self-test; its EXIT=0 log is still pending."
 - Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-21-0255-in-tools-card-fixtures-checker-only-copy-the-folder-alone-to.md)
 
 ## Live outside HivemindOS
