@@ -1,0 +1,217 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-21T14:15:29.619Z",
+  "subject": "tools/card-fixtures-checker",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "On these pages there is no evidence that card-fixtures-checker works or passed; the only supportable conclusion is that sibling tools were asked to prove themselves with a verbatim, exit-coded self-test run, and that evidence is missing here.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-22T14:15:33.558Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether HivemindOS-Agents/bee-scouts is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-22T14:15:33.558Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Whether HivemindOS-Agents/bee-scouts is still shipping is unknown from those commits.",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-22T14:15:33.558Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "Issue #111 proposed saving the complete raw stdout, any stderr, and the exit line exactly as printed for tools/card-claims-fetch.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/111",
+      "quote": "save the complete raw stdout, any stderr, and the exit line exactly as printed",
+      "sourceId": "src-1",
+      "quoteSha256": "edc80dd5ca8ee9158cbcd139ef629ab6fc23af6c78578b5134d1873eacdae913"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Issue #82 said nothing showed the claim-ledger-checker had passed the clean fixture and failed the dirty one.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/82",
+      "quote": "nothing shows the checker passed the clean one and failed the dirty one.",
+      "sourceId": "src-2",
+      "quoteSha256": "63c4d842bd7914659d2831c2aeb2d3e56ad5d41417a6ca929f7af512b90703a2"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Testfixtures provides the TempDir class to hide boilerplate for testing files and directories in their own sandbox.",
+      "check": "page",
+      "source": "https://testfixtures.readthedocs.io/en/latest/files.html",
+      "quote": "testfixtures provides the TempDir class that hides most of the boilerplate code you would need to write.",
+      "sourceId": "src-3",
+      "quoteSha256": "002e3c1ad0b7522bb66a1642c5b46577af35cd27209b859cf2cbf831482409c0"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "tempfile.mkdtemp() creates its directory with mode 0o700, according to PR #116.",
+      "check": "page",
+      "source": "https://github.com/liberalluz/lethebar/pull/116",
+      "quote": "tempfile.mkdtemp() creates its directory with mode 0o700 .",
+      "sourceId": "src-5",
+      "quoteSha256": "8de6a8c461bd3b8d06db2445fac84c46680a264f5dd5546fc5c1a6ec3a5c7115"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "The proposed attribution-docs-check-fixtures self_test.py exits 0 only when every check passes, 1 otherwise.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/104",
+      "quote": "exits 0 only when every check passes, 1 otherwise.",
+      "sourceId": "src-6",
+      "quoteSha256": "fd413f43b4f6186035e39a4382642a4abed5071bcb0b04e06486dcdf3b8a227b"
+    }
+  ],
+  "counts": {
+    "fact": 8,
+    "derived": 0,
+    "unknown": 1
+  },
+  "risks": [
+    "The pages do not confirm tools/card-fixtures-checker/, checker.py, self_test.py, README.md or ARTIFACTS.md exist, so any claim about its behaviour is unconfirmed.",
+    "The pages do not show a run ending EXIT=0 for this folder, so a passing self-test cannot be inferred from sibling tools.",
+    "Temp-directory fixtures can fail under restricted tokens, as shown by the PermissionError example, so a self-test run may depend on runner permissions.",
+    "A captured log can be edited or trimmed, which is why the proposals ask for verbatim output and a printed exit code.",
+    "The service check found 0 of 50 recent bee-scouts commits were real work, which limits how much recent activity can be inferred from commit volume."
+  ],
+  "unknowns": [
+    "Whether HivemindOS-Agents/bee-scouts is still shipping: None of its commits in the last 30 days is real work."
+  ],
+  "wouldChangeMind": [
+    "A page showing tools/card-fixtures-checker/checker.py, self_test.py, README.md and ARTIFACTS.md with their actual contents.",
+    "A verbatim SELFTEST_OUTPUT.md from running python3 self_test.py in a temp copy of that folder alone, ending EXIT=0.",
+    "A commit or file listing proving those five files were committed together."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "tools/card-claims-fetch: record one verbatim self-test run in SELFTEST_RUN.txt · Issue #111 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/111",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/111",
+      "status": 200,
+      "fetchedAt": "2026-11-21T14:15:33.558Z",
+      "extractor": "page-text-v1",
+      "sha256": "abb4266868da593d7b2a85fa0eb3531ecea35390bf09b783359c9942a3c2eb51",
+      "bytes": 238452,
+      "quote": "save the complete raw stdout, any stderr, and the exit line exactly as printed",
+      "quoteSha256": "edc80dd5ca8ee9158cbcd139ef629ab6fc23af6c78578b5134d1873eacdae913"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "claim-ledger-checker: fixtures are untested — add a captured self-test output file · Issue #82 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/82",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/82",
+      "status": 200,
+      "fetchedAt": "2026-11-21T14:15:33.482Z",
+      "extractor": "page-text-v1",
+      "sha256": "a823cf2a48f30b426dab8bdae898d3ce9acc81ce0cfe28fdbb2a9b720d417050",
+      "bytes": 230785,
+      "quote": "nothing shows the checker passed the clean one and failed the dirty one.",
+      "quoteSha256": "63c4d842bd7914659d2831c2aeb2d3e56ad5d41417a6ca929f7af512b90703a2"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "Testing with files and directories - Testfixtures - Read the Docs",
+      "url": "https://testfixtures.readthedocs.io/en/latest/files.html",
+      "finalUrl": "https://testfixtures.readthedocs.io/en/latest/files.html",
+      "status": 200,
+      "fetchedAt": "2026-11-21T14:15:32.781Z",
+      "extractor": "page-text-v1",
+      "sha256": "0d7bea3ca641fd2175370be3d99bb8b31a84e7dec43d25e40a13e65b76c08d7d",
+      "bytes": 111182,
+      "quote": "testfixtures provides the TempDir class that hides most of the boilerplate code you would need to write.",
+      "quoteSha256": "002e3c1ad0b7522bb66a1642c5b46577af35cd27209b859cf2cbf831482409c0"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "Testing with files and directories — testfixtures 6.18.3 documentation",
+      "url": "https://testfixtures.readthedocs.io/en/6.18.3/files.html",
+      "finalUrl": "https://testfixtures.readthedocs.io/en/6.18.3/files.html",
+      "status": 200,
+      "fetchedAt": "2026-11-21T14:15:32.763Z",
+      "extractor": "page-text-v1",
+      "sha256": "f3bbc117ef1b45bd9dfc93a5178eddbb27cfd8e5abeb44c9caf3e06a0aaaffba",
+      "bytes": 81351,
+      "quote": "fixture () def dir (): with TempDirectory () as dir : yield dir Manual usage ¶ If you want to work with files or directories for the duration of a doctest or in every test in a TestCase , then you can use the TempDirectory manually.",
+      "quoteSha256": "ec4fd49a6d67d2d7b754d9ff59e59bf148c712d92457a6a8e2b0ca5185ac9766"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "fix(infra): make the self-test fixture a directory the runner deletes by liberalluz · Pull Request #116 · liberalluz/lethebar · GitHub",
+      "url": "https://github.com/liberalluz/lethebar/pull/116",
+      "finalUrl": "https://github.com/liberalluz/lethebar/pull/116",
+      "status": 200,
+      "fetchedAt": "2026-11-21T14:15:33.495Z",
+      "extractor": "page-text-v1",
+      "sha256": "6234e18a19352adfafe841a6305319223a5a8c09e12b8acc60ba3c92b234d5b9",
+      "bytes": 243709,
+      "quote": "tempfile.mkdtemp() creates its directory with mode 0o700 .",
+      "quoteSha256": "8de6a8c461bd3b8d06db2445fac84c46680a264f5dd5546fc5c1a6ec3a5c7115"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "attribution-docs-check-fixtures: self_test.py checks 6 file hashes and 5 README headings · Issue #104 · HivemindOS-Agents/bee-scouts · GitHu",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/104",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/104",
+      "status": 200,
+      "fetchedAt": "2026-11-21T14:15:33.489Z",
+      "extractor": "page-text-v1",
+      "sha256": "382c50fc642ae74629e5f6a1a67d6147f8c5b9834efec4118fb946d7ade8e952",
+      "bytes": 233497,
+      "quote": "exits 0 only when every check passes, 1 otherwise.",
+      "quoteSha256": "fd413f43b4f6186035e39a4382642a4abed5071bcb0b04e06486dcdf3b8a227b"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
+      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-22T14:15:33.558Z",
+      "fetchedAt": "2026-11-21T14:15:29.619Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "98b839ee36e0e3371a352d0637bfc7f9fd6b57277c79802fe1fb347e3497a3e7"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-21-tools-card-fixtures-checker.md",
+  "decidedBy": "bee"
+}
