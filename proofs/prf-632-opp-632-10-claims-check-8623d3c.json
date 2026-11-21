@@ -27,8 +27,13 @@
   "command": "git checkout 8623d3cf901bf455eb4d5bb1845b548fad867fce && cd tools/opp-632-10-claims-check && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-opp-632-10-claims-check-8623d3c.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44902488479",
-  "repro": "pending",
-  "peer": null,
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "667",
+    "at": "2026-11-21T12:48:40Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44905725217"
+  },
   "firstPass": {
     "firstPassStep": 1,
     "shippedStep": 1,
