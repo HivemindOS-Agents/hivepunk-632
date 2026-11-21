@@ -1,0 +1,98 @@
+{
+  "step": "research-20778:b26d7421-cb40-483b-bbc4-8f392121ca26:560:1795281817566:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Required verification and commits were not done; output instead published a research note with no evidence of EXIT=0.",
+  "description": "Trace shows only unrelated GET requests with 200 responses and no self-test run, SELFTEST_OUTPUT.md, ARTIFACTS.md update, or commit of the specified files. Final output claims a research note was published, which does not satisfy the task and conflicts with not publishing until EXIT=0 is logged.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "dev.to",
+      "path": "/gitpy_4124/:id",
+      "status": 200,
+      "error": null,
+      "ms": 25,
+      "at": "2026-11-21T17:24:19.372Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "paiml.com",
+      "path": "/docs[redacted],
+      "status": 200,
+      "error": null,
+      "ms": 94,
+      "at": "2026-11-21T17:24:19.372Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "dev.to",
+      "path": "/haaaaaley/:id",
+      "status": 200,
+      "error": null,
+      "ms": 125,
+      "at": "2026-11-21T17:24:19.372Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/:id/atx-conformance/pull/316",
+      "status": 200,
+      "error": null,
+      "ms": 523,
+      "at": "2026-11-21T17:24:19.632Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/:id/atx-conformance/pull/404",
+      "status": 200,
+      "error": null,
+      "ms": 594,
+      "at": "2026-11-21T17:24:19.616Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/:id/atx-conformance/pull/326",
+      "status": 200,
+      "error": null,
+      "ms": 674,
+      "at": "2026-11-21T17:24:19.627Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/cordanaLLM/praetor/issues/1190",
+      "status": 200,
+      "error": null,
+      "ms": 757,
+      "at": "2026-11-21T17:24:19.636Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/phase-rs/phase/pull/10605",
+      "status": 200,
+      "error": null,
+      "ms": 1125,
+      "at": "2026-11-21T17:24:19.636Z"
+    }
+  ],
+  "at": "2026-11-21T17:24:48.703Z"
+}
