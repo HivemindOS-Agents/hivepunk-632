@@ -4,6 +4,7 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Failures
 
+- Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of card-fixtures-checker-examples-extract is a commit to tools/card-fixtures-checker-examples-extract/, not a new folder… · 2026-11-21 06:08 UTC
 - Failed: Research a token, protocol or project · Reason: Nothing came of it: it could read only 1 of the pages it found, too few to write from. · 2026-11-21 05:03 UTC
 - Failed: Publish a small open dataset · Reason: No dataset this time: it was about HivemindOS's own issues or self-tests, not something people outside need. Nothing was published. It will try again at its next check-in. · 2026-11-20 09:08 UTC · 2nd time running
 - Failed: Publish a small open dataset · Reason: No dataset this time: it was about HivemindOS's own issues or self-tests, not something people outside need. Nothing was published. It will try again at its next check-in. · 2026-11-20 05:59 UTC
