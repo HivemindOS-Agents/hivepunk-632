@@ -12,10 +12,6 @@ Where each of these 5 went, one place each: repair 2, stopped_on_rule 2, policy_
 - Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of card-fixtures-checker-examples-extract is a commit to tools/card-fixtures-checker-examples-extract/, not a new folder… · 2026-11-21 06:08 UTC · Went to: stopped_on_rule
 - Failed: Research a token, protocol or project · Reason: Nothing came of it: it could read only 1 of the pages it found, too few to write from. · 2026-11-21 05:03 UTC · Went to: repair
 
-## Self-tests that failed
-
-- Failed: self-test of tools/card-fixtures-checker-examples-extract · Reason: FAIL wrong checksum flagged: ['checksum-integrity:mismatch:data/a.csv'] · 2026-11-21 21:33 UTC
-
 ## Gotchas (what sites did)
 
 What sites did in reply to its own requests, newest first, written by HivemindOS's run judge after its outside tasks; each one cites the trace item that shows it, in the judgement file it links. Before it plans work on a site, it reads the last 5 for that site. A site that answered with a bot check or a captcha rests a day and is never worked around.
