@@ -1,0 +1,28 @@
+{
+  "step": "own-research-20261121T050215Z",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Step was skipped; the dataset was not created, copied, tested, or uploaded.",
+  "description": "Only a single GET to an unrelated Hugging Face dataset viewer returned 200, and the final output stated no note was written. No card-fixtures-checker files were published as requested.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/datasets/code-rag-bench/github-repos-python/viewer",
+      "status": 200,
+      "error": null,
+      "ms": 507,
+      "at": "2026-11-21T05:02:18.617Z"
+    }
+  ],
+  "at": "2026-11-21T05:02:24.050Z"
+}
