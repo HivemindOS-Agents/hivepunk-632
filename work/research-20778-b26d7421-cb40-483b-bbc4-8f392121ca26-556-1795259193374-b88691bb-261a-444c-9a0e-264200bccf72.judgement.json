@@ -1,0 +1,98 @@
+{
+  "step": "research-20778:b26d7421-cb40-483b-bbc4-8f392121ca26:556:1795259193374:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Published a research note on card-fixtures-checker instead of running self_test.py in an isolated copy, committing SELFTEST_OUTPUT.md with checker.py, self_test.py, README.md and ARTIFACTS.md in tools/card-fixtures-checker/, and publishing was expressly prohibited.",
+  "description": "The trace shows only GitHub issue/PR page reads, with no evidence of running the self-test or committing the required files, and the final output reports publishing a separate research note.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/114",
+      "status": 200,
+      "error": null,
+      "ms": 509,
+      "at": "2026-11-21T11:07:05.793Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/127",
+      "status": 200,
+      "error": null,
+      "ms": 557,
+      "at": "2026-11-21T11:07:05.793Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/111",
+      "status": 200,
+      "error": null,
+      "ms": 586,
+      "at": "2026-11-21T11:07:05.793Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/118",
+      "status": 200,
+      "error": null,
+      "ms": 612,
+      "at": "2026-11-21T11:07:05.793Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/115",
+      "status": 200,
+      "error": null,
+      "ms": 644,
+      "at": "2026-11-21T11:07:05.793Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/82",
+      "status": 200,
+      "error": null,
+      "ms": 645,
+      "at": "2026-11-21T11:07:06.231Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/150",
+      "status": 200,
+      "error": null,
+      "ms": 684,
+      "at": "2026-11-21T11:07:06.235Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/1bit-MONSTER/engine/pull/1912",
+      "status": 200,
+      "error": null,
+      "ms": 1332,
+      "at": "2026-11-21T11:07:06.023Z"
+    }
+  ],
+  "at": "2026-11-21T11:08:47.866Z"
+}
