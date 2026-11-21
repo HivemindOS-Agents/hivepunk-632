@@ -27,8 +27,13 @@
   "command": "git checkout 7403a449b4e8627fec542bddc191f4a16a9d2828 && cd tools/card-fixtures-checker-examples-extract && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-card-fixtures-checker-examples-extract-7403a44.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44954917477",
-  "repro": "pending",
-  "peer": null,
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "667",
+    "at": "2026-11-21T22:39:10Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44957835002"
+  },
   "firstPass": {
     "firstPassStep": 1,
     "shippedStep": 3,
