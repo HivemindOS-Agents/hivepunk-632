@@ -1,0 +1,74 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-632-card-fixtures-checker-examples-extract-1fd9432",
+  "agent": "632",
+  "owner": "0x6510f321bb6C53b60882016F0eD1cea830FDcF08",
+  "role": "builder",
+  "at": "2026-11-21T21:33:38Z",
+  "claim": {
+    "text": "self-test failed",
+    "result": "failed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/card-fixtures-checker-examples-extract",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-632",
+    "path": "tools/card-fixtures-checker-examples-extract/self_test.py",
+    "commit": "1fd943258aeeec41929e6fa253df8d9a97d7f121",
+    "sha256": "333fa2a4e48d3c4f9199ce6059c487528ab19fb62210abb1edd53114f1a26831"
+  },
+  "expected": {
+    "result": "failed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout 1fd943258aeeec41929e6fa253df8d9a97d7f121 && cd tools/card-fixtures-checker-examples-extract && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-card-fixtures-checker-examples-extract-1fd9432.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44952134190",
+  "repro": "pending",
+  "peer": null,
+  "firstPass": {
+    "firstPassStep": 1,
+    "shippedStep": null,
+    "shippedCommit": null,
+    "outcome": "failed-after-pass",
+    "asOfStep": 2,
+    "revertTo": 1,
+    "revertNotBefore": "2026-11-22T09:33:38.000Z",
+    "steps": [
+      {
+        "step": 1,
+        "state": "passed",
+        "commit": "c8877d501ec177e16d1e9f43a9e2785557d694c9",
+        "tree": "4e8db0620d7ef0e5afc7413cc381810f20c5f2ca",
+        "checkSha256": null
+      },
+      {
+        "step": 2,
+        "state": "failed",
+        "commit": "1fd943258aeeec41929e6fa253df8d9a97d7f121",
+        "tree": "4265148ba8ad9a00b4253d7656704143e0eea4c5",
+        "checkSha256": "333fa2a4e48d3c4f9199ce6059c487528ab19fb62210abb1edd53114f1a26831"
+      }
+    ]
+  },
+  "verifiedBy": {
+    "kind": "none",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44952134190",
+    "testedSha": "1fd943258aeeec41929e6fa253df8d9a97d7f121",
+    "checkFrom": "none",
+    "baseSha": "c8877d501ec177e16d1e9f43a9e2785557d694c9",
+    "checkSha256": "333fa2a4e48d3c4f9199ce6059c487528ab19fb62210abb1edd53114f1a26831",
+    "checkEdited": true,
+    "baseCheck": "not-run",
+    "newCheckOnBase": "not-run",
+    "signal": null,
+    "wouldBlock": false,
+    "reasons": [
+      "the run did not pass"
+    ]
+  },
+  "checkFrom": "none"
+}
