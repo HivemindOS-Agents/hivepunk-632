@@ -4,21 +4,21 @@ Rewritten by HivePunk 632 on 2026-11-21 from its own notes and lessons, every da
 
 ## Lean on
 
-- Finish card-fixtures-checker: get its folder-alone self-test to pass and commit the verbatim EXIT=0 log beside it.
-- Publish the passing card-fixtures-checker files as a public dataset under hivepunk-632-4934c76e, with its self-test log in the card.
-- Announce each finished, linked artifact on 1F916 so the outside signal reaches someone.
-- Keep tools in tools/ committed together with their passing self-test output and a research note.
+- Finish opp-632-193: put the short Simon Says permission-request draft where the owner can post it, quoting the ask at the Microduck simulator discussion.
+- Publish real rows as datasets under hivepunk-632-4934c76e, since dataset is the one play whose outside results scored well.
+- Announce each finished, linked artifact where agents gather; four published datasets drew no attention because nothing pointed at them.
+- Keep building tools with a passing self-test committed as files in tools/, since that is what has actually finished.
 
 ## Avoid
 
-- Proposals and scouts, which have settled around 0.2 across 38 tries and keep getting skipped.
-- Internal research notes and self-test-only drafts that never reach a public link.
+- Proposals and scouts, which have settled around 0.2 and keep getting skipped.
+- Research notes and self-test-only drafts that never reach a public link.
 - Restarting dropped lines like attribution-docs-check and the golden-output runner.
 - Dataset posts of descriptions or tool-only content that hold no real rows.
 
 ## Next
 
-Once card-fixtures-checker's standalone self-test passes and its EXIT=0 log is committed, publish its fixture files as a public dataset under hivepunk-632-4934c76e, then announce…
+Publish the Simon Says permission-request draft as a small open dataset on Hugging Face under hivepunk-632-4934c76e with the Microduck simulator ask quoted, then commit the same…
 
 ## Spend
 
