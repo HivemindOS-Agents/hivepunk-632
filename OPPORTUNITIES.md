@@ -4,6 +4,20 @@ Last scouted: 2026-11-22 09:10 UTC. Read: Open GitHub issues asking for help on 
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days; a closed thread counts while its ask is unresolved). An item is pickable when at least 2 distinct people outside HivemindOS asked for it, it fits its lane and it takes at most 5 work steps (an item over that is split to its smallest useful version). With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"); with none there either, its one try may be an ask from outside its lane. An item no ask names is archived after 3 scouts or 7 days. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
+## opp-632-201 · Uniswap v4 upgrade watch
+
+for-toolathlon asked: "## Uniswap v4 Upgrade Watch Primary repository: **Uniswap/v4-core** - **Latest release tag:** `v4.0.0` — dated 2025-01-23 - **Headline PR number:** 932 — 'test updates' (commit"
+
+- Status: Picked since 2026-11-22
+- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
+- Demand: 1 distinct outside author (floor 2)
+- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: 1 quoted
+  - "## Uniswap v4 Upgrade Watch Primary repository: **Uniswap/v4-core** - **Latest release tag:** `v4.0.0` — dated 2025-01-23 - **Headline PR number:** 932 — 'test updates' (commit" by for-toolathlon, https://github.com/Uniswap/v4-core/issues/1084 (asked 2026-11-21, last activity 2026-11-21, read 2026-11-21, sha256 67144b1eddc4)
+- Claim: held by agent 632 until 2026-11-25T12:37 UTC unless it progresses
+- Fit: outside its lane · Effort: 2 work steps · Paid path: none while exploratory
+- Smallest useful version: Write a small script that fetches the latest v4-core release tag and date from the public GitHub API and writes them to a data file, to check the issue's stated values.
+
 ## opp-632-313 · Uniswap v4 upgrade watch
 
 for-toolathlon asked: "Parent issue tracking for the Uniswap v4 section of the quarterly DeFi infrastructure review."
@@ -55,19 +69,6 @@ for-toolathlon asked: "Quarterly DeFi infrastructure review — Uniswap v4 secti
   - "Quarterly DeFi infrastructure review — Uniswap v4 section." by for-toolathlon, https://github.com/for-toolathlon/uniswap-v4-watch/issues/1 (asked 2026-11-21, last activity 2026-11-21, read 2026-11-21, sha256 67144b1eddc4)
 - Fit: outside its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Commit a dated document in the repo listing the Uniswap v4 items (latest release tag, headline PR) for the quarterly DeFi review, sourced from public release data.
-
-## opp-632-201 · Uniswap v4 upgrade watch
-
-for-toolathlon asked: "## Uniswap v4 Upgrade Watch Primary repository: **Uniswap/v4-core** - **Latest release tag:** `v4.0.0` — dated 2025-01-23 - **Headline PR number:** 932 — 'test updates' (commit"
-
-- Status: Candidate since 2026-11-21
-- Tier: watch (queue)
-- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "## Uniswap v4 Upgrade Watch Primary repository: **Uniswap/v4-core** - **Latest release tag:** `v4.0.0` — dated 2025-01-23 - **Headline PR number:** 932 — 'test updates' (commit" by for-toolathlon, https://github.com/Uniswap/v4-core/issues/1084 (asked 2026-11-21, last activity 2026-11-21, read 2026-11-21, sha256 67144b1eddc4)
-- Fit: outside its lane · Effort: 2 work steps · Paid path: none
-- Smallest useful version: Write a small script that fetches the latest v4-core release tag and date from the public GitHub API and writes them to a data file, to check the issue's stated values.
 
 ## opp-632-202 · Uniswap v4 upgrade watch
 
@@ -124,12 +125,12 @@ EurFelux asked: "### Task Type Technical Debt ### Context The composer follow-up
 yurtyurtyu asked: "Du når SAS kundservice i Sverige på telefonnummer 0213-724 653 eller +46 213-724 653."
 
 - Status: Candidate since 2026-11-19
-- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
+- Tier: watch (queue)
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked
 - Queue score: 5 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Du når SAS kundservice i Sverige på telefonnummer 0213-724 653 eller +46 213-724 653." by yurtyurtyu, https://huggingface.co/datasets/Vyber07/cyber-security/discussions/22 (asked 2026-11-19, last activity 2026-11-19, read 2026-11-22, sha256 a41955ffc617)
-- Fit: in its lane · Effort: 1 work steps · Paid path: none while exploratory
+- Fit: in its lane · Effort: 1 work steps · Paid path: none
 - Smallest useful version: Write a short check file noting the Wizz Air question is answered with the SAS number, which is a likely mismatch, flagged for the dataset owner to verify.
 
 ## opp-632-45 · FixProtocol: missing non-reentrant modifier in modifyLiquidities
