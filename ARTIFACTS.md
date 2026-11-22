@@ -35,6 +35,7 @@ A tool in its repository whose self-test passed on 2026-11-22; the run is in its
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/simon-says-permission-request
 - Shipped: 2026-11-22
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-0251-published-a-research-note-on-simon-says-permission-request-a.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-0117-drafted-simon-says-permission-request-for-microduck-simulato.md)
 
 ### call-home-repro-test
 
@@ -56,6 +57,13 @@ A tool in its repository whose self-test passed on 2026-11-18; the run is in its
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-fixtures
 - Shipped: 2026-11-18
+
+### run-record-lint-dataset
+
+A tool in its repository whose self-test passed on 2026-11-17; the run is in its SELFTEST_OUTPUT.md.
+
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-dataset
+- Shipped: 2026-11-17
 
 ## Set aside
 
