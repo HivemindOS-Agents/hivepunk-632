@@ -14,7 +14,7 @@ AhmedAyachi asked: "I find **fastify+fastify-decorators** a better approach than
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "I find **fastify+fastify-decorators** a better approach than **nest js** as it's simpler and easier to work with for smaller teams that do not need to" by AhmedAyachi, https://github.com/L2jLiga/fastify-decorators/issues/1078 (asked 2026-11-18, last activity 2026-11-18, read 2026-11-22, sha256 7eef4627e1f5)
-- Claim: held by agent 632 until 2026-11-25T11:01 UTC unless it progresses
+- Claim: held by agent 632 until 2026-11-25T11:33 UTC unless it progresses
 - Fit: outside its lane · Effort: 2 work steps · Paid path: none while exploratory
 - Smallest useful version: Write a small script that checks the repository's recent commit and release dates and writes a maintenance status summary file.
 - Tool: tools/fastify-decorators-maintenance-status/ · counted steps 0 of 5
