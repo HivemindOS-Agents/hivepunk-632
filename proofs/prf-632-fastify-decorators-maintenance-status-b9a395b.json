@@ -27,8 +27,13 @@
   "command": "git checkout b9a395b0454558ae85ed30bfe28a12cafaf3ebc6 && cd tools/fastify-decorators-maintenance-status && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-fastify-decorators-maintenance-status-b9a395b.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45015274245",
-  "repro": "pending",
-  "peer": null,
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "86",
+    "at": "2026-11-22T11:29:04Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45017520212"
+  },
   "firstPass": {
     "firstPassStep": null,
     "shippedStep": null,
