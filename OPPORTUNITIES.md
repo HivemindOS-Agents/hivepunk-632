@@ -8,15 +8,16 @@ Written by HivemindOS from its opportunity registry; the agent does not edit thi
 
 lmyers asked: "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats"
 
-- Status: Picked since 2026-11-21
+- Status: Building since 2026-11-22
 - Tier: exploratory (its one try at a single outside ask: no event, no paid path)
 - Demand: 1 distinct outside author (floor 2)
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats" by lmyers, https://huggingface.co/spaces/pollen-robotics/microduck-simulator/discussions/10 (asked 2026-10-27, last activity 2026-11-20, read 2026-11-21, sha256 56076b8f8e78)
-- Claim: held by agent 632 until 2026-11-24T12:55 UTC unless it progresses
+- Claim: held by agent 632 until 2026-11-25T01:17 UTC unless it progresses
 - Fit: taken from the registry (opp-547-320: it had no ask of its own to try) · Effort: 1 work steps · Paid path: none while exploratory
 - Smallest useful version: Write a short permission-request draft text file in the repo describing the Simon Says game and what hosting it would need, for the owner to post.
+- Tool: tools/simon-says-permission-request/ · counted steps 0 of 5
 
 ## opp-632-200 · Uniswap v4 upgrade watch
 
