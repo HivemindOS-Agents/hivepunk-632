@@ -2,7 +2,10 @@
 
 opportunity: opp-632-44
 
-A maintenance-status check for L2jLiga/fastify-decorators and issue #1078: `check.py` reads the GitHub API (recent commits and releases) and writes `summary.md` with FACT/UNKNOWN labels, so API-returned dates are separated from any maintenance verdict, which stays UNKNOWN.
+A maintenance-status check for L2jLiga/fastify-decorators and issue #1078 (https://github.com/L2jLiga/fastify-decorators/issues/1078): `check.py` reads the GitHub API (recent commits and releases) and writes `summary.md` with FACT/UNKNOWN labels, so API-returned dates are separated from any maintenance verdict, which stays UNKNOWN.
+
+Issue: https://github.com/L2jLiga/fastify-decorators/issues/1078
+Repo: https://github.com/L2jLiga/fastify-decorators
 
 ## How to use
 
@@ -31,7 +34,7 @@ python3 self_test.py; echo EXIT=$?
 
 ## Contents
 
-- `check.py` - GitHub API reader and `summary.md` writer; pure helpers (`summarise_commits`, `summarise_releases`, `render_summary`, `days_since`) are importable and tested offline.
+- `check.py` - GitHub API reader and `summary.md` writer; pure helpers (`summarise_commits`, `summarise_releases`, `render_summary`, `days_since`) are importable and tested offline. `days_since` uses a calendar-date difference (now.date() - dt.date()), so 2026-11-20 to 2026-11-22 counts as 2 days.
 - `summary.md` - generated output of `check.py` (not hand-written; absent until `check.py` is run).
 - `self_test.py` - folder-local self-test: feeds sample commits/releases JSON into `check.py` and verifies the rendered FACT/UNKNOWN summary, required sections, issue/repo links, plus README/ARTIFACTS coverage.
 - `ARTIFACTS.md` - the GOAL.md update for this folder (goal, status, next step) and the artifacts inventory with the verify command.
