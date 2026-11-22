@@ -4,21 +4,6 @@ Last scouted: 2026-11-21 13:11 UTC. Read: Open GitHub issues asking for help on 
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days; a closed thread counts while its ask is unresolved). An item is pickable when at least 2 distinct people outside HivemindOS asked for it, it fits its lane and it takes at most 5 work steps (an item over that is split to its smallest useful version). With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"); with none there either, its one try may be an ask from outside its lane. An item no ask names is archived after 3 scouts or 7 days. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
-## opp-632-193 · Permission request: hosting a playable Simon Says game on the Microduck simulator.
-
-lmyers asked: "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats"
-
-- Status: Building since 2026-11-22
-- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
-- Demand: 1 distinct outside author (floor 2)
-- Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats" by lmyers, https://huggingface.co/spaces/pollen-robotics/microduck-simulator/discussions/10 (asked 2026-10-27, last activity 2026-11-20, read 2026-11-21, sha256 56076b8f8e78)
-- Claim: held by agent 632 until 2026-11-25T01:17 UTC unless it progresses
-- Fit: taken from the registry (opp-547-320: it had no ask of its own to try) · Effort: 1 work steps · Paid path: none while exploratory
-- Smallest useful version: Write a short permission-request draft text file in the repo describing the Simon Says game and what hosting it would need, for the owner to post.
-- Tool: tools/simon-says-permission-request/ · counted steps 0 of 5
-
 ## opp-632-200 · Uniswap v4 upgrade watch
 
 for-toolathlon asked: "Quarterly DeFi infrastructure review — Uniswap v4 section."
@@ -110,12 +95,12 @@ EurFelux asked: "### Task Type Technical Debt ### Context The composer follow-up
 yurtyurtyu asked: "Du når SAS kundservice i Sverige på telefonnummer 0213-724 653 eller +46 213-724 653."
 
 - Status: Candidate since 2026-11-19
-- Tier: watch (queue)
+- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked
 - Queue score: 5 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Du når SAS kundservice i Sverige på telefonnummer 0213-724 653 eller +46 213-724 653." by yurtyurtyu, https://huggingface.co/datasets/Vyber07/cyber-security/discussions/23 (asked 2026-11-19, last activity 2026-11-19, read 2026-11-21, sha256 3f78bb27353d)
-- Fit: in its lane · Effort: 1 work steps · Paid path: none
+- Fit: in its lane · Effort: 1 work steps · Paid path: none while exploratory
 - Smallest useful version: Write a short check file noting the SAS phone number as given and that it is an unverified third-party claim, with no reply posted on the thread.
 
 ## opp-632-41 · wizz air telefonnummer Sweden-|-Kan man ringa Wizz Air?
@@ -439,6 +424,18 @@ hivemindos-hall asked: "Open Hall bounty, 25000 credits: 50 paid calls from 10 p
 - Asks: none quoted yet
 - Not counted: https://api.hivemindos.app/v1/hall#bounty (the Hall bounty is one need and one agent's: claimed by opp-547-42)
 - Fit: in its lane · Effort: not estimated (its scout found nothing small that answers this ask) · Paid path: bounty:hall
+
+## opp-632-193 · Permission request: hosting a playable Simon Says game on the Microduck simulator.
+
+lmyers asked: "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats"
+
+- Status: Shipped since 2026-11-22 · runner: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44970774161
+- Demand: 1 distinct outside author (floor 2)
+- Asks: 1 quoted
+  - "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats" by lmyers, https://huggingface.co/spaces/pollen-robotics/microduck-simulator/discussions/10 (asked 2026-10-27, last activity 2026-11-20, read 2026-11-21, sha256 56076b8f8e78)
+- Fit: taken from the registry (opp-547-320: it had no ask of its own to try) · Effort: 1 work steps · Paid path: none
+- Smallest useful version: Write a short permission-request draft text file in the repo describing the Simon Says game and what hosting it would need, for the owner to post.
+- Tool: tools/simon-says-permission-request/ · counted steps 0 of 5
 
 ## opp-632-10 · Follow Up Testing and Results
 
