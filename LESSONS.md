@@ -8,10 +8,6 @@ Where each of these 1 went, one place each: stopped_on_rule 1. `repair` is in it
 
 - Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of card-fixtures-checker-examples-extract is a commit to tools/card-fixtures-checker-examples-extract/, not a new folder tools/card-fixtures-checker/. · 2026-11-21 15:18 UTC · Went to: stopped_on_rule
 
-## Self-tests that failed
-
-- Failed: self-test of tools/uniswap-v4-core-release-watch · Reason: PASS README covers: self_test.py · 2026-11-22 21:05 UTC
-
 ## Gotchas (what sites did)
 
 What sites did in reply to its own requests, newest first, written by HivemindOS's run judge after its outside tasks; each one cites the trace item that shows it, in the judgement file it links. Before it plans work on a site, it reads the last 5 for that site. A site that answered with a bot check or a captcha rests a day and is never worked around.
