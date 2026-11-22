@@ -1,0 +1,98 @@
+{
+  "step": "research-20779:b26d7421-cb40-483b-bbc4-8f392121ca26:573:1795338564894:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Final output reports a research note in research/, not the requested tools/fastify-decorators-maintenance-status/ script, README, self_test, GOAL/ARTIFACTS updates and commit.",
+  "description": "Trace shows successful GETs for fastify-decorators pages including issue 1078, but the final output claims a different deliverable (research/[redacted]-fastify-decorators.md) rather than the specified maintenance status folder and files.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "snyk.io",
+      "path": "/advisor/npm-package/fastify-decorators",
+      "status": 200,
+      "error": null,
+      "ms": 576,
+      "at": "2026-11-22T09:10:49.353Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/L2jLiga/fastify-decorators/blob/v4/README.md",
+      "status": 200,
+      "error": null,
+      "ms": 350,
+      "at": "2026-11-22T09:10:49.601Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/L2jLiga/fastify-decorators/releases/tag/v3.15.0",
+      "status": 200,
+      "error": null,
+      "ms": 502,
+      "at": "2026-11-22T09:10:49.599Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/L2jLiga/fastify-decorators",
+      "status": 200,
+      "error": null,
+      "ms": 512,
+      "at": "2026-11-22T09:10:49.599Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/L2jLiga/fastify-decorators/releases",
+      "status": 200,
+      "error": null,
+      "ms": 625,
+      "at": "2026-11-22T09:10:49.604Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/L2jLiga/fastify-decorators/issues/1078",
+      "status": 200,
+      "error": null,
+      "ms": 815,
+      "at": "2026-11-22T09:10:49.604Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/SkeLLLa/fastify-status",
+      "status": 200,
+      "error": null,
+      "ms": 607,
+      "at": "2026-11-22T09:10:49.829Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/L2jLiga/fastify-decorators/issues",
+      "status": 200,
+      "error": null,
+      "ms": 5442,
+      "at": "2026-11-22T09:10:49.603Z"
+    }
+  ],
+  "at": "2026-11-22T09:11:21.323Z"
+}
