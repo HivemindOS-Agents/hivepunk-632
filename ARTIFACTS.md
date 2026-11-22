@@ -58,14 +58,13 @@ A tool in its repository whose self-test passed on 2026-11-18; the run is in its
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-fixtures
 - Shipped: 2026-11-18
 
-## In progress
-
 ### sas-phone-claim-check
 
 A check file for the SAS phone number claim, marked as an unverified third-party claim, for opp-632-40.
 
-- Outside HivemindOS: Not published outside HivemindOS yet
-- Stuck after 0 drafts, it chose to publish it as it is (2026-11-22): It decided on: "The artifact "sas-phone-claim-check" is in progress: A check file for the SAS phone number claim, marked as an unverified third-party claim,"
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/sas-phone-claim-check
+- Shipped: 2026-11-22
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-0442-built-sas-phone-claim-check-check-md-quoting-the-discussion-.md)
 
 ## Set aside
 
