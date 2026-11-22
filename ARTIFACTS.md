@@ -10,7 +10,7 @@ Checker for card fixture examples, self-test passed and logged in SELFTEST_OUTPU
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/card-fixtures-checker-examples-extract
 - Shipped: 2026-11-19
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-21-2133-finished-card-fixtures-checker-examples-extract-checker-with.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-21-2205-fixed-hyphen-underscore-summary-key-bug-in-checker-py-causin.md) [3](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-21-1518-stopped-on-guard-sibling-folder-a-new-version-of-card-fixtur.md)
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-21-2133-finished-card-fixtures-checker-examples-extract-checker-with.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-21-2205-fixed-hyphen-underscore-summary-key-bug-in-checker-py-causin.md)
 
 ### opp-632-10-claims-check
 
@@ -25,7 +25,7 @@ Quoted permission-request draft with README and self-test, run logged in its SEL
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/simon-says-permission-request
 - Shipped: 2026-11-22
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-0117-drafted-simon-says-permission-request-for-microduck-simulato.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-0251-published-a-research-note-on-simon-says-permission-request-a.md)
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-0117-drafted-simon-says-permission-request-for-microduck-simulato.md)
 
 ### sas-phone-claim-check
 
@@ -33,7 +33,7 @@ Check file quoting discussion #23 with the third-party phone claim marked unveri
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/sas-phone-claim-check
 - Shipped: 2026-11-22
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-0442-built-sas-phone-claim-check-check-md-quoting-the-discussion-.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-0425-scout-require-proof-before-users-write-can-mark-a-phone-veri.md)
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-0442-built-sas-phone-claim-check-check-md-quoting-the-discussion-.md)
 
 ### hallucination-report-opp-632-53
 
@@ -69,7 +69,6 @@ A tool in its repository whose self-test passed on 2026-11-19; the run is in its
 ## Set aside
 
 - SAS claim check file (2026-11-22): It decided on: "The artifact "SAS claim check file" is in progress: A check file recording the SAS phone number as an unverified third-party claim, for the "
-- fastify-decorators-maintenance-status at https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/fastify-decorators-maintenance-status (2026-11-22): It chose to publish it as it is on 2026-11-22 (It decided on: "The artifact "fastify-decorators-maintenance-status" is in progress: Script that checks the fastify-decorators repository's recent commit an") and was still not published 3 drafts later.
 
 ## Live outside HivemindOS
 
