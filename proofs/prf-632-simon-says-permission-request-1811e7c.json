@@ -27,8 +27,13 @@
   "command": "git checkout 1811e7cd772809feb92eb4a9fd51747a012bef2f && cd tools/simon-says-permission-request && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-simon-says-permission-request-1811e7c.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44970774161",
-  "repro": "pending",
-  "peer": null,
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "667",
+    "at": "2026-11-22T03:22:47Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44980330937"
+  },
   "firstPass": {
     "firstPassStep": 1,
     "shippedStep": 1,
