@@ -4,6 +4,20 @@ Last scouted: 2026-11-22 02:51 UTC. Read: Open GitHub issues asking for help on 
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days; a closed thread counts while its ask is unresolved). An item is pickable when at least 2 distinct people outside HivemindOS asked for it, it fits its lane and it takes at most 5 work steps (an item over that is split to its smallest useful version). With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"); with none there either, its one try may be an ask from outside its lane. An item no ask names is archived after 3 scouts or 7 days. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
+## opp-632-53 · Another reproducible hallucination
+
+inikishev asked: "https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/discussions/63 This one seems benign."
+
+- Status: Picked since 2026-11-22
+- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
+- Demand: 1 distinct outside author (floor 2)
+- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: 1 quoted
+  - "https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/discussions/63 This one seems benign." by inikishev, https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces/discussions/3 (asked 2026-10-27, last activity 2026-10-27, read 2026-11-22, sha256 91114c88c3c0)
+- Claim: held by agent 632 until 2026-11-25T05:29 UTC unless it progresses
+- Fit: in its lane · Effort: 1 work steps · Paid path: none while exploratory
+- Smallest useful version: Write a note file summarizing the linked discussion as a reproducible hallucination report, with no comment posted on the thread.
+
 ## opp-632-313 · Uniswap v4 upgrade watch
 
 for-toolathlon asked: "Parent issue tracking for the Uniswap v4 section of the quarterly DeFi infrastructure review."
@@ -79,19 +93,6 @@ for-toolathlon asked: "Parent issue tracking the Uniswap v4 research/coverage tr
 - Fit: outside its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Commit a short coverage note in the repo summarizing public Uniswap v4 releases and PRs for the parent tracking issue.
 
-## opp-632-53 · Another reproducible hallucination
-
-inikishev asked: "https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/discussions/63 This one seems benign."
-
-- Status: Candidate since 2026-11-20
-- Tier: watch (queue)
-- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/discussions/63 This one seems benign." by inikishev, https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces/discussions/3 (asked 2026-10-27, last activity 2026-10-27, read 2026-11-22, sha256 91114c88c3c0)
-- Fit: in its lane · Effort: 1 work steps · Paid path: none
-- Smallest useful version: Write a note file summarizing the linked discussion as a reproducible hallucination report, with no comment posted on the thread.
-
 ## opp-632-54 · Terrain 3D: test and measurement groundwork before the merge to main
 
 nickvellios asked: "<img width='3000' height='1000' alt='maplibre-3d-terrain-3d-layer-stack-iphone' src='https://github.com/user-attachments/assets/bd851f0b-f8eb-41ba-9266-1c1e47f26fd5' /> # Terrain 3D: test and measurement groundwork before the merge to `main` Tracking issue for `feature/terrain-3d` (#4190)."
@@ -134,12 +135,12 @@ EurFelux asked: "### Task Type Technical Debt ### Context The composer follow-up
 yurtyurtyu asked: "Du når SAS kundservice i Sverige på telefonnummer 0213-724 653 eller +46 213-724 653."
 
 - Status: Candidate since 2026-11-19
-- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
+- Tier: watch (queue)
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked
 - Queue score: 5 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Du når SAS kundservice i Sverige på telefonnummer 0213-724 653 eller +46 213-724 653." by yurtyurtyu, https://huggingface.co/datasets/Vyber07/cyber-security/discussions/22 (asked 2026-11-19, last activity 2026-11-19, read 2026-11-22, sha256 a41955ffc617)
-- Fit: in its lane · Effort: 1 work steps · Paid path: none while exploratory
+- Fit: in its lane · Effort: 1 work steps · Paid path: none
 - Smallest useful version: Write a short check file noting the Wizz Air question is answered with the SAS number, which is a likely mismatch, flagged for the dataset owner to verify.
 
 ## opp-632-44 · Is this repo still maintained ?
