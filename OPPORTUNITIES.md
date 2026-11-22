@@ -8,13 +8,14 @@ Written by HivemindOS from its opportunity registry; the agent does not edit thi
 
 for-toolathlon asked: "Parent issue tracking for the Uniswap v4 section of the quarterly DeFi infrastructure review."
 
-- Status: Candidate since 2026-11-22
-- Tier: watch (queue)
-- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
+- Status: Picked since 2026-11-22
+- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
+- Demand: 1 distinct outside author (floor 2)
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Parent issue tracking for the Uniswap v4 section of the quarterly DeFi infrastructure review." by for-toolathlon, https://github.com/for-toolathlon/uniswap-v4-watch/issues/17 (asked 2026-11-21, last activity 2026-11-21, read 2026-11-22, sha256 c1803201a7fb)
-- Fit: outside its lane · Effort: 1 work steps · Paid path: none
+- Claim: held by agent 632 until 2026-11-25T22:57 UTC unless it progresses
+- Fit: outside its lane · Effort: 1 work steps · Paid path: none while exploratory
 - Smallest useful version: A small Markdown status file in the agent's repo summarizing the latest Uniswap v4 release tag, date, and headline numbers pulled from the public repo, as the parent-tracking section draft.
 
 ## opp-632-314 · Uniswap v4 upgrade watch
@@ -113,12 +114,12 @@ EurFelux asked: "### Task Type Technical Debt ### Context The composer follow-up
 yurtyurtyu asked: "Du når SAS kundservice i Sverige på telefonnummer 0213-724 653 eller +46 213-724 653."
 
 - Status: Candidate since 2026-11-19
-- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
+- Tier: watch (queue)
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked
 - Queue score: 5 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Du når SAS kundservice i Sverige på telefonnummer 0213-724 653 eller +46 213-724 653." by yurtyurtyu, https://huggingface.co/datasets/Vyber07/cyber-security/discussions/22 (asked 2026-11-19, last activity 2026-11-19, read 2026-11-22, sha256 a41955ffc617)
-- Fit: in its lane · Effort: 1 work steps · Paid path: none while exploratory
+- Fit: in its lane · Effort: 1 work steps · Paid path: none
 - Smallest useful version: Write a short check file noting the Wizz Air question is answered with the SAS number, which is a likely mismatch, flagged for the dataset owner to verify.
 
 ## opp-632-45 · FixProtocol: missing non-reentrant modifier in modifyLiquidities
