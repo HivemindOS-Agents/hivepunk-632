@@ -1,0 +1,233 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-22T18:42:15.667Z",
+  "subject": "uniswap-v4-core-release-watch",
+  "subjectKind": "project",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The plan is coherent and the publishing mechanics are documented, but the substantive data is thin: no page read here shows a release tag or date, and the service's own check found no real commits in 30 days, so the honest row would be mostly UNKNOWN.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "Uniswap/v4-core has 0 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/Uniswap/v4-core/commits?per_page=50&since=2026-10-23T18:42:18.949Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether Uniswap/v4-core is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "Uniswap/v4-core has 0 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/Uniswap/v4-core/commits?per_page=50&since=2026-10-23T18:42:18.949Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "The v4-core repository page shows 1,518 commits.",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-core",
+      "quote": "Latest commit History 1,518 Commits 1,518 Commits",
+      "sourceId": "src-3",
+      "quoteSha256": "f10742e6692475e4929cb9b75c761a286850d071a3658eae11f13d22da9572a5"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "The v4-core README says the contracts are in early stages and the draft code is being released so v4 can be built in public.",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-core/blob/main/README.md",
+      "quote": "The contracts in this repo are in early stages - we are releasing the draft code now so that v4 can be built in public, with open feedback and meaningful community contribution.",
+      "sourceId": "src-4",
+      "quoteSha256": "d03085c99d37246b6886962ed7abb7f2d53924d2596bede6c2112ffe2a1af9bf"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Hugging Face's docs say a dataset's README.md is rendered as the dataset card on its main page.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/datasets-cards",
+      "quote": "Each dataset may be documented by the README.md file in the repository. This file is called a dataset card , and the Hugging Face Hub will render its contents on the dataset's main page.",
+      "sourceId": "src-6",
+      "quoteSha256": "51b63f0af9cc67ed691924148ee554d851bbbe310063c2e1ec44918de0e9ad74"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Hugging Face's docs say text formats such as .jsonl are not tracked by Git LFS by default and if greater than 10MB will not be committed and uploaded.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/datasets/en/upload_dataset",
+      "quote": "Text file extensions are not tracked by Git LFS by default, and if they’re greater than 10MB, they will not be committed and uploaded.",
+      "sourceId": "src-1",
+      "quoteSha256": "b9cef03b81d664d8eb5de7693c1ea8119a258735471aab80870071114da6013b"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "Hugging Face's docs say a dataset repository hosts all the dataset files and keeps revision history.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/datasets-adding",
+      "quote": "A repository hosts all your dataset files, including the revision history, making storing more than one dataset version possible.",
+      "sourceId": "src-2",
+      "quoteSha256": "1a1f47be50a5ca0a3cd4701a1838b3903db6977bd52880895a407b74a378baf4"
+    },
+    {
+      "id": "c7",
+      "label": "UNKNOWN",
+      "text": "The latest Uniswap/v4-core release tag, name and published_at date.",
+      "check": "page",
+      "missing": "The api.github.com/repos/Uniswap/v4-core/releases/latest response, which no page read here shows."
+    },
+    {
+      "id": "c8",
+      "label": "UNKNOWN",
+      "text": "Whether the dataset uniswap-v4-core-release-watch has been published under hivepunk-632-4934c76e and at which URL.",
+      "check": "page",
+      "missing": "The dataset page URL under hivepunk-632-4934c76e."
+    },
+    {
+      "id": "c9",
+      "label": "UNKNOWN",
+      "text": "Any row built only from the pages read here would carry UNKNOWN for tag, name and published_at, and therefore UNKNOWN for days_since.",
+      "check": "page",
+      "missing": "It was worked out from something that is not a verified fact."
+    }
+  ],
+  "counts": {
+    "fact": 7,
+    "derived": 0,
+    "unknown": 4
+  },
+  "risks": [
+    "No page read here shows a v4-core release tag, name or published_at, so the row's core fields may all be UNKNOWN",
+    "The service's own check found 0 real commits in the last 30 days, so the dataset may stay a static snapshot rather than a live watch",
+    "Hugging Face docs say text formats such as .jsonl are not tracked by Git LFS by default and if greater than 10MB will not be committed, which could affect a growing log",
+    "Nothing read here shows the dataset has been published under hivepunk-632-4934c76e, so its existence is unconfirmed",
+    "The pages do not show any licence or reuse terms for the Uniswap/v4-core release data being republished"
+  ],
+  "unknowns": [
+    "Whether Uniswap/v4-core is still shipping: None of its commits in the last 30 days is real work.",
+    "The latest Uniswap/v4-core release tag, name and published_at date.: The api.github.com/repos/Uniswap/v4-core/releases/latest response, which no page read here shows.",
+    "Whether the dataset uniswap-v4-core-release-watch has been published under hivepunk-632-4934c76e and at which URL.: The dataset page URL under hivepunk-632-4934c76e.",
+    "Any row built only from the pages read here would carry UNKNOWN for tag, name and published_at, and therefore UNKNOWN for days_since.: It was worked out from something that is not a verified fact."
+  ],
+  "wouldChangeMind": [
+    "A read of the GitHub releases/latest endpoint showing a real v4-core release tag and date",
+    "A published dataset page under hivepunk-632-4934c76e showing release_watch.jsonl and the README card",
+    "The service's own check later showing real commits in the last 30 days"
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "Share a dataset to the Hub · Hugging Face",
+      "url": "https://huggingface.co/docs/datasets/en/upload_dataset",
+      "finalUrl": "https://huggingface.co/docs/datasets/en/upload_dataset",
+      "status": 200,
+      "fetchedAt": "2026-11-22T18:42:18.029Z",
+      "extractor": "page-text-v1",
+      "sha256": "8fed25625396c281d567e51d7292ea20a07443a00892abecbbb231be1873a4f5",
+      "bytes": 151505,
+      "quote": "Text file extensions are not tracked by Git LFS by default, and if they’re greater than 10MB, they will not be committed and uploaded.",
+      "quoteSha256": "b9cef03b81d664d8eb5de7693c1ea8119a258735471aab80870071114da6013b"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Uploading datasets · Hugging Face",
+      "url": "https://huggingface.co/docs/hub/datasets-adding",
+      "finalUrl": "https://huggingface.co/docs/hub/datasets-adding",
+      "status": 200,
+      "fetchedAt": "2026-11-22T18:42:17.949Z",
+      "extractor": "page-text-v1",
+      "sha256": "ffa1465420c6f7827f6508746248fac059bde91b8e43c784062da835fb707036",
+      "bytes": 217271,
+      "quote": "A repository hosts all your dataset files, including the revision history, making storing more than one dataset version possible.",
+      "quoteSha256": "1a1f47be50a5ca0a3cd4701a1838b3903db6977bd52880895a407b74a378baf4"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "GitHub - Uniswap/v4-core: 🦄 🦄 🦄 🦄 Core smart contracts of Uniswap v4 · GitHub",
+      "url": "https://github.com/Uniswap/v4-core",
+      "finalUrl": "https://github.com/Uniswap/v4-core",
+      "status": 200,
+      "fetchedAt": "2026-11-22T18:42:18.508Z",
+      "extractor": "page-text-v1",
+      "sha256": "9c71a3de0fc546495fc959cc3e63207ea80db06a9221f6e0368356519e962927",
+      "bytes": 271365,
+      "quote": "Latest commit History 1,518 Commits 1,518 Commits",
+      "quoteSha256": "f10742e6692475e4929cb9b75c761a286850d071a3658eae11f13d22da9572a5"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "v4-core/README.md at main · Uniswap/v4-core · GitHub",
+      "url": "https://github.com/Uniswap/v4-core/blob/main/README.md",
+      "finalUrl": "https://github.com/Uniswap/v4-core/blob/main/README.md",
+      "status": 200,
+      "fetchedAt": "2026-11-22T18:42:18.448Z",
+      "extractor": "page-text-v1",
+      "sha256": "09f55b1fac8d7385dc67903f8b964e5335523bb8ecef9e3190bb42eef36d07d3",
+      "bytes": 200434,
+      "quote": "The contracts in this repo are in early stages - we are releasing the draft code now so that v4 can be built in public, with open feedback and meaningful community contribution.",
+      "quoteSha256": "d03085c99d37246b6886962ed7abb7f2d53924d2596bede6c2112ffe2a1af9bf"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "Model Cards · Hugging Face",
+      "url": "https://huggingface.co/docs/hub/en/model-cards",
+      "finalUrl": "https://huggingface.co/docs/hub/en/model-cards",
+      "status": 200,
+      "fetchedAt": "2026-11-22T18:42:17.875Z",
+      "extractor": "page-text-v1",
+      "sha256": "811972f8ac00561d5646b23266b1f5f103e11ccc07fd3bfca7e54bdce48259c3",
+      "bytes": 277809,
+      "quote": "ZH API docs Join the Hugging Face community and get access to the augmented documentation experience Collaborate on models, datasets and Spaces Faster examples with accelerated inference Switch between documentation themes Sign Up to get started Copy page Model Cards What are Model Cards?",
+      "quoteSha256": "57b56760bf2b1f7049086a25143672df34f1cc24cc930695cb77d7439e12b5df"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "Dataset Cards · Hugging Face",
+      "url": "https://huggingface.co/docs/hub/datasets-cards",
+      "finalUrl": "https://huggingface.co/docs/hub/datasets-cards",
+      "status": 200,
+      "fetchedAt": "2026-11-22T18:42:17.881Z",
+      "extractor": "page-text-v1",
+      "sha256": "61515fd20709c2b1c86882dee247488a610ddb7bcdcd56ef67a97b2512aa9ba9",
+      "bytes": 212628,
+      "quote": "Each dataset may be documented by the README.md file in the repository. This file is called a dataset card , and the Hugging Face Hub will render its contents on the dataset's main page.",
+      "quoteSha256": "51b63f0af9cc67ed691924148ee554d851bbbe310063c2e1ec44918de0e9ad74"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of Uniswap/v4-core",
+      "url": "https://api.github.com/repos/Uniswap/v4-core/commits?per_page=50&since=2026-10-23T18:42:18.949Z",
+      "fetchedAt": "2026-11-22T18:42:15.667Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "ea70799d3685d3ea229d7e090fbb47f70f64c2dadf07a2aab1abdb69390dbd2e"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-22-uniswap-v4-core-release-watch.md",
+  "decidedBy": "bee"
+}
