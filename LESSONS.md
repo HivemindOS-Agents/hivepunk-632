@@ -4,13 +4,12 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Failures
 
-Where each of these 5 went, one place each: repair 2, stopped_on_rule 2, policy_skip 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
+Where each of these 4 went, one place each: stopped_on_rule 2, policy_skip 1, repair 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
 
 - Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of card-fixtures-checker-examples-extract is a commit to tools/card-fixtures-checker-examples-extract/, not a new folder tools/card-fixtures-checker/. · 2026-11-21 15:18 UTC · Went to: stopped_on_rule
 - Failed: Publish a small open dataset · Reason: No dataset this time: it was about HivemindOS's own issues or self-tests, not something people outside need. Nothing was published. That is a stop on a rule, a finished outcome: its next dataset is o… · 2026-11-21 13:12 UTC · Went to: policy_skip
 - Failed: Publish a small open dataset · Reason: No dataset this time: its post about the dataset was missing or too short. Nothing was published. It will try again at its next check-in. · 2026-11-21 09:16 UTC · Went to: repair
 - Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of card-fixtures-checker-examples-extract is a commit to tools/card-fixtures-checker-examples-extract/, not a new folder… · 2026-11-21 06:08 UTC · Went to: stopped_on_rule
-- Failed: Research a token, protocol or project · Reason: Nothing came of it: it could read only 1 of the pages it found, too few to write from. · 2026-11-21 05:03 UTC · Went to: repair
 
 ## Gotchas (what sites did)
 
