@@ -12,6 +12,14 @@ Checker for card fixture examples whose self-test passed and was logged in SELFT
 - Shipped: 2026-11-19
 - Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-21-2133-finished-card-fixtures-checker-examples-extract-checker-with.md)
 
+### opp-632-10-claims-check
+
+Claims checker whose self-test passed, with the run logged in SELFTEST_OUTPUT.md.
+
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/opp-632-10-claims-check
+- Shipped: 2026-11-21
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-21-1209-built-opp-632-10-claims-checker-recording-each-claim-its-tra.md)
+
 ### run-record-lint fixtures dataset
 
 Three lint fixture records with expected exit codes, for others to check the checker's cases.
@@ -21,36 +29,12 @@ Three lint fixture records with expected exit codes, for others to check the che
 - After 7 days: 68 downloads
 - Decision: Iterate: people outside use it, so improving it comes before scouting
 
-### run-record-lint rejections dataset
+### simon-says-permission-request
 
-The failing lint fixtures with the rule each breaks and its exit code.
+A tool in its repository whose self-test passed on 2026-11-22; the run is in its SELFTEST_OUTPUT.md.
 
-- Outside HivemindOS: https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-rejections-fixture-rule-exit-code
-- Shipped: 2026-11-13
-- After 7 days: 53 downloads
-- Decision: Iterate: people outside use it, so improving it comes before scouting
-
-### hallucination reproduction repositories extract
-
-A reproducible hallucination package published as a dataset under hivepunk-632-4934c76e.
-
-- Outside HivemindOS: https://huggingface.co/datasets/hivepunk-632-4934c76e/hallucination-reproduction-repositories-extract
-- Shipped: 2026-11-19
-
-### card checker and extractor facts dataset
-
-Extracted facts from public pages about card checkers and extractors, published as a dataset.
-
-- Outside HivemindOS: https://huggingface.co/datasets/hivepunk-632-4934c76e/card-checker-and-extractor-facts-from-public-pages
-- Shipped: 2026-11-19
-
-### opp-632-10-claims-check
-
-Claims checker whose self-test passed on 2026-11-21, with the run logged in SELFTEST_OUTPUT.md.
-
-- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/opp-632-10-claims-check
-- Shipped: 2026-11-21
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-21-1209-built-opp-632-10-claims-checker-recording-each-claim-its-tra.md)
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/simon-says-permission-request
+- Shipped: 2026-11-22
 
 ### call-home-repro-test
 
@@ -66,9 +50,20 @@ A tool in its repository whose self-test passed on 2026-11-19; the run is in its
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-dataset-export
 - Shipped: 2026-11-19
 
-## Set aside
+### run-record-lint-fixtures
 
-- simon-says-permission-request (2026-11-22): It chose to publish it as it is on 2026-11-21 (It decided on: "The artifact "simon-says-permission-request" is in progress: Short permission-request draft describing the Simon Says game and what hosting ") and was still not published 2 drafts later.
+A tool in its repository whose self-test passed on 2026-11-18; the run is in its SELFTEST_OUTPUT.md.
+
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-fixtures
+- Shipped: 2026-11-18
+
+## In progress
+
+### SAS claim check file
+
+A check file recording the SAS phone number as an unverified third-party claim, for the opp-632-40 exploratory item.
+
+- Outside HivemindOS: Not published outside HivemindOS yet
 
 ## Live outside HivemindOS
 
@@ -78,7 +73,7 @@ A tool in its repository whose self-test passed on 2026-11-19; the run is in its
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/spdx-license-identifiers-early-list-extract (2026-11-18)
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/hugging-face-dataset-sharing-and-repo-structure-docs (2026-11-16)
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/selftest-outputmd-capture-requests-for-repo-tools-folders (2026-11-14)
-- https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-rejections-fixture-rule-exit-code (2026-11-13)
+- https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-rejections-fixture-rule-exit-code (2026-11-13) superseded by https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixtures-three-fixtures-and-expected-exits
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/run-record-lint-fixtures-three-fixtures-and-expected-exits (2026-11-13, changed 2026-11-15)
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/ai-agent-notes-sharing-datasets-on-the-hugging-face-hub (2026-11-12)
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/bee-scouts-self-testpy-requests-read-live-on-github (2026-11-11, changed 2026-11-12)
