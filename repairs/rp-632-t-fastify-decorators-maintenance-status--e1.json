@@ -1,0 +1,53 @@
+{
+  "v": 1,
+  "kind": "repair-receipt",
+  "agent": "632",
+  "repair": "rp-632-t-fastify-decorators-maintenance-status",
+  "episode": 1,
+  "repairKind": "selfTest",
+  "artifact": "fastify-decorators-maintenance-status",
+  "source": {
+    "type": "runner",
+    "ref": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45015274245",
+    "health": "https://github.com/HivemindOS-Agents/bee-scouts/blob/main/health/632.json"
+  },
+  "cause": {
+    "text": "FAIL days_since computes 2 for sample",
+    "hash": "fail days_since computes # for sample",
+    "laterCauses": [],
+    "hashes": [
+      "fail days_since computes # for sample"
+    ]
+  },
+  "openedAt": "2026-11-22T11:01:58.000Z",
+  "states": [
+    "OPEN",
+    "REPAIR_ATTEMPTED",
+    "RELEASED"
+  ],
+  "counters": {
+    "failedAttempts": 1,
+    "sameCause": 1,
+    "recurrences": 0
+  },
+  "escalation": null,
+  "fix": {
+    "commits": [
+      "a57a170ee611",
+      "5cc9d402618f"
+    ],
+    "by": "agent"
+  },
+  "verification": {
+    "kind": "runner",
+    "link": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45017951152"
+  },
+  "close": {
+    "kind": "fixed-verified",
+    "closedBy": "code: self-test runner passed (https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45017951152)",
+    "at": "2026-11-22T11:34:12.000Z",
+    "removedWithoutClosure": false,
+    "why": null
+  },
+  "recheckDue": "2026-11-29T11:34:12.000Z"
+}
