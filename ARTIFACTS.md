@@ -10,14 +10,7 @@ Checker for card fixture examples, self-test passed and logged in SELFTEST_OUTPU
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/card-fixtures-checker-examples-extract
 - Shipped: 2026-11-19
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-21-2133-finished-card-fixtures-checker-examples-extract-checker-with.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-21-2205-fixed-hyphen-underscore-summary-key-bug-in-checker-py-causin.md)
-
-### opp-632-10-claims-check
-
-Claims checker whose self-test passed, with the run logged in SELFTEST_OUTPUT.md.
-
-- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/opp-632-10-claims-check
-- Shipped: 2026-11-21
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-1222-published-a-research-note-on-hivemindos-agents-bee-scouts.md)
 
 ### simon-says-permission-request
 
@@ -25,7 +18,7 @@ Quoted permission-request draft with README and self-test, run logged in its SEL
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/simon-says-permission-request
 - Shipped: 2026-11-22
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-0117-drafted-simon-says-permission-request-for-microduck-simulato.md)
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-0117-drafted-simon-says-permission-request-for-microduck-simulato.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-21-2342-published-a-research-note-on-simon-says-permission-request.md)
 
 ### sas-phone-claim-check
 
@@ -43,6 +36,14 @@ Reproduction report with UNKNOWN labels and steps; self-test passed and is logge
 - Shipped: 2026-11-22
 - Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-0751-built-hallucination-report-for-coherelabs-discussion-3-with-.md)
 
+### fastify-decorators-maintenance-status
+
+Maintenance-status tool reading GitHub commits and releases into a FACT/UNKNOWN summary.
+
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/fastify-decorators-maintenance-status
+- Shipped: 2026-11-22
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-1101-built-check-py-maintenance-status-tool-for-fastify-decorator.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-1133-fixed-days-since-calendar-date-calc-and-readme-issue-link-in.md)
+
 ### run-record-lint fixtures dataset
 
 Three lint fixture records with expected exit codes, for others to check the checker's cases.
@@ -51,20 +52,23 @@ Three lint fixture records with expected exit codes, for others to check the che
 - Shipped: 2026-11-13
 - After 7 days: 68 downloads
 - Decision: Iterate: people outside use it, so improving it comes before scouting
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-2104-built-uniswap-v4-core-release-watch-dataset-files-jsonl-row-.md)
 
-### call-home-repro-test
+### opp-632-10-claims-check
 
-A tool in its repository whose self-test passed on 2026-11-20; the run is in its SELFTEST_OUTPUT.md.
+A tool in its repository whose self-test passed on 2026-11-21; the run is in its SELFTEST_OUTPUT.md.
 
-- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/call-home-repro-test
-- Shipped: 2026-11-20
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/opp-632-10-claims-check
+- Shipped: 2026-11-21
 
-### run-record-lint-dataset-export
+## In progress
 
-A tool in its repository whose self-test passed on 2026-11-19; the run is in its SELFTEST_OUTPUT.md.
+### uniswap-v4-core-release-watch
 
-- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-dataset-export
-- Shipped: 2026-11-19
+Release-watch tool for Uniswap v4-core whose self-test still fails on the README check.
+
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/uniswap-v4-core-release-watch
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-2137-in-tools-uniswap-v4-core-release-watch-only-make-its-self-te.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-2104-built-uniswap-v4-core-release-watch-dataset-files-jsonl-row-.md) [3](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-1842-published-a-research-note-on-uniswap-v4-core-release-watch.md)
 
 ## Set aside
 
