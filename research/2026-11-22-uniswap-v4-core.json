@@ -1,0 +1,268 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-22T15:32:56.035Z",
+  "subject": "Uniswap v4-core",
+  "subjectKind": "protocol",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "Uniswap v4-core is best understood as programmable pool infrastructure, not as v3 with extra features: the singleton and hook design makes the hook contract a first-class risk object. The evidence supports the architecture and overall Uniswap scale, but recent core-repo activity and audit outcomes remain unconfirmed from the pages read.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "Uniswap/v4-core has 1 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/Uniswap/v4-core/commits?per_page=50&since=2026-10-23T15:32:59.197Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether Uniswap/v4-core is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "Uniswap v4 is a new automated market maker protocol that provides extensible and customizable pools, and v4-core hosts the core pool logic for creating pools and executing pool actions like swapping and providing liquidity.",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-core",
+      "context": true,
+      "quote": "Uniswap v4 is a new automated market maker protocol that provides extensible and customizable pools. v4-core hosts the core pool logic for creating pools and executing pool actions like swapping and providing liquidity.",
+      "sourceId": "src-1",
+      "quoteSha256": "a7f8a5cbbae021fb0ca7abcb046a0a722af362941bb8551158c50959a05e450c"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "v4-core uses a singleton-style architecture where all pool state is managed in PoolManager.sol, and pool actions can be taken after an initial call to unlock.",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-core",
+      "quote": "v4-core uses a singleton-style architecture, where all pool state is managed in the PoolManager.sol contract. Pool actions can be taken after an initial call to unlock .",
+      "sourceId": "src-1",
+      "quoteSha256": "4142f996abad68a7d60fe4d62e7c2797d6a1fe65e553e77aa73af88ce69632fe"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "A pool may be initialized with a hook contract implementing before/after callbacks for Initialize, AddLiquidity, RemoveLiquidity, Swap and Donate, and which callbacks are executed cannot change after pool initialization.",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-core",
+      "quote": "Additionally, a pool may be initialized with a hook contract, that can implement any of the following callbacks in the lifecycle of pool actions: {before,after}Initialize {before,after}AddLiquidity {before,after}RemoveLiquidity {before,after}Swap {before,after}Donate The callback logic, may be",
+      "sourceId": "src-1",
+      "quoteSha256": "aab705fd3ccb17c71e87e0697ed293b940759bbf483fc6f72dc9a6e3aeae02bf"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Uniswap described hooks as contracts that run at various points of a pool action's lifecycle, allowing pools to e.g. support dynamic fees or onchain limit orders.",
+      "check": "page",
+      "source": "https://blog.uniswap.org/uniswap-v4",
+      "quote": "Our vision with Uniswap v4 is to allow anyone to make these tradeoff decisions through the introduction of &quot;hooks.&quot; Hooks are contracts that run at various points of a pool action&#x27;s lifecycle.",
+      "sourceId": "src-4",
+      "quoteSha256": "6e01c051694f4d94a6da3c75c0dae985c6b8ef9f5dbf80aace0af0c0da6b0326"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Uniswap's core logic, like v3, is described as non-upgradeable, while each pool can use its own hook smart contract with permissions determined at pool creation.",
+      "check": "page",
+      "source": "https://blog.uniswap.org/uniswap-v4",
+      "quote": "Uniswap v4's core logic, like v3, is non-upgradeable. While each pool can use its own hook smart contract, hooks can be limited to only specific permissions determined at pool creation.",
+      "sourceId": "src-4",
+      "quoteSha256": "e0acf77de5dad098e9f2f14ebe80fbb86c4a897628f5e16ecf53f2c3d23cbfc3"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "The v4-core GitHub repository shows 1,518 commits.",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-core",
+      "quote": "Latest commit History 1,518 Commits 1,518 Commits",
+      "sourceId": "src-1",
+      "quoteSha256": "f10742e6692475e4929cb9b75c761a286850d071a3658eae11f13d22da9572a5"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "An independent research repo reports, at a 29 September 2026 DefiLlama snapshot, Uniswap TVL $3.917B, 30d DEX volume $91.892B and 30d fees $208.26M.",
+      "check": "page",
+      "source": "https://github.com/moonlesssssss/uniswap-onchain-research",
+      "context": true,
+      "quote": "Metric Snapshot TVL $3.917B 30d DEX volume $91.892B 30d fees $208.26M",
+      "sourceId": "src-6",
+      "quoteSha256": "b4afe0018cdeba9a450d033207f79ba1d6d59d7ab2870fc3397fb41b0a7e8bc9"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "The same independent research repo states v4 launched in January 2025.",
+      "check": "page",
+      "source": "https://github.com/moonlesssssss/uniswap-onchain-research",
+      "quote": "v4 launched in January 2025.",
+      "sourceId": "src-6",
+      "quoteSha256": "a09bff16851699666567241a295f87d755864c4e8fe41af78a0eb95991ee31de"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "The service check found Uniswap/v4-core has 1 raw commit in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/Uniswap/v4-core/commits?per_page=50&since=2026-10-23T15:32:59.197Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c10",
+      "label": "DERIVED",
+      "text": "Pool-level risk therefore depends on the specific hook and its admin/permissions, not only on v4-core or on token pair and fee tier.",
+      "check": "page",
+      "inputs": [
+        "c3",
+        "c5"
+      ],
+      "math": "From c3 hooks can run lifecycle callbacks and c5 each pool can use its own hook with permissions set at creation, the effective pool behaviour is a function of core plus the chosen hook."
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "Whether Uniswap/v4-core is still shipping",
+      "check": "page",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "The findings and remediation status of the OpenZeppelin Uniswap v4 Core audit",
+      "check": "page",
+      "missing": "A page whose text actually lists the audit scope, findings and fixes; the OpenZeppelin page read showed navigation/news text only, no audit content."
+    }
+  ],
+  "counts": {
+    "fact": 10,
+    "derived": 1,
+    "unknown": 3
+  },
+  "risks": [
+    "Customisation moved risk into hook code: a hooked pool can differ from v3 and a frontend showing only a fee tier hides the hook users actually use.",
+    "A hook that breaks the unlock/flash-accounting settlement could affect every pool sharing the PoolManager.",
+    "An immutable manager with an upgradeable or replaceable hook is not an immutable pool; deployment and admin rights must be checked per pool.",
+    "Hooks can change pool rules, take a cut or refuse actions, so pool safety is the safety of hook plus manager.",
+    "Recent commit activity looks quiet: 1 raw commit in the last 30 days, 0 real work, leaving maintenance and shipping cadence uncertain."
+  ],
+  "unknowns": [
+    "Whether Uniswap/v4-core is still shipping: None of its commits in the last 30 days is real work.",
+    "Whether Uniswap/v4-core is still shipping: None of its commits in the last 30 days is real work.",
+    "The findings and remediation status of the OpenZeppelin Uniswap v4 Core audit: A page whose text actually lists the audit scope, findings and fixes; the OpenZeppelin page read showed navigation/news text only, no audit content."
+  ],
+  "wouldChangeMind": [
+    "A readable OpenZeppelin audit report showing scope, findings and remediation for the deployed v4-core code.",
+    "Further real-work commits or a new release after the 1 raw / 0 real-work 30-day check window.",
+    "Live, v4-specific data separating v4 volume/TVL/hook usage from Uniswap overall figures."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "GitHub - Uniswap/v4-core: 🦄 🦄 🦄 🦄 Core smart contracts of Uniswap v4 · GitHub",
+      "url": "https://github.com/Uniswap/v4-core",
+      "finalUrl": "https://github.com/Uniswap/v4-core",
+      "status": 200,
+      "fetchedAt": "2026-11-22T15:32:58.962Z",
+      "extractor": "page-text-v1",
+      "sha256": "9c71a3de0fc546495fc959cc3e63207ea80db06a9221f6e0368356519e962927",
+      "bytes": 271373,
+      "quote": "Uniswap v4 is a new automated market maker protocol that provides extensible and customizable pools. v4-core hosts the core pool logic for creating pools and executing pool actions like swapping and providing liquidity.",
+      "quoteSha256": "a7f8a5cbbae021fb0ca7abcb046a0a722af362941bb8551158c50959a05e450c"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Uniswap v4 Core Audit",
+      "url": "https://blog.openzeppelin.com/uniswap-v4-core-audit",
+      "finalUrl": "https://www.openzeppelin.com/news",
+      "status": 200,
+      "fetchedAt": "2026-11-22T15:32:58.583Z",
+      "extractor": "page-text-v1",
+      "sha256": "eac6d4e60fa21f783d4c4091572a71d6c23b462920fda351de991375199b35ff",
+      "bytes": 291439,
+      "quote": "News | OpenZeppelin S&amp;P Global Completes Acquisition of OpenZeppelin | Read the announcement News from OpenZeppelin OpenZeppelin Brings Confidential Balances and Transfers to Stellar Product Releases &amp; Services October 22, 2026 OpenZeppelin Partners With Chainlink to Advance Onchain Finance",
+      "quoteSha256": "5b91517ae9deffc149bdcd85cce394c03b39e6f9f29d967d5732bfa018eff485"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "v4-core/ at main · Uniswap/v4-core · GitHub",
+      "url": "https://github.com/Uniswap/v4-core/tree/main?search=1",
+      "finalUrl": "https://github.com/Uniswap/v4-core/tree/main?search=1",
+      "status": 200,
+      "fetchedAt": "2026-11-22T15:32:58.942Z",
+      "extractor": "page-text-v1",
+      "sha256": "808ed2e8467353d7ba735d4e35bfb8b5e268699002f48c18e56cf2afc9aaf710",
+      "bytes": 239397,
+      "quote": "We expect this will be a months-long process, and we appreciate any kind of contribution, no matter how small.",
+      "quoteSha256": "b96670cda7a2f90f4df960702c4e2a1c901faa1e871d229bab55306c4086b859"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "Our Vision for Uniswap v4",
+      "url": "https://blog.uniswap.org/uniswap-v4",
+      "finalUrl": "https://blog.uniswap.org/uniswap-v4",
+      "status": 200,
+      "fetchedAt": "2026-11-22T15:32:58.479Z",
+      "extractor": "page-text-v1",
+      "sha256": "2f4ac285e5649b0fa768f557cf6bf66443dba239bd8bbe5285724e33bc6fe7ad",
+      "bytes": 159276,
+      "quote": "Our vision with Uniswap v4 is to allow anyone to make these tradeoff decisions through the introduction of &quot;hooks.&quot; Hooks are contracts that run at various points of a pool action&#x27;s lifecycle.",
+      "quoteSha256": "6e01c051694f4d94a6da3c75c0dae985c6b8ef9f5dbf80aace0af0c0da6b0326"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "Uniswap v4 Core | Blockchain Lab",
+      "url": "https://blockchainlab.com/whitepaper/uniswap-v4",
+      "finalUrl": "https://blockchainlab.com/whitepaper/uniswap-v4",
+      "status": 200,
+      "fetchedAt": "2026-11-22T15:32:58.446Z",
+      "extractor": "page-text-v1",
+      "sha256": "76aa76d0c2c102afce1a8a14f78cd06c5386d27c6e842d999917bc750019b35e",
+      "bytes": 43413,
+      "quote": "Hooks are the market A pool can point at code that runs before or after a swap, a liquidity change, or a donation.",
+      "quoteSha256": "8a09d413672b44eab2bc94e291608d7a28a959139103611b429de1fce1eae4d3"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "GitHub - moonlesssssss/uniswap-onchain-research · GitHub",
+      "url": "https://github.com/moonlesssssss/uniswap-onchain-research",
+      "finalUrl": "https://github.com/moonlesssssss/uniswap-onchain-research",
+      "status": 200,
+      "fetchedAt": "2026-11-22T15:32:59.197Z",
+      "extractor": "page-text-v1",
+      "sha256": "0b7ac7aaf64b382caf2c6e72daa2eaece503e291ed15d70bc1281b382c23c248",
+      "bytes": 343504,
+      "quote": "Metric Snapshot TVL $3.917B 30d DEX volume $91.892B 30d fees $208.26M",
+      "quoteSha256": "b4afe0018cdeba9a450d033207f79ba1d6d59d7ab2870fc3397fb41b0a7e8bc9"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of Uniswap/v4-core",
+      "url": "https://api.github.com/repos/Uniswap/v4-core/commits?per_page=50&since=2026-10-23T15:32:59.197Z",
+      "fetchedAt": "2026-11-22T15:32:56.035Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "21c8d674d9fcdf1f1a3ca3f9244c20b099cc6e60702a6ff0e56de6418ec61db9"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-22-uniswap-v4-core.md",
+  "decidedBy": "bee"
+}
