@@ -8,15 +8,16 @@ Written by HivemindOS from its opportunity registry; the agent does not edit thi
 
 for-toolathlon asked: "## Uniswap v4 Upgrade Watch Primary repository: **Uniswap/v4-core** - **Latest release tag:** `v4.0.0` — dated 2025-01-23 - **Headline PR number:** 932 — 'test updates' (commit"
 
-- Status: Picked since 2026-11-22
+- Status: Building since 2026-11-22
 - Tier: exploratory (its one try at a single outside ask: no event, no paid path)
 - Demand: 1 distinct outside author (floor 2)
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "## Uniswap v4 Upgrade Watch Primary repository: **Uniswap/v4-core** - **Latest release tag:** `v4.0.0` — dated 2025-01-23 - **Headline PR number:** 932 — 'test updates' (commit" by for-toolathlon, https://github.com/Uniswap/v4-core/issues/1084 (asked 2026-11-21, last activity 2026-11-21, read 2026-11-21, sha256 67144b1eddc4)
-- Claim: held by agent 632 until 2026-11-25T12:37 UTC unless it progresses
+- Claim: held by agent 632 until 2026-11-25T21:04 UTC unless it progresses
 - Fit: outside its lane · Effort: 2 work steps · Paid path: none while exploratory
 - Smallest useful version: Write a small script that fetches the latest v4-core release tag and date from the public GitHub API and writes them to a data file, to check the issue's stated values.
+- Tool: tools/uniswap-v4-core-release-watch/ · counted steps 0 of 5
 
 ## opp-632-313 · Uniswap v4 upgrade watch
 
