@@ -2,7 +2,7 @@
   "v": 1,
   "kind": "watchdog",
   "agent": "632",
-  "at": "2026-11-21T00:01:40.189Z",
+  "at": "2026-11-22T00:13:18.174Z",
   "version": "watchdog-v1",
   "mode": "report",
   "checked": [
@@ -52,6 +52,16 @@
       "firstSeen": "2026-11-15T13:48:48.674Z"
     },
     {
+      "id": "wd-632-D2-undelivered:publish-dataset",
+      "check": "D2",
+      "name": "failure_not_in_health",
+      "severity": "repair",
+      "subject": "publish-dataset",
+      "detail": "Its repair of publish-dataset has 2 failed attempts, 0 of them after it was delivered.",
+      "evidence": [],
+      "firstSeen": "2026-11-22T00:13:18.174Z"
+    },
+    {
       "id": "wd-632-D15-reviews/2026-11-19-hallucination-reproduction-repositories-extract.json",
       "check": "D15",
       "name": "review_hollow",
@@ -88,16 +98,16 @@
       "firstSeen": "2026-11-20T00:08:10.995Z"
     },
     {
-      "id": "wd-632-D17---Stuck-after-2-drafts-it-chose-to-publish-it-as-it-is-2026-11-20-:-It-decide-",
+      "id": "wd-632-D17---Stuck-after-1-drafts-it-chose-to-publish-it-as-it-is-2026-11-21-:-It-decide-",
       "check": "D17",
       "name": "publish_while_failing",
       "severity": "repair",
       "subject": "ARTIFACTS.md",
-      "detail": "\"- Stuck after 2 drafts, it chose to publish it as it is (2026-11-20): It decided on: \"learned: A packaged artifact only counts once its files are live at a pub…\"",
+      "detail": "\"- Stuck after 1 drafts, it chose to publish it as it is (2026-11-21): It decided on: \"The artifact \"simon-says-permission-request\" is in progress: Short permis…\"",
       "evidence": [
         "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/ARTIFACTS.md"
       ],
-      "firstSeen": "2026-11-21T00:01:40.189Z"
+      "firstSeen": "2026-11-22T00:13:18.174Z"
     },
     {
       "id": "wd-632-D18-artifacts",
@@ -110,30 +120,6 @@
         "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/ARTIFACTS.md"
       ],
       "firstSeen": "2026-11-15T13:48:48.674Z"
-    },
-    {
-      "id": "wd-632-D22-tools/attribution-docs-check-fixtures/fixtures.csv",
-      "check": "D22",
-      "name": "claimed_file_not_committed",
-      "severity": "repair",
-      "subject": "tools/attribution-docs-check-fixtures/fixtures.csv",
-      "detail": "A step said it built tools/attribution-docs-check-fixtures/fixtures.csv; it is not in the commit.",
-      "evidence": [
-        "step 2026-11-19T00:26Z"
-      ],
-      "firstSeen": "2026-11-20T00:08:10.995Z"
-    },
-    {
-      "id": "wd-632-D22-tools/attribution-docs-check-fixtures/checksums.txt",
-      "check": "D22",
-      "name": "claimed_file_not_committed",
-      "severity": "repair",
-      "subject": "tools/attribution-docs-check-fixtures/checksums.txt",
-      "detail": "A step said it built tools/attribution-docs-check-fixtures/checksums.txt; it is not in the commit.",
-      "evidence": [
-        "step 2026-11-19T04:10Z"
-      ],
-      "firstSeen": "2026-11-20T00:08:10.995Z"
     },
     {
       "id": "wd-632-D22-tools/card-fixtures-checker/checker.py",
@@ -153,37 +139,37 @@
       "name": "owner_handoff",
       "severity": "report",
       "subject": "its steps",
-      "detail": "13 steps in the last 48 hours handed the rest of the work to the owner. The newest: \"Left for owner: read that verbatim log before any publish\".",
+      "detail": "7 steps in the last 48 hours handed the rest of the work to the owner. The newest: \"Left for owner: run python3 self_test\".",
       "evidence": [
+        "step 2026-11-21T12:09Z",
+        "step 2026-11-21T02:55Z",
         "step 2026-11-20T20:39Z",
-        "step 2026-11-20T17:30Z",
-        "step 2026-11-20T14:23Z",
-        "step 2026-11-20T11:14Z"
+        "step 2026-11-20T17:30Z"
       ],
       "firstSeen": "2026-11-16T00:00:20.098Z"
     }
   ],
   "notSeenAgain": [
     {
-      "id": "wd-632-D17---Stuck-after-2-drafts-it-chose-to-publish-it-as-it-is-2026-11-19-:-It-decide-",
+      "id": "wd-632-D17---Stuck-after-2-drafts-it-chose-to-publish-it-as-it-is-2026-11-20-:-It-decide-",
       "check": "D17",
       "subject": "ARTIFACTS.md",
+      "firstSeen": "2026-11-21T00:01:40.189Z"
+    },
+    {
+      "id": "wd-632-D22-tools/attribution-docs-check-fixtures/fixtures.csv",
+      "check": "D22",
+      "subject": "tools/attribution-docs-check-fixtures/fixtures.csv",
       "firstSeen": "2026-11-20T00:08:10.995Z"
     },
     {
-      "id": "wd-632-D22-tools/run-record-lint-dataset-card/self_test.py",
+      "id": "wd-632-D22-tools/attribution-docs-check-fixtures/checksums.txt",
       "check": "D22",
-      "subject": "tools/run-record-lint-dataset-card/self_test.py",
-      "firstSeen": "2026-11-19T00:09:00.581Z"
-    },
-    {
-      "id": "wd-632-D22-tools/attribution-docs-check-fixtures/build_dataset.py",
-      "check": "D22",
-      "subject": "tools/attribution-docs-check-fixtures/build_dataset.py",
-      "firstSeen": "2026-11-19T00:09:00.581Z"
+      "subject": "tools/attribution-docs-check-fixtures/checksums.txt",
+      "firstSeen": "2026-11-20T00:08:10.995Z"
     }
   ],
-  "said": "10 found",
+  "said": "9 found",
   "requests": 22,
-  "elapsedMs": 2848
+  "elapsedMs": 2156
 }
