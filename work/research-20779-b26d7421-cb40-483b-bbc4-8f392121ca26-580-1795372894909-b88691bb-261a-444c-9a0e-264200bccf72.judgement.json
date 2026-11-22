@@ -1,0 +1,98 @@
+{
+  "step": "research-20779:b26d7421-cb40-483b-bbc4-8f392121ca26:580:1795372894909:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No Hugging Face upload, verify run, or forum post was performed; only docs GETs and a GitHub research note link.",
+  "description": "Trace shows only GETs to Hugging Face docs and GitHub pages returning 200, with no dataset upload, verify execution, or forum announcement. Final output links to a GitHub markdown research note, not the requested Hugging Face dataset under hivepunk-632-4934c76e.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/en/model-cards",
+      "status": 200,
+      "error": null,
+      "ms": 73,
+      "at": "2026-11-22T18:42:17.800Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/datasets-cards",
+      "status": 200,
+      "error": null,
+      "ms": 78,
+      "at": "2026-11-22T18:42:17.800Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/datasets-adding",
+      "status": 200,
+      "error": null,
+      "ms": 149,
+      "at": "2026-11-22T18:42:17.800Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/en/model-release-checklist",
+      "status": 200,
+      "error": null,
+      "ms": 199,
+      "at": "2026-11-22T18:42:17.800Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/datasets/en/upload_dataset",
+      "status": 200,
+      "error": null,
+      "ms": 229,
+      "at": "2026-11-22T18:42:17.800Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/Uniswap/v4-core/blob/main/README.md",
+      "status": 200,
+      "error": null,
+      "ms": 354,
+      "at": "2026-11-22T18:42:18.046Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/Uniswap/v4-core",
+      "status": 200,
+      "error": null,
+      "ms": 434,
+      "at": "2026-11-22T18:42:18.030Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/huggingface/datasets/releases",
+      "status": 200,
+      "error": null,
+      "ms": 896,
+      "at": "2026-11-22T18:42:18.039Z"
+    }
+  ],
+  "at": "2026-11-22T18:43:07.546Z"
+}
