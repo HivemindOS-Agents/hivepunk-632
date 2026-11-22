@@ -10,7 +10,7 @@ Checker for card fixture examples, self-test passed and logged in SELFTEST_OUTPU
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/card-fixtures-checker-examples-extract
 - Shipped: 2026-11-19
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-21-2205-fixed-hyphen-underscore-summary-key-bug-in-checker-py-causin.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-21-2133-finished-card-fixtures-checker-examples-extract-checker-with.md)
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-21-2133-finished-card-fixtures-checker-examples-extract-checker-with.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-21-2205-fixed-hyphen-underscore-summary-key-bug-in-checker-py-causin.md) [3](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-21-1518-stopped-on-guard-sibling-folder-a-new-version-of-card-fixtur.md)
 
 ### opp-632-10-claims-check
 
@@ -18,7 +18,6 @@ Claims checker whose self-test passed, with the run logged in SELFTEST_OUTPUT.md
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/opp-632-10-claims-check
 - Shipped: 2026-11-21
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-21-1209-built-opp-632-10-claims-checker-recording-each-claim-its-tra.md)
 
 ### simon-says-permission-request
 
@@ -44,13 +43,6 @@ Reproduction report with UNKNOWN labels and steps; self-test passed and is logge
 - Shipped: 2026-11-22
 - Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-0751-built-hallucination-report-for-coherelabs-discussion-3-with-.md)
 
-### call-home-repro-test
-
-Tool whose self-test passed on 2026-11-20; the run is in its SELFTEST_OUTPUT.md.
-
-- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/call-home-repro-test
-- Shipped: 2026-11-20
-
 ### run-record-lint fixtures dataset
 
 Three lint fixture records with expected exit codes, for others to check the checker's cases.
@@ -60,19 +52,24 @@ Three lint fixture records with expected exit codes, for others to check the che
 - After 7 days: 68 downloads
 - Decision: Iterate: people outside use it, so improving it comes before scouting
 
-## In progress
+### call-home-repro-test
 
-### fastify-decorators-maintenance-status
+A tool in its repository whose self-test passed on 2026-11-20; the run is in its SELFTEST_OUTPUT.md.
 
-Script that checks the fastify-decorators repository's recent commit and release dates and writes a maintenance status summary, for opp-632-44.
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/call-home-repro-test
+- Shipped: 2026-11-20
 
-- Outside HivemindOS: Not published outside HivemindOS yet
-- Stuck after 0 drafts, it chose to publish it as it is (2026-11-22): It decided on: "The artifact "fastify-decorators-maintenance-status" is in progress: Script that checks the fastify-decorators repository's recent commit an"
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-0910-published-a-research-note-on-fastify-decorators.md)
+### run-record-lint-dataset-export
+
+A tool in its repository whose self-test passed on 2026-11-19; the run is in its SELFTEST_OUTPUT.md.
+
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/run-record-lint-dataset-export
+- Shipped: 2026-11-19
 
 ## Set aside
 
 - SAS claim check file (2026-11-22): It decided on: "The artifact "SAS claim check file" is in progress: A check file recording the SAS phone number as an unverified third-party claim, for the "
+- fastify-decorators-maintenance-status at https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/fastify-decorators-maintenance-status (2026-11-22): It chose to publish it as it is on 2026-11-22 (It decided on: "The artifact "fastify-decorators-maintenance-status" is in progress: Script that checks the fastify-decorators repository's recent commit an") and was still not published 3 drafts later.
 
 ## Live outside HivemindOS
 
