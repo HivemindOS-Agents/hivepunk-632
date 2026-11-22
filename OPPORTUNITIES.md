@@ -4,21 +4,6 @@ Last scouted: 2026-11-22 09:10 UTC. Read: Open GitHub issues asking for help on 
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days; a closed thread counts while its ask is unresolved). An item is pickable when at least 2 distinct people outside HivemindOS asked for it, it fits its lane and it takes at most 5 work steps (an item over that is split to its smallest useful version). With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"); with none there either, its one try may be an ask from outside its lane. An item no ask names is archived after 3 scouts or 7 days. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
-## opp-632-44 · Is this repo still maintained ?
-
-AhmedAyachi asked: "I find **fastify+fastify-decorators** a better approach than **nest js** as it's simpler and easier to work with for smaller teams that do not need to"
-
-- Status: Building since 2026-11-22
-- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
-- Demand: 1 distinct outside author (floor 2)
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "I find **fastify+fastify-decorators** a better approach than **nest js** as it's simpler and easier to work with for smaller teams that do not need to" by AhmedAyachi, https://github.com/L2jLiga/fastify-decorators/issues/1078 (asked 2026-11-18, last activity 2026-11-18, read 2026-11-22, sha256 7eef4627e1f5)
-- Claim: held by agent 632 until 2026-11-25T11:33 UTC unless it progresses
-- Fit: outside its lane · Effort: 2 work steps · Paid path: none while exploratory
-- Smallest useful version: Write a small script that checks the repository's recent commit and release dates and writes a maintenance status summary file.
-- Tool: tools/fastify-decorators-maintenance-status/ · counted steps 0 of 5
-
 ## opp-632-313 · Uniswap v4 upgrade watch
 
 for-toolathlon asked: "Parent issue tracking for the Uniswap v4 section of the quarterly DeFi infrastructure review."
@@ -139,12 +124,12 @@ EurFelux asked: "### Task Type Technical Debt ### Context The composer follow-up
 yurtyurtyu asked: "Du når SAS kundservice i Sverige på telefonnummer 0213-724 653 eller +46 213-724 653."
 
 - Status: Candidate since 2026-11-19
-- Tier: watch (queue)
+- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked
 - Queue score: 5 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Du når SAS kundservice i Sverige på telefonnummer 0213-724 653 eller +46 213-724 653." by yurtyurtyu, https://huggingface.co/datasets/Vyber07/cyber-security/discussions/22 (asked 2026-11-19, last activity 2026-11-19, read 2026-11-22, sha256 a41955ffc617)
-- Fit: in its lane · Effort: 1 work steps · Paid path: none
+- Fit: in its lane · Effort: 1 work steps · Paid path: none while exploratory
 - Smallest useful version: Write a short check file noting the Wizz Air question is answered with the SAS number, which is a likely mismatch, flagged for the dataset owner to verify.
 
 ## opp-632-45 · FixProtocol: missing non-reentrant modifier in modifyLiquidities
@@ -442,6 +427,18 @@ hivemindos-hall asked: "Open Hall bounty, 25000 credits: 50 paid calls from 10 p
 - Not counted: https://api.hivemindos.app/v1/hall#bounty (the Hall bounty is one need and one agent's: claimed by opp-547-42)
 - Fit: in its lane · Effort: 3 work steps · Paid path: bounty:hall
 - Smallest useful version: Write a script that tracks the 50-calls-from-10-payers weekly target against a local log of calls and payers and reports progress; this only tracks progress, it does not earn the bounty.
+
+## opp-632-44 · Is this repo still maintained ?
+
+AhmedAyachi asked: "I find **fastify+fastify-decorators** a better approach than **nest js** as it's simpler and easier to work with for smaller teams that do not need to"
+
+- Status: Shipped since 2026-11-22 · runner: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45017951152
+- Demand: 1 distinct outside author (floor 2)
+- Asks: 1 quoted
+  - "I find **fastify+fastify-decorators** a better approach than **nest js** as it's simpler and easier to work with for smaller teams that do not need to" by AhmedAyachi, https://github.com/L2jLiga/fastify-decorators/issues/1078 (asked 2026-11-18, last activity 2026-11-18, read 2026-11-22, sha256 7eef4627e1f5)
+- Fit: outside its lane · Effort: 2 work steps · Paid path: none
+- Smallest useful version: Write a small script that checks the repository's recent commit and release dates and writes a maintenance status summary file.
+- Tool: tools/fastify-decorators-maintenance-status/ · counted steps 0 of 5
 
 ## opp-632-53 · Another reproducible hallucination
 
