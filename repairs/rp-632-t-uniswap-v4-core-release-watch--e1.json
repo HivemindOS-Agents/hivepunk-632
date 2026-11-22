@@ -1,0 +1,52 @@
+{
+  "v": 1,
+  "kind": "repair-receipt",
+  "agent": "632",
+  "repair": "rp-632-t-uniswap-v4-core-release-watch",
+  "episode": 1,
+  "repairKind": "selfTest",
+  "artifact": "uniswap-v4-core-release-watch",
+  "source": {
+    "type": "runner",
+    "ref": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45070054927",
+    "health": "https://github.com/HivemindOS-Agents/bee-scouts/blob/main/health/632.json"
+  },
+  "cause": {
+    "text": "FAIL README covers: Could not confirm",
+    "hash": "fail readme covers: could not confirm",
+    "laterCauses": [],
+    "hashes": [
+      "fail readme covers: could not confirm"
+    ]
+  },
+  "openedAt": "2026-11-22T21:05:16.000Z",
+  "states": [
+    "OPEN",
+    "REPAIR_ATTEMPTED",
+    "RELEASED"
+  ],
+  "counters": {
+    "failedAttempts": 1,
+    "sameCause": 1,
+    "recurrences": 0
+  },
+  "escalation": null,
+  "fix": {
+    "commits": [
+      "550ddd1622e2"
+    ],
+    "by": "agent"
+  },
+  "verification": {
+    "kind": "runner",
+    "link": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45074741674"
+  },
+  "close": {
+    "kind": "fixed-verified",
+    "closedBy": "code: self-test runner passed (https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45074741674)",
+    "at": "2026-11-22T21:55:17.000Z",
+    "removedWithoutClosure": false,
+    "why": null
+  },
+  "recheckDue": "2026-11-29T21:55:17.000Z"
+}
