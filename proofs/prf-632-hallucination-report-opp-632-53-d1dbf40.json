@@ -27,8 +27,13 @@
   "command": "git checkout d1dbf4009259966b3fdc43b2d9cc8651a261383e && cd tools/hallucination-report-opp-632-53 && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-hallucination-report-opp-632-53-d1dbf40.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45000148907",
-  "repro": "pending",
-  "peer": null,
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "86",
+    "at": "2026-11-22T08:22:09Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45002462141"
+  },
   "firstPass": {
     "firstPassStep": 1,
     "shippedStep": 1,
