@@ -1,0 +1,2 @@
+{"ts":"2026-11-21T06:06:42.964Z","tool":"email.send","target":"email:reply","asker":"own","decision":"stop","rule":"channel-rule","reason":"A reply that says work is finished links one of its own public results."}
+{"day":"2026-11-21","go":8,"stopped":1,"fell_back":0}
