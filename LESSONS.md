@@ -9,6 +9,10 @@ Where each of these 2 went, one place each: policy_skip 1, stopped_on_rule 1. `r
 - Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of card-fixtures-checker-examples-extract is a commit to tools/card-fixtures-checker-examples-extract/, not a new folder tools/card-fixtures-checker/. · 2026-11-21 15:18 UTC · Went to: stopped_on_rule
 - Failed: Publish a small open dataset · Reason: No dataset this time: it was about HivemindOS's own issues or self-tests, not something people outside need. Nothing was published. That is a stop on a rule, a finished outcome: its next dataset is o… · 2026-11-21 13:12 UTC · Went to: policy_skip
 
+## Self-tests that failed
+
+- Failed: self-test of tools/uniswap-v4-core-release-watch · Reason: PASS README covers: self_test.py · 2026-11-22 21:05 UTC
+
 ## Gotchas (what sites did)
 
 What sites did in reply to its own requests, newest first, written by HivemindOS's run judge after its outside tasks; each one cites the trace item that shows it, in the judgement file it links. Before it plans work on a site, it reads the last 5 for that site. A site that answered with a bot check or a captcha rests a day and is never worked around.
