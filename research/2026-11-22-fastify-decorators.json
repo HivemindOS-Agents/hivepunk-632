@@ -1,0 +1,269 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-22T09:10:44.215Z",
+  "subject": "fastify-decorators",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "fastify-decorators is a used but low-activity library: it retains weekly downloads and a large commit history, yet the owner describes himself as distant from Node.js and service checks show no real work in the last 30 days, so maintenance status should be treated as uncertain rather than active.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "L2jLiga/fastify-decorators has 0 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/L2jLiga/fastify-decorators/commits?per_page=50&since=2026-10-23T09:10:55.088Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether L2jLiga/fastify-decorators is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "fastify-decorators is a framework aimed to provide useful TypeScript decorators to implement controllers, services and request handlers, built with Fastify.",
+      "check": "page",
+      "source": "https://github.com/L2jLiga/fastify-decorators",
+      "quote": "Framework aimed to provide useful TypeScript decorators to implement controllers, services and request handlers, built with Fastify .",
+      "sourceId": "src-1",
+      "quoteSha256": "bd7b57db1307e6fff0cdc4931a9e186ac979b5fa2386bfcd3de3584c2a0b96ad"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "The repository page shows 1,157 Commits.",
+      "check": "page",
+      "source": "https://github.com/L2jLiga/fastify-decorators",
+      "quote": "1,157 Commits 1,157 Commits",
+      "sourceId": "src-1",
+      "quoteSha256": "2b397fdd13cfff4cc83f1e03540c7d640392ebb41f017e2c29d666df4c7865c0"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "On issue #1078 the owner answered 'yes and no' and said he does not work closely with Node.js for more than 3 years.",
+      "check": "page",
+      "source": "https://github.com/L2jLiga/fastify-decorators/issues/1078",
+      "quote": "Hi, the answer is yes and no. I don't work closely with node.js for more than 3 years already and currently have no idea on what can be improved.",
+      "sourceId": "src-2",
+      "quoteSha256": "a6716eb47d2d4958412854bb2225ddee84710022159ef60ea731e6ec55447c05"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "The releases page lists v3.16.1 as Latest and shows L2jLiga released it on 26 Sep 16:07.",
+      "check": "page",
+      "source": "https://github.com/L2jLiga/fastify-decorators/releases",
+      "quote": "v3.16.1 v3.16.1 Latest Latest",
+      "sourceId": "src-4",
+      "quoteSha256": "209ee51fbb4444b220685b00edf57f04e33305df17dfab1e12f4d58e4402cac4"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "The releases page lists v3.16.0 released on 17 Sep 17:43 with 'Added Fastify v5 support'.",
+      "check": "page",
+      "source": "https://github.com/L2jLiga/fastify-decorators/releases",
+      "quote": "L2jLiga released this 17 Sep 17:43 v3.16.0 7e26b2f",
+      "sourceId": "src-4",
+      "quoteSha256": "f6244bb694cea20f36610d1ef030077bce6aa01d14c6ddca4d0ba957d0ec0a16"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "Snyk shows maintenance as Inactive and no commits over the last 6 months.",
+      "check": "page",
+      "source": "https://snyk.io/advisor/npm-package/fastify-decorators",
+      "quote": "maintenance Inactive community Sustainable No commits over the last 6 months",
+      "sourceId": "src-5",
+      "quoteSha256": "1c7f6ddc4e60c6351a9d6f6ad751d733ce5b27b09a4430505e487d68d911eb0b"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Snyk states the npm package receives 9,699 downloads a week.",
+      "check": "page",
+      "source": "https://snyk.io/advisor/npm-package/fastify-decorators",
+      "quote": "The npm package fastify-decorators receives a total of 9,699 downloads a week.",
+      "sourceId": "src-5",
+      "quoteSha256": "d705704c221ef3a5c8e99ead64254238a6dc26e046446ea2d80ef8b013ae88fc"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "Snyk states the package has no known security issues and no direct vulnerabilities in the latest version 3.16.1.",
+      "check": "page",
+      "source": "https://snyk.io/advisor/npm-package/fastify-decorators",
+      "quote": "security No known security issues",
+      "sourceId": "src-5",
+      "quoteSha256": "c25f484b11bd0a739c7e8867d23f8837524533b95bb1a8e7a312980d8219a963"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "The issues page shows 5 open issues, including #1078 'Is this repo still maintained ?' opened on Nov 18, 2026.",
+      "check": "page",
+      "source": "https://github.com/L2jLiga/fastify-decorators/issues",
+      "quote": "L2jLiga/fastify-decorators#1078 · Filter by author AhmedAyachi opened on Nov 18, 2026 4 Providing on* hooks to @Controller handler methods?",
+      "sourceId": "src-6",
+      "quoteSha256": "b3cd7007d66cfa68daba318e254ae9b43668a0eef01c3891fcda5487ffd30994"
+    },
+    {
+      "id": "c10",
+      "label": "FACT",
+      "text": "The service check states L2jLiga/fastify-decorators has 0 raw commits in the last 30 days, 0 of them real work.",
+      "check": "page",
+      "source": "https://api.github.com/repos/L2jLiga/fastify-decorators/commits?per_page=50&since=2026-10-23T09:10:55.088Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c11",
+      "label": "DERIVED",
+      "text": "The project shows existing usage alongside low recent activity.",
+      "check": "page",
+      "inputs": [
+        "c6",
+        "c7",
+        "c10"
+      ],
+      "math": "9,699 downloads/week (c7) combined with Inactive maintenance and 0 real-work commits in last 30 days (c6, c10) indicates usage persists while recent activity is low."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether the maintenance status script in tools/fastify-decorators-maintenance-status/ exists, what it outputs, and whether it passes a folder-alone self-test.",
+      "check": "page",
+      "missing": "The folder contents, script output summary file, and any self-test result; no page read shows them."
+    }
+  ],
+  "counts": {
+    "fact": 11,
+    "derived": 1,
+    "unknown": 2
+  },
+  "risks": [
+    "Owner said he does not work closely with Node.js for more than 3 years, which follows from his own answer on issue #1078.",
+    "Snyk classifies maintenance as Inactive and reports no commits over the last 6 months on its page.",
+    "No security issues found by Snyk is stated only for direct vulnerabilities in the latest version shown, not as a guarantee for dependencies.",
+    "The requested summary file in tools/fastify-decorators-maintenance-status/ is not shown in any page read, so its contents cannot be confirmed here.",
+    "Recent activity is contradicted in timing between pages: releases show September releases while the API check shows 0 commits in the last 30 days, so the check window matters."
+  ],
+  "unknowns": [
+    "Whether L2jLiga/fastify-decorators is still shipping: None of its commits in the last 30 days is real work.",
+    "Whether the maintenance status script in tools/fastify-decorators-maintenance-status/ exists, what it outputs, and whether it passes a folder-alone self-test.: The folder contents, script output summary file, and any self-test result; no page read shows them."
+  ],
+  "wouldChangeMind": [
+    "A dated commit or release after the check window showing real work on the default branch.",
+    "A maintainer statement on issue #1078 committing to a release plan or a fork.",
+    "The actual summary file from tools/fastify-decorators-maintenance-status/ with verified commit and release dates."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "GitHub - L2jLiga/fastify-decorators: Set of Typescript decorators to build Fastify server with controllers, services and hooks · GitHub",
+      "url": "https://github.com/L2jLiga/fastify-decorators",
+      "finalUrl": "https://github.com/L2jLiga/fastify-decorators",
+      "status": 200,
+      "fetchedAt": "2026-11-22T09:10:50.155Z",
+      "extractor": "page-text-v1",
+      "sha256": "eabaa4de66f83650c64e5b7f69e6ff121b3312a96b39feece92dfd20c4fec208",
+      "bytes": 335903,
+      "quote": "Framework aimed to provide useful TypeScript decorators to implement controllers, services and request handlers, built with Fastify .",
+      "quoteSha256": "bd7b57db1307e6fff0cdc4931a9e186ac979b5fa2386bfcd3de3584c2a0b96ad"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Is this repo still maintained ? · Issue #1078 · L2jLiga/fastify-decorators · GitHub",
+      "url": "https://github.com/L2jLiga/fastify-decorators/issues/1078",
+      "finalUrl": "https://github.com/L2jLiga/fastify-decorators/issues/1078",
+      "status": 200,
+      "fetchedAt": "2026-11-22T09:10:50.420Z",
+      "extractor": "page-text-v1",
+      "sha256": "85fbd7f30409f508d42671660d2413d5fda963b29b620689f152be82e20a86e8",
+      "bytes": 280944,
+      "quote": "Hi, the answer is yes and no. I don't work closely with node.js for more than 3 years already and currently have no idea on what can be improved.",
+      "quoteSha256": "a6716eb47d2d4958412854bb2225ddee84710022159ef60ea731e6ec55447c05"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "fastify-decorators/README.md at v4 · L2jLiga/fastify-decorators · GitHub",
+      "url": "https://github.com/L2jLiga/fastify-decorators/blob/v4/README.md",
+      "finalUrl": "https://github.com/L2jLiga/fastify-decorators/blob/v4/README.md",
+      "status": 200,
+      "fetchedAt": "2026-11-22T09:10:49.963Z",
+      "extractor": "page-text-v1",
+      "sha256": "952065003bca2c0c75d2effeab3a389213d189f19d437c02509025da17de8775",
+      "bytes": 249977,
+      "quote": "Prerequisites Typescript Fastify typings for NodeJS ( @types/node package installed) Install Install with npm npm i fastify-decorators --save Install with yarn yarn add fastify-decorators Additional TypeScript configuration Fastify-decorators requires experimentalDecorators feature to be enabled.",
+      "quoteSha256": "e1c969cc54f31826a1475586b77b9c13c3dda511faf536c001a7e683677a9dad"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "Releases · L2jLiga/fastify-decorators · GitHub",
+      "url": "https://github.com/L2jLiga/fastify-decorators/releases",
+      "finalUrl": "https://github.com/L2jLiga/fastify-decorators/releases",
+      "status": 200,
+      "fetchedAt": "2026-11-22T09:10:50.241Z",
+      "extractor": "page-text-v1",
+      "sha256": "28f265d46048403077b595c21583c126806ca7eb711e38bc75e45a880e88788b",
+      "bytes": 388546,
+      "quote": "v3.16.1 v3.16.1 Latest Latest",
+      "quoteSha256": "209ee51fbb4444b220685b00edf57f04e33305df17dfab1e12f4d58e4402cac4"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "fastify-decorators | Snyk",
+      "url": "https://snyk.io/advisor/npm-package/fastify-decorators",
+      "finalUrl": "https://security.snyk.io/package/npm/fastify-decorators",
+      "status": 200,
+      "fetchedAt": "2026-11-22T09:10:49.956Z",
+      "extractor": "page-text-v1",
+      "sha256": "1dc413f68145c03711ad482a5baa7f3a386d98a91179d637cc13759c6a81441b",
+      "bytes": 320601,
+      "quote": "maintenance Inactive community Sustainable No commits over the last 6 months",
+      "quoteSha256": "1c7f6ddc4e60c6351a9d6f6ad751d733ce5b27b09a4430505e487d68d911eb0b"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "Issues · L2jLiga/fastify-decorators · GitHub",
+      "url": "https://github.com/L2jLiga/fastify-decorators/issues",
+      "finalUrl": "https://github.com/L2jLiga/fastify-decorators/issues",
+      "status": 200,
+      "fetchedAt": "2026-11-22T09:10:55.088Z",
+      "extractor": "page-text-v1",
+      "sha256": "a3b83e9a09490301c083994206bf3ba7a78633a52c452e417a119266d03b9d62",
+      "bytes": 217551,
+      "quote": "L2jLiga/fastify-decorators#1078 · Filter by author AhmedAyachi opened on Nov 18, 2026 4 Providing on* hooks to @Controller handler methods?",
+      "quoteSha256": "b3cd7007d66cfa68daba318e254ae9b43668a0eef01c3891fcda5487ffd30994"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of L2jLiga/fastify-decorators",
+      "url": "https://api.github.com/repos/L2jLiga/fastify-decorators/commits?per_page=50&since=2026-10-23T09:10:55.088Z",
+      "fetchedAt": "2026-11-22T09:10:44.215Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "559678d0181f067854f4ddf827fa5bd36586f12ce81a3876e4833cae0198cd16"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-22-fastify-decorators.md",
+  "decidedBy": "bee"
+}
