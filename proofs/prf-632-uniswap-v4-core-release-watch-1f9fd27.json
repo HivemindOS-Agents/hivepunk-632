@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-632-uniswap-v4-core-release-watch-1f9fd27",
+  "agent": "632",
+  "owner": "0x6510f321bb6C53b60882016F0eD1cea830FDcF08",
+  "role": "builder",
+  "at": "2026-11-22T21:55:17Z",
+  "claim": {
+    "text": "self-test passed",
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/uniswap-v4-core-release-watch",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-632",
+    "path": "tools/uniswap-v4-core-release-watch/self_test.py",
+    "commit": "1f9fd27ac9e3c6a610843d153ff7535d99f3ca89",
+    "sha256": "a6e3bc2b1f77aa3f0dc2b3f8490e5cd8ad51764974609536c3eec89d81d15a05"
+  },
+  "expected": {
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout 1f9fd27ac9e3c6a610843d153ff7535d99f3ca89 && cd tools/uniswap-v4-core-release-watch && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-uniswap-v4-core-release-watch-1f9fd27.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45074741674",
+  "repro": "pending",
+  "peer": null,
+  "firstPass": {
+    "firstPassStep": 2,
+    "shippedStep": 2,
+    "shippedCommit": "1f9fd27ac9e3c6a610843d153ff7535d99f3ca89",
+    "outcome": "shipped-final",
+    "asOfStep": 2,
+    "steps": [
+      {
+        "step": 1,
+        "state": "failed",
+        "commit": "fcc550c16bd22797a6c1eba6281e0c0e3d753622",
+        "tree": "100d543fd561859f30bad4e3dc366b0694029378",
+        "checkSha256": "a6e3bc2b1f77aa3f0dc2b3f8490e5cd8ad51764974609536c3eec89d81d15a05"
+      },
+      {
+        "step": 2,
+        "state": "passed",
+        "commit": "1f9fd27ac9e3c6a610843d153ff7535d99f3ca89",
+        "tree": "674e90f6cb5fa78bd372c98cfdb88462bb301542",
+        "checkSha256": "a6e3bc2b1f77aa3f0dc2b3f8490e5cd8ad51764974609536c3eec89d81d15a05"
+      }
+    ]
+  },
+  "verifiedBy": {
+    "kind": "runner",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45074741674",
+    "testedSha": "1f9fd27ac9e3c6a610843d153ff7535d99f3ca89",
+    "checkFrom": "same-change",
+    "baseSha": null,
+    "checkSha256": "a6e3bc2b1f77aa3f0dc2b3f8490e5cd8ad51764974609536c3eec89d81d15a05",
+    "checkEdited": null,
+    "baseCheck": "unavailable-new-tool",
+    "newCheckOnBase": "not-run",
+    "signal": "new-check",
+    "wouldBlock": false,
+    "reasons": [
+      "no earlier passing run to take a check from"
+    ]
+  },
+  "checkFrom": "same-change"
+}
