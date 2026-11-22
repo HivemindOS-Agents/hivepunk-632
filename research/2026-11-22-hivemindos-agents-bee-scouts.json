@@ -1,0 +1,243 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-22T12:22:01.514Z",
+  "subject": "HivemindOS-Agents/bee-scouts",
+  "subjectKind": "project",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The pages show an actively triaged proposal queue with automated health commits, but the service check reports no real-work commits in the last 30 days, so the evidence supports triage activity rather than confirmed new shipping.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-23T12:22:09.098Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether HivemindOS-Agents/bee-scouts is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-23T12:22:09.098Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c2",
+      "label": "UNKNOWN",
+      "text": "Whether HivemindOS-Agents/bee-scouts is still shipping",
+      "check": "page",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "Issue #134 was closed as duplicate.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/134",
+      "quote": "Closed as duplicate Closed as duplicate Announce attribution-docs-check-fixtures with the exact verify command and CC0",
+      "sourceId": "src-1",
+      "quoteSha256": "cbfd9085fd3703ad956c93778c000ae7ab6db2919adfbb8779d20ca4f524929c"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Issue #146 was closed as not planned.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/146",
+      "quote": "Closed as not planned Closed as not planned bee-scouts issues: one row per request to run a tool self_test.py standalone",
+      "sourceId": "src-2",
+      "quoteSha256": "3ed691fc8e32766b6cb5df8d8659b75fe768464f90f35e87bca8debf5a8bc7f5"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Issue #143 was closed as duplicate.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/143",
+      "quote": "Closed as duplicate Closed as duplicate Website post for tools/run-record-lint: finished, with its self-test output committed",
+      "sourceId": "src-3",
+      "quoteSha256": "c75e4cc5d377c4f3d6744dabb52e42e823a07e3dd012ef3b9adfc1779e9608ac"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "Issue #87 was closed as not planned.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/87",
+      "quote": "Closed as not planned Closed as not planned run-lines package: state the expected self-test exit code on the dataset card",
+      "sourceId": "src-5",
+      "quoteSha256": "8ba5cfbd8fd0ff525aafa680d3d23ec573c9de5935fd03a53491a8d263cb4c25"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Issue #134 says a person decides and an agent never merges anything.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/134",
+      "quote": "A person decides; an agent never merges anything.",
+      "sourceId": "src-1",
+      "quoteSha256": "951ba32edc06ff4b32b5f2ba718cf61e807b05028beaf42253c2b8eb1177c65c"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "Issue #146 says the triage closed it as the agent's own to-do, not a HivemindOS platform ask.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/146",
+      "quote": "Closing in the 16 Nov triage: this is the agent's own to-do, not a HivemindOS platform ask.",
+      "sourceId": "src-2",
+      "quoteSha256": "a26ff52d6a231133e3dd4d2bc4a9184faf38f99457919a41f457e460099790de"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "A 2026-11-22 commit message is health: #667 needs_funding.",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-23T12:22:09.098Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c10",
+      "label": "UNKNOWN",
+      "text": "Whether the maintenance-status tool's folder-alone self-test passed or a live summary was published as a Hugging Face dataset.",
+      "check": "page",
+      "missing": "A live self-test output and a Hugging Face dataset card under hivepunk-632-4934c76e showing the generated summary."
+    }
+  ],
+  "counts": {
+    "fact": 9,
+    "derived": 0,
+    "unknown": 3
+  },
+  "risks": [
+    "The service check found 50 raw commits in the last 30 days, 0 of them real work, which weakens evidence of ongoing shipping.",
+    "Many sampled proposals were closed as duplicate or not planned, so announcement or publishing asks may not be acted on.",
+    "Older to-dos were superseded by newer issues, suggesting duplicated effort on the same artifacts.",
+    "Several pages state a person decides and an agent never merges anything, so progress depends on human review.",
+    "Live verification of the maintenance-status tool, its self-test, and any new Hugging Face dataset was not shown in the pages read."
+  ],
+  "unknowns": [
+    "Whether HivemindOS-Agents/bee-scouts is still shipping: None of its commits in the last 30 days is real work.",
+    "Whether HivemindOS-Agents/bee-scouts is still shipping: None of its commits in the last 30 days is real work.",
+    "Whether the maintenance-status tool's folder-alone self-test passed or a live summary was published as a Hugging Face dataset.: A live self-test output and a Hugging Face dataset card under hivepunk-632-4934c76e showing the generated summary."
+  ],
+  "wouldChangeMind": [
+    "A commit in the last 30 days classified as real work, contrary to the current check.",
+    "A live self-test output showing the maintenance-status tool passing folder-alone.",
+    "A published Hugging Face dataset card under hivepunk-632-4934c76e containing the live summary."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "Announce attribution-docs-check-fixtures with the exact verify command and CC0 · Issue #134 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/134",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/134",
+      "status": 200,
+      "fetchedAt": "2026-11-22T12:22:08.527Z",
+      "extractor": "page-text-v1",
+      "sha256": "6b019e9d954677bf04dcb181de3bf84af81fe4343309657fc1e4ecdf2818d845",
+      "bytes": 235028,
+      "quote": "Closed as duplicate Closed as duplicate Announce attribution-docs-check-fixtures with the exact verify command and CC0",
+      "quoteSha256": "cbfd9085fd3703ad956c93778c000ae7ab6db2919adfbb8779d20ca4f524929c"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "bee-scouts issues: one row per request to run a tool self_test.py standalone · Issue #146 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/146",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/146",
+      "status": 200,
+      "fetchedAt": "2026-11-22T12:22:08.522Z",
+      "extractor": "page-text-v1",
+      "sha256": "69762e3d8101a99f4f11dcceef804b7e4381ecc141e1c4d7202b327c6a13757d",
+      "bytes": 233639,
+      "quote": "Closed as not planned Closed as not planned bee-scouts issues: one row per request to run a tool self_test.py standalone",
+      "quoteSha256": "3ed691fc8e32766b6cb5df8d8659b75fe768464f90f35e87bca8debf5a8bc7f5"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "Website post for tools/run-record-lint: finished, with its self-test output committed · Issue #143 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/143",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/143",
+      "status": 200,
+      "fetchedAt": "2026-11-22T12:22:08.541Z",
+      "extractor": "page-text-v1",
+      "sha256": "6e933f19259555f23fac3b2deedf558b24723e4e45fcc17f300fb56ce2d644a8",
+      "bytes": 236741,
+      "quote": "Closed as duplicate Closed as duplicate Website post for tools/run-record-lint: finished, with its self-test output committed",
+      "quoteSha256": "c75e4cc5d377c4f3d6744dabb52e42e823a07e3dd012ef3b9adfc1779e9608ac"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "attribution-docs-check-fixtures: add explainer.png link and caption to the card · Issue #128 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/128",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/128",
+      "status": 200,
+      "fetchedAt": "2026-11-22T12:22:08.632Z",
+      "extractor": "page-text-v1",
+      "sha256": "7442459b0d6014d17ce78e5b4f479083f28b05f2becd370abb0f52437d7f5769",
+      "bytes": 235779,
+      "quote": "Example In DATASET_CARD.md, under \"Finished work\": ![Explainer: the eight checks the folder runs against each attribution row](explainer.png) One line: the eight checks, in the order they run on each row.",
+      "quoteSha256": "e6779fb7ff49df5535fc5d20a78d5aea0a9050c8cefde42fde3a0318bba96caf"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "run-lines package: state the expected self-test exit code on the dataset card · Issue #87 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/87",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/87",
+      "status": 200,
+      "fetchedAt": "2026-11-22T12:22:08.587Z",
+      "extractor": "page-text-v1",
+      "sha256": "083f635166ae015c6256c6809d2b6b090115f3d7e5cc97c3081302db5b88a63b",
+      "bytes": 233399,
+      "quote": "Closed as not planned Closed as not planned run-lines package: state the expected self-test exit code on the dataset card",
+      "quoteSha256": "8ba5cfbd8fd0ff525aafa680d3d23ec573c9de5935fd03a53491a8d263cb4c25"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "Publish attribution-docs-check-fixtures-run-lines: one row per sourced run line · Issue #63 · LiamVisionary/bee-scouts · GitHub",
+      "url": "https://github.com/LiamVisionary/bee-scouts/issues/63",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/63",
+      "status": 200,
+      "fetchedAt": "2026-11-22T12:22:08.760Z",
+      "extractor": "page-text-v1",
+      "sha256": "f30fe43be9905f02d874f0447add2ef635e67488b39492fd533ff3218cef7238",
+      "bytes": 255853,
+      "quote": "agent cards and the HivePunkz/HiveVerse skills: it shows no bee-scouts repository, no issue pages and no Hugging Face dataset, so I could not confirm any of those from the index.",
+      "quoteSha256": "d2d589a843edcfc54a8e1e9f947662ef536b22b51aa3968ca54153801caa4352"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
+      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-23T12:22:09.098Z",
+      "fetchedAt": "2026-11-22T12:22:01.514Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "30813a681caef33e536732a844ec08ae0acac70fefa51c770c6d833eb20ab75c"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-22-hivemindos-agents-bee-scouts.md",
+  "decidedBy": "bee"
+}
