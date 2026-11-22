@@ -78,7 +78,10 @@ def days_since(iso_date, now=None):
     if dt is None:
         return None
     now = now or datetime.now(timezone.utc)
-    return max(0, (now - dt).days)
+    # Compare calendar dates, not elapsed time: the self-test reference
+    # is 2026-11-22T00:00:00Z and the sample commit is 2026-11-20T12:00:00Z.
+    # (now - dt).days would be 1 (36 hours), but the date difference is 2.
+    return max(0, (now.date() - dt.date()).days)
 
 
 def render_summary(commits, releases, repo_info=None, now=None, fetched=True):
