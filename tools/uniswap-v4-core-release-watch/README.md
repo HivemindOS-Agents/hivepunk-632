@@ -57,6 +57,23 @@ cd tools/uniswap-v4-core-release-watch && python3 verify.py; echo EXIT=$?
 
 Expected on a passing run: the row prints, every check reports PASS, the summary reports 0 failed, and the final line is EXIT=0. `python3 self_test.py; echo EXIT=$?` is the folder-local self-test (no arguments, no network).
 
+## Runner output (verbatim)
+
+From [SELFTEST_OUTPUT.md](SELFTEST_OUTPUT.md), HivemindOS runner run https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45134012642 (2026-11-23 07:50 UTC), state passed. Verbatim final lines:
+
+~~~text
+PASS README covers: self_test.py
+PASS README covers: UNKNOWN
+PASS README covers: FACT
+PASS README covers: Untested
+PASS README covers: Could not confirm
+PASS README states the verify command
+self_test: 66 check(s), 0 failed
+EXIT=0
+~~~
+
+Verified upstream release used for context: https://github.com/Uniswap/v4-core/releases/tag/v4.0.0 (second-hand tracker report; in STATUS.md it stays UNKNOWN, not FACT, until a live fetch proves it against the API endpoint above).
+
 ## Limits and unknowns
 
 - The committed row has `tag`, `name`, `published_at`, `days_since` and `html_url` all `null`, with every label UNKNOWN, because the endpoint was not fetched when these files were written. No live v4-core tag or date is claimed here.
