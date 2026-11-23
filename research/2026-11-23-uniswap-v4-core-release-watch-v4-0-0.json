@@ -1,0 +1,220 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-23T04:25:59.297Z",
+  "subject": "Uniswap v4-core release watch (v4.0.0)",
+  "subjectKind": "project",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+  "thesis": "Third-party trackers consistently report v4.0.0 (2025-01-23) as the only v4-core release, cut from a test-only PR. The primary API could not be read and the trackers conflict on the UNI address, so STATUS.md should label the release facts as sourced from trackers and the rest as UNKNOWN.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "UNKNOWN",
+      "text": "The chain of 0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+      "check": "chain",
+      "missing": "The source answered 429."
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether repos/Uniswap is still shipping",
+      "check": "shipping",
+      "missing": "The source answered 404."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "The latest release tag is v4.0.0, \"Uniswap Protocol v4\", published 2025-01-23.",
+      "check": "page",
+      "source": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/11",
+      "quote": "Latest release tag: v4.0.0 — \"Uniswap Protocol v4\", released/published 2025-01-23 (created 2025-01-21).",
+      "sourceId": "src-1",
+      "quoteSha256": "0ba699216d19e0519670a9548e05c2df2985d4c05fa669eb1ffb34f61f1daf1b"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "The tag commit is e50237c43811bd9b526eff40f26772152a42daba.",
+      "check": "page",
+      "source": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/11",
+      "quote": "Tag commit: e50237c43811bd9b526eff40f26772152a42daba .",
+      "sourceId": "src-1",
+      "quoteSha256": "ff8a88a3cd1512f921452f7140d61ef8b34a2de8615e19137e132082f267524c"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "PR #932 is described as a test-only cleanup touching 4 files.",
+      "check": "page",
+      "source": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/11",
+      "quote": "It is a test-campus cleanup (not production core changes). Diff touches 4 files (+22/−18)",
+      "sourceId": "src-1",
+      "quoteSha256": "5d39a5206b05792f1a7de7e8d378f0418f3b4f5427feb140d29e82d8c1a30f1e"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "The v4-core repo has no GitHub Discussions enabled, according to one tracker.",
+      "check": "page",
+      "source": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8/issues/1",
+      "quote": "The v4-core repository has no GitHub Discussions enabled ( has_discussions: false ; zero discussion threads)",
+      "sourceId": "src-5",
+      "quoteSha256": "ec5b7c95b33d314565d3820cf51a7f0102166bf1d231dd87c95e9d7ba41da08c"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "One tracker lists a different UNI address from the others.",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-core/issues/1084",
+      "quote": "UNI contract address: 0x7a24d6e307554af0139a2e3e05c5087905cd80a2 (Ethereum mainnet)",
+      "sourceId": "src-4",
+      "quoteSha256": "86544fa52bb70747c444f9b738ada52babff70375d5305f9331611f40030217f"
+    },
+    {
+      "id": "c6",
+      "label": "DERIVED",
+      "text": "The v4.0.0 release was published two days after its tag commit was created and merged, and the release commit is a test-only change.",
+      "check": "page",
+      "inputs": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "math": "Created 2025-01-21, published 2025-01-23: 2 days."
+    },
+    {
+      "id": "c7",
+      "label": "UNKNOWN",
+      "text": "Whether v4.0.0 is still the latest release per the releases/latest API.",
+      "check": "page",
+      "missing": "A direct read of the Uniswap v4-core releases/latest API endpoint; the service check answered 404."
+    },
+    {
+      "id": "c8",
+      "label": "UNKNOWN",
+      "text": "Which UNI contract address is correct.",
+      "check": "page",
+      "missing": "An on-chain or explorer read; the chain check answered 429."
+    }
+  ],
+  "counts": {
+    "fact": 5,
+    "derived": 1,
+    "unknown": 4
+  },
+  "risks": [
+    "The pages are secondary trackers, not the releases/latest API, so the release data is unverified against the primary source.",
+    "The trackers disagree on the UNI contract address: one lists 0x7a24d6e3…80a2, others list 0x1f9840a8… or 0x1f9840c8…. Copying an address from them could point to the wrong contract.",
+    "The PR #932 author is given as snreynolds in one tracker and hensha256 in another.",
+    "The only release is a tag whose commit is a test-only change, so it says little about production readiness or audits.",
+    "UNI price figures differ by date and tracker. Price is context, not evidence of building."
+  ],
+  "unknowns": [
+    "The chain of 0x1f9840a85d5af5bf1d1762f925bdaddc4201f984: The source answered 429.",
+    "Whether repos/Uniswap is still shipping: The source answered 404.",
+    "Whether v4.0.0 is still the latest release per the releases/latest API.: A direct read of the Uniswap v4-core releases/latest API endpoint; the service check answered 404.",
+    "Which UNI contract address is correct.: An on-chain or explorer read; the chain check answered 429."
+  ],
+  "wouldChangeMind": [
+    "A direct read of releases/latest showing a tag newer than v4.0.0.",
+    "A primary source showing PR #932 changed production contracts, not only tests.",
+    "An explorer read settling which UNI address is correct."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "Uniswap v4 upgrade watch · Issue #11 · mcpmark-eval-liuhezi/uniswap-v4-watch · GitHub",
+      "url": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/11",
+      "finalUrl": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/11",
+      "status": 200,
+      "fetchedAt": "2026-11-23T04:26:02.249Z",
+      "extractor": "page-text-v1",
+      "sha256": "4da5ec2d3e8d03bcc2e8c5523e80ba44ab8170b7e046670e21a133be84fa52fa",
+      "bytes": 226540,
+      "quote": "Latest release tag: v4.0.0 — \"Uniswap Protocol v4\", released/published 2025-01-23 (created 2025-01-21).",
+      "quoteSha256": "0ba699216d19e0519670a9548e05c2df2985d4c05fa669eb1ffb34f61f1daf1b"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Uniswap v4 upgrade watch · Issue #6 · mcpmark-eval-liuhezi/uniswap-v4-watch · GitHub",
+      "url": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/6",
+      "finalUrl": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/6",
+      "status": 200,
+      "fetchedAt": "2026-11-23T04:26:02.261Z",
+      "extractor": "page-text-v1",
+      "sha256": "12c2aff97d8b02f25ea4b3174d074c8fbee709d7a724fb5822cdb9236bbdd43c",
+      "bytes": 223366,
+      "quote": "test/SkipCallsTestHook.t.sol — adds vm.allowCheatcodes(address(skipCallsTestHook)) when deploying the skip-calls test hook.",
+      "quoteSha256": "359070f08539fa4f760706d482335166e881059b1e9dd2474bc4292593690633"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "Uniswap v4 upgrade watch · Issue #1 · mcpmark-eval-liuhezi/uniswap-v4-watch-2 · GitHub",
+      "url": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-2/issues/1",
+      "finalUrl": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-2/issues/1",
+      "status": 200,
+      "fetchedAt": "2026-11-23T04:26:02.356Z",
+      "extractor": "page-text-v1",
+      "sha256": "9cfe09f0110eacf5ec0493118023746ee928c997edf0eff72f1fc6e7a430627e",
+      "bytes": 221768,
+      "quote": "Commit message and release notes both reference it.",
+      "quoteSha256": "f7533f2e5cf0685ae472bc81229e9666e1aa2caf4c55511957cce96eea4b5d71"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "Uniswap v4 upgrade watch · Issue #1084 · Uniswap/v4-core · GitHub",
+      "url": "https://github.com/Uniswap/v4-core/issues/1084",
+      "finalUrl": "https://github.com/Uniswap/v4-core/issues/1084",
+      "status": 200,
+      "fetchedAt": "2026-11-23T04:26:02.186Z",
+      "extractor": "page-text-v1",
+      "sha256": "ae0c99277b4bac00d5cc66a972224de501a57a57eda31653996f1bb0f9161935",
+      "bytes": 204821,
+      "quote": "UNI contract address: 0x7a24d6e307554af0139a2e3e05c5087905cd80a2 (Ethereum mainnet)",
+      "quoteSha256": "86544fa52bb70747c444f9b738ada52babff70375d5305f9331611f40030217f"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "Uniswap v4 upgrade watch · Issue #1 · mcpmark-eval-liuhezi/uniswap-v4-watch-8 · GitHub",
+      "url": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8/issues/1",
+      "finalUrl": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8/issues/1",
+      "status": 200,
+      "fetchedAt": "2026-11-23T04:26:02.268Z",
+      "extractor": "page-text-v1",
+      "sha256": "beee1ac8659bfc48d67fe5e501915d047c2e21e467d5bc3bc6967167e8415c4b",
+      "bytes": 220860,
+      "quote": "The v4-core repository has no GitHub Discussions enabled ( has_discussions: false ; zero discussion threads)",
+      "quoteSha256": "ec5b7c95b33d314565d3820cf51a7f0102166bf1d231dd87c95e9d7ba41da08c"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "Uniswap v4 upgrade watch · Issue #1 · mcpmark-eval-liuhezi/uniswap-v4-watch · GitHub",
+      "url": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/1",
+      "finalUrl": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/1",
+      "status": 200,
+      "fetchedAt": "2026-11-23T04:26:02.301Z",
+      "extractor": "page-text-v1",
+      "sha256": "3f05bd6d9f96d035765f17890c92437d25c862ce0110001dbcb72c7842d54519",
+      "bytes": 220852,
+      "quote": "Sign in to comment Metadata Metadata Assignees No one assigned Labels No labels No labels Type No type Projects No projects Milestone No milestone Relationships None yet Development No branches or pull requests Issue actions Open in GitHub Copilot app You can’t perform that action at this time.",
+      "quoteSha256": "19ad73456f75ab746b543cb98abe1abb77dbb27ea179393f7f3aa8a1beb5783d"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-23-uniswap-v4-core-release-watch-v4-0-0.md",
+  "decidedBy": "bee"
+}
