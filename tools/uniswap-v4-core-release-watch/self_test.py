@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Folder-local self-test for uniswap-v4-core-release-watch.
 Run: python3 self_test.py; echo EXIT=$?  No args, no network.
-Imports verify.py by path, runs its real label check on the committed
-release_watch.jsonl, checks STATUS.md (FACT/DERIVED/UNKNOWN labels and
-source URLs), data/status.json fields, GOAL.md, and README phrases.
+Imports verify.py and render_status.py by path, runs their real checks
+on committed files and on sample data, checks STATUS.md labels/sources,
+data/status.json fields, GOAL.md, and README phrases.
 """
 import importlib.util
 import json
@@ -16,11 +16,19 @@ ENDPOINT = "https://api.github.com/repos/Uniswap/v4-core/releases/latest"
 EXPECTED_TAG = None
 
 
-def load_verify():
-    spec = importlib.util.spec_from_file_location("verify", BASE_DIR / "verify.py")
+def load_mod(name, filename):
+    spec = importlib.util.spec_from_file_location(name, BASE_DIR / filename)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod
+
+
+def load_verify():
+    return load_mod("verify", "verify.py")
+
+
+def load_render():
+    return load_mod("render_status", "render_status.py")
 
 
 def filled_row():
@@ -91,7 +99,6 @@ def main():
     except Exception as exc:
         check(False, "committed release_watch.jsonl loads and checks", repr(exc))
 
-    # STATUS.md: every summary bullet carries a label and a source URL.
     status = read("STATUS.md")
     check(bool(status), "STATUS.md exists and is non-empty")
     check(ENDPOINT in status, "STATUS.md cites the releases/latest source URL")
@@ -104,14 +111,10 @@ def main():
     check(not unsourced, "STATUS.md every bullet carries a source URL", repr(unsourced[:2]))
     check("UNKNOWN: latest release tag" in status, "STATUS.md tag line is UNKNOWN")
     check("UNKNOWN: published date" in status, "STATUS.md published date line is UNKNOWN")
-    # Fixed: was `"never read UNKNOWN as zero" in status.lower()` which can
-    # never match (lowercased text has no uppercase UNKNOWN). Check the
-    # exact literal phrase in the original STATUS.md text instead.
     check("never read UNKNOWN as zero" in status, "STATUS.md says UNKNOWN is never zero/safe")
     for phrase in ("FACT", "DERIVED", "UNKNOWN"):
         check(phrase in status, "STATUS.md uses label " + phrase)
 
-    # data/status.json: fields, labels, sources mirror STATUS.md.
     try:
         data = json.loads(read("data/status.json"))
         check(data.get("source_endpoint") == ENDPOINT, "status.json source_endpoint matches")
@@ -132,6 +135,7 @@ def main():
         check((data.get("labels") or {}).get("maintenance_verdict") == "UNKNOWN", "status.json maintenance_verdict UNKNOWN")
     except Exception as exc:
         check(False, "data/status.json loads as JSON", repr(exc))
+        data = {}
 
     goal = read("GOAL.md")
     check(bool(goal), "GOAL.md exists and is non-empty")
@@ -140,9 +144,42 @@ def main():
 
     readme = read("README.md")
     check(bool(readme), "README.md exists and is non-empty")
-    for word in ("api.github.com/repos/Uniswap/v4-core/releases/latest", "CC0-1.0", "verify.py", "self_test.py", "UNKNOWN", "FACT", "Untested", "Could not confirm"):
+    for word in ("api.github.com/repos/Uniswap/v4-core/releases/latest", "CC0-1.0", "verify.py", "self_test.py", "UNKNOWN", "FACT", "Untested", "Could not confirm", "render_status.py", "issue #17"):
         check(word.lower() in readme.lower(), "README covers: " + word)
     check("python3 verify.py" in readme, "README states the verify command")
+    check("python3 render_status.py" in readme, "README states the renderer command")
+
+    # Renderer checks: sample filled data, UNKNOWN data, committed data.
+    try:
+        rend = load_render()
+        check(True, "render_status.py imports cleanly")
+        filled_status = {
+            "tag": "v1.0.0", "name": "v1.0.0", "published_at": "2026-11-18T00:00:00Z",
+            "days_since": 4, "html_url": "https://github.com/Uniswap/v4-core/releases/tag/v1.0.0",
+            "headline_numbers": {"asset_count": 3, "total_asset_downloads": 42},
+            "labels": {"tag": "FACT", "name": "FACT", "published_at": "FACT", "days_since": "DERIVED", "html_url": "FACT", "asset_count": "FACT", "total_asset_downloads": "FACT"},
+        }
+        out = rend.render_summary(filled_status, filled_row())
+        check("FACT: v1.0.0" in out, "renderer renders FACT tag on filled data")
+        check("2026-11-18T00:00:00Z" in out, "renderer renders published date on filled data")
+        check("FACT: 3" in out and "FACT: 42" in out, "renderer renders headline numbers on filled data")
+        check("Parent issue: https://github.com/for-toolathlon/uniswap-v4-watch/issues/17" in out, "renderer draft cites parent issue #17 URL")
+        check("DRAFT ONLY" in out, "renderer draft is marked DRAFT ONLY")
+        unknown_out = rend.render_summary(data, {})
+        check("UNKNOWN" in unknown_out, "renderer renders UNKNOWN on committed null data")
+        check("days_since=0" not in unknown_out and "FACT: 0" not in unknown_out, "renderer never renders UNKNOWN as zero")
+        check("never read as zero/safe" in unknown_out, "renderer states UNKNOWN never zero/safe")
+        draft = rend.render_draft(data, {})
+        check(any("issue #17" in ln for ln in draft), "renderer draft mentions issue #17")
+        check(any(ENDPOINT in ln for ln in draft), "renderer draft cites source endpoint")
+        check(rend.fmt("UNKNOWN", None).startswith("UNKNOWN"), "renderer fmt UNKNOWN+null stays UNKNOWN")
+        check(rend.fmt("FACT", "v9") == "FACT: v9", "renderer fmt FACT formats value")
+        # Committed files through the renderer's own loaders.
+        loaded = rend.render_summary(rend.load_status(), rend.load_row())
+        check("Upgrade summary" in loaded and "Headline numbers" in loaded, "renderer loads committed files and renders sections")
+        check(rend.main(["--draft-only"]) == 0, "renderer --draft-only main returns 0")
+    except Exception as exc:
+        check(False, "renderer checks run", repr(exc))
 
     print("self_test: %d check(s), %d failed" % (checks, failed))
     code = 0 if failed == 0 else 1
