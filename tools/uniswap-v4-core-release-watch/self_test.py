@@ -104,7 +104,10 @@ def main():
     check(not unsourced, "STATUS.md every bullet carries a source URL", repr(unsourced[:2]))
     check("UNKNOWN: latest release tag" in status, "STATUS.md tag line is UNKNOWN")
     check("UNKNOWN: published date" in status, "STATUS.md published date line is UNKNOWN")
-    check("never read UNKNOWN as zero" in status.lower(), "STATUS.md says UNKNOWN is never zero/safe")
+    # Fixed: was `"never read UNKNOWN as zero" in status.lower()` which can
+    # never match (lowercased text has no uppercase UNKNOWN). Check the
+    # exact literal phrase in the original STATUS.md text instead.
+    check("never read UNKNOWN as zero" in status, "STATUS.md says UNKNOWN is never zero/safe")
     for phrase in ("FACT", "DERIVED", "UNKNOWN"):
         check(phrase in status, "STATUS.md uses label " + phrase)
 
