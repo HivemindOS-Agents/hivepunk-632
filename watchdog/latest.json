@@ -2,7 +2,7 @@
   "v": 1,
   "kind": "watchdog",
   "agent": "632",
-  "at": "2026-11-22T00:13:18.174Z",
+  "at": "2026-11-23T00:15:38.313Z",
   "version": "watchdog-v1",
   "mode": "report",
   "checked": [
@@ -98,18 +98,6 @@
       "firstSeen": "2026-11-20T00:08:10.995Z"
     },
     {
-      "id": "wd-632-D17---Stuck-after-1-drafts-it-chose-to-publish-it-as-it-is-2026-11-21-:-It-decide-",
-      "check": "D17",
-      "name": "publish_while_failing",
-      "severity": "repair",
-      "subject": "ARTIFACTS.md",
-      "detail": "\"- Stuck after 1 drafts, it chose to publish it as it is (2026-11-21): It decided on: \"The artifact \"simon-says-permission-request\" is in progress: Short permis…\"",
-      "evidence": [
-        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/ARTIFACTS.md"
-      ],
-      "firstSeen": "2026-11-22T00:13:18.174Z"
-    },
-    {
       "id": "wd-632-D18-artifacts",
       "check": "D18",
       "name": "unknown_cost_as_zero",
@@ -129,7 +117,7 @@
       "subject": "tools/card-fixtures-checker/checker.py",
       "detail": "A step said it built tools/card-fixtures-checker/checker.py; it is not in the commit.",
       "evidence": [
-        "step 2026-11-20T02:02Z"
+        "step 2026-11-21T15:18Z"
       ],
       "firstSeen": "2026-11-21T00:01:40.189Z"
     },
@@ -139,37 +127,25 @@
       "name": "owner_handoff",
       "severity": "report",
       "subject": "its steps",
-      "detail": "7 steps in the last 48 hours handed the rest of the work to the owner. The newest: \"Left for owner: run python3 self_test\".",
+      "detail": "5 steps in the last 48 hours handed the rest of the work to the owner. The newest: \"**Left for the owner\".",
       "evidence": [
-        "step 2026-11-21T12:09Z",
-        "step 2026-11-21T02:55Z",
-        "step 2026-11-20T20:39Z",
-        "step 2026-11-20T17:30Z"
+        "step 2026-11-22T21:54Z",
+        "step 2026-11-22T21:37Z",
+        "step 2026-11-22T21:04Z",
+        "step 2026-11-21T12:09Z"
       ],
       "firstSeen": "2026-11-16T00:00:20.098Z"
     }
   ],
   "notSeenAgain": [
     {
-      "id": "wd-632-D17---Stuck-after-2-drafts-it-chose-to-publish-it-as-it-is-2026-11-20-:-It-decide-",
+      "id": "wd-632-D17---Stuck-after-1-drafts-it-chose-to-publish-it-as-it-is-2026-11-21-:-It-decide-",
       "check": "D17",
       "subject": "ARTIFACTS.md",
-      "firstSeen": "2026-11-21T00:01:40.189Z"
-    },
-    {
-      "id": "wd-632-D22-tools/attribution-docs-check-fixtures/fixtures.csv",
-      "check": "D22",
-      "subject": "tools/attribution-docs-check-fixtures/fixtures.csv",
-      "firstSeen": "2026-11-20T00:08:10.995Z"
-    },
-    {
-      "id": "wd-632-D22-tools/attribution-docs-check-fixtures/checksums.txt",
-      "check": "D22",
-      "subject": "tools/attribution-docs-check-fixtures/checksums.txt",
-      "firstSeen": "2026-11-20T00:08:10.995Z"
+      "firstSeen": "2026-11-22T00:13:18.174Z"
     }
   ],
-  "said": "9 found",
+  "said": "8 found",
   "requests": 22,
-  "elapsedMs": 2156
+  "elapsedMs": 3251
 }
