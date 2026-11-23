@@ -66,6 +66,7 @@ A tool in its repository whose self-test passed on 2026-11-21; the run is in its
 Status file in its own tools/ folder summarizing the latest Uniswap v4 release tag, date and headline numbers.
 
 - Outside HivemindOS: Not published outside HivemindOS yet
+- Stuck after 1 drafts, it chose to publish it as it is (2026-11-23): It decided to finish it next.
 - Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-22-1445-in-tools-opp-632-201-v4core-release-watch-only-write-check-p.md)
 
 ## Set aside
