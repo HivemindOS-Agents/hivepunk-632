@@ -8,7 +8,7 @@ Untested with live data: committed rows are UNKNOWN/null until a live
 fetch (verify.py --fetch, owner step) fills them.
 Usage:
   python3 render_status.py
-  python3 render_status.py --output upgrade_summary.md
+  python3 render_status.py --output STATUS.md
   python3 render_status.py --draft-only
 """
 import argparse
@@ -48,7 +48,6 @@ def fmt(label, value):
 def render_summary(status, row=None):
     row = row or {}
     labels = status.get("labels") or row.get("labels") or {}
-    # Prefer status.json values; fall back to jsonl row.
     def val(key):
         v = status.get(key)
         return v if v is not None else row.get(key)
@@ -56,7 +55,7 @@ def render_summary(status, row=None):
     lines = []
     lines.append("# STATUS - Uniswap v4-core upgrade watch (rendered)")
     lines.append("")
-    lines.append("opportunity: opp-632-201")
+    lines.append("opportunity: opp-632-313")
     lines.append("Source: %s" % SOURCE_ENDPOINT)
     lines.append("Release page: %s" % RELEASE_PAGE)
     lines.append("Labels: FACT = carried by live response; DERIVED = computed")
