@@ -1,0 +1,237 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-23T17:03:37.646Z",
+  "subject": "Uniswap/v4-periphery",
+  "subjectKind": "project",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "This is a widely forked extension layer for Uniswap v4 rather than a proven, actively shipped product. The combination of high fork count with in-development language and zero real-work commits in the last 30 days suggests interest exceeds demonstrated recent shipping.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "Uniswap/v4-periphery has 1 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/Uniswap/v4-periphery/commits?per_page=50&since=2026-10-24T17:03:41.158Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether Uniswap/v4-periphery is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "v4-periphery hosts logic built on top of Uniswap v4 core pool logic, including hook contracts and position managers.",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-periphery",
+      "quote": "v4-periphery hosts the logic that builds on top of the core pool logic like hook contracts, position managers, and even possibly libraries needed for integrations.",
+      "sourceId": "src-1",
+      "quoteSha256": "0157daa78f2c17ba7aeca6b5f3fd2121a6d4dddb3c2419a637f9e87058da65b6"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Uniswap v4 is described as a new automated market maker protocol providing extensibility and customizability to pools.",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-periphery",
+      "quote": "Uniswap v4 is a new automated market maker protocol that provides extensibility and customizability to pools.",
+      "sourceId": "src-1",
+      "quoteSha256": "af38a363b7fec30bfaf31b1592649468db2cdca3bd29d6c7484e13c15c97018f"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "The v4-periphery contracts are still in development and further periphery contracts have not yet been built.",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-periphery",
+      "quote": "The v4-periphery contracts in this repository are still in development and further periphery contracts have not yet been built.",
+      "sourceId": "src-1",
+      "quoteSha256": "561ff3fd126c02eb947a45c0b07a4bb5ec4a6abf87e68b8176c6c9fbb32b6d11"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "The repository showed 910 stars, 18 watching and 674 forks.",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-periphery",
+      "quote": "Stars 910 stars Watchers 18 watching Forks 674 forks",
+      "sourceId": "src-1",
+      "quoteSha256": "978e9d1d8bf7c248f05da31eba94d89eec1f5d924792fccef7812dec62b0ce03"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "The repository showed 284 commits on main.",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-periphery",
+      "quote": "284 Commits 284 Commits",
+      "sourceId": "src-1",
+      "quoteSha256": "76114ce22038dd4fac456cbba769401bdb3d36c69e167c3c865a1cd5fb4f8713"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "The license for Uniswap V4 Periphery is the GNU General Public License (GPL 2.0).",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-periphery",
+      "quote": "The license for Uniswap V4 Periphery is the GNU General Public License (GPL 2.0), see LICENSE .",
+      "sourceId": "src-1",
+      "quoteSha256": "13fba956da046b7df4bf91ffbb69959e04b87f1d00de1cf220c1025c56aec38a"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "The repository had 13 open issues.",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-periphery/issues",
+      "quote": "Dismiss alert {{ message }} Collapse sidebar Issues Change the issues type filter Issues New issue Search issues is : issue state : open is:issue state:open Clear filter Search Issues Open 13 ( 13 ) Closed Author Labels Projects Milestones Assignees Types Newest Comfortable display density Compact",
+      "sourceId": "src-5",
+      "quoteSha256": "e7efd3c1ca7dca8298cf87f17cb9751af5beadd9605a7081d62339736034d29c"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "Uniswap/v4-periphery has 1 raw commits in the last 30 days, 0 of them real work.",
+      "check": "page",
+      "source": "https://api.github.com/repos/Uniswap/v4-periphery/commits?per_page=50&since=2026-10-24T17:03:41.158Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "The latest commit listed by the API was a docs commit about a permissioned-pools OpenZeppelin force-exit fix review report (#615).",
+      "check": "page",
+      "source": "https://api.github.com/repos/Uniswap/v4-periphery/commits?per_page=50&since=2026-10-24T17:03:41.158Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c10",
+      "label": "FACT",
+      "text": "The contributing guide describes the contracts as in early stages, released as draft code to build v4 in public.",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-periphery/blob/main/CONTRIBUTING.md",
+      "quote": "The contracts in this repo are in early stages - we are releasing the draft code now so that v4 can be built in public, with open feedback and meaningful community contribution.",
+      "sourceId": "src-4",
+      "quoteSha256": "d03085c99d37246b6886962ed7abb7f2d53924d2596bede6c2112ffe2a1af9bf"
+    },
+    {
+      "id": "c11",
+      "label": "DERIVED",
+      "text": "Forks equal about 74% of stars, indicating high forking relative to starring.",
+      "check": "page",
+      "inputs": [
+        "c4"
+      ],
+      "math": "674 forks / 910 stars = 0.7407, i.e. about 74%"
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether the contracts are production-ready, audited or deployed in production.",
+      "check": "page",
+      "missing": "A page confirming audit scope, deployment addresses or production deployment status was not read."
+    }
+  ],
+  "counts": {
+    "fact": 11,
+    "derived": 1,
+    "unknown": 2
+  },
+  "risks": [
+    "README says contracts are still in development and further periphery contracts have not yet been built, so production readiness is uncertain.",
+    "Recent activity check found 0 real-work commits in the last 30 days, suggesting maintenance pace may be low or focused on review and documentation.",
+    "Open issues list router, quoter, position-manager, descriptor and notifier fixes related to DoS, slippage bypass, overflow and griefing risks.",
+    "Forks are not evidence of production use, and no deployment, TVL, volume or user activity figures were shown in the pages read.",
+    "Hook contracts are customizable by design, so individual hooks may carry risks not present in the core pool logic."
+  ],
+  "unknowns": [
+    "Whether Uniswap/v4-periphery is still shipping: None of its commits in the last 30 days is real work.",
+    "Whether the contracts are production-ready, audited or deployed in production.: A page confirming audit scope, deployment addresses or production deployment status was not read."
+  ],
+  "wouldChangeMind": [
+    "Evidence of recent real-work commits shipping new periphery contracts.",
+    "A clear audit or production deployment record for specific contracts in this repository.",
+    "On-chain usage data for deployed periphery contracts showing sustained activity."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "GitHub - Uniswap/v4-periphery: 🦄 🦄 🦄 🦄 Peripheral smart contracts for interacting with Uniswap v4 · GitHub",
+      "url": "https://github.com/Uniswap/v4-periphery",
+      "finalUrl": "https://github.com/Uniswap/v4-periphery",
+      "status": 200,
+      "fetchedAt": "2026-11-23T17:03:40.778Z",
+      "extractor": "page-text-v1",
+      "sha256": "b39386858929a6a14ae1c3e981f46ec1f27634748376a9b1b40e5e5aa1e6845c",
+      "bytes": 250587,
+      "quote": "v4-periphery hosts the logic that builds on top of the core pool logic like hook contracts, position managers, and even possibly libraries needed for integrations.",
+      "quoteSha256": "0157daa78f2c17ba7aeca6b5f3fd2121a6d4dddb3c2419a637f9e87058da65b6"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "Uniswap Labs · GitHub",
+      "url": "https://github.com/uniswap",
+      "finalUrl": "https://github.com/uniswap",
+      "status": 200,
+      "fetchedAt": "2026-11-23T17:03:40.890Z",
+      "extractor": "page-text-v1",
+      "sha256": "99dff45b9a13880300f76ca67e76053c857238c1f3706755cdbc99688b90821a",
+      "bytes": 257525,
+      "quote": "You switched accounts on another tab or window.",
+      "quoteSha256": "4ac799df5144579b343a658cf230d3bccc74d2647af5ca068556e9f00cf45c44"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "v4-periphery/CONTRIBUTING.md at main · Uniswap/v4-periphery · GitHub",
+      "url": "https://github.com/Uniswap/v4-periphery/blob/main/CONTRIBUTING.md",
+      "finalUrl": "https://github.com/Uniswap/v4-periphery/blob/main/CONTRIBUTING.md",
+      "status": 200,
+      "fetchedAt": "2026-11-23T17:03:40.654Z",
+      "extractor": "page-text-v1",
+      "sha256": "c840457e47afc401997bd930c5bd3ac203417454cd29f8ad2a5bcbd4a03de6d3",
+      "bytes": 196497,
+      "quote": "The contracts in this repo are in early stages - we are releasing the draft code now so that v4 can be built in public, with open feedback and meaningful community contribution.",
+      "quoteSha256": "d03085c99d37246b6886962ed7abb7f2d53924d2596bede6c2112ffe2a1af9bf"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "GitHub · Where software is built",
+      "url": "https://github.com/Uniswap/v4-periphery/issues",
+      "finalUrl": "https://github.com/Uniswap/v4-periphery/issues",
+      "status": 200,
+      "fetchedAt": "2026-11-23T17:03:40.889Z",
+      "extractor": "page-text-v1",
+      "sha256": "48432fa61f516be5298858f14b1f8f5d9b12283e35aed4acc12a55aed343cbe9",
+      "bytes": 242020,
+      "quote": "Dismiss alert {{ message }} Collapse sidebar Issues Change the issues type filter Issues New issue Search issues is : issue state : open is:issue state:open Clear filter Search Issues Open 13 ( 13 ) Closed Author Labels Projects Milestones Assignees Types Newest Comfortable display density Compact",
+      "quoteSha256": "e7efd3c1ca7dca8298cf87f17cb9751af5beadd9605a7081d62339736034d29c"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of Uniswap/v4-periphery",
+      "url": "https://api.github.com/repos/Uniswap/v4-periphery/commits?per_page=50&since=2026-10-24T17:03:41.158Z",
+      "fetchedAt": "2026-11-23T17:03:37.646Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "bb43e7994e9e67c3d06e54054557a33659e34926ad29d2680fd1db4b894a8a1c"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-23-uniswap-v4-periphery.md",
+  "decidedBy": "bee"
+}
