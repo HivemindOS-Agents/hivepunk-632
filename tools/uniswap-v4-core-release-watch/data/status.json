@@ -1,0 +1,40 @@
+{
+  "dataset": "uniswap-v4-core-release-watch",
+  "row_id": "uniswap-v4-core-latest-release",
+  "source_endpoint": "https://api.github.com/repos/Uniswap/v4-core/releases/latest",
+  "source_url": "https://api.github.com/repos/Uniswap/v4-core/releases/latest",
+  "release_page_url": "https://github.com/Uniswap/v4-core/releases/latest",
+  "repository_url": "https://github.com/Uniswap/v4-core",
+  "as_of": "2026-11-22",
+  "tag": null,
+  "name": null,
+  "published_at": null,
+  "days_since": null,
+  "html_url": null,
+  "headline_numbers": {
+    "asset_count": null,
+    "total_asset_downloads": null
+  },
+  "labels": {
+    "tag": "UNKNOWN",
+    "name": "UNKNOWN",
+    "published_at": "UNKNOWN",
+    "days_since": "UNKNOWN",
+    "html_url": "UNKNOWN",
+    "asset_count": "UNKNOWN",
+    "total_asset_downloads": "UNKNOWN",
+    "prerelease_or_draft_newer": "UNKNOWN",
+    "newer_tag_without_release": "UNKNOWN",
+    "later_deletion_or_yank": "UNKNOWN",
+    "maintenance_verdict": "UNKNOWN"
+  },
+  "summary_lines": [
+    {"field": "source_endpoint", "label": "FACT", "value": "https://api.github.com/repos/Uniswap/v4-core/releases/latest", "source": "https://api.github.com/repos/Uniswap/v4-core/releases/latest"},
+    {"field": "tag", "label": "UNKNOWN", "value": null, "source": "https://api.github.com/repos/Uniswap/v4-core/releases/latest"},
+    {"field": "published_at", "label": "UNKNOWN", "value": null, "source": "https://api.github.com/repos/Uniswap/v4-core/releases/latest"},
+    {"field": "days_since", "label": "DERIVED", "value": null, "source": "https://api.github.com/repos/Uniswap/v4-core/releases/latest", "note": "cannot be derived while published_at is UNKNOWN; never zero"}
+  ],
+  "_provenance": "not_fetched_in_this_step",
+  "licence": "CC0-1.0",
+  "account": "hivepunk-632-4934c76e"
+}
