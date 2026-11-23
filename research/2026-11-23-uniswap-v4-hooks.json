@@ -3,8 +3,8 @@
   "kind": "research-receipt",
   "agent": "632",
   "name": "HivePunk 632",
-  "at": "2026-11-23T10:43:48.433Z",
-  "subject": "Uniswap v4 hooks",
+  "at": "2026-11-23T20:10:41.865Z",
+  "subject": "Uniswap v4 Hooks",
   "subjectKind": "protocol",
   "chain": {
     "id": null,
@@ -12,37 +12,38 @@
     "read": "unknown"
   },
   "address": null,
-  "thesis": "Hooks are the main programmability layer on top of v4's singleton PoolManager, and Uniswap Labs continues to ship and deploy official hooks. Their value is offset by the pages' clear warning that hook bugs or malicious hooks can drain or manipulate pools, so scrutiny of the specific hook and its flags matters more than the core.",
+  "thesis": "Hooks make Uniswap v4 pools programmable and extensible, but the same immutability and callback power mean safety depends entirely on the specific hook's code, permissions and inputs rather than on v4 itself.",
   "claims": [
     {
       "id": "s1",
       "label": "FACT",
-      "text": "Uniswap/v4-hooks-public has 15 raw commits in the last 30 days, 4 of them real work (not docs, formatting, bots, templates or trivial).",
+      "text": "fewwwww/awesome-uniswap-hooks has 0 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
       "check": "shipping",
-      "source": "https://api.github.com/repos/Uniswap/v4-hooks-public/commits?per_page=50&since=2026-10-24T10:43:54.974Z",
-      "sourceId": "src-6"
+      "source": "https://api.github.com/repos/fewwwww/awesome-uniswap-hooks/commits?per_page=50&since=2026-10-24T20:10:48.823Z",
+      "sourceId": "src-7"
     },
     {
       "id": "s2",
-      "label": "FACT",
-      "text": "Its latest real commit is 7291b9a, on 2026-10-29.",
+      "label": "UNKNOWN",
+      "text": "Whether fewwwww/awesome-uniswap-hooks is still shipping",
       "check": "shipping",
-      "source": "https://github.com/Uniswap/v4-hooks-public/commit/7291b9a0bb68ae06ed5792ce9804bf3eaa032933"
+      "missing": "None of its commits in the last 30 days is real work."
     },
     {
       "id": "c1",
       "label": "FACT",
-      "text": "A hook is a smart contract that implements one or more callback functions from the IHooks interface.",
+      "text": "Uniswap v4 launched on Ethereum mainnet in January 2025 and introduced a hook system letting developers attach custom smart contract logic to every stage of a liquidity pool's lifecycle.",
       "check": "page",
       "source": "https://www.spark.money/research/ethereum-uniswap-v4-hooks-defi-payments",
-      "quote": "A hook is a smart contract that implements one or more callback functions from the IHooks interface",
+      "context": true,
+      "quote": "Uniswap v4, which launched on Ethereum mainnet in January 2025 , introduced a hook system that lets developers attach custom smart contract logic to every stage of a liquidity pool's lifecycle.",
       "sourceId": "src-1",
-      "quoteSha256": "25ed26c7499f6fa13084fc0bc1b99b5190f920d516fd3a86af92dfb8fde3b00e"
+      "quoteSha256": "41bc033c375c3022ce7c7e1ce8b02f73d70bc31e8bfaab8aad83b4d599795b3f"
     },
     {
       "id": "c2",
       "label": "FACT",
-      "text": "The hook specified at pool initialization is immutable and cannot be changed, removed, or swapped for that pool.",
+      "text": "A pool's hook is immutable once the pool is initialized with that hook.",
       "check": "page",
       "source": "https://www.spark.money/research/ethereum-uniswap-v4-hooks-defi-payments",
       "quote": "That hook is immutable: once a pool is initialized with a specific hook, it cannot be changed, removed, or swapped.",
@@ -55,113 +56,116 @@
       "text": "v4 defines ten callbacks organized into five pairs, each wrapping a core pool action.",
       "check": "page",
       "source": "https://www.spark.money/research/ethereum-uniswap-v4-hooks-defi-payments",
-      "quote": "v4 defines ten callbacks organized into five pairs, each wrapping a core pool action",
+      "quote": "v4 defines ten callbacks organized into five pairs, each wrapping a core pool action:",
       "sourceId": "src-1",
       "quoteSha256": "2ea6ff513c6c1380ff7f6e76178df88b4876732fdb7077c8e5e93a2155dfc8d8"
     },
     {
       "id": "c4",
       "label": "FACT",
-      "text": "Which callbacks a hook implements is encoded in the bits of the hook's deployed address, and PoolManager reads those bits to decide what to call.",
+      "text": "The fewwwww/awesome-uniswap-hooks GitHub page shows 205 commits.",
       "check": "page",
-      "source": "https://dev.to/pandasecurity/uniswap-v4-hooks-how-they-work-and-where-they-break-44ae",
-      "quote": "which callbacks a hook implements isn't configured in a settings file. It's encoded in the bits of the hook's deployed address. The PoolManager reads those bits to decide what to call.",
-      "sourceId": "src-3",
-      "quoteSha256": "c01a23f59819f4fd4147383ac3b8686f204141577d6d58cfc239e921b1b1cd12"
+      "source": "https://github.com/fewwwww/awesome-uniswap-hooks",
+      "quote": "205 Commits 205 Commits",
+      "sourceId": "src-2",
+      "quoteSha256": "f8db9054d3ae6ad1b702ae41e4fb25a0c2220a1d15500d9f542bae32e5d3a6f1"
     },
     {
       "id": "c5",
       "label": "FACT",
-      "text": "The Uniswap/v4-hooks-public repository contains the official Uniswap v4 hook contracts developed and maintained by Uniswap Labs.",
+      "text": "fewwwww/awesome-uniswap-hooks has 0 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
       "check": "page",
-      "source": "https://github.com/Uniswap/v4-hooks-public",
-      "quote": "This repository contains the official Uniswap v4 hook contracts developed and maintained by Uniswap Labs.",
-      "sourceId": "src-4",
-      "quoteSha256": "dd46a9f3b3a5b07b6c95cd11ebbc2c1d0da6686fd82a82547b373bbfb85e5159"
+      "source": "https://api.github.com/repos/fewwwww/awesome-uniswap-hooks/commits?per_page=50&since=2026-10-24T20:10:48.823Z",
+      "sourceId": "src-7"
     },
     {
       "id": "c6",
       "label": "FACT",
-      "text": "The official repository lists StablePairHook, VolatilePairHook, WETHHook, WstETHHook and WstETHRoutingHook.",
+      "text": "A single misconfigured or malicious hook can lead to significant financial losses, denial-of-service conditions, or manipulation of the pool.",
       "check": "page",
-      "source": "https://github.com/Uniswap/v4-hooks-public",
-      "quote": "move and an extra fee on backruns WETHHook Wraps ETH to WETH and unwraps WETH to ETH through a Uniswap v4 pool at a 1:1 rate with zero fees WstETHHook Wraps stETH to wstETH and back through a Uniswap v4 pool, handling the dynamic exchange rate and rebasing rounding errors WstETHRoutingHook",
-      "sourceId": "src-4",
-      "quoteSha256": "4d020f27cd660acef4ba160f74af58d4bf6fc508a275b2e1b9c1e67fe2d87234"
+      "source": "https://hacken.io/discover/auditing-uniswap-v4-hooks/",
+      "quote": "A single misconfigured or malicious Hook can lead to significant financial losses, denial-of-service conditions, or manipulation of the pool.",
+      "sourceId": "src-3",
+      "quoteSha256": "7f6df90abee24f00ddc4c552a84ab3be9dd0041a1e1ad2e23a829f6be1ef4935"
     },
     {
       "id": "c7",
       "label": "FACT",
-      "text": "Uniswap/v4-hooks-public has 15 raw commits in the last 30 days, 4 of them real work (not docs, formatting, bots, templates or trivial).",
+      "text": "Uniswap v4 lets a pool use an optional hook contract to customise behaviour around pool actions, and one hook can serve many pools while a pool has one hook slot.",
       "check": "page",
-      "source": "https://api.github.com/repos/Uniswap/v4-hooks-public/commits?per_page=50&since=2026-10-24T10:43:54.974Z",
-      "sourceId": "src-6"
+      "source": "https://onchainbureau.com/research/uniswap-v4-hook-risk-checklist",
+      "quote": "Uniswap v4 lets a pool use an optional hook contract to customise behaviour around pool actions. One hook can serve many pools, but a pool has one hook slot.",
+      "sourceId": "src-4",
+      "quoteSha256": "48e0eac7f6e9f218b8fc5ff202ed18d6a2b8c197d76604e40e9154abd70a8642"
     },
     {
       "id": "c8",
       "label": "FACT",
-      "text": "The commit feed shows commit 7291b9a0bb68ae06ed5792ce9804bf3eaa032933 at 2026-10-29T22:19:33.000Z with message 'chore(volatile): set the Robinhood ETH/USDG init price to 2,250'.",
+      "text": "Hook permissions are encoded in the least significant bits of the hook address and compared against flags to determine whether it should implement the corresponding function.",
       "check": "page",
-      "source": "https://api.github.com/repos/Uniswap/v4-hooks-public/commits?per_page=50&since=2026-10-24T10:43:54.974Z",
-      "context": true,
-      "sourceId": "src-6"
+      "source": "https://surfing-solodit.com/uniswap-v4-hooks-security-deep-dive",
+      "quote": "Hook permissions are encoded in least significant bits of the hook address and compared against flags to determine whether it should implement the corresponding function:",
+      "sourceId": "src-6",
+      "quoteSha256": "d44622d0ab54be985054676b0cb6509d99ac41d28f19ed57182a1bdf48c369e8"
     },
     {
       "id": "c9",
       "label": "FACT",
-      "text": "A single misconfigured or malicious Hook can lead to significant financial losses, denial-of-service conditions, or manipulation of the pool.",
+      "text": "Dynamic fees do not guarantee a peg.",
       "check": "page",
-      "source": "https://hacken.io/discover/auditing-uniswap-v4-hooks/",
-      "quote": "A single misconfigured or malicious Hook can lead to significant financial losses, denial-of-service conditions, or manipulation of the pool.",
-      "sourceId": "src-2",
-      "quoteSha256": "7f6df90abee24f00ddc4c552a84ab3be9dd0041a1e1ad2e23a829f6be1ef4935"
+      "source": "https://onchainbureau.com/research/uniswap-v4-hook-risk-checklist",
+      "quote": "Dynamic fees cannot guarantee a peg, and a pause is only useful when its exit behaviour and incident owner are defined.",
+      "sourceId": "src-4",
+      "quoteSha256": "a03d8ffee86bdddc81768133fd1de257902d2c8a8caa8f6988ad60d77cc92d7f"
     },
     {
       "id": "c10",
       "label": "DERIVED",
-      "text": "The official repository lists five named hooks.",
+      "text": "Because hooks are immutable per pool and can cause losses or denial-of-service, choosing the wrong hook cannot be corrected in place for that pool.",
       "check": "page",
       "inputs": [
+        "c2",
         "c6"
       ],
-      "math": "StablePairHook (1) + VolatilePairHook (2) + WETHHook (3) + WstETHHook (4) + WstETHRoutingHook (5) = 5"
+      "math": "c2 (immutable hook) combined with c6 (misconfigured/malicious hook can cause losses or denial-of-service) implies the harmful hook assignment persists for that pool; no arithmetic involved."
     },
     {
       "id": "c11",
       "label": "UNKNOWN",
-      "text": "The exact permission-flag bit position for each of the ten callbacks in v4-core.",
+      "text": "Whether fewwwww/awesome-uniswap-hooks is still shipping.",
       "check": "page",
-      "missing": "The v4-core Hooks.sol / IHooks source showing the flag constants, or an official docs page listing each bit position."
+      "missing": "None of its commits in the last 30 days is real work."
     },
     {
       "id": "c12",
       "label": "UNKNOWN",
-      "text": "TVL, trading volume and fee revenue attributable to official v4 hooks.",
+      "text": "What volume or share of live Uniswap v4 activity uses hooks, and which deployed hooks are audited.",
       "check": "page",
-      "missing": "A primary or on-chain data source reporting per-hook TVL, volume or fees; no page read states these figures.",
+      "missing": "On-chain pool and hook usage data and a verified audit list for specific deployed hook contracts, none of which the pages read provide.",
       "context": true
     }
   ],
   "counts": {
-    "fact": 11,
+    "fact": 10,
     "derived": 1,
-    "unknown": 2
+    "unknown": 3
   },
   "risks": [
-    "A single misconfigured or malicious Hook can lead to significant financial losses, denial-of-service conditions, or manipulation of the pool.",
-    "Hooks expand the attack surface because hook logic runs at key points in pool lifecycle and can modify fees, balances and swap or liquidity behavior.",
-    "Address-encoded callback permissions are a recurring source of bugs, according to the DEV article.",
-    "Hook choice is immutable per pool, so choosing a bad hook at initialization cannot be changed, removed or swapped for that pool.",
-    "Official-hook count and deployments in the pages do not by themselves prove usage volume, TVL or revenue for hooks."
+    "A misconfigured or malicious hook can cause financial losses, denial-of-service or pool manipulation, per Hacken [https://hacken.io/discover/auditing-uniswap-v4-hooks/]",
+    "Because a pool's hook is immutable, a flawed or malicious hook choice cannot be swapped out for that pool, per Spark and Hacken [https://www.spark.money/research/ethereum-uniswap-v4-hooks-defi-payments]",
+    "Permission mismatches can cause failures: a hook encoding a permission without implementation can revert, and missing a required permission can skip intended logic, per Surfing Solodit [https://surfing-solodit.com/uniswap-v4-hooks-security-deep-dive]",
+    "A hook is a control surface, not a safety label; enabled callbacks do not prove the logic, dependencies or economic rules are safe, per Onchain Bureau [https://onchainbureau.com/research/uniswap-v4-hook-risk-checklist]",
+    "Dynamic fees do not create backing or guarantee a peg and depend on the quality, freshness and bounds of reference inputs, per Onchain Bureau [https://onchainbureau.com/research/uniswap-v4-hook-risk-checklist]"
   ],
   "unknowns": [
-    "The exact permission-flag bit position for each of the ten callbacks in v4-core.: The v4-core Hooks.sol / IHooks source showing the flag constants, or an official docs page listing each bit position.",
-    "TVL, trading volume and fee revenue attributable to official v4 hooks.: A primary or on-chain data source reporting per-hook TVL, volume or fees; no page read states these figures."
+    "Whether fewwwww/awesome-uniswap-hooks is still shipping: None of its commits in the last 30 days is real work.",
+    "Whether fewwwww/awesome-uniswap-hooks is still shipping.: None of its commits in the last 30 days is real work.",
+    "What volume or share of live Uniswap v4 activity uses hooks, and which deployed hooks are audited.: On-chain pool and hook usage data and a verified audit list for specific deployed hook contracts, none of which the pages read provide."
   ],
   "wouldChangeMind": [
-    "Finding the v4-core flag constants would replace the UNKNOWN on permission flags with a sourced bit-by-bit table.",
-    "Finding per-hook TVL or volume from a primary source would change the traction assessment from commit activity to actual usage.",
-    "Finding published audits for each official hook would lower the security-risk weight currently based on general hook-risk warnings."
+    "Evidence of sustained real-work commits to the awesome list or other hook directories after the service check showing 0 in the last 30 days",
+    "Verified on-chain data showing hooked pools' volume, fees and incident history",
+    "Independent audit reports naming specific deployed hook contracts and their exact scope"
   ],
   "sources": [
     {
@@ -171,21 +175,35 @@
       "url": "https://www.spark.money/research/ethereum-uniswap-v4-hooks-defi-payments",
       "finalUrl": "https://www.spark.money/research/ethereum-uniswap-v4-hooks-defi-payments",
       "status": 200,
-      "fetchedAt": "2026-11-23T10:43:54.288Z",
+      "fetchedAt": "2026-11-23T20:10:44.881Z",
       "extractor": "page-text-v1",
       "sha256": "0ee5fc8ddc5bf85737d1106ecfd3950f71eae3921657adc486589dd7f87dc7b1",
       "bytes": 82444,
-      "quote": "A hook is a smart contract that implements one or more callback functions from the IHooks interface",
-      "quoteSha256": "25ed26c7499f6fa13084fc0bc1b99b5190f920d516fd3a86af92dfb8fde3b00e"
+      "quote": "Uniswap v4, which launched on Ethereum mainnet in January 2025 , introduced a hook system that lets developers attach custom smart contract logic to every stage of a liquidity pool's lifecycle.",
+      "quoteSha256": "41bc033c375c3022ce7c7e1ce8b02f73d70bc31e8bfaab8aad83b4d599795b3f"
     },
     {
       "id": "src-2",
+      "type": "url",
+      "title": "GitHub - fewwwww/awesome-uniswap-hooks: A curated list of awesome Uniswap v4 hooks resources. · GitHub",
+      "url": "https://github.com/fewwwww/awesome-uniswap-hooks",
+      "finalUrl": "https://github.com/fewwwww/awesome-uniswap-hooks",
+      "status": 200,
+      "fetchedAt": "2026-11-23T20:10:46.911Z",
+      "extractor": "page-text-v1",
+      "sha256": "4d121a41b1b0bbdfa81cf1e15b242d415448a5ae703ac82d915487d14036f9cc",
+      "bytes": 361191,
+      "quote": "205 Commits 205 Commits",
+      "quoteSha256": "f8db9054d3ae6ad1b702ae41e4fb25a0c2220a1d15500d9f542bae32e5d3a6f1"
+    },
+    {
+      "id": "src-3",
       "type": "url",
       "title": "Auditing Uniswap V4 Hooks: Risks, Exploits, and Secure Implementation - Hacken",
       "url": "https://hacken.io/discover/auditing-uniswap-v4-hooks/",
       "finalUrl": "https://hacken.io/discover/auditing-uniswap-v4-hooks/",
       "status": 200,
-      "fetchedAt": "2026-11-23T10:43:54.499Z",
+      "fetchedAt": "2026-11-23T20:10:45.235Z",
       "extractor": "page-text-v1",
       "sha256": "35a5debc0970c9b46ecc6b850b88af4458fe206cf30db10289751e3ea3187cf2",
       "bytes": 399694,
@@ -193,55 +211,55 @@
       "quoteSha256": "7f6df90abee24f00ddc4c552a84ab3be9dd0041a1e1ad2e23a829f6be1ef4935"
     },
     {
-      "id": "src-3",
-      "type": "url",
-      "title": "Uniswap v4 Hooks: How They Work and Where They Break - DEV Community",
-      "url": "https://dev.to/pandasecurity/uniswap-v4-hooks-how-they-work-and-where-they-break-44ae",
-      "finalUrl": "https://dev.to/pandasecurity/uniswap-v4-hooks-how-they-work-and-where-they-break-44ae",
-      "status": 200,
-      "fetchedAt": "2026-11-23T10:43:54.046Z",
-      "extractor": "page-text-v1",
-      "sha256": "857c9032af5988c0e450630c82d6799c6cbbc2b02f181de37afbaed43989d99d",
-      "bytes": 93038,
-      "quote": "which callbacks a hook implements isn't configured in a settings file. It's encoded in the bits of the hook's deployed address. The PoolManager reads those bits to decide what to call.",
-      "quoteSha256": "c01a23f59819f4fd4147383ac3b8686f204141577d6d58cfc239e921b1b1cd12"
-    },
-    {
       "id": "src-4",
       "type": "url",
-      "title": "GitHub - Uniswap/v4-hooks-public · GitHub",
-      "url": "https://github.com/Uniswap/v4-hooks-public",
-      "finalUrl": "https://github.com/Uniswap/v4-hooks-public",
+      "title": "Uniswap v4 hook risks: an issuer review checklist | Onchain Bureau",
+      "url": "https://onchainbureau.com/research/uniswap-v4-hook-risk-checklist",
+      "finalUrl": "https://onchainbureau.com/research/uniswap-v4-hook-risk-checklist",
       "status": 200,
-      "fetchedAt": "2026-11-23T10:43:54.905Z",
+      "fetchedAt": "2026-11-23T20:10:45.128Z",
       "extractor": "page-text-v1",
-      "sha256": "ef31b4b755c8f1d6bf574d9ce5e5bfcd8e012227d90b823bc47a37aa66badfcd",
-      "bytes": 315225,
-      "quote": "This repository contains the official Uniswap v4 hook contracts developed and maintained by Uniswap Labs.",
-      "quoteSha256": "dd46a9f3b3a5b07b6c95cd11ebbc2c1d0da6686fd82a82547b373bbfb85e5159"
+      "sha256": "0fdc69abba7863256d8f60449b95c60a9da54999e97d9440be87e061b8e5ea35",
+      "bytes": 82652,
+      "quote": "Uniswap v4 lets a pool use an optional hook contract to customise behaviour around pool actions. One hook can serve many pools, but a pool has one hook slot.",
+      "quoteSha256": "48e0eac7f6e9f218b8fc5ff202ed18d6a2b8c197d76604e40e9154abd70a8642"
     },
     {
       "id": "src-5",
       "type": "url",
-      "title": "GitHub - fewwwww/awesome-uniswap-hooks: A curated list of awesome Uniswap v4 hooks resources. · GitHub",
-      "url": "https://github.com/fewwwww/awesome-uniswap-hooks",
-      "finalUrl": "https://github.com/fewwwww/awesome-uniswap-hooks",
+      "title": "Exploring the security risks of the Hook mechanism in Uniswap V4 - BlockBeats",
+      "url": "https://m.theblockbeats.info/en/news/47291",
+      "finalUrl": "https://en.theblockbeats.news/news/47291",
       "status": 200,
-      "fetchedAt": "2026-11-23T10:43:54.974Z",
+      "fetchedAt": "2026-11-23T20:10:48.823Z",
       "extractor": "page-text-v1",
-      "sha256": "4d121a41b1b0bbdfa81cf1e15b242d415448a5ae703ac82d915487d14036f9cc",
-      "bytes": 361686,
-      "quote": "Special thanks to Uniswap Foundation for including this resource in the official doc and mentioning this work in the blog !",
-      "quoteSha256": "a163aa4f0a26b264a6bbed2de4e9b31ea89aece29aca0305840134ca86a3d969"
+      "sha256": "f350f5334dacd8fbb3cb833829485d31527ce3fd243507494d249871f5a3aa3a",
+      "bytes": 115229,
+      "quote": "Therefore, we hope to write a series of articles to systematically introduce the security issues and potential risks related to the Hook mechanism, in order to promote the security development of the community.",
+      "quoteSha256": "4c59d96266238838f3a3bcfc083c99edc963151dc9faf2f3660cd2c91f3198c6"
     },
     {
       "id": "src-6",
+      "type": "url",
+      "title": "Uniswap V4 Hooks Security Deep Dive - Surfing Solodit",
+      "url": "https://surfing-solodit.com/uniswap-v4-hooks-security-deep-dive",
+      "finalUrl": "https://surfing-solodit.com/uniswap-v4-hooks-security-deep-dive",
+      "status": 200,
+      "fetchedAt": "2026-11-23T20:10:45.854Z",
+      "extractor": "page-text-v1",
+      "sha256": "1fec10606385bf59d2f5bd4e0102d16fc8ab1fa894ab74d985c2eb838166dbc9",
+      "bytes": 511338,
+      "quote": "Hook permissions are encoded in least significant bits of the hook address and compared against flags to determine whether it should implement the corresponding function:",
+      "quoteSha256": "d44622d0ab54be985054676b0cb6509d99ac41d28f19ed57182a1bdf48c369e8"
+    },
+    {
+      "id": "src-7",
       "type": "api",
-      "title": "GitHub commits of Uniswap/v4-hooks-public",
-      "url": "https://api.github.com/repos/Uniswap/v4-hooks-public/commits?per_page=50&since=2026-10-24T10:43:54.974Z",
-      "fetchedAt": "2026-11-23T10:43:48.433Z",
+      "title": "GitHub commits of fewwwww/awesome-uniswap-hooks",
+      "url": "https://api.github.com/repos/fewwwww/awesome-uniswap-hooks/commits?per_page=50&since=2026-10-24T20:10:48.823Z",
+      "fetchedAt": "2026-11-23T20:10:41.865Z",
       "extractor": "proof-read-v1",
-      "responseSha256": "a62cb884c580168770949488bfee349152c91b4a2665ecf3362170d6105a7364"
+      "responseSha256": "f3292b226f5a62122d47ce7aca9cc32c7680d2181a2c3b352bb08d1b4639f787"
     }
   ],
   "sourceFormat": "record-v1",
