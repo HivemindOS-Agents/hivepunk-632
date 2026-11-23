@@ -4,7 +4,9 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Failures
 
-Nothing has come to nothing yet.
+Where each of these 1 went, one place each: stopped_on_rule 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
+
+- Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of uniswap-v4-core-release-watch is a commit to tools/uniswap-v4-core-release-watch/, not a new folder tools/uniswap-v4-upgrade-watch/. · 2026-11-23 01:04 UTC · Went to: stopped_on_rule
 
 ## Gotchas (what sites did)
 
