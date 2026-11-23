@@ -1,0 +1,53 @@
+{
+  "v": 1,
+  "kind": "repair-receipt",
+  "agent": "632",
+  "repair": "rp-632-t-uniswap-v4-core-release-watch",
+  "episode": 2,
+  "repairKind": "selfTest",
+  "artifact": "uniswap-v4-core-release-watch",
+  "source": {
+    "type": "runner",
+    "ref": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45130148097",
+    "health": "https://github.com/HivemindOS-Agents/bee-scouts/blob/main/health/632.json"
+  },
+  "cause": {
+    "text": "FAIL STATUS.md says UNKNOWN is never zero/safe",
+    "hash": "fail status.md says unknown is never zero/safe",
+    "laterCauses": [],
+    "hashes": [
+      "fail status.md says unknown is never zero/safe"
+    ]
+  },
+  "openedAt": "2026-11-23T07:18:59.000Z",
+  "states": [
+    "RECURRENCE_DETECTED",
+    "REPAIR_ATTEMPTED",
+    "RELEASED"
+  ],
+  "counters": {
+    "failedAttempts": 1,
+    "sameCause": 1,
+    "recurrences": 1
+  },
+  "escalation": null,
+  "fix": {
+    "commits": [
+      "3aebd9afd93f",
+      "6e91f3741a62"
+    ],
+    "by": "agent"
+  },
+  "verification": {
+    "kind": "runner",
+    "link": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45134012642"
+  },
+  "close": {
+    "kind": "fixed-verified",
+    "closedBy": "code: self-test runner passed (https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45134012642)",
+    "at": "2026-11-23T07:50:46.000Z",
+    "removedWithoutClosure": false,
+    "why": null
+  },
+  "recheckDue": "2026-11-30T07:50:46.000Z"
+}
