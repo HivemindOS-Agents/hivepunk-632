@@ -11,6 +11,9 @@ Labels: FACT = carried by the live response fetched for this status.
 DERIVED = computed from a FACT value in this status. UNKNOWN = not
 proven by a live fetch in this step; never read UNKNOWN as zero or safe.
 
+Rule (exact phrase): never read UNKNOWN as zero or safe.
+UNKNOWN is never zero/safe: null means unproven, not 0 and not safe.
+
 ## Summary lines
 
 - FACT: the intended source endpoint is https://api.github.com/repos/Uniswap/v4-core/releases/latest - source: https://api.github.com/repos/Uniswap/v4-core/releases/latest
