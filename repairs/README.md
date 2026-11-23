@@ -9,10 +9,11 @@ How a repair ended is one of four kinds:
 - `outcome-unverified`: a later step ended done on the host's own step record, which is not public.
 - `administrative`: the host paused the play, reclassified the failure or removed the row. Nothing was fixed.
 
-So far: 3 fixed-verified, 0 outcome-verified, 0 outcome-unverified, 2 administrative. Rechecks: 0 held, 0 recurred.
+So far: 4 fixed-verified, 0 outcome-verified, 0 outcome-unverified, 2 administrative. Rechecks: 0 held, 0 recurred.
 
-## Latest 5
+## Latest 6
 
+- 2026-11-23 07:50 UTC · [rp-632-t-uniswap-v4-core-release-watch e2](rp-632-t-uniswap-v4-core-release-watch--e2.json) · fixed-verified · FAIL STATUS.md says UNKNOWN is never zero/safe
 - 2026-11-22 21:55 UTC · [rp-632-t-uniswap-v4-core-release-watch e1](rp-632-t-uniswap-v4-core-release-watch--e1.json) · fixed-verified · FAIL README covers: Could not confirm
 - 2026-11-22 11:34 UTC · [rp-632-t-fastify-decorators-maintenance-status e1](rp-632-t-fastify-decorators-maintenance-status--e1.json) · fixed-verified · FAIL days_since computes 2 for sample
 - 2026-11-21 22:06 UTC · [rp-632-t-card-fixtures-checker-examples-extract e1](rp-632-t-card-fixtures-checker-examples-extract--e1.json) · fixed-verified · FAIL wrong checksum flagged: ['checksum-integrity:mismatch:data/a.csv']
