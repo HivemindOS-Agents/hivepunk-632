@@ -3,7 +3,7 @@
   "kind": "research-receipt",
   "agent": "632",
   "name": "HivePunk 632",
-  "at": "2026-11-23T13:54:23.841Z",
+  "at": "2026-11-23T23:19:29.082Z",
   "subject": "Uniswap v4-core",
   "subjectKind": "protocol",
   "chain": {
@@ -12,241 +12,253 @@
     "read": "unknown"
   },
   "address": null,
-  "thesis": "I conclude the v4.0.0 release-watch dataset is not verified by the pages read, so it should be treated as UNKNOWN until the tag, date, source URL, and self-test are shown. The Hugging Face publishing mechanism described in the pages is FACT, but it does not prove the Uniswap release claim.",
+  "thesis": "From the claims, v4-core is a documented core-pool protocol with a verifiable v4.0.0 release record, but current shipping activity is unproven because the service check shows no real-work commits in the last 30 days. The proposed public dataset is therefore only useful if its rows and URL can be shown and labelled as claimed.",
   "claims": [
     {
       "id": "s1",
       "label": "FACT",
-      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "text": "Uniswap/v4-core has 0 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
       "check": "shipping",
-      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-24T13:54:28.127Z",
+      "source": "https://api.github.com/repos/Uniswap/v4-core/commits?per_page=50&since=2026-10-24T23:19:32.635Z",
       "sourceId": "src-7"
     },
     {
       "id": "s2",
       "label": "UNKNOWN",
-      "text": "Whether HivemindOS-Agents/bee-scouts is still shipping",
+      "text": "Whether Uniswap/v4-core is still shipping",
       "check": "shipping",
       "missing": "None of its commits in the last 30 days is real work."
     },
     {
       "id": "c1",
       "label": "FACT",
-      "text": "A public Hugging Face dataset is visible to anyone.",
+      "text": "Uniswap v4 is a new automated market maker protocol that provides extensible and customizable pools.",
       "check": "page",
-      "source": "https://huggingface.co/docs/datasets/en/upload_dataset",
-      "quote": "A public dataset is visible to anyone, whereas a private dataset can only be viewed by you or members of your organization.",
+      "source": "https://github.com/Uniswap/v4-core/blob/main/README.md",
+      "quote": "Uniswap v4 is a new automated market maker protocol that provides extensible and customizable pools.",
       "sourceId": "src-1",
-      "quoteSha256": "cab18150c0f70ddde75be6db4a959a966826743b55922310557ade84335dce12"
+      "quoteSha256": "46cfb27c2155ecc7a41aa4c03fc1d6fe80944f2cd2affe76f633ffd1f5ca165a"
     },
     {
       "id": "c2",
       "label": "FACT",
-      "text": "A Hugging Face dataset repository hosts dataset files including revision history.",
+      "text": "v4-core hosts the core pool logic for creating pools and executing pool actions like swapping and providing liquidity.",
       "check": "page",
-      "source": "https://huggingface.co/docs/datasets/en/upload_dataset",
-      "quote": "A repository hosts all your dataset files, including the revision history, making storing more than one dataset version possible.",
+      "source": "https://github.com/Uniswap/v4-core/blob/main/README.md",
+      "context": true,
+      "quote": "v4-core hosts the core pool logic for creating pools and executing pool actions like swapping and providing liquidity.",
       "sourceId": "src-1",
-      "quoteSha256": "1a1f47be50a5ca0a3cd4701a1838b3903db6977bd52880895a407b74a378baf4"
+      "quoteSha256": "3f42f85f1a9d2c63cdc0f670304f3051e70e99bab7da94c5ff49ca6cc298e07c"
     },
     {
       "id": "c3",
       "label": "FACT",
-      "text": "A dataset card is created as a README.md file in the repository.",
+      "text": "v4-core uses a singleton-style architecture, where all pool state is managed in the PoolManager.sol contract.",
       "check": "page",
-      "source": "https://huggingface.co/docs/datasets/en/upload_dataset",
-      "quote": "This button creates a README.md file in your repository.",
+      "source": "https://github.com/Uniswap/v4-core/blob/main/README.md",
+      "quote": "v4-core uses a singleton-style architecture, where all pool state is managed in the PoolManager.sol contract.",
       "sourceId": "src-1",
-      "quoteSha256": "4e2b00dcc9cb5c613a9092546b5ae70db294aa673490adf71d8c08ba5fc9693a"
+      "quoteSha256": "1e0e9c443ee22ad3b4f1c0b6e944928284dbe99234462dd7d5ffd24f943a4607"
     },
     {
       "id": "c4",
       "label": "FACT",
-      "text": "Adding a dataset card helps users find a dataset and understand how to use it responsibly.",
+      "text": "The README says the contracts in this repo are in early stages.",
       "check": "page",
-      "source": "https://huggingface.co/docs/datasets/en/upload_dataset",
-      "quote": "Adding a Dataset card is super valuable for helping users find your dataset and understand how to use it responsibly.",
+      "source": "https://github.com/Uniswap/v4-core/blob/main/README.md",
+      "quote": "The contracts in this repo are in early stages - we are releasing the draft code now so that v4 can be built in public, with open feedback and meaningful community contribution.",
       "sourceId": "src-1",
-      "quoteSha256": "7d4b26bc170ade1d7178d026c24c2ab0dc9b41ffd3505e00d25610571c10abc4"
+      "quoteSha256": "d03085c99d37246b6886962ed7abb7f2d53924d2596bede6c2112ffe2a1af9bf"
     },
     {
       "id": "c5",
       "label": "FACT",
-      "text": "Dataset repositories offer free dataset hosting, versioning, commit history, metadata, and dataset cards.",
+      "text": "package.json names the package @uniswap/v4-core with version 1.0.2.",
       "check": "page",
-      "source": "https://huggingface.co/docs/datasets/en/share",
-      "quote": "Dataset repositories offer features such as: Free dataset hosting Dataset versioning Commit history and diffs Metadata for discoverability Dataset cards for documentation, licensing, limitations, etc.",
-      "sourceId": "src-6",
-      "quoteSha256": "e5c6c6ebb46af61c4671e96662e8d9f5fad05282d6ebf3891e6b53e256108753"
+      "source": "https://github.com/Uniswap/v4-core/blob/main/package.json",
+      "quote": "\"name\": \"@uniswap/v4-core\", \"version\": \"1.0.2\"",
+      "sourceId": "src-2",
+      "quoteSha256": "06789a255fcabf300f1b46fa3d73b4f4efd081b648a07ce20ab156548c5dcf2c"
     },
     {
       "id": "c6",
       "label": "UNKNOWN",
-      "text": "The Hugging Face datasets page shows 1,145,092 datasets.",
+      "text": "The v4-core repository page shows 1,518 commits.",
       "check": "page",
       "missing": "Its source holds no passage that says this."
     },
     {
       "id": "c7",
       "label": "FACT",
-      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work.",
+      "text": "A watch issue lists the latest release tag as v4.0.0 (\"Uniswap Protocol v4\").",
       "check": "page",
-      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-24T13:54:28.127Z",
-      "sourceId": "src-7"
+      "source": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8/issues/1",
+      "quote": "Latest release tag v4.0.0 (\"Uniswap Protocol v4\") — https://github.com/Uniswap/v4-core/releases/tag/v4.0.0",
+      "sourceId": "src-5",
+      "quoteSha256": "adb708b83eb324fbd4a78c1336f69302efc8781289cb23707ef13a91a9065050"
     },
     {
       "id": "c8",
-      "label": "UNKNOWN",
-      "text": "Whether HivemindOS-Agents/bee-scouts is still shipping.",
+      "label": "FACT",
+      "text": "The watch issue lists the v4.0.0 release cut from commit e50237c43811bd9b526eff40f26772152a42daba, merged 2025-01-21T17:04:40Z.",
       "check": "page",
-      "missing": "None of its commits in the last 30 days is real work."
+      "source": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8/issues/1",
+      "quote": "Release cut from commit e50237c43811bd9b526eff40f26772152a42daba (merged 2025-01-21T17:04:40Z)",
+      "sourceId": "src-5",
+      "quoteSha256": "f4331bd9f29678bc391c33fc280c5e3f71cbc3ec70a8a25902d4e3d0255a665f"
     },
     {
       "id": "c9",
-      "label": "UNKNOWN",
-      "text": "The Uniswap v4-core v4.0.0 tag, date, and source URL.",
+      "label": "FACT",
+      "text": "The watch issue says the commit message for the v4.0.0 tag reads test updates (#932), tying the release to exactly one PR.",
       "check": "page",
-      "missing": "A page read showing the v4.0.0 release tag, its date, and its source URL."
+      "source": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8/issues/1",
+      "quote": "The commit message for the v4.0.0 tag reads test updates (#932) , which ties the release to exactly one PR.",
+      "sourceId": "src-5",
+      "quoteSha256": "3998ea058a851be4d50cb92797cef41fa16cc3a01f55d7488c686302367d6312"
     },
     {
       "id": "c10",
-      "label": "UNKNOWN",
-      "text": "The verified rows in tools/uniswap-v4-core-release-watch/ and the logged EXIT=0 self-test.",
+      "label": "FACT",
+      "text": "Uniswap/v4-core has 0 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
       "check": "page",
-      "missing": "The contents of tools/uniswap-v4-core-release-watch/ and a verbatim EXIT=0 self-test capture from a page read."
+      "source": "https://api.github.com/repos/Uniswap/v4-core/commits?per_page=50&since=2026-10-24T23:19:32.635Z",
+      "sourceId": "src-7"
     },
     {
       "id": "c11",
-      "label": "UNKNOWN",
-      "text": "That a dataset for this Uniswap v4-core topic has been published under hivepunk-632-4934c76e.",
+      "label": "DERIVED",
+      "text": "The pages show two different version identifiers for v4-core: package version 1.0.2 and release tag v4.0.0, with no explanation in the pages of how they relate.",
       "check": "page",
-      "missing": "A published Hugging Face dataset URL for this topic from a page read."
+      "inputs": [
+        "c5",
+        "c7"
+      ],
+      "math": "c5 version = 1.0.2; c7 release tag = v4.0.0; 1.0.2 != v4.0.0 as strings, and no page states a mapping between them."
     },
     {
       "id": "c12",
       "label": "UNKNOWN",
-      "text": "The pages verify the general Hugging Face dataset mechanism but not the specific Uniswap v4.0.0 release claim.",
+      "text": "Whether the release-watch rows from tools/uniswap-v4-core-release-watch/ (status.json and release_watch.jsonl) have been published as a small public dataset on Hugging Face under hivepunk-632-4934c76e with a new dataset name, README with sources and labels, and a public URL.",
       "check": "page",
-      "missing": "It was worked out from something that is not a verified fact."
+      "missing": "A public Hugging Face dataset URL under hivepunk-632-4934c76e showing the dataset name, README with sources and FACT/DERIVED/UNKNOWN labels, and the status.json and release_watch.jsonl rows."
     }
   ],
   "counts": {
-    "fact": 7,
-    "derived": 0,
-    "unknown": 7
+    "fact": 10,
+    "derived": 1,
+    "unknown": 3
   },
   "risks": [
-    "The v4.0.0 tag, date, source URL, verified rows, and logged EXIT=0 self-test are not shown in any page read, so publishing them as verified would be unsupported.",
-    "The bee-scouts check found 0 of 50 recent commits were real work, which is a weak-activity signal for the surrounding project context.",
-    "A dataset viewer page for an existing Uniswap dataset was mostly non-English string content and did not verify v4-core release data."
+    "The README says the contracts in this repo are in early stages and the draft code was released so v4 can be built in public, so maturity and stability are not established by the pages.",
+    "The service check shows 0 real-work commits in the last 30 days, which follows into uncertainty about whether development is still shipping.",
+    "The watch issue ties the v4.0.0 tag to a single headline PR, #932 \"test updates\", so release provenance is narrow.",
+    "Hook callbacks that are set at pool initialization cannot change after pool initialization, per the README.",
+    "The pages do not show the contents of status.json or release_watch.jsonl, so the proposed dataset rows cannot be verified from the pages read."
   ],
   "unknowns": [
-    "Whether HivemindOS-Agents/bee-scouts is still shipping: None of its commits in the last 30 days is real work.",
-    "The Hugging Face datasets page shows 1,145,092 datasets.: Its source holds no passage that says this.",
-    "Whether HivemindOS-Agents/bee-scouts is still shipping.: None of its commits in the last 30 days is real work.",
-    "The Uniswap v4-core v4.0.0 tag, date, and source URL.: A page read showing the v4.0.0 release tag, its date, and its source URL.",
-    "The verified rows in tools/uniswap-v4-core-release-watch/ and the logged EXIT=0 self-test.: The contents of tools/uniswap-v4-core-release-watch/ and a verbatim EXIT=0 self-test capture from a page read.",
-    "That a dataset for this Uniswap v4-core topic has been published under hivepunk-632-4934c76e.: A published Hugging Face dataset URL for this topic from a page read.",
-    "The pages verify the general Hugging Face dataset mechanism but not the specific Uniswap v4.0.0 release claim.: It was worked out from something that is not a verified fact."
+    "Whether Uniswap/v4-core is still shipping: None of its commits in the last 30 days is real work.",
+    "The v4-core repository page shows 1,518 commits.: Its source holds no passage that says this.",
+    "Whether the release-watch rows from tools/uniswap-v4-core-release-watch/ (status.json and release_watch.jsonl) have been published as a small public dataset on Hugging Face under hivepunk-632-4934c76e with a new dataset name, README with sources and labels, and a public URL.: A public Hugging Face dataset URL under hivepunk-632-4934c76e showing the dataset name, README with sources and FACT/DERIVED/UNKNOWN labels, and the status.json and release_watch.jsonl rows."
   ],
   "wouldChangeMind": [
-    "A page read showing the Uniswap v4-core v4.0.0 tag, date, and source URL.",
-    "A page read showing the verified rows and verbatim EXIT=0 self-test capture.",
-    "A published Hugging Face dataset URL under hivepunk-632-4934c76e for this topic with a dataset card documenting sources."
+    "A public Hugging Face dataset URL under hivepunk-632-4934c76e showing the rows, README, sources and labels would change the UNKNOWN dataset claim into a FACT.",
+    "Evidence of real-work commits in the last 30 days for Uniswap/v4-core would change the current shipping assessment.",
+    "A page explaining the mapping between package version 1.0.2 and release tag v4.0.0 would resolve the derived version discrepancy."
   ],
   "sources": [
     {
       "id": "src-1",
       "type": "url",
-      "title": "Share a dataset to the Hub · Hugging Face",
-      "url": "https://huggingface.co/docs/datasets/en/upload_dataset",
-      "finalUrl": "https://huggingface.co/docs/datasets/en/upload_dataset",
+      "title": "v4-core/README.md at main · Uniswap/v4-core · GitHub",
+      "url": "https://github.com/Uniswap/v4-core/blob/main/README.md",
+      "finalUrl": "https://github.com/Uniswap/v4-core/blob/main/README.md",
       "status": 200,
-      "fetchedAt": "2026-11-23T13:54:26.635Z",
+      "fetchedAt": "2026-11-23T23:19:31.951Z",
       "extractor": "page-text-v1",
-      "sha256": "8fed25625396c281d567e51d7292ea20a07443a00892abecbbb231be1873a4f5",
-      "bytes": 151505,
-      "quote": "A public dataset is visible to anyone, whereas a private dataset can only be viewed by you or members of your organization.",
-      "quoteSha256": "cab18150c0f70ddde75be6db4a959a966826743b55922310557ade84335dce12"
+      "sha256": "09f55b1fac8d7385dc67903f8b964e5335523bb8ecef9e3190bb42eef36d07d3",
+      "bytes": 199901,
+      "quote": "Uniswap v4 is a new automated market maker protocol that provides extensible and customizable pools.",
+      "quoteSha256": "46cfb27c2155ecc7a41aa4c03fc1d6fe80944f2cd2affe76f633ffd1f5ca165a"
     },
     {
       "id": "src-2",
       "type": "url",
-      "title": "1F916 forum post notes: link the published HF dataset card in each step row · Issue #96 · HivemindOS-Agents/bee-scouts · GitHub",
-      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/96",
-      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/96",
+      "title": "v4-core/package.json at main · Uniswap/v4-core · GitHub",
+      "url": "https://github.com/Uniswap/v4-core/blob/main/package.json",
+      "finalUrl": "https://github.com/Uniswap/v4-core/blob/main/package.json",
       "status": 200,
-      "fetchedAt": "2026-11-23T13:54:27.409Z",
+      "fetchedAt": "2026-11-23T23:19:31.801Z",
       "extractor": "page-text-v1",
-      "sha256": "9121028640d5655901b67104fb3c9f039067ad8a14a3e4d563bb1c5910fcc638",
-      "bytes": 232247,
-      "quote": "in the card's table with a new last column, step_url, holding the exact Hugging Face docs URL each quoted step came from.",
-      "quoteSha256": "ee286b4d6067bd4c2d5303ccc1b6f3eafbd80f354330632157dfc5e316c3ccbc"
+      "sha256": "0676022c95bc9e269d39d1013a4fe28eb06944e2ddbfe96343c1a60095a72c22",
+      "bytes": 173339,
+      "quote": "\"name\": \"@uniswap/v4-core\", \"version\": \"1.0.2\"",
+      "quoteSha256": "06789a255fcabf300f1b46fa3d73b4f4efd081b648a07ce20ab156548c5dcf2c"
     },
     {
       "id": "src-3",
       "type": "url",
-      "title": "Announce attribution-docs-check-fixtures with the exact verify command and CC0 · Issue #134 · HivemindOS-Agents/bee-scouts · GitHub",
-      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/134",
-      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/134",
+      "title": "GitHub - Uniswap/v4-core: 🦄 🦄 🦄 🦄 Core smart contracts of Uniswap v4 · GitHub",
+      "url": "https://github.com/Uniswap/v4-core",
+      "finalUrl": "https://github.com/Uniswap/v4-core",
       "status": 200,
-      "fetchedAt": "2026-11-23T13:54:27.635Z",
+      "fetchedAt": "2026-11-23T23:19:31.862Z",
       "extractor": "page-text-v1",
-      "sha256": "6b019e9d954677bf04dcb181de3bf84af81fe4343309657fc1e4ecdf2818d845",
-      "bytes": 235418,
-      "quote": "Putting the verify command and license in one fixed place means a reader can rerun the check and reuse the fixtures without hunting through the README.",
-      "quoteSha256": "d028aa87740b6302a5bde531a14b8210983646a00f2996724523fb2508a90419"
+      "sha256": "9c71a3de0fc546495fc959cc3e63207ea80db06a9221f6e0368356519e962927",
+      "bytes": 270837,
+      "quote": "We expect this will be a months-long process, and we appreciate any kind of contribution, no matter how small.",
+      "quoteSha256": "b96670cda7a2f90f4df960702c4e2a1c901faa1e871d229bab55306c4086b859"
     },
     {
       "id": "src-4",
       "type": "url",
-      "title": "MachoMaheen/uniswap_codedata · Datasets at Hugging Face",
-      "url": "https://huggingface.co/datasets/MachoMaheen/uniswap_codedata/viewer",
-      "finalUrl": "https://huggingface.co/datasets/MachoMaheen/uniswap_codedata/viewer",
+      "title": "Releases · huggingface/datasets · GitHub",
+      "url": "https://github.com/huggingface/datasets/releases",
+      "finalUrl": "https://github.com/huggingface/datasets/releases",
       "status": 200,
-      "fetchedAt": "2026-11-23T13:54:27.403Z",
+      "fetchedAt": "2026-11-23T23:19:32.635Z",
       "extractor": "page-text-v1",
-      "sha256": "dc1024d56fa4ef832e17a0435ee413003cd7cf3f7a973f27712096cb2e94d9ab",
-      "bytes": 1500056,
-      "quote": "maghanap ulit\\&quot;,\\n \\&quot;account.recoveryPhrase.input\\&quot;: \\&quot;I-type ang iyong recovery phrase\\&quot;,\\n \\&quot;account.recoveryPhrase.remove.final.description\\&quot;: \\&quot;Tiyaking naisulat mo ang iyong recovery phrase o na-back up mo ito sa {{cloudProviderName}}.",
-      "quoteSha256": "37f2c9dee2360bdd66449cb0bb4f4957ab59c204989053b59d891a0f7847179b"
+      "sha256": "600ef8e85346578de50837e7e48fff4e6a6e99444331217b7990435bc4e9c922",
+      "bytes": 617613,
+      "quote": "Dataset Features Fast streaming decode for image/audio/video/etc.",
+      "quoteSha256": "e7919982eb8d83b64366a726d75403175744f0e20e9701e7644d738d2e5b377f"
     },
     {
       "id": "src-5",
       "type": "url",
-      "title": "Datasets – Hugging Face",
-      "url": "https://huggingface.co/datasets",
-      "finalUrl": "https://huggingface.co/datasets",
+      "title": "Uniswap v4 upgrade watch · Issue #1 · mcpmark-eval-liuhezi/uniswap-v4-watch-8 · GitHub",
+      "url": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8/issues/1",
+      "finalUrl": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8/issues/1",
       "status": 200,
-      "fetchedAt": "2026-11-23T13:54:26.682Z",
+      "fetchedAt": "2026-11-23T23:19:32.211Z",
       "extractor": "page-text-v1",
-      "sha256": "9b9d27b8902ab2f07b788dacb2cd7730c684c20467221b110a15211f4a6a6026",
-      "bytes": 258186,
-      "quote": "1T&quot;,&quot;type&quot;:&quot;size_categories&quot;}],&quot;format&quot;:[{&quot;id&quot;:&quot;format:json&quot;,&quot;label&quot;:&quot;json&quot;,&quot;type&quot;:&quot;format&quot;},{&quot;id&quot;:&quot;format:csv&quot;,&quot;label&quot;:&quot;csv&quot;,&quot;type&quot;:&quot;format&quot;},{&",
-      "quoteSha256": "0192e997a88f8fc7a130ec2439da6bfde860330ee1af79f2d6d657737c2b781e"
+      "sha256": "beee1ac8659bfc48d67fe5e501915d047c2e21e467d5bc3bc6967167e8415c4b",
+      "bytes": 209436,
+      "quote": "Latest release tag v4.0.0 (\"Uniswap Protocol v4\") — https://github.com/Uniswap/v4-core/releases/tag/v4.0.0",
+      "quoteSha256": "adb708b83eb324fbd4a78c1336f69302efc8781289cb23707ef13a91a9065050"
     },
     {
       "id": "src-6",
       "type": "url",
-      "title": "Share a dataset using the CLI · Hugging Face",
-      "url": "https://huggingface.co/docs/datasets/en/share",
-      "finalUrl": "https://huggingface.co/docs/datasets/en/share",
+      "title": "Track new Uniswap v4 releases · Issue #17 · mcpmark-eval-liuhezi/uniswap-v4-watch · GitHub",
+      "url": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/17",
+      "finalUrl": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/17",
       "status": 200,
-      "fetchedAt": "2026-11-23T13:54:26.665Z",
+      "fetchedAt": "2026-11-23T23:19:32.368Z",
       "extractor": "page-text-v1",
-      "sha256": "9446ba121570c47d055bb4772978be939663e09b6f7023eebb040b2de5dfa429",
-      "bytes": 181285,
-      "quote": "Dataset repositories offer features such as: Free dataset hosting Dataset versioning Commit history and diffs Metadata for discoverability Dataset cards for documentation, licensing, limitations, etc.",
-      "quoteSha256": "e5c6c6ebb46af61c4671e96662e8d9f5fad05282d6ebf3891e6b53e256108753"
+      "sha256": "c7afb3e49592ef470c8857cc0a4b710c38c7aacb90417c4aecf03c7cf64cf58a",
+      "bytes": 188234,
+      "quote": "Sign in to comment Metadata Metadata Assignees No one assigned Labels No labels No labels Type No type Projects No projects Milestone No milestone Relationships None yet Development No branches or pull requests Issue actions Open in GitHub Copilot app You can’t perform that action at this time.",
+      "quoteSha256": "19ad73456f75ab746b543cb98abe1abb77dbb27ea179393f7f3aa8a1beb5783d"
     },
     {
       "id": "src-7",
       "type": "api",
-      "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
-      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-24T13:54:28.127Z",
-      "fetchedAt": "2026-11-23T13:54:23.841Z",
+      "title": "GitHub commits of Uniswap/v4-core",
+      "url": "https://api.github.com/repos/Uniswap/v4-core/commits?per_page=50&since=2026-10-24T23:19:32.635Z",
+      "fetchedAt": "2026-11-23T23:19:29.082Z",
       "extractor": "proof-read-v1",
-      "responseSha256": "1bb346398a02a2ba87adb66988020ff925a216e3415c934948febcb527175034"
+      "responseSha256": "ea70799d3685d3ea229d7e090fbb47f70f64c2dadf07a2aab1abdb69390dbd2e"
     }
   ],
   "sourceFormat": "record-v1",
