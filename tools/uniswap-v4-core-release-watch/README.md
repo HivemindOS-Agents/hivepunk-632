@@ -15,7 +15,7 @@ tags:
 
 opportunity: opp-632-201
 
-A one-row open dataset recording the latest release of the Uniswap/v4-core GitHub repository, with every value field labelled FACT or UNKNOWN.
+A one-row open dataset recording the latest release of the Uniswap/v4-core GitHub repository, with every value field labelled FACT or UNKNOWN, plus a local upgrade-watch status renderer.
 
 Account: hivepunk-632-4934c76e. Dataset name: `uniswap-v4-core-release-watch`.
 
@@ -27,27 +27,34 @@ This endpoint returns only the newest published, non-prerelease, non-draft relea
 
 ## Method
 
-1. Fetch the endpoint above.
-2. Keep these fields: `tag` (from `tag_name`), `name`, `published_at` (from `published_at` or, if absent, `created_at`), `days_since` (calendar-day difference between `published_at` and the row's `as_of` date), `html_url`.
+1. Fetch the endpoint above (owner step, with network: `python3 verify.py --fetch`).
+2. Keep these fields: `tag` (from `tag_name`), `name`, `published_at`, `days_since`, `html_url`.
 3. Label each field FACT only if the response actually carried it; otherwise UNKNOWN.
-4. Always label these UNKNOWN, because the single `releases/latest` response cannot prove them: a newer prerelease or draft tag (the endpoint excludes both), a newer tag with no published release, later deletion or retag or yank, and any maintenance verdict.
-5. To refresh: run `python3 verify.py --fetch` (needs network), which rewrites `release_watch.jsonl` with live values, then run `python3 verify.py` offline to confirm PASS.
+4. Always label these UNKNOWN: a newer prerelease or draft tag, a newer tag with no published release, later deletion or retag or yank, and any maintenance verdict.
 
-## Fields
+## Upgrade-watch status renderer (new)
 
-| field | meaning |
-|---|---|
-| `tag` | release tag name |
-| `name` | release title |
-| `published_at` | ISO 8601 publish timestamp |
-| `days_since` | calendar days from `published_at` to `as_of` |
-| `html_url` | link to the release page |
-| `labels` | FACT/UNKNOWN per field, plus the four always-UNKNOWN keys |
+`render_status.py` reads ONLY local labelled data files - `data/status.json` and `release_watch.jsonl` - with no network and no code against any external system. It renders:
+
+- An upgrade summary: latest tag, published date, days_since, release URL, and headline numbers (asset count, total asset downloads), preserving FACT/DERIVED/UNKNOWN labels. UNKNOWN/null is rendered as `UNKNOWN (not proven; never read as zero/safe)`, never as 0.
+- A parent-tracking draft for issue #17: `https://github.com/for-toolathlon/uniswap-v4-watch/issues/17` - title and body lines naming tag/date as UNKNOWN until fetched, marked DRAFT ONLY (a person decides; nothing is posted automatically).
+
+Usage:
+
+~~~bash
+cd tools/uniswap-v4-core-release-watch
+python3 render_status.py; echo EXIT=$?
+python3 render_status.py --output upgrade_summary.md
+python3 render_status.py --draft-only
+~~~
+
+Options: `--status PATH`, `--row PATH` to override the default local files. With `--output`, the markdown is written to that file; otherwise it goes to stdout.
 
 ## Labels
 
 - FACT - value was carried by the live response fetched for this row.
 - UNKNOWN - not proven by that response; do not quote as fact.
+- DERIVED - computed from a FACT value (e.g. days_since); cannot be derived while published_at is UNKNOWN.
 
 ## Verify command
 
@@ -55,28 +62,12 @@ This endpoint returns only the newest published, non-prerelease, non-draft relea
 cd tools/uniswap-v4-core-release-watch && python3 verify.py; echo EXIT=$?
 ~~~
 
-Expected on a passing run: the row prints, every check reports PASS, the summary reports 0 failed, and the final line is EXIT=0. `python3 self_test.py; echo EXIT=$?` is the folder-local self-test (no arguments, no network).
-
-## Runner output (verbatim)
-
-From [SELFTEST_OUTPUT.md](SELFTEST_OUTPUT.md), HivemindOS runner run https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45134012642 (2026-11-23 07:50 UTC), state passed. Verbatim final lines:
-
-~~~text
-PASS README covers: self_test.py
-PASS README covers: UNKNOWN
-PASS README covers: FACT
-PASS README covers: Untested
-PASS README covers: Could not confirm
-PASS README states the verify command
-self_test: 66 check(s), 0 failed
-EXIT=0
-~~~
-
-Verified upstream release used for context: https://github.com/Uniswap/v4-core/releases/tag/v4.0.0 (second-hand tracker report; in STATUS.md it stays UNKNOWN, not FACT, until a live fetch proves it against the API endpoint above).
+`python3 self_test.py; echo EXIT=$?` is the folder-local self-test (no arguments, no network). It imports `verify.py` and `render_status.py` by path and checks the renderer on sample filled/UNKNOWN data and on the committed files.
 
 ## Limits and unknowns
 
 - The committed row has `tag`, `name`, `published_at`, `days_since` and `html_url` all `null`, with every label UNKNOWN, because the endpoint was not fetched when these files were written. No live v4-core tag or date is claimed here.
+- The renderer therefore renders tag/date/headline numbers as UNKNOWN for the committed data. That is correct behaviour, not a zero.
 - The endpoint cannot prove a newer prerelease or draft, a newer tag with no release, a later deletion or yank, or whether the repository is maintained. All four stay UNKNOWN.
 - `days_since` is a calendar-date difference, not elapsed hours.
 - Unauthenticated GitHub API rate limits apply in `--fetch` mode.
@@ -84,13 +75,13 @@ Verified upstream release used for context: https://github.com/Uniswap/v4-core/r
 
 ## What is untested
 
-No live fetch was run in the step that wrote these files, so no live value and no passing verify run is claimed. The folder-local self-test result is written by the HivemindOS runner into SELFTEST_OUTPUT.md; treat the tool as untested until that file shows EXIT=0. The live `--fetch` path (network) is untested here. Also untested: any behaviour of this folder outside the folder-local self-test.
+Untested: the renderer has not been run against live data in this step, and no live value is claimed. The `--fetch` live path is untested here. Treat the tool as untested until HivemindOS writes SELFTEST_OUTPUT.md showing EXIT=0. Also untested: any behaviour outside the folder-local self-test, and posting the issue #17 draft (nothing is posted by this folder).
 
 ## Could not confirm
 
 Could not confirm the following, and no value below is claimed anywhere in this dataset:
 
-- Could not confirm the live v4-core release tag, name, published date, `days_since` or release URL: the endpoint was not fetched when these files were written, so those fields stay `null` and their labels stay UNKNOWN.
+- Could not confirm the live v4-core release tag, name, published date, `days_since`, release URL, asset count or total downloads: the endpoint was not fetched when these files were written, so those fields stay `null` and their labels stay UNKNOWN.
 - Could not confirm that no newer prerelease or draft tag exists, that no newer tag lacks a release, or that no tag was later deleted, retagged or yanked - all four keys stay UNKNOWN.
 - Could not confirm whether Uniswap/v4-core is maintained: no maintenance verdict is made and that key stays UNKNOWN.
 - Could not confirm this dataset's public URL. Nothing is published by this folder; publishing is the owner's step, so no dataset link exists yet.
@@ -99,10 +90,14 @@ Could not confirm the following, and no value below is claimed anywhere in this 
 ## Files
 
 - `release_watch.jsonl` - the dataset row.
+- `data/status.json` - labelled status fields mirroring STATUS.md.
+- `STATUS.md` - human STATUS summary with FACT/DERIVED/UNKNOWN labels and source URLs.
+- `render_status.py` - local upgrade-watch status renderer and issue #17 draft generator (no network).
 - `verify.py` - offline label check (`--fetch` refreshes the row from the live endpoint).
 - `self_test.py` - folder-local self-test, no arguments, no network.
 - `README.md` - this card.
-- `ARTIFACTS.md` - the GOAL.md update and artifacts inventory for this folder.
+- `GOAL.md` - goal for this folder.
+- `ARTIFACTS.md` - artifacts inventory for this folder.
 - `SELFTEST_OUTPUT.md` - written by HivemindOS, not by hand.
 
 Licence: CC0-1.0.
