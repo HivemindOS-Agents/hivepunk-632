@@ -1,0 +1,239 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-23T01:19:52.844Z",
+  "subject": "tools/uniswap-v4-core-release-watch",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The sourced trackers consistently point to v4.0.0, published 2025-01-23, as the latest Uniswap v4 release, while the recent-commit check shows no real work in the last 30 days. That makes the release watch useful mainly as a dormant-repo monitor until a newer tag is directly confirmed.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "Uniswap/v4-core has 0 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/Uniswap/v4-core/commits?per_page=50&since=2026-10-24T01:19:56.176Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether Uniswap/v4-core is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "Uniswap v4 is a new automated market maker protocol that provides extensible and customizable pools.",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-core/blob/main/README.md",
+      "quote": "Uniswap v4 is a new automated market maker protocol that provides extensible and customizable pools.",
+      "sourceId": "src-1",
+      "quoteSha256": "46cfb27c2155ecc7a41aa4c03fc1d6fe80944f2cd2affe76f633ffd1f5ca165a"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "v4-core hosts the core pool logic for creating pools and executing pool actions like swapping and providing liquidity.",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-core/blob/main/README.md",
+      "context": true,
+      "quote": "v4-core hosts the core pool logic for creating pools and executing pool actions like swapping and providing liquidity.",
+      "sourceId": "src-1",
+      "quoteSha256": "3f42f85f1a9d2c63cdc0f670304f3051e70e99bab7da94c5ff49ca6cc298e07c"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "v4-core uses a singleton-style architecture, where all pool state is managed in the PoolManager.sol contract.",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-core/blob/main/README.md",
+      "quote": "v4-core uses a singleton-style architecture, where all pool state is managed in the PoolManager.sol contract.",
+      "sourceId": "src-1",
+      "quoteSha256": "1e0e9c443ee22ad3b4f1c0b6e944928284dbe99234462dd7d5ffd24f943a4607"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Latest release tag is v4.0.0, released/published 2025-01-23, created 2025-01-21.",
+      "check": "page",
+      "source": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/11",
+      "quote": "Latest release tag: v4.0.0 — \"Uniswap Protocol v4\", released/published 2025-01-23 (created 2025-01-21).Tag commit: e50237c43811bd9b526eff40f26772152a42daba .",
+      "sourceId": "src-3",
+      "quoteSha256": "ce153a01d77a7ce1d22e8267912334f3e5dfdfe1b679256fc3d56f5391180052"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Headline PR behind the release commit is #932, \"test updates\", authored by snreynolds and merged 2025-01-21, whose merge commit is the commit the v4.0.0 tag points to.",
+      "check": "page",
+      "source": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/11",
+      "quote": "Headline PR behind the release commit: #932 — \"test updates\" (author snreynolds, merged 2025-01-21, merge commit e50237c... = the commit the v4.0.0 tag points to).",
+      "sourceId": "src-3",
+      "quoteSha256": "0827db110a6ed327bc13b7af7ee26410ea243cff67349f0e0f956dc854380ce2"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "PR #932 diff touches 4 files, +22/-18.",
+      "check": "page",
+      "source": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/11",
+      "quote": "Diff touches 4 files (+22/−18): test/PoolManager.t.sol — replaces hardcoded address(1) test recipients with a named makeAddr(\"recipientAddress\") in the protocol-fee collection tests; gas snapshots refreshed ( erc20 collect protocol fees 57,500 → 57,728; native collect protocol fees 59,643 → 59,371).",
+      "sourceId": "src-3",
+      "quoteSha256": "d9dbd4c7b101335e29f55e01a1a79e1cb23df20646c132bbc3b39b8d40e2dd64"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Issue #1085 asks to follow up on the latest Uniswap v4 release v4.0.0 (tag, 2025-01-23).",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-core/issues/1085",
+      "quote": "Follow up on the latest Uniswap v4 release v4.0.0 (tag, 2025-01-23).",
+      "sourceId": "src-5",
+      "quoteSha256": "1dc0f04960498e2e9f935f4bdf1892f3709a4c9a938602c099619232c2a884ce"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "The Uniswap/v4-core repository page shows 1,518 Commits.",
+      "check": "page",
+      "source": "https://github.com/Uniswap/v4-core",
+      "quote": "1,518 Commits 1,518 Commits",
+      "sourceId": "src-4",
+      "quoteSha256": "b961135d2f5b4e164b05dcf443a5b3ab9577533d480b3483ab91884c20765a45"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "Uniswap/v4-core has 0 raw commits in the last 30 days, 0 of them real work.",
+      "check": "page",
+      "source": "https://api.github.com/repos/Uniswap/v4-core/commits?per_page=50&since=2026-10-24T01:19:56.176Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c10",
+      "label": "DERIVED",
+      "text": "Multiple independent tracker pages agree that v4.0.0 on 2025-01-23 is the latest reported release.",
+      "check": "page",
+      "inputs": [
+        "c4",
+        "c7"
+      ],
+      "math": "2 tracker pages (issue #11 and issue #1085) both state v4.0.0 / 2025-01-23 as latest; agreement count = 2, disagreement count = 0."
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "Whether a Uniswap/v4-core release newer than v4.0.0 has been published.",
+      "check": "page",
+      "missing": "A direct read of the Uniswap/v4-core GitHub releases or tags API page showing the newest tag and date."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether Uniswap/v4-core is still shipping.",
+      "check": "page",
+      "missing": "None of its commits in the last 30 days is real work, per the service check."
+    }
+  ],
+  "counts": {
+    "fact": 10,
+    "derived": 1,
+    "unknown": 3
+  },
+  "risks": [
+    "The repository README says the contracts are in early stages and the draft code was released so v4 can be built in public.",
+    "Recent activity check shows 0 raw commits in the last 30 days, so the release watch may be watching a dormant core repo.",
+    "The headline PR #932 is described as a test-campus cleanup, not production core changes, so the v4.0.0 tag may not signal new core functionality.",
+    "Hook callbacks executed on a pool cannot change after pool initialization, which constrains later hook changes for a pool.",
+    "No audit, deployment, liquidity-lock or newer-release confirmation was shown in the pages read."
+  ],
+  "unknowns": [
+    "Whether Uniswap/v4-core is still shipping: None of its commits in the last 30 days is real work.",
+    "Whether a Uniswap/v4-core release newer than v4.0.0 has been published.: A direct read of the Uniswap/v4-core GitHub releases or tags API page showing the newest tag and date.",
+    "Whether Uniswap/v4-core is still shipping.: None of its commits in the last 30 days is real work, per the service check."
+  ],
+  "wouldChangeMind": [
+    "A direct GitHub releases/tags page showing a tag newer than v4.0.0.",
+    "Recent commits in Uniswap/v4-core that are real work rather than docs, formatting, bots, templates or trivial.",
+    "A direct source showing the headline release commit changes core production logic rather than test updates."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "v4-core/README.md at main · Uniswap/v4-core · GitHub",
+      "url": "https://github.com/Uniswap/v4-core/blob/main/README.md",
+      "finalUrl": "https://github.com/Uniswap/v4-core/blob/main/README.md",
+      "status": 200,
+      "fetchedAt": "2026-11-23T01:19:55.578Z",
+      "extractor": "page-text-v1",
+      "sha256": "09f55b1fac8d7385dc67903f8b964e5335523bb8ecef9e3190bb42eef36d07d3",
+      "bytes": 200440,
+      "quote": "Uniswap v4 is a new automated market maker protocol that provides extensible and customizable pools.",
+      "quoteSha256": "46cfb27c2155ecc7a41aa4c03fc1d6fe80944f2cd2affe76f633ffd1f5ca165a"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "Uniswap v4 upgrade watch · Issue #11 · mcpmark-eval-liuhezi/uniswap-v4-watch · GitHub",
+      "url": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/11",
+      "finalUrl": "https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/11",
+      "status": 200,
+      "fetchedAt": "2026-11-23T01:19:55.973Z",
+      "extractor": "page-text-v1",
+      "sha256": "4da5ec2d3e8d03bcc2e8c5523e80ba44ab8170b7e046670e21a133be84fa52fa",
+      "bytes": 226546,
+      "quote": "Latest release tag: v4.0.0 — \"Uniswap Protocol v4\", released/published 2025-01-23 (created 2025-01-21).Tag commit: e50237c43811bd9b526eff40f26772152a42daba .",
+      "quoteSha256": "ce153a01d77a7ce1d22e8267912334f3e5dfdfe1b679256fc3d56f5391180052"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "GitHub - Uniswap/v4-core: 🦄 🦄 🦄 🦄 Core smart contracts of Uniswap v4 · GitHub",
+      "url": "https://github.com/Uniswap/v4-core",
+      "finalUrl": "https://github.com/Uniswap/v4-core",
+      "status": 200,
+      "fetchedAt": "2026-11-23T01:19:55.569Z",
+      "extractor": "page-text-v1",
+      "sha256": "9c71a3de0fc546495fc959cc3e63207ea80db06a9221f6e0368356519e962927",
+      "bytes": 271372,
+      "quote": "1,518 Commits 1,518 Commits",
+      "quoteSha256": "b961135d2f5b4e164b05dcf443a5b3ab9577533d480b3483ab91884c20765a45"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "Track new Uniswap v4 releases · Issue #1085 · Uniswap/v4-core · GitHub",
+      "url": "https://github.com/Uniswap/v4-core/issues/1085",
+      "finalUrl": "https://github.com/Uniswap/v4-core/issues/1085",
+      "status": 200,
+      "fetchedAt": "2026-11-23T01:19:55.925Z",
+      "extractor": "page-text-v1",
+      "sha256": "11d1db6810fe52eee56096973c5fd72acd2f4bf46a147b71b9f1102e427acc4d",
+      "bytes": 203224,
+      "quote": "Follow up on the latest Uniswap v4 release v4.0.0 (tag, 2025-01-23).",
+      "quoteSha256": "1dc0f04960498e2e9f935f4bdf1892f3709a4c9a938602c099619232c2a884ce"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of Uniswap/v4-core",
+      "url": "https://api.github.com/repos/Uniswap/v4-core/commits?per_page=50&since=2026-10-24T01:19:56.176Z",
+      "fetchedAt": "2026-11-23T01:19:52.844Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "ea70799d3685d3ea229d7e090fbb47f70f64c2dadf07a2aab1abdb69390dbd2e"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-23-tools-uniswap-v4-core-release-watch.md",
+  "decidedBy": "bee"
+}
