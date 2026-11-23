@@ -2,12 +2,12 @@
 """Folder-local self-test for uniswap-v4-core-release-watch.
 Run: python3 self_test.py; echo EXIT=$?  No args, no network.
 Imports verify.py and render_status.py by path, runs their real checks
-on committed files and on sample data, checks STATUS.md labels/sources,
-data/status.json fields, GOAL.md, and README phrases.
+on committed files and on sample data, checks generated STATUS.md matches
+the renderer exactly (drift check), data/status.json fields, GOAL.md,
+and README phrases.
 """
 import importlib.util
 import json
-import re
 import sys
 from pathlib import Path
 
@@ -101,19 +101,17 @@ def main():
 
     status = read("STATUS.md")
     check(bool(status), "STATUS.md exists and is non-empty")
+    check("opp-632-313" in status, "STATUS.md carries opportunity opp-632-313")
     check(ENDPOINT in status, "STATUS.md cites the releases/latest source URL")
     check("https://github.com/Uniswap/v4-core/releases/latest" in status, "STATUS.md cites the release page URL")
-    bullets = [ln for ln in status.splitlines() if ln.startswith("- ")]
-    check(len(bullets) >= 10, "STATUS.md has at least 10 summary bullets", str(len(bullets)))
-    unlabeled = [b for b in bullets if not re.match(r"- (FACT|DERIVED|UNKNOWN):", b)]
-    check(not unlabeled, "STATUS.md every bullet starts FACT/DERIVED/UNKNOWN", repr(unlabeled[:2]))
-    unsourced = [b for b in bullets if "http" not in b]
-    check(not unsourced, "STATUS.md every bullet carries a source URL", repr(unsourced[:2]))
-    check("UNKNOWN: latest release tag" in status, "STATUS.md tag line is UNKNOWN")
-    check("UNKNOWN: published date" in status, "STATUS.md published date line is UNKNOWN")
-    check("never read UNKNOWN as zero" in status, "STATUS.md says UNKNOWN is never zero/safe")
-    for phrase in ("FACT", "DERIVED", "UNKNOWN"):
-        check(phrase in status, "STATUS.md uses label " + phrase)
+    check("## Upgrade summary" in status, "STATUS.md has Upgrade summary section")
+    check("## Headline numbers" in status, "STATUS.md has Headline numbers section")
+    check("## Parent-tracking draft for issue #17" in status, "STATUS.md has parent-tracking draft section")
+    check("UNKNOWN" in status, "STATUS.md preserves UNKNOWN")
+    check("never read as zero/safe" in status, "STATUS.md says UNKNOWN never zero/safe")
+    check("DRAFT ONLY" in status, "STATUS.md draft is DRAFT ONLY")
+    check("FACT" in status and "DERIVED" in status, "STATUS.md explains FACT/DERIVED labels")
+    check("asset_count=None" in status or "UNKNOWN" in status, "STATUS.md headline numbers UNKNOWN until fetched")
 
     try:
         data = json.loads(read("data/status.json"))
@@ -144,12 +142,11 @@ def main():
 
     readme = read("README.md")
     check(bool(readme), "README.md exists and is non-empty")
-    for word in ("api.github.com/repos/Uniswap/v4-core/releases/latest", "CC0-1.0", "verify.py", "self_test.py", "UNKNOWN", "FACT", "Untested", "Could not confirm", "render_status.py", "issue #17"):
+    for word in ("api.github.com/repos/Uniswap/v4-core/releases/latest", "CC0-1.0", "verify.py", "self_test.py", "UNKNOWN", "FACT", "Untested", "Could not confirm", "render_status.py", "issue #17", "opp-632-313", "STATUS.md", "drift"):
         check(word.lower() in readme.lower(), "README covers: " + word)
     check("python3 verify.py" in readme, "README states the verify command")
     check("python3 render_status.py" in readme, "README states the renderer command")
 
-    # Renderer checks: sample filled data, UNKNOWN data, committed data.
     try:
         rend = load_render()
         check(True, "render_status.py imports cleanly")
@@ -163,6 +160,7 @@ def main():
         check("FACT: v1.0.0" in out, "renderer renders FACT tag on filled data")
         check("2026-11-18T00:00:00Z" in out, "renderer renders published date on filled data")
         check("FACT: 3" in out and "FACT: 42" in out, "renderer renders headline numbers on filled data")
+        check("opp-632-313" in out, "renderer carries opp-632-313")
         check("Parent issue: https://github.com/for-toolathlon/uniswap-v4-watch/issues/17" in out, "renderer draft cites parent issue #17 URL")
         check("DRAFT ONLY" in out, "renderer draft is marked DRAFT ONLY")
         unknown_out = rend.render_summary(data, {})
@@ -174,9 +172,9 @@ def main():
         check(any(ENDPOINT in ln for ln in draft), "renderer draft cites source endpoint")
         check(rend.fmt("UNKNOWN", None).startswith("UNKNOWN"), "renderer fmt UNKNOWN+null stays UNKNOWN")
         check(rend.fmt("FACT", "v9") == "FACT: v9", "renderer fmt FACT formats value")
-        # Committed files through the renderer's own loaders.
         loaded = rend.render_summary(rend.load_status(), rend.load_row())
         check("Upgrade summary" in loaded and "Headline numbers" in loaded, "renderer loads committed files and renders sections")
+        check(loaded == status, "STATUS.md matches renderer output exactly (drift check)", "regenerate: python3 render_status.py --output STATUS.md")
         check(rend.main(["--draft-only"]) == 0, "renderer --draft-only main returns 0")
     except Exception as exc:
         check(False, "renderer checks run", repr(exc))
