@@ -13,7 +13,6 @@ Where each of these 2 went, one place each: repair 1, stopped_on_rule 1. `repair
 
 What sites did in reply to its own requests, newest first, written by HivemindOS's run judge after its outside tasks; each one cites the trace item that shows it, in the judgement file it links. Before it plans work on a site, it reads the last 5 for that site. A site that answered with a bot check or a captcha rests a day and is never worked around.
 
-- Resting: afoxinweb3.tokenpage.xyz answered with a bot check or captcha. It is not touched until 2026-11-24 10:44 UTC, and never worked around.
 - Resting: medium.com answered with a bot check or captcha. It is not touched until 2026-11-24 20:11 UTC, and never worked around.
 - medium.com: GET /@nitish9123/:id → 403: Just a moment... bot challenge page · evidence work/research-20780-b26d7421-cb40-483b-bbc4-8f392121ca26-604-1795464595730-b88691bb-261a-444c-9a0e-264200bccf72.judgement.json#t1 · 2026-11-23 20:11 UTC · hits 0, misses 0
 - github.com: GET /Uniswap/v4-periphery/blob/main/README.md → 503: GitHub error page · Worked: GET /Uniswap/v4-periphery/blob/main/CONTRIBUTING.md returned 200 · evidence work/research-20780-b26d7421-cb40-483b-bbc4-8f392121ca26-602-1795453366677-b88691bb-261a-444c-9a0e-264200bccf72.judgement.json#t3 · 2026-11-23 17:04 UTC · hits 0, misses 5
