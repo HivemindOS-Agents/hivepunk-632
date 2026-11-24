@@ -54,12 +54,18 @@ def main():
     check(bool(status), "STATUS.md exists and is non-empty")
     check("opp-632-313" in status, "STATUS.md carries opportunity opp-632-313")
     check(ENDPOINT in status, "STATUS.md cites the releases/latest source URL")
+    check(SOURCE_REPO in status or RELEASE_PAGE in status, "STATUS.md cites source repo/release page")
+    check(PARENT in status and "issue #17" in status, "STATUS.md cites parent-tracking issue #17")
     check("## Upgrade summary" in status and "## Headline numbers" in status, "STATUS.md has summary sections")
     check("## Could not confirm" in status and "DRAFT ONLY" in status, "STATUS.md Could-not-confirm and DRAFT ONLY")
     check("never read as zero/safe" in status and "never 0/safe" in status, "STATUS.md says UNKNOWN never zero/safe")
     check("asset_count=None" in status, "STATUS.md headline numbers UNKNOWN until fetched")
+    check("asset_count=None" in status and "total_asset_downloads=None" in status, "STATUS.md headline nulls not zero")
     for f in ("tag","name","published_at","days_since","html_url","asset_count","total_asset_downloads"):
         check((f + ": UNKNOWN") in status, "STATUS.md per-field UNKNOWN line: " + f)
+    check("tag: UNKNOWN" in status and "tag=None" not in status.replace("asset_count=None",""), "STATUS.md UNKNOWN not rendered as 0")
+    for lab in ("FACT","DERIVED","UNKNOWN"):
+        check(lab in status, "STATUS.md explains label " + lab)
     try:
         data = json.loads(read("data/status.json"))
         check(data.get("source_endpoint") == ENDPOINT, "status.json source_endpoint matches")
@@ -71,6 +77,10 @@ def main():
     except Exception as exc:
         check(False, "data/status.json loads as JSON", repr(exc)); data = {}
     goal = read("GOAL.md"); check(bool(goal), "GOAL.md exists and is non-empty")
+    check("opp-632-313" in goal, "GOAL.md carries opp-632-313")
+    check("issue #17" in goal and PARENT in goal, "GOAL.md carries parent-tracking issue #17")
+    check(ENDPOINT in goal, "GOAL.md cites source endpoint")
+    check("UNKNOWN" in goal and "null" in goal and "never 0" in goal, "GOAL.md states UNKNOWN null never 0")
     readme = read("README.md"); check(bool(readme), "README.md exists and is non-empty")
     for w in ("api.github.com/repos/Uniswap/v4-core/releases/latest","CC0-1.0","verify.py","self_test.py","UNKNOWN","FACT","Untested","Could not confirm","render_status.py","issue #17","opp-632-313","STATUS.md","drift","publish_check.py","Publish check","python3 publish_check.py","https://github.com/Uniswap/v4-core"):
         check(w.lower() in readme.lower(), "README covers: " + w)
@@ -95,7 +105,6 @@ def main():
     for w in ("hivepunk-632-4934c76e", SOURCE_REPO, ENDPOINT, "python3 verify.py","CC0-1.0","FACT","DERIVED","UNKNOWN","never zero/safe","Could not confirm","Untested","export_dataset.py",HF_URL,"dataset_rows.jsonl"):
         check(w in card, "dataset_card.md covers: " + w)
     check('load_dataset("hivepunk-632-4934c76e/uniswap-v4-core-release-watch")' in card, "dataset_card.md shows load_dataset example")
-    # publish_check.py checks
     try:
         pc = load_mod("publish_check", "publish_check.py"); check(True, "publish_check.py imports cleanly")
         check(pc.check_rows([filled_row()]) == [], "publish_check accepts filled FACT row", repr(pc.check_rows([filled_row()])))
