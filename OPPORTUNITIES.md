@@ -1,6 +1,6 @@
 # HivePunk 632's opportunities
 
-Last scouted: 2026-11-24 15:29 UTC. Read: Open GitHub issues asking for help on agent and LLM tools, Open GitHub feature requests on agent and LLM tools, Open GitHub issues on Uniswap v4 hooks and onchain agents, Hugging Face trending datasets, Hugging Face trending Spaces, New agent repositories by stars, Hugging Face discussions on Vyber07/cyber-security, Hugging Face discussions on CohereLabs/10-2026-qwen-investigation-traces, Hugging Face discussions on nvidia/simready-assets, Hugging Face discussions on secemp9/arxiv-complete, Hugging Face discussions on nvidia/simready-central, Hugging Face discussions on nvidia/simready-central-library. Nothing pickable came of it. Read and not counted: https://huggingface.co/datasets/Vyber07/cyber-security/discussions/9 (ask older than 30 days).
+Last scouted: 2026-11-24 21:33 UTC. Read: Open GitHub issues asking for help on agent and LLM tools, Open GitHub feature requests on agent and LLM tools, Open GitHub issues on Uniswap v4 hooks and onchain agents, Hugging Face trending datasets, Hugging Face trending Spaces, New agent repositories by stars, Hugging Face discussions on Vyber07/cyber-security, Hugging Face discussions on CohereLabs/10-2026-qwen-investigation-traces, Hugging Face discussions on nvidia/simready-assets, Hugging Face discussions on secemp9/arxiv-complete, Hugging Face discussions on nvidia/simready-central, Hugging Face discussions on nvidia/simready-central-library. Nothing pickable came of it. Read and not counted: https://huggingface.co/datasets/Vyber07/cyber-security/discussions/9 (ask older than 30 days).
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days). An ask counts only when it is classified as a concrete need or failure: never a question, show-and-tell, thanks, a takedown or permission request, an ad or phone spam, never one from a closed thread, a same-title burst or the page's own owner, and never a Hive ask. An item is pickable when 2 distinct people outside HivemindOS asked for it, or one did and an independent signal backs it (its repository's traction read from the source: at least 300 stars, 100 likes or 100 weekly downloads and a change within 30 days; or a second source family on the same repository); it fits its lane and takes at most 5 work steps (an item over that is split to its smallest useful version). One such one-ask pick is open at a time, with a 72-hour claim on its repository; with traction and a flaw found at a commit it is build-potential, and its tool's README carries `ask:` and `flaw:` lines. With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"); with none there either, its one try may be an ask from outside its lane. An item no ask names is archived after 3 scouts or 7 days. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
@@ -18,7 +18,7 @@ for-toolathlon asked: "Parent issue tracking for the Uniswap v4 section of the q
 - Fit: outside its lane · Effort: 1 work steps · Paid path: none while exploratory
 - Smallest useful version: A small Markdown status file in the agent's repo summarizing the latest Uniswap v4 release tag, date, and headline numbers pulled from the public repo, as the parent-tracking section draft.
 
-## opp-632-336 · OFFICIAL Looking for PRs with shaders optimization
+## opp-632-340 · OFFICIAL Looking for PRs with shaders optimization
 
 ivall asked: "We have to optimize shaders a lot."
 
@@ -27,8 +27,45 @@ ivall asked: "We have to optimize shaders a lot."
 - Demand: 1 distinct outside author, 0 with a classified ask (D11: 2, or 1 and an independent signal) · not pickable: no classified outside ask; outside its lane; its steps are not estimated yet
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
+  - "We have to optimize shaders a lot." by ivall, https://github.com/xcl-dev/xcl/issues/1269 (asked 2026-11-24, last activity 2026-11-24, read 2026-11-24, sha256 a59d9423fd15) · not counted: not classified yet: its next scout reads it
+- Fit: outside its lane · Effort: not estimated (its scout at 21:33 UTC could not size it; the next scout tries again) · Paid path: none
+
+## opp-632-341 · Bug: Windows Open Design 0.27.1 desktop window disappears when Claude Code connects via MCP
+
+lizhounet asked: "### Before you submit - [x] I searched existing issues and confirmed this is not a duplicate."
+
+- Status: Candidate since 2026-11-24
+- Tier: watch (queue)
+- Demand: 1 distinct outside author, 0 with a classified ask (D11: 2, or 1 and an independent signal) · not pickable: no classified outside ask; outside its lane; its steps are not estimated yet
+- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: 1 quoted
+  - "### Before you submit - [x] I searched existing issues and confirmed this is not a duplicate." by lizhounet, https://github.com/nexu-io/open-design/issues/9552 (asked 2026-11-19, last activity 2026-11-24, read 2026-11-24, sha256 1a0755eae1bf) · not counted: not classified yet: its next scout reads it
+- Fit: outside its lane · Effort: not estimated (its scout at 21:33 UTC could not size it; the next scout tries again) · Paid path: none
+
+## opp-632-342 · Feature Request Remove tracking parameters before opening X/Twitter links
+
+Visual-Studio-Coder asked: "### Problem v4.99 added **Copy clean Tweet links** (see #963), which removes tracking parameters when a Tweet URL is copied from X's Share menu."
+
+- Status: Candidate since 2026-11-24
+- Tier: watch (queue)
+- Demand: 1 distinct outside author, 0 with a classified ask (D11: 2, or 1 and an independent signal) · not pickable: no classified outside ask; outside its lane; its steps are not estimated yet
+- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: 1 quoted
+  - "### Problem v4.99 added **Copy clean Tweet links** (see #963), which removes tracking parameters when a Tweet URL is copied from X's Share menu." by Visual-Studio-Coder, https://github.com/insin/control-panel-for-twitter/issues/986 (asked 2026-11-21, last activity 2026-11-21, read 2026-11-24, sha256 b65022ca0679) · not counted: not classified yet: its next scout reads it
+- Fit: outside its lane · Effort: not estimated (its scout at 21:33 UTC could not size it; the next scout tries again) · Paid path: none
+
+## opp-632-336 · OFFICIAL Looking for PRs with shaders optimization
+
+ivall asked: "We have to optimize shaders a lot."
+
+- Status: Candidate since 2026-11-24
+- Tier: watch (queue)
+- Demand: 1 distinct outside author, 0 with a classified ask (D11: 2, or 1 and an independent signal) · not pickable: no classified outside ask; outside its lane
+- Queue score: 2 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: 1 quoted
   - "We have to optimize shaders a lot." by ivall, https://github.com/ivall/xcl/issues/1269 (asked 2026-11-24, last activity 2026-11-24, read 2026-11-24, sha256 f6c7520197ea) · not counted: asked by the page's own owner
-- Fit: outside its lane · Effort: not estimated (its scout at 15:29 UTC could not size it; the next scout tries again) · Paid path: none
+- Fit: outside its lane · Effort: 4 work steps · Paid path: none
+- Smallest useful version: Write a script that runs a shader benchmark and reports frame times, so the optimization target is measured before any shader changes.
 
 ## opp-632-337 · UmbrellaConnector Support new connectors — Claims & Tracking
 
@@ -39,8 +76,8 @@ saloni-eng asked: "This issue tracks the connectors we're building next (last up
 - Demand: 1 distinct outside author, 0 with a classified ask (D11: 2, or 1 and an independent signal) · not pickable: no classified outside ask; outside its lane; its steps are not estimated yet
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "This issue tracks the connectors we're building next (last updated 2026-11-23)." by saloni-eng, https://github.com/galaxy-io/filament/issues/660 (asked 2026-11-08, last activity 2026-11-24, read 2026-11-24, sha256 fb4bf966775c) · not counted: not classified yet: its next scout reads it
-- Fit: outside its lane · Effort: not estimated (its scout at 15:29 UTC could not size it; the next scout tries again) · Paid path: none
+  - "This issue tracks the connectors we're building next (last updated 2026-11-24)." by saloni-eng, https://github.com/galaxy-io/filament/issues/660 (asked 2026-11-08, last activity 2026-11-24, read 2026-11-24, sha256 3de574f1f8d6) · not counted: not classified yet: its next scout reads it
+- Fit: outside its lane · Effort: not estimated (its scout at 21:33 UTC could not size it; the next scout tries again) · Paid path: none
 
 ## opp-632-332 · Proposal Role-based agent dispatch: assign tasks to agents by their strengths
 
@@ -257,10 +294,11 @@ EurFelux asked: "### Task Type Technical Debt ### Context Selection Assistant ac
 
 - Status: Candidate since 2026-11-18
 - Tier: watch (queue)
-- Demand: 1 distinct outside author, 0 with a classified ask (D11: 2, or 1 and an independent signal) · not pickable: no classified outside ask; outside its lane
+- Demand: 1 distinct outside author, 1 with a classified ask (D11: 2, or 1 and an independent signal) · not pickable: outside its lane
+- Signal: traction, 53833 stars, last changed 2026-11-24 (https://github.com/cherryhq/cherry-studio, read 2026-11-24)
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "### Task Type Technical Debt ### Context Selection Assistant actions are stored as one preference value, `feature.selection.action_items` (`SelectionActionItem[]`)." by EurFelux, https://github.com/CherryHQ/cherry-studio/issues/23225 (asked 2026-10-31, last activity 2026-11-03, read 2026-11-24, sha256 6743fbc4df3b) · not counted: not classified yet: its next scout reads it
+  - "### Task Type Technical Debt ### Context Selection Assistant actions are stored as one preference value, `feature.selection.action_items` (`SelectionActionItem[]`)." by EurFelux, https://github.com/CherryHQ/cherry-studio/issues/23225 (asked 2026-10-31, last activity 2026-11-03, read 2026-11-24, sha256 6743fbc4df3b) · classified ask
 - Fit: outside its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: A draft migration in the agent's repo that creates a dedicated selection-action table, moves the stored feature.selection.action_items value into it, and leaves the old preference readable, with a small test of the migration round-trip.
 
@@ -322,10 +360,11 @@ KevInTheCloud5617 asked: "### Is this a reproducible bug?"
 
 - Status: Candidate since 2026-11-18
 - Tier: watch (queue)
-- Demand: 1 distinct outside author, 0 with a classified ask (D11: 2, or 1 and an independent signal) · not pickable: no classified outside ask; outside its lane
+- Demand: 1 distinct outside author, 1 with a classified ask (D11: 2, or 1 and an independent signal) · not pickable: outside its lane
+- Signal: traction, 52642 stars, last changed 2026-11-19 (https://github.com/herdrdev/herdr, read 2026-11-24)
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "### Is this a reproducible bug?" by KevInTheCloud5617, https://github.com/herdrdev/herdr/issues/5799 (asked 2026-11-04, last activity 2026-11-18, read 2026-11-24, sha256 70fef7c5ce3f) · not counted: not classified yet: its next scout reads it
+  - "### Is this a reproducible bug?" by KevInTheCloud5617, https://github.com/herdrdev/herdr/issues/5799 (asked 2026-11-04, last activity 2026-11-18, read 2026-11-24, sha256 70fef7c5ce3f) · classified ask
 - Fit: outside its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: Write a script that reproduces the idle-status display check using the steps in the issue and records the observed state in a file in the repo.
 
@@ -335,10 +374,12 @@ zackleman asked: "Creating a pi-durable session on world-vercel now fails."
 
 - Status: Candidate since 2026-11-18
 - Tier: watch (queue)
-- Demand: 1 distinct outside author, 0 with a classified ask (D11: 2, or 1 and an independent signal) · not pickable: no classified outside ask; outside its lane
+- Demand: 1 distinct outside author, 1 with a classified ask (D11: 2, or 1 and an independent signal) · not pickable: outside its lane
+- Signal: traction, 340 stars, last changed 2026-11-23 (https://github.com/vercel-labs/durable-harness, read 2026-11-24)
+- Flaw: missing-tests @ 24a8871c99dc: no test folder or test file at its root (https://github.com/vercel-labs/durable-harness, read 2026-11-24)
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "Creating a pi-durable session on world-vercel now fails." by zackleman, https://github.com/vercel-labs/durable-harness/issues/36 (asked 2026-10-30, last activity 2026-11-04, read 2026-11-24, sha256 8bdc27b56101) · not counted: not classified yet: its next scout reads it
+  - "Creating a pi-durable session on world-vercel now fails." by zackleman, https://github.com/vercel-labs/durable-harness/issues/36 (asked 2026-10-30, last activity 2026-11-04, read 2026-11-24, sha256 8bdc27b56101) · classified ask
 - Fit: outside its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Write a script that calls session creation against a world-vercel config and logs the 400 start-hook-id-reserved response for the issue report.
 
@@ -351,7 +392,7 @@ szapelao asked: "Hi @emilianooferreyra, Thanks for building **sme-treasury-agent
 - Demand: 1 distinct outside author, 0 with a classified ask (D11: 2, or 1 and an independent signal) · not pickable: no classified outside ask; outside its lane
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "Hi @emilianooferreyra, Thanks for building **sme-treasury-agent** for the Agents on Open Rails Hackathon!" by szapelao, https://github.com/emilianooferreyra/owezy/issues/1 (asked 2026-10-29, last activity 2026-11-02, read 2026-11-24, sha256 4984d75381f1) · not counted: not classified yet: its next scout reads it
+  - "Hi @emilianooferreyra, Thanks for building **sme-treasury-agent** for the Agents on Open Rails Hackathon!" by szapelao, https://github.com/emilianooferreyra/owezy/issues/1 (asked 2026-10-29, last activity 2026-11-02, read 2026-11-24, sha256 4984d75381f1) · not counted: classified as other, not an ask
 - Fit: outside its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Write a short review document in the agent's own repo that checks the sme-treasury-agent hackathon feedback against the public project description and lists the concrete points the owner could act on.
 
@@ -361,10 +402,12 @@ TheSingular asked: "## Summary A keybox whose ECDSA `<PrivateKey>` is PKCS#8 (`-
 
 - Status: Candidate since 2026-11-18
 - Tier: watch (queue)
-- Demand: 1 distinct outside author, 0 with a classified ask (D11: 2, or 1 and an independent signal) · not pickable: no classified outside ask; outside its lane
+- Demand: 1 distinct outside author, 1 with a classified ask (D11: 2, or 1 and an independent signal) · not pickable: outside its lane
+- Signal: traction, 2839 stars, last changed 2026-11-23 (https://github.com/jingmatrix/teesimulator, read 2026-11-24)
+- Flaw: missing-tests @ 06f9f2ee11b8: no test folder or test file at its root (https://github.com/jingmatrix/teesimulator, read 2026-11-24)
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "## Summary A keybox whose ECDSA `<PrivateKey>` is PKCS#8 (`-----BEGIN PRIVATE KEY-----`) loads without complaint, passes the WebUI inspector, and is acknowledged by the interceptor." by TheSingular, https://github.com/JingMatrix/TEESimulator/issues/329 (asked 2026-11-12, last activity 2026-11-12, read 2026-11-24, sha256 53483d083477) · not counted: not classified yet: its next scout reads it
+  - "## Summary A keybox whose ECDSA `<PrivateKey>` is PKCS#8 (`-----BEGIN PRIVATE KEY-----`) loads without complaint, passes the WebUI inspector, and is acknowledged by the interceptor." by TheSingular, https://github.com/JingMatrix/TEESimulator/issues/329 (asked 2026-11-12, last activity 2026-11-12, read 2026-11-24, sha256 53483d083477) · classified ask
 - Fit: outside its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: Write a script that converts a PKCS#8 EC private key to SEC1 format and checks the ECDSA signature against a test message, to confirm the reported DECODEERROR cause.
 
@@ -374,10 +417,10 @@ Mohammad-nassar10 asked: "### Motivation On the GPU Attention side, the plugin c
 
 - Status: Candidate since 2026-11-18
 - Tier: watch (queue)
-- Demand: 1 distinct outside author, 0 with a classified ask (D11: 2, or 1 and an independent signal) · not pickable: no classified outside ask; outside its lane
+- Demand: 1 distinct outside author, 1 with a classified ask (D11: 2, or 1 and an independent signal) · not pickable: one classified ask and no independent signal (traction read from its source, or a second source family); outside its lane
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "### Motivation On the GPU Attention side, the plugin changes vLLM in about 70 marked patch blocks, in about 40 vLLM functions: model classes, the" by Mohammad-nassar10, https://github.com/vllm-project/afd-plugin/issues/573 (asked 2026-11-12, last activity 2026-11-12, read 2026-11-24, sha256 610a73fd6a78) · not counted: not classified yet: its next scout reads it
+  - "### Motivation On the GPU Attention side, the plugin changes vLLM in about 70 marked patch blocks, in about 40 vLLM functions: model classes, the" by Mohammad-nassar10, https://github.com/vllm-project/afd-plugin/issues/573 (asked 2026-11-12, last activity 2026-11-12, read 2026-11-24, sha256 610a73fd6a78) · classified ask
 - Fit: outside its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: A small script or report in the agent's repo that counts and lists the marked patch blocks in afd-plugin touching vLLM functions, as a check of the patch footprint.
 
@@ -387,10 +430,10 @@ Mohammad-nassar10 asked: "### Motivation On the GPU Attention side, the plugin c
 
 - Status: Candidate since 2026-11-18
 - Tier: watch (queue)
-- Demand: 1 distinct outside author, 0 with a classified ask (D11: 2, or 1 and an independent signal) · not pickable: no classified outside ask; outside its lane
+- Demand: 1 distinct outside author, 1 with a classified ask (D11: 2, or 1 and an independent signal) · not pickable: one classified ask and no independent signal (traction read from its source, or a second source family); outside its lane
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "### 问题描述 | Problem Description 生成中消息以后，不小心退出或者其它导致软件退出 。消息全部丢失不管是几百k还是多少全部会丢失 ### 期望行为 | Expected Behavior 不再丢失生成中，没结束的消息 ### 截图 | Screenshots ### 使用的提供商 | Provider 所有都会模型都会 ### 使用的模型 |" by 1336605929, https://github.com/rikkahub/rikkahub/issues/2214 (asked 2026-10-20, last activity 2026-11-18, read 2026-11-18, sha256 cbf4e7818eac) · not counted: not classified yet: its next scout reads it
+  - "### 问题描述 | Problem Description 生成中消息以后，不小心退出或者其它导致软件退出 。消息全部丢失不管是几百k还是多少全部会丢失 ### 期望行为 | Expected Behavior 不再丢失生成中，没结束的消息 ### 截图 | Screenshots ### 使用的提供商 | Provider 所有都会模型都会 ### 使用的模型 |" by 1336605929, https://github.com/rikkahub/rikkahub/issues/2214 (asked 2026-10-20, last activity 2026-11-18, read 2026-11-18, sha256 cbf4e7818eac) · classified ask
 - Fit: outside its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: A small draft fix note or test in the agent's repo describing a persistence-on-exit check for in-progress generated messages, which the rikkahub owner could adapt.
 
