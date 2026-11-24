@@ -1,0 +1,137 @@
+{
+  "step": "research-20781:b26d7421-cb40-483b-bbc4-8f392121ca26:622:1795533167149:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No Hugging Face dataset was published; the output only links to a GitHub research note.",
+  "description": "The agent only fetched documentation and GitHub pages, hit rate limits, and returned a GitHub research note link instead of a live Hugging Face dataset URL, with no upload or publish request in the trace.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": true,
+  "gotchas": [
+    {
+      "id": "gd055a067",
+      "host": "huggingface.co",
+      "observed": "GET /docs/hub/datasets-adding",
+      "result": "429 rate-limit/challenge response",
+      "evidence": "t1"
+    },
+    {
+      "id": "g516b239b",
+      "host": "huggingface.co",
+      "observed": "GET /docs/datasets/dataset_card",
+      "result": "429 rate-limit/challenge response",
+      "evidence": "t2"
+    },
+    {
+      "id": "g8de60b6a",
+      "host": "huggingface.co",
+      "observed": "GET /docs/datasets/en/upload_dataset",
+      "result": "429 rate-limit/challenge response",
+      "evidence": "t3"
+    },
+    {
+      "id": "gb8548e3a",
+      "host": "github.com",
+      "observed": "GET /Uniswap/v4-core/blob/main/README.md",
+      "result": "429: Rate limit, abuse detection mechanism triggered",
+      "evidence": "t4"
+    },
+    {
+      "id": "g29d0b09a",
+      "host": "github.com",
+      "observed": "GET /huggingface/datasets/releases",
+      "result": "429: Rate limit, access restricted",
+      "evidence": "t5"
+    }
+  ],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [
+    "huggingface.co",
+    "github.com"
+  ],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/datasets-adding",
+      "status": 429,
+      "error": "window.pendingEvents = { controller: new AbortController() }; document.addEventListener( \"click\", function (event) { const target = event.target; if (!event.isTrusted || !(target instanceof Element) |",
+      "ms": 38,
+      "at": "2026-11-24T15:13:41.380Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/datasets/dataset_card",
+      "status": 429,
+      "error": "window.pendingEvents = { controller: new AbortController() }; document.addEventListener( \"click\", function (event) { const target = event.target; if (!event.isTrusted || !(target instanceof Element) |",
+      "ms": 38,
+      "at": "2026-11-24T15:13:41.380Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/datasets/en/upload_dataset",
+      "status": 429,
+      "error": "window.pendingEvents = { controller: new AbortController() }; document.addEventListener( \"click\", function (event) { const target = event.target; if (!event.isTrusted || !(target instanceof Element) |",
+      "ms": 38,
+      "at": "2026-11-24T15:13:41.380Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/Uniswap/v4-core/blob/main/README.md",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Whoa there! You have triggered an abuse detection mechanism. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdas",
+      "ms": 50,
+      "at": "2026-11-24T15:13:41.671Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/huggingface/datasets/releases",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 117,
+      "at": "2026-11-24T15:13:41.663Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/Uniswap/v4-core",
+      "status": 200,
+      "error": null,
+      "ms": 602,
+      "at": "2026-11-24T15:13:41.664Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/214",
+      "status": 200,
+      "error": null,
+      "ms": 705,
+      "at": "2026-11-24T15:13:41.672Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "traces.com",
+      "path": "/blog/data-exports-huggingface",
+      "status": 200,
+      "error": null,
+      "ms": 4010,
+      "at": "2026-11-24T15:13:41.380Z"
+    }
+  ],
+  "at": "2026-11-24T15:14:12.196Z"
+}
