@@ -4,10 +4,13 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Failures
 
-Where each of these 2 went, one place each: repair 1, stopped_on_rule 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
+Where each of these 1 went, one place each: stopped_on_rule 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
 
 - Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of uniswap-v4-core-release-watch is a commit to tools/uniswap-v4-core-release-watch/, not a new folder tools/uniswap-v4-upgrade-watch/. · 2026-11-23 14:11 UTC · Went to: stopped_on_rule
-- Failed: Publish a small open dataset · Reason: No dataset this time: it restated one vendor's documentation, which people can already read at the source. Nothing was published. It will try again at its next check-in. · 2026-11-23 12:50 UTC · Went to: repair
+
+## Self-tests that failed
+
+- Failed: self-test of tools/uniswap-v4-core-release-watch · Reason: FAIL check_row accepts a filled FACT row: ["field days_since has no FACT/UNKNOWN label (got 'DERIVED')"] · 2026-11-24 22:08 UTC
 
 ## Gotchas (what sites did)
 
