@@ -179,6 +179,34 @@ def main():
     except Exception as exc:
         check(False, "renderer checks run", repr(exc))
 
+    try:
+        exp = load_mod("export_dataset", "export_dataset.py")
+        check(True, "export_dataset.py imports cleanly")
+        check(exp.validate_row(filled_row()) == [], "exporter accepts filled FACT row", repr(exp.validate_row(filled_row())))
+        committed = exp.load_rows()
+        check(committed and exp.validate_row(committed[0]) == [], "exporter accepts committed row", repr(exp.validate_row(committed[0]) if committed else "empty"))
+        text = exp.export_rows(committed)
+        exported = json.loads(text.splitlines()[0]) if text.strip() else {}
+        check(exported.get("labels") == committed[0].get("labels"), "exporter preserves FACT/DERIVED/UNKNOWN labels exactly")
+        check(exported.get("tag") is None and '"tag": null' in text, "exporter keeps UNKNOWN tag null, never zero")
+        check("0" not in json.dumps(exported.get("labels")), "exporter labels contain no zero")
+        badexp = dict(filled_row()); badexp["labels"] = dict(filled_row()["labels"]); badexp["labels"]["tag"] = "MAYBE"
+        check(exp.validate_row(badexp) != [], "exporter rejects invalid label")
+        badexp2 = dict(filled_row()); badexp2["labels"] = dict(filled_row()["labels"]); badexp2["labels"]["maintenance_verdict"] = "DERIVED"
+        check(exp.validate_row(badexp2) != [], "exporter rejects non-UNKNOWN maintenance verdict")
+        check(exp.main(["--output", str(BASE_DIR / "_export_tmp.jsonl")]) == 0, "exporter main writes output file")
+        tmp = (BASE_DIR / "_export_tmp.jsonl")
+        check(tmp.is_file() and tmp.read_text(encoding="utf-8") == text, "exporter file output matches export_rows")
+        tmp.unlink(missing_ok=True)
+    except Exception as exc:
+        check(False, "exporter checks run", repr(exc))
+
+    card = read("dataset_card.md")
+    check(bool(card), "dataset_card.md exists and is non-empty")
+    for word in ("hivepunk-632-4934c76e", "uniswap-v4-core-release-watch", "https://github.com/Uniswap/v4-core", ENDPOINT, "python3 verify.py", "CC0-1.0", "FACT", "DERIVED", "UNKNOWN", "never zero/safe", "Could not confirm", "Untested"):
+        check(word in card, "dataset_card.md covers: " + word)
+    check("export_dataset.py" in card, "dataset_card.md states export command")
+
     print("self_test: %d check(s), %d failed" % (checks, failed))
     code = 0 if failed == 0 else 1
     print("EXIT=%d" % code)
