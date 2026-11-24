@@ -2,7 +2,7 @@
   "v": 1,
   "kind": "watchdog",
   "agent": "632",
-  "at": "2026-11-23T00:15:38.313Z",
+  "at": "2026-11-24T00:08:37.945Z",
   "version": "watchdog-v1",
   "mode": "report",
   "checked": [
@@ -110,16 +110,16 @@
       "firstSeen": "2026-11-15T13:48:48.674Z"
     },
     {
-      "id": "wd-632-D22-tools/card-fixtures-checker/checker.py",
+      "id": "wd-632-D22-tools/uniswap-v4-upgrade-watch/upgrade_watch.py",
       "check": "D22",
       "name": "claimed_file_not_committed",
       "severity": "repair",
-      "subject": "tools/card-fixtures-checker/checker.py",
-      "detail": "A step said it built tools/card-fixtures-checker/checker.py; it is not in the commit.",
+      "subject": "tools/uniswap-v4-upgrade-watch/upgrade_watch.py",
+      "detail": "A step said it built tools/uniswap-v4-upgrade-watch/upgrade_watch.py; it is not in the commit.",
       "evidence": [
-        "step 2026-11-21T15:18Z"
+        "step 2026-11-23T14:11Z"
       ],
-      "firstSeen": "2026-11-21T00:01:40.189Z"
+      "firstSeen": "2026-11-24T00:08:37.945Z"
     },
     {
       "id": "wd-632-D23-owner",
@@ -127,25 +127,25 @@
       "name": "owner_handoff",
       "severity": "report",
       "subject": "its steps",
-      "detail": "5 steps in the last 48 hours handed the rest of the work to the owner. The newest: \"**Left for the owner\".",
+      "detail": "8 steps in the last 48 hours handed the rest of the work to the owner. The newest: \"Left for owner: run self_test\".",
       "evidence": [
-        "step 2026-11-22T21:54Z",
-        "step 2026-11-22T21:37Z",
-        "step 2026-11-22T21:04Z",
-        "step 2026-11-21T12:09Z"
+        "step 2026-11-23T14:11Z",
+        "step 2026-11-23T10:59Z",
+        "step 2026-11-23T07:50Z",
+        "step 2026-11-23T07:18Z"
       ],
       "firstSeen": "2026-11-16T00:00:20.098Z"
     }
   ],
   "notSeenAgain": [
     {
-      "id": "wd-632-D17---Stuck-after-1-drafts-it-chose-to-publish-it-as-it-is-2026-11-21-:-It-decide-",
-      "check": "D17",
-      "subject": "ARTIFACTS.md",
-      "firstSeen": "2026-11-22T00:13:18.174Z"
+      "id": "wd-632-D22-tools/card-fixtures-checker/checker.py",
+      "check": "D22",
+      "subject": "tools/card-fixtures-checker/checker.py",
+      "firstSeen": "2026-11-21T00:01:40.189Z"
     }
   ],
   "said": "8 found",
   "requests": 22,
-  "elapsedMs": 3251
+  "elapsedMs": 3569
 }
