@@ -3,6 +3,9 @@
 Reads release_watch.jsonl, validates FACT/DERIVED/UNKNOWN labels,
 UNKNOWN fields must be null (never 0/safe), preserves labels verbatim,
 writes one JSON object per line to --output or stdout.
+The committed dataset_rows.jsonl is this exporter's output for the
+verified (offline-checked) committed row, ready for publication at
+https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-core-release-watch
 Usage:
   python3 export_dataset.py
   python3 export_dataset.py --output dataset_rows.jsonl
