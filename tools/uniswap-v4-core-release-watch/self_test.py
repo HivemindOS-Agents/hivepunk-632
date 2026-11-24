@@ -6,6 +6,7 @@ c); runs their real checks on committed files and sample data, checks
 STATUS.md matches renderer exactly (drift check), STATUS.md per-field
 FACT/DERIVED/UNKNOWN labels + source URLs + UNKNOWN=null never 0/safe,
 opp-632-313 issue #17 draft, data/status.json, GOAL.md and README.
+Also checks dataset_rows.jsonl is the exporter output for HF publication.
 """
 import importlib.util
 import json
@@ -16,6 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent
 ENDPOINT = "https://api.github.com/repos/Uniswap/v4-core/releases/latest"
 RELEASE_PAGE = "https://github.com/Uniswap/v4-core/releases/latest"
 PARENT = "https://github.com/for-toolathlon/uniswap-v4-watch/issues/17"
+HF_URL = "https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-core-release-watch"
 EXPECTED_TAG = None
 
 def load_mod(name, filename):
@@ -139,11 +141,24 @@ def main():
         check(exported.get("tag") is None and '"tag": null' in text, "exporter keeps UNKNOWN tag null, never zero")
         check(exp.main(["--output", str(BASE_DIR / "_export_tmp.jsonl")]) == 0, "exporter main writes output file")
         tmp = BASE_DIR / "_export_tmp.jsonl"; check(tmp.is_file() and tmp.read_text(encoding="utf-8") == text, "exporter file output matches export_rows"); tmp.unlink(missing_ok=True)
+        ds_text = read("dataset_rows.jsonl")
+        check(bool(ds_text), "dataset_rows.jsonl exists and is non-empty")
+        check(ds_text == text, "dataset_rows.jsonl matches exporter output exactly", "regenerate: python3 export_dataset.py --output dataset_rows.jsonl")
+        ds_rows = [json.loads(ln) for ln in ds_text.splitlines() if ln.strip()]
+        check(len(ds_rows) == 1, "dataset_rows.jsonl holds exactly one row")
+        ds0 = ds_rows[0] if ds_rows else {}
+        check(ds0.get("labels") == committed[0].get("labels"), "dataset_rows.jsonl preserves labels exactly")
+        check(ds0.get("tag") is None and ds0.get("published_at") is None, "dataset_rows.jsonl UNKNOWN fields are null, never zero")
+        check(ds0.get("source_endpoint") == ENDPOINT, "dataset_rows.jsonl cites source endpoint")
+        check('"tag": 0' not in ds_text and '"published_at": 0' not in ds_text, "dataset_rows.jsonl never renders UNKNOWN as zero")
     except Exception as exc:
         check(False, "exporter checks run", repr(exc))
     card = read("dataset_card.md"); check(bool(card), "dataset_card.md exists and is non-empty")
     for w in ("hivepunk-632-4934c76e","uniswap-v4-core-release-watch","https://github.com/Uniswap/v4-core",ENDPOINT,"python3 verify.py","CC0-1.0","FACT","DERIVED","UNKNOWN","never zero/safe","Could not confirm","Untested"): check(w in card, "dataset_card.md covers: " + w)
     check("export_dataset.py" in card, "dataset_card.md states export command")
+    check(HF_URL in card, "dataset_card.md gives the Hugging Face dataset URL")
+    check('load_dataset("hivepunk-632-4934c76e/uniswap-v4-core-release-watch")' in card, "dataset_card.md shows load_dataset example")
+    check("dataset_rows.jsonl" in card, "dataset_card.md names the exported rows file")
     print("self_test: %d check(s), %d failed" % (checks, failed))
     code = 0 if failed == 0 else 1; print("EXIT=%d" % code); return code
 
