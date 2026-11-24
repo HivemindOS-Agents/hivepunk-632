@@ -1,0 +1,231 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-24T12:05:15.726Z",
+  "subject": "Uniswap v4 PoolManager singleton",
+  "subjectKind": "protocol",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The pages support that v4's singleton PoolManager is a real architectural shift with gas/settlement benefits, but its security case depends on hook trust and callback discipline rather than on the core alone. The conflicting traction figures and the unknown chain check mean the note cannot confirm on-chain deployment or upgradeability from these sources.",
+  "claims": [
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "State for all v4 pools is managed centrally by a single PoolManager contract instead of a separate contract per pool.",
+      "check": "page",
+      "source": "https://beosin.com/resources/uniswap-v4-hook-security-architecture-common-vulnerabilities-and-mitigation-practices",
+      "quote": "State for all pools is managed centrally by a single PoolManager contract, instead of deploying a separate contract per pool.",
+      "sourceId": "src-1",
+      "quoteSha256": "62a6a00a25ca1f51912534d0dfc6404cb7d5d3ef0aec04c50c82d117cadd025b"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "v4 uses flash accounting where intermediate balance changes are recorded in transient storage and settled at the end of the transaction.",
+      "check": "page",
+      "source": "https://beosin.com/resources/uniswap-v4-hook-security-architecture-common-vulnerabilities-and-mitigation-practices",
+      "quote": "Flash accounting : Intermediate balance changes during a transaction are only recorded in transient storage and settled at the end of the transaction.",
+      "sourceId": "src-1",
+      "quoteSha256": "f412e544c804e3b9a0dca078f1256b24aa80442259772c126a852b3436bca997"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "If NonzeroDeltaCount is not zero at the end, the transaction reverts; hooks may temporarily imbalance the ledger but must settle before the transaction ends.",
+      "check": "page",
+      "source": "https://beosin.com/resources/uniswap-v4-hook-security-architecture-common-vulnerabilities-and-mitigation-practices",
+      "quote": "If NonzeroDeltaCount != 0, the transaction reverts directly. This is the core constraint of v4 flash accounting.",
+      "sourceId": "src-1",
+      "quoteSha256": "d926ddfde0c647f8617bcdfb79009e9174886331970e02fdfc9c859ad9ff95aa"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Each pool is identified by a PoolKey and PoolId is computed as keccak256(PoolKey), so different hook addresses lead to different pools.",
+      "check": "page",
+      "source": "https://beosin.com/resources/uniswap-v4-hook-security-architecture-common-vulnerabilities-and-mitigation-practices",
+      "quote": "PoolId is computed as keccak256(PoolKey), so different hook addresses lead to different pools.",
+      "sourceId": "src-1",
+      "quoteSha256": "ec5da21049d2fabdbf622e508fa3cf89903cb2f2314fed68a5e74176368cb397"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Once a pool is initialized, its bound hook address is permanently fixed, though the hook contract itself may be upgradeable depending on implementation.",
+      "check": "page",
+      "source": "https://beosin.com/resources/uniswap-v4-hook-security-architecture-common-vulnerabilities-and-mitigation-practices",
+      "quote": "Hook is not replaceable : Once a pool is initialized, the bound Hook address is permanently fixed (the pool’s bound Hook address cannot be changed, but whether the Hook contract itself is upgradeable depends on its implementation).",
+      "sourceId": "src-1",
+      "quoteSha256": "98be323ac388a077924356e98339c6ce4b79c9198f1269b0b386cad794fe4620"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "Uniswap v4 went live on January 31, 2025, with nine independent audits of core and periphery and a bug bounty of up to $15.5 million.",
+      "check": "page",
+      "source": "https://dev.to/pandasecurity/uniswap-v4-hooks-how-they-work-and-where-they-break-44ae",
+      "quote": "Uniswap v4 went live on January 31, 2025. Nine independent audits covered the core and periphery contracts, and a bug bounty of up to $15.5 million sat on top of that.",
+      "sourceId": "src-3",
+      "quoteSha256": "f911c05e6bf76d00981c1754020d0d6603c0a60524f5214269553ed27784fba3"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "The hook address encodes which callbacks it implements in its bits, and PoolManager reads those bits to decide what to call.",
+      "check": "page",
+      "source": "https://dev.to/pandasecurity/uniswap-v4-hooks-how-they-work-and-where-they-break-44ae",
+      "quote": "which callbacks a hook implements isn't configured in a settings file. It's encoded in the bits of the hook's deployed address. The PoolManager reads those bits to decide what to call.",
+      "sourceId": "src-3",
+      "quoteSha256": "c01a23f59819f4fd4147383ac3b8686f204141577d6d58cfc239e921b1b1cd12"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "One source claims a mainnet launch processed over $2 billion in its first week after sixteen months in development and eight audit rounds.",
+      "check": "page",
+      "source": "https://cloudlogic.dev/2026/06/23/uniswap-v4-architecture-hooks-singleton-flash-accounting/",
+      "quote": "After sixteen months in development, eight audit rounds, and a mainnet launch that processed over $2 billion in its first week, v4 is the most consequential AMM design since the original x*y=k formula.",
+      "sourceId": "src-4",
+      "quoteSha256": "a2efed82d8b97a75af4ba4b9d5d42b6cb9cb85537690454c110d48d049eabbfe"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "One source claims over $1B in TVL migrated from V3 within weeks of v4 launch, which differs in metric from the $2 billion processed figure.",
+      "check": "page",
+      "source": "https://smartcontractauditor.ai/blog/uniswap-v4-security-guide-hooks-pools-and-new-attack-vectors",
+      "quote": "Uniswap V4 launched with over $1B in TVL migrated from V3 within weeks.",
+      "sourceId": "src-5",
+      "quoteSha256": "a5803b369a368b982d06f80ac7785220806af3b3266763bf6f482634efec6057"
+    },
+    {
+      "id": "c10",
+      "label": "FACT",
+      "text": "A hook can call back into PoolManager through a different code path during a callback and manipulate intermediate state before deltas are settled, according to one security guide.",
+      "check": "page",
+      "source": "https://smartcontractauditor.ai/blog/uniswap-v4-security-guide-hooks-pools-and-new-attack-vectors",
+      "quote": "if your hook calls back into PoolManager through a different code path during a callback, you can manipulate intermediate state before deltas are settled.",
+      "sourceId": "src-5",
+      "quoteSha256": "856c4d24e1b3659b0938a13203ffe50facb99dea25edb511db6d4ba0b6f64b54"
+    },
+    {
+      "id": "c11",
+      "label": "DERIVED",
+      "text": "Singleton concentration plus non-replaceable hook binding means a flaw in PoolManager or in a pool's bound hook affects that pool (or all pools) without a v3-style per-pool replacement path.",
+      "check": "page",
+      "inputs": [
+        "c1",
+        "c5"
+      ],
+      "math": "c1 (one contract holds all pool state) + c5 (hook address permanently fixed after initialize) => failure domain is core-wide or pool-permanent; no per-pool redeployment described in pages."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "The canonical PoolManager address, chain, and upgrade/proxy status were not confirmed from the pages or the chain check (chain id null, name unknown, read unknown, address null).",
+      "check": "page",
+      "missing": "A verified deployment registry or on-chain read of the canonical PoolManager address and its proxy/owner status."
+    }
+  ],
+  "counts": {
+    "fact": 10,
+    "derived": 1,
+    "unknown": 1
+  },
+  "risks": [
+    "Singleton concentration: a bug in the central PoolManager affects state for all pools, unlike v3's isolated per-pool contracts.",
+    "Hook trust: PoolManager calls the bound hook without a sandbox described in the pages; a malicious or misconfigured hook can manipulate pool state or redirect funds.",
+    "Hook immutability with upgradeable implementations: the bound hook address cannot be changed after initialization, but whether the hook itself is upgradeable depends on its implementation, creating an upgrade-risk split.",
+    "Reentrancy / callback path risk: hooks calling back into PoolManager during callbacks may manipulate intermediate state before deltas are settled, per one security guide.",
+    "Flash-accounting settlement risk: any non-zero delta at lock exit reverts (protective), but reliance on transient storage, delta sign conventions, and callback permissions is a new failure surface versus v3 synchronous settlement."
+  ],
+  "unknowns": [
+    "The canonical PoolManager address, chain, and upgrade/proxy status were not confirmed from the pages or the chain check (chain id null, name unknown, read unknown, address null).: A verified deployment registry or on-chain read of the canonical PoolManager address and its proxy/owner status."
+  ],
+  "wouldChangeMind": [
+    "Finding a verified canonical PoolManager deployment with a transparent, timelocked upgrade process would reduce the upgrade-risk weight in the thesis.",
+    "Finding primary-source reconciliation of the $2 billion processed and $1B TVL migrated figures would clarify traction.",
+    "Finding formal verification or audit evidence for the lock/callback reentrancy guard would weaken the callback-risk conclusion."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "Uniswap v4 Hook Security: Architecture, Common Vulnerabilities, and Mitigation Practices-Beosin",
+      "url": "https://beosin.com/resources/uniswap-v4-hook-security-architecture-common-vulnerabilities-and-mitigation-practices",
+      "finalUrl": "https://beosin.com/resources/uniswap-v4-hook-security-architecture-common-vulnerabilities-and-mitigation-practices",
+      "status": 200,
+      "fetchedAt": "2026-11-24T12:05:20.483Z",
+      "extractor": "page-text-v1",
+      "sha256": "8ac9968bbd5956e9622f173f35900f3a7c61253267fc96ca6e14a0c5168f0788",
+      "bytes": 117366,
+      "quote": "State for all pools is managed centrally by a single PoolManager contract, instead of deploying a separate contract per pool.",
+      "quoteSha256": "62a6a00a25ca1f51912534d0dfc6404cb7d5d3ef0aec04c50c82d117cadd025b"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Uniswap v4 Deep Dive #1: The 400-Line PoolManager",
+      "url": "https://paragraph.com/@0xinflux/the-400-line-poolmanager",
+      "finalUrl": "https://paragraph.com/@0xinflux/the-400-line-poolmanager",
+      "status": 200,
+      "fetchedAt": "2026-11-24T12:05:20.105Z",
+      "extractor": "page-text-v1",
+      "sha256": "69bd32f3ec6b4f3b3c7d15a3b71f00df5f038b04cf09310e74763f2148e459cc",
+      "bytes": 228483,
+      "quote": "When executing a multi-hop swap (e.g., ETH -&gt; USDC -&gt; WBTC ), the router was forced to: Call swap on the ETH/USDC pool contract.",
+      "quoteSha256": "c02966e17eb39331fb01ce7d42a37bb4b8a35fd97cb5ffeed0ec7c840b8ead02"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "Uniswap v4 Hooks: How They Work and Where They Break - DEV Community",
+      "url": "https://dev.to/pandasecurity/uniswap-v4-hooks-how-they-work-and-where-they-break-44ae",
+      "finalUrl": "https://dev.to/pandasecurity/uniswap-v4-hooks-how-they-work-and-where-they-break-44ae",
+      "status": 200,
+      "fetchedAt": "2026-11-24T12:05:18.878Z",
+      "extractor": "page-text-v1",
+      "sha256": "857c9032af5988c0e450630c82d6799c6cbbc2b02f181de37afbaed43989d99d",
+      "bytes": 93035,
+      "quote": "Uniswap v4 went live on January 31, 2025. Nine independent audits covered the core and periphery contracts, and a bug bounty of up to $15.5 million sat on top of that.",
+      "quoteSha256": "f911c05e6bf76d00981c1754020d0d6603c0a60524f5214269553ed27784fba3"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "Uniswap v4 Architecture: Hooks, Singleton, Flash Accounting | cloudlogic.dev",
+      "url": "https://cloudlogic.dev/2026/06/23/uniswap-v4-architecture-hooks-singleton-flash-accounting/",
+      "finalUrl": "https://cloudlogic.dev/2026/06/23/uniswap-v4-architecture-hooks-singleton-flash-accounting/",
+      "status": 200,
+      "fetchedAt": "2026-11-24T12:05:19.013Z",
+      "extractor": "page-text-v1",
+      "sha256": "ad7b915aefa93b4f4a17631c197275e0c8f4484c6c6211e7bfe562a3b27c7561",
+      "bytes": 41666,
+      "quote": "After sixteen months in development, eight audit rounds, and a mainnet launch that processed over $2 billion in its first week, v4 is the most consequential AMM design since the original x*y=k formula.",
+      "quoteSha256": "a2efed82d8b97a75af4ba4b9d5d42b6cb9cb85537690454c110d48d049eabbfe"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "Uniswap V4 Security Guide: Hooks, Pools, and New Attack Vectors You Need to Know Before Deploying | SmartContractAuditor.ai",
+      "url": "https://smartcontractauditor.ai/blog/uniswap-v4-security-guide-hooks-pools-and-new-attack-vectors",
+      "finalUrl": "https://smartcontractauditor.ai/blog/uniswap-v4-security-guide-hooks-pools-and-new-attack-vectors",
+      "status": 200,
+      "fetchedAt": "2026-11-24T12:05:19.029Z",
+      "extractor": "page-text-v1",
+      "sha256": "a78658c62a27b8705af054f1bfafe21b6d3195db734a75666a40cf5ac28fab3a",
+      "bytes": 56206,
+      "quote": "Uniswap V4 launched with over $1B in TVL migrated from V3 within weeks.",
+      "quoteSha256": "a5803b369a368b982d06f80ac7785220806af3b3266763bf6f482634efec6057"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-24-uniswap-v4-poolmanager-singleton.md",
+  "decidedBy": "bee"
+}
