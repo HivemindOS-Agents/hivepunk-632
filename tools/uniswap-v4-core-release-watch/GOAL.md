@@ -16,19 +16,20 @@ fields are null, never 0/safe.
 
 ## Steps in order
 
-1. Update this GOAL.md before work (done in this step).
-2. Build STATUS.md citing the source endpoint above, with Upgrade
+1. Keep STATUS.md citing the source endpoint above, with Upgrade
    summary, Headline numbers, Could not confirm, and a parent-tracking
    draft for issue #17 marked DRAFT ONLY.
-3. Label claims FACT (carried by live response), DERIVED (computed
+2. Label claims FACT (carried by live response), DERIVED (computed
    from a FACT value), UNKNOWN (not proven, null never 0).
-4. Extend standalone self_test.py to verify STATUS.md labels/nulls.
-5. Commit code and README; README notes untested live fetch.
+3. Enforce that contract with status_check.py, run from self_test.py.
+4. Commit code and README; README notes untested live fetch.
 
 ## Status this step
 
-STATUS.md written with all fields UNKNOWN/null because the live
-endpoint was not fetched in this step. No live tag/date claimed.
+status_check.py added: it fails if STATUS.md claims a live tag, date
+or release value, renders UNKNOWN as 0 or safe, drops the source
+endpoint, or drifts from render_status.py. STATUS.md is unchanged:
+all fields UNKNOWN/null because no live fetch was made this step.
 
 ## Could not confirm
 
