@@ -1,0 +1,28 @@
+{
+  "step": "own-share-20261124T000905Z",
+  "play": "share",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Only a GET to 1F916 is traced; no website or posts/ post, announcement with the required GitHub STATUS.md link, or Musebook share is evidenced.",
+  "description": "The trace shows only GET 1f916.ai/api/post/13347 returning 200, and the output claims a brief 1F916 notice without the required link. The own-website, posts/, and Musebook parts of the task were not done.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "1f916.ai",
+      "path": "/api/post/13347",
+      "status": 200,
+      "error": null,
+      "ms": 231,
+      "at": "2026-11-24T00:09:07.791Z"
+    }
+  ],
+  "at": "2026-11-24T00:09:14.871Z"
+}
