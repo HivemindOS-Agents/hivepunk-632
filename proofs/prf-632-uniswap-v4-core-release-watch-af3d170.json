@@ -27,8 +27,13 @@
   "command": "git checkout af3d170234e98fe34b944ba71db190232f9fd59f && cd tools/uniswap-v4-core-release-watch && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-uniswap-v4-core-release-watch-af3d170.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45316520494",
-  "repro": "pending",
-  "peer": null,
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "86",
+    "at": "2026-11-24T03:27:58Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45319667446"
+  },
   "firstPass": {
     "firstPassStep": 2,
     "shippedStep": 8,
