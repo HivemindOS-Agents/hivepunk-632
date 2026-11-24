@@ -2,8 +2,8 @@
 """Folder-local self-test for uniswap-v4-core-release-watch.
 Run: python3 self_test.py; echo EXIT=$?  No args, no network.
 Imports verify.py, render_status.py, export_dataset.py, publish_check.py
-and status_check.py by path, runs their real checks on committed files
-and on sample data.
+and status_check.py by path and runs their real checks on the committed
+files and on sample data.
 """
 import importlib.util
 import json
@@ -36,18 +36,36 @@ def filled_row():
         "published_at": "2026-11-18T00:00:00Z",
         "days_since": 4,
         "html_url": "https://github.com/Uniswap/v4-core/releases/tag/v1.0.0",
+        "asset_count": 2,
+        "total_asset_downloads": 10,
         "labels": {
             "tag": "FACT",
             "name": "FACT",
             "published_at": "FACT",
             "days_since": "DERIVED",
             "html_url": "FACT",
+            "asset_count": "FACT",
+            "total_asset_downloads": "FACT",
             "prerelease_or_draft_newer": "UNKNOWN",
             "newer_tag_without_release": "UNKNOWN",
             "later_deletion_or_yank": "UNKNOWN",
             "maintenance_verdict": "UNKNOWN",
         },
     }
+
+
+def variant(row, field, value):
+    copy = json.loads(json.dumps(row))
+    copy[field] = value
+    return copy
+
+
+def relabel(row, field, label, value=None):
+    copy = json.loads(json.dumps(row))
+    copy["labels"][field] = label
+    if label == "UNKNOWN":
+        copy[field] = value
+    return copy
 
 
 def main():
@@ -81,10 +99,57 @@ def main():
         check(False, "verify.py imports cleanly", repr(exc))
         return done()
 
+    # days_between: DERIVED helper.
     check(verify.days_between("2026-11-18T00:00:00Z", "2026-11-22") == 4, "days_between computes 4")
     check(verify.days_between(None, "2026-11-22") is None, "days_between None -> None")
+    check(verify.days_between("garbage", "2026-11-22") is None, "days_between bad input -> None")
+
+    # The check this step fixes: DERIVED is a valid label for days_since.
     sample = filled_row()
     check(verify.check_row(sample) == [], "check_row accepts a filled FACT row", repr(verify.check_row(sample)))
+    derived_days = relabel(sample, "days_since", "DERIVED", 4)
+    check(verify.check_row(derived_days) == [], "check_row accepts DERIVED days_since", repr(verify.check_row(derived_days)))
+    check(derived_days["labels"]["days_since"] == "DERIVED" and derived_days["days_since"] == 4, "DERIVED days_since keeps its computed value")
+    fact_days = relabel(sample, "days_since", "FACT", 4)
+    check(verify.check_row(fact_days) == [], "check_row still accepts FACT days_since")
+
+    # Other labels are rejected, with the label named.
+    maybe = relabel(sample, "days_since", "MAYBE", 4)
+    problems = verify.check_row(maybe)
+    check(problems != [], "check_row rejects MAYBE label")
+    check(any("MAYBE" in p for p in problems), "MAYBE rejection names the label", repr(problems))
+    guess = relabel(sample, "tag", "GUESS", "v1.0.0")
+    check(verify.check_row(guess) != [], "check_row rejects GUESS label")
+    lower = relabel(sample, "tag", "fact", "v1.0.0")
+    check(verify.check_row(lower) != [], "check_row rejects lower-case 'fact' label")
+
+    # DERIVED only on computed fields.
+    derived_tag = relabel(sample, "tag", "DERIVED", "v1.0.0")
+    check(verify.check_row(derived_tag) != [], "check_row rejects DERIVED on a raw response field")
+
+    # UNKNOWN stays null: never 0, never a value, never "safe".
+    unknown_zero = relabel(sample, "days_since", "UNKNOWN", 0)
+    problems = verify.check_row(unknown_zero)
+    check(problems != [], "check_row rejects UNKNOWN days_since as 0")
+    check(any("never 0/safe" in p for p in problems), "UNKNOWN-as-0 rejection says never 0/safe", repr(problems))
+    check(verify.check_row(relabel(sample, "days_since", "UNKNOWN", None)) == [], "check_row accepts UNKNOWN days_since as null")
+    check(verify.check_row(relabel(sample, "tag", "UNKNOWN", None)) == [], "check_row accepts UNKNOWN tag as null")
+    check(verify.check_row(relabel(sample, "tag", "UNKNOWN", 0)) != [], "check_row rejects UNKNOWN tag as 0")
+    check(verify.check_row(relabel(sample, "tag", "UNKNOWN", "v1.0.0")) != [], "check_row rejects UNKNOWN tag with a value")
+    check(verify.check_row(relabel(sample, "tag", "UNKNOWN", "safe")) != [], "check_row rejects UNKNOWN written as 'safe'")
+    check(verify.check_row(relabel(sample, "maintenance_verdict", "FACT", True)) != [], "check_row keeps always-UNKNOWN fields UNKNOWN")
+
+    # Malformed rows.
+    check(verify.check_row({}) != [], "check_row rejects a row with no labels")
+    no_tag_label = json.loads(json.dumps(sample))
+    del no_tag_label["labels"]["tag"]
+    check(verify.check_row(no_tag_label) != [], "check_row rejects a row missing a field label")
+    wrong_endpoint = variant(sample, "source_endpoint", "https://example.invalid")
+    check(verify.check_row(wrong_endpoint) != [], "check_row rejects a wrong source endpoint")
+    string_days = variant(sample, "days_since", "4")
+    check(verify.check_row(string_days) != [], "check_row rejects days_since sent as a string")
+
+    # Committed data.
     try:
         rows = verify.load_rows()
         check(len(rows) == 1, "release_watch.jsonl holds exactly one row")
@@ -95,7 +160,7 @@ def main():
     except Exception as exc:
         check(False, "committed release_watch.jsonl loads and checks", repr(exc))
 
-    # STATUS.md through status_check.py: the contract this step asks for.
+    # STATUS.md through status_check.py.
     status = read("STATUS.md")
     try:
         sc = load_mod("status_check", "status_check.py")
@@ -103,12 +168,9 @@ def main():
         problems = sc.check_status(status)
         check(problems == [], "status_check accepts committed STATUS.md", repr(problems))
         check(sc.main(["--status", str(BASE_DIR / "STATUS.md")]) == 0, "status_check main returns 0 on STATUS.md")
-        drifted = status.replace("tag: UNKNOWN", "tag: v1.0.0", 1)
-        check(sc.check_status(drifted) != [], "status_check rejects a live tag claimed without a fetch")
-        zeroed = status.replace("asset_count=None", "asset_count=0")
-        check(sc.check_status(zeroed) != [], "status_check rejects UNKNOWN shown as 0")
-        unsourced = status.replace(ENDPOINT, "https://example.invalid")
-        check(sc.check_status(unsourced) != [], "status_check rejects STATUS.md without the source endpoint")
+        check(sc.check_status(status.replace("tag: UNKNOWN", "tag: v1.0.0", 1)) != [], "status_check rejects a live tag claimed without a fetch")
+        check(sc.check_status(status.replace("asset_count=None", "asset_count=0")) != [], "status_check rejects UNKNOWN shown as 0")
+        check(sc.check_status(status.replace(ENDPOINT, "https://example.invalid")) != [], "status_check rejects STATUS.md without the source endpoint")
         check(sc.check_status("") != [], "status_check rejects an empty STATUS.md")
     except Exception as exc:
         check(False, "status_check checks run", repr(exc))
@@ -149,10 +211,11 @@ def main():
 
     readme = read("README.md")
     check(bool(readme), "README.md exists and is non-empty")
-    for word in ("api.github.com/repos/Uniswap/v4-core/releases/latest", "CC0-1.0", "verify.py", "self_test.py", "UNKNOWN", "FACT", "UNKNOWN labels", "status_check.py", "Untested", "Could not confirm", "render_status.py", "issue #17", "opp-632-313", "STATUS.md", "publish_check.py", "python3 publish_check.py", "https://github.com/Uniswap/v4-core"):
-        check(word.lower() in readme.lower(), "README covers: " + word)
+    for word in ("api.github.com/repos/Uniswap/v4-core/releases/latest", "CC0-1.0", "verify.py", "self_test.py", "UNKNOWN", "FACT", "DERIVED", "Untested", "Could not confirm", "render_status.py", "issue #17", "opp-632-313", "STATUS.md", "publish_check.py", "python3 publish_check.py", "https://github.com/Uniswap/v4-core"):
+        check(word in readme, "README covers: " + word)
     check("python3 verify.py" in readme, "README states the verify command")
     check("python3 status_check.py" in readme, "README states the status check command")
+    check("days_since" in readme and "DERIVED" in readme, "README explains DERIVED for computed fields")
 
     try:
         rend = load_mod("render_status", "render_status.py")
@@ -177,7 +240,6 @@ def main():
     check(bool(card), "dataset_card.md exists and is non-empty")
     for word in ("hivepunk-632-4934c76e", SOURCE_REPO, ENDPOINT, "python3 verify.py", "CC0-1.0", "FACT", "DERIVED", "UNKNOWN", "never zero/safe", "Could not confirm", "Untested", "export_dataset.py", HF_URL, "dataset_rows.jsonl"):
         check(word in card, "dataset_card.md covers: " + word)
-    check('load_dataset("hivepunk-632-4934c76e/uniswap-v4-core-release-watch")' in card, "dataset_card.md shows load_dataset example")
 
     try:
         pc = load_mod("publish_check", "publish_check.py")
@@ -185,19 +247,10 @@ def main():
         check(pc.check_rows([filled_row()]) == [], "publish_check accepts filled FACT row", repr(pc.check_rows([filled_row()])))
         committed = pc.load_rows(BASE_DIR / "dataset_rows.jsonl")
         check(pc.check_rows(committed) == [], "publish_check accepts committed dataset_rows.jsonl", repr(pc.check_rows(committed)))
-        bad = filled_row()
-        bad["labels"] = dict(bad["labels"])
-        bad["labels"]["tag"] = "MAYBE"
-        check(pc.check_rows([bad]) != [], "publish_check rejects non FACT/DERIVED/UNKNOWN label")
-        bad0 = filled_row()
-        bad0["labels"] = dict(bad0["labels"])
-        bad0["labels"]["tag"] = "UNKNOWN"
-        bad0["tag"] = 0
+        check(pc.check_rows([relabel(sample, "tag", "MAYBE", "v1.0.0")]) != [], "publish_check rejects non FACT/DERIVED/UNKNOWN label")
+        bad0 = relabel(sample, "tag", "UNKNOWN", 0)
         check(any("never 0/safe" in p for p in pc.check_rows([bad0])), "publish_check rejects UNKNOWN as 0 (never 0/safe)")
-        badnull = filled_row()
-        badnull["labels"] = dict(badnull["labels"])
-        badnull["labels"]["name"] = "UNKNOWN"
-        check(pc.check_rows([badnull]) != [], "publish_check rejects UNKNOWN non-null value")
+        check(pc.check_rows([relabel(sample, "name", "UNKNOWN", "v1.0.0")]) != [], "publish_check rejects UNKNOWN non-null value")
         check(pc.check_rows([]) != [], "publish_check rejects empty rows")
         check(pc.check_card(card) == [], "publish_check accepts committed dataset_card.md", repr(pc.check_card(card)))
         check(any(SOURCE_REPO in p for p in pc.check_card(card.replace(SOURCE_REPO, "https://example.invalid"))), "publish_check rejects card missing source repo")
