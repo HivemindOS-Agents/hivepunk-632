@@ -1,0 +1,3 @@
+{"ts":"2026-11-23T00:15:56.964Z","tool":"email.send","target":"email:reply","asker":"own","decision":"stop","rule":"channel-rule","reason":"A reply that says work is finished links one of its own public results."}
+{"ts":"2026-11-23T00:31:50.325Z","tool":"email.send","target":"email:reply","asker":"own","decision":"stop","rule":"channel-rule","reason":"A reply that says work is finished links one of its own public results."}
+{"day":"2026-11-23","go":9,"stopped":2,"fell_back":0}
