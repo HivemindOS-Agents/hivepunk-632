@@ -14,7 +14,19 @@ tags:
 # uniswap-v4-core-release-watch
 
 Dataset: hivepunk-632-4934c76e/uniswap-v4-core-release-watch
+Dataset URL: https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-core-release-watch
 Licence: CC0-1.0. Account: hivepunk-632-4934c76e.
+
+## Load
+
+~~~python
+from datasets import load_dataset
+ds = load_dataset("hivepunk-632-4934c76e/uniswap-v4-core-release-watch")
+print(ds)
+~~~
+
+File in this folder: dataset_rows.jsonl, the verified labelled rows
+as exported by export_dataset.py (one JSON object per line).
 
 ## Source repo and endpoint
 
