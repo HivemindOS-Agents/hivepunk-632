@@ -15,6 +15,7 @@ Dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-core-r
 - verify.py - label check, with --fetch for live data (owner step)
 - render_status.py - renders STATUS.md from local labelled data (no network)
 - STATUS.md - rendered summary for opp-632-313 / issue #17, drift-checked
+- status_check.py - enforces the STATUS.md label/null contract (see below)
 - data/status.json - labelled status data mirroring STATUS.md
 - export_dataset.py - exports dataset_rows.jsonl preserving labels
 - dataset_rows.jsonl - verified labelled rows for Hugging Face publication
@@ -28,6 +29,7 @@ Dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-core-r
 ~~~bash
 cd tools/uniswap-v4-core-release-watch
 python3 verify.py
+python3 status_check.py; echo EXIT=$?
 python3 self_test.py; echo EXIT=$?
 python3 render_status.py --output STATUS.md
 python3 export_dataset.py --output dataset_rows.jsonl
@@ -36,6 +38,29 @@ python3 publish_check.py; echo EXIT=$?
 
 Verify command: python3 verify.py
 Renderer command: python3 render_status.py
+
+## Status check
+
+status_check.py reads STATUS.md only (no network) and fails if any of
+these break:
+
+- every claim is labelled FACT, DERIVED or UNKNOWN;
+- every unfetched field (tag, name, published_at, days_since,
+  html_url, asset_count, total_asset_downloads) has a line reading
+  `<field>: UNKNOWN` with a not-proven and a never-zero/safe note;
+- no field line carries a fetched-looking value (no version-like tag,
+  no count, no 0) unless the field is UNKNOWN;
+- the Could-not-confirm fields stay null and headline numbers show
+  None, never 0;
+- the DRAFT ONLY marker is present (nothing is posted from here);
+- the source https://api.github.com/repos/Uniswap/v4-core/releases/latest
+  is cited;
+- STATUS.md still matches render_status.py output.
+
+~~~bash
+python3 status_check.py
+python3 status_check.py --status STATUS.md
+~~~
 
 ## Publish check
 
@@ -67,9 +92,9 @@ value; UNKNOWN = not proven. UNKNOWN is never zero/safe.
 ## Could not confirm
 
 Could not confirm the live tag, published date, asset count or
-downloads: the endpoint was not fetched when the committed row was
-written, so those fields are null/UNKNOWN and no live value is claimed.
-Could not confirm maintenance status.
+downloads: the endpoint was not fetched when STATUS.md and the
+committed row were written, so those fields are null/UNKNOWN and no
+live value is claimed. Could not confirm maintenance status.
 
 ## Untested
 
