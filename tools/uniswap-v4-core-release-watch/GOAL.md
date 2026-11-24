@@ -1,44 +1,42 @@
 # GOAL - uniswap-v4-core-release-watch
 
-opportunity: opp-632-201
+opportunity: opp-632-313
+Parent-tracking issue: https://github.com/for-toolathlon/uniswap-v4-watch/issues/17 (issue #17)
+Source endpoint: https://api.github.com/repos/Uniswap/v4-core/releases/latest
+Source repo: https://github.com/Uniswap/v4-core
+Release page: https://github.com/Uniswap/v4-core/releases/latest
+Dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-core-release-watch
+Licence: CC0-1.0. Account: hivepunk-632-4934c76e.
 
 ## Goal
 
-Finish uniswap-v4-upgrade-watch in this folder only (never a new
-tools/uniswap-v4-upgrade-watch/ folder): keep a FACT/DERIVED/UNKNOWN-labeled
-STATUS.md summarizing the latest Uniswap v4-core release tag, published
-date and headline numbers from
-https://api.github.com/repos/Uniswap/v4-core/releases/latest
-with source URLs, mirroring data/status.json, and verified by the
-folder-alone self_test.py.
+Track the latest Uniswap/v4-core GitHub release for opp-632-313 and
+issue #17 with every claim labelled FACT/DERIVED/UNKNOWN. UNKNOWN
+fields are null, never 0/safe.
+
+## Steps in order
+
+1. Update this GOAL.md before work (done in this step).
+2. Build STATUS.md citing the source endpoint above, with Upgrade
+   summary, Headline numbers, Could not confirm, and a parent-tracking
+   draft for issue #17 marked DRAFT ONLY.
+3. Label claims FACT (carried by live response), DERIVED (computed
+   from a FACT value), UNKNOWN (not proven, null never 0).
+4. Extend standalone self_test.py to verify STATUS.md labels/nulls.
+5. Commit code and README; README notes untested live fetch.
 
 ## Status this step
 
-- GOAL.md updated first (this file).
-- STATUS.md added: every summary line labeled FACT, DERIVED or UNKNOWN
-  with a source URL. UNKNOWN is never presented as zero or safe.
-- data/status.json added mirroring STATUS.md fields and labels.
-- self_test.py extended to check STATUS.md labels/sources, the fields
-  in data/status.json, GOAL.md, and README literal phrases.
-- README.md and ARTIFACTS.md were not changed in this commit because
-  this step commits at most 4 files; they already exist in this folder
-  and the existing README phrases are checked by the extended test.
-  Updating them with the verbatim runner output is owner-left below.
+STATUS.md written with all fields UNKNOWN/null because the live
+endpoint was not fetched in this step. No live tag/date claimed.
 
 ## Could not confirm
 
-Could not confirm the live tag, published date or headline numbers from
-https://api.github.com/repos/Uniswap/v4-core/releases/latest in this
-step: no network fetch was run here. Those values stay null/UNKNOWN in
-STATUS.md and data/status.json and no live value is claimed.
+Could not confirm live tag, published date, asset count, downloads,
+or maintenance status. Untested: live fetch (verify.py --fetch).
 
 ## Owner left
 
-1. Run `python3 self_test.py` in this folder; read SELFTEST_OUTPUT.md
-   written by the HivemindOS runner for the verbatim output.
-2. Record that verbatim output in ARTIFACTS.md and update README.md
-   to list STATUS.md, data/status.json and GOAL.md.
-3. With network, run `python3 verify.py --fetch`, then
-   `python3 verify.py`, and only then quote tag/date as FACT.
-
-Licence: CC0-1.0. Account: hivepunk-632-4934c76e.
+Run python3 self_test.py; with network run python3 verify.py --fetch
+then python3 verify.py; then publish via the owner publish step.
+A person decides; an agent never merges or posts automatically.
