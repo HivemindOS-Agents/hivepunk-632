@@ -1,0 +1,255 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-24T08:58:17.503Z",
+  "subject": "Uniswap v4 hooks and hook-validation tools",
+  "subjectKind": "protocol",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "Hooks make v4 pools programmable and have attracted large-scale research and aggregator flow, but the same pages show trust infrastructure lags permissionless deployment, so validation quality remains the deciding unknown.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "fewwwww/awesome-uniswap-hooks has 0 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/fewwwww/awesome-uniswap-hooks/commits?per_page=50&since=2026-10-25T08:58:21.459Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether fewwwww/awesome-uniswap-hooks is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "Uniswap v4 hooks are specially designed contracts that run at distinct points throughout a pool action's lifecycle and serve as plugins to tailor how pools, swaps, fees, and LP positions interact.",
+      "check": "page",
+      "source": "https://github.com/fewwwww/awesome-uniswap-hooks",
+      "quote": "Uniswap v4 Hooks -- also known simply as hooks -- are specially designed contracts that run at distinct points throughout a pool action's lifecycle. They serve as plugins allowing developers to tailor how pools, swaps, fees, and LP positions interact.",
+      "sourceId": "src-1",
+      "quoteSha256": "d235590df4beb8273a18f13dd918bf7c49a85fd7d473250a098720f124b14214"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "A hook invokes custom logic at four critical phases: Initialize, Modify Position, Swap, and Donate, with before/after callbacks for each.",
+      "check": "page",
+      "source": "https://github.com/fewwwww/awesome-uniswap-hooks",
+      "quote": "🔄 Lifecycle During the course of a pool action's lifecycle, a hook invokes custom logic primarily at four critical phases: Initialize : Activated when the pool is deployed.",
+      "sourceId": "src-1",
+      "quoteSha256": "5c76512497106532fc79479b9fe5d6fb4a055877bb0514295b24af69c0048b15"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "Once a pool is initialized with a specific hook, it cannot be changed, removed, or swapped.",
+      "check": "page",
+      "source": "https://www.spark.money/research/ethereum-uniswap-v4-hooks-defi-payments",
+      "quote": "That hook is immutable: once a pool is initialized with a specific hook, it cannot be changed, removed, or swapped.",
+      "sourceId": "src-2",
+      "quoteSha256": "29987f1474ed23c5e361c3640f462c507141e93bf31a2b1d7137ce276c0a8eee"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "There is a Uniswap Hook Official Allowlist described as a per-chain allowlist of hook contract addresses that Uniswap routing API is permitted to route trades through.",
+      "check": "page",
+      "source": "https://github.com/fewwwww/awesome-uniswap-hooks",
+      "quote": "Uniswap Hook Official Allowlist : A per-chain allowlist of Uniswap V4 hook contract addresses that Uniswap routing API is permitted to route trades through.",
+      "sourceId": "src-1",
+      "quoteSha256": "883bd6015438bbc7c3650a521632084acca9d2c35ed2b87413c2202b80950e13"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "0x's research into more than 84,000 Uniswap v4 hooks exposed a challenge that production liquidity needs a trust layer.",
+      "check": "page",
+      "source": "https://blog.algebra.finance/uniswap-v4-hooks-modular-amm-security",
+      "context": true,
+      "quote": "0x’s research into more than 84,000 Uniswap v4 hooks exposed a major challenge for modular AMMs: extensibility is powerful, but production liquidity needs a trust layer.",
+      "sourceId": "src-6",
+      "quoteSha256": "1f9ea81dad5e7648857130f29b8b2f5d41516f855ff2cb619d2a961fe5051356"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "A single misconfigured or malicious Hook can lead to significant financial losses, denial-of-service conditions, or manipulation of the pool.",
+      "check": "page",
+      "source": "https://hacken.io/discover/auditing-uniswap-v4-hooks/",
+      "quote": "A single misconfigured or malicious Hook can lead to significant financial losses, denial-of-service conditions, or manipulation of the pool.",
+      "sourceId": "src-4",
+      "quoteSha256": "7f6df90abee24f00ddc4c552a84ab3be9dd0041a1e1ad2e23a829f6be1ef4935"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Anyone can create a pool, the creator chooses which Hook if any to use, and once a pool is created you cannot change the Hook.",
+      "check": "page",
+      "source": "https://hacken.io/discover/auditing-uniswap-v4-hooks/",
+      "quote": "Crucially, once a pool is created, you cannot change the Hook.",
+      "sourceId": "src-4",
+      "quoteSha256": "ff26ecb97844b4a55ad3f8a91e71f910075117d86203c55a2ee6018ff9103cf8"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "Uniswap v4 was reported as $1.197B TVL, $131.4M in 30d fees, and $42.34B in 30d volume.",
+      "check": "page",
+      "source": "https://blog.algebra.finance/uniswap-v4-hooks-modular-amm-security",
+      "context": true,
+      "quote": "Uniswap v4 : $1.197B TVL, $131.4M in 30d fees, $42.34B in 30d volume — annualized fees/TVL of 131.7% , ~3.2x its own non-hooked predecessor Uniswap V3 (41.2%) .",
+      "sourceId": "src-6",
+      "quoteSha256": "6d01b3f24b186d59e34edcf5c0f669fbfa2d9c9857eb045d9cb032004ed908d0"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "fewwwww/awesome-uniswap-hooks has 0 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/fewwwww/awesome-uniswap-hooks/commits?per_page=50&since=2026-10-25T08:58:21.459Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c10",
+      "label": "DERIVED",
+      "text": "Because hooks are immutable at pool creation and creators choose them permissionlessly, every pool permanently inherits its chosen hook's risk profile.",
+      "check": "page",
+      "inputs": [
+        "c3",
+        "c7"
+      ],
+      "math": "c3 (immutable/no change) + c7 (creator chooses hook, many pools per pair) => permanent per-pool hook risk"
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "Whether a specific named hook-validation tool reliably flags malicious or misconfigured hooks before liquidity is placed.",
+      "check": "page",
+      "missing": "The exact validation tool name, its checks, false-positive/negative rates and audit coverage from a primary source.",
+      "context": true
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether fewwwww/awesome-uniswap-hooks is still shipping",
+      "check": "page",
+      "missing": "None of its commits in the last 30 days is real work."
+    }
+  ],
+  "counts": {
+    "fact": 10,
+    "derived": 1,
+    "unknown": 3
+  },
+  "risks": [
+    "A single misconfigured or malicious hook can lead to significant financial losses, denial-of-service conditions, or manipulation of the pool.",
+    "Permissionless hooks mean anyone can create a pool and choose any hook, with many pools for the same pair using different hooks.",
+    "Hook reentrancy traps, asymmetric gas costs and pool-specific simulation break universal V2/V3 arb bots.",
+    "Custom curves and dynamic fees can be mispriced by generic bots assuming static tiers.",
+    "Curated-list activity may be stale, limiting its use as a live validator."
+  ],
+  "unknowns": [
+    "Whether fewwwww/awesome-uniswap-hooks is still shipping: None of its commits in the last 30 days is real work.",
+    "Whether a specific named hook-validation tool reliably flags malicious or misconfigured hooks before liquidity is placed.: The exact validation tool name, its checks, false-positive/negative rates and audit coverage from a primary source.",
+    "Whether fewwwww/awesome-uniswap-hooks is still shipping: None of its commits in the last 30 days is real work."
+  ],
+  "wouldChangeMind": [
+    "Primary evidence of the allowlist's criteria, coverage and update process for hook addresses.",
+    "A sourced breakdown of the 0x 84,000+ hook analysis showing how many hooks were malicious, audited or allowlisted.",
+    "Recent real-work commits or a successor maintained registry for awesome-uniswap-hooks."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "GitHub - fewwwww/awesome-uniswap-hooks: A curated list of awesome Uniswap v4 hooks resources. · GitHub",
+      "url": "https://github.com/fewwwww/awesome-uniswap-hooks",
+      "finalUrl": "https://github.com/fewwwww/awesome-uniswap-hooks",
+      "status": 200,
+      "fetchedAt": "2026-11-24T08:58:21.457Z",
+      "extractor": "page-text-v1",
+      "sha256": "4d121a41b1b0bbdfa81cf1e15b242d415448a5ae703ac82d915487d14036f9cc",
+      "bytes": 361233,
+      "quote": "Uniswap v4 Hooks -- also known simply as hooks -- are specially designed contracts that run at distinct points throughout a pool action's lifecycle. They serve as plugins allowing developers to tailor how pools, swaps, fees, and LP positions interact.",
+      "quoteSha256": "d235590df4beb8273a18f13dd918bf7c49a85fd7d473250a098720f124b14214"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Uniswap v4 Hooks: How Customizable Liquidity Pools Reshape DeFi Payment Flows | Spark",
+      "url": "https://www.spark.money/research/ethereum-uniswap-v4-hooks-defi-payments",
+      "finalUrl": "https://www.spark.money/research/ethereum-uniswap-v4-hooks-defi-payments",
+      "status": 200,
+      "fetchedAt": "2026-11-24T08:58:21.083Z",
+      "extractor": "page-text-v1",
+      "sha256": "0ee5fc8ddc5bf85737d1106ecfd3950f71eae3921657adc486589dd7f87dc7b1",
+      "bytes": 82444,
+      "quote": "That hook is immutable: once a pool is initialized with a specific hook, it cannot be changed, removed, or swapped.",
+      "quoteSha256": "29987f1474ed23c5e361c3640f462c507141e93bf31a2b1d7137ce276c0a8eee"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "Auditing Uniswap V4 Hooks: Risks, Exploits, and Secure Implementation - Hacken",
+      "url": "https://hacken.io/discover/auditing-uniswap-v4-hooks/",
+      "finalUrl": "https://hacken.io/discover/auditing-uniswap-v4-hooks/",
+      "status": 200,
+      "fetchedAt": "2026-11-24T08:58:21.151Z",
+      "extractor": "page-text-v1",
+      "sha256": "35a5debc0970c9b46ecc6b850b88af4458fe206cf30db10289751e3ea3187cf2",
+      "bytes": 401147,
+      "quote": "A single misconfigured or malicious Hook can lead to significant financial losses, denial-of-service conditions, or manipulation of the pool.",
+      "quoteSha256": "7f6df90abee24f00ddc4c552a84ab3be9dd0041a1e1ad2e23a829f6be1ef4935"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "Uniswap V4 Explained: Hooks, Adoption & UNIfication",
+      "url": "https://www.datawallet.com/crypto/uniswap-v4-explained",
+      "finalUrl": "https://www.datawallet.com/crypto/uniswap-v4-explained",
+      "status": 200,
+      "fetchedAt": "2026-11-24T08:58:20.607Z",
+      "extractor": "page-text-v1",
+      "sha256": "3baa88448691b4d3f107bca29d57a09b3120e5d93207d8e158b62e97cd2a447f",
+      "bytes": 162089,
+      "quote": "Fact checked by Oluwapelumi Adejumo Data accuracy verified Sources cross-referenced Platform details confirmed View our fact-checking process We may earn a commission Affiliate Disclosure How Datawallet is funded Some links on this page are affiliate links.",
+      "quoteSha256": "75241331aac7d18e126a59fa9f22e847f5bf6ed5195e661139eb692acd73ef7f"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "0x Uniswap v4 Hook Research: What It Means for Modular AMMs",
+      "url": "https://blog.algebra.finance/uniswap-v4-hooks-modular-amm-security",
+      "finalUrl": "https://blog.algebra.finance/uniswap-v4-hooks-modular-amm-security",
+      "status": 200,
+      "fetchedAt": "2026-11-24T08:58:21.459Z",
+      "extractor": "page-text-v1",
+      "sha256": "7bc68c00e4bb5fe8a6b00c7067e6235e310b925415edbf351a108147ce5cb8f7",
+      "bytes": 88459,
+      "quote": "0x’s research into more than 84,000 Uniswap v4 hooks exposed a major challenge for modular AMMs: extensibility is powerful, but production liquidity needs a trust layer.",
+      "quoteSha256": "1f9ea81dad5e7648857130f29b8b2f5d41516f855ff2cb619d2a961fe5051356"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of fewwwww/awesome-uniswap-hooks",
+      "url": "https://api.github.com/repos/fewwwww/awesome-uniswap-hooks/commits?per_page=50&since=2026-10-25T08:58:21.459Z",
+      "fetchedAt": "2026-11-24T08:58:17.503Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "f3292b226f5a62122d47ce7aca9cc32c7680d2181a2c3b352bb08d1b4639f787"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-24-uniswap-v4-hooks-and-hook-validation-tools.md",
+  "decidedBy": "bee"
+}
