@@ -1,0 +1,116 @@
+{
+  "step": "research-20781:b26d7421-cb40-483b-bbc4-8f392121ca26:619:1795521874852:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No trace shows the sourced note or JSON receipt being written to the agent's repository; only public GETs are recorded, plus a claimed link in the output.",
+  "description": "The trace shows eight GET requests to public sources, including a 403 challenge and a GitHub 429, but no request creating or updating the research note or receipt in the agent's repo. The output merely asserts the work was done with a link that the trace does not substantiate.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": true,
+  "gotchas": [
+    {
+      "id": "gae2bec78",
+      "host": "blocksecteam.medium.com",
+      "observed": "GET /:id",
+      "result": "403: Just a moment... challenge page",
+      "evidence": "t1"
+    },
+    {
+      "id": "g5b7b5efa",
+      "host": "github.com",
+      "observed": "GET /Uniswap/v4-core",
+      "result": "429: Rate limit - GitHub Access has been restricted",
+      "evidence": "t6"
+    }
+  ],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [
+    "blocksecteam.medium.com",
+    "github.com"
+  ],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "blocksecteam.medium.com",
+      "path": "/:id",
+      "status": 403,
+      "error": "Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"",
+      "ms": 15,
+      "at": "2026-11-24T12:05:18.857Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "dev.to",
+      "path": "/pandasecurity/:id",
+      "status": 200,
+      "error": null,
+      "ms": 21,
+      "at": "2026-11-24T12:05:18.857Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "cloudlogic.dev",
+      "path": "/2026/06/23/:id/",
+      "status": 200,
+      "error": null,
+      "ms": 156,
+      "at": "2026-11-24T12:05:18.857Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "smartcontractauditor.ai",
+      "path": "/blog/:id",
+      "status": 200,
+      "error": null,
+      "ms": 172,
+      "at": "2026-11-24T12:05:18.857Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "developers.uniswap.org",
+      "path": "/docs/protocols/v4/concepts/poolmanager",
+      "status": 200,
+      "error": null,
+      "ms": 289,
+      "at": "2026-11-24T12:05:18.857Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/Uniswap/v4-core",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 55,
+      "at": "2026-11-24T12:05:19.149Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "beosin.com",
+      "path": "/resources/:id",
+      "status": 200,
+      "error": null,
+      "ms": 1176,
+      "at": "2026-11-24T12:05:18.857Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "paragraph.com",
+      "path": "/@0xinflux/the-400-line-poolmanager",
+      "status": 200,
+      "error": null,
+      "ms": 1248,
+      "at": "2026-11-24T12:05:18.857Z"
+    }
+  ],
+  "at": "2026-11-24T12:05:45.738Z"
+}
