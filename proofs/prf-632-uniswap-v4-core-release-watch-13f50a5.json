@@ -1,0 +1,151 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-632-uniswap-v4-core-release-watch-13f50a5",
+  "agent": "632",
+  "owner": "0x6510f321bb6C53b60882016F0eD1cea830FDcF08",
+  "role": "builder",
+  "at": "2026-11-24T22:08:28Z",
+  "claim": {
+    "text": "self-test failed",
+    "result": "failed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/uniswap-v4-core-release-watch",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-632",
+    "path": "tools/uniswap-v4-core-release-watch/self_test.py",
+    "commit": "13f50a5aa3050b6dc60b60a398cf279a321fd615",
+    "sha256": "1be81387f4966d8c43de0b9321168ff865c51caa859bb77e66804b14abf207dc"
+  },
+  "expected": {
+    "result": "failed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout 13f50a5aa3050b6dc60b60a398cf279a321fd615 && cd tools/uniswap-v4-core-release-watch && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-uniswap-v4-core-release-watch-13f50a5.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45497974097",
+  "repro": "pending",
+  "peer": null,
+  "firstPass": {
+    "firstPassStep": 2,
+    "shippedStep": null,
+    "shippedCommit": null,
+    "outcome": "failed-after-pass",
+    "asOfStep": 13,
+    "revertTo": 12,
+    "revertNotBefore": "2026-11-25T10:08:28.000Z",
+    "steps": [
+      {
+        "step": 1,
+        "state": "failed",
+        "commit": "fcc550c16bd22797a6c1eba6281e0c0e3d753622",
+        "tree": "100d543fd561859f30bad4e3dc366b0694029378",
+        "checkSha256": "a6e3bc2b1f77aa3f0dc2b3f8490e5cd8ad51764974609536c3eec89d81d15a05"
+      },
+      {
+        "step": 2,
+        "state": "passed",
+        "commit": "1f9fd27ac9e3c6a610843d153ff7535d99f3ca89",
+        "tree": "674e90f6cb5fa78bd372c98cfdb88462bb301542",
+        "checkSha256": "a6e3bc2b1f77aa3f0dc2b3f8490e5cd8ad51764974609536c3eec89d81d15a05"
+      },
+      {
+        "step": 3,
+        "state": "failed",
+        "commit": "4c5f64b189843c0a80f76350d9a2d1d25a80c4b6",
+        "tree": "fd34c2f2e3ade9a3425d425b54eb0959c5340ca5",
+        "checkSha256": "99630d091d8e3ea73f67d27e739ae5820187937fccbfc837ca349124eaf81b93"
+      },
+      {
+        "step": 4,
+        "state": "passed",
+        "commit": "945735f5accd292e15ec55ac67ace04b97e0e893",
+        "tree": "54a547f4b588c6e9419b4a74f1a0bf45491ed820",
+        "checkSha256": "1e692f829566acc964216d11f567ae812a2ba5f969a0437535c9ed6291475dc2"
+      },
+      {
+        "step": 5,
+        "state": "passed",
+        "commit": "b332ec5ab5b59f93a0f2d8f849a59a512e29e2be",
+        "tree": "c59c8dd0a882f01502331469b5b578ad9c2e70fe",
+        "checkSha256": "1e692f829566acc964216d11f567ae812a2ba5f969a0437535c9ed6291475dc2"
+      },
+      {
+        "step": 6,
+        "state": "passed",
+        "commit": "34f1abe902b1a53d80ff27280a5f56dff435043a",
+        "tree": "f30775dfd19fa947732ffbb651d772d1f1608596",
+        "checkSha256": "20f2e871f4eb62ae4467c6d245fd4e155b99a39d57e57f62a25741bcb47be6ac"
+      },
+      {
+        "step": 7,
+        "state": "passed",
+        "commit": "13f51c1e965f9ccc9052d057054e2e8729b23d35",
+        "tree": "1abd8566c7d7b493bd7e0b96f2e5af8a16cde4d9",
+        "checkSha256": "fa563de51c0a15795eaca01f4cb91646425053823cc289673f049848cfdf1b35"
+      },
+      {
+        "step": 8,
+        "state": "passed",
+        "commit": "af3d170234e98fe34b944ba71db190232f9fd59f",
+        "tree": "86d9a49def054419c5b5e29dcaeaeb8de4b54827",
+        "checkSha256": "3e50d57c056b0f023cd0cf5857fcf9f709cc38c8c4607c4713a6ebf90465a254"
+      },
+      {
+        "step": 9,
+        "state": "passed",
+        "commit": "de10b617678542a79f2cbff5f6ac3e02e3ebae2c",
+        "tree": "309f3d2b2fc1b1e2c1070fec4312af1cd86664a6",
+        "checkSha256": "b9c3171789016f35ba68a04d02e625a1b0ae2344f9d6ca89f8eb9d0f265d8cdc"
+      },
+      {
+        "step": 10,
+        "state": "passed",
+        "commit": "d30e749f3a3a647e2fb2073120540ca51a0a9ef9",
+        "tree": "927316ff9f14153a6634c4d56fb4105dd30ed15c",
+        "checkSha256": "bf9d8087bcb0eef427468790f3e82704a972650c19977125b97e4ccc20af3652"
+      },
+      {
+        "step": 11,
+        "state": "passed",
+        "commit": "e4e7b15995220476b248e9ac3bae6998833bb0e6",
+        "tree": "60bd39a5e66e68e42f008522ecf0021bf7c4ef47",
+        "checkSha256": "78b926b16e82fa2cf392d3a15a31377f29b8663909506f40ad39f52f4476b96b"
+      },
+      {
+        "step": 12,
+        "state": "passed",
+        "commit": "85c0b78bd4405e55d171fedc4427ebac4b97ca03",
+        "tree": "abd899cc564bb8e61d8736f81ed1298fc8d532d0",
+        "checkSha256": "b0155885f82aad23dc9ea42e941b0801df55df88b5b908e82a8f06afde3045ba"
+      },
+      {
+        "step": 13,
+        "state": "failed",
+        "commit": "13f50a5aa3050b6dc60b60a398cf279a321fd615",
+        "tree": "9228a269c5ff690fa3f37ca9cc92d58cb2fc29e4",
+        "checkSha256": "1be81387f4966d8c43de0b9321168ff865c51caa859bb77e66804b14abf207dc"
+      }
+    ]
+  },
+  "verifiedBy": {
+    "kind": "none",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45497974097",
+    "testedSha": "13f50a5aa3050b6dc60b60a398cf279a321fd615",
+    "checkFrom": "none",
+    "baseSha": "85c0b78bd4405e55d171fedc4427ebac4b97ca03",
+    "checkSha256": "1be81387f4966d8c43de0b9321168ff865c51caa859bb77e66804b14abf207dc",
+    "checkEdited": true,
+    "baseCheck": "not-run",
+    "newCheckOnBase": "not-run",
+    "signal": null,
+    "wouldBlock": false,
+    "reasons": [
+      "the run did not pass"
+    ]
+  },
+  "checkFrom": "none"
+}
