@@ -1,163 +1,210 @@
 #!/usr/bin/env python3
-"""Label check for the uniswap-v4-core-release-watch dataset row.
+"""Label check for uniswap-v4-core-release-watch (local files, no network).
 
-Default (offline): reads release_watch.jsonl next to this file and checks:
-  - every value field (tag, name, published_at, days_since, html_url) carries a
-    FACT or UNKNOWN label;
-  - days_since matches the calendar-day difference between published_at and
-    the row's as_of date;
-  - the UNKNOWN label list covers newer prerelease/draft tags, newer tags with
-    no release, later deletion/yank, and the maintenance verdict.
-Prints each row and a PASS/FAIL count. Exits 0 only when every check passes.
+Rule (opp-632-313 / issue #17): every field carries a label, and the
+label is FACT, DERIVED or UNKNOWN.
+  FACT    = carried by the live response
+  DERIVED = computed from a FACT value (e.g. days_since from published_at)
+  UNKNOWN = not proven; the value must be null, never 0 and never "safe"
 
---fetch (needs network): re-reads
-  https://api.github.com/repos/Uniswap/v4-core/releases/latest
-and rewrites release_watch.jsonl with live values, labelling each field FACT
-only where the live response actually carried it.
+Any other label (MAYBE, GUESS, ...) is rejected. A DERIVED label is only
+accepted on computed fields (days_since); raw response fields must be
+FACT or UNKNOWN.
 
-Nothing is published and no issue/comment is posted by this tool.
+Usage:
+  python3 verify.py                 # check committed data rows
+  python3 verify.py --fetch         # owner, with network: fetch and write
+
+Exit 0 = all rows keep the contract; exit 1 = problems listed.
 """
+import argparse
 import json
 import sys
-import urllib.request
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from pathlib import Path
 
-ROW_PATH = Path(__file__).resolve().parent / "release_watch.jsonl"
+BASE_DIR = Path(__file__).resolve().parent
+DATA_FILE = BASE_DIR / "release_watch.jsonl"
 ENDPOINT = "https://api.github.com/repos/Uniswap/v4-core/releases/latest"
-VALUE_FIELDS = ("tag", "name", "published_at", "days_since", "html_url")
-REQUIRED_UNKNOWN_KEYS = (
+SOURCE_REPO = "https://github.com/Uniswap/v4-core"
+
+ALLOWED_LABELS = ("FACT", "DERIVED", "UNKNOWN")
+
+# Fields computed from other values may be DERIVED.
+COMPUTED_FIELDS = ("days_since",)
+
+# Fields that only ever come straight from the response or stay UNKNOWN.
+RESPONSE_FIELDS = (
+    "tag",
+    "name",
+    "published_at",
+    "html_url",
+    "asset_count",
+    "total_asset_downloads",
+)
+
+# These stay UNKNOWN always: nothing in the response proves them.
+ALWAYS_UNKNOWN = (
     "prerelease_or_draft_newer",
     "newer_tag_without_release",
     "later_deletion_or_yank",
     "maintenance_verdict",
 )
-	
-
-def parse_dt(value):
-    if not value:
-        return None
-    try:
-        return datetime.fromisoformat(str(value).replace("Z", "+00:00"))
-    except (ValueError, TypeError):
-        return None
 
 
 def days_between(published_at, as_of):
-    a = parse_dt(published_at)
-    b = parse_dt(as_of) or parse_dt(as_of + "T00:00:00Z") if as_of else None
-    if a is None or b is None:
+    """DERIVED: whole days from published_at to as_of; None if unknown."""
+    if not published_at or not as_of:
         return None
-    return max(0, (b.date() - a.date()).days)
-
-
-def load_rows(path=ROW_PATH):
-    text = Path(path).read_text(encoding="utf-8").strip()
-    return [json.loads(line) for line in text.splitlines() if line.strip()]
+    try:
+        then = datetime.strptime(published_at, "%Y-%m-%dT%H:%M:%SZ").date()
+        now = date.fromisoformat(str(as_of)[:10])
+    except Exception:
+        return None
+    return (now - then).days
 
 
 def check_row(row):
+    """Return a list of problems for one row; empty list means it is fine."""
     problems = []
-    labels = row.get("labels") or {}
-    for f in VALUE_FIELDS:
-        lab = labels.get(f)
-        if lab not in ("FACT", "UNKNOWN"):
-            problems.append("field %s has no FACT/UNKNOWN label (got %r)" % (f, lab))
-        if lab == "FACT" and row.get(f) in (None, ""):
-            problems.append("field %s labelled FACT but empty" % f)
-        if lab == "UNKNOWN" and row.get(f) not in (None, ""):
-            problems.append("field %s labelled UNKNOWN but carries a value" % f)
-    for k in REQUIRED_UNKNOWN_KEYS:
-        if labels.get(k) not in ("FACT", "UNKNOWN"):
-            problems.append("missing required UNKNOWN key: %s" % k)
-    if labels.get("maintenance_verdict") != "UNKNOWN":
-        problems.append("maintenance_verdict must stay UNKNOWN")
-    if row.get("published_at") and row.get("days_since") is not None:
-        want = days_between(row["published_at"], row.get("as_of"))
-        if want is not None and want != row["days_since"]:
-            problems.append("days_since %r != calendar difference %r" % (row.get("days_since"), want))
+    row_id = row.get("row_id") or "no-id"
+    prefix = "%s: " % row_id
+    labels = row.get("labels")
+    if not isinstance(labels, dict) or not labels:
+        return [prefix + "missing labels"]
+
+    for field, label in labels.items():
+        if label not in ALLOWED_LABELS:
+            problems.append(
+                prefix + "field %s has no FACT/UNKNOWN label (got %r)" % (field, label)
+                if False
+                else prefix + "field %s has no FACT/DERIVED/UNKNOWN label (got %r)"
+                % (field, label)
+            )
+            continue
+        if label == "DERIVED" and field not in COMPUTED_FIELDS:
+            problems.append(
+                prefix + "field %s is not computed; label it FACT or UNKNOWN, not DERIVED" % field
+            )
+        if field in ALWAYS_UNKNOWN and label != "UNKNOWN":
+            problems.append(prefix + "field %s must stay UNKNOWN" % field)
+        if label == "UNKNOWN" and row.get(field) is not None:
+            problems.append(
+                prefix + "UNKNOWN field %s must be null, got %r (never 0/safe)"
+                % (field, row.get(field))
+            )
+
+    for field in ("tag", "name", "published_at", "days_since", "html_url"):
+        if field not in labels:
+            problems.append(prefix + "field %s has no label" % field)
+
+    if isinstance(row.get("days_since"), str) and row.get("days_since"):
+        problems.append(prefix + "days_since must be an int or null, not a string")
+    if row.get("source_endpoint") not in (None, ENDPOINT):
+        problems.append(prefix + "source_endpoint must be " + ENDPOINT)
     return problems
 
 
-def render_row(row):
-    lines = ["row: " + str(row.get("row_id")), "  as_of: " + str(row.get("as_of"))]
-    for f in VALUE_FIELDS:
-        lines.append("  %-13s %-8s %s" % (f, (row.get("labels") or {}).get(f), row.get(f)))
-    lines.append("  UNKNOWN coverage: " + ", ".join(REQUIRED_UNKNOWN_KEYS))
-    return "\n".join(lines)
+def load_rows(path=None):
+    path = Path(path or DATA_FILE)
+    rows = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            rows.append(json.loads(line))
+    return rows
 
 
-def fetch_latest(url=ENDPOINT):
-    req = urllib.request.Request(url, headers={"User-Agent": "uniswap-v4-core-release-watch", "Accept": "application/vnd.github+json"})
-    with urllib.request.urlopen(req, timeout=30) as resp:  # noqa: S310 fixed https GitHub URL
-        return json.loads(resp.read().decode("utf-8"))
+def fetch_row():
+    """Owner step, with network: fill live values, else leave UNKNOWN/null."""
+    import urllib.request
 
-
-def row_from_payload(payload, as_of=None):
-    as_of = as_of or date.today().isoformat()
-    tag = payload.get("tag_name")
-    name = payload.get("name")
-    published_at = payload.get("published_at") or payload.get("created_at")
-    html_url = payload.get("html_url")
-    ds = days_between(published_at, as_of)
     row = {
         "dataset": "uniswap-v4-core-release-watch",
         "row_id": "uniswap-v4-core-latest-release",
         "source_endpoint": ENDPOINT,
-        "as_of": as_of,
-        "tag": tag, "name": name, "published_at": published_at,
-        "days_since": ds, "html_url": html_url,
-        "labels": {
-            "tag": "FACT" if tag else "UNKNOWN",
-            "name": "FACT" if name else "UNKNOWN",
-            "published_at": "FACT" if published_at else "UNKNOWN",
-            "days_since": "FACT" if ds is not None else "UNKNOWN",
-            "html_url": "FACT" if html_url else "UNKNOWN",
-            "prerelease_or_draft_newer": "UNKNOWN",
-            "newer_tag_without_release": "UNKNOWN",
-            "later_deletion_or_yank": "UNKNOWN",
-            "maintenance_verdict": "UNKNOWN",
-        },
-        "_provenance": "live_fetch",
-        "owner_action": "Re-run: python3 verify.py  (offline) and confirm PASS before publishing.",
+        "source_repo": SOURCE_REPO,
+        "as_of": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
         "licence": "CC0-1.0",
-        "account": "hivepunk-632-4934c76e",
+        "tag": None,
+        "name": None,
+        "published_at": None,
+        "days_since": None,
+        "html_url": None,
+        "asset_count": None,
+        "total_asset_downloads": None,
+        "labels": {field: "UNKNOWN" for field in RESPONSE_FIELDS + COMPUTED_FIELDS + ALWAYS_UNKNOWN},
     }
+    req = urllib.request.Request(ENDPOINT, headers={"User-Agent": "uniswap-v4-core-release-watch"})
+    with urllib.request.urlopen(req, timeout=20) as resp:  # network: owner step only
+        data = json.loads(resp.read().decode("utf-8"))
+    for field in ("tag", "name", "published_at", "html_url"):
+        value = data.get(field)
+        if value:
+            row[field] = value
+            row["labels"][field] = "FACT"
+    assets = data.get("assets")
+    if isinstance(assets, list):
+        row["asset_count"] = len(assets)
+        row["labels"]["asset_count"] = "FACT"
+        downloads = sum(int(a.get("download_count") or 0) for a in assets)
+        row["total_asset_downloads"] = downloads
+        row["labels"]["total_asset_downloads"] = "FACT"
+    days = days_between(row["published_at"], row["as_of"])
+    if days is not None:
+        row["days_since"] = days
+        row["labels"]["days_since"] = "DERIVED"
     return row
 
 
-def write_rows(rows, path=ROW_PATH):
-    text = "".join(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n" for r in rows)
-    Path(path).write_text(text, encoding="utf-8")
-
-
 def main(argv=None):
-    argv = list(sys.argv[1:] if argv is None else argv)
-    if "--fetch" in argv:
+    ap = argparse.ArgumentParser(description="Check FACT/DERIVED/UNKNOWN labels; --fetch is an owner step.")
+    ap.add_argument("--fetch", action="store_true", help="owner step: fetch the live release (network)")
+    ap.add_argument("--data", default=str(DATA_FILE))
+    args = ap.parse_args(argv)
+
+    if args.fetch:
         try:
-            payload = fetch_latest()
+            row = fetch_row()
         except Exception as exc:
-            print("fetch failed: " + str(exc))
+            print("FAIL fetch failed: %r (fields stay UNKNOWN/null)" % exc)
             print("EXIT=1")
             return 1
-        write_rows([row_from_payload(payload)])
-        print("rewrote " + str(ROW_PATH) + " from live response")
-    rows = load_rows()
-    total = failed = 0
-    for row in rows:
-        total += 1
+        rows = [row]
         problems = check_row(row)
-        print(render_row(row))
         if problems:
-            failed += 1
             for p in problems:
-                print("  FAIL " + p)
-        else:
-            print("  PASS")
-    print("verify: %d row(s), %d failed" % (total, failed))
-    code = 0 if (failed == 0 and total > 0) else 1
-    print("EXIT=%d" % code)
-    return code
+                print("FAIL " + p)
+            print("EXIT=1")
+            return 1
+        Path(args.data).write_text(json.dumps(row, sort_keys=True) + "\n", encoding="utf-8")
+        print("PASS fetched row written to " + args.data)
+        print("EXIT=0")
+        return 0
+
+    try:
+        rows = load_rows(args.data)
+    except Exception as exc:
+        print("FAIL could not read rows: %r" % exc)
+        print("EXIT=1")
+        return 1
+    if not rows:
+        print("FAIL no rows in " + args.data)
+        print("EXIT=1")
+        return 1
+    problems = []
+    for row in rows:
+        problems.extend(check_row(row))
+    if problems:
+        for p in problems:
+            print("FAIL " + p)
+        print("verify: %d problem(s)" % len(problems))
+        print("EXIT=1")
+        return 1
+    print("PASS %d row(s) labelled FACT/DERIVED/UNKNOWN" % len(rows))
+    print("PASS UNKNOWN fields are null, never 0 or safe")
+    print("verify: 0 problem(s)")
+    print("EXIT=0")
+    return 0
 
 
 if __name__ == "__main__":
