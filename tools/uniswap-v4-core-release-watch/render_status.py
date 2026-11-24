@@ -2,8 +2,10 @@
 """Upgrade-watch status renderer for Uniswap v4-core release watch.
 Reads ONLY local labelled data files (data/status.json, release_watch.jsonl),
 no network, no code against any external system. Renders a STATUS/upgrade
-summary (tag, published date, headline numbers) and a parent-tracking draft
-for issue #17 in for-toolathlon/uniswap-v4-watch.
+summary (tag, published date, headline numbers), each claim labelled
+FACT/DERIVED/UNKNOWN with a source URL, and a parent-tracking draft
+for issue #17 in for-toolathlon/uniswap-v4-watch (opp-632-313).
+UNKNOWN is null, never 0/safe.
 Untested with live data: committed rows are UNKNOWN/null until a live
 fetch (verify.py --fetch, owner step) fills them.
 Usage:
@@ -38,11 +40,11 @@ def load_row(path=None):
     return json.loads(lines[0])
 
 
-def fmt(label, value):
+def fmt(label, value, field="value"):
     label = (label or "UNKNOWN").upper()
     if value is None:
-        return "UNKNOWN (not proven; never read as zero/safe)"
-    return "%s: %s" % (label, value)
+        return "%s: UNKNOWN (not proven; never read as zero/safe) [source: %s]" % (field, SOURCE_ENDPOINT)
+    return "%s: %s: %s [source: %s]" % (field, label, value, SOURCE_ENDPOINT)
 
 
 def render_summary(status, row=None):
@@ -62,15 +64,17 @@ def render_summary(status, row=None):
     lines.append("from a FACT value; UNKNOWN = not proven, never zero/safe.")
     lines.append("")
     lines.append("## Upgrade summary")
-    lines.append("- %s" % fmt(labels.get("tag", "UNKNOWN"), val("tag")))
-    lines.append("- %s" % fmt(labels.get("name", "UNKNOWN"), val("name")))
-    lines.append("- %s" % fmt(labels.get("published_at", "UNKNOWN"), val("published_at")))
-    lines.append("- %s" % fmt(labels.get("days_since", "UNKNOWN"), val("days_since")))
-    lines.append("- %s" % fmt(labels.get("html_url", "UNKNOWN"), val("html_url")))
+    for f in ("tag", "name", "published_at", "days_since", "html_url"):
+        lines.append("- %s" % fmt(labels.get(f, "UNKNOWN"), val(f), f))
     lines.append("")
     lines.append("## Headline numbers")
-    lines.append("- %s" % fmt(labels.get("asset_count", "UNKNOWN"), headline.get("asset_count")))
-    lines.append("- %s" % fmt(labels.get("total_asset_downloads", "UNKNOWN"), headline.get("total_asset_downloads")))
+    for f in ("asset_count", "total_asset_downloads"):
+        lines.append("- %s" % fmt(labels.get(f, "UNKNOWN"), headline.get(f), f))
+    lines.append("")
+    lines.append("## Could not confirm")
+    lines.append("- Latest tag: UNKNOWN (not fetched; null, never 0/safe) [source: %s]" % SOURCE_ENDPOINT)
+    lines.append("- Published date: UNKNOWN (not fetched; null, never 0/safe) [source: %s]" % RELEASE_PAGE)
+    lines.append("- Headline numbers: UNKNOWN (not fetched; null, never 0/safe) [source: %s]" % SOURCE_ENDPOINT)
     lines.append("")
     lines.append("## Parent-tracking draft for issue #17")
     lines.extend(render_draft(status, row))
@@ -93,19 +97,17 @@ def render_draft(status, row=None):
         "Latest Uniswap/v4-core release tag: %s [%s]" % (tag_s, labels.get("tag", "UNKNOWN")),
         "Published date: %s [%s]" % (pub_s, labels.get("published_at", "UNKNOWN")),
         "Source: %s" % SOURCE_ENDPOINT,
-        "Headline numbers: asset_count=%s, total_asset_downloads=%s (both UNKNOWN until fetched; never read as zero)." % (
-            (status.get("headline_numbers") or {}).get("asset_count"),
-            (status.get("headline_numbers") or {}).get("total_asset_downloads")),
+        "Headline numbers: asset_count=%s, total_asset_downloads=%s (both UNKNOWN until fetched; never read as zero)." % ((status.get("headline_numbers") or {}).get("asset_count"), (status.get("headline_numbers") or {}).get("total_asset_downloads")),
         "Status: DRAFT ONLY - do not post automatically; a person decides.",
     ]
 
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description="Render v4-core upgrade-watch STATUS from local labelled data (no network).")
-    ap.add_argument("--status", default=None, help="path to data/status.json")
-    ap.add_argument("--row", default=None, help="path to release_watch.jsonl")
-    ap.add_argument("--output", default=None, help="write rendered markdown to this file instead of stdout")
-    ap.add_argument("--draft-only", action="store_true", help="print only the issue #17 draft lines")
+    ap.add_argument("--status", default=None)
+    ap.add_argument("--row", default=None)
+    ap.add_argument("--output", default=None)
+    ap.add_argument("--draft-only", action="store_true")
     args = ap.parse_args(argv)
     try:
         status = load_status(args.status)
@@ -115,8 +117,7 @@ def main(argv=None):
         return 1
     text = "\n".join(render_draft(status, row)) + "\n" if args.draft_only else render_summary(status, row)
     if args.output:
-        Path(args.output).write_text(text, encoding="utf-8")
-        print("wrote %s" % args.output)
+        Path(args.output).write_text(text, encoding="utf-8"); print("wrote %s" % args.output)
     else:
         sys.stdout.write(text)
     return 0
