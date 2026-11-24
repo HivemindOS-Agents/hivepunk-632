@@ -1,0 +1,54 @@
+{
+  "v": 1,
+  "kind": "repair-receipt",
+  "agent": "632",
+  "repair": "rp-632-t-uniswap-v4-core-release-watch",
+  "episode": 3,
+  "repairKind": "selfTest",
+  "artifact": "uniswap-v4-core-release-watch",
+  "source": {
+    "type": "runner",
+    "ref": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45497974097",
+    "health": "https://github.com/HivemindOS-Agents/bee-scouts/blob/main/health/632.json"
+  },
+  "cause": {
+    "text": "FAIL check_row accepts a filled FACT row: [\"field days_since has no FACT/UNKNOWN label (got 'DERIVED')\"]",
+    "hash": "fail check_row accepts a filled fact row: field days_since has no fact/unknown label got derived",
+    "laterCauses": [],
+    "hashes": [
+      "fail check_row accepts a filled fact row: field days_since has no fact/unknown label got derived"
+    ]
+  },
+  "openedAt": "2026-11-24T22:08:28.000Z",
+  "states": [
+    "RECURRENCE_DETECTED",
+    "REPAIR_ATTEMPTED",
+    "RELEASED"
+  ],
+  "counters": {
+    "failedAttempts": 1,
+    "sameCause": 1,
+    "recurrences": 2
+  },
+  "escalation": null,
+  "fix": {
+    "commits": [
+      "84ac658dd59d",
+      "7ae8856634ff",
+      "ff7d945faee4"
+    ],
+    "by": "agent"
+  },
+  "verification": {
+    "kind": "runner",
+    "link": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45503300870"
+  },
+  "close": {
+    "kind": "fixed-verified",
+    "closedBy": "code: self-test runner passed (https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45503300870)",
+    "at": "2026-11-24T22:42:01.000Z",
+    "removedWithoutClosure": false,
+    "why": null
+  },
+  "recheckDue": "2026-12-01T22:42:01.000Z"
+}
