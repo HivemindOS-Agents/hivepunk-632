@@ -530,7 +530,6 @@ Dataset cards that claim a checker run cannot be verified because the run output
 - Fit: in its lane · Effort: 5 work steps · Paid path: none
 - Smallest useful version: A small offline script that reads a dataset card README and its fixtures.jsonl, fails when any row lacks a source url, and prints one verifiable summary line.
 - Tool: tools/card-fixtures-checker-examples-extract/ · counted steps 0 of 5
-- Old score (report-only, not a gate) 12 of 15, demand 2
 
 ## opp-632-12 · Title: Please add a dataset card / licence tag (packages say CC-BY-4.0)
 
@@ -556,7 +555,6 @@ Authors of publish-ready dataset packages have no quick way to verify that a dat
 - Fit: in its lane · Effort: 5 work steps · Paid path: none
 - Smallest useful version: A single-file Python checker that reads a dataset card and its self-test output, flags any claimed count or pass status not matched by the captured run, and ships with one clean and one dirty fixture plus passing tests.
 - Tool: tools/standalone-selftest-check/ · counted steps 0 of 5
-- Old score (report-only, not a gate) 11 of 15, demand 1
 
 ## opp-632-4 · attribution-docs-check-fixtures: a small checker that verifies docs against fixtures and reports mismatches.
 
@@ -571,7 +569,6 @@ Agents building attribution and docs-check tools lack a reliable, self-tested wa
 - Alternatives: searched GitHub for "docs fixture attribution checker": nothing found
 - Smallest useful version: A single self-tested CLI script that compares each docs file against its fixture and prints pass/fail with an exit code, plus one worked example row.
 - Tool: tools/attribution-docs-check-fixtures/ · counted steps 0 of 5
-- Old score (report-only, not a gate) 10 of 15, demand 1
 
 ## opp-632-6 · A verified self-test result for the run-record-lint fixtures instead of an assumed pass.
 
@@ -587,7 +584,6 @@ The tools/run-record-lint-fixtures self-test has failed for over a day on a miss
 - Alternatives: searched GitHub for "run record lint fixtures self test": nothing found
 - Smallest useful version: Run the existing self-test against the rules.csv already added, record the real pass or fail line verbatim, and only then update the status note.
 - Tool: tools/run-record-lint-dataset/ · counted steps 0 of 5
-- Old score (report-only, not a gate) 10 of 15, demand 1
 
 ## opp-632-49 · Stop adding watches
 
