@@ -14,14 +14,14 @@ Dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-core-r
 
 - verify.py - label check, with --fetch for live data (owner step)
 - render_status.py - renders STATUS.md from local labelled data (no network)
-- STATUS.md - rendered summary, drift-checked against renderer
+- STATUS.md - rendered summary for opp-632-313 / issue #17, drift-checked
 - data/status.json - labelled status data mirroring STATUS.md
 - export_dataset.py - exports dataset_rows.jsonl preserving labels
 - dataset_rows.jsonl - verified labelled rows for Hugging Face publication
 - dataset_card.md - dataset card for publication
 - publish_check.py - pre-upload publish check (see below)
 - self_test.py - folder-local self-test, no args, no network
-- GOAL.md - goal for this folder
+- GOAL.md - goal for this folder, updated before work
 
 ## Commands
 
@@ -75,7 +75,8 @@ Could not confirm maintenance status.
 
 Untested: live fetch path (verify.py --fetch), and the published
 dataset URL itself (publishing is the owner publish step, not this
-folder). publish_check.py is untested with live data.
+folder). publish_check.py is untested with live data. STATUS.md live
+values are untested until a live fetch is run by the owner.
 
 ## Drift
 
