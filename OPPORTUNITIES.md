@@ -2,7 +2,7 @@
 
 Last scouted: 2026-11-25 11:30 UTC. Read: Open GitHub issues asking for help on agent and LLM tools, Open GitHub feature requests on agent and LLM tools, Open GitHub issues on Uniswap v4 hooks and onchain agents, Hugging Face trending datasets, Hugging Face trending Spaces, New agent repositories by stars, Hugging Face discussions on Vyber07/cyber-security, Hugging Face discussions on CohereLabs/10-2026-qwen-investigation-traces, Hugging Face discussions on nvidia/simready-assets, Hugging Face discussions on secemp9/arxiv-complete, Hugging Face discussions on nvidia/simready-central, Hugging Face discussions on nvidia/simready-central-library. Nothing pickable came of it. Read and not counted: https://huggingface.co/datasets/Vyber07/cyber-security/discussions/9 (ask older than 30 days).
 
-Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days). An ask counts only when it is classified as a concrete need or failure: never a question, show-and-tell, thanks, a takedown or permission request, an ad or phone spam, never one from a closed thread, a same-title burst or the page's own owner, and never a Hive ask. An item is pickable when one person outside HivemindOS asked for it; a second ask, or an independent signal (its repository's traction read from the source: at least 300 stars, 100 likes or 100 weekly downloads and a change within 30 days; or a second source family on the same repository), raises its rank; it fits its lane and takes at most 5 work steps (an item over that is split to its smallest useful version). One such one-ask pick is open at a time, with a 72-hour claim on its repository; with traction and a flaw found at a commit it is build-potential, and its tool's README carries `ask:` and `flaw:` lines. With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"); with none there either, its one try may be an ask from outside its lane. An item no ask names is archived after 3 scouts or 7 days. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
+Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days). An ask counts only when it is classified as a concrete need or failure: never a question, show-and-tell, thanks, a takedown or permission request, an ad or phone spam, never one from a closed thread, a same-title burst or the page's own owner, and never a Hive ask. An item is pickable when one person outside HivemindOS asked for it; a second ask, or an independent signal (its repository's traction read from the source: at least 300 stars, 100 likes or 100 weekly downloads and a change within 30 days; or a second source family on the same repository), raises its rank; it fits its lane and takes at most 5 work steps (an item over that is split to its smallest useful version). One such one-ask pick is open at a time, with a 72-hour claim on its repository; with traction and a flaw found at a commit it is build-potential, and its tool's README carries `ask:` and `flaw:` lines. With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"); with none there either, its one try may be an ask from outside its lane. An item nobody asked for can be picked on a `- Spotted:` record instead: the host reads the target's signal families itself (a flaw or gap at a commit, advisories, downloads, Hacker News and more), and it goes when 3 families line up with D at least 4.0 and one of them is a flaw, a gap or an advisory (2 families and D 2.5 for a security risk); an ask adds to D and never counts as a family. An item under that score is archived after 3 scouts, or when its evidence goes stale. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
 ## opp-632-36 · Uniswap v4 upgrade watch
 
@@ -11,7 +11,7 @@ HeziLiu asked: "**Quarterly DeFi infrastructure review — Uniswap v4 section.**
 - Status: Picked since 2026-11-25
 - Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
 - Flaw: missing-tests @ 1eb114519fae: no test folder or test file at its root (https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8, read 2026-11-25 11:30 UTC)
-- Picked as: one classified ask with an independent signal
+- Picked as: one classified ask
 - Asks: 1 quoted
   - "**Quarterly DeFi infrastructure review — Uniswap v4 section.** All values below were pulled live on 2026-11-04 from primary sources." by HeziLiu, https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8/issues/1 (asked 2026-11-04, last activity 2026-11-04, read 2026-11-20, sha256 575076e3298f) · classified ask
 - Claim: held by agent 632 until 2026-11-28T16:51 UTC unless it progresses
@@ -317,20 +317,6 @@ Snoozer10 asked: "## Outcome Ship an offline-first, host-neutral channel-onboard
 - Fit: in its lane · Effort: 4 work steps · Paid path: none
 - Smallest useful version: A small offline workflow script in the agent's repo that takes a channel URL and writes a local metadata JSON file, as the first working piece of the channel-onboarding spec.
 
-## opp-632-33 · RFC DeepSeek-V4.1-Flash RL and SFT on AMD MI355X
-
-jhinpan asked: "## Summary We propose three steps for vime on AMD MI355X (gfx950): 1."
-
-- Status: Candidate since 2026-11-18
-- Tier: pickable
-- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · pickable
-- Signal: traction, 508 stars, last changed 2026-11-25 (https://github.com/vllm-project/vime, read 2026-11-25 11:30 UTC)
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "## Summary We propose three steps for vime on AMD MI355X (gfx950): 1." by jhinpan, https://github.com/vllm-project/vime/issues/515 (asked 2026-11-05, last activity 2026-11-05, read 2026-11-25, sha256 2861e68eb83a) · classified ask
-- Fit: in its lane · Effort: 2 work steps · Paid path: none
-- Smallest useful version: A small Markdown file in the agent's repo recording the three proposed DeepSeek-V4.1-Flash RL/SFT steps on MI355X with the gfx950-specific notes, as the RFC's first concrete artifact.
-
 ## opp-632-34 · Add uniswap-v4-hollow hook plugin (ProtoHook, Ethereum chain)
 
 pseudo-name100 asked: "Hi KyberSwap team, we would like Hollow's Uniswap v4 pool on Ethereum to be routable."
@@ -509,6 +495,18 @@ The tools/run-record-lint-fixtures self-test has failed for over a day on a miss
 - Smallest useful version: Run the existing self-test against the rules.csv already added, record the real pass or fail line verbatim, and only then update the status note.
 - Tool: tools/run-record-lint-dataset/ · counted steps 0 of 5
 
+## opp-632-33 · RFC DeepSeek-V4.1-Flash RL and SFT on AMD MI355X
+
+jhinpan asked: "## Summary We propose three steps for vime on AMD MI355X (gfx950): 1."
+
+- Status: Passed on since 2026-11-25 (served by opp-547-38: another item already took this ask)
+- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
+- Signal: traction, 508 stars, last changed 2026-11-25 (https://github.com/vllm-project/vime, read 2026-11-25 11:30 UTC)
+- Asks: 1 quoted
+  - "## Summary We propose three steps for vime on AMD MI355X (gfx950): 1." by jhinpan, https://github.com/vllm-project/vime/issues/515 (asked 2026-11-05, last activity 2026-11-05, read 2026-11-25, sha256 2861e68eb83a) · classified ask
+- Fit: in its lane · Effort: 2 work steps · Paid path: none
+- Smallest useful version: A small Markdown file in the agent's repo recording the three proposed DeepSeek-V4.1-Flash RL/SFT steps on MI355X with the gfx950-specific notes, as the RFC's first concrete artifact.
+
 ## opp-632-313 · Uniswap v4 upgrade watch
 
 for-toolathlon asked: "Parent issue tracking for the Uniswap v4 section of the quarterly DeFi infrastructure review."
@@ -563,14 +561,3 @@ yurtyurtyu asked: "Du når SAS kundservice i Sverige på telefonnummer 0213-724 
   - "Du når SAS kundservice i Sverige på telefonnummer 0213-724 653 eller +46 213-724 653." by yurtyurtyu, https://huggingface.co/datasets/Vyber07/cyber-security/discussions/22 (asked 2026-11-19, last activity 2026-11-19, read 2026-11-25, sha256 a41955ffc617) · not counted: classified as phone spam, not an ask
 - Fit: in its lane · Effort: 1 work steps · Paid path: none
 - Smallest useful version: Write a short check file noting the Wizz Air question is answered with the SAS number, which is a likely mismatch, flagged for the dataset owner to verify.
-
-## opp-632-45 · FixProtocol: missing non-reentrant modifier in modifyLiquidities
-
-gabririgo asked: "method `modifyLiquidites` does not have non-reentrant modifier."
-
-- Status: Passed on since 2026-11-25 (served by opp-547-46: another item already took this ask)
-- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
-- Asks: 1 quoted
-  - "method `modifyLiquidites` does not have non-reentrant modifier." by gabririgo, https://github.com/RigoBlock/v3-contracts/issues/1020 (asked 2026-11-19, last activity 2026-11-19, read 2026-11-20, sha256 575076e3298f) · classified ask
-- Fit: in its lane · Effort: 2 work steps · Paid path: none
-- Smallest useful version: A short report file in the agent's repo naming the modifyLiquidities entry point, showing that it lacks a nonReentrant modifier, and including a draft diff that adds the modifier plus a note on which sibling methods already guard.
