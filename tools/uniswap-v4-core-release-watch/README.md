@@ -1,129 +1,65 @@
 # uniswap-v4-core-release-watch
 
-Tracks the latest Uniswap/v4-core GitHub release with FACT/DERIVED/UNKNOWN
-labels. UNKNOWN is null, never 0/safe.
-
-Source endpoint: https://api.github.com/repos/Uniswap/v4-core/releases/latest
+A labelled watch record for the latest Uniswap/v4-core GitHub release, ready to
+publish on Hugging Face. Source endpoint:
+https://api.github.com/repos/Uniswap/v4-core/releases/latest
 Source repo: https://github.com/Uniswap/v4-core
-Parent-tracking issue: https://github.com/for-toolathlon/uniswap-v4-watch/issues/17 (issue #17)
-Opportunity: opp-632-313
-Licence: CC0-1.0. Account: hivepunk-632-4934c76e.
-Dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-core-release-watch
+Dataset target: https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-core-release-watch
+Account: hivepunk-632-4934c76e. Licence: CC0-1.0.
+
+## Labels
+
+FACT = carried by the live response. DERIVED = computed from a FACT value (today
+only `days_since`). UNKNOWN = not proven, stored as null, never 0 and never
+"safe" (never zero/safe). The four `prerelease_or_draft_newer`,
+`newer_tag_without_release`, `later_deletion_or_yank` and `maintenance_verdict`
+fields stay UNKNOWN always.
 
 ## Files
 
-- verify.py - label check (FACT/DERIVED/UNKNOWN), --fetch is an owner step
-- render_status.py - renders STATUS.md from local labelled data (no network)
-- STATUS.md - rendered summary for opp-632-313 / issue #17, drift-checked
-- status_check.py - enforces the STATUS.md label/null contract
-- data/status.json - labelled status data mirroring STATUS.md
-- export_dataset.py - exports dataset_rows.jsonl preserving labels
-- dataset_rows.jsonl - verified labelled rows for Hugging Face publication
-- dataset_card.md - dataset card for publication
-- publish_check.py - pre-upload publish check (no network)
-- publish_package.py - verbatim publish-package check (no network, no upload)
-- self_test.py - folder-local self-test, no args, no network
-- GOAL.md - goal for this folder, updated before work
+- `publish_model.py` - the publish shape, row and card checks, and the verbatim
+  manifest with SHA-256 hashes. No network, no upload.
+- `verify.py` - label check for the rows; `--fetch` is the owner's network step.
+- `dataset_rows.jsonl` - the labelled rows, published verbatim as
+  `data/dataset_rows.jsonl`.
+- `dataset_card.md` - the card, published verbatim as `README.md`.
+- `self_test.py` - folder-local self-test, no arguments, no network.
+- `export_dataset.py`, `status_check.py`, `render_status.py`, `publish_check.py`,
+  `STATUS.md`, `release_watch.jsonl`, `GOAL.md` - earlier helpers and data.
 
 ## Commands
 
 ~~~bash
 cd tools/uniswap-v4-core-release-watch
-python3 verify.py
-python3 status_check.py; echo EXIT=$?
 python3 self_test.py; echo EXIT=$?
-python3 render_status.py --output STATUS.md
-python3 export_dataset.py --output dataset_rows.jsonl
-python3 publish_check.py; echo EXIT=$?
-python3 publish_package.py; echo EXIT=$?
+python3 verify.py; echo EXIT=$?
+python3 publish_model.py; echo EXIT=$?
 ~~~
 
-Verify command: python3 verify.py
-Renderer command: python3 render_status.py
+`publish_model.py` checks `dataset_rows.jsonl` and `dataset_card.md`, then prints
+the verbatim mapping (`dataset_card.md` -> `README.md`,
+`dataset_rows.jsonl` -> `data/dataset_rows.jsonl`), both SHA-256 hashes, the
+target URL and `live_values_claimed=false`.
 
-## Labels
+## Publish status
 
-FACT = carried by the live response. DERIVED = computed from a FACT value:
-today that is only `days_since`, worked out from published_at and as_of.
-UNKNOWN = not proven; the value must be null, never 0, never "safe".
-
-verify.py check_row accepts FACT, DERIVED and UNKNOWN. It rejects any other
-label (MAYBE, GUESS, lower-case 'fact'), accepts DERIVED only on computed
-fields such as days_since, requires raw response fields (tag, name,
-published_at, html_url, asset_count, total_asset_downloads) to be FACT or
-UNKNOWN, and fails if any UNKNOWN field holds a value instead of null.
-
-## Status check
-
-status_check.py reads STATUS.md only (no network) and fails if every claim
-is not labelled FACT, DERIVED or UNKNOWN, if an unfetched field is not
-`<field>: UNKNOWN` with a not-proven and a never-zero/safe note, if a field
-line carries a fetched-looking value, if the Could-not-confirm fields stop
-being null, if DRAFT ONLY is missing, if the source endpoint is dropped, or
-if STATUS.md drifts from render_status.py output.
-
-~~~bash
-python3 status_check.py
-python3 status_check.py --status STATUS.md
-~~~
-
-## Publish check
-
-Run publish_check.py before any Hugging Face upload; it validates local
-files only and never uploads:
-
-~~~bash
-python3 publish_check.py
-python3 publish_check.py --rows dataset_rows.jsonl --card dataset_card.md
-~~~
-
-Checks: labels only FACT/DERIVED/UNKNOWN; UNKNOWN fields null, never
-0/safe; always-UNKNOWN fields stay UNKNOWN; dataset name and CC0-1.0;
-card cites source https://github.com/Uniswap/v4-core and the endpoint
-https://api.github.com/repos/Uniswap/v4-core/releases/latest, contains
-python3 verify.py, gives the Hugging Face URL and a load_dataset example,
-and carries Could not confirm / Untested notes. Exit 0 means ready for the
-owner publish step; exit 1 lists problems.
-
-## Publish package (verbatim export)
-
-publish_package.py proves the export that the owner publish step uploads
-under hivepunk-632-4934c76e as uniswap-v4-core-release-watch, without
-uploading anything itself:
-
-~~~bash
-python3 publish_package.py
-~~~
-
-It checks dataset_rows.jsonl preserves FACT/DERIVED/UNKNOWN with
-UNKNOWN=null never 0/safe, checks dataset_card.md cites
-https://github.com/Uniswap/v4-core and contains python3 verify.py, and
-prints a manifest mapping dataset_card.md -> README.md verbatim and
-dataset_rows.jsonl -> data verbatim, each with its SHA-256, plus the
-target https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-core-release-watch
-It claims no live values (live_values_claimed=false). Uploading is the
-owner Publish a small open dataset step, not this script.
-
-## Drift
-
-STATUS.md must match render_status.py output exactly; dataset_rows.jsonl
-must match export_dataset.py output exactly. Regenerate and rerun
-python3 self_test.py after any change.
+NOT PUBLISHED. Live URL: none. Publish date: none. Uploading is the owner's
+Publish a small open dataset step under hivepunk-632-4934c76e, using
+`dataset_card.md` as `README.md` and `dataset_rows.jsonl` as
+`data/dataset_rows.jsonl`, unchanged. There is no upload script, token step or
+CLI command in this folder.
 
 ## Could not confirm
 
-Could not confirm the live tag, published date, asset count or downloads:
-the endpoint was not fetched when STATUS.md and the committed row were
-written, so those fields are null/UNKNOWN and no live value is claimed.
-Could not confirm maintenance status. The Hugging Face dataset URL was
-not fetched in this step, so its live existence is not claimed here.
+The live tag, name, published date, days_since, release URL, asset count, asset
+downloads or maintenance status: the endpoint was not fetched, so those fields
+stay UNKNOWN/null. The Hugging Face page's existence and publish date: not
+fetched here.
 
 ## Untested
 
-Untested: live fetch path (verify.py --fetch), publish_check.py with live
-data, publish_package.py against a live published dataset, STATUS.md live
-values, and the published dataset URL (publishing is
-the owner publish step, not this folder). No self-test run result is
-written here by hand; HivemindOS writes each run into SELFTEST_OUTPUT.md.
+`python3 verify.py --fetch` (network) and the dataset as downloaded from Hugging
+Face after the owner publishes it. No self-test run result is written here by
+hand; HivemindOS writes each run into SELFTEST_OUTPUT.md.
 
-This dataset is not advice and not financial information.
+Not advice and not financial information.
