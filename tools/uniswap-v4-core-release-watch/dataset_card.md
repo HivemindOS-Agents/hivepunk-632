@@ -12,9 +12,9 @@ pretty_name: Uniswap v4-core release watch (labelled)
 
 # Uniswap v4-core release watch (labelled)
 
-A one-row watch record for the latest release of Uniswap/v4-core, with every
-field carrying a label. Nothing here is fetched in the published copy: every
-value is UNKNOWN and stored as null, never 0 and never "safe" (never zero/safe).
+A one-row watch record for the latest release of Uniswap/v4-core. Nothing here
+was fetched for the published copy: every value is UNKNOWN and stored as null,
+never 0 and never "safe" (never zero/safe).
 
 - Source repo: https://github.com/Uniswap/v4-core
 - Source endpoint: https://api.github.com/repos/Uniswap/v4-core/releases/latest
@@ -33,11 +33,9 @@ value is UNKNOWN and stored as null, never 0 and never "safe" (never zero/safe).
 ## Labels
 
 - **FACT** - carried by the live response, copied unchanged.
-- **DERIVED** - computed from a FACT value. Today only `days_since`, worked out
-  from `published_at` and `as_of`.
-- **UNKNOWN** - not proven. The value is stored as **null**, never as 0, and
-  never as the word "safe". An unknown number is not a zero, and an unknown
-  risk is not a clean bill of health (never zero/safe).
+- **DERIVED** - computed from a FACT value. Today only `days_since`.
+- **UNKNOWN** - not proven. Stored as **null**, never as 0, and never as the
+  word "safe" (never zero/safe). An unknown number is not a zero.
 
 ## Fields in the published row
 
@@ -55,14 +53,10 @@ Every field below is UNKNOWN with a null value in the published copy.
 | later_deletion_or_yank | UNKNOWN | null |
 | maintenance_verdict | UNKNOWN | null |
 
-`asset_count` and `total_asset_downloads` are not in this file. They are left
-out rather than written as 0 because the release response was not fetched;
-writing 0 would claim a measured zero. A later fetched export adds them as FACT
-or leaves them UNKNOWN/null.
-
-The four `prerelease_or_draft_newer`, `newer_tag_without_release`,
-`later_deletion_or_yank` and `maintenance_verdict` fields stay UNKNOWN always:
-nothing in the latest-release response proves them.
+`asset_count` and `total_asset_downloads` are left out rather than written as 0,
+because the release response was not fetched; a 0 would claim a measured zero.
+The four risk fields stay UNKNOWN always: nothing in the latest-release response
+proves them.
 
 ## Check the labels
 
@@ -87,22 +81,21 @@ Publish status: NOT PUBLISHED
 Live URL: none
 Publish date: none
 
-The upload is the owner Publish a small open dataset step, run under
+The upload is the owner Publish a small open dataset step under
 hivepunk-632-4934c76e with the same title; this card claims no live dataset page
 and no publish date.
 
 ## Could not confirm
 
 The latest tag, name, published date, days_since, release page URL, asset count,
-total asset downloads and maintenance status. The endpoint was not fetched, so
-all of them are UNKNOWN/null here. Also could not confirm that the Hugging Face
-page exists, because publishing has not run.
+total asset downloads and maintenance status: the endpoint was not fetched, so
+all are UNKNOWN/null here. Also could not confirm that the Hugging Face page
+exists, because publishing has not run.
 
 ## Untested
 
-The live fetch path `python3 verify.py --fetch` and this dataset once
-downloaded from Hugging Face. Values from a live fetch have not been checked
-into this card. The page's existence and publish date are unverified here.
+The live fetch path `python3 verify.py --fetch` and this dataset once downloaded
+from Hugging Face. Live-fetch values have not been checked into this card.
 
 ## Licence and scope
 
