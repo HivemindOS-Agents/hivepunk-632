@@ -6,9 +6,9 @@ hivepunk-632-4934c76e uses, verbatim:
   dataset_card.md     -> README.md
   dataset_rows.jsonl  -> data/dataset_rows.jsonl
 
-Labels: FACT (carried by the live response), DERIVED (computed from a
-FACT value; today only days_since), UNKNOWN (not proven, stored null,
-never 0, never "safe").
+Labels: FACT (carried by the live response), DERIVED (computed from a FACT
+value; today only days_since), UNKNOWN (not proven, stored null, never 0,
+never "safe").
 """
 import hashlib
 import json
@@ -31,7 +31,6 @@ ALWAYS_UNKNOWN = (
     "later_deletion_or_yank",
     "maintenance_verdict",
 )
-# The one publish shape: every row is normalized to exactly these fields.
 PUBLISH_FIELDS = RESPONSE_FIELDS + COMPUTED_FIELDS + ALWAYS_UNKNOWN
 
 
@@ -54,7 +53,6 @@ def normalize_row(row):
     for field in PUBLISH_FIELDS:
         if out.get(field) is None:
             out[field] = None
-            labels.setdefault(field, "UNKNOWN")
         labels.setdefault(field, "UNKNOWN")
     out["labels"] = labels
     out.setdefault("source_endpoint", ENDPOINT)
@@ -81,9 +79,7 @@ def check_row(row):
         if field in ALWAYS_UNKNOWN and label != "UNKNOWN":
             problems.append("%s: field %s must stay UNKNOWN" % (rid, field))
         if label == "UNKNOWN" and row.get(field) is not None:
-            problems.append(
-                "%s: UNKNOWN field %s must be null, got %r (never 0/safe)" % (rid, field, row.get(field))
-            )
+            problems.append("%s: UNKNOWN field %s must be null, got %r (never 0/safe)" % (rid, field, row.get(field)))
     for field in PUBLISH_FIELDS:
         if field not in labels:
             problems.append("%s: field %s has no label" % (rid, field))
@@ -197,7 +193,7 @@ def main(argv=None):
     print("PASS target " + m["target"])
     print("PASS readme dataset_card.md -> README.md sha256=" + m["readme_sha256"])
     print("PASS data dataset_rows.jsonl -> data/dataset_rows.jsonl sha256=" + m["data_sha256"])
-    print("PASS %d row(s), %d fields, labels preserved, UNKNOWN null never 0/safe" % (m["row_count"], len(m["fields"])))
+    print("PASS %d row(s), labels preserved, UNKNOWN null never 0/safe" % m["row_count"])
     print("PASS publish status NOT PUBLISHED; live URL none; publish date none")
     print("EXIT=0")
     return 0
