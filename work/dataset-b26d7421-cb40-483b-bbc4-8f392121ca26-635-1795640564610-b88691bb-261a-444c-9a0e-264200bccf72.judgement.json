@@ -1,0 +1,155 @@
+{
+  "step": "dataset:b26d7421-cb40-483b-bbc4-8f392121ca26:635:1795640564610:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "dataset",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Dataset was not published: no repo creation succeeded, no files were uploaded, and no live URL or publish date was returned.",
+  "description": "The agent fetched documentation pages and attempted to create the Hugging Face repo, but that POST timed out. Its final output only described drafting publishing notes, with no published dataset URL or date.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [
+    {
+      "id": "g2841d533",
+      "host": "huggingface.co",
+      "observed": "GET /docs/datasets/upload_dataset",
+      "result": "429 rate limit response",
+      "evidence": "t1",
+      "recoveryThatWorked": "GET /api/datasets later returned 200"
+    }
+  ],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "rateLimited": [
+    {
+      "host": "huggingface.co",
+      "path": "/docs/datasets/upload_dataset",
+      "retryAfter": 132
+    },
+    {
+      "host": "huggingface.co",
+      "path": "/docs/hub/datasets-adding",
+      "retryAfter": 12
+    },
+    {
+      "host": "huggingface.co",
+      "path": "/docs/hub/en/datasets-upload-guide-llm",
+      "retryAfter": 130
+    },
+    {
+      "host": "huggingface.co",
+      "path": "/docs/datasets/en/share",
+      "retryAfter": 10
+    }
+  ],
+  "dropped": {
+    "page-instruction": 1
+  },
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/datasets/upload_dataset",
+      "status": 429,
+      "error": "window.pendingEvents = { controller: new AbortController() }; document.addEventListener( \"click\", function (event) { const target = event.target; if (!event.isTrusted || !(target instanceof Element) |",
+      "ms": 55,
+      "at": "2026-11-25T21:03:54.249Z",
+      "retryAfter": 132
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "zenn.dev",
+      "path": "/rmuraix/articles/:id",
+      "status": 200,
+      "error": null,
+      "ms": 325,
+      "at": "2026-11-25T21:03:54.249Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/datasets-adding",
+      "status": 429,
+      "error": "window.pendingEvents = { controller: new AbortController() }; document.addEventListener( \"click\", function (event) { const target = event.target; if (!event.isTrusted || !(target instanceof Element) |",
+      "ms": 38,
+      "at": "2026-11-25T21:03:55.249Z",
+      "retryAfter": 12
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/huggingface/hub-docs/blob/main/docs/hub/datasets-upload-guide-llm.md",
+      "status": 200,
+      "error": null,
+      "ms": 1356,
+      "at": "2026-11-25T21:03:54.489Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/en/datasets-upload-guide-llm",
+      "status": 429,
+      "error": "window.pendingEvents = { controller: new AbortController() }; document.addEventListener( \"click\", function (event) { const target = event.target; if (!event.isTrusted || !(target instanceof Element) |",
+      "ms": 30,
+      "at": "2026-11-25T21:03:56.249Z",
+      "retryAfter": 130
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/huggingface/datasets/releases",
+      "status": 200,
+      "error": null,
+      "ms": 1392,
+      "at": "2026-11-25T21:03:55.489Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/214",
+      "status": 200,
+      "error": null,
+      "ms": 650,
+      "at": "2026-11-25T21:03:56.489Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/datasets/en/share",
+      "status": 429,
+      "error": "window.pendingEvents = { controller: new AbortController() }; document.addEventListener( \"click\", function (event) { const target = event.target; if (!event.isTrusted || !(target instanceof Element) |",
+      "ms": 29,
+      "at": "2026-11-25T21:03:57.249Z",
+      "retryAfter": 10
+    },
+    {
+      "id": "t9",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/api/datasets",
+      "status": 200,
+      "error": null,
+      "ms": 66,
+      "at": "2026-11-25T21:04:31.233Z"
+    },
+    {
+      "id": "t10",
+      "method": "POST",
+      "host": "huggingface.co",
+      "path": "/api/repos/create",
+      "status": null,
+      "error": "TimeoutError: The operation was aborted due to timeout",
+      "ms": 19066,
+      "at": "2026-11-25T21:04:32.233Z"
+    }
+  ],
+  "at": "2026-11-25T21:04:59.297Z"
+}
