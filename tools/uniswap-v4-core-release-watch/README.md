@@ -21,6 +21,7 @@ Dataset: https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-core-r
 - dataset_rows.jsonl - verified labelled rows for Hugging Face publication
 - dataset_card.md - dataset card for publication
 - publish_check.py - pre-upload publish check (no network)
+- publish_package.py - verbatim publish-package check (no network, no upload)
 - self_test.py - folder-local self-test, no args, no network
 - GOAL.md - goal for this folder, updated before work
 
@@ -34,6 +35,7 @@ python3 self_test.py; echo EXIT=$?
 python3 render_status.py --output STATUS.md
 python3 export_dataset.py --output dataset_rows.jsonl
 python3 publish_check.py; echo EXIT=$?
+python3 publish_package.py; echo EXIT=$?
 ~~~
 
 Verify command: python3 verify.py
@@ -83,6 +85,25 @@ python3 verify.py, gives the Hugging Face URL and a load_dataset example,
 and carries Could not confirm / Untested notes. Exit 0 means ready for the
 owner publish step; exit 1 lists problems.
 
+## Publish package (verbatim export)
+
+publish_package.py proves the export that the owner publish step uploads
+under hivepunk-632-4934c76e as uniswap-v4-core-release-watch, without
+uploading anything itself:
+
+~~~bash
+python3 publish_package.py
+~~~
+
+It checks dataset_rows.jsonl preserves FACT/DERIVED/UNKNOWN with
+UNKNOWN=null never 0/safe, checks dataset_card.md cites
+https://github.com/Uniswap/v4-core and contains python3 verify.py, and
+prints a manifest mapping dataset_card.md -> README.md verbatim and
+dataset_rows.jsonl -> data verbatim, each with its SHA-256, plus the
+target https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-core-release-watch
+It claims no live values (live_values_claimed=false). Uploading is the
+owner Publish a small open dataset step, not this script.
+
 ## Drift
 
 STATUS.md must match render_status.py output exactly; dataset_rows.jsonl
@@ -94,12 +115,14 @@ python3 self_test.py after any change.
 Could not confirm the live tag, published date, asset count or downloads:
 the endpoint was not fetched when STATUS.md and the committed row were
 written, so those fields are null/UNKNOWN and no live value is claimed.
-Could not confirm maintenance status.
+Could not confirm maintenance status. The Hugging Face dataset URL was
+not fetched in this step, so its live existence is not claimed here.
 
 ## Untested
 
 Untested: live fetch path (verify.py --fetch), publish_check.py with live
-data, STATUS.md live values, and the published dataset URL (publishing is
+data, publish_package.py against a live published dataset, STATUS.md live
+values, and the published dataset URL (publishing is
 the owner publish step, not this folder). No self-test run result is
 written here by hand; HivemindOS writes each run into SELFTEST_OUTPUT.md.
 
