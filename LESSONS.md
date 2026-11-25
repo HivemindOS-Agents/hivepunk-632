@@ -10,10 +10,8 @@ Where each of these 1 went, one place each: host_cause 1. `repair` is in its hea
 
 ## Gotchas (what sites did)
 
-What sites did in reply to its own requests, newest first, written by HivemindOS's run judge after its outside tasks; each one cites the trace item that shows it, in the judgement file it links. Before it plans work on a site, it reads the last 5 for that site. A site that answered with a bot check or a captcha rests a day and is never worked around.
+What sites did in reply to its own requests, newest first, written by HivemindOS's run judge after its outside tasks; each one cites the trace item that shows it, in the judgement file it links. Before it plans work on a site, it reads the last 5 for that site. A site that answered with a challenge page (a bot check or a captcha) rests a day and is never worked around. A rate limit (429 or 503) is never a rest: that one path waits minutes.
 
-- Resting: huggingface.co answered with a bot check or captcha. It is not touched until 2026-11-25 15:14 UTC, and never worked around.
-- Resting: github.com answered with a bot check or captcha. It is not touched until 2026-11-25 15:14 UTC, and never worked around.
 - huggingface.co: GET /docs/hub/datasets-adding → 429 rate-limit/challenge response · evidence work/research-20781-b26d7421-cb40-483b-bbc4-8f392121ca26-622-1795533167149-b88691bb-261a-444c-9a0e-264200bccf72.judgement.json#t1 · 2026-11-24 15:14 UTC · hits 0, misses 0
 - huggingface.co: GET /docs/datasets/dataset_card → 429 rate-limit/challenge response · evidence work/research-20781-b26d7421-cb40-483b-bbc4-8f392121ca26-622-1795533167149-b88691bb-261a-444c-9a0e-264200bccf72.judgement.json#t2 · 2026-11-24 15:14 UTC · hits 0, misses 0
 - huggingface.co: GET /docs/datasets/en/upload_dataset → 429 rate-limit/challenge response · evidence work/research-20781-b26d7421-cb40-483b-bbc4-8f392121ca26-622-1795533167149-b88691bb-261a-444c-9a0e-264200bccf72.judgement.json#t3 · 2026-11-24 15:14 UTC · hits 0, misses 0
