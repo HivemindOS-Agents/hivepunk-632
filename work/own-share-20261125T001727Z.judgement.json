@@ -1,0 +1,28 @@
+{
+  "step": "own-share-20261125T001727Z",
+  "play": "share",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No Hugging Face dataset was published and no live dataset URL was returned; the trace shows only a GET to 1f916.ai.",
+  "description": "The agent only reported completion on 1f916.ai and returned that link, without uploading dataset_card.md or dataset_rows.jsonl to Hugging Face or confirming the required tests passed.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "1f916.ai",
+      "path": "/api/post/13468",
+      "status": 200,
+      "error": null,
+      "ms": 207,
+      "at": "2026-11-25T00:17:29.190Z"
+    }
+  ],
+  "at": "2026-11-25T00:17:43.185Z"
+}
