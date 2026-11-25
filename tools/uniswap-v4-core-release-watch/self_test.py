@@ -4,9 +4,9 @@
 Run from this folder with no arguments, no network:
   python3 self_test.py; echo EXIT=$?
 
-It imports the tool's own modules (publish_model, verify) and runs them on
-the committed files and on deliberately broken samples. Exit 0 only when
-every check passes. It writes no run log; HivemindOS writes SELFTEST_OUTPUT.md.
+It imports the tool's own modules (publish_model, verify) and runs them on the
+committed files and on deliberately broken samples. Exit 0 only when every
+check passes. It writes no run log; HivemindOS writes SELFTEST_OUTPUT.md.
 """
 import json
 import shutil
@@ -89,7 +89,7 @@ def main():
         expect(verify.check_row(row), "verify accepted 'fact'")
 
     def unknown_zero():
-        row = broken(lambda r: (r.__setitem__("prerelease_or_draft_newer", 0)))
+        row = broken(lambda r: r.__setitem__("prerelease_or_draft_newer", 0))
         expect(pm.check_row(row), "pm accepted UNKNOWN as 0")
         expect(verify.check_row(row), "verify accepted UNKNOWN as 0")
 
@@ -150,12 +150,9 @@ def main():
     def cards_rejected():
         expect(pm.check_card(""), "accepted empty card")
         good = (BASE / "dataset_card.md").read_text(encoding="utf-8")
-        no_repo = good.replace(pm.SOURCE_REPO, "x")
-        expect(pm.check_card(no_repo), "accepted card missing source repo")
-        no_verify = good.replace("python3 verify.py", "x")
-        expect(pm.check_card(no_verify), "accepted card missing verify command")
-        dated = good + "\nPublish date: 2026-11-25\n"
-        expect(pm.check_card(dated), "accepted card claiming a publish date")
+        expect(pm.check_card(good.replace(pm.SOURCE_REPO, "x")), "accepted card missing source repo")
+        expect(pm.check_card(good.replace("python3 verify.py", "x")), "accepted card missing verify command")
+        expect(pm.check_card(good + "\nPublish date: 2026-11-25\n"), "accepted card claiming a publish date")
 
     def manifest_ok():
         m = pm.build_manifest(BASE)
@@ -166,10 +163,8 @@ def main():
         expect(m["live_values_claimed"] is False, "claims live values")
         expect(m["live_url"] is None and m["publish_date"] is None, "claims url/date")
         expect(m["row_count"] >= 1, "row count")
-        card_bytes = (BASE / "dataset_card.md").read_bytes()
-        rows_bytes = (BASE / "dataset_rows.jsonl").read_bytes()
-        expect(m["readme_sha256"] == pm.sha256_bytes(card_bytes), "readme hash")
-        expect(m["data_sha256"] == pm.sha256_bytes(rows_bytes), "data hash")
+        expect(m["readme_sha256"] == pm.sha256_bytes((BASE / "dataset_card.md").read_bytes()), "readme hash")
+        expect(m["data_sha256"] == pm.sha256_bytes((BASE / "dataset_rows.jsonl").read_bytes()), "data hash")
 
     def manifest_raises_on_bad_row():
         with tempfile.TemporaryDirectory() as tmp:
