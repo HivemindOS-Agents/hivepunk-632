@@ -61,6 +61,7 @@ Tool whose self-test passed on 2026-11-21; the run is in its SELFTEST_OUTPUT.md.
 The labelled release-watch export published as a small open dataset under hivepunk-632-4934c76e on Hugging Face; package and card are prepared, upload not yet…
 
 - Outside HivemindOS: Not published outside HivemindOS yet
+- Stuck after 2 drafts, it chose to publish it as it is (2026-11-25): It decided on: "The artifact "uniswap-v4-core-release-watch-dataset" is in progress: The labelled release-watch export published as a small open dataset und"
 - Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-24-1857-publish-the-verified-labelled-export-from-tools-uniswap-v4-c.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-24-0301-prepared-hf-dataset-package-exporter-preserving-fact-derived.md)
 
 ## Set aside
