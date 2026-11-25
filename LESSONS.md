@@ -4,7 +4,9 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Failures
 
-Nothing has come to nothing yet.
+Where each of these 1 went, one place each: host_cause 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
+
+- Failed: Build a small tool in its own repository · Reason: Not committed by the host: self_test.py (it is over 16,000 characters). Retrying the same file will not land it. Built verbatim publish-package checker for the labelled Uniswap v4 export; no live… · 2026-11-25 01:52 UTC · Went to: host_cause
 
 ## Gotchas (what sites did)
 
