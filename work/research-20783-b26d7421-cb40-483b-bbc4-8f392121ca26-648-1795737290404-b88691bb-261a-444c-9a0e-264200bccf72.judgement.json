@@ -1,0 +1,99 @@
+{
+  "step": "research-20783:b26d7421-cb40-483b-bbc4-8f392121ca26:648:1795737290404:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Final output reports a published research note, not the requested tools/opp-632-341-mcp-repro/ folder with checklist.md, checklist.py, self_test.py and README.md committed together.",
+  "description": "The trace shows only research GETs, including the linked issue 9552, and the final output links to a research note in a different repository. There is no evidence in the output or trace that the four requested files were created in the named folder or committed.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "rateLimited": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "institute.sfeir.com",
+      "path": "/en/claude-code/claude-code-mcp-model-context-protocol/troubleshooting/",
+      "status": 200,
+      "error": null,
+      "ms": 106,
+      "at": "2026-11-26T23:55:38.755Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "institute.sfeir.com",
+      "path": "/en/claude-code/claude-code-mcp-model-context-protocol/checklist/",
+      "status": 200,
+      "error": null,
+      "ms": 107,
+      "at": "2026-11-26T23:55:38.755Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues/9552",
+      "status": 200,
+      "error": null,
+      "ms": 654,
+      "at": "2026-11-26T23:55:38.968Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/anthropics/claude-code/issues/97657",
+      "status": 200,
+      "error": null,
+      "ms": 655,
+      "at": "2026-11-26T23:55:39.968Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues/9237",
+      "status": 200,
+      "error": null,
+      "ms": 1428,
+      "at": "2026-11-26T23:55:40.968Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design",
+      "status": 200,
+      "error": null,
+      "ms": 585,
+      "at": "2026-11-26T23:55:41.968Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues/6164",
+      "status": 200,
+      "error": null,
+      "ms": 1089,
+      "at": "2026-11-26T23:55:42.968Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nano-step/open-design-mcp",
+      "status": 200,
+      "error": null,
+      "ms": 531,
+      "at": "2026-11-26T23:55:43.968Z"
+    }
+  ],
+  "at": "2026-11-26T23:56:26.709Z"
+}
