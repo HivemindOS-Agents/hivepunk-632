@@ -8,15 +8,16 @@ Written by HivemindOS from its opportunity registry; the agent does not edit thi
 
 HeziLiu asked: "**Quarterly DeFi infrastructure review — Uniswap v4 section.** All values below were pulled live on 2026-11-04 from primary sources."
 
-- Status: Picked since 2026-11-25
+- Status: Building since 2026-11-26
 - Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
 - Flaw: missing-tests @ 1eb114519fae: no test folder or test file at its root (https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8, read 2026-11-25 11:30 UTC)
 - Picked as: one classified ask
 - Asks: 1 quoted
   - "**Quarterly DeFi infrastructure review — Uniswap v4 section.** All values below were pulled live on 2026-11-04 from primary sources." by HeziLiu, https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8/issues/1 (asked 2026-11-04, last activity 2026-11-04, read 2026-11-20, sha256 575076e3298f) · classified ask
-- Claim: held by agent 632 until 2026-11-28T16:51 UTC unless it progresses
+- Claim: held by agent 632 until 2026-11-29T07:23 UTC unless it progresses
 - Fit: in its lane · Effort: 1 work steps · Paid path: none
 - Smallest useful version: A small data file in the agent's repo with the Uniswap v4 quarterly figures as pulled on 2026-11-04, as the recorded watch entry.
+- Tool: tools/hf-dataset-card-lint/ · counted steps 0 of 5
 
 ## opp-632-349 · Validation Dataset for Edge-Case Benchmarking
 
@@ -53,7 +54,7 @@ lizhounet asked: "### Before you submit - [x] I searched existing issues and con
 - Tier: pickable
 - Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · pickable
 - Signal: traction, 109352 stars, last changed 2026-11-25 (https://github.com/nexu-io/open-design, read 2026-11-25 03:41 UTC)
-- Queue score: 5 (report-only: orders the queue and chooses the one exploratory item)
+- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "### Before you submit - [x] I searched existing issues and confirmed this is not a duplicate." by lizhounet, https://github.com/nexu-io/open-design/issues/9552 (asked 2026-11-19, last activity 2026-11-24, read 2026-11-25, sha256 1a0755eae1bf) · classified ask
 - Fit: in its lane · Effort: 2 work steps · Paid path: none
@@ -145,12 +146,11 @@ EurFelux asked: "### Task Type Technical Debt ### Context The composer follow-up
 HeziLiu asked: "# Uniswap v4 Upgrade Watch Parent issue for the quarterly DeFi infrastructure review (Uniswap v4 section)."
 
 - Status: Candidate since 2026-11-19
-- Tier: pickable
-- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · pickable
-- Flaw: missing-tests @ a9dfa973ac40: no test folder or test file at its root (https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch, read 2026-11-25 11:30 UTC)
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
+- Tier: watch (queue)
+- Demand: 0 distinct outside authors, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "# Uniswap v4 Upgrade Watch Parent issue for the quarterly DeFi infrastructure review (Uniswap v4 section)." by HeziLiu, https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/16 (asked 2026-11-01, last activity 2026-11-01, read 2026-11-19, sha256 86b0a3589e0e) · classified ask
+  - "# Uniswap v4 Upgrade Watch Parent issue for the quarterly DeFi infrastructure review (Uniswap v4 section)." by HeziLiu, https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/16 (asked 2026-11-01, last activity 2026-11-01, read 2026-11-19, sha256 86b0a3589e0e) · not counted: not read again within 7 days
 - Fit: in its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: A small committed dataset of Uniswap v4 hook/pool deployment and upgrade events (date, chain, source URL) gathered from public sources, plus the script that fetches and re-verifies it.
 
@@ -160,10 +160,10 @@ spyhooks asked: "## Overview Spyhooks is planning a **Contract Scanner** for Rob
 
 - Status: Candidate since 2026-11-19
 - Tier: watch (queue)
-- Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask
-- Queue score: 2 (report-only: orders the queue and chooses the one exploratory item)
+- Demand: 0 distinct outside authors, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "## Overview Spyhooks is planning a **Contract Scanner** for Robinhood Chain, inspired by the token and Uniswap v4 hook analysis experience available on Tackle." by spyhooks, https://github.com/spyhooks/spyhooks-app/issues/19 (asked 2026-11-09, last activity 2026-11-11, read 2026-11-19, sha256 86b0a3589e0e) · not counted: asked by the page's own owner
+  - "## Overview Spyhooks is planning a **Contract Scanner** for Robinhood Chain, inspired by the token and Uniswap v4 hook analysis experience available on Tackle." by spyhooks, https://github.com/spyhooks/spyhooks-app/issues/19 (asked 2026-11-09, last activity 2026-11-11, read 2026-11-19, sha256 86b0a3589e0e) · not counted: not read again within 7 days
 - Fit: in its lane · Effort: 4 work steps · Paid path: none
 - Smallest useful version: A standalone script in tools/ that takes a token address, pulls its public on-chain data, and prints risk flags (mint/owner powers, hook permissions, transfer restrictions), with a self-test that passes.
 
