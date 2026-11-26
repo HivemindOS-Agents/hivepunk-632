@@ -2,7 +2,7 @@
   "v": 1,
   "kind": "watchdog",
   "agent": "632",
-  "at": "2026-11-25T00:16:38.022Z",
+  "at": "2026-11-26T00:11:49.807Z",
   "version": "watchdog-v1",
   "mode": "report",
   "checked": [
@@ -57,9 +57,48 @@
       "name": "failure_not_in_health",
       "severity": "repair",
       "subject": "publish-dataset",
-      "detail": "Its repair of publish-dataset has 3 failed attempts, 0 of them after it was delivered.",
+      "detail": "Its repair of publish-dataset has 2 failed attempts, 0 of them after it was delivered.",
       "evidence": [],
       "firstSeen": "2026-11-22T00:13:18.174Z"
+    },
+    {
+      "id": "wd-632-D13-https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/uniswap-v4-core-release-watch",
+      "check": "D13",
+      "name": "receipt_or_link_false",
+      "severity": "report",
+      "subject": "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/uniswap-v4-core-release-watch",
+      "detail": "ARTIFACTS.md calls it live; it answered 429.",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/uniswap-v4-core-release-watch",
+        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/ARTIFACTS.md"
+      ],
+      "firstSeen": "2026-11-26T00:11:49.807Z"
+    },
+    {
+      "id": "wd-632-D13-https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/fastify-decorators-maintenance-status",
+      "check": "D13",
+      "name": "receipt_or_link_false",
+      "severity": "report",
+      "subject": "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/fastify-decorators-maintenance-status",
+      "detail": "ARTIFACTS.md calls it live; it answered 429.",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/fastify-decorators-maintenance-status",
+        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/ARTIFACTS.md"
+      ],
+      "firstSeen": "2026-11-26T00:11:49.807Z"
+    },
+    {
+      "id": "wd-632-D13-https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hallucination-report-opp-632-53",
+      "check": "D13",
+      "name": "receipt_or_link_false",
+      "severity": "report",
+      "subject": "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hallucination-report-opp-632-53",
+      "detail": "ARTIFACTS.md calls it live; it answered 429.",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hallucination-report-opp-632-53",
+        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/ARTIFACTS.md"
+      ],
+      "firstSeen": "2026-11-26T00:11:49.807Z"
     },
     {
       "id": "wd-632-D15-reviews/2026-11-19-hallucination-reproduction-repositories-extract.json",
@@ -98,6 +137,18 @@
       "firstSeen": "2026-11-20T00:08:10.995Z"
     },
     {
+      "id": "wd-632-D17---uniswap-v4-core-release-watch-dataset-2026-11-25-:-It-chose-to-publish-it-as-",
+      "check": "D17",
+      "name": "publish_while_failing",
+      "severity": "repair",
+      "subject": "ARTIFACTS.md",
+      "detail": "\"- uniswap-v4-core-release-watch-dataset (2026-11-25): It chose to publish it as it is on 2026-11-25 (It decided on: \"The artifact \"uniswap-v4-core-release-watc…\"",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/ARTIFACTS.md"
+      ],
+      "firstSeen": "2026-11-26T00:11:49.807Z"
+    },
+    {
       "id": "wd-632-D18-artifacts",
       "check": "D18",
       "name": "unknown_cost_as_zero",
@@ -110,35 +161,30 @@
       "firstSeen": "2026-11-15T13:48:48.674Z"
     },
     {
-      "id": "wd-632-D22-tools/uniswap-v4-upgrade-watch/upgrade_watch.py",
-      "check": "D22",
-      "name": "claimed_file_not_committed",
-      "severity": "repair",
-      "subject": "tools/uniswap-v4-upgrade-watch/upgrade_watch.py",
-      "detail": "A step said it built tools/uniswap-v4-upgrade-watch/upgrade_watch.py; it is not in the commit.",
-      "evidence": [
-        "step 2026-11-23T14:11Z"
-      ],
-      "firstSeen": "2026-11-24T00:08:37.945Z"
-    },
-    {
       "id": "wd-632-D23-owner",
       "check": "D23",
       "name": "owner_handoff",
       "severity": "report",
       "subject": "its steps",
-      "detail": "8 steps in the last 48 hours handed the rest of the work to the owner. The newest: \"Left for the owner: let the post-commit self-test run and confirm EXIT=0 newer than the failing run (fix forward if not), and with network …\".",
+      "detail": "9 steps in the last 48 hours handed the rest of the work to the owner. The newest: \"Left for the owner: let the self-test run after this commit, then publish through the Publish a small open dataset play under hivepunk-632-…\".",
       "evidence": [
-        "step 2026-11-24T22:41Z",
-        "step 2026-11-24T22:07Z",
-        "step 2026-11-24T18:57Z",
-        "step 2026-11-23T14:11Z"
+        "step 2026-11-25T21:21Z",
+        "step 2026-11-25T17:55Z",
+        "step 2026-11-25T14:43Z",
+        "step 2026-11-25T11:33Z"
       ],
       "firstSeen": "2026-11-16T00:00:20.098Z"
     }
   ],
-  "notSeenAgain": [],
-  "said": "8 found",
+  "notSeenAgain": [
+    {
+      "id": "wd-632-D22-tools/uniswap-v4-upgrade-watch/upgrade_watch.py",
+      "check": "D22",
+      "subject": "tools/uniswap-v4-upgrade-watch/upgrade_watch.py",
+      "firstSeen": "2026-11-24T00:08:37.945Z"
+    }
+  ],
+  "said": "11 found",
   "requests": 22,
-  "elapsedMs": 7316
+  "elapsedMs": 3272
 }
