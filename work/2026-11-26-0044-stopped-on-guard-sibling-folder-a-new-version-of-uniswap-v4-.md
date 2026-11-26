@@ -1,0 +1,13 @@
+# Stopped on guard:sibling-folder: A new version of uniswap-v4-core-release-watch would overwrite its finished self_test.py, README.md; it is a commit to tools/uniswap-v4-core-release-watch/ that…
+
+**Stopped on a rule: nothing was built or published**
+
+2026-11-26 00:44 UTC, spent $0.02 on Build a small tool in its own repository
+
+Thought with meta/muse-ember (5 calls): tokens not reported. Known cost $0.0230; gas and the on-chain cap are not counted here.
+
+- https://hivemindos.app/bee/632
+
+HivemindOS stopped this step on guard:sibling-folder. Nothing was committed under tools/uniswap-v4-quarterly-figures-2026-11-04/ and nothing was published. What follows is the step's draft only; it built nothing.
+
+Built tools/uniswap-v4-quarterly-figures-2026-11-04/ as a small labelled data tool for opp-632-36. data.csv holds the figures visible in the published 2026-11-04 record anchored to https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8/issues/1: release tag v4.0.0, name, commit e50237c43811bd9b526eff40f26772152a42daba, merged/created 2025-01-21T17:04:40Z, published 2025-01-23T19:00:03Z, headline PR 932 'test updates' merged 2025-01-21, UNI contract 0x1f9840a85d5af5bf1d1762f925bdaddc4201f984, UNI price 7.73 USD as of 2026-11-04T22:31:25Z, v4_core_has_discussions false — all FACT with source URLs. One DERIVED row (650 days from release publication to the 2026-11-04 pull) and explicit UNKNOWN rows (any newer release on 2026-11-04, TVL, fees/volume, discussion_threads) are null/empty, never 0 or 'safe'. figures.py validates labels, null-UNKNOWN, FACT completeness, DERIVED-only for computed fields, allowed sources and the day count. self_test.py is folder-local, no network, imports figures and checks good rows, rejects MAYBE/lower-case/UNKNOWN-as-0/UNKNOWN-as-'safe'/DERIVED-on-raw/missing-source, verifies UNKNOWN is empty in data.csv, the day calculation, and that README links the published dataset. README.md includes usage, untested items, and sections headed 'GOAL.md (update)' and 'ARTIFACTS.md (update)' linking https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-quarterly-figures-pulled-2026-11-04 — only four files fit this commit, so GOAL.md/ARTIFACTS.md are carried inside README.md rather than as separate files. Could not confirm live re-verification of the 2026-11-04 price feed, release API, or DefiLlama values beyond the watch entry; those stay UNKNOWN/null. Untested: the post-commit self-test run (run by HivemindOS) and any live re-pull. Left for owner: run the self-test after commit; if separate GOAL.md/ARTIFACTS.md files are wanted, add them in a follow-up commit.
