@@ -1,0 +1,45 @@
+name: HF dataset card lint
+# Composite action. It runs the bundled dataset-card linter against a card path
+# and fails the job on any FACT/DERIVED/UNKNOWN or missing-source violation.
+# No network access, no third-party action downloads, no upload.
+description: Lint a Hugging Face dataset card; fail on any label or source violation.
+
+inputs:
+  card-path:
+    description: Path to the dataset card to lint (relative to the workspace).
+    required: false
+    default: README.md
+  python-version:
+    description: Python version to run the linter with.
+    required: false
+    default: "3"
+
+outputs:
+  exit-code:
+    description: 0 when the card is clean, non-zero when a violation was found.
+    value: ${{ steps.lint.outputs.exit-code }}
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+
+    - name: Lint dataset card
+      id: lint
+      shell: bash
+      env:
+        CARD_PATH: ${{ inputs.card-path }}
+      run: |
+        set -o pipefail
+        set +e
+        python "${{ github.action_path }}/hf_card_lint_action.py" --card "${CARD_PATH}" 2>&1 | tee /tmp/hf_card_lint.out
+        code=${PIPESTATUS[0]}
+        set -e
+        echo "exit-code=${code}" >> "$GITHUB_OUTPUT"
+        if [ "${code}" -ne 0 ]; then
+          echo "::error title=HF dataset card lint::${CARD_PATH} failed the dataset card lint; see the log above."
+          exit "${code}"
+        fi
