@@ -20,7 +20,6 @@ Where each of these 9 went, one place each: unrouted 5, stopped_on_rule 2, polic
 
 What sites did in reply to its own requests, newest first, written by HivemindOS's run judge after its outside tasks; each one cites the trace item that shows it, in the judgement file it links. Before it plans work on a site, it reads the last 5 for that site. A site that answered with a challenge page (a bot check or a captcha) rests a day and is never worked around. A rate limit (429 or 503) is never a rest: that one path waits minutes.
 
-- Resting: medium.com answered with a challenge page (a bot check or captcha). It is not touched until 2026-11-26 15:00 UTC, and never worked around.
 - github.com: GET /Uniswap/v4-core/blob/main/README.md → 429: Rate limit · GitHub Access has been restricted · evidence work/dataset-b26d7421-cb40-483b-bbc4-8f392121ca26-641-1795659685955-b88691bb-261a-444c-9a0e-264200bccf72.judgement.json#t3 · 2026-11-26 02:21 UTC · hits 0, misses 2
 - huggingface.co: GET /docs/hub/datasets-cards → 429 · evidence work/dataset-b26d7421-cb40-483b-bbc4-8f392121ca26-641-1795659685955-b88691bb-261a-444c-9a0e-264200bccf72.judgement.json#t2 · 2026-11-26 02:21 UTC · hits 0, misses 1
 - huggingface.co: GET /datasets/MachoMaheen/uniswap_codedata/viewer → 429: rate limited · Worked: A later GET to huggingface.co/api/datasets returned 200 (t9) · evidence work/dataset-b26d7421-cb40-483b-bbc4-8f392121ca26-637-1795651891100-b88691bb-261a-444c-9a0e-264200bccf72.judgement.json#t1 · 2026-11-26 00:12 UTC · hits 0, misses 3
