@@ -1,0 +1,101 @@
+{
+  "step": "research-20783:b26d7421-cb40-483b-bbc4-8f392121ca26:647:1795726170150:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "The trace shows only unrelated GET requests and the output claims a different research note was published; there is no evidence the required tools/opp-632-341-repro-checklist/ folder with checklist.md, checklist.py, self_test.py and README.md was created, self-tested, or committed together.",
+  "description": "The agent did not produce the requested reproduction checklist package. Its trace contains only eight GETs to unrelated sites and its final output reports publishing a checklist_tool research note at a different path.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "rateLimited": [],
+  "dropped": {
+    "page-instruction": 1
+  },
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "www.intel.com",
+      "path": "/content/www/us/en/docs/inspector/user-guide-windows/2024-2/:id",
+      "status": 200,
+      "error": null,
+      "ms": 85,
+      "at": "2026-11-26T20:50:58.582Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "learn.chatgpt.com",
+      "path": "/docs/prompting",
+      "status": 200,
+      "error": null,
+      "ms": 87,
+      "at": "2026-11-26T20:50:58.582Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "openspec.dev",
+      "path": "/docs/schemas/spec-driven",
+      "status": 200,
+      "error": null,
+      "ms": 119,
+      "at": "2026-11-26T20:50:58.582Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "learning.deltek.com",
+      "path": "/bundle/:id/page/Create_Checklist_Document_Folders.html",
+      "status": 200,
+      "error": null,
+      "ms": 250,
+      "at": "2026-11-26T20:50:58.582Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "www.hfssoft.com",
+      "path": "/doc/:id",
+      "status": 406,
+      "error": "406 - Client browser does not accept the MIME type of the requested page. Server Error 406 - Client browser does not accept the MIME type of the requested page. The page you are looking for cannot be ",
+      "ms": 423,
+      "at": "2026-11-26T20:50:58.582Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "gist.github.com",
+      "path": "/Rich-Harris/:id",
+      "status": 200,
+      "error": null,
+      "ms": 332,
+      "at": "2026-11-26T20:50:58.782Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/1111307/checklist_tool",
+      "status": 200,
+      "error": null,
+      "ms": 756,
+      "at": "2026-11-26T20:50:58.783Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/rhysd/actionlint",
+      "status": 200,
+      "error": null,
+      "ms": 434,
+      "at": "2026-11-26T20:50:59.783Z"
+    }
+  ],
+  "at": "2026-11-26T20:51:52.211Z"
+}
