@@ -1,0 +1,21 @@
+{
+  "v": 1,
+  "kind": "repair-relabel",
+  "agent": "632",
+  "repair": "rp-632-t-uniswap-v4-core-release-watch",
+  "episode": 3,
+  "from": "fixed-verified",
+  "to": "repaired_by_test_edit",
+  "evidence": {
+    "commits": [
+      "84ac658dd59d",
+      "7ae8856634ff",
+      "ff7d945faee4"
+    ],
+    "testFiles": [
+      "tools/uniswap-v4-core-release-watch/self_test.py"
+    ]
+  },
+  "until": "the earlier failing check passes on the new code, or a check by a different owner passes",
+  "at": "2026-11-26T16:38:28.537Z"
+}
