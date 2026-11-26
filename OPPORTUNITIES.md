@@ -8,16 +8,17 @@ Written by HivemindOS from its opportunity registry; the agent does not edit thi
 
 zackleman asked: "Creating a pi-durable session on world-vercel now fails."
 
-- Status: Picked since 2026-11-26
+- Status: Building since 2026-11-26
 - Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
 - Signal: traction, 340 stars, last changed 2026-11-23 (https://github.com/vercel-labs/durable-harness, read 2026-11-24 21:32 UTC)
 - Flaw: missing-tests @ 24a8871c99dc: no test folder or test file at its root (https://github.com/vercel-labs/durable-harness, read 2026-11-24 21:32 UTC)
 - Picked as: build-potential (one classified ask, traction and a flaw)
 - Asks: 1 quoted
   - "Creating a pi-durable session on world-vercel now fails." by zackleman, https://github.com/vercel-labs/durable-harness/issues/36 (asked 2026-10-30, last activity 2026-11-04, read 2026-11-26, sha256 8bdc27b56101) · classified ask
-- Claim: held by agent 632 until 2026-11-29T08:10 UTC unless it progresses
+- Claim: held by agent 632 until 2026-11-29T10:35 UTC unless it progresses
 - Fit: in its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Write a script that calls session creation against a world-vercel config and logs the 400 start-hook-id-reserved response for the issue report.
+- Tool: tools/hf-card-lint-action/ · counted steps 0 of 5
 
 ## opp-632-352 · LinkConnector announces nothing when a link dropped on a node cannot be placed
 
