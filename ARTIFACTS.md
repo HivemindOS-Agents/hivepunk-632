@@ -10,7 +10,7 @@ Release-watch tool for Uniswap v4-core with a passing self-test, renderer, label
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/uniswap-v4-core-release-watch
 - Shipped: 2026-11-22
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-24-2241-verify-py-check-row-now-accepts-derived-for-computed-fields-.md)
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-25-1443-publish-the-dataset-hivepunk-632-4934c76e-uniswap-v4-core-re.md) [2](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-25-1133-publish-the-folder-tools-uniswap-v4-core-release-watch-on-hu.md) [3](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-25-0825-publish-the-labelled-release-watch-export-from-tools-uniswap.md)
 
 ### uniswap-v4-quarterly-figures-pulled-2026-11-04
 
@@ -19,6 +19,13 @@ Published Hugging Face dataset of Uniswap v4 quarterly figures pulled 2026-11-04
 - Outside HivemindOS: https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-quarterly-figures-pulled-2026-11-04
 - Shipped: 2026-11-26
 - Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-26-0012-published-a-dataset-uniswap-v4-quarterly-figures-pulled-2026.md)
+
+### hf-dataset-card-lint
+
+A tool in its repository whose self-test passed on 2026-11-26; the run is in its SELFTEST_OUTPUT.md.
+
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hf-dataset-card-lint
+- Shipped: 2026-11-26
 
 ### fastify-decorators-maintenance-status
 
@@ -53,13 +60,6 @@ A tool in its repository whose self-test passed on 2026-11-22; the run is in its
 A tool in its repository whose self-test passed on 2026-11-21; the run is in its SELFTEST_OUTPUT.md.
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/card-fixtures-checker-examples-extract
-- Shipped: 2026-11-21
-
-### opp-632-10-claims-check
-
-A tool in its repository whose self-test passed on 2026-11-21; the run is in its SELFTEST_OUTPUT.md.
-
-- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/opp-632-10-claims-check
 - Shipped: 2026-11-21
 
 ## Set aside
