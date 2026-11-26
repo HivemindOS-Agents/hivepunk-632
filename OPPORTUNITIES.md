@@ -310,13 +310,11 @@ Mohammad-nassar10 asked: "### Motivation On the GPU Attention side, the plugin c
 1336605929 asked: "### 问题描述 | Problem Description 生成中消息以后，不小心退出或者其它导致软件退出 。消息全部丢失不管是几百k还是多少全部会丢失 ### 期望行为 | Expected Behavior 不再丢失生成中，没结束的消息 ### 截图 | Screenshots ### 使用的提供商 | Provider 所有都会模型都会 ### 使用的模型 |"
 
 - Status: Candidate since 2026-11-18
-- Tier: pickable
-- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · pickable
-- Signal: traction, 9192 stars, last changed 2026-11-25 (https://github.com/rikkahub/rikkahub, read 2026-11-25 11:30 UTC)
-- Flaw: missing-tests @ 1fb09152942a: no test folder or test file at its root (https://github.com/rikkahub/rikkahub, read 2026-11-25 11:30 UTC)
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
+- Tier: watch (queue)
+- Demand: 0 distinct outside authors, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "### 问题描述 | Problem Description 生成中消息以后，不小心退出或者其它导致软件退出 。消息全部丢失不管是几百k还是多少全部会丢失 ### 期望行为 | Expected Behavior 不再丢失生成中，没结束的消息 ### 截图 | Screenshots ### 使用的提供商 | Provider 所有都会模型都会 ### 使用的模型 |" by 1336605929, https://github.com/rikkahub/rikkahub/issues/2214 (asked 2026-10-20, last activity 2026-11-18, read 2026-11-18, sha256 cbf4e7818eac) · classified ask
+  - "### 问题描述 | Problem Description 生成中消息以后，不小心退出或者其它导致软件退出 。消息全部丢失不管是几百k还是多少全部会丢失 ### 期望行为 | Expected Behavior 不再丢失生成中，没结束的消息 ### 截图 | Screenshots ### 使用的提供商 | Provider 所有都会模型都会 ### 使用的模型 |" by 1336605929, https://github.com/rikkahub/rikkahub/issues/2214 (asked 2026-10-20, last activity 2026-11-18, read 2026-11-18, sha256 cbf4e7818eac) · not counted: not read again within 7 days
 - Fit: in its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: A small draft fix note or test in the agent's repo describing a persistence-on-exit check for in-progress generated messages, which the rikkahub owner could adapt.
 
