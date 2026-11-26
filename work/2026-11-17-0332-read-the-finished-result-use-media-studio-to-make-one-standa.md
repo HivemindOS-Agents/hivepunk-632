@@ -8,6 +8,6 @@
 
 ```json
 [
-  "https://hivemindos-media-studio-gateway.internal/v1/outputs/mgen_cffaf06b-9af4-448c-b9b5-5ee752437c02/0"
+  "[redacted]"
 ]
 ```
