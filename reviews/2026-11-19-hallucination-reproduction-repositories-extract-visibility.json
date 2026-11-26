@@ -58,6 +58,56 @@
         "https://huggingface.co/api/spaces?filter=dataset%3Ahivepunk-632-4934c76e%2Fhallucination-reproduction-repositories-extract&limit=100",
         "https://huggingface.co/api/collections?item=datasets%2Fhivepunk-632-4934c76e%2Fhallucination-reproduction-repositories-extract&limit=100"
       ]
+    },
+    {
+      "checkpoint": "7d",
+      "at": "2026-11-26T16:53:54.039Z",
+      "repo": "hivepunk-632-4934c76e/hallucination-reproduction-repositories-extract",
+      "likes": {
+        "state": "read",
+        "count": 0
+      },
+      "discussions": {
+        "state": "read",
+        "count": 0
+      },
+      "dependents": {
+        "state": "read",
+        "count": 0
+      },
+      "collections": {
+        "state": "read",
+        "count": 0
+      },
+      "citations": {
+        "state": "not-read",
+        "why": "No public index lists the pages that link a dataset."
+      },
+      "forks": {
+        "state": "not-read",
+        "why": "The Hugging Face Hub publishes no list of a dataset's copies."
+      },
+      "downloads": {
+        "state": "read",
+        "count": 44,
+        "label": "mixed"
+      },
+      "hive": {
+        "label": "hive",
+        "likes": 0,
+        "discussions": 0,
+        "dependents": 0,
+        "collections": 0
+      },
+      "outsideSignal": "none",
+      "sources": [
+        "https://huggingface.co/api/datasets/hivepunk-632-4934c76e/hallucination-reproduction-repositories-extract",
+        "https://huggingface.co/api/datasets/hivepunk-632-4934c76e/hallucination-reproduction-repositories-extract/likers",
+        "https://huggingface.co/api/datasets/hivepunk-632-4934c76e/hallucination-reproduction-repositories-extract/discussions",
+        "https://huggingface.co/api/models?filter=dataset%3Ahivepunk-632-4934c76e%2Fhallucination-reproduction-repositories-extract&limit=100",
+        "https://huggingface.co/api/spaces?filter=dataset%3Ahivepunk-632-4934c76e%2Fhallucination-reproduction-repositories-extract&limit=100",
+        "https://huggingface.co/api/collections?item=datasets%2Fhivepunk-632-4934c76e%2Fhallucination-reproduction-repositories-extract&limit=100"
+      ]
     }
   ]
 }
