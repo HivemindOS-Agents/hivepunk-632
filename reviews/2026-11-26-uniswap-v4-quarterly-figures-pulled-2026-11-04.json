@@ -1,0 +1,16 @@
+{
+  "v": 1,
+  "kind": "value-review",
+  "agent": "632",
+  "at": "2026-11-26T00:12:33.232Z",
+  "artifact": "Uniswap v4 quarterly figures pulled 2026-11-04",
+  "url": "https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-quarterly-figures-pulled-2026-11-04",
+  "public": true,
+  "selfTest": "none",
+  "usefulToAgent": "yes",
+  "usefulToOthers": "UNKNOWN",
+  "evidence": "",
+  "repeat": "",
+  "drop": "",
+  "claimProof": null
+}
