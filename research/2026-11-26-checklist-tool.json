@@ -1,0 +1,190 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-26T20:50:56.499Z",
+  "subject": "checklist_tool (配置核查工具包)",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The pages show a maintained, Windows-and-Kylin security configuration checklist toolkit with a steady recent commit cadence of substantive fixes, but every behavioural claim comes from its own Chinese README and no usage, licence or release data is shown, so it is worth knowing as an actively worked-on internal-looking tool rather than as a proven standard.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "1111307/checklist_tool has 13 raw commits in the last 30 days, 11 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/1111307/checklist_tool/commits?per_page=50&since=2026-10-27T20:51:00.218Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is abb45b5, on 2026-11-19.",
+      "check": "shipping",
+      "source": "https://github.com/1111307/checklist_tool/commit/abb45b5556759e9dc0fe903da649f6f92484a838"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "1111307/checklist_tool has 143 commits in total.",
+      "check": "page",
+      "source": "https://github.com/1111307/checklist_tool",
+      "quote": "Latest commit History 143 Commits 143 Commits",
+      "sourceId": "src-1",
+      "quoteSha256": "75e8d36ddf56706f60ce2ca5eb2a1372faa38f3e725885d730744ad77f2f13c3"
+    },
+    {
+      "id": "c2",
+      "label": "UNKNOWN",
+      "text": "The repository page lists a folder 交付包_v2.0.0_20261025 and a file 配置核查作业指导书_v2.0.0.docx.",
+      "check": "page",
+      "missing": "Its source holds no passage that says this."
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "The README describes the toolkit as a security configuration checking tool for Windows and domestic Chinese operating systems (Kylin), with a guide, checklist table and cross-verification report.",
+      "check": "page",
+      "source": "https://github.com/1111307/checklist_tool",
+      "quote": "配置核查工具包（checklist_tool） 面向 Windows 与国产操作系统（麒麟）的安全配置核查工具，配套指导书、核查表与交叉验证报告。",
+      "sourceId": "src-1",
+      "quoteSha256": "a333307d72b5244938a1d47f9f89eafc9d39adadb4b3610bf05fa408cf1462cc"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "On Windows, an administrator runs win\\run_all.bat for a full check or win\\run.bat for the OS only; on Kylin, the equivalent is sudo bash kylin/run_all.sh or sudo bash kylin/run.sh.",
+      "check": "page",
+      "source": "https://github.com/1111307/checklist_tool",
+      "quote": "Windows （XP/7/10） 管理员双击 win\\run_all.bat 双击 win\\run.bat 麒麟 （中标/银河） sudo bash kylin/run_all.sh sudo bash kylin/run.sh",
+      "sourceId": "src-1",
+      "quoteSha256": "58251c8bd90bf304d4c8530f7cab207ffcb59b2dd213f94736f6fdc4aeb52afa"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "The README states there are no dependencies: Windows uses the system's built-in VBScript (cscript) and Kylin uses its built-in Bash, so the machine under test needs no software installed.",
+      "check": "page",
+      "source": "https://github.com/1111307/checklist_tool",
+      "quote": "零依赖 ：Windows 用系统自带 VBScript（cscript），麒麟用系统自带 Bash，被测机无需安装任何软件。",
+      "sourceId": "src-1",
+      "quoteSha256": "2bd0e9d57373244069bbe33d7ea241b65b261de4f883d1a3b450351a0dcaa603"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "The README says Kylin's run_all.sh auto-detects installed databases/middleware, checks only those present and skips the rest, with FORCE_ALL=1 to force checking all; and that network-device checking is included when it finds device output under kylin/output/netdev/.",
+      "check": "page",
+      "source": "https://github.com/1111307/checklist_tool",
+      "quote": "麒麟版 run_all.sh 会 自动探测 本机安装的数据库/中间件，只核查存在的组件，没装的自动跳过（ FORCE_ALL=1 可强制全查）；检测到 kylin/output/netdev/ 有设备采集回显时，网络设备核查自动纳入同一轮。",
+      "sourceId": "src-1",
+      "quoteSha256": "2793194cc1059f907b24360e9f6a6ca3eb8da7c649eea65b56eaf8b8f6ec8ece"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Database/middleware connection parameters are edited in each platform directory's db_config.conf or overridden by environment variables, with MYSQL_PASS=xxx given as an example.",
+      "check": "page",
+      "source": "https://github.com/1111307/checklist_tool",
+      "quote": "数据库/中间件连接参数：编辑各平台目录下的 db_config.conf ，或用环境变量覆盖（ MYSQL_PASS=xxx sudo bash kylin/run_all.sh ）。",
+      "sourceId": "src-1",
+      "quoteSha256": "d70bca72fa53d701e8358b5ab13684afefd3f1ec43578cf8ca75fb91e2357e53"
+    },
+    {
+      "id": "c8",
+      "label": "UNKNOWN",
+      "text": "The README says the toolkit covers 6 databases/middleware plus network devices, 16 check scripts in total.",
+      "check": "page",
+      "missing": "Its source holds no passage that says this."
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "1111307/checklist_tool has 13 raw commits in the last 30 days, 11 of them real work (not docs, formatting, bots, templates or trivial), and its latest real commit is abb45b5 on 2026-11-19.",
+      "check": "page",
+      "source": "https://api.github.com/repos/1111307/checklist_tool/commits?per_page=50&since=2026-10-27T20:51:00.218Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c10",
+      "label": "FACT",
+      "text": "Commit abb45b5 is dated 2026-11-19T11:32:30.000Z with message 'fix: 1.17 详情的 netOut 也改为 Snippet（最后一处裸命令输出）'.",
+      "check": "page",
+      "source": "https://api.github.com/repos/1111307/checklist_tool/commits?per_page=50&since=2026-10-27T20:51:00.218Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c11",
+      "label": "FACT",
+      "text": "A nearby commit, 29731a1, is dated 2026-11-19T11:29:57.000Z with message 'fix: 报告详情不再拼接原始命令输出，修复中文 Windows 下 HTML 被非法字节破坏'.",
+      "check": "page",
+      "source": "https://api.github.com/repos/1111307/checklist_tool/commits?per_page=50&since=2026-10-27T20:51:00.218Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c12",
+      "label": "DERIVED",
+      "text": "The described toolkit is maintained, not dormant, around the date of these pages, because its most recent 30-day window shows 13 commits, 11 classified as real work, with the latest real commit on 2026-11-19.",
+      "check": "page",
+      "inputs": [
+        "c9"
+      ],
+      "math": "c9 gives 13 raw commits and 11 real-work commits in the last 30 days plus a latest real commit date of 2026-11-19; a window that short with that many real commits and a recent latest commit indicates ongoing maintenance rather than a stopped project."
+    }
+  ],
+  "counts": {
+    "fact": 11,
+    "derived": 1,
+    "unknown": 2
+  },
+  "risks": [
+    "The README's claim of zero dependencies rests on Windows VBScript and Kylin Bash being present; the pages do not show what happens on a Windows build with VBScript disabled or a non-Kylin Linux [https://github.com/1111307/checklist_tool]",
+    "Commits in the window are fixes to report rendering and checklist judgement (for example a fix for HTML broken by invalid bytes under Chinese Windows), which suggests output correctness has been fragile…",
+    "The description page is only in Chinese, so claims about what the toolkit checks cannot be independently verified from the pages read [https://github.com/1111307/checklist_tool]",
+    "The pages read show no license, no releases and no user or download numbers, so adoption and permission to reuse are both unshown [https://github.com/1111307/checklist_tool]",
+    "The README says database and middleware connection parameters are edited in db_config.conf or passed as environment variables (for example MYSQL_PASS=xxx), a pattern that can leave credentials in files or shell history [https://github.com/1111307/checklist_tool]"
+  ],
+  "unknowns": [
+    "The repository page lists a folder 交付包_v2.0.0_20261025 and a file 配置核查作业指导书_v2.0.0.docx.: Its source holds no passage that says this.",
+    "The README says the toolkit covers 6 databases/middleware plus network devices, 16 check scripts in total.: Its source holds no passage that says this."
+  ],
+  "wouldChangeMind": [
+    "A license file or published releases, which would show whether the toolkit can be reused outside its current setting",
+    "Any external usage evidence (issues, forks, citations, third-party reports) instead of the repository's own description",
+    "Documentation or a test proving it works outside Windows XP/7/10 and Kylin, or in English"
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "GitHub - 1111307/checklist_tool · GitHub",
+      "url": "https://github.com/1111307/checklist_tool",
+      "finalUrl": "https://github.com/1111307/checklist_tool",
+      "status": 200,
+      "fetchedAt": "2026-11-26T20:50:59.565Z",
+      "extractor": "page-text-v1",
+      "sha256": "6940c10f717fe3c3385194c16be1a8da429df8f11c61751dffcfa250b88e7202",
+      "bytes": 426185,
+      "quote": "Latest commit History 143 Commits 143 Commits",
+      "quoteSha256": "75e8d36ddf56706f60ce2ca5eb2a1372faa38f3e725885d730744ad77f2f13c3"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of 1111307/checklist_tool",
+      "url": "https://api.github.com/repos/1111307/checklist_tool/commits?per_page=50&since=2026-10-27T20:51:00.218Z",
+      "fetchedAt": "2026-11-26T20:50:56.499Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "032a835c110a7d674c60bbd314af4053e9fd9d3bb941dadddf24b16b2da0e73b"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-26-checklist-tool.md",
+  "decidedBy": "agent"
+}
