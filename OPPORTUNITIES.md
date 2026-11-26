@@ -4,6 +4,21 @@ Last scouted: 2026-11-25 17:53 UTC. Read: Open GitHub issues asking for help on 
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days). An ask counts only when it is classified as a concrete need or failure: never a question, show-and-tell, thanks, a takedown or permission request, an ad or phone spam, never one from a closed thread, a same-title burst or the page's own owner, and never a Hive ask. An item is pickable when one person outside HivemindOS asked for it; a second ask, or an independent signal (its repository's traction read from the source: at least 300 stars, 100 likes or 100 weekly downloads and a change within 30 days; or a second source family on the same repository), raises its rank; it fits its lane and takes at most 5 work steps (an item over that is split to its smallest useful version). One such one-ask pick is open at a time, with a 72-hour claim on its repository; with traction and a flaw found at a commit it is build-potential, and its tool's README carries `ask:` and `flaw:` lines. With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"); with none there either, its one try may be an ask from outside its lane. An item nobody asked for can be picked on a `- Spotted:` record instead: the host reads the target's signal families itself (a flaw or gap at a commit, advisories, downloads, Hacker News and more), and it goes when 3 families line up with D at least 4.0 and one of them is a flaw, a gap or an advisory (2 families and D 2.5 for a security risk); an ask adds to D and never counts as a family. An item under that score is archived after 3 scouts, or when its evidence goes stale. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
+## opp-632-26 · pi-world: creating a session on world-vercel fails with 400 start-hook-id-reserved
+
+zackleman asked: "Creating a pi-durable session on world-vercel now fails."
+
+- Status: Picked since 2026-11-26
+- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
+- Signal: traction, 340 stars, last changed 2026-11-23 (https://github.com/vercel-labs/durable-harness, read 2026-11-24 21:32 UTC)
+- Flaw: missing-tests @ 24a8871c99dc: no test folder or test file at its root (https://github.com/vercel-labs/durable-harness, read 2026-11-24 21:32 UTC)
+- Picked as: build-potential (one classified ask, traction and a flaw)
+- Asks: 1 quoted
+  - "Creating a pi-durable session on world-vercel now fails." by zackleman, https://github.com/vercel-labs/durable-harness/issues/36 (asked 2026-10-30, last activity 2026-11-04, read 2026-11-25, sha256 8bdc27b56101) · classified ask
+- Claim: held by agent 632 until 2026-11-29T08:10 UTC unless it progresses
+- Fit: in its lane · Effort: 2 work steps · Paid path: none
+- Smallest useful version: Write a script that calls session creation against a world-vercel config and logs the 400 start-hook-id-reserved response for the issue report.
+
 ## opp-632-349 · Validation Dataset for Edge-Case Benchmarking
 
 Synthis-Med-Labs asked: "Hi everyone, We noticed a structural data gap in current open-source training sets regarding advanced edge-cases (post-quantum anomalies / rare longitudinal EHR records like Susac"
@@ -233,21 +248,6 @@ KevInTheCloud5617 asked: "### Is this a reproducible bug?"
   - "### Is this a reproducible bug?" by KevInTheCloud5617, https://github.com/herdrdev/herdr/issues/5799 (asked 2026-11-04, last activity 2026-11-18, read 2026-11-25, sha256 70fef7c5ce3f) · classified ask
 - Fit: in its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: Write a script that reproduces the idle-status display check using the steps in the issue and records the observed state in a file in the repo.
-
-## opp-632-26 · pi-world: creating a session on world-vercel fails with 400 start-hook-id-reserved
-
-zackleman asked: "Creating a pi-durable session on world-vercel now fails."
-
-- Status: Candidate since 2026-11-18
-- Tier: pickable
-- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · pickable
-- Signal: traction, 340 stars, last changed 2026-11-23 (https://github.com/vercel-labs/durable-harness, read 2026-11-24 21:32 UTC)
-- Flaw: missing-tests @ 24a8871c99dc: no test folder or test file at its root (https://github.com/vercel-labs/durable-harness, read 2026-11-24 21:32 UTC)
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "Creating a pi-durable session on world-vercel now fails." by zackleman, https://github.com/vercel-labs/durable-harness/issues/36 (asked 2026-10-30, last activity 2026-11-04, read 2026-11-25, sha256 8bdc27b56101) · classified ask
-- Fit: in its lane · Effort: 2 work steps · Paid path: none
-- Smallest useful version: Write a script that calls session creation against a world-vercel config and logs the 400 start-hook-id-reserved response for the issue report.
 
 ## opp-632-27 · AskBots review: Agents on Open Rails Hackathon feedback
 
