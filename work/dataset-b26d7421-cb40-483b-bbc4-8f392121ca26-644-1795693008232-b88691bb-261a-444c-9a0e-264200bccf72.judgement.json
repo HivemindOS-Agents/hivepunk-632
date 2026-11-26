@@ -1,0 +1,99 @@
+{
+  "step": "dataset:b26d7421-cb40-483b-bbc4-8f392121ca26:644:1795693008232:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "dataset",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Final output reports nothing was published and no checklist files were created, so the requested folder, README.md, checklist, and passing self_test.py were not delivered.",
+  "description": "The agent only performed GET requests to documentation and issue pages, all returning 200. Its final output states no dataset or other artifact was published, with no evidence the opp-632-341 checklist was built or committed.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": "SOURCE_CHECK_FAILED",
+  "causeHash": "c1260410c",
+  "rest": [],
+  "rateLimited": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "docs.openclaw.ai",
+      "path": "/platforms/windows",
+      "status": 200,
+      "error": null,
+      "ms": 298,
+      "at": "2026-11-26T11:38:25.883Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "aident.ai",
+      "path": "/blog/fix-claude-code-taskcreate-missing",
+      "status": 200,
+      "error": null,
+      "ms": 396,
+      "at": "2026-11-26T11:38:25.883Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues/9552",
+      "status": 200,
+      "error": null,
+      "ms": 714,
+      "at": "2026-11-26T11:38:26.130Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "gist.github.com",
+      "path": "/feveromo/:id",
+      "status": 200,
+      "error": null,
+      "ms": 650,
+      "at": "2026-11-26T11:38:26.369Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/anthropics/claude-code/issues/85317",
+      "status": 200,
+      "error": null,
+      "ms": 1605,
+      "at": "2026-11-26T11:38:27.130Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/anthropics/claude-code/issues/14828",
+      "status": 200,
+      "error": null,
+      "ms": 1342,
+      "at": "2026-11-26T11:38:28.130Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues/6164",
+      "status": 200,
+      "error": null,
+      "ms": 1286,
+      "at": "2026-11-26T11:38:29.130Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/anthropics/claude-code/issues/23637",
+      "status": 200,
+      "error": null,
+      "ms": 1164,
+      "at": "2026-11-26T11:38:30.130Z"
+    }
+  ],
+  "at": "2026-11-26T11:39:16.506Z"
+}
