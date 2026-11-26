@@ -27,8 +27,13 @@
   "command": "git checkout f41e197408d59bae567c0cc72e5c56b90447bdc5 && cd tools/hf-dataset-card-lint && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-hf-dataset-card-lint-f41e197.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45774999740",
-  "repro": "pending",
-  "peer": null,
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "86",
+    "at": "2026-11-26T08:05:10Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45780171762"
+  },
   "firstPass": {
     "firstPassStep": 1,
     "shippedStep": 1,
