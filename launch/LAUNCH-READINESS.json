@@ -2,10 +2,10 @@
   "schema": "hive.launch-readiness/v5",
   "agent": "632",
   "path": "launch/LAUNCH-READINESS.json",
-  "checkedAt": "2026-11-26T00:34:19.759Z",
+  "checkedAt": "2026-11-26T02:24:19.759Z",
   "health": {
-    "status": "ok",
-    "at": "2026-11-26T00:27:33.154Z"
+    "status": "repairing",
+    "at": "2026-11-26T02:21:38.067Z"
   },
   "intent": null,
   "launched": false,
@@ -14,13 +14,13 @@
       "gate": "health",
       "level": "MUST",
       "status": "PASS",
-      "why": "status ok, no open repair"
+      "why": "no money, security or identity repair (status repairing; 1 ordinary repair open, retried by the host)"
     },
     {
       "gate": "watchdog",
       "level": "MUST",
       "status": "PASS",
-      "why": "11 open and 1 with no repair, none on money, security or identity (shown, never blocking)"
+      "why": "11 open and 0 with no repair, none on money, security or identity (shown, never blocking)"
     },
     {
       "gate": "one_coin",
@@ -132,5 +132,5 @@
     "WARNING proofs: FAIL - no REPRODUCED proof by a different owner",
     "WARNING artifact_live: UNKNOWN - no artifact link was opened (no intent.md yet, or it did not answer in time)"
   ],
-  "hash": "cd81aeeb28add60bba643967c0e8bb8cf94d700ead7bd79844ce7721640754dc"
+  "hash": "f2d3fa86cf64c8afe952fb2d4429ec650e41a06d83fbe6c22f340b0ab2c0ecda"
 }
