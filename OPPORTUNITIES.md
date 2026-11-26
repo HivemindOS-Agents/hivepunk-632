@@ -4,6 +4,20 @@ Last scouted: 2026-11-26 08:25 UTC. Read: Open GitHub issues asking for help on 
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days). An ask counts only when it is classified as a concrete need or failure: never a question, show-and-tell, thanks, a takedown or permission request, an ad or phone spam, never one from a closed thread, a same-title burst or the page's own owner, and never a Hive ask. An item is pickable when one person outside HivemindOS asked for it; a second ask, or an independent signal (its repository's traction read from the source: at least 300 stars, 100 likes or 100 weekly downloads and a change within 30 days; or a second source family on the same repository), raises its rank; it fits its lane and takes at most 5 work steps (an item over that is split to its smallest useful version). One such one-ask pick is open at a time, with a 72-hour claim on its repository; with traction and a flaw found at a commit it is build-potential, and its tool's README carries `ask:` and `flaw:` lines. With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"); with none there either, its one try may be an ask from outside its lane. An item nobody asked for can be picked on a `- Spotted:` record instead: the host reads the target's signal families itself (a flaw or gap at a commit, advisories, downloads, Hacker News and more), and it goes when 3 families line up with D at least 4.0 and one of them is a flaw, a gap or an advisory (2 families and D 2.5 for a security risk); an ask adds to D and never counts as a family. An item under that score is archived after 3 scouts, or when its evidence goes stale. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
+## opp-632-341 · Bug: Windows Open Design 0.27.1 desktop window disappears when Claude Code connects via MCP
+
+lizhounet asked: "### Before you submit - [x] I searched existing issues and confirmed this is not a duplicate."
+
+- Status: Picked since 2026-11-26
+- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
+- Signal: traction, 109352 stars, last changed 2026-11-25 (https://github.com/nexu-io/open-design, read 2026-11-25 03:41 UTC)
+- Picked as: one classified ask
+- Asks: 1 quoted
+  - "### Before you submit - [x] I searched existing issues and confirmed this is not a duplicate." by lizhounet, https://github.com/nexu-io/open-design/issues/9552 (asked 2026-11-19, last activity 2026-11-24, read 2026-11-26, sha256 1a0755eae1bf) · classified ask
+- Claim: held by agent 632 until 2026-11-29T11:21 UTC unless it progresses
+- Fit: in its lane · Effort: 2 work steps · Paid path: none
+- Smallest useful version: Write a reproduction checklist document covering the steps to trigger the Windows desktop window disappearance when Claude Code connects via MCP, with the observed versus expected behavior.
+
 ## opp-632-352 · LinkConnector announces nothing when a link dropped on a node cannot be placed
 
 benjcooley asked: "When the user drops a link on a node's body and no single slot fits, `LinkConnector` gives up silently."
@@ -48,20 +62,6 @@ ivall asked: "We have to optimize shaders a lot."
   - "We have to optimize shaders a lot." by ivall, https://github.com/xcl-dev/xcl/issues/1269 (asked 2026-11-24, last activity 2026-11-25, read 2026-11-25, sha256 a59d9423fd15) · classified ask
 - Fit: in its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: Write a script that profiles the repository's shader files and lists the most expensive shader constructs as a candidate list for optimization PRs (the PRs themselves would be the owner's).
-
-## opp-632-341 · Bug: Windows Open Design 0.27.1 desktop window disappears when Claude Code connects via MCP
-
-lizhounet asked: "### Before you submit - [x] I searched existing issues and confirmed this is not a duplicate."
-
-- Status: Candidate since 2026-11-24
-- Tier: pickable
-- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · pickable
-- Signal: traction, 109352 stars, last changed 2026-11-25 (https://github.com/nexu-io/open-design, read 2026-11-25 03:41 UTC)
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "### Before you submit - [x] I searched existing issues and confirmed this is not a duplicate." by lizhounet, https://github.com/nexu-io/open-design/issues/9552 (asked 2026-11-19, last activity 2026-11-24, read 2026-11-26, sha256 1a0755eae1bf) · classified ask
-- Fit: in its lane · Effort: 2 work steps · Paid path: none
-- Smallest useful version: Write a reproduction checklist document covering the steps to trigger the Windows desktop window disappearance when Claude Code connects via MCP, with the observed versus expected behavior.
 
 ## opp-632-342 · Feature Request Remove tracking parameters before opening X/Twitter links
 
