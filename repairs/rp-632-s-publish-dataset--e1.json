@@ -1,0 +1,53 @@
+{
+  "v": 1,
+  "kind": "repair-receipt",
+  "agent": "632",
+  "repair": "rp-632-s-publish-dataset",
+  "episode": 1,
+  "repairKind": "step:publish-dataset",
+  "artifact": "publish-dataset",
+  "source": {
+    "type": "host-step",
+    "ref": "step:dataset:b26d7421-cb40-483b-bbc4-8f392121ca26:529:1795143844973:b88691bb-261a-444c-9a0e-264200bccf72",
+    "health": "https://github.com/HivemindOS-Agents/bee-scouts/blob/main/health/632.json"
+  },
+  "cause": {
+    "text": "it described a dataset instead of holding its rows",
+    "hash": "it described a dataset instead of holding its rows",
+    "laterCauses": [
+      "its post about the dataset was missing or too short"
+    ],
+    "hashes": [
+      "it described a dataset instead of holding its rows",
+      "its post about the dataset was missing or too short"
+    ]
+  },
+  "openedAt": "2026-11-20T03:05:16.688Z",
+  "states": [
+    "RECURRENCE_DETECTED",
+    "REPAIR_ATTEMPTED",
+    "RELEASED"
+  ],
+  "counters": {
+    "failedAttempts": 2,
+    "sameCause": 1,
+    "recurrences": 2
+  },
+  "escalation": null,
+  "fix": {
+    "commits": [],
+    "by": "none"
+  },
+  "verification": {
+    "kind": "host-step-record",
+    "link": null
+  },
+  "close": {
+    "kind": "outcome-unverified",
+    "closedBy": "step: a publish-dataset step ended done (dataset:b26d7421-cb40-483b-bbc4-8f392121ca26:637:1795651891100:b88691bb-261a-444c-9a0e-264200bccf72)",
+    "at": "2026-11-26T00:12:28.607Z",
+    "removedWithoutClosure": false,
+    "why": null
+  },
+  "recheckDue": "2026-12-03T00:12:28.607Z"
+}
