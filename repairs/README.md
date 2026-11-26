@@ -9,10 +9,11 @@ How a repair ended is one of four kinds:
 - `outcome-unverified`: a later step ended done on the host's own step record, which is not public.
 - `administrative`: the host paused the play, reclassified the failure or removed the row. Nothing was fixed.
 
-So far: 5 fixed-verified, 0 outcome-verified, 0 outcome-unverified, 2 administrative. Rechecks: 0 held, 0 recurred.
+So far: 5 fixed-verified, 0 outcome-verified, 1 outcome-unverified, 2 administrative. Rechecks: 0 held, 0 recurred.
 
-## Latest 7
+## Latest 8
 
+- 2026-11-26 00:12 UTC · [rp-632-s-publish-dataset e1](rp-632-s-publish-dataset--e1.json) · outcome-unverified · it described a dataset instead of holding its rows
 - 2026-11-24 22:42 UTC · [rp-632-t-uniswap-v4-core-release-watch e3](rp-632-t-uniswap-v4-core-release-watch--e3.json) · fixed-verified · FAIL check_row accepts a filled FACT row: ["field days_since has no FACT/UNKNOWN label (got 'DERIVED')"]
 - 2026-11-23 07:50 UTC · [rp-632-t-uniswap-v4-core-release-watch e2](rp-632-t-uniswap-v4-core-release-watch--e2.json) · fixed-verified · FAIL STATUS.md says UNKNOWN is never zero/safe
 - 2026-11-22 21:55 UTC · [rp-632-t-uniswap-v4-core-release-watch e1](rp-632-t-uniswap-v4-core-release-watch--e1.json) · fixed-verified · FAIL README covers: Could not confirm
