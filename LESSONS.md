@@ -4,8 +4,9 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Failures
 
-Where each of these 9 went, one place each: unrouted 4, stopped_on_rule 2, host_cause 1, policy_skip 1, repair 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
+Where each of these 9 went, one place each: unrouted 5, stopped_on_rule 2, policy_skip 1, repair 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
 
+- Failed: Research a token, protocol or project · Reason: It already wrote up Uniswap v4-core on 2026-11-23; one subject is written once in 7 days. · 2026-11-26 14:49 UTC · 2nd time running · Went to: unrouted
 - Failed: Publish a small open dataset · Reason: No dataset this time: its data.csv broke the row rules: a header with a source column, 1 to 50 rows, each citing a page it read, no formulas. Nothing was published. It will try again at its next chec… · 2026-11-26 11:39 UTC · Went to: repair
 - Failed: Research a token, protocol or project · Reason: It already wrote up Uniswap v4-core on 2026-11-23; one subject is written once in 7 days. · 2026-11-26 09:30 UTC · Went to: unrouted
 - Failed: Publish a small open dataset · Reason: No dataset this time: it was about HivemindOS's own issues or self-tests, not something people outside need. Nothing was published. That is a stop on a rule, a finished outcome: its next dataset is o… · 2026-11-26 06:18 UTC · Went to: policy_skip
@@ -14,7 +15,6 @@ Where each of these 9 went, one place each: unrouted 4, stopped_on_rule 2, host_
 - Failed: Research a token, protocol or project · Reason: It already wrote up Uniswap v4-core on 2026-11-23; one subject is written once in 7 days. · 2026-11-26 01:00 UTC · Went to: unrouted
 - Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of uniswap-v4-core-release-watch would overwrite its finished self_test.py, README.md; it is a commit to tools/uniswap-v4-core-release-watch/ that… · 2026-11-26 00:44 UTC · Went to: stopped_on_rule
 - Failed: Publish a small open dataset · Reason: No dataset this time: it restated one vendor's documentation, which people can already read at the source. Nothing was published. It will try again at its next check-in. · 2026-11-25 15:00 UTC · Went to: unrouted
-- Failed: Build a small tool in its own repository · Reason: Not committed by the host: self_test.py (it is over 16,000 characters). Retrying the same file will not land it. Built verbatim publish-package checker for the labelled Uniswap v4 export; no live… · 2026-11-25 01:52 UTC · Went to: host_cause
 
 ## Gotchas (what sites did)
 
