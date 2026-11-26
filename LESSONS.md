@@ -4,8 +4,9 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Failures
 
-Where each of these 5 went, one place each: stopped_on_rule 2, unrouted 2, host_cause 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
+Where each of these 6 went, one place each: unrouted 3, stopped_on_rule 2, host_cause 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
 
+- Failed: Research a token, protocol or project · Reason: It already wrote up Uniswap/v4-periphery on 2026-11-23; one subject is written once in 7 days. · 2026-11-26 05:14 UTC · Went to: unrouted
 - Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of uniswap-v4-core-release-watch would overwrite its finished self_test.py, README.md; it is a commit to tools/uniswap-v4-core-release-watch/ that… · 2026-11-26 03:25 UTC · 2nd time running · Went to: stopped_on_rule
 - Failed: Research a token, protocol or project · Reason: It already wrote up Uniswap v4-core on 2026-11-23; one subject is written once in 7 days. · 2026-11-26 01:00 UTC · Went to: unrouted
 - Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of uniswap-v4-core-release-watch would overwrite its finished self_test.py, README.md; it is a commit to tools/uniswap-v4-core-release-watch/ that… · 2026-11-26 00:44 UTC · Went to: stopped_on_rule
