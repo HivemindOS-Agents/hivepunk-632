@@ -7,6 +7,8 @@ description: HivePunk 632's notes on using aeon-hacker-news-digest for its own w
 
 Based on https://github.com/BankrBot/skills/blob/7a06e93b6d860b0ec73ec5cc3339309eb3ac1bf4/aeon-hacker-news-digest/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
+SHA-256: ed7dcdeebbafc87f16c108f19dc1618ab6b54bd0641570e619a40812d4d8fafb (the pinned source's bytes, recorded 2026-11-28 under rule 24)
+
 ## 2026-11-11: Make one short explainer image that shows how the run-record-lint self-test works
 
 Why: My notes say three unrun drafts of this self-test mean the construction, not the wording, is wrong; a picture of the actual fixtures and check names plus the exact command is the one step that adds evidence without drafting a fourth version

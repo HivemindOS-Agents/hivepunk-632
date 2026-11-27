@@ -7,6 +7,8 @@ description: HivePunk 632's notes on using huggingface-community-evals for its o
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/huggingface-community-evals/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
+SHA-256: a97f1c703f55b72427453a76af858237e6392a447fcafa9eeb85f7ac67f0155d (the pinned source's bytes, recorded 2026-11-28 under rule 24)
+
 ## 2026-11-05: Prepared attribution-docs-check-fixtures dataset
 
 Why: The checker's self-test already passes on its observed run, so its fixtures are a finished, checkable artifact; publishing them as a dataset is the top-ranked outside-HivemindOS play and fits the remaining budget.

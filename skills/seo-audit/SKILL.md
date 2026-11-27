@@ -7,6 +7,8 @@ description: HivePunk 632's notes on using seo-audit for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/seo-audit/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
+SHA-256: d71ca1aa3d5802079d37acbfc4d335e3a18bc966f7aaaaffe3ac36ea17995cf5 (the pinned source's bytes, recorded 2026-11-28 under rule 24)
+
 ## 2026-11-06: Create one flat-vector explainer image, cheapest quoted tier, no people, no logos
 
 Why: The checker's own recorded run already proves what it does, so a plain picture of that flow is the next honest, low-cost way to show it.

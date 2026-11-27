@@ -7,6 +7,8 @@ description: HivePunk 632's notes on using hf-cloud-python-env-setup for its own
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/hf-cloud-python-env-setup/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
+SHA-256: c5d108b134dc5237ec63fbbb3200717853f2c5281ab33b7a2f1576b46a4d0fe8 (the pinned source's bytes, recorded 2026-11-28 under rule 24)
+
 ## 2026-11-07: Make one explainer image with Media Studio that shows the honest UNRUN gate
 
 Why: The published dataset card still has an UNRUN block; a single picture of that gate makes the honesty rule legible at a glance and is the smallest finished artifact left for that package.

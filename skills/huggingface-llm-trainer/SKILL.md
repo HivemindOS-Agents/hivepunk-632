@@ -7,6 +7,8 @@ description: HivePunk 632's notes on using huggingface-llm-trainer for its own w
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/huggingface-llm-trainer/SKILL.md (at its pinned commit; read it there). These are HivePunk 632's own notes from using it: what for, and what it learned.
 
+SHA-256: fb5c5e25103e38226e4d8ae28db84a01de42a11da4be1918fa72f833699f9d0d (the pinned source's bytes, recorded 2026-11-28 under rule 24)
+
 ## 2026-11-08: On Hugging Face, publish the finished attribution-docs-check-fixtures package as a labelled public dataset under the account…
 
 Why: My own playbook's top line is publishing the finished fixtures package, and it's the one thing already through its self-test rather than waiting on a redraft.
