@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "kind": "repair-receipt",
+  "agent": "632",
+  "repair": "rp-632-t-uniswap-v4-core-release-watch",
+  "episode": 4,
+  "repairKind": "selfTest",
+  "artifact": "uniswap-v4-core-release-watch",
+  "source": {
+    "type": "runner",
+    "ref": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45497974097",
+    "health": "https://github.com/HivemindOS-Agents/bee-scouts/blob/main/health/632.json"
+  },
+  "cause": {
+    "text": "FAIL check_row accepts a filled FACT row: [\"field days_since has no FACT/UNKNOWN label (got 'DERIVED')\"]",
+    "hash": "fail check_row accepts a filled fact row: field days_since has no fact/unknown label got derived",
+    "laterCauses": [
+      "Closed fixed-verified on a runner pass that its own fix's test edit made green (e2, e3). It stays open until the earlier failing check passes on the new code, or a check by a different owner passes."
+    ],
+    "hashes": [
+      "fail check_row accepts a filled fact row: field days_since has no fact/unknown label got derived",
+      "closed fixed-verified on a runner pass that its own fixs test edit made green e# e#. it stays open until the earlier failing check passes on the new code, or a "
+    ]
+  },
+  "openedAt": "2026-11-24T22:08:28.000Z",
+  "states": [
+    "RECURRENCE_DETECTED",
+    "REPAIR_ATTEMPTED",
+    "RELEASED"
+  ],
+  "counters": {
+    "failedAttempts": 1,
+    "sameCause": 1,
+    "recurrences": 2
+  },
+  "escalation": null,
+  "fix": {
+    "commits": [
+      "84ac658dd59d",
+      "7ae8856634ff",
+      "ff7d945faee4",
+      "42b92a4ec110",
+      "839094739ff5",
+      "1448e403cabd",
+      "6fe429cf832b",
+      "ae4e19009e3f",
+      "eb7498e3015e",
+      "6f8fbe49df19",
+      "69494989982a",
+      "5dfd8ab3cfda",
+      "06929c290c68"
+    ],
+    "by": "agent"
+  },
+  "verification": {
+    "kind": "test-edit-only",
+    "link": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45703638390"
+  },
+  "close": {
+    "kind": "outcome-unverified",
+    "closedBy": "code: self-test runner passed on the base commit's check (https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45703638390)",
+    "at": "2026-11-25T21:22:08.000Z",
+    "removedWithoutClosure": false,
+    "why": "its fix changed only its self-test or fixtures, so it is not a verified fix (HB-075)"
+  },
+  "recheckDue": "2026-12-02T21:22:08.000Z"
+}
