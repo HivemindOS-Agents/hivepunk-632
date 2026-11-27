@@ -1,0 +1,134 @@
+{
+  "step": "research-20784:b26d7421-cb40-483b-bbc4-8f392121ca26:657:1795797286935:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Did not list apps/desktop/src or read the MCP, IPC, window and tray lifecycle files, nor report the exact file, function and line hiding/closing the Windows window on MCP connect with quoted code.",
+  "description": "The trace shows only repository-level GitHub GETs and blocked DeepWiki requests, with no reads of the requested source files. The final output only claims a published research note, with no quoted code, file, function or line numbers as required.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": true,
+  "gotchas": [
+    {
+      "id": "g1cc5d504",
+      "host": "deepwiki.com",
+      "observed": "GET /nexu-io/open-design",
+      "result": "429: Vercel Security Checkpoint challenge page",
+      "evidence": "t1"
+    },
+    {
+      "id": "gd7782c57",
+      "host": "github.com",
+      "observed": "GET /nexu-io/open-design/blob/main/docs/architecture.md",
+      "result": "503: GitHub Unicorn static error page",
+      "evidence": "t4"
+    }
+  ],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [
+    "deepwiki.com"
+  ],
+  "rateLimited": [
+    {
+      "host": "github.com",
+      "path": "/nexu-io/open-design/blob/main/docs/architecture.md",
+      "retryAfter": null
+    },
+    {
+      "host": "github.com",
+      "path": "/nexu-io/open-design/blob/main/QUICKSTART.md",
+      "retryAfter": null
+    },
+    {
+      "host": "github.com",
+      "path": "/nexu-io/open-design/blob/main/README.md",
+      "retryAfter": null
+    }
+  ],
+  "dropped": {
+    "bot-block-recovery": 1
+  },
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "deepwiki.com",
+      "path": "/nexu-io/open-design",
+      "status": 429,
+      "error": "Vercel Security Checkpoint .spinner[data-astro-cid-ijmsm3te]{flex-direction:column;justify-content:center;align-items:center;display:flex}.spinner-circle[data-astro-cid-ijmsm3te]{transform-origin:50%;",
+      "ms": 327,
+      "at": "2026-11-27T16:35:18.950Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "deepwiki.com",
+      "path": "/nexu-io/open-design/:id",
+      "status": 429,
+      "error": "Vercel Security Checkpoint .spinner[data-astro-cid-ijmsm3te]{flex-direction:column;justify-content:center;align-items:center;display:flex}.spinner-circle[data-astro-cid-ijmsm3te]{transform-origin:50%;",
+      "ms": 327,
+      "at": "2026-11-27T16:35:18.950Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/tree/main/apps/desktop",
+      "status": 200,
+      "error": null,
+      "ms": 683,
+      "at": "2026-11-27T16:35:19.236Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/blob/main/docs/architecture.md",
+      "status": 503,
+      "error": "Unicorn! &middot; GitHub /* BEGIN GENERATED STATIC ERROR COLORS: light */ /* @primer/primitives 11.1.0; regenerate with npm run static-errors:generate. */ :root { color-scheme: light dark; --bgColor-d",
+      "ms": 89,
+      "at": "2026-11-27T16:35:20.236Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design",
+      "status": 200,
+      "error": null,
+      "ms": 490,
+      "at": "2026-11-27T16:35:22.236Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/releases",
+      "status": 200,
+      "error": null,
+      "ms": 1745,
+      "at": "2026-11-27T16:35:21.236Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/blob/main/QUICKSTART.md",
+      "status": 503,
+      "error": "Unicorn! &middot; GitHub /* BEGIN GENERATED STATIC ERROR COLORS: light */ /* @primer/primitives 11.1.0; regenerate with npm run static-errors:generate. */ :root { color-scheme: light dark; --bgColor-d",
+      "ms": 124,
+      "at": "2026-11-27T16:35:23.236Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/blob/main/README.md",
+      "status": 503,
+      "error": "Unicorn! &middot; GitHub /* BEGIN GENERATED STATIC ERROR COLORS: light */ /* @primer/primitives 11.1.0; regenerate with npm run static-errors:generate. */ :root { color-scheme: light dark; --bgColor-d",
+      "ms": 166,
+      "at": "2026-11-27T16:35:24.236Z"
+    }
+  ],
+  "at": "2026-11-27T16:35:55.795Z"
+}
