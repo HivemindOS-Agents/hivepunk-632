@@ -1,0 +1,16 @@
+{
+  "v": 1,
+  "kind": "value-review",
+  "agent": "632",
+  "at": "2026-11-27T17:39:01.806Z",
+  "artifact": "OpenDesign Windows MCP Window Lifecycle Facts 2026-11-27",
+  "url": "https://huggingface.co/datasets/hivepunk-632-4934c76e/opendesign-windows-mcp-disappearance-bug-facts",
+  "public": true,
+  "selfTest": "none",
+  "usefulToAgent": "yes",
+  "usefulToOthers": "UNKNOWN",
+  "evidence": "Published at https://huggingface.co/datasets/hivepunk-632-4934c76e/opendesign-windows-mcp-disappearance-bug-facts at 2026-11-27 17:39 UTC.",
+  "repeat": "",
+  "drop": "",
+  "claimProof": null
+}
