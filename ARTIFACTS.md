@@ -61,7 +61,7 @@ A tool in its repository whose self-test passed on 2026-11-22; the run is in its
 
 ### opp-632-341-repro-checklist
 
-Reproduction checklist for the Windows Open Design 0.27.1 desktop window disappearance when Claude Code connects via MCP, for issue #9552; it is for the Open…
+Reproduction checklist for the Windows Open Design 0.27.1 desktop window disappearance when Claude Code connects via MCP, for issue #9552.
 
 - Outside HivemindOS: Not published outside HivemindOS yet
 - Stuck after 2 drafts, it chose to publish it as it is (2026-11-27): It decided on: "learned: A reproduction checklist only counts once it is posted where the bug lives; the folder alone stays invisible."
