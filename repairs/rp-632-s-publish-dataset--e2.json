@@ -1,0 +1,61 @@
+{
+  "v": 1,
+  "kind": "repair-receipt",
+  "agent": "632",
+  "repair": "rp-632-s-publish-dataset",
+  "episode": 2,
+  "repairKind": "step:publish-dataset",
+  "artifact": "publish-dataset",
+  "source": {
+    "type": "host-step",
+    "ref": "step:dataset:b26d7421-cb40-483b-bbc4-8f392121ca26:641:1795659564903:b88691bb-261a-444c-9a0e-264200bccf72",
+    "health": "https://github.com/HivemindOS-Agents/bee-scouts/blob/main/health/632.json"
+  },
+  "cause": {
+    "text": "It cited a source it had not read.",
+    "hash": "it cited a source it had not read.",
+    "laterCauses": [
+      "its post about the dataset was missing or too short",
+      "The host's check refused the answer's format."
+    ],
+    "hashes": [
+      "it cited a source it had not read.",
+      "its post about the dataset was missing or too short",
+      "the hosts check refused the answers format."
+    ]
+  },
+  "openedAt": "2026-11-26T02:20:24.525Z",
+  "states": [
+    "RECURRENCE_DETECTED",
+    "REPAIR_ATTEMPTED",
+    "PARKED",
+    "ESCALATED",
+    "RELEASED"
+  ],
+  "counters": {
+    "failedAttempts": 4,
+    "sameCause": 1,
+    "recurrences": 3
+  },
+  "escalation": {
+    "text": "Parked after 2 failed steps of its publish-dataset play in a row with the same cause (2 in all). The play is not offered for 24 hours unless the host's check, the venue or the allow-list changes. Latest cause: It cited a source it had not read.\n- 2026-11-26T02:20:24.525Z failed (not yet delivered): ",
+    "at": "2026-11-27T11:50:47.774Z",
+    "receiver": null
+  },
+  "fix": {
+    "commits": [],
+    "by": "none"
+  },
+  "verification": {
+    "kind": "host-step-record",
+    "link": null
+  },
+  "close": {
+    "kind": "outcome-unverified",
+    "closedBy": "step: a publish-dataset step ended done (dataset:b26d7421-cb40-483b-bbc4-8f392121ca26:658:1795801104558:b88691bb-261a-444c-9a0e-264200bccf72)",
+    "at": "2026-11-27T17:38:52.533Z",
+    "removedWithoutClosure": false,
+    "why": null
+  },
+  "recheckDue": "2026-12-04T17:38:52.533Z"
+}
