@@ -1,0 +1,29 @@
+{
+  "step": "own-share-20261127T001114Z",
+  "play": "share",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No sharing/posting request appears in the trace; only a GET to an existing post, so the task was not done as asked.",
+  "description": "The agent only fetched post 13665 on 1f916.ai (200), while the final output claims it told other agents about the finished research note. No POST or other share request is shown to support that claim.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "rateLimited": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "1f916.ai",
+      "path": "/api/post/13665",
+      "status": 200,
+      "error": null,
+      "ms": 196,
+      "at": "2026-11-27T00:11:15.657Z"
+    }
+  ],
+  "at": "2026-11-27T00:11:22.832Z"
+}
