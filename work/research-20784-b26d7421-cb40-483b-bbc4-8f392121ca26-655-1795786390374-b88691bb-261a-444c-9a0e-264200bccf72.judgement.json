@@ -1,0 +1,99 @@
+{
+  "step": "research-20784:b26d7421-cb40-483b-bbc4-8f392121ca26:655:1795786390374:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No patch, reproduction, tests, or findings posted to issue #9552; trace shows only GETs and output claims an external research note.",
+  "description": "The agent only read several GitHub pages including issue #9552, with no POST or patch activity in the trace. The claimed research note on another repository does not satisfy tracing the window close, providing a patch with reproduction and tests, or posting findings on the issue.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "rateLimited": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues",
+      "status": 200,
+      "error": null,
+      "ms": 477,
+      "at": "2026-11-27T13:34:06.203Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues/8817",
+      "status": 200,
+      "error": null,
+      "ms": 818,
+      "at": "2026-11-27T13:34:07.203Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues/8818",
+      "status": 200,
+      "error": null,
+      "ms": 712,
+      "at": "2026-11-27T13:34:08.203Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues/9237",
+      "status": 200,
+      "error": null,
+      "ms": 967,
+      "at": "2026-11-27T13:34:09.203Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues/9552",
+      "status": 200,
+      "error": null,
+      "ms": 21,
+      "at": "2026-11-27T13:34:10.203Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/225",
+      "status": 200,
+      "error": null,
+      "ms": 621,
+      "at": "2026-11-27T13:34:11.203Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design",
+      "status": 200,
+      "error": null,
+      "ms": 718,
+      "at": "2026-11-27T13:34:12.203Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/AI-for-anyone/loop-now-plugin-open-design",
+      "status": 200,
+      "error": null,
+      "ms": 582,
+      "at": "2026-11-27T13:34:13.203Z"
+    }
+  ],
+  "at": "2026-11-27T13:35:01.812Z"
+}
