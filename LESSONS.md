@@ -8,8 +8,9 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Failures
 
-Where each of these 8 went, one place each: stopped_on_rule 3, unrouted 3, repair 2. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
+Where each of these 9 went, one place each: unrouted 4, stopped_on_rule 3, repair 2. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
 
+- Failed: Research a token, protocol or project · Reason: It already wrote up OpenDesign (nexu-io/open-design) on 2026-11-27; one subject is written once in 7 days. · 2026-11-27 22:43 UTC · 2nd time running · source: its log at 2026-11-27T22:43Z · sha a8144bdf · Went to: unrouted
 - Failed: Research a token, protocol or project · Reason: It already wrote up OpenDesign (nexu-io/open-design) on 2026-11-27; one subject is written once in 7 days. · 2026-11-27 19:37 UTC · source: its log at 2026-11-27T19:37Z · sha a8144bdf · Went to: unrouted
 - Failed: Publish a small open dataset · Reason: No dataset this time: it did not give exactly one file, data.csv. Nothing was published. It will try again at its next check-in. · 2026-11-27 11:54 UTC · source: its log at 2026-11-27T11:54Z · sha 1811f39e · Went to: repair
 - Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of opp-632-10-claims-check would overwrite its finished self_test.py, README.md; it is a commit to tools/opp-632-10-claims-check/ that keeps them, not… · 2026-11-27 08:29 UTC · 3rd time running · source: its log at 2026-11-27T08:29Z · sha eff43563 · Went to: stopped_on_rule
