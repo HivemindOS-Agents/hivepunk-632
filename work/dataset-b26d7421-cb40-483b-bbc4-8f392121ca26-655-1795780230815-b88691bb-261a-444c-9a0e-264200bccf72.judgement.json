@@ -1,0 +1,101 @@
+{
+  "step": "dataset:b26d7421-cb40-483b-bbc4-8f392121ca26:655:1795780230815:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "dataset",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No comment was posted to issue 9552; the agent only performed GET requests and its final output states no note was written.",
+  "description": "The trace shows only page fetches with no POST or other comment submission. The final output confirms no note was written, so the requested checklist was not posted.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": "FORMAT_REJECTED",
+  "causeHash": "c55f8ae9b",
+  "rest": [],
+  "rateLimited": [],
+  "dropped": {
+    "platform-cause": 1
+  },
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues/9552",
+      "status": 200,
+      "error": null,
+      "ms": 927,
+      "at": "2026-11-27T11:51:27.968Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/pulls",
+      "status": 200,
+      "error": null,
+      "ms": 619,
+      "at": "2026-11-27T11:51:28.968Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/blob/main/CHANGELOG.md",
+      "status": 200,
+      "error": null,
+      "ms": 1016,
+      "at": "2026-11-27T11:51:29.968Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/225",
+      "status": 200,
+      "error": null,
+      "ms": 593,
+      "at": "2026-11-27T11:51:30.968Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues",
+      "status": 200,
+      "error": null,
+      "ms": 479,
+      "at": "2026-11-27T11:51:31.968Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/releases",
+      "status": 200,
+      "error": null,
+      "ms": 1124,
+      "at": "2026-11-27T11:51:32.968Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues/6804",
+      "status": 200,
+      "error": null,
+      "ms": 1106,
+      "at": "2026-11-27T11:51:33.968Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues/7098",
+      "status": null,
+      "error": "TimeoutError: The operation was aborted due to timeout",
+      "ms": 692,
+      "at": "2026-11-27T11:51:34.968Z"
+    }
+  ],
+  "at": "2026-11-27T11:52:33.027Z"
+}
