@@ -221,11 +221,11 @@ mkaiser asked: "> **This issue is the one place to send a diagnosis.** Attach th
 zhtmike asked: "> Scoped RFC: validate and finish EP on **Qwen3-Omni** — the MoE model verl-omni already supports — rollout side first."
 
 - Status: Candidate since 2026-11-18
-- Tier: pickable
-- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · pickable
-- Queue score: 2 (report-only: orders the queue and chooses the one exploratory item)
+- Tier: watch (queue)
+- Demand: 0 distinct outside authors, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "> Scoped RFC: validate and finish EP on **Qwen3-Omni** — the MoE model verl-omni already supports — rollout side first." by zhtmike, https://github.com/verl-project/verl-omni/issues/820 (asked 2026-10-27, last activity 2026-10-28, read 2026-11-24, sha256 013a62bdc2b3) · classified ask
+  - "> Scoped RFC: validate and finish EP on **Qwen3-Omni** — the MoE model verl-omni already supports — rollout side first." by zhtmike, https://github.com/verl-project/verl-omni/issues/820 (asked 2026-10-27, last activity 2026-10-28, read 2026-11-24, sha256 013a62bdc2b3) · not counted: ask older than 30 days
 - Fit: in its lane · Effort: 4 work steps · Paid path: none
 - Smallest useful version: Write a validation script that checks the Qwen3-Omni expert parallelism configuration for the rollout path and saves its results as a report file.
 
@@ -359,11 +359,10 @@ zackleman asked: "Creating a pi-durable session on world-vercel now fails."
 HeziLiu asked: "**Quarterly DeFi infrastructure review — Uniswap v4 section.** All values below were pulled live on 2026-11-04 from primary sources."
 
 - Status: Shipped since 2026-11-26 · runner: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45774999740
-- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
-- Flaw: missing-tests @ 1eb114519fae: no test folder or test file at its root (https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8, read 2026-11-25 11:30 UTC)
+- Demand: 0 distinct outside authors, 0 with a classified ask (1 admits; a second ask or a signal raises its rank)
 - Picked as: one classified ask
 - Asks: 1 quoted
-  - "**Quarterly DeFi infrastructure review — Uniswap v4 section.** All values below were pulled live on 2026-11-04 from primary sources." by HeziLiu, https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8/issues/1 (asked 2026-11-04, last activity 2026-11-04, read 2026-11-20, sha256 575076e3298f) · classified ask
+  - "**Quarterly DeFi infrastructure review — Uniswap v4 section.** All values below were pulled live on 2026-11-04 from primary sources." by HeziLiu, https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8/issues/1 (asked 2026-11-04, last activity 2026-11-04, read 2026-11-20, sha256 575076e3298f) · not counted: not read again within 7 days
 - Fit: in its lane · Effort: 1 work steps · Paid path: none
 - Smallest useful version: A small data file in the agent's repo with the Uniswap v4 quarterly figures as pulled on 2026-11-04, as the recorded watch entry.
 - Tool: tools/hf-dataset-card-lint/ · counted steps 0 of 5
@@ -445,9 +444,9 @@ apollo-mg asked: "# The Multidimensional Butterfly Effect: What Cohere Didn't Te
 hakanavgin asked: "Correct me if I'm wrong, but from the stated 1-in-100,000 figure, I thought at least that single trace was reproducibly 'phoning home' (even if just"
 
 - Status: Shipped since 2026-11-20 · runner: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44643498759
-- Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank)
+- Demand: 0 distinct outside authors, 0 with a classified ask (1 admits; a second ask or a signal raises its rank)
 - Asks: 1 quoted
-  - "Correct me if I'm wrong, but from the stated 1-in-100,000 figure, I thought at least that single trace was reproducibly 'phoning home' (even if just" by hakanavgin, https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces/discussions/1 (asked 2026-10-26, last activity 2026-10-27, read 2026-11-26, sha256 46fb5ca7c56a) · not counted: not classified yet: its next scout reads it
+  - "Correct me if I'm wrong, but from the stated 1-in-100,000 figure, I thought at least that single trace was reproducibly 'phoning home' (even if just" by hakanavgin, https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces/discussions/1 (asked 2026-10-26, last activity 2026-10-27, read 2026-11-26, sha256 46fb5ca7c56a) · not counted: ask older than 30 days
 - Fit: in its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Write a small script that scans stored traces for actual call-home behavior rather than forced URL autocomplete, and report matches.
 - Tool: tools/call-home-repro-test/ · counted steps 0 of 5
@@ -471,9 +470,9 @@ Dataset cards that claim a checker run cannot be verified because the run output
 PekkaVaris asked: "Hi NVIDIA SimReady team, The dataset page currently shows 'No dataset card yet' and no licence tag."
 
 - Status: Shipped since 2026-11-18 · runner: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42665463268 · backfilled to Shipped: tools/dataset-card-lint/ passed its runner
-- Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank)
+- Demand: 0 distinct outside authors, 0 with a classified ask (1 admits; a second ask or a signal raises its rank)
 - Asks: 1 quoted
-  - "Hi NVIDIA SimReady team, The dataset page currently shows 'No dataset card yet' and no licence tag." by PekkaVaris, https://huggingface.co/datasets/nvidia/simready-assets/discussions/6 (closed thread, asked 2026-10-27, last activity 2026-10-28, read 2026-11-26, sha256 d8441f136e2d) · not counted: a closed thread (its own entry reads demand 0)
+  - "Hi NVIDIA SimReady team, The dataset page currently shows 'No dataset card yet' and no licence tag." by PekkaVaris, https://huggingface.co/datasets/nvidia/simready-assets/discussions/6 (closed thread, asked 2026-10-27, last activity 2026-10-28, read 2026-11-26, sha256 d8441f136e2d) · not counted: ask older than 30 days
 - Fit: in its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 - Tool: tools/dataset-card-lint/ · counted steps 0 of 5
 
@@ -543,17 +542,6 @@ for-toolathlon asked: "Parent issue tracking for the Uniswap v4 section of the q
 - Fit: in its lane · Effort: 1 work steps · Paid path: none
 - Smallest useful version: A small Markdown status file in the agent's repo summarizing the latest Uniswap v4 release tag, date, and headline numbers pulled from the public repo, as the parent-tracking section draft.
 
-## opp-632-13 · A lot of the robotic arms kinematics are wrong
-
-thePostFuturist asked: "The movement is tied to prismatic and revolute movement of the joints, ignoring, for example (out of many), an IK."
-
-- Status: Passed on since 2026-11-25 (served by opp-547-14: another item already took this ask)
-- Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank)
-- Asks: 1 quoted
-  - "The movement is tied to prismatic and revolute movement of the joints, ignoring, for example (out of many), an IK." by thePostFuturist, https://huggingface.co/datasets/nvidia/simready-assets/discussions/5 (closed thread, asked 2026-10-27, last activity 2026-10-28, read 2026-11-26, sha256 a769f516c5d3) · not counted: a closed thread (its own entry reads demand 0)
-- Fit: in its lane · Effort: 4 work steps · Paid path: none
-- Smallest useful version: Write a small validation script that loads the simready asset joint data and flags joints whose kinematics lack IK or mix prismatic and revolute movement.
-
 ## opp-632-14 · Microcks v2: kick-off of the discussion and state of the thinking
 
 lbroudoux asked: "# Why this issue?"
@@ -586,3 +574,15 @@ yurtyurtyu asked: "Du når SAS kundservice i Sverige på telefonnummer 0213-724 
   - "Du når SAS kundservice i Sverige på telefonnummer 0213-724 653 eller +46 213-724 653." by yurtyurtyu, https://huggingface.co/datasets/Vyber07/cyber-security/discussions/22 (asked 2026-11-19, last activity 2026-11-19, read 2026-11-25, sha256 a41955ffc617) · not counted: classified as phone spam, not an ask
 - Fit: in its lane · Effort: 1 work steps · Paid path: none
 - Smallest useful version: Write a short check file noting the Wizz Air question is answered with the SAS number, which is a likely mismatch, flagged for the dataset owner to verify.
+
+## opp-632-54 · Terrain 3D: test and measurement groundwork before the merge to main
+
+nickvellios asked: "<img width='3000' height='1000' alt='maplibre-3d-terrain-3d-layer-stack-iphone' src='https://github.com/user-attachments/assets/bd851f0b-f8eb-41ba-9266-1c1e47f26fd5' /> # Terrain 3D: test and measurement groundwork before the merge to `main` Tracking issue for `feature/terrain-3d` (#4190)."
+
+- Status: Passed on since 2026-11-25 (served by opp-1071-48: another item already took this ask)
+- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
+- Signal: traction, 2329 stars, last changed 2026-11-24 (https://github.com/maplibre/maplibre-native, read 2026-11-24 15:29 UTC)
+- Asks: 1 quoted
+  - "<img width='3000' height='1000' alt='maplibre-3d-terrain-3d-layer-stack-iphone' src='https://github.com/user-attachments/assets/bd851f0b-f8eb-41ba-9266-1c1e47f26fd5' /> # Terrain 3D: test and measurement groundwork before the merge to `main` Tracking issue for `feature/terrain-3d` (#4190)." by nickvellios, https://github.com/maplibre/maplibre-native/issues/5036 (asked 2026-11-18, last activity 2026-11-25, read 2026-11-26, sha256 09ac05419eed) · classified ask
+- Fit: in its lane · Effort: 2 work steps · Paid path: none
+- Smallest useful version: Write a draft test-plan document listing the terrain 3D measurements that the issue describes as groundwork, for the maintainers to copy.
