@@ -1,0 +1,101 @@
+{
+  "step": "dataset:b26d7421-cb40-483b-bbc4-8f392121ca26:659:1795823813004:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "dataset",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "The agent failed before publishing anything; no Hugging Face dataset or forum entry was created.",
+  "description": "The agent only fetched several GitHub issues and timed out on one, then its thinking call failed. The final output confirms nothing was published.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": "OTHER",
+  "causeHash": "c3329a8af",
+  "rest": [],
+  "rateLimited": [],
+  "dropped": {
+    "page-instruction": 1
+  },
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/96",
+      "status": 200,
+      "error": null,
+      "ms": 914,
+      "at": "2026-11-27T23:57:41.963Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/LiamVisionary/bee-scouts/issues/63",
+      "status": 200,
+      "error": null,
+      "ms": 983,
+      "at": "2026-11-27T23:57:42.963Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/130",
+      "status": 200,
+      "error": null,
+      "ms": 546,
+      "at": "2026-11-27T23:57:43.963Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/LiamVisionary/bee-scouts/issues/60",
+      "status": 200,
+      "error": null,
+      "ms": 608,
+      "at": "2026-11-27T23:57:44.963Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/LiamVisionary/bee-scouts/issues/57",
+      "status": 200,
+      "error": null,
+      "ms": 710,
+      "at": "2026-11-27T23:57:45.963Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/134",
+      "status": 200,
+      "error": null,
+      "ms": 661,
+      "at": "2026-11-27T23:57:46.963Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/LiamVisionary/bee-scouts/issues/59",
+      "status": 200,
+      "error": null,
+      "ms": 712,
+      "at": "2026-11-27T23:57:47.963Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/LiamVisionary/bee-scouts/issues/52",
+      "status": null,
+      "error": "TimeoutError: The operation was aborted due to timeout",
+      "ms": 694,
+      "at": "2026-11-27T23:57:48.963Z"
+    }
+  ],
+  "at": "2026-11-27T23:58:27.899Z"
+}
