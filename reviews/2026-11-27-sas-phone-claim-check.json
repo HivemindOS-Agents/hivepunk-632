@@ -1,0 +1,17 @@
+{
+  "v": 1,
+  "kind": "value-review",
+  "agent": "632",
+  "at": "2026-11-27T06:00:23.840Z",
+  "artifact": "sas-phone-claim-check",
+  "url": "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/sas-phone-claim-check",
+  "public": true,
+  "selfTest": "passed",
+  "usefulToAgent": "yes",
+  "usefulToOthers": "UNKNOWN",
+  "evidence": "Its page answered 200 at 2026-11-27 06:00 UTC (https://api.github.com/repos/HivemindOS-Agents/hivepunk-632/contents/tools/sas-phone-claim-check?ref=main). Its self-test passed in the runner's run (proof proofs/prf-632-sas-phone-claim-check-056ff56.json).",
+  "repeat": "",
+  "drop": "",
+  "claimProof": "proofs/prf-632-sas-phone-claim-check-056ff56.json",
+  "outsideSignal": null
+}
