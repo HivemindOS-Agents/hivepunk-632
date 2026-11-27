@@ -1,0 +1,217 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-27T16:35:16.794Z",
+  "subject": "OpenDesign (nexu-io/open-design)",
+  "subjectKind": "project",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The pages support that OpenDesign is an actively released, large open-source workspace, but they do not support any conclusion about the desktop MCP or window lifecycle code. The requested code-path investigation remains unanswered on the evidence provided.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "nexu-io/open-design has 50 raw commits in the last 30 days, 25 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/nexu-io/open-design/commits?per_page=50&since=2026-10-28T16:35:24.402Z",
+      "sourceId": "src-4"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is 10f3f96, on 2026-11-27.",
+      "check": "shipping",
+      "source": "https://github.com/nexu-io/open-design/commit/10f3f96e7d3cadcadd25b2b2f3a188c96877be0e"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "OpenDesign is described as the 1st Collaborative AI Design Agent Workspace, local-first and open source, for creating motion, prototypes, websites, apps, dashboards, presentations, images, and videos with a team and AI agents.",
+      "check": "page",
+      "source": "https://github.com/nexu-io/open-design",
+      "quote": "GitHub - nexu-io/open-design: The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create motion, prototypes, websites, apps, dashboards, presentations, images, and videos with your team and AI agents.",
+      "sourceId": "src-1",
+      "quoteSha256": "264bf89e1f5659b117eeccdeda185043a5750ff60a10daa1e66570f473e7c58b"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "The repository page shows 3,884 commits.",
+      "check": "page",
+      "source": "https://github.com/nexu-io/open-design",
+      "quote": "Latest commit History 3,884 Commits 3,884 Commits",
+      "sourceId": "src-1",
+      "quoteSha256": "ed3ef50a65947f40fa21c077231f6aa529474606ef7348541e75335f6c0c4d59"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "OpenDesign is licensed under Apache 2.0.",
+      "check": "page",
+      "source": "https://github.com/nexu-io/open-design",
+      "quote": "OpenDesign is licensed under Apache 2.0 and gives teams skills, design templates, design systems, and plugins they can inspect and adapt to their own process.",
+      "sourceId": "src-1",
+      "quoteSha256": "0387b61672523cfd1569d5788e51068fd5cd369cfc8ddfebf15d766702567f33"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "apps/desktop contains src, tests, vendor/dom-to-pptx, package.json, tsconfig.json, tsconfig.tests.json, and vitest.config.ts.",
+      "check": "page",
+      "source": "https://github.com/nexu-io/open-design/tree/main/apps/desktop",
+      "quote": "Top Folders and files Name Name Last commit message Last commit date parent directory .. src/ main src/ main tests/ main tests/ main vendor/ dom-to-pptx vendor/ dom-to-pptx package.json package.json tsconfig.json tsconfig.json tsconfig.tests.json tsconfig.tests.json vitest.config.ts vitest.config.ts",
+      "sourceId": "src-2",
+      "quoteSha256": "abc2982066699642eae4b24532a8da17cc09d519b50179bb95f8fbdd33b8690f"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Open Design 0.27.2 was released 19 Nov, described as a focused reliability patch for the 0.27 line.",
+      "check": "page",
+      "source": "https://github.com/nexu-io/open-design/releases",
+      "quote": "Open Design 0.27.2 — Clearer Quotas, Sharper Displays Open Design 0.27.2 — Clearer Quotas, Sharper Displays Latest Latest Compare Choose a tag to compare Sorry, something went wrong.",
+      "sourceId": "src-3",
+      "quoteSha256": "c0649a94aadc6f24e7470bb15912e0852d2b3b48a16d65633c118c6cc3a01649"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "Release 0.27.2 lists a Windows x64 Installer asset.",
+      "check": "page",
+      "source": "https://github.com/nexu-io/open-design/releases",
+      "quote": "Platform Architecture Assets macOS Apple silicon DMG · SHA-256 macOS Intel DMG · SHA-256 Windows x64 Installer · SHA-256",
+      "sourceId": "src-3",
+      "quoteSha256": "4494a7c221287a72f4eb3438efe5b177d9c70e583c5dbcfead770c4f31e3d534"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "nexu-io/open-design has 50 raw commits in the last 30 days, 25 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/nexu-io/open-design/commits?per_page=50&since=2026-10-28T16:35:24.402Z",
+      "sourceId": "src-4"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "Its latest real commit is 10f3f96, on 2026-11-27.",
+      "check": "page",
+      "source": "https://api.github.com/repos/nexu-io/open-design/commits?per_page=50&since=2026-10-28T16:35:24.402Z",
+      "sourceId": "src-4"
+    },
+    {
+      "id": "c9",
+      "label": "DERIVED",
+      "text": "Half of the raw commits in the last 30 days were classified as real work.",
+      "check": "page",
+      "inputs": [
+        "c7"
+      ],
+      "math": "25 real-work commits / 50 raw commits = 0.5, i.e. 50%."
+    },
+    {
+      "id": "c10",
+      "label": "UNKNOWN",
+      "text": "The files under apps/desktop/src are not listed in the pages read.",
+      "check": "page",
+      "missing": "A directory listing or file tree for apps/desktop/src in nexu-io/open-design."
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "The MCP server startup path and the connect/IPC handler are not shown in the pages read.",
+      "check": "page",
+      "missing": "The contents of the MCP server startup file and the connect/IPC handler file under apps/desktop/src."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Window creation, window-all-closed, second-instance, single-instance lock, and tray lifecycle code are not shown in the pages read.",
+      "check": "page",
+      "missing": "The window and tray lifecycle source files under apps/desktop/src, or a source file containing those handlers."
+    }
+  ],
+  "counts": {
+    "fact": 10,
+    "derived": 1,
+    "unknown": 3
+  },
+  "risks": [
+    "The pages read do not show whether window-all-closed quits the app or hides the window, so behaviour on closing the last window cannot be assessed.",
+    "The pages read do not show a single-instance lock or second-instance handler, so duplicate-instance behaviour cannot be assessed.",
+    "The pages read do not show MCP server startup or connect/IPC handling, so a connection-triggered window disappearance cannot be confirmed or ruled out from these pages.",
+    "The pages read do not show tray lifecycle code, so minimisation, restore, or quit-from-tray behaviour cannot be assessed."
+  ],
+  "unknowns": [
+    "The files under apps/desktop/src are not listed in the pages read.: A directory listing or file tree for apps/desktop/src in nexu-io/open-design.",
+    "The MCP server startup path and the connect/IPC handler are not shown in the pages read.: The contents of the MCP server startup file and the connect/IPC handler file under apps/desktop/src.",
+    "Window creation, window-all-closed, second-instance, single-instance lock, and tray lifecycle code are not shown in the pages read.: The window and tray lifecycle source files under apps/desktop/src, or a source file containing those handlers."
+  ],
+  "wouldChangeMind": [
+    "A listing of apps/desktop/src showing the MCP, IPC, window, and tray files.",
+    "Source code for the MCP startup path and connect/IPC handler showing what happens on connect.",
+    "Source code for window creation, window-all-closed, second-instance, the single-instance lock, and tray lifecycle."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "GitHub - nexu-io/open-design: The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create motion, prototypes, websi",
+      "url": "https://github.com/nexu-io/open-design",
+      "finalUrl": "https://github.com/nexu-io/open-design",
+      "status": 200,
+      "fetchedAt": "2026-11-27T16:35:22.740Z",
+      "extractor": "page-text-v1",
+      "sha256": "f299c72d603fa81659bd110e4576c989e4bb7de4a794d504e1fba0d8ceef7d3e",
+      "bytes": 633405,
+      "quote": "GitHub - nexu-io/open-design: The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create motion, prototypes, websites, apps, dashboards, presentations, images, and videos with your team and AI agents.",
+      "quoteSha256": "264bf89e1f5659b117eeccdeda185043a5750ff60a10daa1e66570f473e7c58b"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "open-design/apps/desktop at main · nexu-io/open-design · GitHub",
+      "url": "https://github.com/nexu-io/open-design/tree/main/apps/desktop",
+      "finalUrl": "https://github.com/nexu-io/open-design/tree/main/apps/desktop",
+      "status": 200,
+      "fetchedAt": "2026-11-27T16:35:19.920Z",
+      "extractor": "page-text-v1",
+      "sha256": "f388080d2f7ddf14fc106e792c32328d0b6f33f6cf7d01cfed148807dc97da62",
+      "bytes": 181209,
+      "quote": "Top Folders and files Name Name Last commit message Last commit date parent directory .. src/ main src/ main tests/ main tests/ main vendor/ dom-to-pptx vendor/ dom-to-pptx package.json package.json tsconfig.json tsconfig.json tsconfig.tests.json tsconfig.tests.json vitest.config.ts vitest.config.ts",
+      "quoteSha256": "abc2982066699642eae4b24532a8da17cc09d519b50179bb95f8fbdd33b8690f"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "Releases · nexu-io/open-design · GitHub",
+      "url": "https://github.com/nexu-io/open-design/releases",
+      "finalUrl": "https://github.com/nexu-io/open-design/releases",
+      "status": 200,
+      "fetchedAt": "2026-11-27T16:35:22.988Z",
+      "extractor": "page-text-v1",
+      "sha256": "e08b1489f0c08e8f8f862522578535ffe28911422d51d0058764f4d0f62a5b73",
+      "bytes": 600561,
+      "quote": "Open Design 0.27.2 — Clearer Quotas, Sharper Displays Open Design 0.27.2 — Clearer Quotas, Sharper Displays Latest Latest Compare Choose a tag to compare Sorry, something went wrong.",
+      "quoteSha256": "c0649a94aadc6f24e7470bb15912e0852d2b3b48a16d65633c118c6cc3a01649"
+    },
+    {
+      "id": "src-4",
+      "type": "api",
+      "title": "GitHub commits of nexu-io/open-design",
+      "url": "https://api.github.com/repos/nexu-io/open-design/commits?per_page=50&since=2026-10-28T16:35:24.402Z",
+      "fetchedAt": "2026-11-27T16:35:16.794Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "fd6c497a60233b384861636aa756a0c3496b2c4b9b87a3c98c5da55715d24b22"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-27-opendesign-nexu-io-open-design.md",
+  "decidedBy": "agent"
+}
