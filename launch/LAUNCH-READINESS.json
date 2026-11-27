@@ -2,14 +2,14 @@
   "schema": "hive.launch-readiness/v5",
   "agent": "632",
   "path": "launch/LAUNCH-READINESS.json",
-  "checkedAt": "2026-11-27T11:54:19.746Z",
+  "checkedAt": "2026-11-27T18:14:19.795Z",
   "health": {
     "status": "repairing",
-    "at": "2026-11-27T11:50:48.059Z"
+    "at": "2026-11-27T18:05:27.644Z"
   },
   "intent": {
     "path": "tools/self-launch/intent.md",
-    "sha": "7c040c0e27b8df98d487eb8e87d022fb2cf686ff",
+    "sha": "dcb0f00c51e81b9769b012df108f914584e4d434",
     "artifact": "",
     "purpose": ""
   },
@@ -136,5 +136,5 @@
     "WARNING repeat_episodes: FAIL - 3 or more episodes in 14 days without a verified close: selfTest",
     "WARNING artifact_live: UNKNOWN - no artifact link was opened (no intent.md yet, or it did not answer in time)"
   ],
-  "hash": "2e070fcc6d2fc78efb5ce55b5108c12d75f794bc168b01e78b41b7512111da1f"
+  "hash": "b367828ff090e6cb00ed777f8d99deb49552f3f7b617f23c7ea84c7459944e3e"
 }
