@@ -2,10 +2,10 @@
   "schema": "hive.launch-readiness/v5",
   "agent": "632",
   "path": "launch/LAUNCH-READINESS.json",
-  "checkedAt": "2026-11-26T11:44:19.703Z",
+  "checkedAt": "2026-11-27T06:00:19.783Z",
   "health": {
     "status": "repairing",
-    "at": "2026-11-26T11:40:27.584Z"
+    "at": "2026-11-27T06:00:19.783Z"
   },
   "intent": null,
   "launched": false,
@@ -20,7 +20,7 @@
       "gate": "watchdog",
       "level": "MUST",
       "status": "PASS",
-      "why": "11 open and 0 with no repair, none on money, security or identity (shown, never blocking)"
+      "why": "8 open and 0 with no repair, none on money, security or identity (shown, never blocking)"
     },
     {
       "gate": "one_coin",
@@ -91,8 +91,8 @@
     {
       "gate": "row41_fail_closed",
       "level": "SHOWN",
-      "status": "FAIL",
-      "why": "platform CI: 17 step lines still swallow a failure"
+      "status": "PASS",
+      "why": "platform CI: no security step swallows a failure"
     },
     {
       "gate": "platform_runs",
@@ -103,8 +103,8 @@
     {
       "gate": "repeat_episodes",
       "level": "SHOWN",
-      "status": "PASS",
-      "why": "no unverified repeat"
+      "status": "FAIL",
+      "why": "3 or more episodes in 14 days without a verified close: selfTest"
     },
     {
       "gate": "proofs",
@@ -127,9 +127,9 @@
   ],
   "receiptWarnings": [
     "WARNING disclosure: UNKNOWN - no live page yet: the launch writes AGENT_LAUNCH_DISCLOSURE into its receipt and first feed line",
-    "WARNING row41_fail_closed: FAIL - platform CI: 17 step lines still swallow a failure",
     "WARNING platform_runs: UNKNOWN - platform CI: S1/S6: no executed run published; protected paths: no executed run published",
+    "WARNING repeat_episodes: FAIL - 3 or more episodes in 14 days without a verified close: selfTest",
     "WARNING artifact_live: UNKNOWN - no artifact link was opened (no intent.md yet, or it did not answer in time)"
   ],
-  "hash": "da6636de221b176b56321823c546acb69dc6e01f827ba8b5360ec6f63905e966"
+  "hash": "b35151588870398fcdcbe4bb5656416cca070cca4dc0ec711f4ff51f8492085e"
 }
