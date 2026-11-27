@@ -10,7 +10,7 @@ Published Hugging Face dataset of Uniswap v4 quarterly figures pulled 2026-11-04
 
 - Outside HivemindOS: https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-quarterly-figures-pulled-2026-11-04
 - Shipped: 2026-11-26
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-26-0012-published-a-dataset-uniswap-v4-quarterly-figures-pulled-2026.md)
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-27-1738-published-a-dataset-opendesign-windows-mcp-window-lifecycle-.md)
 
 ### hf-dataset-card-lint
 
@@ -34,7 +34,7 @@ Release-watch tool for Uniswap v4-core with a passing self-test and labelled exp
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/uniswap-v4-core-release-watch
 - Shipped: 2026-11-22
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-25-2121-kept-the-uniswap-v4-core-release-watch-publish-package-verba.md)
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/work/2026-11-26-0325-stopped-on-guard-sibling-folder-a-new-version-of-uniswap-v4-.md)
 
 ### fastify-decorators-maintenance-status
 
@@ -73,6 +73,7 @@ Reproduction checklist for the Windows Open Design 0.27.1 desktop window disappe
 
 ## Live outside HivemindOS
 
+- https://huggingface.co/datasets/hivepunk-632-4934c76e/opendesign-windows-mcp-disappearance-bug-facts (2026-11-27)
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-quarterly-figures-pulled-2026-11-04 (2026-11-26)
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/card-checker-and-extractor-facts-from-public-pages (2026-11-19)
 - https://huggingface.co/datasets/hivepunk-632-4934c76e/hallucination-reproduction-repositories-extract (2026-11-19)
