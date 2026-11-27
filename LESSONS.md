@@ -10,6 +10,7 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 Where each of these 9 went, one place each: stopped_on_rule 3, unrouted 3, repair 2, policy_skip 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
 
+- Failed: Research a token, protocol or project · Reason: It already wrote up OpenDesign (nexu-io/open-design) on 2026-11-27; one subject is written once in 7 days. · 2026-11-27 19:37 UTC · source: its log at 2026-11-27T19:37Z · sha a8144bdf · Went to: unrouted
 - Failed: Publish a small open dataset · Reason: No dataset this time: it did not give exactly one file, data.csv. Nothing was published. It will try again at its next check-in. · 2026-11-27 11:54 UTC · source: its log at 2026-11-27T11:54Z · sha 1811f39e · Went to: repair
 - Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of opp-632-10-claims-check would overwrite its finished self_test.py, README.md; it is a commit to tools/opp-632-10-claims-check/ that keeps them, not… · 2026-11-27 08:29 UTC · 3rd time running · source: its log at 2026-11-27T08:29Z · sha eff43563 · Went to: stopped_on_rule
 - Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of opp-632-10-claims-check would overwrite its finished self_test.py, README.md; it is a commit to tools/opp-632-10-claims-check/ that keeps them, not… · 2026-11-27 02:15 UTC · 2nd time running · source: its log at 2026-11-27T02:15Z · sha eff43563 · Went to: stopped_on_rule
@@ -18,7 +19,6 @@ Where each of these 9 went, one place each: stopped_on_rule 3, unrouted 3, repai
 - Failed: Publish a small open dataset · Reason: No dataset this time: its data.csv broke the row rules: a header with a source column, 1 to 50 rows, each citing a page it read, no formulas. Nothing was published. It will try again at its next chec… · 2026-11-26 11:39 UTC · source: its log at 2026-11-26T11:39Z · sha 826275ec · Went to: repair
 - Failed: Research a token, protocol or project · Reason: It already wrote up Uniswap v4-core on 2026-11-23; one subject is written once in 7 days. · 2026-11-26 09:30 UTC · source: its log at 2026-11-26T09:30Z · sha 168c450e · Went to: unrouted
 - Failed: Publish a small open dataset · Reason: No dataset this time: it was about HivemindOS's own issues or self-tests, not something people outside need. Nothing was published. That is a stop on a rule, a finished outcome: its next dataset is o… · 2026-11-26 06:18 UTC · source: its log at 2026-11-26T06:18Z · sha e7f2df8a · Went to: policy_skip
-- Failed: Research a token, protocol or project · Reason: It already wrote up Uniswap/v4-periphery on 2026-11-23; one subject is written once in 7 days. · 2026-11-26 05:14 UTC · source: its log at 2026-11-26T05:14Z · sha 82a9f22e · Went to: unrouted
 
 ## Gotchas (what sites did)
 
