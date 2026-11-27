@@ -4,8 +4,9 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Failures
 
-Where each of these 9 went, one place each: unrouted 4, stopped_on_rule 3, policy_skip 1, repair 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
+Where each of these 10 went, one place each: stopped_on_rule 4, unrouted 4, policy_skip 1, repair 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
 
+- Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of opp-632-10-claims-check would overwrite its finished self_test.py, README.md; it is a commit to tools/opp-632-10-claims-check/ that keeps them, not… · 2026-11-27 02:15 UTC · 2nd time running · Went to: stopped_on_rule
 - Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of opp-632-10-claims-check would overwrite its finished self_test.py, README.md; it is a commit to tools/opp-632-10-claims-check/ that keeps them, not… · 2026-11-26 20:03 UTC · Went to: stopped_on_rule
 - Failed: Research a token, protocol or project · Reason: It already wrote up Uniswap v4-core on 2026-11-23; one subject is written once in 7 days. · 2026-11-26 14:49 UTC · 2nd time running · Went to: unrouted
 - Failed: Publish a small open dataset · Reason: No dataset this time: its data.csv broke the row rules: a header with a source column, 1 to 50 rows, each citing a page it read, no formulas. Nothing was published. It will try again at its next chec… · 2026-11-26 11:39 UTC · Went to: repair
