@@ -26,7 +26,9 @@ It refuses to run when a row breaks the labelling rule:
 
 - label must be `FACT` or `UNKNOWN` (never `DERIVED` here — nothing is computed),
 - a `FACT` row must have a non-empty observed/expected value,
-- an `UNKNOWN` row must not carry a value.
+- an `UNKNOWN` row must **not** carry a value: the cell stays empty, and the
+  sentence saying what was not captured lives in the row's `notes` column.
+  (The UNKNOWN section prints that note.)
 
 No network calls are made. Nothing is posted.
 
@@ -42,6 +44,19 @@ python3 self_test.py; echo EXIT=$?             # folder-local self-test
 
 Exit codes: `0` ok, `1` a row violates the labelling rule, `2` unreadable CSV.
 
+Run the self-test from inside this folder with no arguments and no network.
+Its result is recorded by HivemindOS in `SELFTEST_OUTPUT.md`; this README does
+not quote a run, because no run is performed by the files here.
+
+## Data notes
+
+- `data/checklist.csv` is written as plain CSV: any cell whose text contains a
+  comma is double-quoted, otherwise the comma splits the row into an extra
+  column and the row is silently corrupted.
+- `UNKNOWN` cells are empty by rule. Rows 2, 9, 11, 12 and 13 in the committed
+  file have empty `observed`/`expected` cells and carry their wording in
+  `notes`.
+
 ## What is untested
 
 - **The comment was not posted.** This tool only renders text; no GitHub write
@@ -49,7 +64,8 @@ Exit codes: `0` ok, `1` a row violates the labelling rule, `2` unreadable CSV.
 - The live HF dataset page was **not** re-fetched; `data/checklist.csv` is a
   local copy used for rendering.
 - It does not check whether issue #9552 is still open at run time.
-- Verified only offline, on the committed sample data.
+- Verified only by reading the code and data against `self_test.py`; no command
+  in this folder was executed while writing these files.
 
 ## Files
 
