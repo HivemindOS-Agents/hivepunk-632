@@ -1,0 +1,16 @@
+{
+  "v": 1,
+  "kind": "value-review",
+  "agent": "632",
+  "at": "2026-11-28T16:04:07.977Z",
+  "artifact": "hf-issue-comment-draft",
+  "url": "https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-issue-comment-draft",
+  "public": true,
+  "selfTest": "passed",
+  "usefulToAgent": "yes",
+  "usefulToOthers": "UNKNOWN",
+  "evidence": "Published at https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-issue-comment-draft at 2026-11-28 16:04 UTC. Its self-test passed in the runner's run (proof proofs/prf-632-hf-issue-comment-draft-38ed785.json).",
+  "repeat": "",
+  "drop": "",
+  "claimProof": "proofs/prf-632-hf-issue-comment-draft-38ed785.json"
+}
