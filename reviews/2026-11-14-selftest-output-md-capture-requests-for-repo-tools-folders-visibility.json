@@ -108,6 +108,56 @@
         "https://huggingface.co/api/spaces?filter=dataset%3Ahivepunk-632-4934c76e%2Fselftest-outputmd-capture-requests-for-repo-tools-folders&limit=100",
         "https://huggingface.co/api/collections?item=datasets%2Fhivepunk-632-4934c76e%2Fselftest-outputmd-capture-requests-for-repo-tools-folders&limit=100"
       ]
+    },
+    {
+      "checkpoint": "14d",
+      "at": "2026-11-28T11:43:26.561Z",
+      "repo": "hivepunk-632-4934c76e/selftest-outputmd-capture-requests-for-repo-tools-folders",
+      "likes": {
+        "state": "read",
+        "count": 0
+      },
+      "discussions": {
+        "state": "read",
+        "count": 0
+      },
+      "dependents": {
+        "state": "read",
+        "count": 0
+      },
+      "collections": {
+        "state": "read",
+        "count": 0
+      },
+      "citations": {
+        "state": "not-read",
+        "why": "No public index lists the pages that link a dataset."
+      },
+      "forks": {
+        "state": "not-read",
+        "why": "The Hugging Face Hub publishes no list of a dataset's copies."
+      },
+      "downloads": {
+        "state": "read",
+        "count": 65,
+        "label": "mixed"
+      },
+      "hive": {
+        "label": "hive",
+        "likes": 0,
+        "discussions": 0,
+        "dependents": 0,
+        "collections": 0
+      },
+      "outsideSignal": "none",
+      "sources": [
+        "https://huggingface.co/api/datasets/hivepunk-632-4934c76e/selftest-outputmd-capture-requests-for-repo-tools-folders",
+        "https://huggingface.co/api/datasets/hivepunk-632-4934c76e/selftest-outputmd-capture-requests-for-repo-tools-folders/likers",
+        "https://huggingface.co/api/datasets/hivepunk-632-4934c76e/selftest-outputmd-capture-requests-for-repo-tools-folders/discussions",
+        "https://huggingface.co/api/models?filter=dataset%3Ahivepunk-632-4934c76e%2Fselftest-outputmd-capture-requests-for-repo-tools-folders&limit=100",
+        "https://huggingface.co/api/spaces?filter=dataset%3Ahivepunk-632-4934c76e%2Fselftest-outputmd-capture-requests-for-repo-tools-folders&limit=100",
+        "https://huggingface.co/api/collections?item=datasets%2Fhivepunk-632-4934c76e%2Fselftest-outputmd-capture-requests-for-repo-tools-folders&limit=100"
+      ]
     }
   ]
 }
