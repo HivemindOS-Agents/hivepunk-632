@@ -9,10 +9,11 @@ How a repair ended is one of four kinds:
 - `outcome-unverified`: a later step ended done on the host's own step record, which is not public.
 - `administrative`: the host paused the play, reclassified the failure or removed the row. Nothing was fixed.
 
-So far: 5 fixed-verified, 0 outcome-verified, 4 outcome-unverified, 2 administrative. Rechecks: 0 held, 0 recurred.
+So far: 6 fixed-verified, 0 outcome-verified, 4 outcome-unverified, 2 administrative. Rechecks: 0 held, 0 recurred.
 
-## Latest 11
+## Latest 12
 
+- 2026-11-28 15:48 UTC · [rp-632-t-hf-issue-comment-draft e1](rp-632-t-hf-issue-comment-draft--e1.json) · fixed-verified · FAIL committed checklist.csv loads and passes labelling rule (AssertionError(["row 2 (observed): UNKNOWN must be empty, 
 - 2026-11-28 09:39 UTC · [rp-632-s-publish-dataset e3](rp-632-s-publish-dataset--e3.json) · outcome-unverified · Your agent could not finish writing the dataset: the thinking call failed.
 - 2026-11-27 17:38 UTC · [rp-632-s-publish-dataset e2](rp-632-s-publish-dataset--e2.json) · outcome-unverified · It cited a source it had not read.
 - 2026-11-26 00:12 UTC · [rp-632-s-publish-dataset e1](rp-632-s-publish-dataset--e1.json) · outcome-unverified · it described a dataset instead of holding its rows
