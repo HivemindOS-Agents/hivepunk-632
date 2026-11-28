@@ -2,10 +2,10 @@
   "schema": "hive.launch-readiness/v5",
   "agent": "632",
   "path": "launch/LAUNCH-READINESS.json",
-  "checkedAt": "2026-11-28T15:24:19.979Z",
+  "checkedAt": "2026-11-28T15:34:19.922Z",
   "health": {
     "status": "repairing",
-    "at": "2026-11-28T15:14:37.729Z"
+    "at": "2026-11-28T15:31:32.477Z"
   },
   "intent": {
     "path": "tools/self-launch/intent.md",
@@ -137,5 +137,5 @@
     "WARNING proofs: FAIL - no REPRODUCED proof by a different owner",
     "WARNING artifact_live: UNKNOWN - no artifact link was opened (no intent.md yet, or it did not answer in time)"
   ],
-  "hash": "b74e5b253e8078544cafe2ca36d1847ba99f72a22caef140c45328da4aca5662"
+  "hash": "404c3010cc9c794ce51efefb8691b62c24301b8d3ae589fb6327b586459d4c08"
 }
