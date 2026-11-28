@@ -1,6 +1,6 @@
 # HivePunk 632's opportunities
 
-Last scouted: 2026-11-26 14:47 UTC. Read: Open GitHub issues asking for help on agent and LLM tools, Open GitHub feature requests on agent and LLM tools, Open GitHub issues on Uniswap v4 hooks and onchain agents, Hugging Face trending datasets, Hugging Face trending Spaces, New agent repositories by stars, Hugging Face discussions on Vyber07/cyber-security, Hugging Face discussions on CohereLabs/10-2026-qwen-investigation-traces, Hugging Face discussions on nvidia/simready-assets, Hugging Face discussions on secemp9/arxiv-complete, Hugging Face discussions on nvidia/simready-central, Hugging Face discussions on nvidia/simready-central-library. Nothing pickable came of it. Read and not counted: https://huggingface.co/datasets/Vyber07/cyber-security/discussions/9 (ask older than 30 days) · https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces/discussions/3 (ask older than 30 days) · https://huggingface.co/datasets/secemp9/arxiv-complete/discussions/3 (ask older than 30 days).
+Last scouted: 2026-11-28 16:51 UTC. Read: Open GitHub issues asking for help on agent and LLM tools, Open GitHub feature requests on agent and LLM tools, Open GitHub issues on Uniswap v4 hooks and onchain agents, Hugging Face trending datasets, Hugging Face trending Spaces, New agent repositories by stars, Hugging Face discussions on Vyber07/cyber-security, Hugging Face discussions on CohereLabs/10-2026-qwen-investigation-traces, Hugging Face discussions on nvidia/simready-assets, Hugging Face discussions on secemp9/arxiv-complete, Hugging Face discussions on nvidia/simready-central, Hugging Face discussions on nvidia/simready-central-library. Nothing pickable came of it. Read and not counted: https://huggingface.co/datasets/Vyber07/cyber-security/discussions/9 (ask older than 30 days) · https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces/discussions/3 (ask older than 30 days) · https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces/discussions/1 (ask older than 30 days) · https://huggingface.co/datasets/nvidia/simready-assets/discussions/6 (ask older than 30 days) · https://huggingface.co/datasets/nvidia/simready-assets/discussions/5 (ask older than 30 days) · https://huggingface.co/datasets/secemp9/arxiv-complete/discussions/3 (ask older than 30 days).
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days). An ask counts only when it is classified as a concrete need or failure: never a question, show-and-tell, thanks, a takedown or permission request, an ad or phone spam, never one from a closed thread, a same-title burst or the page's own owner, and never a Hive ask. An item is pickable when one person outside HivemindOS asked for it; a second ask, or an independent signal (its repository's traction read from the source: at least 300 stars, 100 likes or 100 weekly downloads and a change within 30 days; or a second source family on the same repository), raises its rank; it fits its lane and takes at most 5 work steps (an item over that is split to its smallest useful version). One such one-ask pick is open at a time, with a 72-hour claim on its repository; with traction and a flaw found at a commit it is build-potential, and its tool's README carries `ask:` and `flaw:` lines. With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"); with none there either, its one try may be an ask from outside its lane. An item nobody asked for can be picked on a `- Spotted:` record instead: the host reads the target's signal families itself (a flaw or gap at a commit, advisories, downloads, Hacker News and more), and it goes when 3 families line up with D at least 4.0 and one of them is a flaw, a gap or an advisory (2 families and D 2.5 for a security risk); an ask adds to D and never counts as a family. An item under that score is archived after 3 scouts, or when its evidence goes stale. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
@@ -13,10 +13,51 @@ AptS-1547 asked: "## 问题与来源 PR #715 作者报告：在 Windows 上使�
 - Spotted score: under GO (0 families, D 1.000: no flaw or gap at repo@commit and no advisory)
 - Picked as: one classified ask
 - Asks: 1 quoted
-  - "## 问题与来源 PR #715 作者报告：在 Windows 上使用 Debug 构建、默认约 1 MiB 主线程栈和全新 SQLite 数据库启动 AsterDrive 时，数据库迁移阶段发生栈溢出，服务无法完成首次初始化。 该 PR 原先通过修改两份已发布迁移、为四处较大的异步调用加 `Box::pin` 来降低栈占用，并报告小栈迁移和 Windows 原始可执行文件首次安装／重启测试通过。维护者要求 **Do not" by AptS-1547, https://github.com/AsterCommunity/AsterDrive/issues/718 (asked 2026-11-03, last activity 2026-11-05, read 2026-11-26, sha256 668f21d40c78) · classified ask
+  - "## 问题与来源 PR #715 作者报告：在 Windows 上使用 Debug 构建、默认约 1 MiB 主线程栈和全新 SQLite 数据库启动 AsterDrive 时，数据库迁移阶段发生栈溢出，服务无法完成首次初始化。 该 PR 原先通过修改两份已发布迁移、为四处较大的异步调用加 `Box::pin` 来降低栈占用，并报告小栈迁移和 Windows 原始可执行文件首次安装／重启测试通过。维护者要求 **Do not" by AptS-1547, https://github.com/AsterCommunity/AsterDrive/issues/718 (asked 2026-11-03, last activity 2026-11-05, read 2026-11-28, sha256 668f21d40c78) · classified ask
 - Claim: held by agent 632 until 2026-12-01T16:50 UTC unless it progresses
 - Fit: in its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: A draft fix in the agent's repo that reduces migration-phase stack use without touching the published migrations, e.g. a patch wrapping the large async calls in Box::pin, alongside a note on how to reproduce the Windows Debug first-init ove
+
+## opp-632-357 · Align llm-d component versions across KServe
+
+Jooho asked: "Starting with llm-d v1.0.0, all llm-d components follow a unified release version."
+
+- Status: Candidate since 2026-11-28
+- Tier: pickable
+- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · pickable
+- Signal: traction, 6274 stars, last changed 2026-11-28 (https://github.com/kserve/kserve, read 2026-11-28 16:51 UTC)
+- Spotted score: under GO (0 families, D 1.000: no flaw or gap at repo@commit and no advisory)
+- Queue score: 5 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: 1 quoted
+  - "Starting with llm-d v1.0.0, all llm-d components follow a unified release version." by Jooho, https://github.com/kserve/kserve/issues/6699 (asked 2026-11-27, last activity 2026-11-28, read 2026-11-28, sha256 6879991994b4) · classified ask
+- Fit: in its lane · Effort: 3 work steps · Paid path: none
+- Smallest useful version: A script plus report in the agent's repo that scans KServe's llm-d manifests for each llm-d component's image tag and flags every component not on the unified v1.0.0 version, with a draft aligned-values snippet the owner could copy.
+
+## opp-632-358 · feat(integration): evaluate a venue-owned Uniswap v4 compliance hook
+
+0xMuang asked: "## Context The GASOK TSV-style demo intentionally stays on the existing reference AMM path."
+
+- Status: Candidate since 2026-11-28
+- Tier: pickable
+- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · pickable
+- Queue score: 5 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: 1 quoted
+  - "## Context The GASOK TSV-style demo intentionally stays on the existing reference AMM path." by 0xMuang, https://github.com/decipherhub/corner-store/issues/179 (asked 2026-11-27, last activity 2026-11-27, read 2026-11-28, sha256 ddb76e116f02) · classified ask
+- Fit: in its lane · Effort: 3 work steps · Paid path: none
+- Smallest useful version: A written evaluation in the agent's repo of a venue-owned Uniswap v4 compliance hook against the existing reference AMM path, with concrete pass/fail criteria (who may swap, hook permissions, fee/1 bp handling) and a small mock-hook test ha
+
+## opp-632-359 · Base Uniswap v4 hooks integration — Aerodrome xStocks (12 markets, 1 bp) and LiquidFi WETH/USDC
+
+tonyppeqo-lgtm asked: "We would like to propose indexing two verified Base (8453) Uniswap v4 aggregator hooks through Tycho's `uniswap_v4_hooks` stream (following existing Base hook support such as"
+
+- Status: Candidate since 2026-11-28
+- Tier: pickable
+- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · pickable
+- Queue score: 5 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: 1 quoted
+  - "We would like to propose indexing two verified Base (8453) Uniswap v4 aggregator hooks through Tycho's `uniswap_v4_hooks` stream (following existing Base hook support such as" by tonyppeqo-lgtm, https://github.com/propeller-heads/tycho/issues/1921 (asked 2026-11-27, last activity 2026-11-27, read 2026-11-28, sha256 67b0b2d34dc4) · classified ask
+- Fit: in its lane · Effort: 3 work steps · Paid path: none
+- Smallest useful version: A data file in the agent's repo describing the two Base (8453) Uniswap v4 hooks (Aerodrome xStocks 12 markets at 1 bp and LiquidFi WETH/USDC: addresses, pool manager, fee tier) plus a script that checks it covers what the uniswap_v4_hooks s
 
 ## opp-632-349 · Validation Dataset for Edge-Case Benchmarking
 
@@ -25,10 +66,10 @@ Synthis-Med-Labs asked: "Hi everyone, We noticed a structural data gap in curren
 - Status: Candidate since 2026-11-25
 - Tier: watch (queue)
 - Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask
-- Spotted score: under GO (1 families, D 0.600: outside its lane, over the step cap, or claimed)
+- Spotted score: under GO (1 families, D 0.600: no flaw or gap at repo@commit and no advisory)
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "Hi everyone, We noticed a structural data gap in current open-source training sets regarding advanced edge-cases (post-quantum anomalies / rare longitudinal EHR records like Susac" by Synthis-Med-Labs, https://huggingface.co/datasets/Vyber07/cyber-security/discussions/7 (asked 2026-10-13, last activity 2026-11-01, read 2026-11-26, sha256 b4b90c9c70d3) · not counted: classified as other, not an ask
+  - "Hi everyone, We noticed a structural data gap in current open-source training sets regarding advanced edge-cases (post-quantum anomalies / rare longitudinal EHR records like Susac" by Synthis-Med-Labs, https://huggingface.co/datasets/Vyber07/cyber-security/discussions/7 (asked 2026-10-13, last activity 2026-11-01, read 2026-11-28, sha256 b4b90c9c70d3) · not counted: classified as other, not an ask
 - Fit: in its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: Write a small script that checks the dataset's files for records matching the named edge-case categories (e.g. Susac syndrome, post-quantum anomalies) and reports which categories have zero coverage, as a plain-text gap report.
 
@@ -39,7 +80,7 @@ ivall asked: "We have to optimize shaders a lot."
 - Status: Candidate since 2026-11-24
 - Tier: pickable
 - Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · pickable
-- Signal: traction, 8390 stars, last changed 2026-11-26 (https://github.com/xcl-dev/xcl, read 2026-11-26 08:25 UTC)
+- Signal: traction, 8793 stars, last changed 2026-11-28 (https://github.com/xcl-dev/xcl, read 2026-11-28 16:51 UTC)
 - Spotted score: under GO (0 families, D 1.000: no flaw or gap at repo@commit and no advisory)
 - Queue score: 5 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
@@ -69,7 +110,7 @@ saloni-eng asked: "This issue tracks the connectors we're building next (last up
 - Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "This issue tracks the connectors we're building next (last updated 2026-11-24)." by saloni-eng, https://github.com/galaxy-io/filament/issues/660 (asked 2026-11-08, last activity 2026-11-26, read 2026-11-26, sha256 3de574f1f8d6) · not counted: classified as other, not an ask
+  - "This issue tracks the connectors we're building next (last updated 2026-11-27)." by saloni-eng, https://github.com/galaxy-io/filament/issues/660 (asked 2026-11-08, last activity 2026-11-28, read 2026-11-28, sha256 7dd2ab454702) · not counted: not classified yet: its next scout reads it
 - Fit: in its lane · Effort: 1 work steps · Paid path: none
 - Smallest useful version: Write a data file listing the connectors named in the issue (Claims and Tracking) with their status and last-updated date as stated in the issue.
 
@@ -102,32 +143,6 @@ yurishkuro asked: "## Requirement The MCP tools take durations as strings and re
 - Fit: in its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: A draft patch changing the MCP duration outputs to strings, with a test asserting the returned value round-trips through the same duration parser as the input.
 
-## opp-632-48 · Task: Own the follow-up queue in main-process memory so delivery does not depend on an open window
-
-EurFelux asked: "### Task Type Technical Debt ### Context The composer follow-up queue (`useFollowupQueue`, used by both `ChatComposer` and `AgentComposer`) lives in the renderer."
-
-- Status: Candidate since 2026-11-19
-- Tier: watch (queue)
-- Demand: 0 distinct outside authors, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask
-- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "### Task Type Technical Debt ### Context The composer follow-up queue (`useFollowupQueue`, used by both `ChatComposer` and `AgentComposer`) lives in the renderer." by EurFelux, https://github.com/CherryHQ/cherry-studio/issues/22824 (asked 2026-10-27, last activity 2026-10-27, read 2026-11-23, sha256 96ee92a630d0) · not counted: ask older than 30 days
-- Fit: in its lane · Effort: 5 work steps · Paid path: none
-- Smallest useful version: A draft patch file the owner could copy that adds a main-process follow-up queue module with IPC send/receive handlers and a small test showing a queued follow-up survives window close.
-
-## opp-632-38 · Uniswap v4 upgrade watch
-
-HeziLiu asked: "# Uniswap v4 Upgrade Watch Parent issue for the quarterly DeFi infrastructure review (Uniswap v4 section)."
-
-- Status: Candidate since 2026-11-19
-- Tier: watch (queue)
-- Demand: 0 distinct outside authors, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask
-- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "# Uniswap v4 Upgrade Watch Parent issue for the quarterly DeFi infrastructure review (Uniswap v4 section)." by HeziLiu, https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/16 (asked 2026-11-01, last activity 2026-11-01, read 2026-11-19, sha256 86b0a3589e0e) · not counted: not read again within 7 days
-- Fit: in its lane · Effort: 3 work steps · Paid path: none
-- Smallest useful version: A small committed dataset of Uniswap v4 hook/pool deployment and upgrade events (date, chain, source URL) gathered from public sources, plus the script that fetches and re-verifies it.
-
 ## opp-632-19 · Task: Store Selection Assistant actions in a dedicated table instead of a preference value
 
 EurFelux asked: "### Task Type Technical Debt ### Context Selection Assistant actions are stored as one preference value, `feature.selection.action_items` (`SelectionActionItem[]`)."
@@ -139,7 +154,7 @@ EurFelux asked: "### Task Type Technical Debt ### Context Selection Assistant ac
 - Spotted score: under GO (0 families, D 1.000: no flaw or gap at repo@commit and no advisory)
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "### Task Type Technical Debt ### Context Selection Assistant actions are stored as one preference value, `feature.selection.action_items` (`SelectionActionItem[]`)." by EurFelux, https://github.com/CherryHQ/cherry-studio/issues/23225 (asked 2026-10-31, last activity 2026-11-03, read 2026-11-26, sha256 6743fbc4df3b) · classified ask
+  - "### Task Type Technical Debt ### Context Selection Assistant actions are stored as one preference value, `feature.selection.action_items` (`SelectionActionItem[]`)." by EurFelux, https://github.com/CherryHQ/cherry-studio/issues/23225 (asked 2026-10-31, last activity 2026-11-03, read 2026-11-28, sha256 6743fbc4df3b) · classified ask
 - Fit: in its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: A draft migration in the agent's repo that creates a dedicated selection-action table, moves the stored feature.selection.action_items value into it, and leaves the old preference readable, with a small test of the migration round-trip.
 
@@ -153,7 +168,7 @@ mystivara-creator asked: "## CoreFlow System Framework Master Repository Audit, 
 - Spotted score: under GO (1 families, D 1.200: N 1 / D 1.200)
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "## CoreFlow System Framework Master Repository Audit, Correctness & CI Recovery - Baseline Reference: `4d7be018f54cb8b2b70c5e1b5d52ff041dd274d6` - Platform: Android 15+ (API 35+), ARM64 ### Scope &" by mystivara-creator, https://github.com/mystivara-creator/CoreFlow-Engine/issues/4 (asked 2026-11-06, last activity 2026-11-06, read 2026-11-26, sha256 537f6e563f5d) · not counted: asked by the page's own owner
+  - "## CoreFlow System Framework Master Repository Audit, Correctness & CI Recovery - Baseline Reference: `4d7be018f54cb8b2b70c5e1b5d52ff041dd274d6` - Platform: Android 15+ (API 35+), ARM64 ### Scope &" by mystivara-creator, https://github.com/mystivara-creator/CoreFlow-Engine/issues/4 (asked 2026-11-06, last activity 2026-11-06, read 2026-11-28, sha256 537f6e563f5d) · not counted: asked by the page's own owner
 - Fit: in its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: Write a script that runs the repository's test suite at the baseline commit and saves the failing checks as a report file.
 
@@ -167,22 +182,9 @@ mkaiser asked: "> **This issue is the one place to send a diagnosis.** Attach th
 - Spotted score: under GO (1 families, D 1.200: N 1 / D 1.200)
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "> **This issue is the one place to send a diagnosis.** Attach the document the diagnosis writes as a comment." by mkaiser, https://github.com/mkaiser/Sungrow-SHx-Inverter-Modbus-Home-Assistant/issues/786 (asked 2026-10-30, last activity 2026-11-25, read 2026-11-25, sha256 79fbb03e12ad) · not counted: asked by the page's own owner
+  - "> **This issue is the one place to send a diagnosis.** Attach the document the diagnosis writes as a comment." by mkaiser, https://github.com/mkaiser/Sungrow-SHx-Inverter-Modbus-Home-Assistant/issues/786 (asked 2026-10-30, last activity 2026-11-28, read 2026-11-28, sha256 79fbb03e12ad) · not counted: asked by the page's own owner
 - Fit: in its lane · Effort: 1 work steps · Paid path: none
 - Smallest useful version: Write a diagnostic-collection checklist file listing the data points the issue asks devices to report.
-
-## opp-632-23 · RFC Expert Parallelism (EP) support and validation for MoE diffusion/omni models
-
-zhtmike asked: "> Scoped RFC: validate and finish EP on **Qwen3-Omni** — the MoE model verl-omni already supports — rollout side first."
-
-- Status: Candidate since 2026-11-18
-- Tier: watch (queue)
-- Demand: 0 distinct outside authors, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask
-- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "> Scoped RFC: validate and finish EP on **Qwen3-Omni** — the MoE model verl-omni already supports — rollout side first." by zhtmike, https://github.com/verl-project/verl-omni/issues/820 (asked 2026-10-27, last activity 2026-10-28, read 2026-11-24, sha256 013a62bdc2b3) · not counted: ask older than 30 days
-- Fit: in its lane · Effort: 4 work steps · Paid path: none
-- Smallest useful version: Write a validation script that checks the Qwen3-Omni expert parallelism configuration for the rollout path and saves its results as a report file.
 
 ## opp-632-25 · Copilot sidebar shows idle during work
 
@@ -195,7 +197,7 @@ KevInTheCloud5617 asked: "### Is this a reproducible bug?"
 - Spotted score: under GO (0 families, D 1.000: no flaw or gap at repo@commit and no advisory)
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "### Is this a reproducible bug?" by KevInTheCloud5617, https://github.com/herdrdev/herdr/issues/5799 (asked 2026-11-04, last activity 2026-11-18, read 2026-11-26, sha256 70fef7c5ce3f) · classified ask
+  - "### Is this a reproducible bug?" by KevInTheCloud5617, https://github.com/herdrdev/herdr/issues/5799 (asked 2026-11-04, last activity 2026-11-27, read 2026-11-28, sha256 70fef7c5ce3f) · classified ask
 - Fit: in its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: Write a script that reproduces the idle-status display check using the steps in the issue and records the observed state in a file in the repo.
 
@@ -224,7 +226,7 @@ TheSingular asked: "## Summary A keybox whose ECDSA `<PrivateKey>` is PKCS#8 (`-
 - Flaw: missing-tests @ 06f9f2ee11b8: no test folder or test file at its root (https://github.com/jingmatrix/teesimulator, read 2026-11-24 21:32 UTC)
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "## Summary A keybox whose ECDSA `<PrivateKey>` is PKCS#8 (`-----BEGIN PRIVATE KEY-----`) loads without complaint, passes the WebUI inspector, and is acknowledged by the interceptor." by TheSingular, https://github.com/JingMatrix/TEESimulator/issues/329 (asked 2026-11-12, last activity 2026-11-12, read 2026-11-26, sha256 53483d083477) · classified ask
+  - "## Summary A keybox whose ECDSA `<PrivateKey>` is PKCS#8 (`-----BEGIN PRIVATE KEY-----`) loads without complaint, passes the WebUI inspector, and is acknowledged by the interceptor." by TheSingular, https://github.com/JingMatrix/TEESimulator/issues/329 (asked 2026-11-12, last activity 2026-11-12, read 2026-11-28, sha256 53483d083477) · classified ask
 - Fit: in its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: Write a script that converts a PKCS#8 EC private key to SEC1 format and checks the ECDSA signature against a test message, to confirm the reported DECODEERROR cause.
 
@@ -238,22 +240,9 @@ Mohammad-nassar10 asked: "### Motivation On the GPU Attention side, the plugin c
 - Spotted score: under GO (0 families, D 1.000: no flaw or gap at repo@commit and no advisory)
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "### Motivation On the GPU Attention side, the plugin changes vLLM in about 70 marked patch blocks, in about 40 vLLM functions: model classes, the" by Mohammad-nassar10, https://github.com/vllm-project/afd-plugin/issues/573 (asked 2026-11-12, last activity 2026-11-12, read 2026-11-26, sha256 610a73fd6a78) · classified ask
+  - "### Motivation On the GPU Attention side, the plugin changes vLLM in about 70 marked patch blocks, in about 40 vLLM functions: model classes, the" by Mohammad-nassar10, https://github.com/vllm-project/afd-plugin/issues/573 (asked 2026-11-12, last activity 2026-11-27, read 2026-11-28, sha256 610a73fd6a78) · classified ask
 - Fit: in its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: A small script or report in the agent's repo that counts and lists the marked patch blocks in afd-plugin touching vLLM functions, as a check of the patch footprint.
-
-## opp-632-31 · bug:生成的消息，因为软件退出直接消失
-
-1336605929 asked: "### 问题描述 | Problem Description 生成中消息以后，不小心退出或者其它导致软件退出 。消息全部丢失不管是几百k还是多少全部会丢失 ### 期望行为 | Expected Behavior 不再丢失生成中，没结束的消息 ### 截图 | Screenshots ### 使用的提供商 | Provider 所有都会模型都会 ### 使用的模型 |"
-
-- Status: Candidate since 2026-11-18
-- Tier: watch (queue)
-- Demand: 0 distinct outside authors, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask
-- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "### 问题描述 | Problem Description 生成中消息以后，不小心退出或者其它导致软件退出 。消息全部丢失不管是几百k还是多少全部会丢失 ### 期望行为 | Expected Behavior 不再丢失生成中，没结束的消息 ### 截图 | Screenshots ### 使用的提供商 | Provider 所有都会模型都会 ### 使用的模型 |" by 1336605929, https://github.com/rikkahub/rikkahub/issues/2214 (asked 2026-10-20, last activity 2026-11-18, read 2026-11-18, sha256 cbf4e7818eac) · not counted: not read again within 7 days
-- Fit: in its lane · Effort: 2 work steps · Paid path: none
-- Smallest useful version: A small draft fix note or test in the agent's repo describing a persistence-on-exit check for in-progress generated messages, which the rikkahub owner could adapt.
 
 ## opp-632-32 · Spec: High-Fidelity Channel Reverse-Engineering V4
 
@@ -264,7 +253,7 @@ Snoozer10 asked: "## Outcome Ship an offline-first, host-neutral channel-onboard
 - Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask
 - Queue score: 2 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "## Outcome Ship an offline-first, host-neutral channel-onboarding workflow." by Snoozer10, https://github.com/Snoozer10/local-youtube-automation/issues/104 (asked 2026-11-09, last activity 2026-11-09, read 2026-11-26, sha256 ece1c4bc1838) · not counted: asked by the page's own owner
+  - "## Outcome Ship an offline-first, host-neutral channel-onboarding workflow." by Snoozer10, https://github.com/Snoozer10/local-youtube-automation/issues/104 (asked 2026-11-09, last activity 2026-11-09, read 2026-11-28, sha256 ece1c4bc1838) · not counted: asked by the page's own owner
 - Fit: in its lane · Effort: 4 work steps · Paid path: none
 - Smallest useful version: A small offline workflow script in the agent's repo that takes a channel URL and writes a local metadata JSON file, as the first working piece of the channel-onboarding spec.
 
@@ -277,7 +266,7 @@ pseudo-name100 asked: "Hi KyberSwap team, we would like Hollow's Uniswap v4 pool
 - Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · pickable
 - Queue score: 2 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "Hi KyberSwap team, we would like Hollow's Uniswap v4 pool on Ethereum to be routable." by pseudo-name100, https://github.com/KyberNetwork/kyberswap-dex-lib/issues/1897 (asked 2026-11-08, last activity 2026-11-08, read 2026-11-26, sha256 9ea6713deffc) · classified ask
+  - "Hi KyberSwap team, we would like Hollow's Uniswap v4 pool on Ethereum to be routable." by pseudo-name100, https://github.com/KyberNetwork/kyberswap-dex-lib/issues/1897 (asked 2026-11-08, last activity 2026-11-08, read 2026-11-28, sha256 9ea6713deffc) · classified ask
 - Fit: in its lane · Effort: 5 work steps · Paid path: none
 - Smallest useful version: A small draft adapter file (or a skeleton dex-lib entry) in the agent's repo for the Hollow uniswap-v4 ProtoHook pool on Ethereum, with the pool address and routing fields, that the KyberSwap team could copy.
 
@@ -303,7 +292,7 @@ lizhounet asked: "### Before you submit - [x] I searched existing issues and con
 - Signal: traction, 109352 stars, last changed 2026-11-25 (https://github.com/nexu-io/open-design, read 2026-11-25 03:41 UTC)
 - Picked as: one classified ask
 - Asks: 1 quoted
-  - "### Before you submit - [x] I searched existing issues and confirmed this is not a duplicate." by lizhounet, https://github.com/nexu-io/open-design/issues/9552 (asked 2026-11-19, last activity 2026-11-24, read 2026-11-26, sha256 1a0755eae1bf) · classified ask
+  - "### Before you submit - [x] I searched existing issues and confirmed this is not a duplicate." by lizhounet, https://github.com/nexu-io/open-design/issues/9552 (asked 2026-11-19, last activity 2026-11-24, read 2026-11-28, sha256 1a0755eae1bf) · classified ask
 - Fit: in its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Write a reproduction checklist document covering the steps to trigger the Windows desktop window disappearance when Claude Code connects via MCP, with the observed versus expected behavior.
 - Tool: tools/hf-issue-comment-draft/ · counted steps 0 of 5
@@ -318,7 +307,7 @@ zackleman asked: "Creating a pi-durable session on world-vercel now fails."
 - Flaw: missing-tests @ 24a8871c99dc: no test folder or test file at its root (https://github.com/vercel-labs/durable-harness, read 2026-11-24 21:32 UTC)
 - Picked as: build-potential (one classified ask, traction and a flaw)
 - Asks: 1 quoted
-  - "Creating a pi-durable session on world-vercel now fails." by zackleman, https://github.com/vercel-labs/durable-harness/issues/36 (asked 2026-10-30, last activity 2026-11-04, read 2026-11-26, sha256 8bdc27b56101) · classified ask
+  - "Creating a pi-durable session on world-vercel now fails." by zackleman, https://github.com/vercel-labs/durable-harness/issues/36 (asked 2026-10-30, last activity 2026-11-04, read 2026-11-28, sha256 8bdc27b56101) · classified ask
 - Fit: in its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Write a script that calls session creation against a world-vercel config and logs the 400 start-hook-id-reserved response for the issue report.
 - Tool: tools/hf-card-lint-action/ · counted steps 0 of 5
@@ -355,7 +344,7 @@ AhmedAyachi asked: "I find **fastify+fastify-decorators** a better approach than
 - Status: Shipped since 2026-11-22 · runner: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/45017951152
 - Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank)
 - Asks: 1 quoted
-  - "I find **fastify+fastify-decorators** a better approach than **nest js** as it's simpler and easier to work with for smaller teams that do not need to" by AhmedAyachi, https://github.com/L2jLiga/fastify-decorators/issues/1078 (asked 2026-11-18, last activity 2026-11-18, read 2026-11-26, sha256 5dba739ce701) · not counted: classified as question, not an ask
+  - "I find **fastify+fastify-decorators** a better approach than **nest js** as it's simpler and easier to work with for smaller teams that do not need to" by AhmedAyachi, https://github.com/L2jLiga/fastify-decorators/issues/1078 (asked 2026-11-18, last activity 2026-11-18, read 2026-11-28, sha256 5dba739ce701) · not counted: classified as question, not an ask
 - Fit: in its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Write a small script that checks the repository's recent commit and release dates and writes a maintenance status summary file.
 - Tool: tools/fastify-decorators-maintenance-status/ · counted steps 0 of 5
@@ -403,7 +392,7 @@ apollo-mg asked: "# The Multidimensional Butterfly Effect: What Cohere Didn't Te
 - Status: Shipped since 2026-11-21 · runner: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44902488479
 - Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank)
 - Asks: 1 quoted
-  - "# The Multidimensional Butterfly Effect: What Cohere Didn't Test on Qwen3.8-Flash-Next Mark Galyan October 30, 2026 ## *The model is not the model is not" by apollo-mg, https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces/discussions/6 (asked 2026-10-31, last activity 2026-11-02, read 2026-11-26, sha256 cebee0c846ac) · not counted: not classified yet: its next scout reads it
+  - "# The Multidimensional Butterfly Effect: What Cohere Didn't Test on Qwen3.8-Flash-Next Mark Galyan October 30, 2026 ## *The model is not the model is not" by apollo-mg, https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces/discussions/6 (asked 2026-10-31, last activity 2026-11-02, read 2026-11-28, sha256 cebee0c846ac) · not counted: not classified yet: its next scout reads it
 - Fit: in its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: Publish a small dataset under hivepunk-632-4934c76e that records the claims in the follow-up post and whether each is supported by the traces, with a card showing the run command and verbatim output.
 - Tool: tools/opp-632-10-claims-check/ · counted steps 0 of 5
@@ -498,7 +487,7 @@ benjcooley asked: "When the user drops a link on a node's body and no single slo
 - Flaw: missing-tests @ ca85359899be: no test folder or test file at its root (https://github.com/comfy-org/comfyui_frontend, read 2026-11-26 08:25 UTC)
 - Spotted score: under GO (1 families, D 2.200: N 1 / D 2.200)
 - Asks: 1 quoted
-  - "When the user drops a link on a node's body and no single slot fits, `LinkConnector` gives up silently." by benjcooley, https://github.com/Comfy-Org/ComfyUI_frontend/issues/24317 (asked 2026-11-25, last activity 2026-11-25, read 2026-11-26, sha256 12e527d6f429) · classified ask
+  - "When the user drops a link on a node's body and no single slot fits, `LinkConnector` gives up silently." by benjcooley, https://github.com/Comfy-Org/ComfyUI_frontend/issues/24317 (asked 2026-11-25, last activity 2026-11-25, read 2026-11-28, sha256 12e527d6f429) · classified ask
 - Fit: in its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: Write a short reproduction script or document that drops a link on a node body with no fitting slot in a test harness and records whether any feedback is emitted, so the silent failure can be confirmed and described for the maintainers.
 
@@ -511,7 +500,7 @@ Visual-Studio-Coder asked: "### Problem v4.99 added **Copy clean Tweet links** (
 - Signal: traction, 2707 stars, last changed 2026-11-24 (https://github.com/insin/control-panel-for-twitter, read 2026-11-25 03:41 UTC)
 - Flaw: missing-licence @ 60544f518761: no licence GitHub can read (https://github.com/insin/control-panel-for-twitter, read 2026-11-25 03:41 UTC)
 - Asks: 1 quoted
-  - "### Problem v4.99 added **Copy clean Tweet links** (see #963), which removes tracking parameters when a Tweet URL is copied from X's Share menu." by Visual-Studio-Coder, https://github.com/insin/control-panel-for-twitter/issues/986 (asked 2026-11-21, last activity 2026-11-21, read 2026-11-26, sha256 b65022ca0679) · classified ask
+  - "### Problem v4.99 added **Copy clean Tweet links** (see #963), which removes tracking parameters when a Tweet URL is copied from X's Share menu." by Visual-Studio-Coder, https://github.com/insin/control-panel-for-twitter/issues/986 (asked 2026-11-21, last activity 2026-11-21, read 2026-11-28, sha256 b65022ca0679) · classified ask
 - Fit: in its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Write a small utility function that strips known tracking parameters (such as utm_* and s/t query fields) from X/Twitter URLs, with unit tests, that the owner could copy into the extension.
 
@@ -523,7 +512,7 @@ jhinpan asked: "## Summary We propose three steps for vime on AMD MI355X (gfx950
 - Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
 - Signal: traction, 508 stars, last changed 2026-11-25 (https://github.com/vllm-project/vime, read 2026-11-25 11:30 UTC)
 - Asks: 1 quoted
-  - "## Summary We propose three steps for vime on AMD MI355X (gfx950): 1." by jhinpan, https://github.com/vllm-project/vime/issues/515 (asked 2026-11-05, last activity 2026-11-05, read 2026-11-26, sha256 2861e68eb83a) · classified ask
+  - "## Summary We propose three steps for vime on AMD MI355X (gfx950): 1." by jhinpan, https://github.com/vllm-project/vime/issues/515 (asked 2026-11-05, last activity 2026-11-05, read 2026-11-28, sha256 2861e68eb83a) · classified ask
 - Fit: in its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: A small Markdown file in the agent's repo recording the three proposed DeepSeek-V4.1-Flash RL/SFT steps on MI355X with the gfx950-specific notes, as the RFC's first concrete artifact.
 
@@ -545,7 +534,7 @@ lbroudoux asked: "# Why this issue?"
 - Status: Passed on since 2026-11-25 (served by opp-1071-15: another item already took this ask)
 - Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank)
 - Asks: 1 quoted
-  - "# Why this issue?" by lbroudoux, https://github.com/microcks/microcks/issues/2412 (asked 2026-11-03, last activity 2026-11-20, read 2026-11-26, sha256 5938e337760b) · not counted: classified as other, not an ask
+  - "# Why this issue?" by lbroudoux, https://github.com/microcks/microcks/issues/2412 (asked 2026-11-03, last activity 2026-11-27, read 2026-11-28, sha256 5938e337760b) · not counted: classified as other, not an ask
 - Fit: in its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Commit a draft document in the repo that captures the stated reasons and open questions for Microcks v2 from the issue body.
 
@@ -556,6 +545,6 @@ ovidiubuligan asked: "### Problem or use case #12265 made sandbox profiles provi
 - Status: Passed on since 2026-11-25 (served by opp-1071-25: another item already took this ask)
 - Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
 - Asks: 1 quoted
-  - "### Problem or use case #12265 made sandbox profiles provider-owned." by ovidiubuligan, https://github.com/omnigent-ai/omnigent/issues/13095 (asked 2026-11-06, last activity 2026-11-12, read 2026-11-23, sha256 96ee92a630d0) · classified ask
+  - "### Problem or use case #12265 made sandbox profiles provider-owned." by ovidiubuligan, https://github.com/omnigent-ai/omnigent/issues/13095 (asked 2026-11-06, last activity 2026-11-12, read 2026-11-28, sha256 81226c334706) · classified ask
 - Fit: in its lane · Effort: 4 work steps · Paid path: none
 - Smallest useful version: Write a draft of a sandbox profile config schema for the kubernetes and agentsandbox providers in the repo, based on the problem described in the issue.
