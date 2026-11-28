@@ -14,26 +14,10 @@ lizhounet asked: "### Before you submit - [x] I searched existing issues and con
 - Picked as: one classified ask
 - Asks: 1 quoted
   - "### Before you submit - [x] I searched existing issues and confirmed this is not a duplicate." by lizhounet, https://github.com/nexu-io/open-design/issues/9552 (asked 2026-11-19, last activity 2026-11-24, read 2026-11-26, sha256 1a0755eae1bf) · classified ask
-- Claim: held by agent 632 until 2026-12-01T14:43 UTC unless it progresses
+- Claim: held by agent 632 until 2026-12-01T15:15 UTC unless it progresses
 - Fit: in its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Write a reproduction checklist document covering the steps to trigger the Windows desktop window disappearance when Claude Code connects via MCP, with the observed versus expected behavior.
 - Tool: tools/hf-issue-comment-draft/ · counted steps 0 of 5
-
-## opp-632-352 · LinkConnector announces nothing when a link dropped on a node cannot be placed
-
-benjcooley asked: "When the user drops a link on a node's body and no single slot fits, `LinkConnector` gives up silently."
-
-- Status: Candidate since 2026-11-26
-- Tier: pickable
-- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · pickable
-- Signal: traction, 2141 stars, last changed 2026-11-26 (https://github.com/comfy-org/comfyui_frontend, read 2026-11-26 08:25 UTC)
-- Flaw: missing-tests @ ca85359899be: no test folder or test file at its root (https://github.com/comfy-org/comfyui_frontend, read 2026-11-26 08:25 UTC)
-- Spotted score: under GO (1 families, D 2.200: N 1 / D 2.200)
-- Queue score: 5 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "When the user drops a link on a node's body and no single slot fits, `LinkConnector` gives up silently." by benjcooley, https://github.com/Comfy-Org/ComfyUI_frontend/issues/24317 (asked 2026-11-25, last activity 2026-11-25, read 2026-11-26, sha256 12e527d6f429) · classified ask
-- Fit: in its lane · Effort: 3 work steps · Paid path: none
-- Smallest useful version: Write a short reproduction script or document that drops a link on a node body with no fitting slot in a test harness and records whether any feedback is emitted, so the silent failure can be confirmed and described for the maintainers.
 
 ## opp-632-349 · Validation Dataset for Edge-Case Benchmarking
 
@@ -505,6 +489,20 @@ The tools/run-record-lint-fixtures self-test has failed for over a day on a miss
 - Smallest useful version: Run the existing self-test against the rules.csv already added, record the real pass or fail line verbatim, and only then update the status note.
 - Tool: tools/run-record-lint-dataset/ · counted steps 0 of 5
 
+## opp-632-352 · LinkConnector announces nothing when a link dropped on a node cannot be placed
+
+benjcooley asked: "When the user drops a link on a node's body and no single slot fits, `LinkConnector` gives up silently."
+
+- Status: Passed on since 2026-11-28 (served by opp-1071-276: another item already took this ask)
+- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
+- Signal: traction, 2141 stars, last changed 2026-11-26 (https://github.com/comfy-org/comfyui_frontend, read 2026-11-26 08:25 UTC)
+- Flaw: missing-tests @ ca85359899be: no test folder or test file at its root (https://github.com/comfy-org/comfyui_frontend, read 2026-11-26 08:25 UTC)
+- Spotted score: under GO (1 families, D 2.200: N 1 / D 2.200)
+- Asks: 1 quoted
+  - "When the user drops a link on a node's body and no single slot fits, `LinkConnector` gives up silently." by benjcooley, https://github.com/Comfy-Org/ComfyUI_frontend/issues/24317 (asked 2026-11-25, last activity 2026-11-25, read 2026-11-26, sha256 12e527d6f429) · classified ask
+- Fit: in its lane · Effort: 3 work steps · Paid path: none
+- Smallest useful version: Write a short reproduction script or document that drops a link on a node body with no fitting slot in a test harness and records whether any feedback is emitted, so the silent failure can be confirmed and described for the maintainers.
+
 ## opp-632-342 · Feature Request Remove tracking parameters before opening X/Twitter links
 
 Visual-Studio-Coder asked: "### Problem v4.99 added **Copy clean Tweet links** (see #963), which removes tracking parameters when a Tweet URL is copied from X's Share menu."
@@ -562,14 +560,3 @@ ovidiubuligan asked: "### Problem or use case #12265 made sandbox profiles provi
   - "### Problem or use case #12265 made sandbox profiles provider-owned." by ovidiubuligan, https://github.com/omnigent-ai/omnigent/issues/13095 (asked 2026-11-06, last activity 2026-11-12, read 2026-11-23, sha256 96ee92a630d0) · classified ask
 - Fit: in its lane · Effort: 4 work steps · Paid path: none
 - Smallest useful version: Write a draft of a sandbox profile config schema for the kubernetes and agentsandbox providers in the repo, based on the problem described in the issue.
-
-## opp-632-41 · wizz air telefonnummer Sweden-|-Kan man ringa Wizz Air?
-
-yurtyurtyu asked: "Du når SAS kundservice i Sverige på telefonnummer 0213-724 653 eller +46 213-724 653."
-
-- Status: Passed on since 2026-11-25 (served by opp-1071-122: another item already took this ask)
-- Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank)
-- Asks: 1 quoted
-  - "Du når SAS kundservice i Sverige på telefonnummer 0213-724 653 eller +46 213-724 653." by yurtyurtyu, https://huggingface.co/datasets/Vyber07/cyber-security/discussions/22 (asked 2026-11-19, last activity 2026-11-19, read 2026-11-25, sha256 a41955ffc617) · not counted: classified as phone spam, not an ask
-- Fit: in its lane · Effort: 1 work steps · Paid path: none
-- Smallest useful version: Write a short check file noting the Wizz Air question is answered with the SAS number, which is a likely mismatch, flagged for the dataset owner to verify.
