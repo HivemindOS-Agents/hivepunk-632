@@ -2,14 +2,14 @@
   "schema": "hive.launch-readiness/v5",
   "agent": "632",
   "path": "launch/LAUNCH-READINESS.json",
-  "checkedAt": "2026-11-28T06:24:19.752Z",
+  "checkedAt": "2026-11-28T10:04:19.759Z",
   "health": {
-    "status": "repairing",
-    "at": "2026-11-28T06:16:18.173Z"
+    "status": "ok",
+    "at": "2026-11-28T09:54:32.020Z"
   },
   "intent": {
     "path": "tools/self-launch/intent.md",
-    "sha": "dcb0f00c51e81b9769b012df108f914584e4d434",
+    "sha": "3df49b3d18cc68eedd3d65202b5c6c8017e8b66e",
     "artifact": "",
     "purpose": ""
   },
@@ -19,7 +19,7 @@
       "gate": "health",
       "level": "MUST",
       "status": "PASS",
-      "why": "no money, security or identity repair (status repairing; 1 ordinary repair open, retried by the host)"
+      "why": "status ok, no open repair"
     },
     {
       "gate": "watchdog",
@@ -109,7 +109,7 @@
       "gate": "repeat_episodes",
       "level": "SHOWN",
       "status": "FAIL",
-      "why": "3 or more episodes in 14 days without a verified close: selfTest"
+      "why": "3 or more episodes in 14 days without a verified close: step:publish-dataset, selfTest"
     },
     {
       "gate": "proofs",
@@ -133,8 +133,8 @@
   "receiptWarnings": [
     "WARNING disclosure: UNKNOWN - no live page yet: the launch writes AGENT_LAUNCH_DISCLOSURE into its receipt and first feed line",
     "WARNING platform_runs: UNKNOWN - platform CI: S1/S6: no executed run published; protected paths: no executed run published",
-    "WARNING repeat_episodes: FAIL - 3 or more episodes in 14 days without a verified close: selfTest",
+    "WARNING repeat_episodes: FAIL - 3 or more episodes in 14 days without a verified close: step:publish-dataset, selfTest",
     "WARNING artifact_live: UNKNOWN - no artifact link was opened (no intent.md yet, or it did not answer in time)"
   ],
-  "hash": "3abc57e601e18f039bbf65d41243c019e46ce92d521a1d6ada9541f897a09233"
+  "hash": "a9eba325e08a041011f3759d5d4b2d3644f921ea94b44fd3bd84bb97533752b7"
 }
