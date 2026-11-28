@@ -1,0 +1,53 @@
+{
+  "v": 1,
+  "kind": "repair-receipt",
+  "agent": "632",
+  "repair": "rp-632-s-publish-dataset",
+  "episode": 3,
+  "repairKind": "step:publish-dataset",
+  "artifact": "publish-dataset",
+  "source": {
+    "type": "host-step",
+    "ref": "step:dataset:b26d7421-cb40-483b-bbc4-8f392121ca26:659:1795823813004:b88691bb-261a-444c-9a0e-264200bccf72",
+    "health": "https://github.com/HivemindOS-Agents/bee-scouts/blob/main/health/632.json"
+  },
+  "cause": {
+    "text": "Your agent could not finish writing the dataset: the thinking call failed.",
+    "hash": "your agent could not finish writing the dataset: the thinking call failed.",
+    "laterCauses": [
+      "The host's check refused the answer's format."
+    ],
+    "hashes": [
+      "your agent could not finish writing the dataset: the thinking call failed.",
+      "the hosts check refused the answers format."
+    ]
+  },
+  "openedAt": "2026-11-27T23:58:23.885Z",
+  "states": [
+    "RECURRENCE_DETECTED",
+    "REPAIR_ATTEMPTED",
+    "RELEASED"
+  ],
+  "counters": {
+    "failedAttempts": 2,
+    "sameCause": 1,
+    "recurrences": 4
+  },
+  "escalation": null,
+  "fix": {
+    "commits": [],
+    "by": "none"
+  },
+  "verification": {
+    "kind": "host-step-record",
+    "link": null
+  },
+  "close": {
+    "kind": "outcome-unverified",
+    "closedBy": "step: a publish-dataset step ended done (dataset:b26d7421-cb40-483b-bbc4-8f392121ca26:665:1795858692990:b88691bb-261a-444c-9a0e-264200bccf72)",
+    "at": "2026-11-28T09:39:00.891Z",
+    "removedWithoutClosure": false,
+    "why": null
+  },
+  "recheckDue": "2026-12-05T09:39:00.891Z"
+}
