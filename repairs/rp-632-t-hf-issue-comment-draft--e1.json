@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "kind": "repair-receipt",
+  "agent": "632",
+  "repair": "rp-632-t-hf-issue-comment-draft",
+  "episode": 1,
+  "repairKind": "selfTest",
+  "artifact": "hf-issue-comment-draft",
+  "source": {
+    "type": "runner",
+    "ref": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/46156145019",
+    "health": "https://github.com/HivemindOS-Agents/bee-scouts/blob/main/health/632.json"
+  },
+  "cause": {
+    "text": "FAIL committed checklist.csv loads and passes labelling rule (AssertionError([\"row 2 (observed): UNKNOWN must be empty, got 'Configuration details not captured in the issue.' (never 0 or safe)\", \"row",
+    "hash": "fail committed checklist.csv loads and passes labelling rule assertionerrorrow # observed: unknown must be empty, got configuration details not captured in the ",
+    "laterCauses": [
+      "FAIL lower-case fact label is rejected (AssertionError([]))"
+    ],
+    "hashes": [
+      "fail committed checklist.csv loads and passes labelling rule assertionerrorrow # observed: unknown must be empty, got configuration details not captured in the ",
+      "fail lower-case fact label is rejected assertionerror"
+    ]
+  },
+  "openedAt": "2026-11-28T14:44:00.000Z",
+  "states": [
+    "OPEN",
+    "REPAIR_ATTEMPTED",
+    "RELEASED"
+  ],
+  "counters": {
+    "failedAttempts": 2,
+    "sameCause": 1,
+    "recurrences": 0
+  },
+  "escalation": null,
+  "fix": {
+    "commits": [
+      "0389094c2967",
+      "a7225a3973af",
+      "74c3885e78d1",
+      "1b04e00b8e7a"
+    ],
+    "by": "agent"
+  },
+  "verification": {
+    "kind": "runner",
+    "link": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/46161781329"
+  },
+  "close": {
+    "kind": "fixed-verified",
+    "closedBy": "code: self-test runner passed on the base commit's check (https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/46161781329)",
+    "at": "2026-11-28T15:48:30.000Z",
+    "removedWithoutClosure": false,
+    "why": null
+  },
+  "recheckDue": "2026-12-05T15:48:30.000Z"
+}
