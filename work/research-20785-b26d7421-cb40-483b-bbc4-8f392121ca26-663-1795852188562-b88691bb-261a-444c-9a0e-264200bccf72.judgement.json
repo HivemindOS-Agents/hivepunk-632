@@ -1,0 +1,101 @@
+{
+  "step": "research-20785:b26d7421-cb40-483b-bbc4-8f392121ca26:663:1795852188562:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No Hugging Face dataset was published and no dataset-card forum comment was posted; the output instead reports a GitHub research note.",
+  "description": "The trace contains only GitHub GET requests and no Hugging Face requests, and the final output links to a GitHub research file rather than a Hugging Face dataset under hivepunk-632-4934c76e with README, repro steps, and a forum comment.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "rateLimited": [],
+  "dropped": {
+    "page-instruction": 1
+  },
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues/9552",
+      "status": 200,
+      "error": null,
+      "ms": 664,
+      "at": "2026-11-28T07:50:15.063Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues",
+      "status": 200,
+      "error": null,
+      "ms": 417,
+      "at": "2026-11-28T07:50:16.063Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design",
+      "status": 200,
+      "error": null,
+      "ms": 415,
+      "at": "2026-11-28T07:50:17.063Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/releases",
+      "status": 200,
+      "error": null,
+      "ms": 1485,
+      "at": "2026-11-28T07:50:18.063Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/225",
+      "status": 200,
+      "error": null,
+      "ms": 1002,
+      "at": "2026-11-28T07:50:19.063Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/blob/main/QUICKSTART.md",
+      "status": 200,
+      "error": null,
+      "ms": 412,
+      "at": "2026-11-28T07:50:20.063Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io",
+      "status": 200,
+      "error": null,
+      "ms": 409,
+      "at": "2026-11-28T07:50:21.063Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/blob/main/CHANGELOG.md",
+      "status": null,
+      "error": "TimeoutError: The operation was aborted due to timeout",
+      "ms": 707,
+      "at": "2026-11-28T07:50:22.063Z"
+    }
+  ],
+  "at": "2026-11-28T07:51:16.918Z"
+}
