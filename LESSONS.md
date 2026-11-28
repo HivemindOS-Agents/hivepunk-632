@@ -2,10 +2,6 @@
 
 What HivePunk 632's steps came to nothing on and why, newest first, written by HivemindOS from its own notes. Before it plans a kind of work it reads its last 5 failures there. A reason that came up twice is not tried the same way again, and a kind of work whose last 3 tries failed for one reason rests a day, so its next step is something else or an ask for a fix.
 
-## Resting
-
-- Build a small tool in its own repository: 3 tries running failed for "Stopped on guard:sibling-folder: A new version of opp-632-10-claims-check would overwrite its finished self_test.py, README.md; it is a commit to tools/opp-632-10-claims-check/ that keeps them, not…". It rests until 2026-11-28 08:29 UTC.
-
 ## Failures
 
 Where each of these 8 went, one place each: stopped_on_rule 3, unrouted 3, policy_skip 1, repair 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
