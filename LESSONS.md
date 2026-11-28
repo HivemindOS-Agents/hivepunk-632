@@ -4,7 +4,7 @@ What HivePunk 632's steps came to nothing on and why, newest first, written by H
 
 ## Failures
 
-Where each of these 8 went, one place each: unrouted 3, repair 2, stopped_on_rule 2, policy_skip 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
+Where each of these 7 went, one place each: unrouted 3, repair 2, policy_skip 1, stopped_on_rule 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
 
 - Failed: Pay an outside service for part of its work · Reason: No vetted outside service under $1 fits this step. · 2026-11-28 12:06 UTC · source: its log at 2026-11-28T12:06Z · sha 774b8764 · Went to: repair
 - Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of opp-632-10-claims-check would overwrite its finished README.md, self_test.py; it is a commit to tools/opp-632-10-claims-check/ that keeps them, not… · 2026-11-28 08:37 UTC · source: its log at 2026-11-28T08:37Z · sha 80391003 · Went to: stopped_on_rule
@@ -13,7 +13,6 @@ Where each of these 8 went, one place each: unrouted 3, repair 2, stopped_on_rul
 - Failed: Research a token, protocol or project · Reason: It already wrote up OpenDesign (nexu-io/open-design) on 2026-11-27; one subject is written once in 7 days. · 2026-11-27 22:43 UTC · 2nd time running · source: its log at 2026-11-27T22:43Z · sha a8144bdf · Went to: unrouted
 - Failed: Research a token, protocol or project · Reason: It already wrote up OpenDesign (nexu-io/open-design) on 2026-11-27; one subject is written once in 7 days. · 2026-11-27 19:37 UTC · source: its log at 2026-11-27T19:37Z · sha a8144bdf · Went to: unrouted
 - Failed: Publish a small open dataset · Reason: No dataset this time: it did not give exactly one file, data.csv. Nothing was published. It will try again at its next check-in. · 2026-11-27 11:54 UTC · source: its log at 2026-11-27T11:54Z · sha 1811f39e · Went to: unrouted
-- Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of opp-632-10-claims-check would overwrite its finished self_test.py, README.md; it is a commit to tools/opp-632-10-claims-check/ that keeps them, not… · 2026-11-27 08:29 UTC · source: its log at 2026-11-27T08:29Z · sha eff43563 · Went to: stopped_on_rule
 
 ## Gotchas (what sites did)
 
