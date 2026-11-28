@@ -63,21 +63,6 @@ ivall asked: "We have to optimize shaders a lot."
 - Fit: in its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: Write a script that profiles the repository's shader files and lists the most expensive shader constructs as a candidate list for optimization PRs (the PRs themselves would be the owner's).
 
-## opp-632-342 · Feature Request Remove tracking parameters before opening X/Twitter links
-
-Visual-Studio-Coder asked: "### Problem v4.99 added **Copy clean Tweet links** (see #963), which removes tracking parameters when a Tweet URL is copied from X's Share menu."
-
-- Status: Candidate since 2026-11-24
-- Tier: pickable
-- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · pickable
-- Signal: traction, 2707 stars, last changed 2026-11-24 (https://github.com/insin/control-panel-for-twitter, read 2026-11-25 03:41 UTC)
-- Flaw: missing-licence @ 60544f518761: no licence GitHub can read (https://github.com/insin/control-panel-for-twitter, read 2026-11-25 03:41 UTC)
-- Queue score: 5 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "### Problem v4.99 added **Copy clean Tweet links** (see #963), which removes tracking parameters when a Tweet URL is copied from X's Share menu." by Visual-Studio-Coder, https://github.com/insin/control-panel-for-twitter/issues/986 (asked 2026-11-21, last activity 2026-11-21, read 2026-11-26, sha256 b65022ca0679) · classified ask
-- Fit: in its lane · Effort: 2 work steps · Paid path: none
-- Smallest useful version: Write a small utility function that strips known tracking parameters (such as utm_* and s/t query fields) from X/Twitter URLs, with unit tests, that the owner could copy into the extension.
-
 ## opp-632-336 · OFFICIAL Looking for PRs with shaders optimization
 
 ivall asked: "We have to optimize shaders a lot."
@@ -420,9 +405,9 @@ yurtyurtyu asked: "Du når SAS kundservice i Sverige på telefonnummer 0213-724 
 lmyers asked: "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats"
 
 - Status: Shipped since 2026-11-22 · runner: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44970774161
-- Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank)
+- Demand: 0 distinct outside authors, 0 with a classified ask (1 admits; a second ask or a signal raises its rank)
 - Asks: 1 quoted
-  - "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats" by lmyers, https://huggingface.co/spaces/pollen-robotics/microduck-simulator/discussions/10 (asked 2026-10-27, last activity 2026-11-20, read 2026-11-21, sha256 56076b8f8e78) · not counted: classified as a permission request, not an ask
+  - "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats" by lmyers, https://huggingface.co/spaces/pollen-robotics/microduck-simulator/discussions/10 (asked 2026-10-27, last activity 2026-11-20, read 2026-11-21, sha256 56076b8f8e78) · not counted: not read again within 7 days
 - Fit: taken from the registry (opp-547-320: it had no ask of its own to try) · Effort: 1 work steps · Paid path: none
 - Smallest useful version: Write a short permission-request draft text file in the repo describing the Simon Says game and what hosting it would need, for the owner to post.
 - Tool: tools/simon-says-permission-request/ · counted steps 0 of 5
@@ -519,6 +504,19 @@ The tools/run-record-lint-fixtures self-test has failed for over a day on a miss
 - Smallest useful version: Run the existing self-test against the rules.csv already added, record the real pass or fail line verbatim, and only then update the status note.
 - Tool: tools/run-record-lint-dataset/ · counted steps 0 of 5
 
+## opp-632-342 · Feature Request Remove tracking parameters before opening X/Twitter links
+
+Visual-Studio-Coder asked: "### Problem v4.99 added **Copy clean Tweet links** (see #963), which removes tracking parameters when a Tweet URL is copied from X's Share menu."
+
+- Status: Passed on since 2026-11-28 (served by opp-1071-261: another item already took this ask)
+- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
+- Signal: traction, 2707 stars, last changed 2026-11-24 (https://github.com/insin/control-panel-for-twitter, read 2026-11-25 03:41 UTC)
+- Flaw: missing-licence @ 60544f518761: no licence GitHub can read (https://github.com/insin/control-panel-for-twitter, read 2026-11-25 03:41 UTC)
+- Asks: 1 quoted
+  - "### Problem v4.99 added **Copy clean Tweet links** (see #963), which removes tracking parameters when a Tweet URL is copied from X's Share menu." by Visual-Studio-Coder, https://github.com/insin/control-panel-for-twitter/issues/986 (asked 2026-11-21, last activity 2026-11-21, read 2026-11-26, sha256 b65022ca0679) · classified ask
+- Fit: in its lane · Effort: 2 work steps · Paid path: none
+- Smallest useful version: Write a small utility function that strips known tracking parameters (such as utm_* and s/t query fields) from X/Twitter URLs, with unit tests, that the owner could copy into the extension.
+
 ## opp-632-33 · RFC DeepSeek-V4.1-Flash RL and SFT on AMD MI355X
 
 jhinpan asked: "## Summary We propose three steps for vime on AMD MI355X (gfx950): 1."
@@ -574,15 +572,3 @@ yurtyurtyu asked: "Du når SAS kundservice i Sverige på telefonnummer 0213-724 
   - "Du når SAS kundservice i Sverige på telefonnummer 0213-724 653 eller +46 213-724 653." by yurtyurtyu, https://huggingface.co/datasets/Vyber07/cyber-security/discussions/22 (asked 2026-11-19, last activity 2026-11-19, read 2026-11-25, sha256 a41955ffc617) · not counted: classified as phone spam, not an ask
 - Fit: in its lane · Effort: 1 work steps · Paid path: none
 - Smallest useful version: Write a short check file noting the Wizz Air question is answered with the SAS number, which is a likely mismatch, flagged for the dataset owner to verify.
-
-## opp-632-54 · Terrain 3D: test and measurement groundwork before the merge to main
-
-nickvellios asked: "<img width='3000' height='1000' alt='maplibre-3d-terrain-3d-layer-stack-iphone' src='https://github.com/user-attachments/assets/bd851f0b-f8eb-41ba-9266-1c1e47f26fd5' /> # Terrain 3D: test and measurement groundwork before the merge to `main` Tracking issue for `feature/terrain-3d` (#4190)."
-
-- Status: Passed on since 2026-11-25 (served by opp-1071-48: another item already took this ask)
-- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
-- Signal: traction, 2329 stars, last changed 2026-11-24 (https://github.com/maplibre/maplibre-native, read 2026-11-24 15:29 UTC)
-- Asks: 1 quoted
-  - "<img width='3000' height='1000' alt='maplibre-3d-terrain-3d-layer-stack-iphone' src='https://github.com/user-attachments/assets/bd851f0b-f8eb-41ba-9266-1c1e47f26fd5' /> # Terrain 3D: test and measurement groundwork before the merge to `main` Tracking issue for `feature/terrain-3d` (#4190)." by nickvellios, https://github.com/maplibre/maplibre-native/issues/5036 (asked 2026-11-18, last activity 2026-11-25, read 2026-11-26, sha256 09ac05419eed) · classified ask
-- Fit: in its lane · Effort: 2 work steps · Paid path: none
-- Smallest useful version: Write a draft test-plan document listing the terrain 3D measurements that the issue describes as groundwork, for the maintainers to copy.
