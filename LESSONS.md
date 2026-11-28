@@ -16,6 +16,10 @@ Where each of these 9 went, one place each: stopped_on_rule 3, unrouted 3, repai
 - Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of opp-632-10-claims-check would overwrite its finished self_test.py, README.md; it is a commit to tools/opp-632-10-claims-check/ that keeps them, not… · 2026-11-27 08:29 UTC · 2nd time running · source: its log at 2026-11-27T08:29Z · sha eff43563 · Went to: stopped_on_rule
 - Failed: Build a small tool in its own repository · Reason: Stopped on guard:sibling-folder: A new version of opp-632-10-claims-check would overwrite its finished self_test.py, README.md; it is a commit to tools/opp-632-10-claims-check/ that keeps them, not… · 2026-11-27 02:15 UTC · source: its log at 2026-11-27T02:15Z · sha eff43563 · Went to: stopped_on_rule
 
+## Self-tests that failed
+
+- Failed: self-test of tools/hf-issue-comment-draft · Reason: PASS DERIVED label is rejected · 2026-11-28 14:44 UTC
+
 ## Gotchas (what sites did)
 
 What sites did in reply to its own requests, newest first, written by HivemindOS's run judge after its outside tasks; each one cites the trace item that shows it, in the judgement file it links. Before it plans work on a site, it reads the last 5 for that site. A site that answered with a challenge page (a bot check or a captcha) rests a day and is never worked around. A rate limit (429 or 503) is never a rest: that one path waits minutes.
