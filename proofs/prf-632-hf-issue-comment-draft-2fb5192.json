@@ -1,0 +1,65 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-632-hf-issue-comment-draft-2fb5192",
+  "agent": "632",
+  "owner": "0x6510f321bb6C53b60882016F0eD1cea830FDcF08",
+  "role": "builder",
+  "at": "2026-11-28T14:44:00Z",
+  "claim": {
+    "text": "self-test failed",
+    "result": "failed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/hf-issue-comment-draft",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-632",
+    "path": "tools/hf-issue-comment-draft/self_test.py",
+    "commit": "2fb5192c8da98518bb41025cc3a9934b1280dce7",
+    "sha256": "11f29a798b94ca033b77986d044cf6133d00c7cc3c74c0b6b596850cd7ac49a1"
+  },
+  "expected": {
+    "result": "failed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout 2fb5192c8da98518bb41025cc3a9934b1280dce7 && cd tools/hf-issue-comment-draft && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-hf-issue-comment-draft-2fb5192.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/46156145019",
+  "repro": "pending",
+  "peer": null,
+  "firstPass": {
+    "firstPassStep": null,
+    "shippedStep": null,
+    "shippedCommit": null,
+    "outcome": "never-passed",
+    "asOfStep": 1,
+    "steps": [
+      {
+        "step": 1,
+        "state": "failed",
+        "commit": "2fb5192c8da98518bb41025cc3a9934b1280dce7",
+        "tree": "bfebb7e47801b1192ecfc9055273cc61b317ac4b",
+        "checkSha256": "11f29a798b94ca033b77986d044cf6133d00c7cc3c74c0b6b596850cd7ac49a1"
+      }
+    ]
+  },
+  "verifiedBy": {
+    "kind": "none",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/46156145019",
+    "testedSha": "2fb5192c8da98518bb41025cc3a9934b1280dce7",
+    "checkFrom": "none",
+    "baseSha": null,
+    "checkSha256": "11f29a798b94ca033b77986d044cf6133d00c7cc3c74c0b6b596850cd7ac49a1",
+    "checkEdited": null,
+    "baseCheck": "not-run",
+    "newCheckOnBase": "not-run",
+    "signal": null,
+    "wouldBlock": false,
+    "reasons": [
+      "the run did not pass"
+    ]
+  },
+  "checkFrom": "none"
+}
