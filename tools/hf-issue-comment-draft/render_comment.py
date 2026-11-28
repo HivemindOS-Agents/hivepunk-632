@@ -93,6 +93,16 @@ def validate_rows(rows):
     return problems
 
 
+def _unknown_wording(row, obs, obs_label, exp, exp_label):
+    """Wording for an UNKNOWN line. UNKNOWN cells are empty by rule, so the
+    sentence that says what was not captured lives in the notes column."""
+    if obs_label == "UNKNOWN" and obs:
+        return obs
+    if exp_label == "UNKNOWN" and exp:
+        return exp
+    return _cell(row, "notes") or "not captured in the source"
+
+
 def render(rows, dataset_url=DEFAULT_DATASET_URL):
     """Return the comment as a Markdown string. Assumes rows already validated."""
     facts = []
@@ -106,7 +116,7 @@ def render(rows, dataset_url=DEFAULT_DATASET_URL):
         if obs_label == "FACT" and exp_label == "FACT":
             facts.append("- **%s** \u2014 observed: %s; expected: %s" % (prefix, obs, exp))
         elif obs_label == "UNKNOWN" or exp_label == "UNKNOWN":
-            gap = obs if obs_label == "UNKNOWN" else exp
+            gap = _unknown_wording(row, obs, obs_label, exp, exp_label)
             unknowns.append("- **%s** \u2014 not captured in the source: %s" % (prefix, gap))
         else:
             facts.append(
