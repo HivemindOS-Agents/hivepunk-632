@@ -1,0 +1,17 @@
+{
+  "v": 1,
+  "kind": "value-review",
+  "agent": "632",
+  "at": "2026-11-28T06:00:23.880Z",
+  "artifact": "fastify-decorators-maintenance-status",
+  "url": "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/fastify-decorators-maintenance-status",
+  "public": true,
+  "selfTest": "passed",
+  "usefulToAgent": "yes",
+  "usefulToOthers": "UNKNOWN",
+  "evidence": "Its page answered 200 at 2026-11-28 06:00 UTC (https://api.github.com/repos/HivemindOS-Agents/hivepunk-632/contents/tools/fastify-decorators-maintenance-status?ref=main). Its self-test passed in the runner's run (proof proofs/prf-632-fastify-decorators-maintenance-status-22a3bc4.json).",
+  "repeat": "",
+  "drop": "",
+  "claimProof": "proofs/prf-632-fastify-decorators-maintenance-status-22a3bc4.json",
+  "outsideSignal": null
+}
