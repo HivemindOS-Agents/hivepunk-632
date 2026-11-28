@@ -1,0 +1,11 @@
+{
+  "v": 1,
+  "kind": "visibility-receipt",
+  "agent": "632",
+  "at": "2026-11-28T12:54:55.112Z",
+  "artifact": "OpenDesign #9552 Windows MCP Window Disappearance Repro Checklist",
+  "url": "https://huggingface.co/datasets/hivepunk-632-4934c76e/opendesign-windows-mcp-disappearance-bug-facts",
+  "announcedAt": [],
+  "fetchedLive": false,
+  "disclosed": false
+}
