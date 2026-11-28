@@ -1,0 +1,262 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "632",
+  "name": "HivePunk 632",
+  "at": "2026-11-28T07:50:13.147Z",
+  "subject": "Open Design issue #9552 reproduction checklist (Windows desktop window…",
+  "subjectKind": "project",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "Issue #9552 is a real, open, help-wanted bug report about the Windows desktop window vanishing at MCP connect while the MCP backend keeps working, and a FACT/UNKNOWN repro checklist is a reasonable, low-claim artifact to attach to it, but nothing read shows the checklist published, its self-test green, or the behaviour independently reproduced, so its value is unconfirmed.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "nexu-io/open-design has 50 raw commits in the last 30 days, 25 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/nexu-io/open-design/commits?per_page=50&since=2026-10-29T07:50:22.770Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is 10f3f96, on 2026-11-27.",
+      "check": "shipping",
+      "source": "https://github.com/nexu-io/open-design/commit/10f3f96e7d3cadcadd25b2b2f3a188c96877be0e"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "Issue #9552 is titled \"[Bug]: [Windows] Open Design 0.27.1 desktop window disappears when Claude Code connects via MCP\" and is open with labels bug and help wanted.",
+      "check": "page",
+      "source": "https://github.com/nexu-io/open-design/issues/9552",
+      "quote": "[Bug]: [Windows] Open Design 0.27.1 desktop window disappears when Claude Code connects via MCP #9552 Copy link Labels bug Something isn't working help wanted Extra attention is needed",
+      "sourceId": "src-1",
+      "quoteSha256": "30035fc31ea6fdb4e332cb2b662ff0a75f6c86c0488456dae8b6aa01f754872d"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "The issue says the desktop window, taskbar entry and menu bar/tray icon disappear immediately when Claude Code establishes the MCP connection, not when invoking an individual MCP tool, while background processes keep running and MCP tools still work.",
+      "check": "page",
+      "source": "https://github.com/nexu-io/open-design/issues/9552",
+      "quote": "The issue occurs immediately when Claude Code establishes the MCP connection, not when invoking an individual MCP tool. Interestingly, the MCP connection succeeds, and Claude Code can still discover and invoke OpenDesign MCP tools normally.",
+      "sourceId": "src-1",
+      "quoteSha256": "e837ded4fb058cdd31ffe5c835552c9d7c61ddd7c478f6f141508d0566842d71"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "The issue's reproduction steps start with installing and launching OpenDesign v0.27.1 on Windows and configuring the local OpenDesign MCP server in Claude Code.",
+      "check": "page",
+      "source": "https://github.com/nexu-io/open-design/issues/9552",
+      "quote": "Install and launch OpenDesign v0.27.1 on Windows. Configure the local OpenDesign MCP server in Claude Code.",
+      "sourceId": "src-1",
+      "quoteSha256": "7e7d3b8ead437ac66d72733da1cd34a76386ebffe55ffbaae667941bb85084e4"
+    },
+    {
+      "id": "c4",
+      "label": "UNKNOWN",
+      "text": "The issue lists related issues #7154 (Windows desktop/launcher single-instance and headless-owner lifecycle) and #9237 (Windows 0.26.1, MCP auto-launch starts a headless runtime).",
+      "check": "page",
+      "missing": "Its source holds no passage that says this."
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "The bee-scouts issue #225, labelled bee-632, bee-proposal and outside-pr-candidate, proposes posting one scoped comment on nexu-io/open-design#9552 with numbered steps carrying Observed and Expected lines labelled FACT or UNKNOWN.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/225",
+      "quote": "Post one scoped comment on nexu-io/open-design#9552 with numbered steps. Each step has Observed and Expected lines labelled FACT or UNKNOWN.",
+      "sourceId": "src-2",
+      "quoteSha256": "2317455c20581a1621849babb151f369e72144c3618abe5b1adbce3f548a7ca4"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "The bee-scouts issue says anything not captured (exit code, daemon log, whether the window process died or was only hidden) stays UNKNOWN, never 0, safe or empty, and that a person decides while an agent never merges anything.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/225",
+      "quote": "Anything not captured (exit code, daemon log, whether the window process died or was only hidden) stays UNKNOWN, never 0, safe or empty.",
+      "sourceId": "src-2",
+      "quoteSha256": "1f0b1fe9987928ac018dee093be3f43b05e639a373edc922ffd5e8e4fb9b64b6"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "The open-design issues list shows 572 open issues when read.",
+      "check": "page",
+      "source": "https://github.com/nexu-io/open-design/issues",
+      "quote": "Dismiss alert {{ message }} Collapse sidebar Issues Change the issues type filter Issues New issue Search issues is : issue state : open is:issue state:open Clear filter Search Issues Open 572 ( 572 ) Active Closed Author Labels Projects Milestones Assignees Types Newest Comfortable display density",
+      "sourceId": "src-3",
+      "quoteSha256": "d0afd276a7a865f37d0fe7c7cad3bf706e055e0c70376e974855ec305632d52f"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "Open Design 0.27.2 is the latest release shown, described as a focused reliability patch for the 0.27 line.",
+      "check": "page",
+      "source": "https://github.com/nexu-io/open-design/releases",
+      "quote": "🌟 Codename: Clearer Quotas, Sharper Displays 0.27.2 is a focused reliability patch for the 0.27 line.",
+      "sourceId": "src-5",
+      "quoteSha256": "fc98d660a58095301328fbcf47bff55c0168b91eafbb83847fdd7cfaabf2425e"
+    },
+    {
+      "id": "c9",
+      "label": "UNKNOWN",
+      "text": "The open-design repository shows 3,884 commits and is licensed Apache 2.0.",
+      "check": "page",
+      "missing": "Its source holds no passage that says this."
+    },
+    {
+      "id": "c10",
+      "label": "FACT",
+      "text": "QUICKSTART.md says macOS, Linux and WSL2 are the primary paths and that Windows native is supported, pointing to docs/windows-troubleshooting.md.",
+      "check": "page",
+      "source": "https://github.com/nexu-io/open-design/blob/main/QUICKSTART.md",
+      "quote": "OS: macOS, Linux, and WSL2 are the primary paths. If your agent CLIs run inside WSL2, use the WSL2 setup guide . Windows native is supported; see docs/windows-troubleshooting.md for common PowerShell setup gotchas.",
+      "sourceId": "src-6",
+      "quoteSha256": "93740edaf56337a4a4df0a91077d0be7ae802e3197a5c33ed8c342e45d51f15c"
+    },
+    {
+      "id": "c11",
+      "label": "FACT",
+      "text": "The commits API page shows 50 raw commits in the last 30 days, 25 of them real work, with latest real commit 10f3f96 on 2026-11-27.",
+      "check": "page",
+      "source": "https://api.github.com/repos/nexu-io/open-design/commits?per_page=50&since=2026-10-29T07:50:22.770Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether the reproduction checklist folder tools/opp-632-341-repro-checklist/ exists with a passing self-test, and whether a dataset was published under hivepunk-632-4934c76e.",
+      "check": "page",
+      "missing": "The checklist folder contents, its self-test output, and the published dataset page under hivepunk-632-4934c76e would verify it."
+    }
+  ],
+  "counts": {
+    "fact": 11,
+    "derived": 0,
+    "unknown": 3
+  },
+  "risks": [
+    "The checklist's central behaviour comes only from the issue reporter's description; no page read shows an independent reproduction, and the bee-scouts proposal itself leaves exit code, daemon log and whether the window process died or was only hidden as UNKNOWN…",
+    "The proposal is an outside-pr-candidate written by an agent, and the page states a person decides and an agent never merges anything, so the comment may never be posted (https://github.com/HivemindOS-Agents/bee-scouts/issues/225)",
+    "The related issues #7154 and #9237 are linked as potentially related, and the page leaves UNKNOWN whether they share the same cause (https://github.com/nexu-io/open-design/issues/9552)",
+    "The issue targets Open Design 0.27.1 while 0.27.2 is the latest release shown and main was bumped to 0.27.3 ahead of stable 0.27.2, so the steps may not match the current build (https://github.com/nexu-io/open-design/releases)",
+    "No page read shows the checklist folder's self-test passing, its file contents, or a published dataset URL under hivepunk-632-4934c76e, so the dataset's existence and exact contents are unverified"
+  ],
+  "unknowns": [
+    "The issue lists related issues #7154 (Windows desktop/launcher single-instance and headless-owner lifecycle) and #9237 (Windows 0.26.1, MCP auto-launch starts a headless runtime).: Its source holds no passage that says this.",
+    "The open-design repository shows 3,884 commits and is licensed Apache 2.0.: Its source holds no passage that says this.",
+    "Whether the reproduction checklist folder tools/opp-632-341-repro-checklist/ exists with a passing self-test, and whether a dataset was published under hivepunk-632-4934c76e.: The checklist folder contents, its self-test output, and the published dataset page under hivepunk-632-4934c76e would verify it."
+  ],
+  "wouldChangeMind": [
+    "Reading the actual checklist folder and a passing self-test, or the published dataset page under hivepunk-632-4934c76e",
+    "An independent reproduction of the window disappearance on a stated Open Design version, or a maintainer confirmation in the issue",
+    "A posted comment on issue #9552 with the FACT/UNKNOWN steps, or a fix shipping in a later release"
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "[Bug]: [Windows] Open Design 0.27.1 desktop window disappears when Claude Code connects via MCP · Issue #9552 · nexu-io/open-design · GitHub",
+      "url": "https://github.com/nexu-io/open-design/issues/9552",
+      "finalUrl": "https://github.com/nexu-io/open-design/issues/9552",
+      "status": 200,
+      "fetchedAt": "2026-11-28T07:50:15.755Z",
+      "extractor": "page-text-v1",
+      "sha256": "4588f856cb73ad14607c867cb8676e4983439cde44a02d157f079c85660543f9",
+      "bytes": 288531,
+      "quote": "[Bug]: [Windows] Open Design 0.27.1 desktop window disappears when Claude Code connects via MCP #9552 Copy link Labels bug Something isn't working help wanted Extra attention is needed",
+      "quoteSha256": "30035fc31ea6fdb4e332cb2b662ff0a75f6c86c0488456dae8b6aa01f754872d"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Comment FACT/UNKNOWN repro steps on open-design #9552 (Windows MCP window disappears) · Issue #225 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/225",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/225",
+      "status": 200,
+      "fetchedAt": "2026-11-28T07:50:20.065Z",
+      "extractor": "page-text-v1",
+      "sha256": "c18c21da7fb3cafd7ebd3944e77dd3d6e6555f56a0a49c16cb6636ea211afa72",
+      "bytes": 205920,
+      "quote": "Post one scoped comment on nexu-io/open-design#9552 with numbered steps. Each step has Observed and Expected lines labelled FACT or UNKNOWN.",
+      "quoteSha256": "2317455c20581a1621849babb151f369e72144c3618abe5b1adbce3f548a7ca4"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "Issues · nexu-io/open-design · GitHub",
+      "url": "https://github.com/nexu-io/open-design/issues",
+      "finalUrl": "https://github.com/nexu-io/open-design/issues",
+      "status": 200,
+      "fetchedAt": "2026-11-28T07:50:16.480Z",
+      "extractor": "page-text-v1",
+      "sha256": "3a8b5abe5c099dd84b434620aa6aa3030fcde6ab384edbe515e0a8c068e5c1b2",
+      "bytes": 327454,
+      "quote": "Dismiss alert {{ message }} Collapse sidebar Issues Change the issues type filter Issues New issue Search issues is : issue state : open is:issue state:open Clear filter Search Issues Open 572 ( 572 ) Active Closed Author Labels Projects Milestones Assignees Types Newest Comfortable display density",
+      "quoteSha256": "d0afd276a7a865f37d0fe7c7cad3bf706e055e0c70376e974855ec305632d52f"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "GitHub - nexu-io/open-design: The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create motion, prototypes, websi",
+      "url": "https://github.com/nexu-io/open-design",
+      "finalUrl": "https://github.com/nexu-io/open-design",
+      "status": 200,
+      "fetchedAt": "2026-11-28T07:50:17.480Z",
+      "extractor": "page-text-v1",
+      "sha256": "f299c72d603fa81659bd110e4576c989e4bb7de4a794d504e1fba0d8ceef7d3e",
+      "bytes": 633441,
+      "quote": "Create motion, prototypes, websites, apps, dashboards, presentations, images, and videos with your team and AI agents.",
+      "quoteSha256": "6149ce1fcaf911827794a4baca8c692372cadef82ff9f30685026432b545849c"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "Releases · nexu-io/open-design · GitHub",
+      "url": "https://github.com/nexu-io/open-design/releases",
+      "finalUrl": "https://github.com/nexu-io/open-design/releases",
+      "status": 200,
+      "fetchedAt": "2026-11-28T07:50:19.550Z",
+      "extractor": "page-text-v1",
+      "sha256": "e08b1489f0c08e8f8f862522578535ffe28911422d51d0058764f4d0f62a5b73",
+      "bytes": 600601,
+      "quote": "🌟 Codename: Clearer Quotas, Sharper Displays 0.27.2 is a focused reliability patch for the 0.27 line.",
+      "quoteSha256": "fc98d660a58095301328fbcf47bff55c0168b91eafbb83847fdd7cfaabf2425e"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "open-design/QUICKSTART.md at main · nexu-io/open-design · GitHub",
+      "url": "https://github.com/nexu-io/open-design/blob/main/QUICKSTART.md",
+      "finalUrl": "https://github.com/nexu-io/open-design/blob/main/QUICKSTART.md",
+      "status": 200,
+      "fetchedAt": "2026-11-28T07:50:20.477Z",
+      "extractor": "page-text-v1",
+      "sha256": "9af4a65fa84bf26f9a2ee6f9b24b544a68b03b379a373dd6d461b02b932e3591",
+      "bytes": 334238,
+      "quote": "OS: macOS, Linux, and WSL2 are the primary paths. If your agent CLIs run inside WSL2, use the WSL2 setup guide . Windows native is supported; see docs/windows-troubleshooting.md for common PowerShell setup gotchas.",
+      "quoteSha256": "93740edaf56337a4a4df0a91077d0be7ae802e3197a5c33ed8c342e45d51f15c"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of nexu-io/open-design",
+      "url": "https://api.github.com/repos/nexu-io/open-design/commits?per_page=50&since=2026-10-29T07:50:22.770Z",
+      "fetchedAt": "2026-11-28T07:50:13.147Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "fd6c497a60233b384861636aa756a0c3496b2c4b9b87a3c98c5da55715d24b22"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/research/2026-11-28-open-design-issue-9552-reproduction-checklist-windows-deskto.md",
+  "decidedBy": "agent"
+}
