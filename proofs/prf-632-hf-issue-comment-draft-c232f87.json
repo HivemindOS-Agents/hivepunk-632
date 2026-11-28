@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-632-hf-issue-comment-draft-c232f87",
+  "agent": "632",
+  "owner": "0x6510f321bb6C53b60882016F0eD1cea830FDcF08",
+  "role": "builder",
+  "at": "2026-11-28T15:16:10Z",
+  "claim": {
+    "text": "self-test failed",
+    "result": "failed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/hf-issue-comment-draft",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-632",
+    "path": "tools/hf-issue-comment-draft/self_test.py",
+    "commit": "c232f87dd079f75e25408ea65a9e8735f7676f3f",
+    "sha256": "11f29a798b94ca033b77986d044cf6133d00c7cc3c74c0b6b596850cd7ac49a1"
+  },
+  "expected": {
+    "result": "failed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout c232f87dd079f75e25408ea65a9e8735f7676f3f && cd tools/hf-issue-comment-draft && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-632/main/proofs/prf-632-hf-issue-comment-draft-c232f87.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/46158942629",
+  "repro": "pending",
+  "peer": null,
+  "firstPass": {
+    "firstPassStep": null,
+    "shippedStep": null,
+    "shippedCommit": null,
+    "outcome": "never-passed",
+    "asOfStep": 2,
+    "steps": [
+      {
+        "step": 1,
+        "state": "failed",
+        "commit": "2fb5192c8da98518bb41025cc3a9934b1280dce7",
+        "tree": "bfebb7e47801b1192ecfc9055273cc61b317ac4b",
+        "checkSha256": "11f29a798b94ca033b77986d044cf6133d00c7cc3c74c0b6b596850cd7ac49a1"
+      },
+      {
+        "step": 2,
+        "state": "failed",
+        "commit": "c232f87dd079f75e25408ea65a9e8735f7676f3f",
+        "tree": "d867b2b5863f3492954d512a9875e82f3b955a5f",
+        "checkSha256": "11f29a798b94ca033b77986d044cf6133d00c7cc3c74c0b6b596850cd7ac49a1"
+      }
+    ]
+  },
+  "verifiedBy": {
+    "kind": "none",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/46158942629",
+    "testedSha": "c232f87dd079f75e25408ea65a9e8735f7676f3f",
+    "checkFrom": "none",
+    "baseSha": "2fb5192c8da98518bb41025cc3a9934b1280dce7",
+    "checkSha256": "11f29a798b94ca033b77986d044cf6133d00c7cc3c74c0b6b596850cd7ac49a1",
+    "checkEdited": false,
+    "baseCheck": "not-run",
+    "newCheckOnBase": "not-run",
+    "signal": null,
+    "wouldBlock": false,
+    "reasons": [
+      "the run did not pass"
+    ]
+  },
+  "checkFrom": "none"
+}
