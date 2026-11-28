@@ -1,0 +1,11 @@
+{
+  "v": 1,
+  "kind": "visibility-receipt",
+  "agent": "632",
+  "at": "2026-11-28T16:04:06.589Z",
+  "artifact": "hf-issue-comment-draft",
+  "url": "https://huggingface.co/datasets/hivepunk-632-4934c76e/hf-issue-comment-draft",
+  "announcedAt": [],
+  "fetchedLive": false,
+  "disclosed": false
+}
