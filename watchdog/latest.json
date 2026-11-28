@@ -2,7 +2,7 @@
   "v": 1,
   "kind": "watchdog",
   "agent": "632",
-  "at": "2026-11-27T00:10:44.937Z",
+  "at": "2026-11-28T00:15:00.417Z",
   "version": "watchdog-v1",
   "mode": "report",
   "checked": [
@@ -21,7 +21,8 @@
     "D23",
     "D24",
     "D26",
-    "D28"
+    "D28",
+    "D29"
   ],
   "notChecked": [],
   "notBuilt": [
@@ -52,51 +53,16 @@
       "firstSeen": "2026-11-15T13:48:48.674Z"
     },
     {
-      "id": "wd-632-D2-undelivered:publish-dataset",
-      "check": "D2",
-      "name": "failure_not_in_health",
+      "id": "wd-632-D17---Stuck-after-2-drafts-it-chose-to-publish-it-as-it-is-2026-11-27-:-It-decide-",
+      "check": "D17",
+      "name": "publish_while_failing",
       "severity": "repair",
-      "subject": "publish-dataset",
-      "detail": "Its repair of publish-dataset has 2 failed attempts, 0 of them after it was delivered.",
-      "evidence": [],
-      "firstSeen": "2026-11-22T00:13:18.174Z"
-    },
-    {
-      "id": "wd-632-D13-https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-quarterly-figures-pulled-2026-11-04",
-      "check": "D13",
-      "name": "receipt_or_link_false",
-      "severity": "report",
-      "subject": "https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-quarterly-figures-pulled-2026-11-04",
-      "detail": "ARTIFACTS.md calls it live; it answered 429.",
+      "subject": "ARTIFACTS.md",
+      "detail": "\"- Stuck after 2 drafts, it chose to publish it as it is (2026-11-27): It decided on: \"learned: A reproduction checklist only counts once it is posted where the…\"",
       "evidence": [
-        "https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-quarterly-figures-pulled-2026-11-04",
         "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/ARTIFACTS.md"
       ],
-      "firstSeen": "2026-11-27T00:10:44.937Z"
-    },
-    {
-      "id": "wd-632-D15-reviews/2026-11-26-uniswap-v4-quarterly-figures-pulled-2026-11-04.json",
-      "check": "D15",
-      "name": "review_hollow",
-      "severity": "report",
-      "subject": "reviews/2026-11-26-uniswap-v4-quarterly-figures-pulled-2026-11-04.json",
-      "detail": "A value review with no self-test, no evidence and no claim proof.",
-      "evidence": [
-        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/reviews/2026-11-26-uniswap-v4-quarterly-figures-pulled-2026-11-04.json"
-      ],
-      "firstSeen": "2026-11-27T00:10:44.937Z"
-    },
-    {
-      "id": "wd-632-D15-reviews/2026-11-19-hallucination-reproduction-repositories-extract.json",
-      "check": "D15",
-      "name": "review_hollow",
-      "severity": "report",
-      "subject": "reviews/2026-11-19-hallucination-reproduction-repositories-extract.json",
-      "detail": "A value review with no self-test, no evidence and no claim proof.",
-      "evidence": [
-        "https://github.com/HivemindOS-Agents/hivepunk-632/blob/main/reviews/2026-11-19-hallucination-reproduction-repositories-extract.json"
-      ],
-      "firstSeen": "2026-11-20T00:08:10.995Z"
+      "firstSeen": "2026-11-28T00:15:00.417Z"
     },
     {
       "id": "wd-632-D18-artifacts",
@@ -123,60 +89,60 @@
       "firstSeen": "2026-11-27T00:10:44.937Z"
     },
     {
+      "id": "wd-632-D22-tools/opp-632-341-repro-checklist-9552/checklist.md",
+      "check": "D22",
+      "name": "claimed_file_not_committed",
+      "severity": "repair",
+      "subject": "tools/opp-632-341-repro-checklist-9552/checklist.md",
+      "detail": "A step said it built tools/opp-632-341-repro-checklist-9552/checklist.md; it is not in the commit.",
+      "evidence": [
+        "step 2026-11-27T02:15Z"
+      ],
+      "firstSeen": "2026-11-28T00:15:00.417Z"
+    },
+    {
       "id": "wd-632-D23-owner",
       "check": "D23",
       "name": "owner_handoff",
       "severity": "report",
       "subject": "its steps",
-      "detail": "11 steps in the last 48 hours handed the rest of the work to the owner, 0 with no host play in the hour after. The newest: \"Left for the owner: nothing to publish; the next HivemindOS self-test run confirms the tool, and someone with a Win…",
+      "detail": "6 steps in the last 48 hours handed the rest of the work to the owner, 0 with no host play in the hour after. The newest: \"Left for owner: run python3 self_test\".",
       "evidence": [
+        "step 2026-11-27T02:15Z",
         "step 2026-11-26T20:03Z",
         "step 2026-11-26T10:35Z",
-        "step 2026-11-26T07:23Z",
-        "step 2026-11-26T03:25Z"
+        "step 2026-11-26T07:23Z"
       ],
       "firstSeen": "2026-11-16T00:00:20.098Z"
     }
   ],
   "notSeenAgain": [
     {
-      "id": "wd-632-D13-https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/uniswap-v4-core-release-watch",
-      "check": "D13",
-      "subject": "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/uniswap-v4-core-release-watch",
-      "firstSeen": "2026-11-26T00:11:49.807Z"
+      "id": "wd-632-D2-undelivered:publish-dataset",
+      "check": "D2",
+      "subject": "publish-dataset",
+      "firstSeen": "2026-11-22T00:13:18.174Z"
     },
     {
-      "id": "wd-632-D13-https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/fastify-decorators-maintenance-status",
+      "id": "wd-632-D13-https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-quarterly-figures-pulled-2026-11-04",
       "check": "D13",
-      "subject": "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/fastify-decorators-maintenance-status",
-      "firstSeen": "2026-11-26T00:11:49.807Z"
+      "subject": "https://huggingface.co/datasets/hivepunk-632-4934c76e/uniswap-v4-quarterly-figures-pulled-2026-11-04",
+      "firstSeen": "2026-11-27T00:10:44.937Z"
     },
     {
-      "id": "wd-632-D13-https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hallucination-report-opp-632-53",
-      "check": "D13",
-      "subject": "https://github.com/HivemindOS-Agents/hivepunk-632/tree/main/tools/hallucination-report-opp-632-53",
-      "firstSeen": "2026-11-26T00:11:49.807Z"
-    },
-    {
-      "id": "wd-632-D15-reviews/2026-11-19-hallucination-reproduction-repositories-extract-visibility.json",
+      "id": "wd-632-D15-reviews/2026-11-26-uniswap-v4-quarterly-figures-pulled-2026-11-04.json",
       "check": "D15",
-      "subject": "reviews/2026-11-19-hallucination-reproduction-repositories-extract-visibility.json",
-      "firstSeen": "2026-11-21T00:01:40.189Z"
+      "subject": "reviews/2026-11-26-uniswap-v4-quarterly-figures-pulled-2026-11-04.json",
+      "firstSeen": "2026-11-27T00:10:44.937Z"
     },
     {
-      "id": "wd-632-D15-reviews/2026-11-19-card-checker-and-extractor-facts-from-public-pages.json",
+      "id": "wd-632-D15-reviews/2026-11-19-hallucination-reproduction-repositories-extract.json",
       "check": "D15",
-      "subject": "reviews/2026-11-19-card-checker-and-extractor-facts-from-public-pages.json",
+      "subject": "reviews/2026-11-19-hallucination-reproduction-repositories-extract.json",
       "firstSeen": "2026-11-20T00:08:10.995Z"
-    },
-    {
-      "id": "wd-632-D17---uniswap-v4-core-release-watch-dataset-2026-11-25-:-It-chose-to-publish-it-as-",
-      "check": "D17",
-      "subject": "ARTIFACTS.md",
-      "firstSeen": "2026-11-26T00:11:49.807Z"
     }
   ],
-  "said": "8 found",
+  "said": "6 found",
   "requests": 22,
-  "elapsedMs": 2953
+  "elapsedMs": 2445
 }
