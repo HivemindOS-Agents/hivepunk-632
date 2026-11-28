@@ -2,10 +2,10 @@
   "schema": "hive.launch-readiness/v5",
   "agent": "632",
   "path": "launch/LAUNCH-READINESS.json",
-  "checkedAt": "2026-11-28T12:14:19.770Z",
+  "checkedAt": "2026-11-28T15:24:19.979Z",
   "health": {
     "status": "repairing",
-    "at": "2026-11-28T12:07:53.868Z"
+    "at": "2026-11-28T15:14:37.729Z"
   },
   "intent": {
     "path": "tools/self-launch/intent.md",
@@ -19,7 +19,7 @@
       "gate": "health",
       "level": "MUST",
       "status": "PASS",
-      "why": "no money, security or identity repair (status repairing; 1 ordinary repair open, retried by the host)"
+      "why": "no money, security or identity repair (status repairing; 2 ordinary repairs open, retried by the host)"
     },
     {
       "gate": "watchdog",
@@ -114,8 +114,8 @@
     {
       "gate": "proofs",
       "level": "SHOWN",
-      "status": "PASS",
-      "why": "REPRODUCED by a different owner"
+      "status": "FAIL",
+      "why": "no REPRODUCED proof by a different owner"
     },
     {
       "gate": "artifact_live",
@@ -134,7 +134,8 @@
     "WARNING disclosure: UNKNOWN - no live page yet: the launch writes AGENT_LAUNCH_DISCLOSURE into its receipt and first feed line",
     "WARNING platform_runs: UNKNOWN - platform CI: S1/S6: no executed run published; protected paths: no executed run published",
     "WARNING repeat_episodes: FAIL - 3 or more episodes in 14 days without a verified close: step:publish-dataset, selfTest",
+    "WARNING proofs: FAIL - no REPRODUCED proof by a different owner",
     "WARNING artifact_live: UNKNOWN - no artifact link was opened (no intent.md yet, or it did not answer in time)"
   ],
-  "hash": "6785385870ad3257741ea85b54d262968d8276653d2654b516e4e12c56df8182"
+  "hash": "b74e5b253e8078544cafe2ca36d1847ba99f72a22caef140c45328da4aca5662"
 }
