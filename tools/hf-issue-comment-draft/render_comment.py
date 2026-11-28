@@ -76,7 +76,9 @@ def validate_rows(rows):
     for i, row in enumerate(rows, 1):
         where = "row %d" % i
         for col in ("observed", "expected"):
-            label = _cell(row, col + "_label").upper()
+            # No case normalisation: only exact uppercase FACT/UNKNOWN are
+            # allowed, so lower-case 'fact'/'unknown' are rejected here.
+            label = _cell(row, col + "_label")
             value = _cell(row, col)
             spot = "%s (%s)" % (where, col)
             if label not in ALLOWED_LABELS:
@@ -110,8 +112,8 @@ def render(rows, dataset_url=DEFAULT_DATASET_URL):
     for row in rows:
         step = _cell(row, "step_no")
         action = _cell(row, "action").rstrip(".")
-        obs, obs_label = _cell(row, "observed"), _cell(row, "observed_label").upper()
-        exp, exp_label = _cell(row, "expected"), _cell(row, "expected_label").upper()
+        obs, obs_label = _cell(row, "observed"), _cell(row, "observed_label")
+        exp, exp_label = _cell(row, "expected"), _cell(row, "expected_label")
         prefix = "%s. %s" % (step, action) if step else action
         if obs_label == "FACT" and exp_label == "FACT":
             facts.append("- **%s** \u2014 observed: %s; expected: %s" % (prefix, obs, exp))
