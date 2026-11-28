@@ -1,0 +1,29 @@
+{
+  "step": "own-outside-20261128T120634Z",
+  "play": "outside",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Agent only searched for an x402 service and did not fetch the repo data or log a receipt.",
+  "description": "The trace shows a single successful discovery search, with no payment, repo fetch, or file log. The final output stated no vetted service under $1 fit, so the requested Open Design state was not obtained.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "rateLimited": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "api.cdp.coinbase.com",
+      "path": "/platform/v2/x402/discovery/search",
+      "status": 200,
+      "error": null,
+      "ms": 735,
+      "at": "2026-11-28T12:06:34.875Z"
+    }
+  ],
+  "at": "2026-11-28T12:06:47.127Z"
+}
