@@ -1,0 +1,148 @@
+{
+  "step": "dataset:b26d7421-cb40-483b-bbc4-8f392121ca26:665:1795858692990:b88691bb-261a-444c-9a0e-264200bccf72",
+  "play": "dataset",
+  "model": "meta/muse-ember",
+  "success": true,
+  "failure_reason": null,
+  "description": "The agent published the OpenDesign 0.27.1 Windows MCP window disappearance dataset to Hugging Face under hivepunk-632-4934c76e, committing the dataset files and updating its settings; the final output provides the dataset link.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [
+    {
+      "id": "gb0246361",
+      "host": "huggingface.co",
+      "observed": "POST /api/repos/create",
+      "result": "409: the repository already exists",
+      "evidence": "t10",
+      "recoveryThatWorked": "POST /api/datasets/hivepunk-632-4934c76e/:id/commit/main returned 200 in t11"
+    }
+  ],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "rateLimited": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design",
+      "status": 200,
+      "error": null,
+      "ms": 600,
+      "at": "2026-11-28T09:38:43.405Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues/6164",
+      "status": 200,
+      "error": null,
+      "ms": 925,
+      "at": "2026-11-28T09:38:44.405Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/227",
+      "status": 200,
+      "error": null,
+      "ms": 419,
+      "at": "2026-11-28T09:38:45.405Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/blob/main/README.md",
+      "status": 200,
+      "error": null,
+      "ms": 413,
+      "at": "2026-11-28T09:38:46.405Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/blob/main/docs/roadmap.md",
+      "status": 200,
+      "error": null,
+      "ms": 285,
+      "at": "2026-11-28T09:38:47.405Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues",
+      "status": 200,
+      "error": null,
+      "ms": 397,
+      "at": "2026-11-28T09:38:48.405Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/nexu-io/open-design/issues/9552",
+      "status": 200,
+      "error": null,
+      "ms": 667,
+      "at": "2026-11-28T09:38:49.405Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/225",
+      "status": 200,
+      "error": null,
+      "ms": 447,
+      "at": "2026-11-28T09:38:50.405Z"
+    },
+    {
+      "id": "t9",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/api/datasets",
+      "status": 200,
+      "error": null,
+      "ms": 51,
+      "at": "2026-11-28T09:39:00.891Z"
+    },
+    {
+      "id": "t10",
+      "method": "POST",
+      "host": "huggingface.co",
+      "path": "/api/repos/create",
+      "status": 409,
+      "error": "{\"error\":\"You already created this dataset repo: hivepunk-632-4934c76e/opendesign-windows-mcp-disappearance-bug-facts\",\"url\":\"https://huggingface.co/datasets/hivepunk-632-4934c76e/opendesign-windows-m",
+      "ms": 37,
+      "at": "2026-11-28T09:39:01.891Z"
+    },
+    {
+      "id": "t11",
+      "method": "POST",
+      "host": "huggingface.co",
+      "path": "/api/datasets/hivepunk-632-4934c76e/:id/commit/main",
+      "status": 200,
+      "error": null,
+      "ms": 295,
+      "at": "2026-11-28T09:39:02.891Z"
+    },
+    {
+      "id": "t12",
+      "method": "PUT",
+      "host": "huggingface.co",
+      "path": "/api/datasets/hivepunk-632-4934c76e/:id/settings",
+      "status": 200,
+      "error": null,
+      "ms": 103,
+      "at": "2026-11-28T09:39:03.891Z"
+    }
+  ],
+  "at": "2026-11-28T09:39:15.924Z"
+}
