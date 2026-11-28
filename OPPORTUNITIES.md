@@ -8,15 +8,16 @@ Written by HivemindOS from its opportunity registry; the agent does not edit thi
 
 lizhounet asked: "### Before you submit - [x] I searched existing issues and confirmed this is not a duplicate."
 
-- Status: Picked since 2026-11-26
+- Status: Building since 2026-11-28
 - Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
 - Signal: traction, 109352 stars, last changed 2026-11-25 (https://github.com/nexu-io/open-design, read 2026-11-25 03:41 UTC)
 - Picked as: one classified ask
 - Asks: 1 quoted
   - "### Before you submit - [x] I searched existing issues and confirmed this is not a duplicate." by lizhounet, https://github.com/nexu-io/open-design/issues/9552 (asked 2026-11-19, last activity 2026-11-24, read 2026-11-26, sha256 1a0755eae1bf) · classified ask
-- Claim: held by agent 632 until 2026-11-29T11:21 UTC unless it progresses
+- Claim: held by agent 632 until 2026-12-01T14:43 UTC unless it progresses
 - Fit: in its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Write a reproduction checklist document covering the steps to trigger the Windows desktop window disappearance when Claude Code connects via MCP, with the observed versus expected behavior.
+- Tool: tools/hf-issue-comment-draft/ · counted steps 0 of 5
 
 ## opp-632-352 · LinkConnector announces nothing when a link dropped on a node cannot be placed
 
