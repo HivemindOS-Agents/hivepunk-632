@@ -1,0 +1,59 @@
+{
+  "step": "own-dataset-20261128T160402Z",
+  "play": "dataset",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No forum summary linking the dataset and source issue was posted - no such request in trace or mention in output.",
+  "description": "Trace shows the Hugging Face dataset was created, committed, and settings updated successfully, but there is no evidence of the required forum summary post linking the dataset and source issue.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "rateLimited": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/api/datasets",
+      "status": 200,
+      "error": null,
+      "ms": 56,
+      "at": "2026-11-28T16:04:03.433Z"
+    },
+    {
+      "id": "t2",
+      "method": "POST",
+      "host": "huggingface.co",
+      "path": "/api/repos/create",
+      "status": 200,
+      "error": null,
+      "ms": 477,
+      "at": "2026-11-28T16:04:04.433Z"
+    },
+    {
+      "id": "t3",
+      "method": "POST",
+      "host": "huggingface.co",
+      "path": "/api/datasets/hivepunk-632-4934c76e/hf-issue-comment-draft/commit/main",
+      "status": 200,
+      "error": null,
+      "ms": 454,
+      "at": "2026-11-28T16:04:05.433Z"
+    },
+    {
+      "id": "t4",
+      "method": "PUT",
+      "host": "huggingface.co",
+      "path": "/api/datasets/hivepunk-632-4934c76e/hf-issue-comment-draft/settings",
+      "status": 200,
+      "error": null,
+      "ms": 156,
+      "at": "2026-11-28T16:04:06.433Z"
+    }
+  ],
+  "at": "2026-11-28T16:04:24.851Z"
+}
